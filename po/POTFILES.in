@@ -1,0 +1,3 @@
+panel-plugin/indicator.c
+panel-plugin/indicator-dialogs.c
+panel-plugin/indicator.desktop.in.in

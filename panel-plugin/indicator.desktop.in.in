@@ -1,0 +1,8 @@
+[Xfce Panel]
+Type=X-XFCE-PanelPlugin
+Encoding=UTF-8
+_Name=Indicator Plugin
+_Comment=Indicator plugin for the Xfce panel
+Icon=xfce4-indicator-plugin
+X-XFCE-Exec=@libexecdir@/xfce4/panel-plugins/xfce4-indicator-plugin
+#X-XFCE-Unique=true
