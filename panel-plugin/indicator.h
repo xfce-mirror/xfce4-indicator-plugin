@@ -30,7 +30,10 @@ typedef struct
     /* panel widgets */
     GtkWidget       *ebox;
     GtkWidget       *hvbox;
-    GtkWidget       *label;
+    GtkWidget       *label;    
+    GtkWidget *button;
+    GdkPixbuf *button_pb;
+    GtkWidget *menu;
 
     /* indicator settings */
     gchar           *setting1;
