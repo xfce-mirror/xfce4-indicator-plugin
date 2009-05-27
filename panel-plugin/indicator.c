@@ -150,6 +150,7 @@ indicator_new (XfcePanelPlugin *plugin)
   /* get the current orientation */
   orientation = xfce_panel_plugin_get_orientation (plugin);
 
+  /* TODO: Create menubar */
   /* create some panel widgets */
   indicator->ebox = gtk_event_box_new ();
   gtk_widget_show (indicator->ebox);
