@@ -185,6 +185,13 @@ indicator_new (XfcePanelPlugin *plugin)
     "widget \"*.indicator-applet-menubar\" style \"indicator-applet-menubar-style\"");
   gtk_widget_set_name(GTK_WIDGET (plugin), "indicator-applet-menubar");
   /* create some panel widgets */
+  indicator->button = gtk_button_new ("foo");
+  gtk_button_set_relief (GTK_BUTTON(indicator->button), GTK_RELIEF_NONE);
+    
+  g_signal_connect (G_OBJECT(mounter->button), "button_press_event",
+                    G_CALLBACK(on_button_press), indicator);
+
+  
   /* Build menu */
   indicator->menu = gtk_menu_bar_new();
   GTK_WIDGET_SET_FLAGS (indicator->menu, GTK_WIDGET_FLAGS(indicator->menu) | GTK_CAN_FOCUS);
@@ -301,9 +308,6 @@ indicator_construct (XfcePanelPlugin *plugin)
 
   /* show the panel's right-click menu on this menu */
   xfce_panel_plugin_add_action_widget (plugin, indicator->button);
-  
-  g_signal_connect (G_OBJECT(mounter->button), "button_press_event",
-                    G_CALLBACK(on_button_press), indicator);
 
   /* connect plugin signals */
   g_signal_connect (G_OBJECT (plugin), "free-data",
