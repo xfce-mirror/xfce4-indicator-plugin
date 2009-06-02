@@ -257,11 +257,8 @@ indicator_construct (XfcePanelPlugin *plugin)
   /* create the plugin */
   indicator = indicator_new (plugin);
 
-  /* add the ebox to the panel */
-  gtk_container_add (GTK_CONTAINER (plugin), indicator->ebox);
-
-  /* show the panel's right-click menu on this ebox */
-  xfce_panel_plugin_add_action_widget (plugin, indicator->ebox);
+  /* show the panel's right-click menu on this menubar */
+  xfce_panel_plugin_add_action_widget (plugin, indicator->menubar);
 
   /* connect plugin signals */
   g_signal_connect (G_OBJECT (plugin), "free-data",
