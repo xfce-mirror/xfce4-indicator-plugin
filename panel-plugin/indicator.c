@@ -185,13 +185,13 @@ indicator_new (XfcePanelPlugin *plugin)
     "widget \"*.indicator-applet-menubar\" style \"indicator-applet-menubar-style\"");
   gtk_widget_set_name(GTK_WIDGET (plugin), "indicator-applet-menubar");
   /* create some panel widgets */
-  /* Build menubar */
-  indicator->menubar = gtk_menu_bar_new();
-  GTK_WIDGET_SET_FLAGS (indicator->menubar, GTK_WIDGET_FLAGS(indicator->menubar) | GTK_CAN_FOCUS);
-  gtk_widget_set_name(GTK_WIDGET (indicator->menubar), "indicator-applet-menubar");
-  //g_signal_connect(indicator->menubar, "button-press-event", G_CALLBACK(menubar_press), NULL);
-  //g_signal_connect_after(indicator->menubar, "expose-event", G_CALLBACK(menubar_on_expose), menubar);
-  gtk_container_set_border_width(GTK_CONTAINER(indicator->menubar), 0);
+  /* Build menu */
+  indicator->menu = gtk_menu_bar_new();
+  GTK_WIDGET_SET_FLAGS (indicator->menu, GTK_WIDGET_FLAGS(indicator->menu) | GTK_CAN_FOCUS);
+  gtk_widget_set_name(GTK_WIDGET (indicator->menu), "indicator-applet-menubar");
+  //g_signal_connect(indicator->menu, "button-press-event", G_CALLBACK(menu_press), NULL);
+  //g_signal_connect_after(indicator->menu, "expose-event", G_CALLBACK(menu_on_expose), menu);
+  gtk_container_set_border_width(GTK_CONTAINER(indicator->menu), 0);
 
   
   /* load 'em */
@@ -200,7 +200,7 @@ indicator_new (XfcePanelPlugin *plugin)
 
     const gchar * name;
     while ((name = g_dir_read_name(dir)) != NULL) {
-      if (load_module(name, indicator->menubar))
+      if (load_module(name, indicator->menu))
         indicators_loaded++;
     }
     g_dir_close (dir);
@@ -212,8 +212,8 @@ indicator_new (XfcePanelPlugin *plugin)
     gtk_widget_show(indicator->item);
     gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
   } else {
-    gtk_widget_show(indicator->menubar);
-    gtk_container_add (GTK_CONTAINER (plugin), indicator->menubar);
+    gtk_widget_show(indicator->menu);
+    gtk_container_add (GTK_CONTAINER (plugin), indicator->menu);
   }
   return indicator;
 }
@@ -273,6 +273,20 @@ indicator_size_changed (XfcePanelPlugin *plugin,
 }
 
 
+static gboolean
+on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
+{
+    TRACE ("enters on_button_press");
+    if (plugin != NULL && event->button == 1) /* left click only */
+    {
+        gtk_menu_popup (GTK_MENU(indicator->menu), NULL, NULL, NULL, NULL, 0,
+                        event->time);
+        return TRUE;
+    }
+    TRACE ("leaves on_button_press");
+    return FALSE ;
+}
+
 
 static void
 indicator_construct (XfcePanelPlugin *plugin)
@@ -285,8 +299,11 @@ indicator_construct (XfcePanelPlugin *plugin)
   /* create the plugin */
   indicator = indicator_new (plugin);
 
-  /* show the panel's right-click menu on this menubar */
-  xfce_panel_plugin_add_action_widget (plugin, indicator->menubar);
+  /* show the panel's right-click menu on this menu */
+  xfce_panel_plugin_add_action_widget (plugin, indicator->button);
+  
+  g_signal_connect (G_OBJECT(mounter->button), "button_press_event",
+                    G_CALLBACK(on_button_press), indicator);
 
   /* connect plugin signals */
   g_signal_connect (G_OBJECT (plugin), "free-data",
