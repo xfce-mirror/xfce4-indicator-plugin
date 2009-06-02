@@ -141,6 +141,7 @@ indicator_new (XfcePanelPlugin *plugin)
   IndicatorPlugin   *indicator;
   GtkOrientation  orientation;
   GtkWidget      *label;
+  gint indicators_loaded = 0;
 
   /* allocate memory for the plugin structure */
   indicator = panel_slice_new0 (IndicatorPlugin);
@@ -156,22 +157,37 @@ indicator_new (XfcePanelPlugin *plugin)
 
   /* TODO: Create menubar */
   /* create some panel widgets */
-  indicator->ebox = gtk_event_box_new ();
-  gtk_widget_show (indicator->ebox);
+  /* Build menubar */
+  indicator->menubar = gtk_menu_bar_new();
+  GTK_WIDGET_SET_FLAGS (indicator->menubar, GTK_WIDGET_FLAGS(indicator->menubar) | GTK_CAN_FOCUS);
+  gtk_widget_set_name(GTK_WIDGET (indicator->menubar), "fast-user-switch-menubar");
+  //g_signal_connect(indicator->menubar, "button-press-event", G_CALLBACK(menubar_press), NULL);
+  //g_signal_connect_after(indicator->menubar, "expose-event", G_CALLBACK(menubar_on_expose), menubar);
+  gtk_container_set_border_width(GTK_CONTAINER(indicator->menubar), 0);
 
-  indicator->hvbox = xfce_hvbox_new (orientation, FALSE, 2);
-  gtk_widget_show (indicator->hvbox);
-  gtk_container_add (GTK_CONTAINER (indicator->ebox), indicator->hvbox);
+  
+  /* load 'em */
+  if (g_file_test(INDICATOR_DIR, (G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))) {
+    GDir * dir = g_dir_open(INDICATOR_DIR, 0, NULL);
 
-  /* some indicator widgets */
-  label = gtk_label_new (_("Indicator"));
-  gtk_widget_show (label);
-  gtk_box_pack_start (GTK_BOX (indicator->hvbox), label, FALSE, FALSE, 0);
+    const gchar * name;
+    while ((name = g_dir_read_name(dir)) != NULL) {
+      if (load_module(name, indicator->menubar))
+        indicators_loaded++;
+    }
+    g_dir_close (dir);
+  }
 
-  label = gtk_label_new (_("Plugin"));
-  gtk_widget_show (label);
-  gtk_box_pack_start (GTK_BOX (indicator->hvbox), label, FALSE, FALSE, 0);
-
+  if (indicators_loaded == 0) {
+    /* A label to allow for click through */
+    indicator->item = gtk_label_new(_("No Indicators"));
+    gtk_widget_show(indicator->item);
+    gtk_container_add (GTK_CONTAINER (indicator->ebox), indicator->item);
+  } else {
+    gtk_container_add (GTK_CONTAINER (indicator->ebox), indicator->menubar);
+    gtk_widget_show(indicator->menubar);
+  }
+  gtk_widget_show(indicator->ebox);
   return indicator;
 }
 
