@@ -182,12 +182,11 @@ indicator_new (XfcePanelPlugin *plugin)
     /* A label to allow for click through */
     indicator->item = gtk_label_new(_("No Indicators"));
     gtk_widget_show(indicator->item);
-    gtk_container_add (GTK_CONTAINER (indicator->ebox), indicator->item);
+    gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
   } else {
-    gtk_container_add (GTK_CONTAINER (indicator->ebox), indicator->menubar);
     gtk_widget_show(indicator->menubar);
+    gtk_container_add (GTK_CONTAINER (plugin), indicator->menubar);
   }
-  gtk_widget_show(indicator->ebox);
   return indicator;
 }
 
@@ -203,9 +202,6 @@ indicator_free (XfcePanelPlugin *plugin,
   dialog = g_object_get_data (G_OBJECT (plugin), "dialog");
   if (G_UNLIKELY (dialog != NULL))
     gtk_widget_destroy (dialog);
-
-  /* destroy the panel widgets */
-  gtk_widget_destroy (indicator->hvbox);
 
   /* cleanup the settings */
   if (G_LIKELY (indicator->setting1 != NULL))
@@ -223,7 +219,7 @@ indicator_orientation_changed (XfcePanelPlugin *plugin,
                             IndicatorPlugin    *indicator)
 {
   /* change the orienation of the box */
-  xfce_hvbox_set_orientation (XFCE_HVBOX (indicator->hvbox), orientation);
+  //xfce_hvbox_set_orientation (XFCE_HVBOX (indicator->hvbox), orientation);
 }
 
 

@@ -28,9 +28,7 @@ typedef struct
     XfcePanelPlugin *plugin;
 
     /* panel widgets */
-    GtkWidget       *ebox;
     GtkWidget       *menubar;
-    GtkWidget       *hvbox;
     GtkWidget       *label;    
     GdkPixbuf       *item;
 
