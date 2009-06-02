@@ -28,6 +28,7 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-hvbox.h>
+#include <libindicator/indicator.h>
 
 #include "indicator.h"
 #include "indicator-dialogs.h"

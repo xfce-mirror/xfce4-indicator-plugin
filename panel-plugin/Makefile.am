@@ -25,8 +25,10 @@ xfce4_indicator_plugin_CFLAGS =					\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(LIBXFCEGUI4_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
-	$(INDICATOR_CFLAGS)							\
-	$(PLATFORM_CFLAGS)
+	$(INDICATOR_CFLAGS)						\
+	$(PLATFORM_CFLAGS)					\
+	-DINDICATOR_DIR=\""$(libdir)/indicators/2"\"
+
 
 xfce4_indicator_plugin_LDADD =					\
 	$(LIBXFCE4UTIL_LIBS)						\
