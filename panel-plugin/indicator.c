@@ -188,7 +188,7 @@ indicator_new (XfcePanelPlugin *plugin)
   /* Build menubar */
   indicator->menubar = gtk_menu_bar_new();
   GTK_WIDGET_SET_FLAGS (indicator->menubar, GTK_WIDGET_FLAGS(indicator->menubar) | GTK_CAN_FOCUS);
-  gtk_widget_set_name(GTK_WIDGET (indicator->menubar), "fast-user-switch-menubar");
+  gtk_widget_set_name(GTK_WIDGET (indicator->menubar), "indicator-applet-menubar");
   //g_signal_connect(indicator->menubar, "button-press-event", G_CALLBACK(menubar_press), NULL);
   //g_signal_connect_after(indicator->menubar, "expose-event", G_CALLBACK(menubar_on_expose), menubar);
   gtk_container_set_border_width(GTK_CONTAINER(indicator->menubar), 0);
