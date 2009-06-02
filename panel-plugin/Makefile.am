@@ -27,6 +27,7 @@ xfce4_indicator_plugin_CFLAGS =					\
 	$(LIBXFCE4PANEL_CFLAGS)						\
 	$(INDICATOR_CFLAGS)						\
 	$(PLATFORM_CFLAGS)					\
+	-DDATADIR=\""$(datadir)"\" 				\
 	-DINDICATOR_DIR=\""$(libdir)/indicators/2"\"
 
 

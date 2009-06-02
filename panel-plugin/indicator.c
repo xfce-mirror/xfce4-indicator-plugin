@@ -37,7 +37,7 @@
 #define DEFAULT_SETTING1 NULL
 #define DEFAULT_SETTING2 1
 #define DEFAULT_SETTING3 FALSE
-
+#define ICONS_DIR  (DATADIR G_DIR_SEPARATOR_S "indicator-applet" G_DIR_SEPARATOR_S "icons")
 
 
 /* prototypes */
@@ -140,7 +140,6 @@ indicator_new (XfcePanelPlugin *plugin)
 {
   IndicatorPlugin   *indicator;
   GtkOrientation  orientation;
-  GtkWidget      *label;
   gint indicators_loaded = 0;
 
   /* allocate memory for the plugin structure */
@@ -155,7 +154,36 @@ indicator_new (XfcePanelPlugin *plugin)
   /* get the current orientation */
   orientation = xfce_panel_plugin_get_orientation (plugin);
 
-  /* TODO: Create menubar */
+  /* Init some theme/icon stuff */
+  gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(),
+                                  ICONS_DIR);
+  /* g_debug("Icons directory: %s", ICONS_DIR); */
+  gtk_rc_parse_string (
+    "style \"indicator-applet-style\"\n"
+    "{\n"
+    "    GtkMenuBar::shadow-type = none\n"
+    "    GtkMenuBar::internal-padding = 0\n"
+    "    GtkWidget::focus-line-width = 0\n"
+    "    GtkWidget::focus-padding = 0\n"
+    "}\n"
+    "style \"indicator-applet-menubar-style\"\n"
+    "{\n"
+    "    GtkMenuBar::shadow-type = none\n"
+    "    GtkMenuBar::internal-padding = 0\n"
+    "    GtkWidget::focus-line-width = 0\n"
+    "    GtkWidget::focus-padding = 0\n"
+    "    GtkMenuItem::horizontal-padding = 0\n"
+    "}\n"
+    "style \"indicator-applet-menuitem-style\"\n"
+    "{\n"
+    "    GtkWidget::focus-line-width = 0\n"
+    "    GtkWidget::focus-padding = 0\n"
+    "    GtkMenuItem::horizontal-padding = 0\n"
+    "}\n"
+    "widget \"*.indicator-applet\" style \"indicator-applet-style\""
+    "widget \"*.indicator-applet-menuitem\" style \"indicator-applet-menuitem-style\""
+    "widget \"*.indicator-applet-menubar\" style \"indicator-applet-menubar-style\"");
+  gtk_widget_set_name(GTK_WIDGET (plugin), "indicator-applet-menubar");
   /* create some panel widgets */
   /* Build menubar */
   indicator->menubar = gtk_menu_bar_new();
