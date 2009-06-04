@@ -283,8 +283,8 @@ on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indica
     TRACE ("enters on_button_press");
     if (indicator != NULL && event->button == 1) /* left click only */
     {
-        gtk_menu_popup (GTK_MENU(indicator->menu), NULL, NULL, NULL, NULL, 0,
-                        event->time);
+     /*   gtk_menu_popup (GTK_MENU(indicator->menu), NULL, NULL, NULL, NULL, 0,
+                        event->time);*/
         return TRUE;
     }
     TRACE ("leaves on_button_press");
