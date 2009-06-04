@@ -28,17 +28,10 @@ typedef struct
     XfcePanelPlugin *plugin;
 
     /* panel widgets */
-    GtkWidget       *menu;
-    GtkWidget       *label;    
+    GtkWidget       *menu; 
     GtkWidget       *item;
-    GtkWidget       *button;
-    GdkPixbuf       *button_pb;
-    gchar           *icon;
 
     /* indicator settings */
-    gchar           *setting1;
-    gint             setting2;
-    gboolean         setting3;
 }
 IndicatorPlugin;
 

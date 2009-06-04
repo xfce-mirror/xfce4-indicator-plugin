@@ -31,7 +31,6 @@
 #include <libindicator/indicator.h>
 
 #include "indicator.h"
-#include "indicator-dialogs.h"
 
 /* default settings */
 #define DEFAULT_SETTING1 NULL
@@ -55,7 +54,7 @@ on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indica
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (indicator_construct);
 
 
-
+#if 0
 void
 indicator_save (XfcePanelPlugin *plugin,
              IndicatorPlugin    *indicator)
@@ -135,7 +134,7 @@ indicator_read (IndicatorPlugin *indicator)
   indicator->setting2 = DEFAULT_SETTING2;
   indicator->setting3 = DEFAULT_SETTING3;
 }
-
+#endif
 
 
 static IndicatorPlugin *
@@ -150,9 +149,6 @@ indicator_new (XfcePanelPlugin *plugin)
 
   /* pointer to plugin */
   indicator->plugin = plugin;
-
-  /* read the user settings */
-  indicator_read (indicator);
 
   /* get the current orientation */
   orientation = xfce_panel_plugin_get_orientation (plugin);
@@ -235,10 +231,6 @@ indicator_free (XfcePanelPlugin *plugin,
   if (G_UNLIKELY (dialog != NULL))
     gtk_widget_destroy (dialog);
 
-  /* cleanup the settings */
-  if (G_LIKELY (indicator->setting1 != NULL))
-    g_free (indicator->setting1);
-
   /* free the plugin structure */
   panel_slice_free (IndicatorPlugin, indicator);
 }
@@ -310,24 +302,11 @@ indicator_construct (XfcePanelPlugin *plugin)
   g_signal_connect (G_OBJECT (plugin), "free-data",
                     G_CALLBACK (indicator_free), indicator);
 
-  g_signal_connect (G_OBJECT (plugin), "save",
-                    G_CALLBACK (indicator_save), indicator);
-
   g_signal_connect (G_OBJECT (plugin), "size-changed",
                     G_CALLBACK (indicator_size_changed), indicator);
 
   g_signal_connect (G_OBJECT (plugin), "orientation-changed",
                     G_CALLBACK (indicator_orientation_changed), indicator);
-
-  /* show the configure menu item and connect signal */
-  xfce_panel_plugin_menu_show_configure (plugin);
-  g_signal_connect (G_OBJECT (plugin), "configure-plugin",
-                    G_CALLBACK (indicator_configure), indicator);
-
-  /* show the about menu item and connect signal */
-  xfce_panel_plugin_menu_show_about (plugin);
-  g_signal_connect (G_OBJECT (plugin), "about",
-                    G_CALLBACK (indicator_about), NULL);
 }
 
 
