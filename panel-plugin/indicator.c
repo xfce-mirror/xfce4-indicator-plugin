@@ -47,6 +47,9 @@ indicator_construct (XfcePanelPlugin *plugin);
 static gboolean
 load_module (const gchar * name, GtkWidget * menu);
 
+static gboolean
+on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator);
+
 
 /* register the plugin */
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (indicator_construct);
@@ -185,10 +188,10 @@ indicator_new (XfcePanelPlugin *plugin)
     "widget \"*.indicator-applet-menubar\" style \"indicator-applet-menubar-style\"");
   gtk_widget_set_name(GTK_WIDGET (plugin), "indicator-applet-menubar");
   /* create some panel widgets */
-  indicator->button = gtk_button_new ("foo");
+  indicator->button = gtk_button_new_with_label ("foo");
   gtk_button_set_relief (GTK_BUTTON(indicator->button), GTK_RELIEF_NONE);
     
-  g_signal_connect (G_OBJECT(mounter->button), "button_press_event",
+  g_signal_connect (G_OBJECT(indicator->button), "button_press_event",
                     G_CALLBACK(on_button_press), indicator);
 
   
@@ -284,7 +287,7 @@ static gboolean
 on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
 {
     TRACE ("enters on_button_press");
-    if (plugin != NULL && event->button == 1) /* left click only */
+    if (indicator != NULL && event->button == 1) /* left click only */
     {
         gtk_menu_popup (GTK_MENU(indicator->menu), NULL, NULL, NULL, NULL, 0,
                         event->time);
