@@ -1,6 +1,4 @@
-/*  $Id: indicator.c 2257 2006-12-19 19:49:00Z nick $
- *
- *  Copyright (c) 2006-2007 John Doo <john@foo.org>
+/*  Copyright (c) 2009 Mark Trompell <mark@foresightlinux.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
