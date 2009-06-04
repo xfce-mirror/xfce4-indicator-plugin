@@ -17,9 +17,7 @@ plugindir =										\
 
 xfce4_indicator_plugin_SOURCES =				\
 	indicator.c									\
-	indicator.h									\
-	indicator-dialogs.c							\
-	indicator-dialogs.h
+	indicator.h									
 
 xfce4_indicator_plugin_CFLAGS =					\
 	$(LIBXFCE4UTIL_CFLAGS)						\
