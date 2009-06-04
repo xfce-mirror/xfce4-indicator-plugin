@@ -48,7 +48,7 @@ static gboolean
 load_module (const gchar * name, GtkWidget * menu);
 
 static gboolean
-on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator);
+on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator);
 
 
 /* register the plugin */
@@ -188,18 +188,12 @@ indicator_new (XfcePanelPlugin *plugin)
     "widget \"*.indicator-applet-menubar\" style \"indicator-applet-menubar-style\"");
   gtk_widget_set_name(GTK_WIDGET (plugin), "indicator-applet-menubar");
   /* create some panel widgets */
-  indicator->button = gtk_button_new_with_label ("foo");
-  gtk_button_set_relief (GTK_BUTTON(indicator->button), GTK_RELIEF_NONE);
-    
-  g_signal_connect (G_OBJECT(indicator->button), "button_press_event",
-                    G_CALLBACK(on_button_press), indicator);
-
   
   /* Build menu */
   indicator->menu = gtk_menu_bar_new();
   GTK_WIDGET_SET_FLAGS (indicator->menu, GTK_WIDGET_FLAGS(indicator->menu) | GTK_CAN_FOCUS);
   gtk_widget_set_name(GTK_WIDGET (indicator->menu), "indicator-applet-menubar");
-  //g_signal_connect(indicator->menu, "button-press-event", G_CALLBACK(menu_press), NULL);
+  g_signal_connect(indicator->menu, "button-press-event", G_CALLBACK(on_menu_press), NULL);
   //g_signal_connect_after(indicator->menu, "expose-event", G_CALLBACK(menu_on_expose), menu);
   gtk_container_set_border_width(GTK_CONTAINER(indicator->menu), 0);
 
@@ -284,7 +278,7 @@ indicator_size_changed (XfcePanelPlugin *plugin,
 
 
 static gboolean
-on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
+on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
 {
     TRACE ("enters on_button_press");
     if (indicator != NULL && event->button == 1) /* left click only */
@@ -310,7 +304,7 @@ indicator_construct (XfcePanelPlugin *plugin)
   indicator = indicator_new (plugin);
 
   /* show the panel's right-click menu on this menu */
-  xfce_panel_plugin_add_action_widget (plugin, indicator->button);
+  xfce_panel_plugin_add_action_widget (plugin, indicator->menu);
 
   /* connect plugin signals */
   g_signal_connect (G_OBJECT (plugin), "free-data",
