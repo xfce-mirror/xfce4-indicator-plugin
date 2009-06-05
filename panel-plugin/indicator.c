@@ -318,12 +318,15 @@ load_module (const gchar * name, GtkWidget * menu)
 	guint name_len = strlen(name);
 
 	g_return_val_if_fail(name_len > suffix_len, FALSE);
-
+    if (!g_str_has_suffix(name,G_MODULE_SUFFIX))
+        return FALSE;
+/*        
 	int i;
 	for (i = 0; i < suffix_len; i++) {
 		if (name[(name_len - suffix_len) + i] != (G_MODULE_SUFFIX)[i])
 			return FALSE;
 	}
+    */
 	g_debug("Loading Module: %s", name);
 
 	gchar * fullpath = g_build_filename(INDICATOR_DIR, name, NULL);
