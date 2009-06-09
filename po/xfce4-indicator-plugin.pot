@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-09 11:58+0200\n"
+"POT-Creation-Date: 2009-06-09 13:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,9 +22,9 @@ msgid "No Indicators"
 msgstr ""
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
-msgid "Indicator Plugin"
+msgid "An indicator of something that needs your attention on the desktop"
 msgstr ""
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2
-msgid "Indicator plugin for the Xfce panel"
+msgid "Indicator Plugin"
 msgstr ""

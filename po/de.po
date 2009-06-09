@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.0.1svn-r\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-09 11:58+0200\n"
+"POT-Creation-Date: 2009-06-09 13:40+0200\n"
 "PO-Revision-Date: 2009-06-09 12:02+0200\n"
 "Last-Translator: Mark Trompell <mark@foresightlinux.org>\n"
 "Language-Team: German\n"
@@ -23,9 +23,9 @@ msgid "No Indicators"
 msgstr "Keine Anzeigen"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
-msgid "Indicator Plugin"
-msgstr "Nachrichtenanzeige"
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "Eine Anzeige, dass etwas Ihre Aufmerksamkeit benötigt"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2
-msgid "Indicator plugin for the Xfce panel"
-msgstr "Panel Plugin zum Anzeigen neuer Nachrichten"
+msgid "Indicator Plugin"
+msgstr "Nachrichtenanzeige"
