@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-09 13:40+0200\n"
 "PO-Revision-Date: 2009-06-10 15:31+0200\n"
-"Last-Translator: Mark Trompell <mark@foresightlinux.org>\n"
+"Last-Translator: Bucur Alexandru <melipse@gmail.com>\n"
 "Language-Team: Romanian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
@@ -21,12 +21,12 @@ msgstr ""
 #. A label to allow for click through
 #: ../panel-plugin/indicator.c:209
 msgid "No Indicators"
-msgstr ""
+msgstr "Nu exista indicator"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "An indicator of something that needs your attention on the desktop"
-msgstr ""
+msgstr "Un indicator aflat pe desktop care necesita atentie"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
-msgstr ""
+msgstr "Plugin de Indicator"
