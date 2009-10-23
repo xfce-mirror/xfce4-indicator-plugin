@@ -1,3 +1,190 @@
-2009-05-15	Mark Trompell <mark@forsightlinux.org>
+2009-10-23  Mark Trompell  <mark@foresightlinux.org>
 
-	* Get started.
+	* .hgtags:
+	Removed tag 0.1.0
+	[637ac7b3ce18] [tip]
+
+	* .hgtags:
+	Removed tag 0.1.0
+	[bc32f9c0d949]
+
+	* .hgtags:
+	tag for unstable release
+	[247267c94fe3]
+
+	* configure.in.in:
+	bump version to match the odd/even pattern
+	[db937462c76e]
+
+	* INSTALL, configure.in.in, panel-plugin/Makefile.am, panel-
+	plugin/indicator.c:
+	use icon dir provided by pkgconfig
+	[f55e3f23f51f]
+
+2009-08-19  Mark Trompell  <mark@foresightlinux.org>
+
+	* autogen.sh, configure.in.in:
+	prepare for moving to git.xfce.org
+	[627bce9c8d8b]
+
+2009-06-22  Mark Trompell  <mark@foresightlinux.org>
+
+	* .hgtags:
+	Added tag 0.0.1 for changeset 5252a897c046
+	[c2c591ecb672]
+
+	* configure.in.in:
+	remove svn tag only
+	[5252a897c046] [0.0.1]
+
+	* configure.in.in:
+	remove svn references
+	[b9113c0e5c2a]
+
+2009-06-17  Mark Trompell  <mark@foresightlinux.org>
+
+	* configure.in.in:
+	fix check for indicator version
+	[9890ead51176]
+
+2009-06-10  Mark Trompell  <mark@foresightlinux.org>
+
+	* THANKS, po/LINGUAS, po/fr.po:
+	french translations
+	[e65d3a56a5f0]
+
+	* THANKS, po/LINGUAS, po/ro.po:
+	update translations and Thanks
+	[d2d18bbfcced]
+
+	* po/ro.po:
+	ad a ro.po
+	[d87437a7cc16]
+
+2009-06-10  Og Maciel  <omaciel@rpath.com>
+
+	* po/ChangeLog, po/LINGUAS, po/pt_BR.po:
+	Added Brazilian Portuguese translation.
+	[3747d6ba92fe]
+
+2009-06-09  Mark Trompell  <mark@foresightlinux.org>
+
+	* panel-plugin/indicator.desktop.in.in, po/de.po, po/xfce4-indicator-
+	plugin.pot:
+	make the english string match 'upstream'
+	[5131cf5f8af9]
+
+	* po/LINGUAS, po/POTFILES.in, po/de.po, po/xfce4-indicator-plugin.pot:
+	add i18n
+	[889ced45348a]
+
+2009-06-05  Mark Trompell  <mark@foresightlinux.org>
+
+	* panel-plugin/indicator.c:
+	remove the old stuff
+	[af4d1bf7d0fb]
+
+	* panel-plugin/indicator.c:
+	simplify so check
+	[e7fa9c50e2e9]
+
+2009-06-04  Mark Trompell  <mark@foresightlinux.org>
+
+	* Makefile.am, NEWS, TODO, configure.in.in, panel-plugin/Makefile.am,
+	panel-plugin/indicator.c, panel-plugin/indicator.h:
+	fix license
+	[60855760422c]
+
+	* panel-plugin/Makefile.am:
+	fix build
+	[c268fcc51951]
+
+	* icons/48x48/xfce4-indicator-plugin.png, icons/scalable/xfce4
+	-indicator-plugin.svg, panel-plugin/indicator-dialogs.c, panel-
+	plugin/indicator-dialogs.h, panel-plugin/indicator.c, panel-
+	plugin/indicator.h:
+	some cleanup
+	[7c93b7344569]
+
+	* panel-plugin/indicator.c:
+	do I really need the popup thing?
+	[e70d14d8edac]
+
+	* panel-plugin/indicator.c:
+	remove button again
+	[c693babca8b4]
+
+	* panel-plugin/indicator.c, panel-plugin/indicator.h:
+	it compiles
+	[c1a35016630c]
+
+2009-06-02  Mark Trompell  <mark@foresightlinux.org>
+
+	* panel-plugin/indicator.c:
+	no comment
+	[794d46f01ee5]
+
+	* panel-plugin/indicator.c, panel-plugin/indicator.h:
+	break some more things
+	[2181eb951590]
+
+	* panel-plugin/indicator.c:
+	change menubar name
+	[0c027c03bb81]
+
+	* panel-plugin/Makefile.am, panel-plugin/indicator.c:
+	add some theme and icon stuff
+	[caa587a41a59]
+
+	* panel-plugin/indicator.c:
+	fix the fix
+	[327be7e098ed]
+
+	* panel-plugin/indicator.c, panel-plugin/indicator.h:
+	some random fixes
+	[571fbea24fc3]
+
+	* panel-plugin/indicator.c, panel-plugin/indicator.h:
+	add menubar
+	[8bf18f9d0247]
+
+	* panel-plugin/Makefile.am, panel-plugin/indicator.c:
+	add a new CFLAG
+	[73d6b6c8fdc2]
+
+2009-05-29  Mark Trompell  <mark@foresightlinux.org>
+
+	* panel-plugin/indicator.c:
+	start to break things
+	[4dd240c193ff]
+
+2009-05-27  Mark Trompell  <mark@foresightlinux.org>
+
+	* configure.in.in, panel-plugin/indicator.c:
+	indicator is the one we need to check for
+	[9270629d14cd]
+
+2009-05-26  Mark Trompell  <mark@foresightlinux.org>
+
+	* configure.in.in, panel-plugin/indicator.h:
+	Fix build issue with libtool 2.x
+	[581ef713c278]
+
+2009-05-15  Mark Trompell  <mark@foresightlinux.org>
+
+	* INSTALL, configure.in.in, panel-plugin/Makefile.am, panel-plugin
+	/indicator-dialogs.h:
+	some random changes
+	[7c4d0280a9de]
+
+	* AUTHORS, COPYING, COPYING.LIB, ChangeLog, INSTALL, Makefile.am,
+	NEWS, README, THANKS, TODO, autogen.sh, configure.in.in,
+	icons/48x48/Makefile.am, icons/48x48/xfce4-indicator-plugin.png,
+	icons/Makefile.am, icons/scalable/Makefile.am, icons/scalable/xfce4
+	-indicator-plugin.svg, panel-plugin/Makefile.am, panel-plugin
+	/indicator-dialogs.c, panel-plugin/indicator-dialogs.h, panel-
+	plugin/indicator.c, panel-plugin/indicator.desktop.in.in, panel-
+	plugin/indicator.h, po/ChangeLog, po/LINGUAS, po/POTFILES.in:
+	initial checkin
+	[68d6304613eb]
+
