@@ -24,7 +24,8 @@ xfce4_indicator_plugin_CFLAGS =					\
 	$(INDICATOR_CFLAGS)						\
 	$(PLATFORM_CFLAGS)					\
 	-DDATADIR=\""$(datadir)"\" 				\
-	-DINDICATOR_DIR=\""$(libdir)/indicators/2"\"
+	-DINDICATOR_ICONS_DIR=\""$(INDICATORICONSDIR)"\" \
+	-DINDICATOR_DIR=\""$(INDICATORDIR)"\"
 
 
 xfce4_indicator_plugin_LDADD =					\

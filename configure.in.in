@@ -74,6 +74,15 @@ dnl *** Check for debugging support ***
 dnl ***********************************
 XDT_FEATURE_DEBUG()
 
+dnl ***********************
+dnl *** Indicator info ***
+dnl ***********************
+INDICATORDIR=`$PKG_CONFIG --variable=indicatordir indicator`
+INDICATORICONSDIR=`$PKG_CONFIG --variable=iconsdir indicator`
+
+AC_SUBST(INDICATORDIR)
+AC_SUBST(INDICATORICONSDIR)
+
 dnl *********************************
 dnl *** Substitute platform flags ***
 dnl *********************************
