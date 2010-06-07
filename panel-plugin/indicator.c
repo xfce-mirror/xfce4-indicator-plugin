@@ -26,7 +26,7 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-hvbox.h>
-#include <libindicator/indicator.h>
+#include <libindicator/indicator-object.h>
 
 #include "indicator.h"
 
@@ -318,57 +318,35 @@ load_module (const gchar * name, GtkWidget * menu)
 	g_debug("Loading Module: %s", name);
 
 	gchar * fullpath = g_build_filename(INDICATOR_DIR, name, NULL);
-	GModule * module = g_module_open(fullpath,
-                                     G_MODULE_BIND_LAZY | G_MODULE_BIND_LOCAL);
+	IndicatorObject * io = indicator_object_new_from_file(fullpath);
 	g_free(fullpath);
-	g_return_val_if_fail(module != NULL, FALSE);
 
-	get_version_t lget_version = NULL;
-	g_return_val_if_fail(g_module_symbol(module, INDICATOR_GET_VERSION_S, (gpointer *)(&lget_version)), FALSE);
-	if (!INDICATOR_VERSION_CHECK(lget_version())) {
-		g_warning("Indicator using API version '%s' we're expecting '%s'", lget_version(), INDICATOR_VERSION);
-		return FALSE;
+	GList * entries = indicator_object_get_entries(io);
+	GList * entry = NULL;
+
+	for (entry = entries; entry != NULL; entry = g_list_next(entry)) {
+		IndicatorObjectEntry * entrydata = (IndicatorObjectEntry *)entry->data;
+
+		GtkWidget * menuitem = gtk_menu_item_new();
+		GtkWidget * hbox = gtk_hbox_new(FALSE, 3);
+		if (entrydata->image != NULL) {
+			gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entrydata->image), FALSE, FALSE, 0);
+		}
+		if (entrydata->label != NULL) {
+			gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entrydata->label), FALSE, FALSE, 0);
+		}
+		gtk_container_add(GTK_CONTAINER(menuitem), hbox);
+		gtk_widget_show(hbox);
+
+		if (entrydata->menu != NULL) {
+			gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), GTK_WIDGET(entrydata->menu));
+		}
+
+		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
+		gtk_widget_show(menuitem);
 	}
 
-	get_label_t lget_label = NULL;
-	g_return_val_if_fail(g_module_symbol(module, INDICATOR_GET_LABEL_S, (gpointer *)(&lget_label)), FALSE);
-	g_return_val_if_fail(lget_label != NULL, FALSE);
-	GtkLabel * label = lget_label();
-
-	get_icon_t lget_icon = NULL;
-	g_return_val_if_fail(g_module_symbol(module, INDICATOR_GET_ICON_S, (gpointer *)(&lget_icon)), FALSE);
-	g_return_val_if_fail(lget_icon != NULL, FALSE);
-	GtkImage * icon = lget_icon();
-
-	get_menu_t lget_menu = NULL;
-	g_return_val_if_fail(g_module_symbol(module, INDICATOR_GET_MENU_S, (gpointer *)(&lget_menu)), FALSE);
-	g_return_val_if_fail(lget_menu != NULL, FALSE);
-	GtkMenu * lmenu = lget_menu();
-
-	if (label == NULL && icon == NULL) {
-		/* This is the case where there is nothing to display,
-		   kinda odd that we'd have a module with nothing. */
-		g_warning("No label or icon.  Odd.");
-		return FALSE;
-	}
-
-	GtkWidget * menuitem = gtk_menu_item_new();
-	GtkWidget * hbox = gtk_hbox_new(FALSE, 3);
-	if (icon != NULL) {
-		gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(icon), FALSE, FALSE, 0);
-	}
-	if (label != NULL) {
-		gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(label), FALSE, FALSE, 0);
-	}
-	gtk_container_add(GTK_CONTAINER(menuitem), hbox);
-	gtk_widget_show(hbox);
-
-	if (lmenu != NULL) {
-		gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), GTK_WIDGET(lmenu));
-	}
-
-	gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-	gtk_widget_show(menuitem);
+	g_list_free(entries);
 
 	return TRUE;
 }
