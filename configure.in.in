@@ -7,7 +7,7 @@ dnl ***************************
 dnl *** Version information ***
 dnl ***************************
 m4_define([indicator_version_major], [0])
-m4_define([indicator_version_minor], [1])
+m4_define([indicator_version_minor], [2])
 m4_define([indicator_version_micro], [0])
 m4_define([indicator_version], [indicator_version_major().indicator_version_minor().indicator_version_micro()])
 
