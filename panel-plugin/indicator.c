@@ -204,7 +204,8 @@ indicator_new (XfcePanelPlugin *plugin)
 
   if (indicators_loaded == 0) {
     /* A label to allow for click through */
-    indicator->item = gtk_label_new(_("No Indicators"));
+    indicator->item = xfce_create_panel_button();
+    gtk_button_set_label(indicator->item, _("No Indicators"));
     gtk_widget_show(indicator->item);
     gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
   } else {
@@ -293,6 +294,7 @@ indicator_construct (XfcePanelPlugin *plugin)
 
   /* show the panel's right-click menu on this menu */
   xfce_panel_plugin_add_action_widget (plugin, indicator->menu);
+  xfce_panel_plugin_add_action_widget (plugin, indicator->item);
 
   /* connect plugin signals */
   g_signal_connect (G_OBJECT (plugin), "free-data",
