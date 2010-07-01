@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-indicator-plugin 0.0.1svn-r\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-09 13:40+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Vincent Tunru <projects@vinnl.nl>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+
+#. A label to allow for click through
+#: ../panel-plugin/indicator.c:209
+msgid "No Indicators"
+msgstr "Geen indicators"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "Een indicator van iets dat uw aandacht nodig heeft op het bureaublad"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2
+msgid "Indicator Plugin"
+msgstr "Indicator-plug-in"
+
