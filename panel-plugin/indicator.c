@@ -377,24 +377,7 @@ load_module (const gchar * name, GtkWidget * menu)
 
 	for (entry = entries; entry != NULL; entry = g_list_next(entry)) {
 		IndicatorObjectEntry * entrydata = (IndicatorObjectEntry *)entry->data;
-
-		GtkWidget * menuitem = gtk_menu_item_new();
-		GtkWidget * hbox = gtk_hbox_new(FALSE, 3);
-		if (entrydata->image != NULL) {
-			gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entrydata->image), FALSE, FALSE, 0);
-		}
-		if (entrydata->label != NULL) {
-			gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entrydata->label), FALSE, FALSE, 0);
-		}
-		gtk_container_add(GTK_CONTAINER(menuitem), hbox);
-		gtk_widget_show(hbox);
-
-		if (entrydata->menu != NULL) {
-			gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), GTK_WIDGET(entrydata->menu));
-		}
-
-		gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-		gtk_widget_show(menuitem);
+		entry_added(io, entrydata, menu);
 	}
 
 	g_list_free(entries);
