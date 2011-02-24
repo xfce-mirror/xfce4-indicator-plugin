@@ -16,18 +16,4 @@ EOF
   exit 1
 }
 
-# substitute revision and linguas
-linguas=`ls po/*.po | awk 'BEGIN { FS="[./]"; ORS=" " } { print $2 }'`
-if [ -d .git ]; then
-  revision=`git rev-parse --short HEAD 2>/dev/null`
-fi
-
-if [ -z "$revision" ]; then
-  revision="UNKNOWN"
-fi
-
-sed -e "s/@LINGUAS@/${linguas}/g" \
-    -e "s/@REVISION@/${revision}/g" \
-    < "configure.in.in" > "configure.in"
-
-exec xdt-autogen $@
+XDT_AUTOGEN_REQUIRED_VERSION="4.7.3" exec xdt-autogen $@
