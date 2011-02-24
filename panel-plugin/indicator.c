@@ -308,11 +308,28 @@ indicator_construct (XfcePanelPlugin *plugin)
 }
 
 
+static gboolean
+entry_scrolled (GtkWidget *menuitem, GdkEventScroll *event, gpointer data)
+{
+  IndicatorObject *io = g_object_get_data (G_OBJECT (menuitem), "indicator-custom-object-data");
+  IndicatorObjectEntry *entry = g_object_get_data (G_OBJECT (menuitem), "indicator-custom-entry-data");
+
+  g_return_val_if_fail(INDICATOR_IS_OBJECT(io), FALSE);
+
+  g_signal_emit_by_name (io, "scroll", 1, event->direction);
+  g_signal_emit_by_name (io, "scroll-entry", entry, 1, event->direction);
+
+  return FALSE;
+}
+
+
 static void
 entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
   GtkWidget * menuitem = gtk_menu_item_new();
   GtkWidget * hbox = gtk_hbox_new(FALSE, 3);
+
+  g_signal_connect(G_OBJECT(menuitem), "scroll-event", G_CALLBACK(entry_scrolled), entry);
 
   if (entry->image != NULL)
     gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entry->image), FALSE, FALSE, 0);
@@ -329,6 +346,7 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
   gtk_menu_shell_append(GTK_MENU_SHELL(user_data), menuitem);
   gtk_widget_show(menuitem);
 
+  g_object_set_data(G_OBJECT(menuitem), "indicator-custom-object-data", io);
   g_object_set_data(G_OBJECT(menuitem), "indicator-custom-entry-data", entry);
 }
 
