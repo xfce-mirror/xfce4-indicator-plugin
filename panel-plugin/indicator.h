@@ -31,6 +31,7 @@ typedef struct
     GtkWidget       *ebox;
 
     /* indicator settings */
+    gchar          **excluded_modules;
 }
 IndicatorPlugin;
 

@@ -25,10 +25,11 @@
 #include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
-#include <libxfce4panel/xfce-hvbox.h>
 #include <libindicator/indicator-object.h>
 
 #include "indicator.h"
+
+#define DEFAULT_EXCLUDED_MODULES NULL
 
 /* prototypes */
 static void
@@ -40,6 +41,75 @@ load_module (const gchar * name, IndicatorPlugin * indicator);
 /* register the plugin */
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (indicator_construct);
 
+#if 0
+void
+indicator_save (XfcePanelPlugin *plugin,
+             IndicatorPlugin    *indicator)
+{
+  XfceRc *rc;
+  gchar  *file;
+
+  /* get the config file location */
+  file = xfce_panel_plugin_save_location (plugin, TRUE);
+
+  if (G_UNLIKELY (file == NULL))
+    {
+       DBG ("Failed to open config file");
+       return;
+    }
+
+  /* open the config file, read/write */
+  rc = xfce_rc_simple_open (file, FALSE);
+  g_free (file);
+
+  if (G_LIKELY (rc != NULL))
+    {
+      /* save the settings */
+      DBG(".");
+      if (indicator->excluded_modules)
+        xfce_rc_write_list_entry (rc, "Exclude",
+                                  indicator->excluded_modules, NULL);
+
+      /* close the rc file */
+      xfce_rc_close (rc);
+    }
+}
+#endif
+
+static void
+indicator_read (IndicatorPlugin *indicator)
+{
+  XfceRc      *rc;
+  gchar       *file;
+
+  /* get the plugin config file location */
+  file = xfce_panel_plugin_lookup_rc_file (indicator->plugin);
+
+  if (G_LIKELY (file != NULL))
+    {
+      /* open the config file, readonly */
+      rc = xfce_rc_simple_open (file, TRUE);
+
+      /* cleanup */
+      g_free (file);
+
+      if (G_LIKELY (rc != NULL))
+        {
+          /* read the settings */
+          indicator->excluded_modules = xfce_rc_read_list_entry (rc, "Exclude", NULL);
+
+          /* cleanup */
+          xfce_rc_close (rc);
+
+          /* leave the function, everything went well */
+          return;
+        }
+    }
+
+  /* something went wrong, apply default values */
+  DBG ("Applying default settings");
+  indicator->excluded_modules = DEFAULT_EXCLUDED_MODULES;
+}
 
 static IndicatorPlugin *
 indicator_new (XfcePanelPlugin *plugin)
@@ -76,12 +146,29 @@ indicator_new (XfcePanelPlugin *plugin)
   gtk_widget_set_name(GTK_WIDGET (indicator->buttonbox), "indicator-button");
   gtk_container_set_border_width(GTK_CONTAINER(indicator->buttonbox), 0);
   
+  /* get the list of excluded modules */
+  indicator_read (indicator);
+  
   /* load 'em */
   if (g_file_test(INDICATOR_DIR, (G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))) {
     GDir * dir = g_dir_open(INDICATOR_DIR, 0, NULL);
 
     const gchar * name;
+    guint i, length;
+    gboolean match = FALSE;
+
+    length = g_strv_length (indicator->excluded_modules);
     while ((name = g_dir_read_name(dir)) != NULL) {
+      for (i = 0; i < length; ++i) {
+        if (match = (g_strcmp0 (name, indicator->excluded_modules[i]) == 0))
+          break;
+      }
+
+      if (G_UNLIKELY (match)) {
+        g_debug ("Excluding module: %s", name);
+        continue;
+      }
+
       if (load_module(name, indicator))
         indicators_loaded++;
     }
