@@ -1,10 +1,12 @@
-What's this file about?
+xçxçø›	ø›	 about?
 -----------------------
 This file lists all external people that have contributed to this project
 
 Contributions:
 --------------
  Evgeni Golov <evgeni@debian.org>
+ Lionel Le Folgoc <lionel@lefolgoc.net>
+ Nick Schermer <nick@xfce.org>
 
 Translators (sorted by language):
 ----------------------------------
@@ -19,6 +21,9 @@ These people have translated the indicator plugin to foreign languages.
  Vincent Tunru
  * nl translations
 
+ Piotr SokÃ³Å‚ <psokol@jabster.pl>
+ * po translations
+
  Og Maciel <ogmaciel@gnome.org>
  * pt_BR translations
 
@@ -27,4 +32,9 @@ These people have translated the indicator plugin to foreign languages.
 
  Evgeni Golov <evgeni@debian.org>
  * ru translations
+
+ Yarema aka Knedlyk <yupadmin@gmail.com>
+ * uk translations
+
+
 
