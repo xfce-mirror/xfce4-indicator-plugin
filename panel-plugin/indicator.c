@@ -30,11 +30,6 @@
 
 #include "indicator.h"
 
-/* default settings */
-#define DEFAULT_SETTING1 NULL
-#define DEFAULT_SETTING2 1
-#define DEFAULT_SETTING3 FALSE
-
 /* prototypes */
 static void
 indicator_construct (XfcePanelPlugin *plugin);
@@ -48,89 +43,6 @@ on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indica
 
 /* register the plugin */
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (indicator_construct);
-
-
-#if 0
-void
-indicator_save (XfcePanelPlugin *plugin,
-             IndicatorPlugin    *indicator)
-{
-  XfceRc *rc;
-  gchar  *file;
-
-  /* get the config file location */
-  file = xfce_panel_plugin_save_location (plugin, TRUE);
-
-  if (G_UNLIKELY (file == NULL))
-    {
-       DBG ("Failed to open config file");
-       return;
-    }
-
-  /* open the config file, read/write */
-  rc = xfce_rc_simple_open (file, FALSE);
-  g_free (file);
-
-  if (G_LIKELY (rc != NULL))
-    {
-      /* save the settings */
-      DBG(".");
-      if (indicator->setting1)
-        xfce_rc_write_entry    (rc, "setting1", indicator->setting1);
-
-      xfce_rc_write_int_entry  (rc, "setting2", indicator->setting2);
-      xfce_rc_write_bool_entry (rc, "setting3", indicator->setting3);
-
-      /* close the rc file */
-      xfce_rc_close (rc);
-    }
-}
-
-
-
-static void
-indicator_read (IndicatorPlugin *indicator)
-{
-  XfceRc      *rc;
-  gchar       *file;
-  const gchar *value;
-
-  /* get the plugin config file location */
-  file = xfce_panel_plugin_save_location (indicator->plugin, TRUE);
-
-  if (G_LIKELY (file != NULL))
-    {
-      /* open the config file, readonly */
-      rc = xfce_rc_simple_open (file, TRUE);
-
-      /* cleanup */
-      g_free (file);
-
-      if (G_LIKELY (rc != NULL))
-        {
-          /* read the settings */
-          value = xfce_rc_read_entry (rc, "setting1", DEFAULT_SETTING1);
-          indicator->setting1 = g_strdup (value);
-
-          indicator->setting2 = xfce_rc_read_int_entry (rc, "setting2", DEFAULT_SETTING2);
-          indicator->setting3 = xfce_rc_read_bool_entry (rc, "setting3", DEFAULT_SETTING3);
-
-          /* cleanup */
-          xfce_rc_close (rc);
-
-          /* leave the function, everything went well */
-          return;
-        }
-    }
-
-  /* something went wrong, apply default values */
-  DBG ("Applying default settings");
-
-  indicator->setting1 = g_strdup (DEFAULT_SETTING1);
-  indicator->setting2 = DEFAULT_SETTING2;
-  indicator->setting3 = DEFAULT_SETTING3;
-}
-#endif
 
 
 static IndicatorPlugin *
@@ -183,7 +95,7 @@ indicator_new (XfcePanelPlugin *plugin)
   
   /* Build menu */
   indicator->menu = gtk_menu_bar_new();
-  GTK_WIDGET_SET_FLAGS (indicator->menu, GTK_WIDGET_FLAGS(indicator->menu) | GTK_CAN_FOCUS);
+  gtk_widget_set_can_focus(indicator->menu, TRUE);
   gtk_widget_set_name(GTK_WIDGET (indicator->menu), "indicator-applet-menubar");
   g_signal_connect(indicator->menu, "button-press-event", G_CALLBACK(on_menu_press), NULL);
   //g_signal_connect_after(indicator->menu, "expose-event", G_CALLBACK(menu_on_expose), menu);
@@ -205,7 +117,7 @@ indicator_new (XfcePanelPlugin *plugin)
   if (indicators_loaded == 0) {
     /* A label to allow for click through */
     indicator->item = xfce_create_panel_button();
-    gtk_button_set_label(indicator->item, _("No Indicators"));
+    gtk_button_set_label(GTK_BUTTON(indicator->item), _("No Indicators"));
     gtk_widget_show(indicator->item);
     gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
   } else {
