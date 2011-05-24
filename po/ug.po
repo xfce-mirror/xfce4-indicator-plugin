@@ -1,0 +1,29 @@
+# Uyghur translations for xfce4-indicator-plugin.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Gheyret T.Kenji <gheyret@gmail.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-indicator-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-19 22:18+0000\n"
+"PO-Revision-Date: 2011-05-19 15:00+0900\n"
+"Last-Translator: Gheyret T.Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/indicator.c:120
+msgid "No Indicators"
+msgstr "كۆرسەتكۈلەر يوق"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "كۆرسەتكۈ دېگەن سىزنىڭ ئۈستەلئۈستىدىكى دىققىتىڭىزنى تارتىدىغان نەرسىدۇر"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2
+msgid "Indicator Plugin"
+msgstr "كۆرسەتكۈ قىستۇرمىسى"
