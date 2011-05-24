@@ -151,8 +151,8 @@ indicator_orientation_changed (XfcePanelPlugin *plugin,
                             GtkOrientation   orientation,
                             IndicatorPlugin    *indicator)
 {
-  /* change the orienation of the box */
-  //xfce_hvbox_set_orientation (XFCE_HVBOX (indicator->hvbox), orientation);
+  gtk_menu_bar_set_pack_direction (GTK_MENU_BAR(indicator->menu),
+        orientation == GTK_ORIENTATION_HORIZONTAL ? GTK_PACK_DIRECTION_LTR : GTK_PACK_DIRECTION_TTB );
 }
 
 
