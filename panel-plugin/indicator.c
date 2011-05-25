@@ -151,8 +151,11 @@ indicator_orientation_changed (XfcePanelPlugin *plugin,
                             GtkOrientation   orientation,
                             IndicatorPlugin    *indicator)
 {
+  gint sizex=-1, sizey=-1;
   gtk_menu_bar_set_pack_direction (GTK_MENU_BAR(indicator->menu),
         orientation == GTK_ORIENTATION_HORIZONTAL ? GTK_PACK_DIRECTION_LTR : GTK_PACK_DIRECTION_TTB );
+  gtk_widget_get_size_request (GTK_WIDGET (plugin), &sizex, &sizey);
+  gtk_widget_set_size_request (GTK_WIDGET (plugin), sizey, sizex);  
 }
 
 
