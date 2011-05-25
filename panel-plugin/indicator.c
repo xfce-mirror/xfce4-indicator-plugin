@@ -40,7 +40,6 @@ load_module (const gchar * name, GtkWidget * menu);
 static gboolean
 on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator);
 
-
 /* register the plugin */
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (indicator_construct);
 
@@ -66,14 +65,14 @@ indicator_new (XfcePanelPlugin *plugin)
                                   INDICATOR_ICONS_DIR);
   /* g_debug("Icons directory: %s", INDICATOR_ICONS_DIR); */
   gtk_rc_parse_string (
-    "style \"indicator-applet-style\"\n"
+    "style \"indicator-plugin-style\"\n"
     "{\n"
     "    GtkMenuBar::shadow-type = none\n"
     "    GtkMenuBar::internal-padding = 0\n"
     "    GtkWidget::focus-line-width = 0\n"
     "    GtkWidget::focus-padding = 0\n"
     "}\n"
-    "style \"indicator-applet-menubar-style\"\n"
+    "style \"indicator-plugin-menubar-style\"\n"
     "{\n"
     "    GtkMenuBar::shadow-type = none\n"
     "    GtkMenuBar::internal-padding = 0\n"
@@ -81,22 +80,22 @@ indicator_new (XfcePanelPlugin *plugin)
     "    GtkWidget::focus-padding = 0\n"
     "    GtkMenuItem::horizontal-padding = 0\n"
     "}\n"
-    "style \"indicator-applet-menuitem-style\"\n"
+    "style \"indicator-plugin-menuitem-style\"\n"
     "{\n"
     "    GtkWidget::focus-line-width = 0\n"
     "    GtkWidget::focus-padding = 0\n"
     "    GtkMenuItem::horizontal-padding = 0\n"
     "}\n"
-    "widget \"*.indicator-applet\" style \"indicator-applet-style\""
-    "widget \"*.indicator-applet-menuitem\" style \"indicator-applet-menuitem-style\""
-    "widget \"*.indicator-applet-menubar\" style \"indicator-applet-menubar-style\"");
-  gtk_widget_set_name(GTK_WIDGET (plugin), "indicator-applet-menubar");
+    "widget \"*.indicator-plugin\" style \"indicator-plugin-style\""
+    "widget \"*.indicator-plugin-menuitem\" style \"indicator-plugin-menuitem-style\""
+    "widget \"*.indicator-plugin-menubar\" style \"indicator-plugin-menubar-style\"");
+  gtk_widget_set_name(GTK_WIDGET (plugin), "indicator-plugin");
   /* create some panel widgets */
   
   /* Build menu */
   indicator->menu = gtk_menu_bar_new();
   gtk_widget_set_can_focus(indicator->menu, TRUE);
-  gtk_widget_set_name(GTK_WIDGET (indicator->menu), "indicator-applet-menubar");
+  gtk_widget_set_name(GTK_WIDGET (indicator->menu), "indicator-plugin-menubar");
   g_signal_connect(indicator->menu, "button-press-event", G_CALLBACK(on_menu_press), NULL);
   //g_signal_connect_after(indicator->menu, "expose-event", G_CALLBACK(menu_on_expose), menu);
   gtk_container_set_border_width(GTK_CONTAINER(indicator->menu), 0);
@@ -195,7 +194,6 @@ on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indica
     return FALSE ;
 }
 
-
 static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
@@ -242,6 +240,7 @@ static void
 entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
   GtkWidget * menuitem = gtk_menu_item_new();
+  gtk_widget_set_name(GTK_WIDGET (menuitem), "indicator-plugin-menuitem");
   GtkWidget * hbox = gtk_hbox_new(FALSE, 3);
 
   g_signal_connect(G_OBJECT(menuitem), "scroll-event", G_CALLBACK(entry_scrolled), entry);
