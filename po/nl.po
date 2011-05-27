@@ -1,8 +1,13 @@
+# Dutch translation of the xfce4-indicator-plugin package.
+# Copyright (C) The Xfce development team.
+# This file is distributed under the same license as the 
+# xfce4-indicator-plugin package.
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.0.1svn-r\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-09 13:40+0200\n"
+"POT-Creation-Date: 2011-05-27 10:21+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vincent Tunru <projects@vinnl.nl>\n"
 "Language-Team: Dutch\n"
@@ -12,8 +17,7 @@ msgstr ""
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NETHERLANDS\n"
 
-#. A label to allow for click through
-#: ../panel-plugin/indicator.c:209
+#: ../panel-plugin/indicator.c:119
 msgid "No Indicators"
 msgstr "Geen indicators"
 
@@ -24,4 +28,3 @@ msgstr "Een indicator van iets dat uw aandacht nodig heeft op het bureaublad"
 #: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Indicator-plug-in"
-
