@@ -1,0 +1,27 @@
+# Simplified Chinese for xfce4-indicator-plugin package.
+# Copyright (C) 2002-2011 The Xfce development team.
+# This file is distributed under the same license as 
+# the xfce4-indicator-plugins package.
+# Chipong Luo <chipong_l@yahoo.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-indicator-plugin\n"
+"POT-Creation-Date: 2011-05-30 13:29+0200\n"
+"Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
+"Language-Team: Chinese/Simplified <xfce-i18n@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/indicator.c:119
+msgid "No Indicators"
+msgstr "无提示"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "提示是当桌面上有新情况时，提醒您注意"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2
+msgid "Indicator Plugin"
+msgstr "提示插件"
