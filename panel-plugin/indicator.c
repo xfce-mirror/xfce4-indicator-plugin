@@ -35,11 +35,11 @@ static void
 indicator_construct (XfcePanelPlugin *plugin);
 
 static gboolean
-load_module (const gchar * name, GtkWidget * menu);
-
+load_module (const gchar * name, IndicatorPlugin * indicator);
+/*
 static gboolean
 on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator);
-
+*/
 /* register the plugin */
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (indicator_construct);
 
@@ -63,43 +63,21 @@ indicator_new (XfcePanelPlugin *plugin)
   /* Init some theme/icon stuff */
   gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(),
                                   INDICATOR_ICONS_DIR);
-  /* g_debug("Icons directory: %s", INDICATOR_ICONS_DIR); */
+  gtk_widget_set_name(GTK_WIDGET (indicator), "indicator-plugin");
+  
+  indicator->buttonbox = gtk_hbox_new(FALSE,0);
+  gtk_widget_set_can_focus(GTK_WIDGET(indicator->buttonbox), TRUE);
   gtk_rc_parse_string (
     "style \"indicator-plugin-style\"\n"
     "{\n"
-    "    GtkMenuBar::shadow-type = none\n"
-    "    GtkMenuBar::internal-padding = 0\n"
+    "    GtkButton::internal-border= 0\n"
     "    GtkWidget::focus-line-width = 0\n"
     "    GtkWidget::focus-padding = 0\n"
     "}\n"
-    "style \"indicator-plugin-menubar-style\"\n"
-    "{\n"
-    "    GtkMenuBar::shadow-type = none\n"
-    "    GtkMenuBar::internal-padding = 0\n"
-    "    GtkWidget::focus-line-width = 0\n"
-    "    GtkWidget::focus-padding = 0\n"
-    "    GtkMenuItem::horizontal-padding = 0\n"
-    "}\n"
-    "style \"indicator-plugin-menuitem-style\"\n"
-    "{\n"
-    "    GtkWidget::focus-line-width = 0\n"
-    "    GtkWidget::focus-padding = 0\n"
-    "    GtkMenuItem::horizontal-padding = 0\n"
-    "}\n"
-    "widget \"*.indicator-plugin\" style \"indicator-plugin-style\""
-    "widget \"*.indicator-plugin-menuitem\" style \"indicator-plugin-menuitem-style\""
-    "widget \"*.indicator-plugin-menubar\" style \"indicator-plugin-menubar-style\"");
-  gtk_widget_set_name(GTK_WIDGET (plugin), "indicator-plugin");
-  /* create some panel widgets */
-  
-  /* Build menu */
-  indicator->menu = gtk_menu_bar_new();
-  gtk_widget_set_can_focus(indicator->menu, TRUE);
-  gtk_widget_set_name(GTK_WIDGET (indicator->menu), "indicator-plugin-menubar");
-  g_signal_connect(indicator->menu, "button-press-event", G_CALLBACK(on_menu_press), NULL);
-  //g_signal_connect_after(indicator->menu, "expose-event", G_CALLBACK(menu_on_expose), menu);
-  gtk_container_set_border_width(GTK_CONTAINER(indicator->menu), 0);
+    "widget \"*.indicator-button\" style \"indicator-plugin-style\"");
 
+  gtk_widget_set_name(GTK_WIDGET (indicator->buttonbox), "indicator-button");
+  gtk_container_set_border_width(GTK_CONTAINER(indicator->buttonbox), 0);
   
   /* load 'em */
   if (g_file_test(INDICATOR_DIR, (G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))) {
@@ -107,7 +85,7 @@ indicator_new (XfcePanelPlugin *plugin)
 
     const gchar * name;
     while ((name = g_dir_read_name(dir)) != NULL) {
-      if (load_module(name, indicator->menu))
+      if (load_module(name, indicator))
         indicators_loaded++;
     }
     g_dir_close (dir);
@@ -120,8 +98,8 @@ indicator_new (XfcePanelPlugin *plugin)
     gtk_widget_show(indicator->item);
     gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
   } else {
-    gtk_widget_show(indicator->menu);
-    gtk_container_add (GTK_CONTAINER (plugin), indicator->menu);
+    gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
+    gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->buttonbox));
   }
   return indicator;
 }
@@ -151,8 +129,7 @@ indicator_orientation_changed (XfcePanelPlugin *plugin,
                             IndicatorPlugin    *indicator)
 {
   gint sizex=-1, sizey=-1;
-  gtk_menu_bar_set_pack_direction (GTK_MENU_BAR(indicator->menu),
-        orientation == GTK_ORIENTATION_HORIZONTAL ? GTK_PACK_DIRECTION_LTR : GTK_PACK_DIRECTION_TTB );
+  gtk_orientable_set_orientation (GTK_ORIENTABLE(indicator->buttonbox), orientation);
   gtk_widget_get_size_request (GTK_WIDGET (plugin), &sizex, &sizey);
   gtk_widget_set_size_request (GTK_WIDGET (plugin), sizey, sizex);  
 }
@@ -179,21 +156,37 @@ indicator_size_changed (XfcePanelPlugin *plugin,
   return TRUE;
 }
 
+static gboolean
+on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
+{
+	if (event->button == 1) /* left click only */
+    {
+	    gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL,
+	                    NULL, NULL, NULL, 1, event->time);
+	    /* no approvement to the above */
+	    /*
+	    gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL, NULL,
+	                    xfce_panel_plugin_position_menu,
+                        indicator->plugin, 1, gtk_get_current_event_time ());
+        */
+        return TRUE;
+	}
+    return FALSE ;
+}
 
+#if FALSE
 static gboolean
 on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
 {
-    TRACE ("enters on_button_press");
     if (indicator != NULL && event->button == 1) /* left click only */
     {
      /*   gtk_menu_popup (GTK_MENU(indicator->menu), NULL, NULL, NULL, NULL, 0,
                         event->time);*/
         return TRUE;
     }
-    TRACE ("leaves on_button_press");
     return FALSE ;
 }
-
+#endif
 static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
@@ -206,7 +199,7 @@ indicator_construct (XfcePanelPlugin *plugin)
   indicator = indicator_new (plugin);
 
   /* show the panel's right-click menu on this menu */
-  xfce_panel_plugin_add_action_widget (plugin, indicator->menu);
+  xfce_panel_plugin_add_action_widget (plugin, indicator->buttonbox);
   xfce_panel_plugin_add_action_widget (plugin, indicator->item);
 
   /* connect plugin signals */
@@ -242,23 +235,32 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
   GtkWidget * menuitem = gtk_menu_item_new();
   gtk_widget_set_name(GTK_WIDGET (menuitem), "indicator-plugin-menuitem");
   GtkWidget * hbox = gtk_hbox_new(FALSE, 3);
+  GtkWidget * button = gtk_button_new();
+  gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
+  gtk_widget_set_name(GTK_WIDGET (button), "indicator-button");
 
   g_signal_connect(G_OBJECT(menuitem), "scroll-event", G_CALLBACK(entry_scrolled), entry);
 
   if (entry->image != NULL)
     gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entry->image), FALSE, FALSE, 0);
+    gtk_button_set_image(GTK_BUTTON(button), GTK_WIDGET(entry->image));
 
   if (entry->label != NULL)
     gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entry->label), FALSE, FALSE, 0);
+    gtk_button_set_label(GTK_BUTTON(button), gtk_label_get_label (entry->label));
 
   gtk_container_add(GTK_CONTAINER(menuitem), hbox);
   gtk_widget_show(hbox);
 
   if (entry->menu != NULL)
     gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), GTK_WIDGET(entry->menu));
+    g_object_set_data(G_OBJECT(button), "menu", entry->menu);
 
-  gtk_menu_shell_append(GTK_MENU_SHELL(user_data), menuitem);
   gtk_widget_show(menuitem);
+  g_signal_connect(button, "button-press-event", G_CALLBACK(on_button_press),
+                   user_data);
+  gtk_widget_show(button);
+  gtk_box_pack_start(GTK_BOX(((IndicatorPlugin *)user_data)->buttonbox), button, TRUE, TRUE, 0);
 
   g_object_set_data(G_OBJECT(menuitem), "indicator-custom-object-data", io);
   g_object_set_data(G_OBJECT(menuitem), "indicator-custom-entry-data", entry);
@@ -285,7 +287,7 @@ entry_removed (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user
 
 
 static gboolean
-load_module (const gchar * name, GtkWidget * menu)
+load_module (const gchar * name, IndicatorPlugin * indicator)
 {
 	g_debug("Looking at Module: %s", name);
 	g_return_val_if_fail(name != NULL, FALSE);
@@ -300,16 +302,16 @@ load_module (const gchar * name, GtkWidget * menu)
 	g_free(fullpath);
 
     g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_ADDED,
-                     G_CALLBACK(entry_added), menu);
+                     G_CALLBACK(entry_added), indicator);
     g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_REMOVED,
-                     G_CALLBACK(entry_removed), menu);
+                     G_CALLBACK(entry_removed), indicator->buttonbox);
 
 	GList * entries = indicator_object_get_entries(io);
 	GList * entry = NULL;
 
 	for (entry = entries; entry != NULL; entry = g_list_next(entry)) {
 		IndicatorObjectEntry * entrydata = (IndicatorObjectEntry *)entry->data;
-		entry_added(io, entrydata, menu);
+		entry_added(io, entrydata, indicator);
 	}
 
 	g_list_free(entries);
