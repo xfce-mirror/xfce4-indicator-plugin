@@ -36,10 +36,7 @@ indicator_construct (XfcePanelPlugin *plugin);
 
 static gboolean
 load_module (const gchar * name, IndicatorPlugin * indicator);
-/*
-static gboolean
-on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator);
-*/
+
 /* register the plugin */
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (indicator_construct);
 
@@ -152,7 +149,6 @@ indicator_size_changed (XfcePanelPlugin *plugin,
   else
     gtk_widget_set_size_request (GTK_WIDGET (plugin), size, -1);
 
-  /* we handled the orientation */
   return TRUE;
 }
 
@@ -174,19 +170,6 @@ on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indi
     return FALSE ;
 }
 
-#if FALSE
-static gboolean
-on_menu_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
-{
-    if (indicator != NULL && event->button == 1) /* left click only */
-    {
-     /*   gtk_menu_popup (GTK_MENU(indicator->menu), NULL, NULL, NULL, NULL, 0,
-                        event->time);*/
-        return TRUE;
-    }
-    return FALSE ;
-}
-#endif
 static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
