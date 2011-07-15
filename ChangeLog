@@ -1,3 +1,8 @@
+# created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2011-07-15 fb138cd fix indicator-appmenu Mark Trompell <mark@foresightlinux.org>
+2011-07-15 61d0a59 back to normal Mark Trompell <mark@foresightlinux.org>
+2011-07-15 f1801cb forgot to bump version Mark Trompell <mark@foresightlinux.org>
+2011-07-15 3d2109a get ready for 0.3.0 Mark Trompell <mark@foresightlinux.org>
 2011-07-15 991616d make context menu work, clean up some more Mark Trompell <mark@foresightlinux.org>
 2011-07-13 19d87ed remove some leftovers Mark Trompell <mark@foresightlinux.org>
 2011-07-13 45f671e use hbox with buttons instead of menubar Mark Trompell <mark@foresightlinux.org>
