@@ -1,58 +1,78 @@
-2b0df52 l10n: Updated Ukrainian (uk) translation to 100%
-338602b l10n: Ukrainian translation
-4277c8a l10n: Added Polish translation
-ff9f26a relay the 'scroll-event' signals to the indicators (used e.g. by indicator-sound to change the volume).
-7307f54 set up indicators with only one function (some set here where missing a few signal handlers)
-93a1c28 Updates for auto-po generation.
-3ebc177 remove libxfcegui4
-16d8daa Add entry_{added,removed} signal handlers
-5fd54ab add module.xml
-101de86 add ru.po
-3bbaa9e fix Charset. Thanks Evgeni
-c82a0a7 honor to whom honor is due! nl.po from Vincent.
-a4c37ad add dutch
-017e04e Added tag 0.2.0 for changeset 87a6a470a7c4
-827c171 get ready for 0.2
-38226e1 fix missing menu, when no indicators are found
-6d16122 fix for indicator 0.3
-b9c0584 Added tag 0.1.0 for changeset 1e001f64ad6a
-cc25b26 forgotten pre release updates
-eba33df Removed tag 0.1.0
-ba3186a Removed tag 0.1.0
-c4560ce Removed tag remove
-ab036e4 Added tag remove, 0.1.0 for changeset 247267c94fe3
-864bf4b tag for unstable release
-df46888 bump version to match the odd/even pattern
-f1835a8 use icon dir provided by pkgconfig
-e358b2a prepare for moving to git.xfce.org
-3c848a5 Added tag 0.0.1 for changeset 5252a897c046
-e0f57ac remove svn tag only
-f4095fd remove svn references
-1a37ebb fix check for indicator version
-a4b374d french translations
-644a9b3 update translations and Thanks
-eaa9e6b ad a ro.po
-ffff609 Added Brazilian Portuguese translation.
-6749b8b make the english string match 'upstream'
-04c3604 add i18n
-c980b4c remove the old stuff
-a969bbd simplify so check
-7878085 fix license
-53a9a8f fix build
-049ebe7 some cleanup
-3cd2b92 do I really need the popup thing?
-b65b79b remove button again
-4798235 it compiles
-709ad77 no comment
-138ceef break some more things
-366e4e5 change menubar name
-6fcdac9 add some theme and icon stuff
-2204270 fix the fix
-9ef5c62 some random fixes
-3df6743 add menubar
-71bbe20 add a new CFLAG
-cee9b27 start to break things
-67c060d indicator is the one we need to check for
-646fe35 Fix build issue with libtool 2.x
-aa9f8f0 some random changes
-ac4fe3f initial checkin
+2011-07-15 991616d make context menu work, clean up some more Mark Trompell <mark@foresightlinux.org>
+2011-07-13 19d87ed remove some leftovers Mark Trompell <mark@foresightlinux.org>
+2011-07-13 45f671e use hbox with buttons instead of menubar Mark Trompell <mark@foresightlinux.org>
+2011-07-08 808a529 l10n: Updated Basque (eu) translation to 100% Piarres Beobide <pi@beobide.net>
+2011-06-16 d75df60 l10n: Updated Dutch (Flemish) (nl) translation to 100% Pjotr Anon <pliniusminor@gmail.com>
+2011-06-04 c5c64c6 l10n: Initial Indonesian translation Andhika Padmawan <andhika.padmawan@gmail.com>
+2011-05-30 fb01f3f l10n: Updates to Chinese(China) translation Chipong Luo <chipong_l@yahoo.com>
+2011-05-29 5a09be4 l10n: Add Italian translation Cristian Marchi <cri.penta@gmail.com>
+2011-05-29 592d372 l10n: Danish translation Morten Juhl-Johansen Zölde-Fejér <mjjzf@syntaktisk.dk>
+2011-05-27 bd4b835 l10n: Updated Dutch (Flemish) (nl) translation to 100% Pjotr Anon <pliniusminor@gmail.com>
+2011-05-26 9f929c9 l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 100% Sérgio Cipolla <secipolla@gmail.com>
+2011-05-25 72a751d tweak internal gtkrc usage Mark Trompell <mark@foresightlinux.org>
+2011-05-25 2c0cc99 we need to swap the size, when orientation changes Mark Trompell <mark@foresightlinux.org>
+2011-05-24 4e55a3d support vertical panel Mark Trompell <mark@foresightlinux.org>
+2011-05-21 ed77c55 l10n: Initial Croatian (hr) translation Ivica  Kolić <ikoli@yahoo.com>
+2011-05-20 2d880fc l10n: Uyghur translation Gheyret Kenji <gheyret@yahoo.com>
+2011-05-15 0402176 l10n: Firsta Basque translation Piarres Beobide <pi@beobide.net>
+2011-05-12 3effb93 replace depreciated GTK_WIDGET_SET_FLAGS Mark Trompell <mark@foresightlinux.org>
+2011-05-06 a1820a4 add git tag Mark Trompell <mark@foresightlinux.org>
+2011-05-06 c726f96 get ready for 0.2.1 Mark Trompell <mark@foresightlinux.org>
+2011-03-25 2b0df52 l10n: Updated Ukrainian (uk) translation to 100% Yarema aka Knedlyk <yupadmin@gmail.com>
+2011-03-25 338602b l10n: Ukrainian translation Yarema aka Knedlyk <yupadmin@gmail.com>
+2011-03-22 4277c8a l10n: Added Polish translation Piotr Sokół <psokol@jabster.pl>
+2011-02-24 ff9f26a relay the 'scroll-event' signals to the indicators (used e.g. by indicator-sound to change the volume). Lionel Le Folgoc <lionel@lefolgoc.net>
+2011-02-24 7307f54 set up indicators with only one function (some set here where missing a few signal handlers) Lionel Le Folgoc <lionel@lefolgoc.net>
+2011-02-24 93a1c28 Updates for auto-po generation. Nick Schermer <nick@xfce.org>
+2011-02-24 3ebc177 remove libxfcegui4 Mark Trompell <mark@foresightlinux.org>
+2011-02-21 16d8daa Add entry_{added,removed} signal handlers Lionel Le Folgoc <mrpouit@gmail.com>
+2011-02-17 5fd54ab add module.xml Mark Trompell <mark@foresightlinux.org>
+2010-07-02 101de86 add ru.po Evgeni Golov <evgeni@debian.org>
+2010-07-02 3bbaa9e fix Charset. Thanks Evgeni Mark Trompell <mark@foresightlinux.org>
+2010-07-01 c82a0a7 honor to whom honor is due! nl.po from Vincent. Mark Trompell <mark@foresightlinux.org>
+2010-07-01 a4c37ad add dutch Mark Trompell <mark@foresightlinux.org>
+2010-06-29 017e04e Added tag 0.2.0 for changeset 87a6a470a7c4 Mark Trompell <mark@foresightlinux.org>
+2010-06-29 827c171 get ready for 0.2 Mark Trompell <mark@foresightlinux.org>
+2010-06-29 38226e1 fix missing menu, when no indicators are found Evgeni Golov <evgeni@debian.org>
+2010-06-07 6d16122 fix for indicator 0.3 Evgeni Golov <evgeni@debian.org>
+2009-10-23 b9c0584 Added tag 0.1.0 for changeset 1e001f64ad6a Mark Trompell <mark@foresightlinux.org>
+2009-10-23 cc25b26 forgotten pre release updates Mark Trompell <mark@foresightlinux.org>
+2009-10-23 eba33df Removed tag 0.1.0 Mark Trompell <mark@foresightlinux.org>
+2009-10-23 ba3186a Removed tag 0.1.0 Mark Trompell <mark@foresightlinux.org>
+2009-10-23 c4560ce Removed tag remove Mark Trompell <mark@foresightlinux.org>
+2009-10-23 ab036e4 Added tag remove, 0.1.0 for changeset 247267c94fe3 Mark Trompell <mark@foresightlinux.org>
+2009-10-23 864bf4b tag for unstable release Mark Trompell <mark@foresightlinux.org>
+2009-10-23 df46888 bump version to match the odd/even pattern Mark Trompell <mark@foresightlinux.org>
+2009-10-23 f1835a8 use icon dir provided by pkgconfig Mark Trompell <mark@foresightlinux.org>
+2009-08-19 e358b2a prepare for moving to git.xfce.org Mark Trompell <mark@foresightlinux.org>
+2009-06-22 3c848a5 Added tag 0.0.1 for changeset 5252a897c046 Mark Trompell <mark@foresightlinux.org>
+2009-06-22 e0f57ac remove svn tag only Mark Trompell <mark@foresightlinux.org>
+2009-06-22 f4095fd remove svn references Mark Trompell <mark@foresightlinux.org>
+2009-06-17 1a37ebb fix check for indicator version Mark Trompell <mark@foresightlinux.org>
+2009-06-10 a4b374d french translations Mark Trompell <mark@foresightlinux.org>
+2009-06-10 644a9b3 update translations and Thanks Mark Trompell <mark@foresightlinux.org>
+2009-06-10 eaa9e6b ad a ro.po Mark Trompell <mark@foresightlinux.org>
+2009-06-10 ffff609 Added Brazilian Portuguese translation. Og Maciel <omaciel@rpath.com>
+2009-06-09 6749b8b make the english string match 'upstream' Mark Trompell <mark@foresightlinux.org>
+2009-06-09 04c3604 add i18n Mark Trompell <mark@foresightlinux.org>
+2009-06-05 c980b4c remove the old stuff Mark Trompell <mark@foresightlinux.org>
+2009-06-05 a969bbd simplify so check Mark Trompell <mark@foresightlinux.org>
+2009-06-04 7878085 fix license Mark Trompell <mark@foresightlinux.org>
+2009-06-04 53a9a8f fix build Mark Trompell <mark@foresightlinux.org>
+2009-06-04 049ebe7 some cleanup Mark Trompell <mark@foresightlinux.org>
+2009-06-04 3cd2b92 do I really need the popup thing? Mark Trompell <mark@foresightlinux.org>
+2009-06-04 b65b79b remove button again Mark Trompell <mark@foresightlinux.org>
+2009-06-04 4798235 it compiles Mark Trompell <mark@foresightlinux.org>
+2009-06-02 709ad77 no comment Mark Trompell <mark@foresightlinux.org>
+2009-06-02 138ceef break some more things Mark Trompell <mark@foresightlinux.org>
+2009-06-02 366e4e5 change menubar name Mark Trompell <mark@foresightlinux.org>
+2009-06-02 6fcdac9 add some theme and icon stuff Mark Trompell <mark@foresightlinux.org>
+2009-06-02 2204270 fix the fix Mark Trompell <mark@foresightlinux.org>
+2009-06-02 9ef5c62 some random fixes Mark Trompell <mark@foresightlinux.org>
+2009-06-02 3df6743 add menubar Mark Trompell <mark@foresightlinux.org>
+2009-06-02 71bbe20 add a new CFLAG Mark Trompell <mark@foresightlinux.org>
+2009-05-29 cee9b27 start to break things Mark Trompell <mark@foresightlinux.org>
+2009-05-27 67c060d indicator is the one we need to check for Mark Trompell <mark@foresightlinux.org>
+2009-05-26 646fe35 Fix build issue with libtool 2.x Mark Trompell <mark@foresightlinux.org>
+2009-05-15 aa9f8f0 some random changes Mark Trompell <mark@foresightlinux.org>
+2009-05-15 ac4fe3f initial checkin Mark Trompell <mark@foresightlinux.org>
