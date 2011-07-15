@@ -92,11 +92,15 @@ indicator_new (XfcePanelPlugin *plugin)
     /* A label to allow for click through */
     indicator->item = xfce_create_panel_button();
     gtk_button_set_label(GTK_BUTTON(indicator->item), _("No Indicators"));
-    gtk_widget_show(indicator->item);
     gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
+    gtk_widget_show(indicator->item);
   } else {
+    indicator->ebox = gtk_event_box_new();
+    gtk_widget_set_can_focus(GTK_WIDGET(indicator->ebox), TRUE);
+    gtk_container_add (GTK_CONTAINER (indicator->ebox), GTK_WIDGET(indicator->buttonbox));
+    gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->ebox));
     gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
-    gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->buttonbox));
+    gtk_widget_show(GTK_WIDGET(indicator->ebox));
   }
   return indicator;
 }
@@ -155,19 +159,24 @@ indicator_size_changed (XfcePanelPlugin *plugin,
 static gboolean
 on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
 {
-	if (event->button == 1) /* left click only */
+  if (indicator != NULL)
+  {
+    if( event->button == 1) /* left click only */
     {
-	    gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL,
-	                    NULL, NULL, NULL, 1, event->time);
-	    /* no approvement to the above */
-	    /*
-	    gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL, NULL,
-	                    xfce_panel_plugin_position_menu,
-                        indicator->plugin, 1, gtk_get_current_event_time ());
-        */
-        return TRUE;
-	}
-    return FALSE ;
+      gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL,
+                      NULL, NULL, NULL, 1, event->time);
+      /* no approvement to the above */
+      /*
+      gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL, NULL,
+                      xfce_panel_plugin_position_menu,
+                      indicator->plugin, 1, gtk_get_current_event_time ());
+      */
+      return TRUE;
+    }
+    /* event doesn't make it to the ebox, so I just push it. */
+    gtk_widget_event (indicator->ebox, (GdkEvent*)event);
+  }
+  return FALSE;
 }
 
 static void
@@ -182,7 +191,7 @@ indicator_construct (XfcePanelPlugin *plugin)
   indicator = indicator_new (plugin);
 
   /* show the panel's right-click menu on this menu */
-  xfce_panel_plugin_add_action_widget (plugin, indicator->buttonbox);
+  xfce_panel_plugin_add_action_widget (plugin, indicator->ebox);
   xfce_panel_plugin_add_action_widget (plugin, indicator->item);
 
   /* connect plugin signals */
@@ -215,38 +224,23 @@ entry_scrolled (GtkWidget *menuitem, GdkEventScroll *event, gpointer data)
 static void
 entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
-  GtkWidget * menuitem = gtk_menu_item_new();
-  gtk_widget_set_name(GTK_WIDGET (menuitem), "indicator-plugin-menuitem");
-  GtkWidget * hbox = gtk_hbox_new(FALSE, 3);
   GtkWidget * button = gtk_button_new();
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_widget_set_name(GTK_WIDGET (button), "indicator-button");
 
-  g_signal_connect(G_OBJECT(menuitem), "scroll-event", G_CALLBACK(entry_scrolled), entry);
-
   if (entry->image != NULL)
-    gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entry->image), FALSE, FALSE, 0);
     gtk_button_set_image(GTK_BUTTON(button), GTK_WIDGET(entry->image));
 
   if (entry->label != NULL)
-    gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(entry->label), FALSE, FALSE, 0);
     gtk_button_set_label(GTK_BUTTON(button), gtk_label_get_label (entry->label));
 
-  gtk_container_add(GTK_CONTAINER(menuitem), hbox);
-  gtk_widget_show(hbox);
-
   if (entry->menu != NULL)
-    gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuitem), GTK_WIDGET(entry->menu));
     g_object_set_data(G_OBJECT(button), "menu", entry->menu);
 
-  gtk_widget_show(menuitem);
   g_signal_connect(button, "button-press-event", G_CALLBACK(on_button_press),
                    user_data);
-  gtk_widget_show(button);
   gtk_box_pack_start(GTK_BOX(((IndicatorPlugin *)user_data)->buttonbox), button, TRUE, TRUE, 0);
-
-  g_object_set_data(G_OBJECT(menuitem), "indicator-custom-object-data", io);
-  g_object_set_data(G_OBJECT(menuitem), "indicator-custom-entry-data", entry);
+  gtk_widget_show(button);
 }
 
 

@@ -27,7 +27,8 @@ typedef struct
 
     /* panel widgets */ 
     GtkWidget       *item;
-    GtkWidget		*buttonbox;
+    GtkWidget       *buttonbox;
+    GtkWidget       *ebox;
 
     /* indicator settings */
 }
