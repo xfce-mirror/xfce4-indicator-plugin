@@ -226,6 +226,7 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
 {
   GtkWidget * button = gtk_button_new();
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
+  gtk_button_set_use_underline(GTK_BUTTON (button),TRUE);
   gtk_widget_set_name(GTK_WIDGET (button), "indicator-button");
 
   if (entry->image != NULL)
@@ -241,6 +242,8 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
                    user_data);
   gtk_box_pack_start(GTK_BOX(((IndicatorPlugin *)user_data)->buttonbox), button, TRUE, TRUE, 0);
   gtk_widget_show(button);
+  g_object_set_data(G_OBJECT(button), "indicator-custom-object-data", io);
+  g_object_set_data(G_OBJECT(button), "indicator-custom-entry-data", entry);
 }
 
 
@@ -251,7 +254,7 @@ entry_removed_cb (GtkWidget * widget, gpointer userdata)
 
   if (data != userdata)
     return;
-
+    
   gtk_widget_destroy(widget);
 }
 
