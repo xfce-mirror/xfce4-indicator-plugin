@@ -1,0 +1,30 @@
+# Spanish translations for the xfce4-indicator-plugin
+# Copyright (C) 2009 Mark Trompell <mark@foresightlinux.org>
+# This file is distributed under the same license as the xfce4-indicator-plugin package.
+# Andres Sanchez <afsanchez93@gmail.com>, .
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-indicator-plugin VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-19 10:20+0000\n"
+"PO-Revision-Date: 2011-07-19 11:13-0500\n"
+"Last-Translator: Andres Sanchez <afsanchez93@gmail.com>\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+
+#: ../panel-plugin/indicator.c:182
+msgid "No Indicators"
+msgstr "Sin indicadores"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "Un indicator necesita su atención en el escritorio"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2
+msgid "Indicator Plugin"
+msgstr "Plugin Indicador"
+
