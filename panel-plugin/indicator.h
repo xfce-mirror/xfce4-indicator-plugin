@@ -34,8 +34,6 @@ typedef struct
 }
 IndicatorPlugin;
 
-
-
 void
 indicator_save (XfcePanelPlugin *plugin,
              IndicatorPlugin    *indicator);
