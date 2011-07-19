@@ -138,6 +138,7 @@ indicator_new (XfcePanelPlugin *plugin)
     "style \"indicator-plugin-style\"\n"
     "{\n"
     "    GtkButton::internal-border= 0\n"
+    "    GtkToggleButton::internal-border= 0\n"
     "    GtkWidget::focus-line-width = 0\n"
     "    GtkWidget::focus-padding = 0\n"
     "}\n"
@@ -250,6 +251,7 @@ on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indi
   {
     if( event->button == 1) /* left click only */
     {
+      gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
       gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL, NULL,
                       xfce_panel_plugin_position_menu,
                       indicator->plugin, 1, gtk_get_current_event_time ());
@@ -260,6 +262,13 @@ on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indi
     gtk_widget_event (indicator->ebox, (GdkEvent*)event);
   }
   return FALSE;
+}
+
+static void
+menu_deactivate (GtkMenu *menu,
+                 gpointer      user_data)
+{
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_menu_get_attach_widget (menu)), FALSE);
 }
 
 static void
@@ -307,21 +316,22 @@ entry_scrolled (GtkWidget *menuitem, GdkEventScroll *event, gpointer data)
 static void
 entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
-  GtkWidget * button = gtk_button_new();
-  gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
-  gtk_button_set_use_underline(GTK_BUTTON (button),TRUE);
+  GtkWidget * button = gtk_toggle_button_new();
+  gtk_button_set_relief (GTK_TOGGLE_BUTTON (button), GTK_RELIEF_NONE);
+  gtk_button_set_use_underline(GTK_TOGGLE_BUTTON (button),TRUE);
   gtk_widget_set_name(GTK_WIDGET (button), "indicator-button");
 
   if (entry->image != NULL)
-    gtk_button_set_image(GTK_BUTTON(button), GTK_WIDGET(entry->image));
+    gtk_button_set_image(GTK_TOGGLE_BUTTON(button), GTK_WIDGET(entry->image));
 
   if (entry->label != NULL)
-    gtk_button_set_label(GTK_BUTTON(button), gtk_label_get_label (entry->label));
+    gtk_button_set_label(GTK_TOGGLE_BUTTON(button), gtk_label_get_label (entry->label));
 
   if (entry->menu != NULL)
   {
     g_object_set_data(G_OBJECT(button), "menu", entry->menu);
     gtk_menu_attach_to_widget(entry->menu, button, NULL);
+    g_signal_connect(entry->menu, "deactivate", menu_deactivate,NULL);
   }
 
   g_signal_connect(button, "button-press-event", G_CALLBACK(on_button_press),
