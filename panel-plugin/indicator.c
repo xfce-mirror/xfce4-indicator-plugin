@@ -163,9 +163,7 @@ on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indi
   {
     if( event->button == 1) /* left click only */
     {
-      GtkMenu * menu = GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu"));
-      gtk_menu_attach_to_widget(menu, widget, NULL);
-      gtk_menu_popup (menu, NULL, NULL,
+      gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL, NULL,
                       xfce_panel_plugin_position_menu,
                       indicator->plugin, 1, gtk_get_current_event_time ());
       
@@ -234,7 +232,10 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
     gtk_button_set_label(GTK_BUTTON(button), gtk_label_get_label (entry->label));
 
   if (entry->menu != NULL)
+  {
     g_object_set_data(G_OBJECT(button), "menu", entry->menu);
+    gtk_menu_attach_to_widget(entry->menu, button, NULL);
+  }
 
   g_signal_connect(button, "button-press-event", G_CALLBACK(on_button_press),
                    user_data);
