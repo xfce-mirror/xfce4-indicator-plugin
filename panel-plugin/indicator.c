@@ -163,14 +163,12 @@ on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indi
   {
     if( event->button == 1) /* left click only */
     {
-      gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL,
-                      NULL, NULL, NULL, 1, event->time);
-      /* no approvement to the above */
-      /*
-      gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL, NULL,
+      GtkMenu * menu = GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu"));
+      gtk_menu_attach_to_widget(menu, widget, NULL);
+      gtk_menu_popup (menu, NULL, NULL,
                       xfce_panel_plugin_position_menu,
                       indicator->plugin, 1, gtk_get_current_event_time ());
-      */
+      
       return TRUE;
     }
     /* event doesn't make it to the ebox, so I just push it. */
