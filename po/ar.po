@@ -1,0 +1,31 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-indicator-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-09 10:21+0000\n"
+"PO-Revision-Date: 2011-08-09 16:05-0000\n"
+"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
+"Language-Team: Arabic Xfce Translation Team <herr.linux88@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Arabic\n"
+"X-Poedit-Country: Lorocco\n"
+
+#: ../panel-plugin/indicator.c:182
+msgid "No Indicators"
+msgstr "بدون مؤشر"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "مؤشرا لشيء يحتاج إلى عناية منك على سطح المكتب"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2
+msgid "Indicator Plugin"
+msgstr "إضافة المؤشر"
+
