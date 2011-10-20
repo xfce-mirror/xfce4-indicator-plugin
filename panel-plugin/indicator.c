@@ -130,7 +130,7 @@ indicator_new (XfcePanelPlugin *plugin)
   /* Init some theme/icon stuff */
   gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(),
                                   INDICATOR_ICONS_DIR);
-  gtk_widget_set_name(GTK_WIDGET (indicator), "indicator-plugin");
+  /*gtk_widget_set_name(GTK_WIDGET (indicator->plugin), "indicator-plugin");*/
   
   indicator->buttonbox = gtk_hbox_new(FALSE,0);
   gtk_widget_set_can_focus(GTK_WIDGET(indicator->buttonbox), TRUE);
@@ -157,8 +157,8 @@ indicator_new (XfcePanelPlugin *plugin)
     const gchar * name;
     guint i, length;
     gboolean match = FALSE;
-
-    length = g_strv_length (indicator->excluded_modules);
+ 
+    length = (indicator->excluded_modules != NULL) ? g_strv_length (indicator->excluded_modules) : 0;
     while ((name = g_dir_read_name(dir)) != NULL) {
       for (i = 0; i < length; ++i) {
         if (match = (g_strcmp0 (name, indicator->excluded_modules[i]) == 0))
@@ -181,7 +181,9 @@ indicator_new (XfcePanelPlugin *plugin)
     indicator->item = xfce_create_panel_button();
     gtk_button_set_label(GTK_BUTTON(indicator->item), _("No Indicators"));
     gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
-    gtk_widget_show(indicator->item);
+    gtk_widget_show(indicator->item);  
+    /* show the panel's right-click menu on this menu */
+    xfce_panel_plugin_add_action_widget (plugin, indicator->item);
   } else {
     indicator->ebox = gtk_event_box_new();
     gtk_widget_set_can_focus(GTK_WIDGET(indicator->ebox), TRUE);
@@ -189,6 +191,8 @@ indicator_new (XfcePanelPlugin *plugin)
     gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->ebox));
     gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
     gtk_widget_show(GTK_WIDGET(indicator->ebox));
+    /* show the panel's right-click menu on this menu */
+    xfce_panel_plugin_add_action_widget (plugin, indicator->ebox);
   }
   return indicator;
 }
@@ -281,10 +285,6 @@ indicator_construct (XfcePanelPlugin *plugin)
 
   /* create the plugin */
   indicator = indicator_new (plugin);
-
-  /* show the panel's right-click menu on this menu */
-  xfce_panel_plugin_add_action_widget (plugin, indicator->ebox);
-  xfce_panel_plugin_add_action_widget (plugin, indicator->item);
 
   /* connect plugin signals */
   g_signal_connect (G_OBJECT (plugin), "free-data",
