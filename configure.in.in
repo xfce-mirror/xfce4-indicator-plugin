@@ -67,7 +67,7 @@ dnl ***********************************
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.6.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.99.2])
-XDT_CHECK_PACKAGE([INDICATOR], [indicator], [0.3.0], [], [XDT_CHECK_PACKAGE([INDICATOR], [indicator-0.4], [0.3.90])])
+XDT_CHECK_PACKAGE([INDICATOR], [indicator], [0.3.0], [indicator_pkgname=indicator], [XDT_CHECK_PACKAGE([INDICATOR], [indicator-0.4], [0.3.90], [indicator_pkgname=indicator-0.4], [])])
 
 dnl ***********************************
 dnl *** Check for debugging support ***
@@ -77,8 +77,8 @@ XDT_FEATURE_DEBUG()
 dnl ***********************
 dnl *** Indicator info ***
 dnl ***********************
-INDICATORDIR=`$PKG_CONFIG --variable=indicatordir indicator`
-INDICATORICONSDIR=`$PKG_CONFIG --variable=iconsdir indicator`
+INDICATORDIR=`$PKG_CONFIG --variable=indicatordir $indicator_pkgname`
+INDICATORICONSDIR=`$PKG_CONFIG --variable=iconsdir $indicator_pkgname`
 
 AC_SUBST(INDICATORDIR)
 AC_SUBST(INDICATORICONSDIR)
