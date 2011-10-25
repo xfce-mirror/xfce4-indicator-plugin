@@ -1,3 +1,30 @@
+0.4.0
+=====
+support libindicator 0.4
+fix menu position
+use togglebuttons instead of buttons
+add preliminary blacklisting of modules
+[Bug 8066] xfce4-indicator-plugin does not update output
+[Bug 8065] Scroll events' support got lost between 0.2.1 and 0.3.0
+translation updates
+
+0.3.1
+=====
+Fix support for indicator-appmenu
+
+0.3.0
+=====
+Use Buttons instead of a menubar
+Support horizontal panel
+Support transparency
+translation updates
+
+0.2.1
+=====
+translation updates
+Add missing Signals and Cleanup
+Remove check for libxfcegui4
+
 0.2.0
 =====
 Use indicator 0.3+

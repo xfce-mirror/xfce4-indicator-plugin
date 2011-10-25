@@ -1,4 +1,25 @@
 # created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2011-10-25 271d081 Fix location of indicator dirs Lionel Le Folgoc <lionel@lefolgoc.net>
+2011-10-25 54cf557 Revert "Fix location of indicator dirs", committed wrong file Mark Trompell <mark@foresightlinux.org>
+2011-10-25 0b91347 Fix location of indicator dirs Lionel Le Folgoc <lionel@lefolgoc.net>
+2011-10-25 f21f115 fix build for indicator < 0.3.90 Mark Trompell <mark@foresightlinux.org>
+2011-10-24 26fec65 [PATCH] Restore actions on scroll events Lionel Le Folgoc <lionel@lefolgoc.net>
+2011-10-25 49fb5c4 fix some warnings Mark Trompell <mark@foresightlinux.org>
+2011-09-16 7c4732f xfce4-indicator-plugin does not update output #8066 Jason Conti <jconti@launchpad.net>
+2011-10-20 3352344 fix some {gtk,GLib}-critical messages Mark Trompell <mark@foresightlinux.org>
+2011-09-15 f2c6cac l10n: Updated Turkish (tr) translation to 66% Alper Tekinalp <alper.tekinalp@gmail.com>
+2011-09-15 e3a683c l10n: Updates to Turkish translation Alper Tekinalp <alper.tekinalp@gmail.com>
+2011-09-09 68b8d6a allow building with indicator-0.4 Mark Trompell <mark@foresightlinux.org>
+2011-08-09 60d11cb l10n: Arabic Translation كريم أولاد الشلحة <herr.linux88@gmail.com>
+2011-07-19 7533340 l10n: Spanish translation afsanchez93 <afsanchez93@gmail.com>
+2011-07-19 25e4fd4 use togglebutton Mark Trompell <mark@foresightlinux.org>
+2011-03-08 04546cc add preliminary blacklisting of modules Lionel Le Folgoc <lionel@lefolgoc.net>
+2011-07-19 defca95 attach button to menu right at the beginning Mark Trompell <mark@foresightlinux.org>
+2011-07-19 c0e2483 remove some blank lines Mark Trompell <mark@foresightlinux.org>
+2011-07-19 4c41046 fix menu position Mark Trompell <mark@foresightlinux.org>
+2011-07-18 af8bf4b l10n: New Slovak translation Tomáš Vadina <kyberdev@gmail.com>
+2011-07-15 1259f7a back to git Mark Trompell <mark@foresightlinux.org>
+2011-07-15 1e0d241 prepare for 0.3.1 Mark Trompell <mark@foresightlinux.org>
 2011-07-15 fb138cd fix indicator-appmenu Mark Trompell <mark@foresightlinux.org>
 2011-07-15 61d0a59 back to normal Mark Trompell <mark@foresightlinux.org>
 2011-07-15 f1801cb forgot to bump version Mark Trompell <mark@foresightlinux.org>
