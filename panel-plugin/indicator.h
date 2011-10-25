@@ -19,7 +19,9 @@
 #define __INDICATOR_H__
 
 G_BEGIN_DECLS
-
+#ifndef INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED
+#define INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED "scroll-entry"
+#endif
 /* plugin structure */
 typedef struct
 {
