@@ -7,21 +7,23 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
-"POT-Creation-Date: 2011-05-30 13:29+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-09 04:10+0000\n"
 "Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
 "Language-Team: Chinese/Simplified <xfce-i18n@xfce.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/indicator.c:119
+#: ../panel-plugin/indicator.c:182
 msgid "No Indicators"
 msgstr "无提示"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "An indicator of something that needs your attention on the desktop"
-msgstr "提示是当桌面上有新情况时，提醒您注意"
+msgstr "桌面上需要您注意的事项的提示器"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
-msgstr "提示插件"
+msgstr "提示器插件"
