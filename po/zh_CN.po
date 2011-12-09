@@ -1,7 +1,7 @@
-# Simplified Chinese for xfce4-indicator-plugin package.
-# Copyright (C) 2002-2011 The Xfce development team.
-# This file is distributed under the same license as 
-# the xfce4-indicator-plugins package.
+# Simplified Chinese translations for
+# the xfce4-indicator-plugin package.
+# This file is distributed under the same license as
+# the xfce4-indicator-plugin package.
 # Chipong Luo <chipong_l@yahoo.com>, 2011.
 #
 msgid ""
@@ -10,8 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-09 04:10+0000\n"
 "Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
-"Language-Team: Chinese/Simplified <xfce-i18n@xfce.org>\n"
-"Language: \n"
+"Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
