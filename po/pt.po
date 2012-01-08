@@ -1,0 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: indicator-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-08 17:54+0000\n"
+"PO-Revision-Date: 2012-01-08 22:16-0000\n"
+"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: PORTUGAL\n"
+
+#: ../panel-plugin/indicator.c:182
+msgid "No Indicators"
+msgstr "Sem indicadores"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "Uma indicação sobre algo que requer a sua atenção"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2
+msgid "Indicator Plugin"
+msgstr "\"Plug-in\" Indicador"
+
