@@ -1,0 +1,33 @@
+# Czech translation of the xfce-indicator-plugin package.
+# Copyright (C) 2009 Mark Trompell <mark@foresightlinux.org>
+# This file is distributed under the same license as the xfce4-indicator-plugin package.
+# Michal Várady <miko.vaji@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-indicator-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-08 17:54+0000\n"
+"PO-Revision-Date: 2012-01-09 00:29+0100\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
+"Language-Team: Czech <xfce-i18n@xfce.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+
+#: ../panel-plugin/indicator.c:182
+msgid "No Indicators"
+msgstr "Žádné indikátory"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "Indikátor záležitosti, která vyžaduje vaši pozornost na pracovní ploše"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2
+msgid "Indicator Plugin"
+msgstr "Zásuvný modul Indikátor"
+
