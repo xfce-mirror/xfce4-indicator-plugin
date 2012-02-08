@@ -2,14 +2,14 @@
 # the xfce4-indicator-plugin package.
 # This file is distributed under the same license as
 # the xfce4-indicator-plugin package.
-# Chipong Luo <chipong_l@yahoo.com>, 2011.
+# Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 04:10+0000\n"
-"Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
+"POT-Creation-Date: 2012-02-08 05:57+0000\n"
+"Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -18,12 +18,12 @@ msgstr ""
 
 #: ../panel-plugin/indicator.c:182
 msgid "No Indicators"
-msgstr "无提示"
+msgstr "无指示器"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "An indicator of something that needs your attention on the desktop"
-msgstr "桌面上需要您注意的事项的提示器"
+msgstr "桌面上需要您注意的事项的指示器"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
-msgstr "提示器插件"
+msgstr "指示器插件"
