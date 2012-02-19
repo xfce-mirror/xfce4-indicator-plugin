@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-15 16:21+0000\n"
+"POT-Creation-Date: 2012-02-19 09:30+0000\n"
 "PO-Revision-Date: 2011-09-16 00:25+0300\n"
 "Last-Translator: Alper Tekinalp <alper.tekinalp@gmail.com>\n"
 "Language-Team: Turkish\n"
@@ -24,7 +24,7 @@ msgstr "Gösterge Yok"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "An indicator of something that needs your attention on the desktop"
-msgstr ""
+msgstr "Masaüstünde ilgilenmenizi gerektiren şeyleri gösteren bir göstergedir."
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
