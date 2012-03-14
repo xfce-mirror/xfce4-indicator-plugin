@@ -28,6 +28,7 @@
 #include <libindicator/indicator-object.h>
 
 #include "indicator.h"
+#include "indicator-button.h"
 
 #define DEFAULT_EXCLUDED_MODULES NULL
 
@@ -37,6 +38,18 @@ indicator_construct (XfcePanelPlugin *plugin);
 
 static gboolean
 load_module (const gchar * name, IndicatorPlugin * indicator);
+
+static gboolean
+indicator_size_changed (XfcePanelPlugin *plugin, gint size, IndicatorPlugin *indicator);
+
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+static void
+indicator_mode_changed (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, IndicatorPlugin *indicator);
+#else
+static void
+indicator_orientation_changed (XfcePanelPlugin *plugin, GtkOrientation orientation, IndicatorPlugin *indicator);
+#endif
+
 
 /* register the plugin */
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (indicator_construct);
@@ -75,6 +88,7 @@ indicator_save (XfcePanelPlugin *plugin,
     }
 }
 #endif
+
 
 static void
 indicator_read (IndicatorPlugin *indicator)
@@ -178,8 +192,9 @@ indicator_new (XfcePanelPlugin *plugin)
 
   if (indicators_loaded == 0) {
     /* A label to allow for click through */
-    indicator->item = xfce_create_panel_button();
-    gtk_button_set_label(GTK_BUTTON(indicator->item), _("No Indicators"));
+    indicator->item = xfce_indicator_button_new(NULL, NULL);
+    xfce_indicator_button_set_label(XFCE_INDICATOR_BUTTON(indicator->item),
+                                    GTK_LABEL (gtk_label_new(_("No Indicators"))));
     gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
     gtk_widget_show(indicator->item);  
     /* show the panel's right-click menu on this menu */
@@ -216,17 +231,56 @@ indicator_free (XfcePanelPlugin *plugin,
 
 
 
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+static void
+indicator_mode_changed (XfcePanelPlugin     *plugin,
+                        XfcePanelPluginMode  mode,
+                        IndicatorPlugin     *indicator)
+{
+  GList *buttons;
+  GList *button;
+  GtkOrientation orientation;
+  GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation (plugin);
+
+  gtk_orientable_set_orientation (GTK_ORIENTABLE(indicator->buttonbox), panel_orientation);
+
+  orientation = (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
+    GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL;
+
+  buttons = gtk_container_get_children (GTK_CONTAINER (indicator->buttonbox));
+  for (button = buttons; button != NULL; button = g_list_next (button))
+    {
+      xfce_indicator_button_set_panel_orientation (XFCE_INDICATOR_BUTTON (button->data),
+                                                   panel_orientation);
+      xfce_indicator_button_set_orientation (XFCE_INDICATOR_BUTTON (button->data),
+                                             orientation);
+    }
+  indicator_size_changed (plugin, xfce_panel_plugin_get_size (plugin), indicator);
+}
+
+#else
 static void
 indicator_orientation_changed (XfcePanelPlugin *plugin,
                             GtkOrientation   orientation,
                             IndicatorPlugin    *indicator)
 {
-  gint sizex=-1, sizey=-1;
-  gtk_orientable_set_orientation (GTK_ORIENTABLE(indicator->buttonbox), orientation);
-  gtk_widget_get_size_request (GTK_WIDGET (plugin), &sizex, &sizey);
-  gtk_widget_set_size_request (GTK_WIDGET (plugin), sizey, sizex);  
-}
+  GList *buttons;
+  GList *button;
 
+  gtk_orientable_set_orientation (GTK_ORIENTABLE(indicator->buttonbox), orientation);
+
+  buttons = gtk_container_get_children (GTK_CONTAINER (indicator->buttonbox));
+  for (button = buttons; button != NULL; button = g_list_next (button))
+    {
+      xfce_indicator_button_set_panel_orientation (XFCE_INDICATOR_BUTTON (button->data),
+                                                   orientation);
+      xfce_indicator_button_set_orientation (XFCE_INDICATOR_BUTTON (button->data),
+                                             GTK_ORIENTATION_HORIZONTAL);
+    }
+
+  indicator_size_changed (plugin, xfce_panel_plugin_get_size (plugin), indicator);
+}
+#endif
 
 
 static gboolean
@@ -235,6 +289,11 @@ indicator_size_changed (XfcePanelPlugin *plugin,
                      IndicatorPlugin    *indicator)
 {
   GtkOrientation orientation;
+  GList *buttons;
+  GList *button;
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+  gint row_size = size / xfce_panel_plugin_get_nrows (plugin);
+#endif
 
   /* get the orientation of the plugin */
   orientation = xfce_panel_plugin_get_orientation (plugin);
@@ -245,8 +304,20 @@ indicator_size_changed (XfcePanelPlugin *plugin,
   else
     gtk_widget_set_size_request (GTK_WIDGET (plugin), size, -1);
 
+
+  buttons = gtk_container_get_children (GTK_CONTAINER (indicator->buttonbox));
+  for (button = buttons; button != NULL; button = g_list_next (button))
+    {
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+      //xfce_indicator_button_set_size (XFCE_INDICATOR_BUTTON (button->data), row_size);
+#endif
+      xfce_indicator_button_set_panel_size (XFCE_INDICATOR_BUTTON (button->data), size);
+    }
+
   return TRUE;
 }
+
+
 
 static gboolean
 on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
@@ -256,7 +327,7 @@ on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indi
     if( event->button == 1) /* left click only */
     {
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
-      gtk_menu_popup (GTK_MENU(g_object_get_data (G_OBJECT(widget),"menu")), NULL, NULL,
+      gtk_menu_popup (xfce_indicator_button_get_menu (XFCE_INDICATOR_BUTTON(widget)), NULL, NULL,
                       xfce_panel_plugin_position_menu,
                       indicator->plugin, 1, gtk_get_current_event_time ());
       
@@ -276,9 +347,12 @@ menu_deactivate (GtkMenu *menu,
 }
 
 static void
-on_label_changed (GtkLabel *label, GParamSpec *pspec, GtkButton *button)
+on_label_changed (GtkLabel *label, GParamSpec *pspec, XfceIndicatorButton *button)
 {
-  gtk_button_set_label (button, gtk_label_get_label (label));
+  g_return_if_fail (GTK_IS_LABEL (label));
+  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
+
+  xfce_indicator_button_set_label (button, label);
 }
 
 static void
@@ -299,16 +373,23 @@ indicator_construct (XfcePanelPlugin *plugin)
   g_signal_connect (G_OBJECT (plugin), "size-changed",
                     G_CALLBACK (indicator_size_changed), indicator);
 
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+  g_signal_connect (G_OBJECT (plugin), "mode-changed",
+                    G_CALLBACK (indicator_mode_changed), indicator);
+  indicator_mode_changed (plugin, xfce_panel_plugin_get_mode (plugin), indicator);
+#else
   g_signal_connect (G_OBJECT (plugin), "orientation-changed",
                     G_CALLBACK (indicator_orientation_changed), indicator);
+  indicator_orientation_changed (plugin, xfce_panel_plugin_get_orientation (plugin), indicator);
+#endif
 }
 
 
 static gboolean
 entry_scrolled (GtkWidget *menuitem, GdkEventScroll *event, IndicatorPlugin *indicator)
 {
-  IndicatorObject *io = g_object_get_data (G_OBJECT (menuitem), "indicator-custom-object-data");
-  IndicatorObjectEntry *entry = g_object_get_data (G_OBJECT (menuitem), "indicator-custom-entry-data");
+  IndicatorObject *io = xfce_indicator_button_get_io (XFCE_INDICATOR_BUTTON (menuitem));
+  IndicatorObjectEntry *entry = xfce_indicator_button_get_entry (XFCE_INDICATOR_BUTTON (menuitem));
 
   g_return_val_if_fail(INDICATOR_IS_OBJECT(io), FALSE);
   g_return_val_if_fail(indicator != NULL, FALSE);
@@ -322,23 +403,23 @@ entry_scrolled (GtkWidget *menuitem, GdkEventScroll *event, IndicatorPlugin *ind
 static void
 entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
-  GtkWidget * button = gtk_toggle_button_new();
+  XfcePanelPlugin *plugin = ((IndicatorPlugin *) user_data)->plugin;
+  GtkWidget * button = xfce_indicator_button_new (io, entry);
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_button_set_use_underline(GTK_BUTTON (button),TRUE);
   gtk_widget_set_name(GTK_WIDGET (button), "indicator-button");
 
   if (entry->image != NULL)
-    gtk_button_set_image(GTK_BUTTON(button), GTK_WIDGET(entry->image));
+    xfce_indicator_button_set_image(XFCE_INDICATOR_BUTTON(button), entry->image);
 
   if (entry->label != NULL) {
-    gtk_button_set_label(GTK_BUTTON(button), gtk_label_get_label (entry->label));
+    xfce_indicator_button_set_label(XFCE_INDICATOR_BUTTON(button), entry->label);
     g_signal_connect(G_OBJECT(entry->label), "notify::label", G_CALLBACK(on_label_changed), button);
   }
 
   if (entry->menu != NULL)
   {
-    g_object_set_data(G_OBJECT(button), "menu", entry->menu);
-    gtk_menu_attach_to_widget(entry->menu, button, NULL);
+    xfce_indicator_button_set_menu (XFCE_INDICATOR_BUTTON(button), entry->menu);
     g_signal_connect(G_OBJECT(entry->menu), "deactivate", G_CALLBACK(menu_deactivate),NULL);
   }
 
@@ -348,15 +429,27 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
                    user_data);
   gtk_box_pack_start(GTK_BOX(((IndicatorPlugin *)user_data)->buttonbox), button, TRUE, TRUE, 0);
   gtk_widget_show(button);
-  g_object_set_data(G_OBJECT(button), "indicator-custom-object-data", io);
-  g_object_set_data(G_OBJECT(button), "indicator-custom-entry-data", entry);
+
+  xfce_indicator_button_set_panel_size (XFCE_INDICATOR_BUTTON (button),
+                                        xfce_panel_plugin_get_size (plugin));
+  xfce_indicator_button_set_panel_orientation (XFCE_INDICATOR_BUTTON (button),
+                                               xfce_panel_plugin_get_orientation (plugin));
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+  xfce_indicator_button_set_orientation
+    (XFCE_INDICATOR_BUTTON (button),
+     (xfce_panel_plugin_get_mode (plugin) == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
+     GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL);
+#else
+  xfce_indicator_button_set_orientation (XFCE_INDICATOR_BUTTON (button),
+                                         GTK_ORIENTATION_HORIZONTAL);
+#endif
 }
 
 
 static void
 entry_removed_cb (GtkWidget * widget, gpointer userdata)
 {
-  gpointer data = g_object_get_data(G_OBJECT(widget), "indicator-custom-entry-data");
+  gpointer data = (gpointer) xfce_indicator_button_get_entry (XFCE_INDICATOR_BUTTON (widget));
 
   if (data != userdata)
     return;

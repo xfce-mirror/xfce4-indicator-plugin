@@ -14,6 +14,8 @@ plugindir =										\
 	$(libexecdir)/xfce4/panel-plugins
 
 xfce4_indicator_plugin_SOURCES =				\
+	indicator-button.c									\
+	indicator-button.h									\
 	indicator.c									\
 	indicator.h									
 
