@@ -40,13 +40,13 @@ struct _XfceIndicatorButton
   IndicatorObjectEntry *entry;
   GtkMenu              *menu;
 
-  GtkWidget            *outer_box;
   GtkWidget            *box;
   GtkWidget            *label;
   GtkWidget            *icon;
 
   gint                  panel_size;
   gint                  size;
+  gint                  orig_icon_size;
 
   GtkOrientation        panel_orientation;
   GtkOrientation        orientation;
@@ -73,13 +73,13 @@ IndicatorObject *xfce_indicator_button_get_io (XfceIndicatorButton *button);
 
 GtkMenu *xfce_indicator_button_get_menu (XfceIndicatorButton *button);
 
-void xfce_indicator_button_set_orientation (XfceIndicatorButton *button, GtkOrientation orientation);
+void xfce_indicator_button_set_orientation (XfceIndicatorButton *button,
+                                            GtkOrientation panel_orientation,
+                                            GtkOrientation orientation);
 
-void xfce_indicator_button_set_panel_orientation (XfceIndicatorButton *button, GtkOrientation orientation);
-
-void xfce_indicator_button_set_panel_size (XfceIndicatorButton *button, gint size);
-
-void xfce_indicator_button_set_size (XfceIndicatorButton *button, gint size);
+void xfce_indicator_button_set_size (XfceIndicatorButton *button,
+                                     gint panel_size,
+                                     gint size);
 
 GtkWidget *xfce_indicator_button_new (IndicatorObject *io, IndicatorObjectEntry *entry);
 

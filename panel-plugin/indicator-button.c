@@ -41,6 +41,8 @@ xfce_indicator_button_class_init (XfceIndicatorButtonClass *klass)
 static void
 xfce_indicator_button_init (XfceIndicatorButton *button)
 {
+  GtkWidget   *outer_container;
+
   GTK_WIDGET_UNSET_FLAGS (GTK_WIDGET (button), GTK_CAN_DEFAULT | GTK_CAN_FOCUS);
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_button_set_use_underline (GTK_BUTTON (button),TRUE);
@@ -53,18 +55,21 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
 
   button->label = NULL;
   button->icon = NULL;
-  button->size = -1;
-  button->panel_size = -1;
+
+  button->size = 0;
+  button->panel_size = 0;
+  button->orig_icon_size = 0;
   button->panel_orientation = GTK_ORIENTATION_HORIZONTAL;
   button->orientation = GTK_ORIENTATION_HORIZONTAL;
 
-
-  button->outer_box = xfce_hvbox_new (GTK_ORIENTATION_VERTICAL, FALSE, 1);
-  gtk_container_add (GTK_CONTAINER (button), button->outer_box);
-  gtk_widget_show (button->outer_box);
+  outer_container = gtk_table_new (1, 1, FALSE);
+  gtk_container_add (GTK_CONTAINER (button), outer_container);
+  gtk_widget_show (outer_container);
 
   button->box = xfce_hvbox_new (button->orientation, FALSE, 1);
-  gtk_box_pack_start (GTK_BOX (button->outer_box), button->box, TRUE, FALSE, 0);
+  gtk_table_attach (GTK_TABLE (outer_container), button->box,
+                    0, 1, 0, 1,
+                    GTK_EXPAND | GTK_SHRINK, GTK_EXPAND | GTK_SHRINK, 0, 0);
   gtk_widget_show (button->box);
 }
 
@@ -107,29 +112,34 @@ xfce_indicator_button_finalize (GObject *object)
 
 
 static void
-xfce_indicator_button_check_label_size (XfceIndicatorButton *button)
+xfce_indicator_button_update_layout (XfceIndicatorButton *button)
 {
   GtkRequisition          label_size;
-  gint                    width, border_thickness;
+  gint                    border_thickness;
   GtkStyle               *style;
+  gint                    icon_size;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
 
-  if (button->panel_orientation == GTK_ORIENTATION_VERTICAL &&
-      button->orientation == GTK_ORIENTATION_HORIZONTAL &&
-      button->icon != NULL &&
-      button->label != NULL)
+  if (button->icon != NULL && button->size != 0)
     {
-      gtk_widget_size_request (button->label, &label_size);
-
-      width = gdk_pixbuf_get_width (gtk_image_get_pixbuf (button->icon));
       style = gtk_widget_get_style (GTK_WIDGET (button));
       border_thickness = 2 * MAX (style->xthickness, style->ythickness) + 2;
+      icon_size = MIN (button->size - border_thickness, button->orig_icon_size);
 
-      if (label_size.width > button->panel_size - width - border_thickness)
-        gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_VERTICAL);
-      else
-        gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_HORIZONTAL);
+      if (button->label != NULL &&
+          button->panel_orientation == GTK_ORIENTATION_VERTICAL &&
+          button->orientation == GTK_ORIENTATION_HORIZONTAL)
+        {
+          gtk_widget_size_request (button->label, &label_size);
+
+          if (label_size.width > button->panel_size - icon_size - border_thickness)
+            gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_VERTICAL);
+          else
+            gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_HORIZONTAL);
+        }
+
+      xfce_panel_image_set_size (XFCE_PANEL_IMAGE (button->icon), icon_size);
     }
 }
 
@@ -154,7 +164,7 @@ xfce_indicator_button_set_label (XfceIndicatorButton *button,
       g_object_ref (G_OBJECT (button->label));
       gtk_box_pack_end (GTK_BOX (button->box), button->label, TRUE, FALSE, 1);
     }
-  xfce_indicator_button_check_label_size (button);
+  xfce_indicator_button_update_layout (button);
 }
 
 
@@ -163,6 +173,8 @@ void
 xfce_indicator_button_set_image (XfceIndicatorButton *button,
                                  GtkImage            *image)
 {
+  GdkPixbuf     *pixbuf;
+
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_IMAGE (image));
 
@@ -174,11 +186,15 @@ xfce_indicator_button_set_image (XfceIndicatorButton *button,
           g_object_unref (G_OBJECT (button->icon));
         }
 
-      button->icon = GTK_WIDGET (image);
-      g_object_ref (G_OBJECT (button->icon));
+      pixbuf = gtk_image_get_pixbuf (image);
+      button->orig_icon_size = gdk_pixbuf_get_width (pixbuf);
+
+      button->icon = xfce_panel_image_new_from_pixbuf (pixbuf);
+
       gtk_box_pack_start (GTK_BOX (button->box), button->icon, TRUE, FALSE, 1);
+      gtk_widget_show (button->icon);
     }
-  xfce_indicator_button_check_label_size (button);
+  xfce_indicator_button_update_layout (button);
 }
 
 
@@ -254,66 +270,61 @@ xfce_indicator_button_get_menu (XfceIndicatorButton *button)
 
 void
 xfce_indicator_button_set_orientation (XfceIndicatorButton *button,
+                                       GtkOrientation       panel_orientation,
                                        GtkOrientation       orientation)
 {
+  gboolean    needs_update = FALSE;
+
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
 
-  button->orientation = orientation;
+  if (button->orientation != orientation)
+    {
+      button->orientation = orientation;
 
-  gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), orientation);
+      if (button->label != NULL)
+        gtk_label_set_angle (GTK_LABEL (button->label),
+                             (orientation == GTK_ORIENTATION_VERTICAL) ? -90 : 0);
+      needs_update = TRUE;
+    }
 
-  if (button->label != NULL)
-    gtk_label_set_angle (GTK_LABEL (button->label),
-                         (orientation == GTK_ORIENTATION_VERTICAL) ? -90 : 0);
-  xfce_indicator_button_check_label_size (button);
-}
+  if (button->panel_orientation != panel_orientation)
+    {
+      button->panel_orientation = panel_orientation;
+      needs_update = TRUE;
+    }
 
-
-
-void
-xfce_indicator_button_set_panel_orientation (XfceIndicatorButton *button,
-                                             GtkOrientation       orientation)
-{
-  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
-
-  button->panel_orientation = orientation;
-
-  gtk_orientable_set_orientation
-    (GTK_ORIENTABLE (button->outer_box),
-     (orientation == GTK_ORIENTATION_HORIZONTAL) ?
-     GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL);
-  xfce_indicator_button_check_label_size (button);
-}
-
-
-
-void
-xfce_indicator_button_set_panel_size (XfceIndicatorButton *button,
-                                      gint                 size)
-{
-  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
-
-  button->panel_size = size;
-  xfce_indicator_button_check_label_size (button);
+  if (needs_update)
+    {
+      gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), orientation);
+      xfce_indicator_button_update_layout (button);
+    }
 }
 
 
 
 void
 xfce_indicator_button_set_size (XfceIndicatorButton *button,
+                                gint                 panel_size,
                                 gint                 size)
 {
+  gboolean    needs_update = FALSE;
+
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
 
-  button->size = size;
-
-  size -= (2 + 2 * MAX (GTK_WIDGET (button)->style->xthickness,
-                        GTK_WIDGET (button)->style->ythickness));
-  if (button->icon != NULL)
+  if (button->size != size)
     {
-      gtk_widget_set_size_request (button->icon, size, size);
-      xfce_indicator_button_check_label_size (button);
+      button->size = size;
+      needs_update = TRUE;
     }
+
+  if (button->panel_size != panel_size)
+    {
+      button->panel_size = panel_size;
+      needs_update = TRUE;
+    }
+
+  if (needs_update)
+    xfce_indicator_button_update_layout (button);
 }
 
 
