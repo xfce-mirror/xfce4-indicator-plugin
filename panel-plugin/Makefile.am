@@ -16,6 +16,8 @@ plugindir =										\
 xfce4_indicator_plugin_SOURCES =				\
 	indicator-button.c									\
 	indicator-button.h									\
+	indicator-box.c									\
+	indicator-box.h									\
 	indicator.c									\
 	indicator.h									
 

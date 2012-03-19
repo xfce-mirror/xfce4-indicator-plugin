@@ -28,6 +28,7 @@
 #include <libindicator/indicator-object.h>
 
 #include "indicator.h"
+#include "indicator-box.h"
 #include "indicator-button.h"
 
 #define DEFAULT_EXCLUDED_MODULES NULL
@@ -146,8 +147,7 @@ indicator_new (XfcePanelPlugin *plugin)
                                   INDICATOR_ICONS_DIR);
   /*gtk_widget_set_name(GTK_WIDGET (indicator->plugin), "indicator-plugin");*/
   
-  indicator->buttonbox = gtk_hbox_new(FALSE,0);
-  gtk_widget_set_can_focus(GTK_WIDGET(indicator->buttonbox), TRUE);
+  indicator->buttonbox = xfce_indicator_box_new ();;
   gtk_rc_parse_string (
     "style \"indicator-plugin-style\"\n"
     "{\n"
@@ -157,9 +157,6 @@ indicator_new (XfcePanelPlugin *plugin)
     "    GtkWidget::focus-padding = 0\n"
     "}\n"
     "widget \"*.indicator-button\" style \"indicator-plugin-style\"");
-
-  gtk_widget_set_name(GTK_WIDGET (indicator->buttonbox), "indicator-button");
-  gtk_container_set_border_width(GTK_CONTAINER(indicator->buttonbox), 0);
   
   /* get the list of excluded modules */
   indicator_read (indicator);
@@ -237,24 +234,18 @@ indicator_mode_changed (XfcePanelPlugin     *plugin,
                         XfcePanelPluginMode  mode,
                         IndicatorPlugin     *indicator)
 {
-  GList *buttons;
-  GList *button;
   GtkOrientation orientation;
   GtkOrientation panel_orientation = xfce_panel_plugin_get_orientation (plugin);
-
-  gtk_orientable_set_orientation (GTK_ORIENTABLE(indicator->buttonbox), panel_orientation);
 
   orientation = (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
     GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL;
 
-  buttons = gtk_container_get_children (GTK_CONTAINER (indicator->buttonbox));
-  for (button = buttons; button != NULL; button = g_list_next (button))
-    {
-      xfce_indicator_button_set_orientation (XFCE_INDICATOR_BUTTON (button->data),
-                                             panel_orientation, orientation);
-    }
+  xfce_indicator_box_set_orientation (XFCE_INDICATOR_BOX (indicator->buttonbox), panel_orientation, orientation);
+
   indicator_size_changed (plugin, xfce_panel_plugin_get_size (plugin), indicator);
 }
+
+
 
 #else
 static void
@@ -262,17 +253,7 @@ indicator_orientation_changed (XfcePanelPlugin *plugin,
                             GtkOrientation   orientation,
                             IndicatorPlugin    *indicator)
 {
-  GList *buttons;
-  GList *button;
-
-  gtk_orientable_set_orientation (GTK_ORIENTABLE(indicator->buttonbox), orientation);
-
-  buttons = gtk_container_get_children (GTK_CONTAINER (indicator->buttonbox));
-  for (button = buttons; button != NULL; button = g_list_next (button))
-    {
-      xfce_indicator_button_set_orientation (XFCE_INDICATOR_BUTTON (button->data),
-                                             orientation, GTK_ORIENTATION_HORIZONTAL);
-    }
+  xfce_indicator_box_set_orientation (XFCE_INDICATOR_BOX (indicator->buttonbox), orientation, GTK_ORIENTATION_HORIZONTAL);
 
   indicator_size_changed (plugin, xfce_panel_plugin_get_size (plugin), indicator);
 }
@@ -284,30 +265,13 @@ indicator_size_changed (XfcePanelPlugin *plugin,
                      gint             size,
                      IndicatorPlugin    *indicator)
 {
-  GtkOrientation orientation;
-  GList *buttons;
-  GList *button;
-
-  /* get the orientation of the plugin */
-  orientation = xfce_panel_plugin_get_orientation (plugin);
-
-  /* set the widget size */
-  if (orientation == GTK_ORIENTATION_HORIZONTAL)
-    gtk_widget_set_size_request (GTK_WIDGET (plugin), -1, size);
-  else
-    gtk_widget_set_size_request (GTK_WIDGET (plugin), size, -1);
-
-
-  buttons = gtk_container_get_children (GTK_CONTAINER (indicator->buttonbox));
-  for (button = buttons; button != NULL; button = g_list_next (button))
-    {
 #if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
-      xfce_indicator_button_set_size (XFCE_INDICATOR_BUTTON (button->data),
-                                      size, size / xfce_panel_plugin_get_nrows (plugin));
+  xfce_indicator_box_set_size (XFCE_INDICATOR_BOX (indicator->buttonbox),
+                               size, xfce_panel_plugin_get_nrows (plugin));
 #else
-      xfce_indicator_button_set_size (XFCE_INDICATOR_BUTTON (button->data), size, size);
+  xfce_indicator_box_set_size (XFCE_INDICATOR_BOX (indicator->buttonbox),
+                               size, 1);
 #endif
-    }
 
   return TRUE;
 }
@@ -371,11 +335,9 @@ indicator_construct (XfcePanelPlugin *plugin)
 #if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
   g_signal_connect (G_OBJECT (plugin), "mode-changed",
                     G_CALLBACK (indicator_mode_changed), indicator);
-  indicator_mode_changed (plugin, xfce_panel_plugin_get_mode (plugin), indicator);
 #else
   g_signal_connect (G_OBJECT (plugin), "orientation-changed",
                     G_CALLBACK (indicator_orientation_changed), indicator);
-  indicator_orientation_changed (plugin, xfce_panel_plugin_get_orientation (plugin), indicator);
 #endif
 }
 
@@ -422,27 +384,9 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
                    user_data);
   g_signal_connect(button, "scroll-event", G_CALLBACK(entry_scrolled),
                    user_data);
-  gtk_box_pack_start(GTK_BOX(((IndicatorPlugin *)user_data)->buttonbox), button, TRUE, TRUE, 0);
-  gtk_widget_show(button);
 
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
-  xfce_indicator_button_set_orientation
-    (XFCE_INDICATOR_BUTTON (button),
-     xfce_panel_plugin_get_orientation (plugin),
-     (xfce_panel_plugin_get_mode (plugin) == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
-     GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL);
-  xfce_indicator_button_set_size
-    (XFCE_INDICATOR_BUTTON (button),
-     xfce_panel_plugin_get_size (plugin),
-     xfce_panel_plugin_get_size (plugin) / xfce_panel_plugin_get_nrows (plugin));
-#else
-  xfce_indicator_button_set_orientation (XFCE_INDICATOR_BUTTON (button),
-                                         xfce_panel_plugin_get_orientation (plugin),
-                                         GTK_ORIENTATION_HORIZONTAL);
-  xfce_indicator_button_set_size (XFCE_INDICATOR_BUTTON (button),
-                                  xfce_panel_plugin_get_size (plugin),
-                                  xfce_panel_plugin_get_size (plugin));
-#endif
+  gtk_container_add(XFCE_INDICATOR_BOX (((IndicatorPlugin *)user_data)->buttonbox), button);
+  gtk_widget_show(button);
 }
 
 

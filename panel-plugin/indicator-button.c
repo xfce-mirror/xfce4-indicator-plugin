@@ -133,7 +133,10 @@ xfce_indicator_button_update_layout (XfceIndicatorButton *button)
         {
           gtk_widget_size_request (button->label, &label_size);
 
-          if (label_size.width > button->panel_size - icon_size - border_thickness)
+          /* put icon above the label if number of rows > 1 (they look better)
+             or if they don't fit when arranged horizontally */
+          if (button->panel_size != button->size ||
+              label_size.width > button->panel_size - icon_size - border_thickness)
             gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_VERTICAL);
           else
             gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_HORIZONTAL);
