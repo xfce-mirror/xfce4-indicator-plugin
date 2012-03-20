@@ -148,15 +148,6 @@ indicator_new (XfcePanelPlugin *plugin)
   /*gtk_widget_set_name(GTK_WIDGET (indicator->plugin), "indicator-plugin");*/
   
   indicator->buttonbox = xfce_indicator_box_new ();;
-  gtk_rc_parse_string (
-    "style \"indicator-plugin-style\"\n"
-    "{\n"
-    "    GtkButton::internal-border= 0\n"
-    "    GtkToggleButton::internal-border= 0\n"
-    "    GtkWidget::focus-line-width = 0\n"
-    "    GtkWidget::focus-padding = 0\n"
-    "}\n"
-    "widget \"*.indicator-button\" style \"indicator-plugin-style\"");
   
   /* get the list of excluded modules */
   indicator_read (indicator);
