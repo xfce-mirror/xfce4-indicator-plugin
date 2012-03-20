@@ -43,6 +43,8 @@ struct _XfceIndicatorButton
   GtkWidget            *box;
   GtkWidget            *label;
   GtkWidget            *icon;
+  GtkWidget            *orig_icon;
+  gulong                orig_icon_handler;
 
   gint                  panel_size;
   gint                  size;

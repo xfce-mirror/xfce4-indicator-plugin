@@ -54,7 +54,9 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   button->menu = NULL;
 
   button->label = NULL;
+  button->orig_icon = NULL;
   button->icon = NULL;
+  button->orig_icon_handler = 0;
 
   button->size = 0;
   button->panel_size = 0;
@@ -84,6 +86,11 @@ xfce_indicator_button_finalize (GObject *object)
     {
       g_object_unref (G_OBJECT (button->label));
       button->label = NULL;
+    }
+  if (button->orig_icon != NULL)
+    {
+      g_object_unref (G_OBJECT (button->orig_icon));
+      button->orig_icon = NULL;
     }
   if (button->icon != NULL)
     {
@@ -180,11 +187,15 @@ on_pixbuf_changed (GtkImage *image, GParamSpec *pspec, XfceIndicatorButton *butt
 
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_IMAGE (image));
+  g_return_if_fail (XFCE_IS_PANEL_IMAGE (button->icon));
 
   pixbuf = gtk_image_get_pixbuf (image);
-  button->orig_icon_size = gdk_pixbuf_get_width (pixbuf);
 
-  xfce_panel_image_set_from_pixbuf (button->icon, pixbuf);
+  if (pixbuf != NULL)
+    {
+      button->orig_icon_size = gdk_pixbuf_get_width (pixbuf);
+      xfce_panel_image_set_from_pixbuf (button->icon, pixbuf);
+    }
 }
 
 
@@ -198,19 +209,39 @@ xfce_indicator_button_set_image (XfceIndicatorButton *button,
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_IMAGE (image));
 
-  if (button->icon != GTK_WIDGET (image))
+  if (button->orig_icon != GTK_WIDGET (image))
     {
+      if (button->orig_icon != NULL)
+        {
+          g_signal_handler_disconnect
+            (G_OBJECT (button->orig_icon), button->orig_icon_handler);
+          g_object_unref (G_OBJECT (button->orig_icon));
+        }
+
       if (button->icon != NULL)
         {
           gtk_container_remove (GTK_CONTAINER (button->box), button->icon);
           g_object_unref (G_OBJECT (button->icon));
         }
 
-      pixbuf = gtk_image_get_pixbuf (image);
-      g_signal_connect(G_OBJECT(image), "notify::pixbuf", G_CALLBACK(on_pixbuf_changed), button);
-      button->orig_icon_size = gdk_pixbuf_get_width (pixbuf);
+      button->orig_icon = GTK_WIDGET (image);
+      g_object_ref (G_OBJECT (button->orig_icon));
 
-      button->icon = xfce_panel_image_new_from_pixbuf (pixbuf);
+      button->orig_icon_handler = g_signal_connect
+        (G_OBJECT (image), "notify::pixbuf", G_CALLBACK (on_pixbuf_changed), button);
+      pixbuf = gtk_image_get_pixbuf (image);
+
+      if (pixbuf)
+        {
+          button->orig_icon_size = gdk_pixbuf_get_width (pixbuf);
+          button->icon = xfce_panel_image_new_from_pixbuf (pixbuf);
+        }
+      else
+        {
+          button->icon = xfce_panel_image_new_from_source ("image-missing");
+          /* hard-coded size to mimic the limitation of pixbuf scaling */
+          button->orig_icon_size = 24;
+        }
 
       gtk_box_pack_start (GTK_BOX (button->box), button->icon, TRUE, FALSE, 1);
       gtk_widget_show (button->icon);
@@ -254,7 +285,7 @@ xfce_indicator_button_get_image (XfceIndicatorButton *button)
 {
   g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), NULL);
 
-  return button->icon;
+  return button->orig_icon;
 }
 
 
