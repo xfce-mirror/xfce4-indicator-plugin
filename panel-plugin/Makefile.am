@@ -24,6 +24,7 @@ xfce4_indicator_plugin_SOURCES =				\
 xfce4_indicator_plugin_CFLAGS =					\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
+	$(XFCONF_CFLAGS)					\
 	$(INDICATOR_CFLAGS)						\
 	$(PLATFORM_CFLAGS)					\
 	-DDATADIR=\""$(datadir)"\" 				\
@@ -34,6 +35,7 @@ xfce4_indicator_plugin_CFLAGS =					\
 xfce4_indicator_plugin_LDADD =					\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(LIBXFCE4PANEL_LIBS)						\
+	$(XFCONF_LIBS)						\
 	$(INDICATOR_LIBS)
 
 #

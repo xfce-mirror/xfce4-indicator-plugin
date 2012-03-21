@@ -26,6 +26,7 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libindicator/indicator-object.h>
+#include <xfconf/xfconf.h>
 
 #include "indicator.h"
 #include "indicator-box.h"
@@ -94,36 +95,15 @@ indicator_save (XfcePanelPlugin *plugin,
 static void
 indicator_read (IndicatorPlugin *indicator)
 {
-  XfceRc      *rc;
-  gchar       *file;
-
-  /* get the plugin config file location */
-  file = xfce_panel_plugin_lookup_rc_file (indicator->plugin);
-
-  if (G_LIKELY (file != NULL))
-    {
-      /* open the config file, readonly */
-      rc = xfce_rc_simple_open (file, TRUE);
-
-      /* cleanup */
-      g_free (file);
-
-      if (G_LIKELY (rc != NULL))
-        {
-          /* read the settings */
-          indicator->excluded_modules = xfce_rc_read_list_entry (rc, "Exclude", NULL);
-
-          /* cleanup */
-          xfce_rc_close (rc);
-
-          /* leave the function, everything went well */
-          return;
-        }
-    }
-
+  XfconfChannel * channel = xfconf_channel_get ("xfce4-panel");
+  gchar * property = g_strconcat (xfce_panel_plugin_get_property_base(indicator->plugin),"/blacklist",NULL);
+  indicator->excluded_modules = xfconf_channel_get_string_list(channel, property);
+  g_free (property);
   /* something went wrong, apply default values */
+  /*
   DBG ("Applying default settings");
   indicator->excluded_modules = DEFAULT_EXCLUDED_MODULES;
+  */
 }
 
 static IndicatorPlugin *
@@ -148,10 +128,11 @@ indicator_new (XfcePanelPlugin *plugin)
   /*gtk_widget_set_name(GTK_WIDGET (indicator->plugin), "indicator-plugin");*/
   
   indicator->buttonbox = xfce_indicator_box_new ();;
-  
-  /* get the list of excluded modules */
-  indicator_read (indicator);
-  
+  /* initialize xfconf */
+  if (xfconf_init(NULL)){
+    /* get the list of excluded modules */
+    indicator_read (indicator);
+  }
   /* load 'em */
   if (g_file_test(INDICATOR_DIR, (G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))) {
     GDir * dir = g_dir_open(INDICATOR_DIR, 0, NULL);
@@ -212,7 +193,7 @@ indicator_free (XfcePanelPlugin *plugin,
   dialog = g_object_get_data (G_OBJECT (plugin), "dialog");
   if (G_UNLIKELY (dialog != NULL))
     gtk_widget_destroy (dialog);
-
+  xfconf_shutdown();
   /* free the plugin structure */
   panel_slice_free (IndicatorPlugin, indicator);
 }
