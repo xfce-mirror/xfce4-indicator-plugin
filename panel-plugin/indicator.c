@@ -382,7 +382,7 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
   g_signal_connect(button, "scroll-event", G_CALLBACK(entry_scrolled),
                    user_data);
 
-  gtk_container_add(XFCE_INDICATOR_BOX (((IndicatorPlugin *)user_data)->buttonbox), button);
+  gtk_container_add(GTK_CONTAINER (((IndicatorPlugin *)user_data)->buttonbox), button);
   gtk_widget_show(button);
 }
 

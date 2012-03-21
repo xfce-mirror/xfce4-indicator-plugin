@@ -273,8 +273,9 @@ xfce_indicator_button_set_image (XfceIndicatorButton *button,
 
       gtk_box_pack_start (GTK_BOX (button->box), button->icon, TRUE, FALSE, 1);
       gtk_widget_show (button->icon);
+
+      xfce_indicator_button_update_layout (button);
     }
-  xfce_indicator_button_update_layout (button);
 }
 
 
@@ -412,8 +413,11 @@ xfce_indicator_button_set_size (XfceIndicatorButton *button,
       border_thickness = 2 * MAX (style->xthickness, style->ythickness) + 2;
       button->icon_size = button->size - border_thickness;
 
-      xfce_indicator_button_update_icon (button);
-      xfce_indicator_button_update_layout (button);
+      if (button->orig_icon != NULL)
+        {
+          xfce_indicator_button_update_icon (button);
+          xfce_indicator_button_update_layout (button);
+        }
     }
 }
 
