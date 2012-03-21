@@ -33,6 +33,12 @@
 
 #define DEFAULT_EXCLUDED_MODULES NULL
 
+#ifdef LIBXFCE4PANEL_CHECK_VERSION
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#define HAS_PANEL_49
+#endif
+#endif
+
 /* prototypes */
 static void
 indicator_construct (XfcePanelPlugin *plugin);
@@ -43,7 +49,7 @@ load_module (const gchar * name, IndicatorPlugin * indicator);
 static gboolean
 indicator_size_changed (XfcePanelPlugin *plugin, gint size, IndicatorPlugin *indicator);
 
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#ifdef HAS_PANEL_49
 static void
 indicator_mode_changed (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, IndicatorPlugin *indicator);
 #else
@@ -219,7 +225,7 @@ indicator_free (XfcePanelPlugin *plugin,
 
 
 
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#ifdef HAS_PANEL_49
 static void
 indicator_mode_changed (XfcePanelPlugin     *plugin,
                         XfcePanelPluginMode  mode,
@@ -256,7 +262,7 @@ indicator_size_changed (XfcePanelPlugin *plugin,
                      gint             size,
                      IndicatorPlugin    *indicator)
 {
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#ifdef HAS_PANEL_49
   xfce_indicator_box_set_size (XFCE_INDICATOR_BOX (indicator->buttonbox),
                                size, xfce_panel_plugin_get_nrows (plugin));
 #else
@@ -323,7 +329,7 @@ indicator_construct (XfcePanelPlugin *plugin)
   g_signal_connect (G_OBJECT (plugin), "size-changed",
                     G_CALLBACK (indicator_size_changed), indicator);
 
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#ifdef HAS_PANEL_49
   g_signal_connect (G_OBJECT (plugin), "mode-changed",
                     G_CALLBACK (indicator_mode_changed), indicator);
 #else
