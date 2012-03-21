@@ -40,6 +40,7 @@ struct _XfceIndicatorBox
 
   gint                  panel_size;
   gint                  nrows;
+  gint                  nrows_min;
 
   GtkOrientation        panel_orientation;
   GtkOrientation        orientation;
