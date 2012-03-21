@@ -22,6 +22,8 @@ xfce4_indicator_plugin_SOURCES =				\
 	indicator.h									
 
 xfce4_indicator_plugin_CFLAGS =					\
+	$(GTK_CFLAGS) \
+	$(EXO_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(LIBXFCE4PANEL_CFLAGS)						\
 	$(INDICATOR_CFLAGS)						\
@@ -32,6 +34,8 @@ xfce4_indicator_plugin_CFLAGS =					\
 
 
 xfce4_indicator_plugin_LDADD =					\
+	$(GTK_LIBS) \
+	$(EXO_LIBS) \
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(LIBXFCE4PANEL_LIBS)						\
 	$(INDICATOR_LIBS)

@@ -65,6 +65,7 @@ dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.14.0])
+XDT_CHECK_PACKAGE([EXO], [exo-1], [0.6.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([INDICATOR], [indicator], [0.3.0], [indicator_pkgname=indicator], [XDT_CHECK_PACKAGE([INDICATOR], [indicator-0.4], [0.3.90], [indicator_pkgname=indicator-0.4], [])])
