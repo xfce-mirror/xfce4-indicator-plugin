@@ -303,15 +303,6 @@ menu_deactivate (GtkMenu *menu,
 }
 
 static void
-on_label_changed (GtkLabel *label, GParamSpec *pspec, XfceIndicatorButton *button)
-{
-  g_return_if_fail (GTK_IS_LABEL (label));
-  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
-
-  xfce_indicator_button_set_label (button, label);
-}
-
-static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
   IndicatorPlugin *indicator;
@@ -366,10 +357,8 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
   if (entry->image != NULL)
     xfce_indicator_button_set_image(XFCE_INDICATOR_BUTTON(button), entry->image);
 
-  if (entry->label != NULL) {
+  if (entry->label != NULL)
     xfce_indicator_button_set_label(XFCE_INDICATOR_BUTTON(button), entry->label);
-    g_signal_connect(G_OBJECT(entry->label), "notify::label", G_CALLBACK(on_label_changed), button);
-  }
 
   if (entry->menu != NULL)
   {
