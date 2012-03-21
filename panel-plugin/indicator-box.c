@@ -316,7 +316,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
       requisition->width = panel_size;
       requisition->height = x;
     }
-  g_debug ("indicator-box size request: w=%d h=%d", requisition->width, requisition->height);
+  /* g_debug ("indicator-box size request: w=%d h=%d", requisition->width, requisition->height); */
 }
 
 
@@ -384,8 +384,8 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
           child_alloc.height = length;
         }
 
-      g_debug ("indicator-box size allocate: x=%d y=%d w=%d h=%d",
-               child_alloc.x, child_alloc.y, child_alloc.width, child_alloc.height);
+      /* g_debug ("indicator-box size allocate: x=%d y=%d w=%d h=%d", */
+      /*          child_alloc.x, child_alloc.y, child_alloc.width, child_alloc.height); */
 
       gtk_widget_size_allocate (child, &child_alloc);
 
