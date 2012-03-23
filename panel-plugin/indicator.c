@@ -105,6 +105,9 @@ indicator_read (IndicatorPlugin *indicator)
   gchar * property = g_strconcat (xfce_panel_plugin_get_property_base(indicator->plugin),"/blacklist",NULL);
   indicator->excluded_modules = xfconf_channel_get_string_list(channel, property);
   g_free (property);
+  property = g_strconcat (xfce_panel_plugin_get_property_base(indicator->plugin),"/icon-size-max",NULL);
+  xfconf_g_property_bind (channel, property, G_TYPE_INT, indicator->buttonbox, "icon-size-max");
+  g_free (property);
   /* something went wrong, apply default values */
   /*
   DBG ("Applying default settings");
