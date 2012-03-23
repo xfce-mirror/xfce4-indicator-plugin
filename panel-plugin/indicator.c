@@ -34,6 +34,12 @@
 
 #define DEFAULT_EXCLUDED_MODULES NULL
 
+#ifdef LIBXFCE4PANEL_CHECK_VERSION
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#define HAS_PANEL_49
+#endif
+#endif
+
 /* prototypes */
 static void
 indicator_construct (XfcePanelPlugin *plugin);
@@ -44,7 +50,7 @@ load_module (const gchar * name, IndicatorPlugin * indicator);
 static gboolean
 indicator_size_changed (XfcePanelPlugin *plugin, gint size, IndicatorPlugin *indicator);
 
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#ifdef HAS_PANEL_49
 static void
 indicator_mode_changed (XfcePanelPlugin *plugin, XfcePanelPluginMode mode, IndicatorPlugin *indicator);
 #else
@@ -200,7 +206,7 @@ indicator_free (XfcePanelPlugin *plugin,
 
 
 
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#ifdef HAS_PANEL_49
 static void
 indicator_mode_changed (XfcePanelPlugin     *plugin,
                         XfcePanelPluginMode  mode,
@@ -237,7 +243,7 @@ indicator_size_changed (XfcePanelPlugin *plugin,
                      gint             size,
                      IndicatorPlugin    *indicator)
 {
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#ifdef HAS_PANEL_49
   xfce_indicator_box_set_size (XFCE_INDICATOR_BOX (indicator->buttonbox),
                                size, xfce_panel_plugin_get_nrows (plugin));
 #else
@@ -278,15 +284,6 @@ menu_deactivate (GtkMenu *menu,
 }
 
 static void
-on_label_changed (GtkLabel *label, GParamSpec *pspec, XfceIndicatorButton *button)
-{
-  g_return_if_fail (GTK_IS_LABEL (label));
-  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
-
-  xfce_indicator_button_set_label (button, label);
-}
-
-static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
   IndicatorPlugin *indicator;
@@ -304,7 +301,7 @@ indicator_construct (XfcePanelPlugin *plugin)
   g_signal_connect (G_OBJECT (plugin), "size-changed",
                     G_CALLBACK (indicator_size_changed), indicator);
 
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#ifdef HAS_PANEL_49
   g_signal_connect (G_OBJECT (plugin), "mode-changed",
                     G_CALLBACK (indicator_mode_changed), indicator);
 #else
@@ -341,10 +338,8 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
   if (entry->image != NULL)
     xfce_indicator_button_set_image(XFCE_INDICATOR_BUTTON(button), entry->image);
 
-  if (entry->label != NULL) {
+  if (entry->label != NULL)
     xfce_indicator_button_set_label(XFCE_INDICATOR_BUTTON(button), entry->label);
-    g_signal_connect(G_OBJECT(entry->label), "notify::label", G_CALLBACK(on_label_changed), button);
-  }
 
   if (entry->menu != NULL)
   {
@@ -357,7 +352,7 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
   g_signal_connect(button, "scroll-event", G_CALLBACK(entry_scrolled),
                    user_data);
 
-  gtk_container_add(XFCE_INDICATOR_BOX (((IndicatorPlugin *)user_data)->buttonbox), button);
+  gtk_container_add(GTK_CONTAINER (((IndicatorPlugin *)user_data)->buttonbox), button);
   gtk_widget_show(button);
 }
 

@@ -17,27 +17,43 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
+#include <exo/exo.h>
 #include <libxfce4panel/libxfce4panel.h>
 #include <libindicator/indicator-object.h>
 
 #include "indicator-box.h"
 #include "indicator-button.h"
 
-static void                 xfce_indicator_box_finalize       (GObject        *object);
-static void                 xfce_indicator_box_add            (GtkContainer   *container,
-                                                               GtkWidget      *child);
-static void                 xfce_indicator_box_remove         (GtkContainer   *container,
-                                                               GtkWidget      *child);
-static void                 xfce_indicator_box_forall         (GtkContainer   *container,
-                                                               gboolean        include_internals,
-                                                               GtkCallback     callback,
-                                                               gpointer        callback_data);
-static GType                xfce_indicator_box_child_type     (GtkContainer   *container);
-static void                 xfce_indicator_box_size_request   (GtkWidget      *widget,
-                                                               GtkRequisition *requisition);
-static void                 xfce_indicator_box_size_allocate  (GtkWidget     *widget,
-                                                               GtkAllocation *allocation);
+static void                 xfce_indicator_box_finalize       (GObject          *object);
+static void                 xfce_indicator_box_get_property   (GObject          *object,
+                                                               guint             prop_id,
+                                                               GValue           *value,
+                                                               GParamSpec       *pspec);
+static void                 xfce_indicator_box_set_property   (GObject          *object,
+                                                               guint             prop_id,
+                                                               const GValue     *value,
+                                                               GParamSpec       *pspec);
+static void                 xfce_indicator_box_add            (GtkContainer     *container,
+                                                               GtkWidget        *child);
+static void                 xfce_indicator_box_remove         (GtkContainer     *container,
+                                                               GtkWidget        *child);
+static void                 xfce_indicator_box_forall         (GtkContainer     *container,
+                                                               gboolean          include_internals,
+                                                               GtkCallback       callback,
+                                                               gpointer          callback_data);
+static GType                xfce_indicator_box_child_type     (GtkContainer     *container);
+static void                 xfce_indicator_box_size_request   (GtkWidget        *widget,
+                                                               GtkRequisition   *requisition);
+static void                 xfce_indicator_box_size_allocate  (GtkWidget        *widget,
+                                                               GtkAllocation    *allocation);
+static gint                 xfce_indicator_box_get_row_size   (XfceIndicatorBox *box);
 
+
+enum
+{
+  PROP_0,
+  PROP_ICON_SIZE_MAX
+};
 
 G_DEFINE_TYPE (XfceIndicatorBox, xfce_indicator_box, GTK_TYPE_CONTAINER)
 
@@ -50,6 +66,8 @@ xfce_indicator_box_class_init (XfceIndicatorBoxClass *klass)
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = xfce_indicator_box_finalize;
+  gobject_class->get_property = xfce_indicator_box_get_property;
+  gobject_class->set_property = xfce_indicator_box_set_property;
 
   gtkwidget_class = GTK_WIDGET_CLASS (klass);
   gtkwidget_class->size_request = xfce_indicator_box_size_request;
@@ -60,6 +78,15 @@ xfce_indicator_box_class_init (XfceIndicatorBoxClass *klass)
   gtkcontainer_class->remove = xfce_indicator_box_remove;
   gtkcontainer_class->forall = xfce_indicator_box_forall;
   gtkcontainer_class->child_type = xfce_indicator_box_child_type;
+
+  g_object_class_install_property (gobject_class,
+                                   PROP_ICON_SIZE_MAX,
+                                   g_param_spec_uint ("icon-size-max",
+                                                      NULL, NULL,
+                                                      1,
+                                                      128,
+                                                      24,
+                                                      EXO_PARAM_READWRITE));
 }
 
 
@@ -75,6 +102,7 @@ xfce_indicator_box_init (XfceIndicatorBox *box)
   box->children = NULL;
 
   box->nrows = 1;
+  box->icon_size_max = 24;
   box->panel_size = 16;
   box->panel_orientation = GTK_ORIENTATION_HORIZONTAL;
   box->orientation = GTK_ORIENTATION_HORIZONTAL;
@@ -94,6 +122,67 @@ xfce_indicator_box_finalize (GObject *object)
     }
 
   G_OBJECT_CLASS (xfce_indicator_box_parent_class)->finalize (object);
+}
+
+
+
+static void
+xfce_indicator_box_get_property (GObject    *object,
+                                 guint       prop_id,
+                                 GValue     *value,
+                                 GParamSpec *pspec)
+{
+  XfceIndicatorBox *box = XFCE_INDICATOR_BOX (object);
+  GPtrArray        *array;
+
+  switch (prop_id)
+    {
+    case PROP_ICON_SIZE_MAX:
+      g_value_set_uint (value, box->icon_size_max);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+      break;
+    }
+}
+
+
+
+static void
+xfce_indicator_box_set_property (GObject      *object,
+                                 guint         prop_id,
+                                 const GValue *value,
+                                 GParamSpec   *pspec)
+{
+  XfceIndicatorBox     *box = XFCE_INDICATOR_BOX (object);
+  gint                  val;
+  gint                  size;
+  XfceIndicatorButton  *child;
+  GSList               *li;
+
+  switch (prop_id)
+    {
+    case PROP_ICON_SIZE_MAX:
+      val = g_value_get_uint (value);
+      if (box->icon_size_max != val)
+        {
+          box->icon_size_max = val;
+          size = xfce_indicator_box_get_row_size (box);
+          for (li = box->children; li != NULL; li = li->next)
+            {
+              child = XFCE_INDICATOR_BUTTON (li->data);
+              g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
+              xfce_indicator_button_set_size (child, box->panel_size, size);
+            }
+          gtk_widget_queue_resize (GTK_WIDGET (box));
+        }
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+      break;
+    }
 }
 
 
@@ -143,6 +232,7 @@ xfce_indicator_box_set_size (XfceIndicatorBox *box,
   gboolean              needs_update = FALSE;
   XfceIndicatorButton  *child;
   GSList               *li;
+  gint                  size;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
 
@@ -160,11 +250,12 @@ xfce_indicator_box_set_size (XfceIndicatorBox *box,
 
   if (needs_update)
     {
+      size = xfce_indicator_box_get_row_size (box);
       for (li = box->children; li != NULL; li = li->next)
         {
           child = XFCE_INDICATOR_BUTTON (li->data);
           g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
-          xfce_indicator_button_set_size (child, panel_size, panel_size / nrows);
+          xfce_indicator_button_set_size (child, panel_size, size);
         }
       gtk_widget_queue_resize (GTK_WIDGET (box));
     }
@@ -187,6 +278,7 @@ xfce_indicator_box_add (GtkContainer *container,
 {
   XfceIndicatorBox    *box = XFCE_INDICATOR_BOX (container);
   XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (child);
+  gint                 size;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
   g_return_if_fail (GTK_IS_WIDGET (child));
@@ -196,7 +288,8 @@ xfce_indicator_box_add (GtkContainer *container,
 
   gtk_widget_set_parent (child, GTK_WIDGET (box));
   xfce_indicator_button_set_orientation (button, box->panel_orientation, box->orientation);
-  xfce_indicator_button_set_size (button, box->panel_size, box->panel_size / box->nrows);
+  size = xfce_indicator_box_get_row_size (box);
+  xfce_indicator_button_set_size (button, box->panel_size, size);
 
   gtk_widget_queue_resize (GTK_WIDGET (container));
 }
@@ -265,6 +358,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
   gint              panel_size;
   gint              length;
   gint              row;
+  gint              nrows;
   gint              x;
   gboolean          has_label;
 
@@ -272,6 +366,9 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
   row = 0;
   length = 0;
   x = 0;
+  //nrows = MAX (box->nrows,
+  //             box->panel_size / xfce_indicator_box_get_row_size (box));
+  nrows = box->panel_size / xfce_indicator_box_get_row_size (box);
 
   for (li = box->children; li != NULL; li = li->next)
     {
@@ -282,7 +379,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
       has_label = (xfce_indicator_button_get_label (XFCE_INDICATOR_BUTTON (child)) != NULL);
 
       /* wrap rows if column is overflowing or a label is encountered */
-      if (row > 0 && (has_label || row >= box->nrows))
+      if (row > 0 && (has_label || row >= nrows))
         {
           x += length;
           row = 0;
@@ -292,7 +389,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
       length =
         MAX (length, (box->panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
 
-      if (has_label || row >= box->nrows)
+      if (has_label || row >= nrows)
         {
           x += length;
           row = 0;
@@ -316,7 +413,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
       requisition->width = panel_size;
       requisition->height = x;
     }
-  g_debug ("indicator-box size request: w=%d h=%d", requisition->width, requisition->height);
+  /* g_debug ("indicator-box size request: w=%d h=%d", requisition->width, requisition->height); */
 }
 
 
@@ -335,6 +432,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   GSList           *li;
   gint              length, width;
   gint              row;
+  gint              nrows;
   gboolean          has_label;
 
   row = 0;
@@ -344,8 +442,10 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   x0 = allocation->x;
   y0 = allocation->y;
 
+  //nrows = MAX (box->nrows, box->panel_size / box->icon_size_max);
+  nrows = box->panel_size / xfce_indicator_box_get_row_size (box);
   panel_size = box->panel_size;
-  size = panel_size / box->nrows;
+  size = panel_size / nrows;
 
   for (li = box->children; li != NULL; li = li->next)
     {
@@ -357,7 +457,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
       has_label = (xfce_indicator_button_get_label (XFCE_INDICATOR_BUTTON (child)) != NULL);
 
       /* wrap rows if column is overflowing or a label is encountered */
-      if (row > 0 && (has_label || row >= box->nrows))
+      if (row > 0 && (has_label || row >= nrows))
         {
           x += length;
           y = 0;
@@ -384,12 +484,12 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
           child_alloc.height = length;
         }
 
-      g_debug ("indicator-box size allocate: x=%d y=%d w=%d h=%d",
-               child_alloc.x, child_alloc.y, child_alloc.width, child_alloc.height);
+      /* g_debug ("indicator-box size allocate: x=%d y=%d w=%d h=%d", */
+      /*          child_alloc.x, child_alloc.y, child_alloc.width, child_alloc.height); */
 
       gtk_widget_size_allocate (child, &child_alloc);
 
-      if (has_label || row >= box->nrows)
+      if (has_label || row >= nrows)
         {
           x += length;
           y = 0;
@@ -406,3 +506,16 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
 
 
+static gint
+xfce_indicator_box_get_row_size (XfceIndicatorBox *box)
+{
+  gint                 border_thickness;
+  GtkStyle            *style;
+
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 24);
+
+  style = gtk_widget_get_style (GTK_WIDGET (box));
+  border_thickness = 2 * MAX (style->xthickness, style->ythickness) + 2;
+
+  return MIN (box->panel_size / box->nrows, box->icon_size_max + border_thickness);
+}
