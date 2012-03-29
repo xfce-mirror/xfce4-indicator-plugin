@@ -18,6 +18,11 @@
 #ifndef __INDICATOR_BOX_H__
 #define __INDICATOR_BOX_H__
 
+#include <glib.h>
+#include <gtk/gtk.h>
+#include <libindicator/indicator-object.h>
+#include "indicator-button.h"
+
 G_BEGIN_DECLS
 
 GType xfce_indicator_box_get_type (void);
@@ -51,13 +56,16 @@ struct _XfceIndicatorBoxClass
   GtkContainerClass __parent__;
 };
 
-void xfce_indicator_box_set_orientation (XfceIndicatorBox *button,
+void xfce_indicator_box_set_orientation (XfceIndicatorBox *box,
                                          GtkOrientation panel_orientation,
                                          GtkOrientation orientation);
 
-void xfce_indicator_box_set_size (XfceIndicatorBox *button,
+void xfce_indicator_box_set_size (XfceIndicatorBox *box,
                                   gint panel_size,
                                   gint nrows);
+
+XfceIndicatorButton *xfce_indicator_box_get_button (XfceIndicatorBox     *box,
+                                                    IndicatorObjectEntry *entry);
 
 GtkWidget *xfce_indicator_box_new ();
 

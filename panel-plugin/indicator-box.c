@@ -519,3 +519,26 @@ xfce_indicator_box_get_row_size (XfceIndicatorBox *box)
 
   return MIN (box->panel_size / box->nrows, box->icon_size_max + border_thickness);
 }
+
+
+XfceIndicatorButton *
+xfce_indicator_box_get_button (XfceIndicatorBox     *box,
+                               IndicatorObjectEntry *entry)
+{
+  GSList              *li;
+  GtkWidget           *child;
+  XfceIndicatorButton *button;
+
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), NULL);
+
+  for (li = box->children; li != NULL; li = li->next)
+    {
+      child = GTK_WIDGET (li->data);
+      g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (child), NULL);
+
+      button = XFCE_INDICATOR_BUTTON (child);
+      if (xfce_indicator_button_get_entry (button) == entry)
+        return button;
+    }
+  return NULL;
+}

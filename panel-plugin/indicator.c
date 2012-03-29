@@ -361,21 +361,14 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
 
 
 static void
-entry_removed_cb (GtkWidget * widget, gpointer userdata)
-{
-  gpointer data = (gpointer) xfce_indicator_button_get_entry (XFCE_INDICATOR_BUTTON (widget));
-
-  if (data != userdata)
-    return;
-    
-  gtk_widget_destroy(widget);
-}
-
-
-static void
 entry_removed (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
-  gtk_container_foreach(GTK_CONTAINER(user_data), entry_removed_cb, entry);
+  XfceIndicatorButton *button;
+
+  button = xfce_indicator_box_get_button (XFCE_INDICATOR_BOX (user_data), entry);
+
+  if (button != NULL)
+    gtk_widget_destroy (GTK_WIDGET (button));
 }
 
 

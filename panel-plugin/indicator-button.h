@@ -18,6 +18,10 @@
 #ifndef __INDICATOR_BUTTON_H__
 #define __INDICATOR_BUTTON_H__
 
+#include <glib.h>
+#include <gtk/gtk.h>
+#include <libindicator/indicator-object.h>
+
 G_BEGIN_DECLS
 
 GType xfce_indicator_button_get_type (void);
