@@ -1,19 +1,24 @@
+
 INCLUDES =										\
 	-I$(top_srcdir)								\
-	-DG_LOG_DOMAIN=\"xfce4-indicator-plugin\"	\
+	-DG_LOG_DOMAIN=\"libindicator-plugin\"	\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
 	$(PLATFORM_CPPFLAGS)
 
 #
 # Indicator plugin
 #
-plugin_PROGRAMS =								\
-	xfce4-indicator-plugin
+plugindir = \
+	$(libdir)/xfce4/panel/plugins
 
-plugindir =										\
-	$(libexecdir)/xfce4/panel-plugins
+plugin_LTLIBRARIES = \
+	libindicator-plugin.la
 
-xfce4_indicator_plugin_SOURCES =				\
+libindicator_built_sources = \
+	indicator-dialog_ui.h
+
+libindicator_plugin_la_SOURCES = \
+	$(libindicator_built_sources) \
 	indicator-button.c									\
 	indicator-button.h									\
 	indicator-box.c									\
@@ -21,7 +26,7 @@ xfce4_indicator_plugin_SOURCES =				\
 	indicator.c									\
 	indicator.h									
 
-xfce4_indicator_plugin_CFLAGS =					\
+libindicator_plugin_la_CFLAGS = \
 	$(GTK_CFLAGS) \
 	$(EXO_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS)						\
@@ -33,8 +38,14 @@ xfce4_indicator_plugin_CFLAGS =					\
 	-DINDICATOR_ICONS_DIR=\""$(INDICATORICONSDIR)"\" \
 	-DINDICATOR_DIR=\""$(INDICATORDIR)"\"
 
+libindicator_plugin_la_LDFLAGS = \
+	-avoid-version \
+	-module \
+	-no-undefined \
+	-export-symbols-regex '^xfce_panel_module_(preinit|init|construct)' \
+	$(PLATFORM_LDFLAGS)
 
-xfce4_indicator_plugin_LDADD =					\
+libindicator_plugin_la_LIBADD = \
 	$(GTK_LIBS) \
 	$(EXO_LIBS) \
 	$(LIBXFCE4UTIL_LIBS)						\
@@ -46,16 +57,10 @@ xfce4_indicator_plugin_LDADD =					\
 # Desktop file
 #
 desktopdir =									\
-	$(datadir)/xfce4/panel-plugins
+	$(datadir)/xfce4/panel/plugins
 
-desktop_in_in_files =							\
-	indicator.desktop.in.in
-
-desktop_in_files =								\
-	$(desktop_in_in_files:.desktop.in.in=.desktop.in)
-
-%.desktop.in: %.desktop.in.in
-	sed -e "s,\@libexecdir\@,$(libexecdir),g" < $< > $@
+desktop_in_files = \
+	indicator.desktop.in
 
 desktop_DATA =									\
 	$(desktop_in_files:.desktop.in=.desktop)
@@ -63,10 +68,20 @@ desktop_DATA =									\
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST =									\
-	$(desktop_in_in_files)
+	$(desktop_in_files)
 
-CLEANFILES =									\
-	$(desktop_in_files)							\
+DISTCLEANFILES = \
 	$(desktop_DATA)
+
+if MAINTAINER_MODE
+BUILT_SOURCES = \
+	$(libindicator_plugin_built_sources)
+
+DISTCLEANFILES += \
+	$(libindicator_plugin_built_sources)
+
+indicator-dialog_ui.h: indicator-dialog.glade
+	$(AM_V_GEN) exo-csource --static --strip-comments --strip-content --name=indicator_dialog_ui $< >$@
+endif
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
