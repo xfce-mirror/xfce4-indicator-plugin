@@ -31,6 +31,7 @@
 #include "indicator.h"
 #include "indicator-box.h"
 #include "indicator-button.h"
+#include "indicator-dialog.h"
 
 #define DEFAULT_EXCLUDED_MODULES NULL
 
@@ -45,6 +46,7 @@ static void             indicator_construct                        (XfcePanelPlu
 static void             indicator_free                             (XfcePanelPlugin       *plugin);
 static gboolean         load_module                                (const gchar           *name,
                                                                     IndicatorPlugin       *indicator);
+static void             indicator_configure_plugin                 (XfcePanelPlugin       *plugin);
 static gboolean         indicator_size_changed                     (XfcePanelPlugin       *plugin,
                                                                     gint                   size);
 #ifdef HAS_PANEL_49
@@ -150,7 +152,7 @@ indicator_class_init (IndicatorPluginClass *klass)
   plugin_class->construct = indicator_construct;
   plugin_class->free_data = indicator_free;
   plugin_class->size_changed = indicator_size_changed;
-  //plugin_class->configure_plugin = indicator_configure_plugin;
+  plugin_class->configure_plugin = indicator_configure_plugin;
 #ifdef HAS_PANEL_49
   plugin_class->mode_changed = indicator_mode_changed;
 #else
@@ -251,6 +253,17 @@ indicator_free (XfcePanelPlugin *plugin)
 
 
 
+static void
+indicator_configure_plugin (XfcePanelPlugin *plugin)
+{
+  g_return_if_fail (XFCE_IS_INDICATOR_PLUGIN (plugin));
+
+  indicator_dialog_show (gtk_widget_get_screen (GTK_WIDGET (plugin)), XFCE_INDICATOR_PLUGIN (plugin));
+}
+
+
+
+
 #ifdef HAS_PANEL_49
 static void
 indicator_mode_changed (XfcePanelPlugin     *plugin,
@@ -336,6 +349,8 @@ static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
   IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
+
+  xfce_panel_plugin_menu_show_configure (plugin);
 
   //consider moving some stuff from indicator_init() here
 }
@@ -430,4 +445,13 @@ load_module (const gchar * name, IndicatorPlugin * indicator)
 	g_list_free(entries);
 
 	return TRUE;
+}
+
+
+XfceIndicatorBox *
+indicator_get_buttonbox (IndicatorPlugin *plugin)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_PLUGIN (plugin), NULL);
+
+  return plugin->buttonbox;
 }

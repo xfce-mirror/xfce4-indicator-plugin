@@ -21,6 +21,7 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libxfce4panel/libxfce4panel.h>
+#include "indicator-box.h"
 
 G_BEGIN_DECLS
 typedef struct _IndicatorPluginClass IndicatorPluginClass;
@@ -41,9 +42,10 @@ void  indicator_register_type (XfcePanelTypeModule *type_module);
 #define INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED "scroll-entry"
 #endif
 
-void
-indicator_save (XfcePanelPlugin *plugin,
-             IndicatorPlugin    *indicator);
+void                indicator_save             (XfcePanelPlugin    *plugin,
+                                                IndicatorPlugin    *indicator);
+
+XfceIndicatorBox   *indicator_get_buttonbox    (IndicatorPlugin    *plugin);
 
 G_END_DECLS
 
