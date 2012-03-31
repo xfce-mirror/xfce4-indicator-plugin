@@ -15,6 +15,16 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+
+
+/*
+ *  This file implements an indicator button class corresponding to
+ *  a single indicator object entry.
+ *
+ */
+
+
+
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libxfce4panel/libxfce4panel.h>

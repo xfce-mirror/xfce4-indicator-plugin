@@ -15,6 +15,15 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+
+
+/*
+ *  This file implements a container class for holding indicator buttons.
+ *
+ */
+
+
+
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <exo/exo.h>
