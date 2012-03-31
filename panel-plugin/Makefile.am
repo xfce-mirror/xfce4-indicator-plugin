@@ -14,11 +14,7 @@ plugindir = \
 plugin_LTLIBRARIES = \
 	libindicator-plugin.la
 
-libindicator_built_sources = \
-	indicator-dialog_ui.h
-
 libindicator_plugin_la_SOURCES = \
-	$(libindicator_built_sources) \
 	indicator-button.c									\
 	indicator-button.h									\
 	indicator-box.c									\
@@ -72,16 +68,5 @@ EXTRA_DIST =									\
 
 DISTCLEANFILES = \
 	$(desktop_DATA)
-
-if MAINTAINER_MODE
-BUILT_SOURCES = \
-	$(libindicator_plugin_built_sources)
-
-DISTCLEANFILES += \
-	$(libindicator_plugin_built_sources)
-
-indicator-dialog_ui.h: indicator-dialog.glade
-	$(AM_V_GEN) exo-csource --static --strip-comments --strip-content --name=indicator_dialog_ui $< >$@
-endif
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
