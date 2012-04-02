@@ -213,6 +213,8 @@ xfce_indicator_button_set_label (XfceIndicatorButton *button,
 
       button->label = GTK_WIDGET (label);
       g_object_ref (G_OBJECT (button->label));
+      gtk_label_set_angle (GTK_LABEL (button->label),
+                           (button->orientation == GTK_ORIENTATION_VERTICAL) ? -90 : 0);
       gtk_box_pack_end (GTK_BOX (button->box), button->label, TRUE, FALSE, 1);
     }
   xfce_indicator_button_update_layout (button);
