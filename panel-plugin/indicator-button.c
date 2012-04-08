@@ -93,35 +93,18 @@ xfce_indicator_button_finalize (GObject *object)
   XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (object);
 
   if (button->label != NULL)
-    {
-      g_object_unref (G_OBJECT (button->label));
-      button->label = NULL;
-    }
+    g_object_unref (G_OBJECT (button->label));
   if (button->orig_icon != NULL)
-    {
-      g_object_unref (G_OBJECT (button->orig_icon));
-      button->orig_icon = NULL;
-    }
+    g_object_unref (G_OBJECT (button->orig_icon));
   if (button->icon != NULL)
-    {
-      g_object_unref (G_OBJECT (button->icon));
-      button->icon = NULL;
-    }
-  if (button->io != NULL)
-    {
-      g_object_unref (G_OBJECT (button->io));
-      button->io = NULL;
-    }
-  if (button->entry != NULL)
-    {
-      g_object_unref (G_OBJECT (button->entry));
-      button->entry = NULL;
-    }
+    g_object_unref (G_OBJECT (button->icon));
   if (button->menu != NULL)
-    {
-      g_object_unref (G_OBJECT (button->menu));
-      button->menu = NULL;
-    }
+    g_object_unref (G_OBJECT (button->menu));
+  /* IndicatorObjectEntry is not GObject */
+  /* if (button->entry != NULL) */
+  /*   g_object_unref (G_OBJECT (button->entry)); */
+  if (button->io != NULL)
+    g_object_unref (G_OBJECT (button->io));
 
   G_OBJECT_CLASS (xfce_indicator_button_parent_class)->finalize (object);
 }
@@ -442,10 +425,11 @@ xfce_indicator_button_new (IndicatorObject *io,
   XfceIndicatorButton *button = g_object_new (XFCE_TYPE_INDICATOR_BUTTON, NULL);
   button->io = io;
   button->entry = entry;
-  g_object_ref (G_OBJECT (button->io));
-  g_object_ref (G_OBJECT (button->entry));
+  if (button->io != NULL)
+    g_object_ref (G_OBJECT (button->io));
+  /* IndicatorObjectEntry is not GObject */
+  /* g_object_ref (G_OBJECT (button->entry)); */
   return GTK_WIDGET (button);
 }
-
 
 
