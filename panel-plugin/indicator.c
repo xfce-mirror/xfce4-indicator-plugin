@@ -175,74 +175,17 @@ static void
 indicator_init (IndicatorPlugin *indicator)
 {
   XfcePanelPlugin  *plugin = XFCE_PANEL_PLUGIN (indicator);
-  GtkRcStyle       *style;
 
-  /* setup transation domain */
-  xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-
-  GtkOrientation  orientation;
-  gint indicators_loaded = 0;
-
-  /* get the current orientation */
-  orientation = xfce_panel_plugin_get_orientation (plugin);
-
-  /* Init some theme/icon stuff */
-  gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(),
-                                  INDICATOR_ICONS_DIR);
-  /*gtk_widget_set_name(GTK_WIDGET (indicator->plugin), "indicator-plugin");*/
+  indicator->ebox = gtk_event_box_new();
+  gtk_widget_set_can_focus(GTK_WIDGET(indicator->ebox), TRUE);
 
   indicator->buttonbox = xfce_indicator_box_new ();
-
-  /* initialize xfconf */
-  if (xfconf_init(NULL)){
-    /* get the list of excluded modules */
-    indicator_read (indicator);
-  }
-  /* load 'em */
-  if (g_file_test(INDICATOR_DIR, (G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))) {
-    GDir * dir = g_dir_open(INDICATOR_DIR, 0, NULL);
-
-    const gchar * name;
-    guint i, length;
-    gboolean match = FALSE;
-
-    length = (indicator->excluded_modules != NULL) ? g_strv_length (indicator->excluded_modules) : 0;
-    while ((name = g_dir_read_name(dir)) != NULL) {
-      for (i = 0; i < length; ++i) {
-        if (match = (g_strcmp0 (name, indicator->excluded_modules[i]) == 0))
-          break;
-      }
-
-      if (G_UNLIKELY (match)) {
-        g_debug ("Excluding module: %s", name);
-        continue;
-      }
-
-      if (load_module(name, indicator))
-        indicators_loaded++;
-    }
-    g_dir_close (dir);
-  }
-
-  if (indicators_loaded == 0) {
-    /* A label to allow for click through */
-    indicator->item = xfce_indicator_button_new(NULL, NULL);
-    xfce_indicator_button_set_label(XFCE_INDICATOR_BUTTON(indicator->item),
-                                    GTK_LABEL (gtk_label_new(_("No Indicators"))));
-    gtk_container_add (GTK_CONTAINER (plugin), indicator->item);
-    gtk_widget_show(indicator->item);
-    /* show the panel's right-click menu on this menu */
-    xfce_panel_plugin_add_action_widget (plugin, indicator->item);
-  } else {
-    indicator->ebox = gtk_event_box_new();
-    gtk_widget_set_can_focus(GTK_WIDGET(indicator->ebox), TRUE);
-    gtk_container_add (GTK_CONTAINER (indicator->ebox), GTK_WIDGET(indicator->buttonbox));
-    gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->ebox));
-    gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
-    gtk_widget_show(GTK_WIDGET(indicator->ebox));
-    /* show the panel's right-click menu on this menu */
-    xfce_panel_plugin_add_action_widget (plugin, indicator->ebox);
-  }
+  gtk_container_add (GTK_CONTAINER (indicator->ebox), GTK_WIDGET(indicator->buttonbox));
+  gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->ebox));
+  gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
+  gtk_widget_show(GTK_WIDGET(indicator->ebox));
+  /* show the panel's right-click menu on this menu */
+  xfce_panel_plugin_add_action_widget (plugin, indicator->ebox);
 }
 
 
@@ -357,11 +300,59 @@ menu_deactivate (GtkMenu *menu,
 static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
-  IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
+  IndicatorPlugin  *indicator = XFCE_INDICATOR_PLUGIN (plugin);
+  GtkRcStyle       *style;
+  gint              indicators_loaded = 0;
 
   xfce_panel_plugin_menu_show_configure (plugin);
 
-  //consider moving some stuff from indicator_init() here
+  /* setup transation domain */
+  xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+
+  /* Init some theme/icon stuff */
+  gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(),
+                                  INDICATOR_ICONS_DIR);
+  /*gtk_widget_set_name(GTK_WIDGET (indicator->plugin), "indicator-plugin");*/
+
+  /* initialize xfconf */
+  if (xfconf_init(NULL)){
+    /* get the list of excluded modules */
+    indicator_read (indicator);
+  }
+  /* load 'em */
+  if (g_file_test(INDICATOR_DIR, (G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))) {
+    GDir * dir = g_dir_open(INDICATOR_DIR, 0, NULL);
+
+    const gchar * name;
+    guint i, length;
+    gboolean match = FALSE;
+
+    length = (indicator->excluded_modules != NULL) ? g_strv_length (indicator->excluded_modules) : 0;
+    while ((name = g_dir_read_name(dir)) != NULL) {
+      for (i = 0; i < length; ++i) {
+        if (match = (g_strcmp0 (name, indicator->excluded_modules[i]) == 0))
+          break;
+      }
+
+      if (G_UNLIKELY (match)) {
+        g_debug ("Excluding module: %s", name);
+        continue;
+      }
+
+      if (load_module(name, indicator))
+        indicators_loaded++;
+    }
+    g_dir_close (dir);
+  }
+
+  if (indicators_loaded == 0) {
+    /* A label to allow for click through */
+    indicator->item = xfce_indicator_button_new(NULL, NULL);
+    xfce_indicator_button_set_label(XFCE_INDICATOR_BUTTON(indicator->item),
+                                    GTK_LABEL (gtk_label_new(_("No Indicators"))));
+    gtk_container_add (GTK_CONTAINER (indicator->buttonbox), indicator->item);
+    gtk_widget_show(indicator->item);
+  }
 }
 
 
@@ -384,6 +375,7 @@ static void
 entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
   XfcePanelPlugin *plugin = XFCE_PANEL_PLUGIN (user_data);
+  IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
   GtkWidget * button = xfce_indicator_button_new (io, entry);
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_button_set_use_underline(GTK_BUTTON (button),TRUE);
@@ -406,7 +398,7 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
   g_signal_connect(button, "scroll-event", G_CALLBACK(entry_scrolled),
                    user_data);
 
-  gtk_container_add(GTK_CONTAINER (XFCE_INDICATOR_PLUGIN (user_data)->buttonbox), button);
+  gtk_container_add(GTK_CONTAINER (indicator->buttonbox), button);
   gtk_widget_show(button);
 }
 
@@ -462,5 +454,5 @@ indicator_get_buttonbox (IndicatorPlugin *plugin)
 {
   g_return_val_if_fail (XFCE_IS_INDICATOR_PLUGIN (plugin), NULL);
 
-  return plugin->buttonbox;
+  return XFCE_INDICATOR_BOX (plugin->buttonbox);
 }
