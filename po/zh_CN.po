@@ -7,17 +7,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-14 10:39+0000\n"
+"Report-Msgid-Bugs-To: <xfce-i18n@xfce.org>\n"
+"POT-Creation-Date: 2012-04-20 06:57+0000\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
-"Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
+"Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/indicator.c:197
+#: ../panel-plugin/indicator.c:175
 msgid "No Indicators"
 msgstr "无指示器"
 
