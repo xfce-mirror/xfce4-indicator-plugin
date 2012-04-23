@@ -7,11 +7,11 @@ dnl ***************************
 dnl *** Version information ***
 dnl ***************************
 m4_define([indicator_version_major], [0])
-m4_define([indicator_version_minor], [4])
+m4_define([indicator_version_minor], [5])
 m4_define([indicator_version_micro], [0])
 m4_define([indicator_version_nano],  []) dnl leave this empty to have no nano version
 m4_define([indicator_version_build], [@REVISION@])
-m4_define([indicator_version_tag],   [git])
+m4_define([indicator_version_tag],   [])
 m4_define([indicator_version], [indicator_version_major().indicator_version_minor().indicator_version_micro()ifelse(indicator_version_nano(), [], [], [.indicator_version_nano()])ifelse(indicator_version_tag(), [git], [indicator_version_tag()-indicator_version_build()], [indicator_version_tag()])])
 
 dnl ***************************
@@ -37,8 +37,9 @@ dnl ********************************
 AC_PROG_CC()
 AC_PROG_LD()
 AC_PROG_INSTALL()
-AC_PROG_LIBTOOL()
 AC_PROG_INTLTOOL()
+LT_PREREQ([2.2.6])
+LT_INIT([disable-static])
 
 dnl **********************************
 dnl *** Check for standard headers ***

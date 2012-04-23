@@ -1,4 +1,43 @@
 # created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2012-04-08 828eb61 Cleaning some runtime GObject assert violations Andrzej <ndrwrdck@gmail.com>
+2012-04-02 33611c0 bugfix: fixed label orientation. Andrzej <ndrwrdck@gmail.com>
+2012-04-20 7ce7f33 l10n: Updated Chinese (China) (zh_CN) translation to 100% Chipong Luo <chipong.luo@yahoo.com>
+2012-04-12 33a3472 l10n: Initial Finnish translation Jari Rahkonen <jari.rahkonen@pp1.inet.fi>
+2012-03-23 2bf70a1 bind icon-size-max to xfconf Andrzej <ndrwrdck@gmail.com>
+2012-03-22 969fe20 Replaced "nrows-min" with "icon-size-max" Andrzej <ndrwrdck@gmail.com>
+2012-03-21 517416a brain dead port to xfconf Mark Trompell <mark@foresightlinux.org>
+2012-03-21 43120ff Removed unused on_label_changed Andrzej <ndrwrdck@gmail.com>
+2012-03-21 92aa37e Removing some assert violations and compiler warnings. Andrzej <ndrwrdck@gmail.com>
+2012-03-21 7cf3a0d Added "nrows-min" property. Sets a minimum number of icon rows/columns. Andrzej <ndrwrdck@gmail.com>
+2012-03-21 2b92a4b Added exo dependency Andrzej <ndrwrdck@gmail.com>
+2012-03-21 4433eaf Removed chatty debug messages Andrzej <ndrwrdck@gmail.com>
+2012-03-21 47662af Changed version checking mechanism Andrzej <ndrwrdck@gmail.com>
+2012-03-21 ac510b4 Icons can now be scaled up to the row size (or panel size in 4.8). Andrzej <ndrwrdck@gmail.com>
+2012-03-21 733903a Added a default icon and reworked pixbuf change notification. Andrzej <ndrwrdck@gmail.com>
+2012-03-20 d46b02e notify pixbuf on changing icons Andrzej <ndrwrdck@gmail.com>
+2012-03-20 cb53f68 remove unused gtkrc Mark Trompell <mark@foresightlinux.org>
+2012-03-19 29f92f2 Added support for multi-row layout. Andrzej <ndrwrdck@gmail.com>
+2012-03-18 12875c1 Use resizeable icons. Andrzej <ndrwrdck@gmail.com>
+2012-03-14 b23a0fe l10n: Updated Chinese (China) (zh_CN) translation to 100% Chipong Luo <chipong.luo@yahoo.com>
+2012-03-14 1ca0151 add files I missed with previous commit Andrzej <ndrwrdck@gmail.com>
+2012-03-14 4faa7f1 Adapt the plugin to xfce4-panel 4.9+ Andrzej <ndrwrdck@gmail.com>
+2012-02-28 c57681e l10n: initial commit for Korean translation. Seong-ho Cho <darkcircle.0426@gmail.com>
+2012-02-19 9bdb3cf l10n: Updated Turkish (tr) translation to 100% Utku Berberoğlu <utku.berber@gmail.com>
+2012-02-08 d6aa05b l10n: Updated Chinese (China) (zh_CN) translation to 100% Chipong Luo <chipong.luo@yahoo.com>
+2012-01-24 a2c3c7b l10n: Added Lithuanian language Algimantas Margevičius <gymka@mail.ru>
+2012-01-15 a6f958b l10n: Initial catalan translation. Carles Muñoz Gorriz <carlesmu@internautas.org>
+2012-01-09 da1b85b l10n: Czech transaltion added Michal Várady <miko.vaji@gmail.com>
+2012-01-08 ce2725b l10n: Added portuguese Sergio Marques <smarquespt@gmail.com>
+2011-12-29 998be70 l10n: Updated Bulgarian (bg) translation to 100% Milen Milev <fanfolet@gmail.com>
+2011-12-29 b78e353 l10n: Updates to Bulgarian translation Milen Milev <fanfolet@gmail.com>
+2011-12-09 46ec343 l10n: Updated Chinese (China) (zh_CN) translation to 100% Chipong Luo <chipong_l@yahoo.com>
+2011-11-25 8d40ac2 don't support older gtk than xfce itself Mark Trompell <mark@foresightlinux.org>
+2011-11-24 9aaf142 rm module.xml Mark Trompell <mark@foresightlinux.org>
+2011-11-17 28eb5e4 l10n: Updates to Chinese (Taiwan) translation Cheng-Chia Tseng <pswo10680@gmail.com>
+2011-11-05 32055a7 l10n: Updated Chinese (China) (zh_CN) translation to 100% Chipong Luo <chipong_l@yahoo.com>
+2011-11-05 f21e075 l10n: Initial Hungarian translation for xfce4-indicator-plugin Gabor Kelemen <kelemeng@gnome.hu>
+2011-10-25 2abae06 back to development Mark Trompell <mark@foresightlinux.org>
+2011-10-25 05a80cc prepare for 0.4.0 Mark Trompell <mark@foresightlinux.org>
 2011-10-25 271d081 Fix location of indicator dirs Lionel Le Folgoc <lionel@lefolgoc.net>
 2011-10-25 54cf557 Revert "Fix location of indicator dirs", committed wrong file Mark Trompell <mark@foresightlinux.org>
 2011-10-25 0b91347 Fix location of indicator dirs Lionel Le Folgoc <lionel@lefolgoc.net>
