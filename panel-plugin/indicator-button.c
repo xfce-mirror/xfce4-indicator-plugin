@@ -57,7 +57,6 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
   gtk_widget_set_name (GTK_WIDGET (button), "indicator-button");
 
-  button->group = NULL;
   button->entry = NULL;
   button->menu = NULL;
 
