@@ -122,6 +122,12 @@ indicator_dialog_build (IndicatorDialog *dialog,
       g_return_if_fail (GTK_IS_WIDGET (object));
       exo_mutual_binding_new (G_OBJECT (indicator_get_buttonbox (plugin)), "icon-size-max",
                               G_OBJECT (object), "value");
+
+      object = gtk_builder_get_object (GTK_BUILDER (dialog), "checkbutton-align-left");
+      g_return_if_fail (GTK_IS_WIDGET (object));
+      exo_mutual_binding_new (G_OBJECT (indicator_get_buttonbox (plugin)), "align-left",
+                              G_OBJECT (object), "active");
+
     }
   else
     {

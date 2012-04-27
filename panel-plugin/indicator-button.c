@@ -51,15 +51,13 @@ xfce_indicator_button_class_init (XfceIndicatorButtonClass *klass)
 static void
 xfce_indicator_button_init (XfceIndicatorButton *button)
 {
-  GtkWidget   *outer_container;
-
   GTK_WIDGET_UNSET_FLAGS (GTK_WIDGET (button), GTK_CAN_DEFAULT | GTK_CAN_FOCUS);
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_button_set_use_underline (GTK_BUTTON (button),TRUE);
   gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
   gtk_widget_set_name (GTK_WIDGET (button), "indicator-button");
 
-  button->io = NULL;
+  button->group = NULL;
   button->entry = NULL;
   button->menu = NULL;
 
@@ -71,17 +69,16 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   button->size = 0;
   button->panel_size = 0;
   button->icon_size = 24;
+  button->align_left = FALSE;
   button->panel_orientation = GTK_ORIENTATION_HORIZONTAL;
   button->orientation = GTK_ORIENTATION_HORIZONTAL;
 
-  outer_container = gtk_table_new (1, 1, FALSE);
-  gtk_container_add (GTK_CONTAINER (button), outer_container);
-  gtk_widget_show (outer_container);
+  button->alignment = gtk_alignment_new (0.5, 0.5, 0.0, 0.0);
+  gtk_container_add (GTK_CONTAINER (button), button->alignment);
+  gtk_widget_show (button->alignment);
 
   button->box = xfce_hvbox_new (button->orientation, FALSE, 1);
-  gtk_table_attach (GTK_TABLE (outer_container), button->box,
-                    0, 1, 0, 1,
-                    GTK_EXPAND | GTK_SHRINK, GTK_EXPAND | GTK_SHRINK, 0, 0);
+  gtk_container_add (GTK_CONTAINER (button->alignment), button->box);
   gtk_widget_show (button->box);
 }
 
@@ -118,25 +115,28 @@ xfce_indicator_button_update_layout (XfceIndicatorButton *button)
 
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
 
-  if (button->icon != NULL && button->size != 0)
+  if (button->label != NULL &&
+      button->panel_orientation == GTK_ORIENTATION_VERTICAL &&
+      button->orientation == GTK_ORIENTATION_HORIZONTAL)
     {
-      if (button->label != NULL &&
-          button->panel_orientation == GTK_ORIENTATION_VERTICAL &&
-          button->orientation == GTK_ORIENTATION_HORIZONTAL)
-        {
-          gtk_widget_size_request (button->label, &label_size);
+      gtk_alignment_set (GTK_ALIGNMENT (button->alignment), button->align_left ? 0.0 : 0.5, 0.5, 0.0, 0.0);
+      gtk_widget_size_request (button->label, &label_size);
 
-          /* put icon above the label if number of rows > 1 (they look better)
-             or if they don't fit when arranged horizontally */
-          if (button->panel_size != button->size ||
-              label_size.width > button->panel_size - button->size)
-            gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_VERTICAL);
-          else
-            gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_HORIZONTAL);
-        }
-
-      xfce_panel_image_set_size (XFCE_PANEL_IMAGE (button->icon), button->icon_size);
+      /* put icon above the label if number of rows > 1 (they look better)
+         or if they don't fit when arranged horizontally */
+      if ((!button->align_left && button->panel_size != button->size) ||
+          label_size.width > button->panel_size - button->size)
+        gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_VERTICAL);
+      else
+        gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_HORIZONTAL);
     }
+  else
+    {
+      gtk_alignment_set (GTK_ALIGNMENT (button->alignment), 0.5, 0.5, 0.0, 0.0);
+    }
+
+  if (button->icon != NULL)
+    xfce_panel_image_set_size (XFCE_PANEL_IMAGE (button->icon), button->icon_size);
 }
 
 
@@ -415,6 +415,22 @@ xfce_indicator_button_set_size (XfceIndicatorButton *button,
         }
     }
 }
+
+
+
+void
+xfce_indicator_button_set_align_left (XfceIndicatorButton *button,
+                                      gboolean             align_left)
+{
+  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
+
+  if (button->align_left != align_left)
+    {
+      button->align_left = align_left;
+      xfce_indicator_button_update_layout (button);
+    }
+}
+
 
 
 

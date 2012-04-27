@@ -44,6 +44,7 @@ struct _XfceIndicatorButton
   IndicatorObjectEntry *entry;
   GtkMenu              *menu;
 
+  GtkWidget            *alignment;
   GtkWidget            *box;
   GtkWidget            *label;
   GtkWidget            *icon;
@@ -53,6 +54,7 @@ struct _XfceIndicatorButton
   gint                  panel_size;
   gint                  size;
   gint                  icon_size;
+  gboolean              align_left;
 
   GtkOrientation        panel_orientation;
   GtkOrientation        orientation;
@@ -86,6 +88,9 @@ void xfce_indicator_button_set_orientation (XfceIndicatorButton *button,
 void xfce_indicator_button_set_size (XfceIndicatorButton *button,
                                      gint panel_size,
                                      gint size);
+
+void xfce_indicator_button_set_align_left (XfceIndicatorButton *button,
+                                           gboolean align_left);
 
 GtkWidget *xfce_indicator_button_new (IndicatorObject *io, IndicatorObjectEntry *entry);
 

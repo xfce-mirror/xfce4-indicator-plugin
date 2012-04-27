@@ -46,6 +46,7 @@ struct _XfceIndicatorBox
   gint                  panel_size;
   gint                  nrows;
   gint                  icon_size_max;
+  gboolean              align_left;
 
   GtkOrientation        panel_orientation;
   GtkOrientation        orientation;

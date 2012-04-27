@@ -61,7 +61,8 @@ static gint                 xfce_indicator_box_get_row_size   (XfceIndicatorBox 
 enum
 {
   PROP_0,
-  PROP_ICON_SIZE_MAX
+  PROP_ICON_SIZE_MAX,
+  PROP_ALIGN_LEFT
 };
 
 G_DEFINE_TYPE (XfceIndicatorBox, xfce_indicator_box, GTK_TYPE_CONTAINER)
@@ -96,6 +97,13 @@ xfce_indicator_box_class_init (XfceIndicatorBoxClass *klass)
                                                       128,
                                                       24,
                                                       EXO_PARAM_READWRITE));
+  g_object_class_install_property (gobject_class,
+                                   PROP_ALIGN_LEFT,
+                                   g_param_spec_boolean ("align-left", NULL, NULL,
+                                                         FALSE,
+                                                         EXO_PARAM_READWRITE));
+
+
 }
 
 
@@ -112,6 +120,7 @@ xfce_indicator_box_init (XfceIndicatorBox *box)
 
   box->nrows = 1;
   box->icon_size_max = 24;
+  box->align_left = FALSE;
   box->panel_size = 16;
   box->panel_orientation = GTK_ORIENTATION_HORIZONTAL;
   box->orientation = GTK_ORIENTATION_HORIZONTAL;
@@ -150,6 +159,10 @@ xfce_indicator_box_get_property (GObject    *object,
       g_value_set_uint (value, box->icon_size_max);
       break;
 
+    case PROP_ALIGN_LEFT:
+      g_value_set_boolean (value, box->align_left);
+      break;
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -184,7 +197,20 @@ xfce_indicator_box_set_property (GObject      *object,
               g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
               xfce_indicator_button_set_size (child, box->panel_size, size);
             }
-          gtk_widget_queue_resize (GTK_WIDGET (box));
+        }
+      break;
+
+    case PROP_ALIGN_LEFT:
+      val = g_value_get_boolean (value);
+      if (box->align_left != val)
+        {
+          box->align_left = val;
+          for (li = box->children; li != NULL; li = li->next)
+            {
+              child = XFCE_INDICATOR_BUTTON (li->data);
+              g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
+              xfce_indicator_button_set_align_left (child, box->align_left);
+            }
         }
       break;
 
@@ -299,6 +325,7 @@ xfce_indicator_box_add (GtkContainer *container,
   xfce_indicator_button_set_orientation (button, box->panel_orientation, box->orientation);
   size = xfce_indicator_box_get_row_size (box);
   xfce_indicator_button_set_size (button, box->panel_size, size);
+  xfce_indicator_button_set_align_left (button, box->align_left);
 
   gtk_widget_queue_resize (GTK_WIDGET (container));
 }

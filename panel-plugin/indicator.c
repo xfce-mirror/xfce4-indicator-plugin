@@ -140,6 +140,9 @@ indicator_read (IndicatorPlugin *indicator)
   property = g_strconcat (xfce_panel_plugin_get_property_base(plugin),"/icon-size-max",NULL);
   xfconf_g_property_bind (channel, property, G_TYPE_INT, indicator->buttonbox, "icon-size-max");
   g_free (property);
+  property = g_strconcat (xfce_panel_plugin_get_property_base(plugin),"/align-left",NULL);
+  xfconf_g_property_bind (channel, property, G_TYPE_BOOLEAN, indicator->buttonbox, "align-left");
+  g_free (property);
   /* something went wrong, apply default values */
   /*
   DBG ("Applying default settings");
