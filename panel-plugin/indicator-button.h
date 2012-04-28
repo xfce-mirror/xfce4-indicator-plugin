@@ -21,6 +21,7 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libindicator/indicator-object.h>
+#include "indicator-box.h"
 
 G_BEGIN_DECLS
 
@@ -42,22 +43,17 @@ struct _XfceIndicatorButton
 
   IndicatorObject      *io;
   IndicatorObjectEntry *entry;
+  XfceIndicatorBox     *buttonbox;
   GtkMenu              *menu;
 
-  GtkWidget            *alignment;
+  GtkWidget            *align_box;
   GtkWidget            *box;
   GtkWidget            *label;
   GtkWidget            *icon;
   GtkWidget            *orig_icon;
-  gulong                orig_icon_handler;
 
-  gint                  panel_size;
-  gint                  size;
-  gint                  icon_size;
-  gboolean              align_left;
-
-  GtkOrientation        panel_orientation;
-  GtkOrientation        orientation;
+  gulong                orig_icon_changed_id;
+  gulong                box_layout_changed_id;
 };
 
 struct _XfceIndicatorButtonClass
@@ -81,18 +77,11 @@ IndicatorObject *xfce_indicator_button_get_io (XfceIndicatorButton *button);
 
 GtkMenu *xfce_indicator_button_get_menu (XfceIndicatorButton *button);
 
-void xfce_indicator_button_set_orientation (XfceIndicatorButton *button,
-                                            GtkOrientation panel_orientation,
-                                            GtkOrientation orientation);
+GtkWidget *xfce_indicator_button_new (IndicatorObject *io,
+                                      IndicatorObjectEntry *entry,
+                                      XfceIndicatorBox *buttonbox);
 
-void xfce_indicator_button_set_size (XfceIndicatorButton *button,
-                                     gint panel_size,
-                                     gint size);
-
-void xfce_indicator_button_set_align_left (XfceIndicatorButton *button,
-                                           gboolean align_left);
-
-GtkWidget *xfce_indicator_button_new (IndicatorObject *io, IndicatorObjectEntry *entry);
+void xfce_indicator_button_disconnect_signals (XfceIndicatorButton *button);
 
 G_END_DECLS
 

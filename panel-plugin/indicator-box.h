@@ -21,7 +21,6 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libindicator/indicator-object.h>
-#include "indicator-button.h"
 
 G_BEGIN_DECLS
 
@@ -65,8 +64,23 @@ void xfce_indicator_box_set_size (XfceIndicatorBox *box,
                                   gint panel_size,
                                   gint nrows);
 
-XfceIndicatorButton *xfce_indicator_box_get_button (XfceIndicatorBox     *box,
-                                                    IndicatorObjectEntry *entry);
+
+GtkOrientation xfce_indicator_box_get_panel_orientation (XfceIndicatorBox *box);
+
+GtkOrientation xfce_indicator_box_get_indicator_orientation (XfceIndicatorBox *box);
+
+gint xfce_indicator_box_get_nrows (XfceIndicatorBox *box);
+
+gint xfce_indicator_box_get_panel_size (XfceIndicatorBox *box);
+
+gint xfce_indicator_box_get_indicator_size (XfceIndicatorBox *box);
+
+gint xfce_indicator_box_get_icon_size_max (XfceIndicatorBox *box);
+
+gboolean xfce_indicator_box_get_align_left (XfceIndicatorBox *box);
+
+void xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
+                                      IndicatorObjectEntry *entry);
 
 GtkWidget *xfce_indicator_box_new ();
 

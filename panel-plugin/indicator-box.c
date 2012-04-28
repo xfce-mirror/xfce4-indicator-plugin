@@ -65,6 +65,15 @@ enum
   PROP_ALIGN_LEFT
 };
 
+enum
+{
+  BOX_LAYOUT_CHANGED,
+  LAST_SIGNAL
+};
+
+static guint xfce_indicator_box_signals[LAST_SIGNAL] = { 0, };
+
+
 G_DEFINE_TYPE (XfceIndicatorBox, xfce_indicator_box, GTK_TYPE_CONTAINER)
 
 static void
@@ -103,7 +112,13 @@ xfce_indicator_box_class_init (XfceIndicatorBoxClass *klass)
                                                          FALSE,
                                                          EXO_PARAM_READWRITE));
 
-
+  xfce_indicator_box_signals[BOX_LAYOUT_CHANGED] =
+    g_signal_new (g_intern_static_string ("box-layout-changed"),
+                  G_TYPE_FROM_CLASS (gobject_class),
+                  G_SIGNAL_RUN_LAST,
+                  0, NULL, NULL,
+                  g_cclosure_marshal_VOID__VOID,
+                  G_TYPE_NONE, 0);
 }
 
 
@@ -190,13 +205,7 @@ xfce_indicator_box_set_property (GObject      *object,
       if (box->icon_size_max != val)
         {
           box->icon_size_max = val;
-          size = xfce_indicator_box_get_row_size (box);
-          for (li = box->children; li != NULL; li = li->next)
-            {
-              child = XFCE_INDICATOR_BUTTON (li->data);
-              g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
-              xfce_indicator_button_set_size (child, box->panel_size, size);
-            }
+          g_signal_emit (G_OBJECT (box), xfce_indicator_box_signals[BOX_LAYOUT_CHANGED], 0);
         }
       break;
 
@@ -205,12 +214,7 @@ xfce_indicator_box_set_property (GObject      *object,
       if (box->align_left != val)
         {
           box->align_left = val;
-          for (li = box->children; li != NULL; li = li->next)
-            {
-              child = XFCE_INDICATOR_BUTTON (li->data);
-              g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
-              xfce_indicator_button_set_align_left (child, box->align_left);
-            }
+          g_signal_emit (G_OBJECT (box), xfce_indicator_box_signals[BOX_LAYOUT_CHANGED], 0);
         }
       break;
 
@@ -247,12 +251,7 @@ xfce_indicator_box_set_orientation (XfceIndicatorBox *box,
 
   if (needs_update)
     {
-      for (li = box->children; li != NULL; li = li->next)
-        {
-          child = XFCE_INDICATOR_BUTTON (li->data);
-          g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
-          xfce_indicator_button_set_orientation (child, panel_orientation, orientation);
-        }
+      g_signal_emit (G_OBJECT (box), xfce_indicator_box_signals[BOX_LAYOUT_CHANGED], 0);
       gtk_widget_queue_resize (GTK_WIDGET (box));
     }
 }
@@ -285,13 +284,7 @@ xfce_indicator_box_set_size (XfceIndicatorBox *box,
 
   if (needs_update)
     {
-      size = xfce_indicator_box_get_row_size (box);
-      for (li = box->children; li != NULL; li = li->next)
-        {
-          child = XFCE_INDICATOR_BUTTON (li->data);
-          g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
-          xfce_indicator_button_set_size (child, panel_size, size);
-        }
+      g_signal_emit (G_OBJECT (box), xfce_indicator_box_signals[BOX_LAYOUT_CHANGED], 0);
       gtk_widget_queue_resize (GTK_WIDGET (box));
     }
 }
@@ -322,10 +315,6 @@ xfce_indicator_box_add (GtkContainer *container,
   box->children = g_slist_append (box->children, child);
 
   gtk_widget_set_parent (child, GTK_WIDGET (box));
-  xfce_indicator_button_set_orientation (button, box->panel_orientation, box->orientation);
-  size = xfce_indicator_box_get_row_size (box);
-  xfce_indicator_button_set_size (button, box->panel_size, size);
-  xfce_indicator_button_set_align_left (button, box->align_left);
 
   gtk_widget_queue_resize (GTK_WIDGET (container));
 }
@@ -402,9 +391,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
   row = 0;
   length = 0;
   x = 0;
-  //nrows = MAX (box->nrows,
-  //             box->panel_size / xfce_indicator_box_get_row_size (box));
-  nrows = box->panel_size / xfce_indicator_box_get_row_size (box);
+  nrows = xfce_indicator_box_get_nrows (box);
 
   for (li = box->children; li != NULL; li = li->next)
     {
@@ -478,8 +465,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   x0 = allocation->x;
   y0 = allocation->y;
 
-  //nrows = MAX (box->nrows, box->panel_size / box->icon_size_max);
-  nrows = box->panel_size / xfce_indicator_box_get_row_size (box);
+  nrows = xfce_indicator_box_get_nrows (box);
   panel_size = box->panel_size;
   size = panel_size / nrows;
 
@@ -557,24 +543,93 @@ xfce_indicator_box_get_row_size (XfceIndicatorBox *box)
 }
 
 
-XfceIndicatorButton *
-xfce_indicator_box_get_button (XfceIndicatorBox     *box,
-                               IndicatorObjectEntry *entry)
+void
+xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
+                                 IndicatorObjectEntry *entry)
 {
   GSList              *li;
   GtkWidget           *child;
   XfceIndicatorButton *button;
 
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), NULL);
+  g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
 
   for (li = box->children; li != NULL; li = li->next)
     {
       child = GTK_WIDGET (li->data);
-      g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (child), NULL);
+      g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
 
       button = XFCE_INDICATOR_BUTTON (child);
       if (xfce_indicator_button_get_entry (button) == entry)
-        return button;
+        {
+          xfce_indicator_button_disconnect_signals (button);
+          gtk_widget_destroy (GTK_WIDGET (button));
+        }
     }
-  return NULL;
+}
+
+
+
+
+
+GtkOrientation
+xfce_indicator_box_get_panel_orientation (XfceIndicatorBox *box)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), GTK_ORIENTATION_HORIZONTAL);
+
+  return box->panel_orientation;
+}
+
+
+GtkOrientation
+xfce_indicator_box_get_indicator_orientation (XfceIndicatorBox *box)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), GTK_ORIENTATION_HORIZONTAL);
+
+  return box->orientation;
+}
+
+
+gint
+xfce_indicator_box_get_nrows (XfceIndicatorBox *box)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 0);
+
+  return box->panel_size / xfce_indicator_box_get_row_size (box);
+
+}
+
+
+gint
+xfce_indicator_box_get_panel_size (XfceIndicatorBox *box)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 0);
+
+  return box->panel_size;
+}
+
+
+gint
+xfce_indicator_box_get_indicator_size (XfceIndicatorBox *box)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 0);
+
+  return xfce_indicator_box_get_row_size (box);
+}
+
+
+gint
+xfce_indicator_box_get_icon_size_max (XfceIndicatorBox *box)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 0);
+
+  return box->icon_size_max;
+}
+
+
+gboolean
+xfce_indicator_box_get_align_left (XfceIndicatorBox *box)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), FALSE);
+
+  return box->align_left;
 }
