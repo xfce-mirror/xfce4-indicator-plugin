@@ -131,29 +131,46 @@ static void
 xfce_indicator_button_update_layout (XfceIndicatorButton *button)
 {
   GtkRequisition          label_size;
+  gfloat                  align_x;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (button->buttonbox));
 
+  if (button->label != NULL)
+    gtk_label_set_ellipsize (GTK_LABEL (button->label), PANGO_ELLIPSIZE_NONE);
+
+  /* deskbar mode? */
   if (button->label != NULL &&
       xfce_indicator_box_get_panel_orientation (button->buttonbox) == GTK_ORIENTATION_VERTICAL &&
       xfce_indicator_box_get_indicator_orientation (button->buttonbox) == GTK_ORIENTATION_HORIZONTAL)
     {
       gtk_widget_size_request (button->label, &label_size);
 
+      /* check if icon and label fit side by side */
       if (!xfce_indicator_box_get_align_left (button->buttonbox)
           || (button->icon != NULL
               && label_size.width >
               xfce_indicator_box_get_panel_size (button->buttonbox)
               - xfce_indicator_box_get_indicator_size (button->buttonbox)))
         {
-          gtk_alignment_set (GTK_ALIGNMENT (button->align_box), 0.5, 0.5, 0.0, 0.0);
+          align_x = 0.5;
           gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_VERTICAL);
         }
       else
         {
-          gtk_alignment_set (GTK_ALIGNMENT (button->align_box), 0.0, 0.5, 0.0, 0.0);
+          align_x = 0.0;
           gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_HORIZONTAL);
+        }
+
+      /* check if label alone fits in the panel */
+      if (label_size.width > xfce_indicator_box_get_panel_size (button->buttonbox) - 6)
+        {
+          gtk_alignment_set (GTK_ALIGNMENT (button->align_box), align_x, 0.5, 1.0, 0.0);
+          gtk_label_set_ellipsize (GTK_LABEL (button->label), PANGO_ELLIPSIZE_END);
+        }
+      else
+        {
+          gtk_alignment_set (GTK_ALIGNMENT (button->align_box), align_x, 0.5, 0.0, 0.0);
         }
     }
   else
@@ -482,7 +499,7 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
 {
   XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (widget);
 
-  if( event->button == 1) /* left click only */
+  if(event->button == 1 && button->menu != NULL) /* left click only */
     {
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
       gtk_menu_popup (button->menu, NULL, NULL,
