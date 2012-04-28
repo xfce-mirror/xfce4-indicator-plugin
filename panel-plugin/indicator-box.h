@@ -21,6 +21,7 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libindicator/indicator-object.h>
+#include <libxfce4panel/libxfce4panel.h>
 
 G_BEGIN_DECLS
 
@@ -39,6 +40,8 @@ typedef struct _XfceIndicatorBoxClass XfceIndicatorBoxClass;
 struct _XfceIndicatorBox
 {
   GtkContainer          __parent__;
+
+  XfcePanelPlugin      *plugin;
 
   GSList               *children;
 
@@ -81,6 +84,8 @@ gboolean xfce_indicator_box_get_align_left (XfceIndicatorBox *box);
 
 void xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
                                       IndicatorObjectEntry *entry);
+
+XfcePanelPlugin *xfce_indicator_box_get_plugin (XfceIndicatorBox *box);
 
 GtkWidget *xfce_indicator_box_new ();
 

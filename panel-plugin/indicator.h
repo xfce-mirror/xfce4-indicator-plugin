@@ -38,10 +38,6 @@ GType indicator_get_type      (void) G_GNUC_CONST;
 
 void  indicator_register_type (XfcePanelTypeModule *type_module);
 
-#ifndef INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED
-#define INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED "scroll-entry"
-#endif
-
 void                indicator_save             (XfcePanelPlugin    *plugin,
                                                 IndicatorPlugin    *indicator);
 

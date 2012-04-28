@@ -182,7 +182,7 @@ indicator_init (IndicatorPlugin *indicator)
   indicator->ebox = gtk_event_box_new();
   gtk_widget_set_can_focus(GTK_WIDGET(indicator->ebox), TRUE);
 
-  indicator->buttonbox = xfce_indicator_box_new ();
+  indicator->buttonbox = xfce_indicator_box_new (plugin);
   gtk_container_add (GTK_CONTAINER (indicator->ebox), GTK_WIDGET(indicator->buttonbox));
   gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->ebox));
   gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
@@ -270,36 +270,6 @@ indicator_size_changed (XfcePanelPlugin *plugin,
 }
 
 
-
-static gboolean
-on_button_press (GtkWidget *widget, GdkEventButton *event, IndicatorPlugin *indicator)
-{
-  XfcePanelPlugin  *plugin = XFCE_PANEL_PLUGIN (indicator);
-
-  if (indicator != NULL)
-  {
-    if( event->button == 1) /* left click only */
-    {
-      gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
-      gtk_menu_popup (xfce_indicator_button_get_menu (XFCE_INDICATOR_BUTTON(widget)), NULL, NULL,
-                      xfce_panel_plugin_position_menu,
-                      plugin, 1, gtk_get_current_event_time ());
-      
-      return TRUE;
-    }
-    /* event doesn't make it to the ebox, so I just push it. */
-    gtk_widget_event (indicator->ebox, (GdkEvent*)event);
-  }
-  return FALSE;
-}
-
-static void
-menu_deactivate (GtkMenu *menu,
-                 gpointer      user_data)
-{
-  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_menu_get_attach_widget (menu)), FALSE);
-}
-
 static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
@@ -359,21 +329,6 @@ indicator_construct (XfcePanelPlugin *plugin)
 }
 
 
-static gboolean
-entry_scrolled (GtkWidget *menuitem, GdkEventScroll *event, IndicatorPlugin *indicator)
-{
-  IndicatorObject *io = xfce_indicator_button_get_io (XFCE_INDICATOR_BUTTON (menuitem));
-  IndicatorObjectEntry *entry = xfce_indicator_button_get_entry (XFCE_INDICATOR_BUTTON (menuitem));
-
-  g_return_val_if_fail(INDICATOR_IS_OBJECT(io), FALSE);
-  g_return_val_if_fail(indicator != NULL, FALSE);
-
-  g_signal_emit_by_name (io, INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED, entry, 1, event->direction);
-
-  return TRUE;
-}
-
-
 static void
 entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
@@ -391,15 +346,7 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
     xfce_indicator_button_set_label(XFCE_INDICATOR_BUTTON(button), entry->label);
 
   if (entry->menu != NULL)
-  {
     xfce_indicator_button_set_menu (XFCE_INDICATOR_BUTTON(button), entry->menu);
-    g_signal_connect(G_OBJECT(entry->menu), "deactivate", G_CALLBACK(menu_deactivate),NULL);
-  }
-
-  g_signal_connect(button, "button-press-event", G_CALLBACK(on_button_press),
-                   user_data);
-  g_signal_connect(button, "scroll-event", G_CALLBACK(entry_scrolled),
-                   user_data);
 
   gtk_container_add(GTK_CONTAINER (indicator->buttonbox), button);
   gtk_widget_show(button);

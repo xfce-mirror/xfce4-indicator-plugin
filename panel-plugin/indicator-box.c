@@ -292,9 +292,14 @@ xfce_indicator_box_set_size (XfceIndicatorBox *box,
 
 
 GtkWidget *
-xfce_indicator_box_new ()
+xfce_indicator_box_new (XfcePanelPlugin *plugin)
 {
   XfceIndicatorBox *box = g_object_new (XFCE_TYPE_INDICATOR_BOX, NULL);
+
+  box->plugin = plugin;
+  if (box->plugin != NULL)
+    g_object_ref (G_OBJECT (box->plugin));
+
   return GTK_WIDGET (box);
 }
 
@@ -632,4 +637,13 @@ xfce_indicator_box_get_align_left (XfceIndicatorBox *box)
   g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), FALSE);
 
   return box->align_left;
+}
+
+
+XfcePanelPlugin *
+xfce_indicator_box_get_plugin (XfceIndicatorBox *box)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), NULL);
+
+  return box->plugin;
 }

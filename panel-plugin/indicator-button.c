@@ -32,8 +32,21 @@
 
 #include "indicator-button.h"
 
+
+#include <libindicator/indicator-object.h>
+//#ifndef INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED
+//#define INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED "scroll-entry"
+//#endif
+
+
 static void                 xfce_indicator_button_finalize        (GObject                *object);
 static gint                 xfce_indicator_button_get_icon_size   (XfceIndicatorButton    *button);
+static gboolean             xfce_indicator_button_button_press    (GtkWidget              *widget,
+                                                                   GdkEventButton         *event);
+static gboolean             xfce_indicator_button_scroll          (GtkWidget              *widget,
+                                                                   GdkEventScroll         *event);
+static void                 xfce_indicator_button_menu_deactivate (XfceIndicatorButton    *button,
+                                                                   GtkMenu                *menu);
 
 
 G_DEFINE_TYPE (XfceIndicatorButton, xfce_indicator_button, GTK_TYPE_TOGGLE_BUTTON)
@@ -41,10 +54,16 @@ G_DEFINE_TYPE (XfceIndicatorButton, xfce_indicator_button, GTK_TYPE_TOGGLE_BUTTO
 static void
 xfce_indicator_button_class_init (XfceIndicatorButtonClass *klass)
 {
-  GObjectClass   *gobject_class;
+  GObjectClass      *gobject_class;
+  GtkWidgetClass    *widget_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = xfce_indicator_button_finalize;
+
+  widget_class = GTK_WIDGET_CLASS (klass);
+  widget_class->button_press_event = xfce_indicator_button_button_press;
+  widget_class->scroll_event = xfce_indicator_button_scroll;
+
 }
 
 
@@ -314,6 +333,8 @@ xfce_indicator_button_set_menu (XfceIndicatorButton *button,
         g_object_unref (G_OBJECT (button->menu));
       button->menu = menu;
       g_object_ref (G_OBJECT (button->menu));
+      g_signal_connect_swapped (G_OBJECT (button->menu), "deactivate",
+                                G_CALLBACK (xfce_indicator_button_menu_deactivate), button);
       gtk_menu_attach_to_widget(menu, GTK_WIDGET (button), NULL);
     }
 }
@@ -454,3 +475,45 @@ xfce_indicator_button_disconnect_signals (XfceIndicatorButton *button)
 
 }
 
+
+static gboolean
+xfce_indicator_button_button_press (GtkWidget      *widget,
+                                    GdkEventButton *event)
+{
+  XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (widget);
+
+  if( event->button == 1) /* left click only */
+    {
+      gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
+      gtk_menu_popup (button->menu, NULL, NULL,
+                      xfce_panel_plugin_position_menu,
+                      xfce_indicator_box_get_plugin (button->buttonbox),
+                      1, gtk_get_current_event_time ());
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+
+static gboolean
+xfce_indicator_button_scroll (GtkWidget *widget, GdkEventScroll *event)
+{
+  XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (widget);
+
+  g_signal_emit_by_name (button->io, INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED,
+                         button->entry, 1, event->direction);
+
+  return TRUE;
+}
+
+
+static void
+xfce_indicator_button_menu_deactivate (XfceIndicatorButton *button,
+                                       GtkMenu             *menu)
+{
+  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
+  g_return_if_fail (GTK_IS_MENU (menu));
+
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), FALSE);
+}
