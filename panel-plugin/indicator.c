@@ -154,9 +154,9 @@ static void
 indicator_class_init (IndicatorPluginClass *klass)
 {
   XfcePanelPluginClass *plugin_class;
-  GObjectClass         *gobject_class;
+  //GObjectClass         *gobject_class;
 
-  gobject_class = G_OBJECT_CLASS (klass);
+  //gobject_class = G_OBJECT_CLASS (klass);
   //gobject_class->get_property = indicator_get_property;
   //gobject_class->set_property = indicator_set_property;
 
@@ -196,7 +196,7 @@ indicator_init (IndicatorPlugin *indicator)
 static void
 indicator_free (XfcePanelPlugin *plugin)
 {
-  IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
+  //IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
   GtkWidget *dialog;
 
   /* check if the dialog is still open. if so, destroy it */
@@ -274,7 +274,6 @@ static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
   IndicatorPlugin  *indicator = XFCE_INDICATOR_PLUGIN (plugin);
-  GtkRcStyle       *style;
   gint              indicators_loaded = 0;
   GtkWidget        *label;
 
@@ -304,7 +303,7 @@ indicator_construct (XfcePanelPlugin *plugin)
     length = (indicator->excluded_modules != NULL) ? g_strv_length (indicator->excluded_modules) : 0;
     while ((name = g_dir_read_name(dir)) != NULL) {
       for (i = 0; i < length; ++i) {
-        if (match = (g_strcmp0 (name, indicator->excluded_modules[i]) == 0))
+        if ((match = g_strcmp0 (name, indicator->excluded_modules[i])) == 0)
           break;
       }
 
@@ -374,34 +373,40 @@ entry_removed (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user
 static gboolean
 load_module (const gchar * name, IndicatorPlugin * indicator)
 {
-	g_debug("Looking at Module: %s", name);
-	g_return_val_if_fail(name != NULL, FALSE);
+  gchar                *fullpath;
+  IndicatorObject      *io;
+  GList                *entries, *entry;
+  IndicatorObjectEntry *entrydata;
 
-    if (!g_str_has_suffix(name,G_MODULE_SUFFIX))
-        return FALSE;
+  g_debug("Looking at Module: %s", name);
+  g_return_val_if_fail(name != NULL, FALSE);
 
-	g_debug("Loading Module: %s", name);
+  if (!g_str_has_suffix(name,G_MODULE_SUFFIX))
+    return FALSE;
 
-	gchar * fullpath = g_build_filename(INDICATOR_DIR, name, NULL);
-	IndicatorObject * io = indicator_object_new_from_file(fullpath);
-	g_free(fullpath);
+  g_debug("Loading Module: %s", name);
 
-    g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_ADDED,
-                     G_CALLBACK(entry_added), indicator);
-    g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_REMOVED,
-                     G_CALLBACK(entry_removed), indicator->buttonbox);
+  fullpath = g_build_filename(INDICATOR_DIR, name, NULL);
+  io = indicator_object_new_from_file(fullpath);
+  g_free(fullpath);
 
-	GList * entries = indicator_object_get_entries(io);
-	GList * entry = NULL;
+  g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_ADDED,
+                   G_CALLBACK(entry_added), indicator);
+  g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_REMOVED,
+                   G_CALLBACK(entry_removed), indicator->buttonbox);
 
-	for (entry = entries; entry != NULL; entry = g_list_next(entry)) {
-		IndicatorObjectEntry * entrydata = (IndicatorObjectEntry *)entry->data;
-		entry_added(io, entrydata, indicator);
-	}
+  entries = indicator_object_get_entries(io);
+  entry = NULL;
 
-	g_list_free(entries);
+  for (entry = entries; entry != NULL; entry = g_list_next(entry))
+    {
+      entrydata = (IndicatorObjectEntry *)entry->data;
+      entry_added(io, entrydata, indicator);
+    }
 
-	return TRUE;
+  g_list_free(entries);
+
+  return TRUE;
 }
 
 

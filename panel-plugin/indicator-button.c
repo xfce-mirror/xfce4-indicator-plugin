@@ -278,8 +278,6 @@ xfce_indicator_button_set_label (XfceIndicatorButton *button,
 static void
 on_pixbuf_changed (GtkImage *image, GParamSpec *pspec, XfceIndicatorButton *button)
 {
-  GdkPixbuf     *pixbuf;
-
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_IMAGE (image));
   g_return_if_fail (XFCE_IS_PANEL_IMAGE (button->icon));
@@ -293,8 +291,6 @@ void
 xfce_indicator_button_set_image (XfceIndicatorButton *button,
                                  GtkImage            *image)
 {
-  GdkPixbuf     *pixbuf;
-
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_IMAGE (image));
 

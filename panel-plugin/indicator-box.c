@@ -166,7 +166,6 @@ xfce_indicator_box_get_property (GObject    *object,
                                  GParamSpec *pspec)
 {
   XfceIndicatorBox *box = XFCE_INDICATOR_BOX (object);
-  GPtrArray        *array;
 
   switch (prop_id)
     {
@@ -194,9 +193,6 @@ xfce_indicator_box_set_property (GObject      *object,
 {
   XfceIndicatorBox     *box = XFCE_INDICATOR_BOX (object);
   gint                  val;
-  gint                  size;
-  XfceIndicatorButton  *child;
-  GSList               *li;
 
   switch (prop_id)
     {
@@ -232,8 +228,6 @@ xfce_indicator_box_set_orientation (XfceIndicatorBox *box,
                                     GtkOrientation    orientation)
 {
   gboolean              needs_update = FALSE;
-  XfceIndicatorButton  *child;
-  GSList               *li;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
 
@@ -264,9 +258,6 @@ xfce_indicator_box_set_size (XfceIndicatorBox *box,
                              gint              nrows)
 {
   gboolean              needs_update = FALSE;
-  XfceIndicatorButton  *child;
-  GSList               *li;
-  gint                  size;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
 
@@ -310,8 +301,6 @@ xfce_indicator_box_add (GtkContainer *container,
                         GtkWidget    *child)
 {
   XfceIndicatorBox    *box = XFCE_INDICATOR_BOX (container);
-  XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (child);
-  gint                 size;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
   g_return_if_fail (GTK_IS_WIDGET (child));
