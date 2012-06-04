@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Gheyret T.Kenji <gheyret@gmail.com>, 2011.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
