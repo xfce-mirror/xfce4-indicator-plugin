@@ -474,6 +474,11 @@ xfce_indicator_button_disconnect_signals (XfceIndicatorButton *button)
 {
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
 
+  if (button->menu != 0)
+    {
+      gtk_menu_popdown (button->menu);
+    }
+
   if (button->box_layout_changed_id != 0)
     {
       g_signal_handler_disconnect (button->buttonbox, button->box_layout_changed_id);
