@@ -80,7 +80,6 @@ struct _IndicatorPlugin
   /* panel widgets */
   GtkWidget       *item;
   GtkWidget       *buttonbox;
-  GtkWidget       *ebox;
 
   /* indicator settings */
   gchar          **excluded_modules;
@@ -179,16 +178,9 @@ indicator_init (IndicatorPlugin *indicator)
 {
   XfcePanelPlugin  *plugin = XFCE_PANEL_PLUGIN (indicator);
 
-  indicator->ebox = gtk_event_box_new();
-  gtk_widget_set_can_focus(GTK_WIDGET(indicator->ebox), TRUE);
-
   indicator->buttonbox = xfce_indicator_box_new (plugin);
-  gtk_container_add (GTK_CONTAINER (indicator->ebox), GTK_WIDGET(indicator->buttonbox));
-  gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->ebox));
+  gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->buttonbox));
   gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
-  gtk_widget_show(GTK_WIDGET(indicator->ebox));
-  /* show the panel's right-click menu on this menu */
-  xfce_panel_plugin_add_action_widget (plugin, indicator->ebox);
 }
 
 
