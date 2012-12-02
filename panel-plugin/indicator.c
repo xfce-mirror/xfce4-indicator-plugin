@@ -178,6 +178,12 @@ indicator_init (IndicatorPlugin *indicator)
 {
   XfcePanelPlugin  *plugin = XFCE_PANEL_PLUGIN (indicator);
 
+  /* Indicators print a lot of warnings. By default, "wrapper"
+     makes them critical, so the plugin "crashes" when run as an external
+     plugin but not internal one (loaded by "xfce4-panel" itself).
+     The following lines makes only g_error critical. */
+  g_log_set_always_fatal (G_LOG_LEVEL_ERROR);
+
   indicator->buttonbox = xfce_indicator_box_new (plugin);
   gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->buttonbox));
   gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
