@@ -503,6 +503,7 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
   if(event->button == 1 && button->menu != NULL) /* left click only */
     {
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
+      gtk_menu_reposition (GTK_MENU (button->menu));
       gtk_menu_popup (button->menu, NULL, NULL,
                       xfce_panel_plugin_position_menu,
                       xfce_indicator_box_get_plugin (button->buttonbox),
