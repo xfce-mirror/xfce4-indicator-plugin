@@ -228,6 +228,7 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
           (pixbuf_s, (gint) (size * aspect), size,
            GDK_INTERP_BILINEAR);
       xfce_panel_image_set_from_pixbuf (XFCE_PANEL_IMAGE (button->icon), pixbuf_d);
+      g_object_unref (G_OBJECT (pixbuf_d));
     }
   else
     {
