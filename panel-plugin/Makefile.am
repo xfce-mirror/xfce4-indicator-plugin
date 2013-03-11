@@ -19,6 +19,8 @@ libindicator_built_sources = \
 
 libindicator_plugin_la_SOURCES = \
 	$(libindicator_built_sources) \
+	indicator-config.c									\
+	indicator-config.h									\
 	indicator-button.c									\
 	indicator-button.h									\
 	indicator-box.c									\

@@ -1,4 +1,4 @@
-/*  Copyright (c) 2012 Andrzej <ndrwrdck@gmail.com>
+/*  Copyright (c) 2012-2013 Andrzej <ndrwrdck@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -34,14 +34,6 @@
 #include "indicator-button.h"
 
 static void                 xfce_indicator_box_finalize       (GObject          *object);
-static void                 xfce_indicator_box_get_property   (GObject          *object,
-                                                               guint             prop_id,
-                                                               GValue           *value,
-                                                               GParamSpec       *pspec);
-static void                 xfce_indicator_box_set_property   (GObject          *object,
-                                                               guint             prop_id,
-                                                               const GValue     *value,
-                                                               GParamSpec       *pspec);
 static void                 xfce_indicator_box_add            (GtkContainer     *container,
                                                                GtkWidget        *child);
 static void                 xfce_indicator_box_remove         (GtkContainer     *container,
@@ -55,23 +47,31 @@ static void                 xfce_indicator_box_size_request   (GtkWidget        
                                                                GtkRequisition   *requisition);
 static void                 xfce_indicator_box_size_allocate  (GtkWidget        *widget,
                                                                GtkAllocation    *allocation);
-static gint                 xfce_indicator_box_get_row_size   (XfceIndicatorBox *box);
 
 
-enum
+struct _XfceIndicatorBox
 {
-  PROP_0,
-  PROP_ICON_SIZE_MAX,
-  PROP_ALIGN_LEFT
+  GtkContainer          __parent__;
+
+  IndicatorConfig      *config;
+
+  GSList               *children;
+
+  gint                  panel_size;
+  gint                  nrows;
+  gint                  icon_size_max;
+  gboolean              align_left;
+
+  GtkOrientation        panel_orientation;
+  GtkOrientation        orientation;
 };
 
-enum
+struct _XfceIndicatorBoxClass
 {
-  BOX_LAYOUT_CHANGED,
-  LAST_SIGNAL
+  GtkContainerClass __parent__;
 };
 
-static guint xfce_indicator_box_signals[LAST_SIGNAL] = { 0, };
+
 
 
 G_DEFINE_TYPE (XfceIndicatorBox, xfce_indicator_box, GTK_TYPE_CONTAINER)
@@ -85,8 +85,6 @@ xfce_indicator_box_class_init (XfceIndicatorBoxClass *klass)
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = xfce_indicator_box_finalize;
-  gobject_class->get_property = xfce_indicator_box_get_property;
-  gobject_class->set_property = xfce_indicator_box_set_property;
 
   gtkwidget_class = GTK_WIDGET_CLASS (klass);
   gtkwidget_class->size_request = xfce_indicator_box_size_request;
@@ -97,28 +95,6 @@ xfce_indicator_box_class_init (XfceIndicatorBoxClass *klass)
   gtkcontainer_class->remove = xfce_indicator_box_remove;
   gtkcontainer_class->forall = xfce_indicator_box_forall;
   gtkcontainer_class->child_type = xfce_indicator_box_child_type;
-
-  g_object_class_install_property (gobject_class,
-                                   PROP_ICON_SIZE_MAX,
-                                   g_param_spec_uint ("icon-size-max",
-                                                      NULL, NULL,
-                                                      1,
-                                                      128,
-                                                      24,
-                                                      EXO_PARAM_READWRITE));
-  g_object_class_install_property (gobject_class,
-                                   PROP_ALIGN_LEFT,
-                                   g_param_spec_boolean ("align-left", NULL, NULL,
-                                                         FALSE,
-                                                         EXO_PARAM_READWRITE));
-
-  xfce_indicator_box_signals[BOX_LAYOUT_CHANGED] =
-    g_signal_new (g_intern_static_string ("box-layout-changed"),
-                  G_TYPE_FROM_CLASS (gobject_class),
-                  G_SIGNAL_RUN_LAST,
-                  0, NULL, NULL,
-                  g_cclosure_marshal_VOID__VOID,
-                  G_TYPE_NONE, 0);
 }
 
 
@@ -132,13 +108,6 @@ xfce_indicator_box_init (XfceIndicatorBox *box)
   gtk_container_set_border_width(GTK_CONTAINER(box), 0);
 
   box->children = NULL;
-
-  box->nrows = 1;
-  box->icon_size_max = 24;
-  box->align_left = FALSE;
-  box->panel_size = 16;
-  box->panel_orientation = GTK_ORIENTATION_HORIZONTAL;
-  box->orientation = GTK_ORIENTATION_HORIZONTAL;
 }
 
 
@@ -159,137 +128,12 @@ xfce_indicator_box_finalize (GObject *object)
 
 
 
-static void
-xfce_indicator_box_get_property (GObject    *object,
-                                 guint       prop_id,
-                                 GValue     *value,
-                                 GParamSpec *pspec)
-{
-  XfceIndicatorBox *box = XFCE_INDICATOR_BOX (object);
-
-  switch (prop_id)
-    {
-    case PROP_ICON_SIZE_MAX:
-      g_value_set_uint (value, box->icon_size_max);
-      break;
-
-    case PROP_ALIGN_LEFT:
-      g_value_set_boolean (value, box->align_left);
-      break;
-
-    default:
-      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-      break;
-    }
-}
-
-
-
-static void
-xfce_indicator_box_set_property (GObject      *object,
-                                 guint         prop_id,
-                                 const GValue *value,
-                                 GParamSpec   *pspec)
-{
-  XfceIndicatorBox     *box = XFCE_INDICATOR_BOX (object);
-  gint                  val;
-
-  switch (prop_id)
-    {
-    case PROP_ICON_SIZE_MAX:
-      val = g_value_get_uint (value);
-      if (box->icon_size_max != val)
-        {
-          box->icon_size_max = val;
-          g_signal_emit (G_OBJECT (box), xfce_indicator_box_signals[BOX_LAYOUT_CHANGED], 0);
-        }
-      break;
-
-    case PROP_ALIGN_LEFT:
-      val = g_value_get_boolean (value);
-      if (box->align_left != val)
-        {
-          box->align_left = val;
-          g_signal_emit (G_OBJECT (box), xfce_indicator_box_signals[BOX_LAYOUT_CHANGED], 0);
-        }
-      break;
-
-    default:
-      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-      break;
-    }
-}
-
-
-
-void
-xfce_indicator_box_set_orientation (XfceIndicatorBox *box,
-                                    GtkOrientation    panel_orientation,
-                                    GtkOrientation    orientation)
-{
-  gboolean              needs_update = FALSE;
-
-  g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
-
-  if (box->orientation != orientation)
-    {
-      box->orientation = orientation;
-      needs_update = TRUE;
-    }
-
-  if (box->panel_orientation != panel_orientation)
-    {
-      box->panel_orientation = panel_orientation;
-      needs_update = TRUE;
-    }
-
-  if (needs_update)
-    {
-      g_signal_emit (G_OBJECT (box), xfce_indicator_box_signals[BOX_LAYOUT_CHANGED], 0);
-      gtk_widget_queue_resize (GTK_WIDGET (box));
-    }
-}
-
-
-
-void
-xfce_indicator_box_set_size (XfceIndicatorBox *box,
-                             gint              panel_size,
-                             gint              nrows)
-{
-  gboolean              needs_update = FALSE;
-
-  g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
-
-  if (box->nrows != nrows)
-    {
-      box->nrows = nrows;
-      needs_update = TRUE;
-    }
-
-  if (box->panel_size != panel_size)
-    {
-      box->panel_size = panel_size;
-      needs_update = TRUE;
-    }
-
-  if (needs_update)
-    {
-      g_signal_emit (G_OBJECT (box), xfce_indicator_box_signals[BOX_LAYOUT_CHANGED], 0);
-      gtk_widget_queue_resize (GTK_WIDGET (box));
-    }
-}
-
-
-
 GtkWidget *
-xfce_indicator_box_new (XfcePanelPlugin *plugin)
+xfce_indicator_box_new (IndicatorConfig *config)
 {
   XfceIndicatorBox *box = g_object_new (XFCE_TYPE_INDICATOR_BOX, NULL);
 
-  box->plugin = plugin;
-  if (box->plugin != NULL)
-    g_object_ref (G_OBJECT (box->plugin));
+  box->config = config;
 
   return GTK_WIDGET (box);
 }
@@ -366,6 +210,26 @@ xfce_indicator_box_child_type (GtkContainer *container)
 
 
 
+static gint
+xfce_indicator_box_get_row_size (XfceIndicatorBox *box)
+{
+  gint                 border_thickness;
+  GtkStyle            *style;
+
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 24);
+
+  style = gtk_widget_get_style (GTK_WIDGET (box));
+  border_thickness = 2 * MAX (style->xthickness, style->ythickness) + 2;
+
+  return MIN (indicator_config_get_panel_size (box->config) /
+              indicator_config_get_nrows (box->config),
+              indicator_config_get_icon_size_max (box->config) + border_thickness);
+}
+
+
+
+
+
 static void
 xfce_indicator_box_size_request (GtkWidget      *widget,
                                  GtkRequisition *requisition)
@@ -380,12 +244,14 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
   gint              nrows;
   gint              x;
   gboolean          has_label;
+  GtkOrientation    panel_orientation;
 
-  panel_size = box->panel_size;
+  panel_size = indicator_config_get_panel_size (box->config);
+  panel_orientation = indicator_config_get_panel_orientation (box->config);
   row = 0;
   length = 0;
   x = 0;
-  nrows = xfce_indicator_box_get_nrows (box);
+  nrows = panel_size / xfce_indicator_box_get_row_size (box);
 
   for (li = box->children; li != NULL; li = li->next)
     {
@@ -404,7 +270,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
         }
 
       length =
-        MAX (length, (box->panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
+        MAX (length, (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
 
       if (has_label || row >= nrows)
         {
@@ -420,7 +286,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
 
   x += length;
 
-  if (box->panel_orientation == GTK_ORIENTATION_HORIZONTAL)
+  if (panel_orientation == GTK_ORIENTATION_HORIZONTAL)
     {
       requisition->width = x;
       requisition->height = panel_size;
@@ -451,6 +317,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   gint              row;
   gint              nrows;
   gboolean          has_label;
+  GtkOrientation    panel_orientation;
 
   row = 0;
   length = 0;
@@ -459,8 +326,9 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   x0 = allocation->x;
   y0 = allocation->y;
 
-  nrows = xfce_indicator_box_get_nrows (box);
-  panel_size = box->panel_size;
+  panel_size = indicator_config_get_panel_size (box->config);
+  panel_orientation = indicator_config_get_panel_orientation (box->config);
+  nrows = panel_size / xfce_indicator_box_get_row_size (box);
   size = panel_size / nrows;
 
   for (li = box->children; li != NULL; li = li->next)
@@ -483,9 +351,9 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
       width = (has_label) ? panel_size : size;
       length = MAX (length,
-                    (box->panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
+                    (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
 
-      if (box->panel_orientation == GTK_ORIENTATION_HORIZONTAL)
+      if (panel_orientation == GTK_ORIENTATION_HORIZONTAL)
         {
           child_alloc.x = x0 + x;
           child_alloc.y = y0 + y;
@@ -522,21 +390,6 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
 
 
-static gint
-xfce_indicator_box_get_row_size (XfceIndicatorBox *box)
-{
-  gint                 border_thickness;
-  GtkStyle            *style;
-
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 24);
-
-  style = gtk_widget_get_style (GTK_WIDGET (box));
-  border_thickness = 2 * MAX (style->xthickness, style->ythickness) + 2;
-
-  return MIN (box->panel_size / box->nrows, box->icon_size_max + border_thickness);
-}
-
-
 void
 xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
                                  IndicatorObjectEntry *entry)
@@ -561,78 +414,3 @@ xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
     }
 }
 
-
-
-
-
-GtkOrientation
-xfce_indicator_box_get_panel_orientation (XfceIndicatorBox *box)
-{
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), GTK_ORIENTATION_HORIZONTAL);
-
-  return box->panel_orientation;
-}
-
-
-GtkOrientation
-xfce_indicator_box_get_indicator_orientation (XfceIndicatorBox *box)
-{
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), GTK_ORIENTATION_HORIZONTAL);
-
-  return box->orientation;
-}
-
-
-gint
-xfce_indicator_box_get_nrows (XfceIndicatorBox *box)
-{
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 0);
-
-  return box->panel_size / xfce_indicator_box_get_row_size (box);
-
-}
-
-
-gint
-xfce_indicator_box_get_panel_size (XfceIndicatorBox *box)
-{
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 0);
-
-  return box->panel_size;
-}
-
-
-gint
-xfce_indicator_box_get_indicator_size (XfceIndicatorBox *box)
-{
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 0);
-
-  return xfce_indicator_box_get_row_size (box);
-}
-
-
-gint
-xfce_indicator_box_get_icon_size_max (XfceIndicatorBox *box)
-{
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 0);
-
-  return box->icon_size_max;
-}
-
-
-gboolean
-xfce_indicator_box_get_align_left (XfceIndicatorBox *box)
-{
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), FALSE);
-
-  return box->align_left;
-}
-
-
-XfcePanelPlugin *
-xfce_indicator_box_get_plugin (XfceIndicatorBox *box)
-{
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), NULL);
-
-  return box->plugin;
-}

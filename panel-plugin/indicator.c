@@ -1,4 +1,5 @@
-/*  Copyright (c) 2009 Mark Trompell <mark@foresightlinux.org>
+/*  Copyright (c) 2009      Mark Trompell <mark@foresightlinux.org>
+ *  Copyright (c) 2012-2013 Andrzej <ndrwrdck@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -35,14 +36,11 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libindicator/indicator-object.h>
-#include <xfconf/xfconf.h>
 
 #include "indicator.h"
 #include "indicator-box.h"
 #include "indicator-button.h"
 #include "indicator-dialog.h"
-
-#define DEFAULT_EXCLUDED_MODULES NULL
 
 #ifdef LIBXFCE4PANEL_CHECK_VERSION
 #if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
@@ -82,7 +80,7 @@ struct _IndicatorPlugin
   GtkWidget       *buttonbox;
 
   /* indicator settings */
-  gchar          **excluded_modules;
+  IndicatorConfig *config;
 };
 
 
@@ -92,72 +90,10 @@ XFCE_PANEL_DEFINE_PLUGIN (IndicatorPlugin, indicator)
 
 
 
-#if 0
-void
-indicator_save (XfcePanelPlugin *plugin,
-             IndicatorPlugin    *indicator)
-{
-  XfceRc *rc;
-  gchar  *file;
-
-  /* get the config file location */
-  file = xfce_panel_plugin_save_location (plugin, TRUE);
-
-  if (G_UNLIKELY (file == NULL))
-    {
-       DBG ("Failed to open config file");
-       return;
-    }
-
-  /* open the config file, read/write */
-  rc = xfce_rc_simple_open (file, FALSE);
-  g_free (file);
-
-  if (G_LIKELY (rc != NULL))
-    {
-      /* save the settings */
-      DBG(".");
-      if (indicator->excluded_modules)
-        xfce_rc_write_list_entry (rc, "Exclude",
-                                  indicator->excluded_modules, NULL);
-
-      /* close the rc file */
-      xfce_rc_close (rc);
-    }
-}
-#endif
-
-
-static void
-indicator_read (IndicatorPlugin *indicator)
-{
-  XfcePanelPlugin  *plugin = XFCE_PANEL_PLUGIN (indicator);
-  XfconfChannel * channel = xfconf_channel_get ("xfce4-panel");
-  gchar * property = g_strconcat (xfce_panel_plugin_get_property_base(plugin),"/blacklist",NULL);
-  indicator->excluded_modules = xfconf_channel_get_string_list(channel, property);
-  g_free (property);
-  property = g_strconcat (xfce_panel_plugin_get_property_base(plugin),"/icon-size-max",NULL);
-  xfconf_g_property_bind (channel, property, G_TYPE_INT, indicator->buttonbox, "icon-size-max");
-  g_free (property);
-  property = g_strconcat (xfce_panel_plugin_get_property_base(plugin),"/align-left",NULL);
-  xfconf_g_property_bind (channel, property, G_TYPE_BOOLEAN, indicator->buttonbox, "align-left");
-  g_free (property);
-  /* something went wrong, apply default values */
-  /*
-  DBG ("Applying default settings");
-  indicator->excluded_modules = DEFAULT_EXCLUDED_MODULES;
-  */
-}
-
 static void
 indicator_class_init (IndicatorPluginClass *klass)
 {
   XfcePanelPluginClass *plugin_class;
-  //GObjectClass         *gobject_class;
-
-  //gobject_class = G_OBJECT_CLASS (klass);
-  //gobject_class->get_property = indicator_get_property;
-  //gobject_class->set_property = indicator_set_property;
 
   plugin_class = XFCE_PANEL_PLUGIN_CLASS (klass);
   plugin_class->construct = indicator_construct;
@@ -176,17 +112,11 @@ indicator_class_init (IndicatorPluginClass *klass)
 static void
 indicator_init (IndicatorPlugin *indicator)
 {
-  XfcePanelPlugin  *plugin = XFCE_PANEL_PLUGIN (indicator);
-
   /* Indicators print a lot of warnings. By default, "wrapper"
      makes them critical, so the plugin "crashes" when run as an external
      plugin but not internal one (loaded by "xfce4-panel" itself).
      The following lines makes only g_error critical. */
   g_log_set_always_fatal (G_LOG_LEVEL_ERROR);
-
-  indicator->buttonbox = xfce_indicator_box_new (plugin);
-  gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->buttonbox));
-  gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
 }
 
 
@@ -194,14 +124,12 @@ indicator_init (IndicatorPlugin *indicator)
 static void
 indicator_free (XfcePanelPlugin *plugin)
 {
-  //IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
   GtkWidget *dialog;
 
   /* check if the dialog is still open. if so, destroy it */
   dialog = g_object_get_data (G_OBJECT (plugin), "dialog");
   if (G_UNLIKELY (dialog != NULL))
     gtk_widget_destroy (dialog);
-  xfconf_shutdown();
 }
 
 
@@ -209,9 +137,9 @@ indicator_free (XfcePanelPlugin *plugin)
 static void
 indicator_configure_plugin (XfcePanelPlugin *plugin)
 {
-  g_return_if_fail (XFCE_IS_INDICATOR_PLUGIN (plugin));
+  IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
 
-  indicator_dialog_show (gtk_widget_get_screen (GTK_WIDGET (plugin)), XFCE_INDICATOR_PLUGIN (plugin));
+  indicator_dialog_show (gtk_widget_get_screen (GTK_WIDGET (plugin)), indicator->config);
 }
 
 
@@ -229,7 +157,7 @@ indicator_mode_changed (XfcePanelPlugin     *plugin,
   orientation = (mode == XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
     GTK_ORIENTATION_VERTICAL : GTK_ORIENTATION_HORIZONTAL;
 
-  xfce_indicator_box_set_orientation (XFCE_INDICATOR_BOX (indicator->buttonbox), panel_orientation, orientation);
+  indicator_config_set_orientation (indicator->config, panel_orientation, orientation);
 
   indicator_size_changed (plugin, xfce_panel_plugin_get_size (plugin));
 }
@@ -243,7 +171,7 @@ indicator_orientation_changed (XfcePanelPlugin *plugin,
 {
   IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
 
-  xfce_indicator_box_set_orientation (XFCE_INDICATOR_BOX (indicator->buttonbox), orientation, GTK_ORIENTATION_HORIZONTAL);
+  indicator_config_set_orientation (indicator->config, orientation, GTK_ORIENTATION_HORIZONTAL);
 
   indicator_size_changed (plugin, xfce_panel_plugin_get_size (plugin));
 }
@@ -257,11 +185,9 @@ indicator_size_changed (XfcePanelPlugin *plugin,
   IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
 
 #ifdef HAS_PANEL_49
-  xfce_indicator_box_set_size (XFCE_INDICATOR_BOX (indicator->buttonbox),
-                               size, xfce_panel_plugin_get_nrows (plugin));
+  indicator_config_set_size (indicator->config, size, xfce_panel_plugin_get_nrows (plugin));
 #else
-  xfce_indicator_box_set_size (XFCE_INDICATOR_BOX (indicator->buttonbox),
-                               size, 1);
+  indicator_config_set_size (indicator->config, size, 1);
 #endif
 
   return TRUE;
@@ -286,39 +212,46 @@ indicator_construct (XfcePanelPlugin *plugin)
   /*gtk_widget_set_name(GTK_WIDGET (indicator->plugin), "indicator-plugin");*/
 
   /* initialize xfconf */
-  if (xfconf_init(NULL)){
-    /* get the list of excluded modules */
-    indicator_read (indicator);
-  }
+  indicator->config = indicator_config_new (xfce_panel_plugin_get_property_base (plugin));
+
+  /* instantiate a button box */
+  indicator->buttonbox = xfce_indicator_box_new (indicator->config);
+  gtk_container_add (GTK_CONTAINER (plugin), GTK_WIDGET(indicator->buttonbox));
+  gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
+
   /* load 'em */
   if (g_file_test(INDICATOR_DIR, (G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))) {
     GDir * dir = g_dir_open(INDICATOR_DIR, 0, NULL);
 
     const gchar * name;
-    guint i, length;
-    gboolean match = FALSE;
-
-    length = (indicator->excluded_modules != NULL) ? g_strv_length (indicator->excluded_modules) : 0;
-    while ((name = g_dir_read_name(dir)) != NULL) {
-      for (i = 0; i < length; ++i) {
-        if ((match = g_strcmp0 (name, indicator->excluded_modules[i])) == 0)
-          break;
+    if (indicator_config_get_mode_whitelist (indicator->config))
+      {
+        while ((name = g_dir_read_name (dir)) != NULL)
+          if (indicator_config_is_whitelisted (indicator->config, name))
+            {
+              g_debug ("Loading whitelisted module: %s", name);
+              if (load_module(name, indicator))
+                indicators_loaded++;
+            }
+      }
+    else
+      {
+        while ((name = g_dir_read_name (dir)) != NULL)
+          if (indicator_config_is_blacklisted (indicator->config, name))
+            g_debug ("Excluding blacklisted module: %s", name);
+          else if (load_module(name, indicator))
+            indicators_loaded++;
       }
 
-      if (G_UNLIKELY (match)) {
-        g_debug ("Excluding module: %s", name);
-        continue;
-      }
-
-      if (load_module(name, indicator))
-        indicators_loaded++;
-    }
     g_dir_close (dir);
   }
 
   if (indicators_loaded == 0) {
     /* A label to allow for click through */
-    indicator->item = xfce_indicator_button_new(NULL, NULL, XFCE_INDICATOR_BOX (indicator->buttonbox));
+    indicator->item = xfce_indicator_button_new (NULL,
+                                                 NULL,
+                                                 plugin,
+                                                 indicator->config);
     label = gtk_label_new ( _("No Indicators"));
     xfce_indicator_button_set_label (XFCE_INDICATOR_BUTTON (indicator->item), GTK_LABEL (label));
     gtk_container_add (GTK_CONTAINER (indicator->buttonbox), indicator->item);
@@ -333,7 +266,10 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
 {
   XfcePanelPlugin *plugin = XFCE_PANEL_PLUGIN (user_data);
   IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
-  GtkWidget * button = xfce_indicator_button_new (io, entry, XFCE_INDICATOR_BOX (indicator->buttonbox));
+  GtkWidget *button = xfce_indicator_button_new (io,
+                                                 entry,
+                                                 plugin,
+                                                 indicator->config);
 
   /* remove placeholder item when there are real entries to be added */
   if (indicator->item != NULL)
@@ -383,6 +319,8 @@ load_module (const gchar * name, IndicatorPlugin * indicator)
     return FALSE;
 
   g_debug("Loading Module: %s", name);
+
+  indicator_config_add_known_indicator (indicator->config, name);
 
   fullpath = g_build_filename(INDICATOR_DIR, name, NULL);
   io = indicator_object_new_from_file(fullpath);

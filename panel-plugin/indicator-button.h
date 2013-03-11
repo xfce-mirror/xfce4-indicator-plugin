@@ -1,4 +1,4 @@
-/*  Copyright (c) 2012 Andrzej <ndrwrdck@gmail.com>
+/*  Copyright (c) 2012-2013 Andrzej <ndrwrdck@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,6 +21,8 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libindicator/indicator-object.h>
+
+#include "indicator-config.h"
 #include "indicator-box.h"
 
 G_BEGIN_DECLS
@@ -37,29 +39,6 @@ GType xfce_indicator_button_get_type (void);
 typedef struct _XfceIndicatorButton XfceIndicatorButton;
 typedef struct _XfceIndicatorButtonClass XfceIndicatorButtonClass;
 
-struct _XfceIndicatorButton
-{
-  GtkToggleButton       __parent__;
-
-  IndicatorObject      *io;
-  IndicatorObjectEntry *entry;
-  XfceIndicatorBox     *buttonbox;
-  GtkMenu              *menu;
-
-  GtkWidget            *align_box;
-  GtkWidget            *box;
-  GtkWidget            *label;
-  GtkWidget            *icon;
-  GtkWidget            *orig_icon;
-
-  gulong                orig_icon_changed_id;
-  gulong                box_layout_changed_id;
-};
-
-struct _XfceIndicatorButtonClass
-{
-  GtkToggleButtonClass __parent__;
-};
 
 void xfce_indicator_button_set_label (XfceIndicatorButton *button, GtkLabel *label);
 
@@ -77,9 +56,10 @@ IndicatorObject *xfce_indicator_button_get_io (XfceIndicatorButton *button);
 
 GtkMenu *xfce_indicator_button_get_menu (XfceIndicatorButton *button);
 
-GtkWidget *xfce_indicator_button_new (IndicatorObject *io,
-                                      IndicatorObjectEntry *entry,
-                                      XfceIndicatorBox *buttonbox);
+GtkWidget              *xfce_indicator_button_new         (IndicatorObject            *io,
+                                                           IndicatorObjectEntry       *entry,
+                                                           XfcePanelPlugin            *plugin,
+                                                           IndicatorConfig            *config);
 
 void xfce_indicator_button_disconnect_signals (XfceIndicatorButton *button);
 

@@ -1,4 +1,4 @@
-/*  Copyright (c) 2012 Andrzej <ndrwrdck@gmail.com>
+/*  Copyright (c) 2012-2013 Andrzej <ndrwrdck@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 #include <gtk/gtk.h>
 #include <libindicator/indicator-object.h>
 #include <libxfce4panel/libxfce4panel.h>
+#include "indicator-config.h"
 
 G_BEGIN_DECLS
 
@@ -37,57 +38,10 @@ GType xfce_indicator_box_get_type (void);
 typedef struct _XfceIndicatorBox XfceIndicatorBox;
 typedef struct _XfceIndicatorBoxClass XfceIndicatorBoxClass;
 
-struct _XfceIndicatorBox
-{
-  GtkContainer          __parent__;
-
-  XfcePanelPlugin      *plugin;
-
-  GSList               *children;
-
-  gint                  panel_size;
-  gint                  nrows;
-  gint                  icon_size_max;
-  gboolean              align_left;
-
-  GtkOrientation        panel_orientation;
-  GtkOrientation        orientation;
-};
-
-struct _XfceIndicatorBoxClass
-{
-  GtkContainerClass __parent__;
-};
-
-void xfce_indicator_box_set_orientation (XfceIndicatorBox *box,
-                                         GtkOrientation panel_orientation,
-                                         GtkOrientation orientation);
-
-void xfce_indicator_box_set_size (XfceIndicatorBox *box,
-                                  gint panel_size,
-                                  gint nrows);
-
-
-GtkOrientation xfce_indicator_box_get_panel_orientation (XfceIndicatorBox *box);
-
-GtkOrientation xfce_indicator_box_get_indicator_orientation (XfceIndicatorBox *box);
-
-gint xfce_indicator_box_get_nrows (XfceIndicatorBox *box);
-
-gint xfce_indicator_box_get_panel_size (XfceIndicatorBox *box);
-
-gint xfce_indicator_box_get_indicator_size (XfceIndicatorBox *box);
-
-gint xfce_indicator_box_get_icon_size_max (XfceIndicatorBox *box);
-
-gboolean xfce_indicator_box_get_align_left (XfceIndicatorBox *box);
-
 void xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
                                       IndicatorObjectEntry *entry);
 
-XfcePanelPlugin *xfce_indicator_box_get_plugin (XfceIndicatorBox *box);
-
-GtkWidget *xfce_indicator_box_new ();
+GtkWidget       *xfce_indicator_box_new                       (IndicatorConfig        *config);
 
 G_END_DECLS
 
