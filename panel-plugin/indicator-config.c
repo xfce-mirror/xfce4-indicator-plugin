@@ -596,6 +596,7 @@ indicator_config_blacklist_set (IndicatorConfig *config,
       g_hash_table_remove (config->blacklist, name);
     }
   g_object_notify (G_OBJECT (config), "blacklist");
+  g_signal_emit (G_OBJECT (config), indicator_config_signals [INDICATOR_LIST_CHANGED], 0);
 }
 
 
@@ -622,6 +623,7 @@ indicator_config_whitelist_set (IndicatorConfig *config,
       g_hash_table_remove (config->whitelist, name);
     }
   g_object_notify (G_OBJECT (config), "whitelist");
+  g_signal_emit (G_OBJECT (config), indicator_config_signals [INDICATOR_LIST_CHANGED], 0);
 }
 
 
@@ -668,6 +670,7 @@ indicator_config_add_known_indicator (IndicatorConfig *config,
   config->known_indicators = g_list_append (config->known_indicators, g_strdup (name));
 
   g_object_notify (G_OBJECT (config), "known-indicators");
+  g_signal_emit (G_OBJECT (config), indicator_config_signals [INDICATOR_LIST_CHANGED], 0);
 }
 
 
@@ -709,6 +712,7 @@ indicator_config_swap_known_indicators (IndicatorConfig *config,
   g_list_free (li_tmp);
 
   g_object_notify (G_OBJECT (config), "known-indicators");
+  g_signal_emit (G_OBJECT (config), indicator_config_signals [INDICATOR_LIST_CHANGED], 0);
 }
 
 
@@ -727,6 +731,7 @@ indicator_config_names_clear (IndicatorConfig *config)
 
   g_hash_table_remove_all (config->whitelist);
   g_object_notify (G_OBJECT (config), "whitelist");
+  g_signal_emit (G_OBJECT (config), indicator_config_signals [INDICATOR_LIST_CHANGED], 0);
 }
 
 

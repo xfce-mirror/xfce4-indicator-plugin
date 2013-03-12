@@ -113,10 +113,6 @@ xfce_indicator_box_init (XfceIndicatorBox *box)
 
   /* todo: no deallocation function for values */
   box->children = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
-
-  box->indicator_list_changed_id =
-    g_signal_connect_swapped (G_OBJECT (box->config), "indicator-list-changed",
-                              G_CALLBACK (xfce_indicator_box_list_changed), box);
 }
 
 
@@ -145,6 +141,10 @@ xfce_indicator_box_new (IndicatorConfig *config)
   XfceIndicatorBox *box = g_object_new (XFCE_TYPE_INDICATOR_BOX, NULL);
 
   box->config = config;
+
+  box->indicator_list_changed_id =
+    g_signal_connect_swapped (G_OBJECT (box->config), "indicator-list-changed",
+                              G_CALLBACK (xfce_indicator_box_list_changed), box);
 
   return GTK_WIDGET (box);
 }
