@@ -163,6 +163,32 @@ xfce_indicator_box_list_changed (XfceIndicatorBox *box,
 
 
 
+static gint
+xfce_indicator_box_sort_buttons (gconstpointer a,
+                                 gconstpointer b)
+{
+  XfceIndicatorButton *a0 = XFCE_INDICATOR_BUTTON (a);
+  XfceIndicatorButton *b0 = XFCE_INDICATOR_BUTTON (b);
+  guint                a1, b1;
+
+  a1 = xfce_indicator_button_get_pos (a0);
+  b1 = xfce_indicator_button_get_pos (b0);
+
+  /* group all entries with location==0 at the beginning of the list
+   * but don't sort them (they may depend on insertion order) */
+
+  /* if there are two entries with the same non-zero location
+   * try to resolve their order by their name_hint */
+  if (a1 != 0 && a1 == b1)
+    return -g_strcmp0 (xfce_indicator_button_get_entry(a0)->name_hint,
+                       xfce_indicator_button_get_entry(b0)->name_hint);
+
+  /* else, use the location field */
+  return (a1-b1);
+}
+
+
+
 static void
 xfce_indicator_box_add (GtkContainer *container,
                         GtkWidget    *child)
@@ -178,7 +204,11 @@ xfce_indicator_box_add (GtkContainer *container,
 
   io_name = xfce_indicator_button_get_io_name (button);
   li = g_hash_table_lookup (box->children, io_name);
-  li = g_list_append (li, button);
+  if (xfce_indicator_button_get_pos (button) == 0)
+    li = g_list_append (li, button);
+  else
+    li = g_list_insert_sorted (li, button, xfce_indicator_box_sort_buttons);
+
   g_hash_table_replace (box->children, g_strdup (io_name), li);
 
   gtk_widget_set_parent (child, GTK_WIDGET (box));

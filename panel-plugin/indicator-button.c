@@ -434,6 +434,20 @@ xfce_indicator_button_get_io_name (XfceIndicatorButton *button)
 
 
 
+guint
+xfce_indicator_button_get_pos (XfceIndicatorButton *button)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), 0);
+
+  return indicator_object_get_location (button->io, button->entry);
+}
+
+
+
+
+
+
+
 GtkMenu *
 xfce_indicator_button_get_menu (XfceIndicatorButton *button)
 {

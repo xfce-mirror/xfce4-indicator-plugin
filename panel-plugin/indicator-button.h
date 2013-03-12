@@ -59,6 +59,8 @@ IndicatorObject        *xfce_indicator_button_get_io      (XfceIndicatorButton  
 
 const gchar            *xfce_indicator_button_get_io_name (XfceIndicatorButton        *button);
 
+guint                   xfce_indicator_button_get_pos     (XfceIndicatorButton        *button);
+
 GtkMenu                *xfce_indicator_button_get_menu    (XfceIndicatorButton        *button);
 
 GtkWidget              *xfce_indicator_button_new         (IndicatorObject            *io,
