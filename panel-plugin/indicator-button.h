@@ -36,32 +36,38 @@ GType xfce_indicator_button_get_type (void);
 #define XFCE_IS_INDICATOR_BUTTON_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE((klass), XFCE_TYPE_INDICATOR_BUTTON))
 #define XFCE_INDICATOR_BUTTON_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS((obj), XFCE_TYPE_INDICATOR_BUTTON, XfceIndicatorButtonClass))
 
-typedef struct _XfceIndicatorButton XfceIndicatorButton;
-typedef struct _XfceIndicatorButtonClass XfceIndicatorButtonClass;
+typedef struct          _XfceIndicatorButton              XfceIndicatorButton;
+typedef struct          _XfceIndicatorButtonClass         XfceIndicatorButtonClass;
 
 
-void xfce_indicator_button_set_label (XfceIndicatorButton *button, GtkLabel *label);
+void                    xfce_indicator_button_set_label   (XfceIndicatorButton        *button,
+                                                           GtkLabel                   *label);
 
-void xfce_indicator_button_set_image (XfceIndicatorButton *button, GtkImage *image);
+void                    xfce_indicator_button_set_image   (XfceIndicatorButton        *button,
+                                                           GtkImage                   *image);
 
-void xfce_indicator_button_set_menu (XfceIndicatorButton *button, GtkMenu *menu);
+void                    xfce_indicator_button_set_menu    (XfceIndicatorButton        *button,
+                                                           GtkMenu                    *menu);
 
-GtkWidget *xfce_indicator_button_get_label (XfceIndicatorButton *button);
+GtkWidget              *xfce_indicator_button_get_label   (XfceIndicatorButton        *button);
 
-GtkWidget *xfce_indicator_button_get_image (XfceIndicatorButton *button);
+GtkWidget              *xfce_indicator_button_get_image   (XfceIndicatorButton        *button);
 
-IndicatorObjectEntry *xfce_indicator_button_get_entry (XfceIndicatorButton *button);
+IndicatorObjectEntry   *xfce_indicator_button_get_entry   (XfceIndicatorButton        *button);
 
-IndicatorObject *xfce_indicator_button_get_io (XfceIndicatorButton *button);
+IndicatorObject        *xfce_indicator_button_get_io      (XfceIndicatorButton        *button);
 
-GtkMenu *xfce_indicator_button_get_menu (XfceIndicatorButton *button);
+const gchar            *xfce_indicator_button_get_io_name (XfceIndicatorButton        *button);
+
+GtkMenu                *xfce_indicator_button_get_menu    (XfceIndicatorButton        *button);
 
 GtkWidget              *xfce_indicator_button_new         (IndicatorObject            *io,
+                                                           const gchar                *io_name,
                                                            IndicatorObjectEntry       *entry,
                                                            XfcePanelPlugin            *plugin,
                                                            IndicatorConfig            *config);
 
-void xfce_indicator_button_disconnect_signals (XfceIndicatorButton *button);
+void                    xfce_indicator_button_disconnect_signals (XfceIndicatorButton *button);
 
 G_END_DECLS
 

@@ -34,6 +34,8 @@
 #include "indicator-button.h"
 
 static void                 xfce_indicator_box_finalize       (GObject          *object);
+static void                 xfce_indicator_box_list_changed   (XfceIndicatorBox *box,
+                                                               IndicatorConfig  *config);
 static void                 xfce_indicator_box_add            (GtkContainer     *container,
                                                                GtkWidget        *child);
 static void                 xfce_indicator_box_remove         (GtkContainer     *container,
@@ -55,7 +57,7 @@ struct _XfceIndicatorBox
 
   IndicatorConfig      *config;
 
-  GSList               *children;
+  GHashTable           *children;
 
   gint                  panel_size;
   gint                  nrows;
@@ -64,6 +66,8 @@ struct _XfceIndicatorBox
 
   GtkOrientation        panel_orientation;
   GtkOrientation        orientation;
+
+  gulong                indicator_list_changed_id;
 };
 
 struct _XfceIndicatorBoxClass
@@ -107,7 +111,12 @@ xfce_indicator_box_init (XfceIndicatorBox *box)
   gtk_widget_set_can_focus(GTK_WIDGET(box), TRUE);
   gtk_container_set_border_width(GTK_CONTAINER(box), 0);
 
-  box->children = NULL;
+  /* todo: no deallocation function for values */
+  box->children = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
+
+  box->indicator_list_changed_id =
+    g_signal_connect_swapped (G_OBJECT (box->config), "indicator-list-changed",
+                              G_CALLBACK (xfce_indicator_box_list_changed), box);
 }
 
 
@@ -117,11 +126,13 @@ xfce_indicator_box_finalize (GObject *object)
 {
   XfceIndicatorBox *box = XFCE_INDICATOR_BOX (object);
 
-  if (box->children != NULL)
+  if (box->indicator_list_changed_id != 0)
     {
-      g_slist_free (box->children);
-      g_debug ("Not all icons have been removed from the indicator icon box.");
+      g_signal_handler_disconnect (box->config, box->indicator_list_changed_id);
+      box->indicator_list_changed_id = 0;
     }
+
+  g_hash_table_destroy (box->children);
 
   G_OBJECT_CLASS (xfce_indicator_box_parent_class)->finalize (object);
 }
@@ -141,16 +152,34 @@ xfce_indicator_box_new (IndicatorConfig *config)
 
 
 static void
+xfce_indicator_box_list_changed (XfceIndicatorBox *box,
+                                 IndicatorConfig  *config)
+{
+  g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
+  g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
+
+  gtk_widget_queue_resize (GTK_WIDGET (box));
+}
+
+
+
+static void
 xfce_indicator_box_add (GtkContainer *container,
                         GtkWidget    *child)
 {
   XfceIndicatorBox    *box = XFCE_INDICATOR_BOX (container);
+  XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (child);
+  GList               *li;
+  const gchar         *io_name;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
-  g_return_if_fail (GTK_IS_WIDGET (child));
+  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (child->parent == NULL);
 
-  box->children = g_slist_append (box->children, child);
+  io_name = xfce_indicator_button_get_io_name (button);
+  li = g_hash_table_lookup (box->children, io_name);
+  li = g_list_append (li, button);
+  g_hash_table_replace (box->children, g_strdup (io_name), li);
 
   gtk_widget_set_parent (child, GTK_WIDGET (box));
 
@@ -163,17 +192,22 @@ static void
 xfce_indicator_box_remove (GtkContainer *container,
                            GtkWidget    *child)
 {
-  XfceIndicatorBox *box = XFCE_INDICATOR_BOX (container);
-  GSList           *li;
+  XfceIndicatorBox    *box = XFCE_INDICATOR_BOX (container);
+  XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (child);
+  GList               *li, *li_tmp;
+  const gchar         *io_name;
 
   /* search the child */
-  li = g_slist_find (box->children, child);
-  if (G_LIKELY (li != NULL))
+  io_name = xfce_indicator_button_get_io_name (button);
+  li = g_hash_table_lookup (box->children, io_name);
+  li_tmp = g_list_find (li, child);
+  if (G_LIKELY (li_tmp != NULL))
     {
-      g_assert (GTK_WIDGET (li->data) == child);
+      g_assert (GTK_WIDGET (li_tmp->data) == child);
 
       /* unparent widget */
-      box->children = g_slist_remove_link (box->children, li);
+      li = g_list_remove_link (li, li_tmp);
+      g_hash_table_replace (box->children, g_strdup (io_name), li);
       gtk_widget_unparent (child);
 
       /* resize, so we update has-hidden */
@@ -190,13 +224,23 @@ xfce_indicator_box_forall (GtkContainer *container,
                            gpointer      callback_data)
 {
   XfceIndicatorBox *box = XFCE_INDICATOR_BOX (container);
-  GSList           *li, *lnext;
+  GList            *known_indicators;
+  GList            *li, *li_int, *li_tmp;
 
   /* run callback for all children */
-  for (li = box->children; li != NULL; li = lnext)
+  known_indicators = indicator_config_get_known_indicators (box->config);
+  for (li = known_indicators; li != NULL; li = li->next)
     {
-      lnext = li->next;
-      (*callback) (GTK_WIDGET (li->data), callback_data);
+      li_int = g_hash_table_lookup (box->children, li->data);
+      for (li_tmp = li_int; li_tmp != NULL; li_tmp = li_tmp->next)
+        {
+          (*callback) (GTK_WIDGET (li_tmp->data), callback_data);
+        }
+    }
+  li_int = g_hash_table_lookup (box->children, "<placeholder>");
+  for (li_tmp = li_int; li_tmp != NULL; li_tmp = li_tmp->next)
+    {
+      (*callback) (GTK_WIDGET (li_tmp->data), callback_data);
     }
 }
 
@@ -205,7 +249,7 @@ xfce_indicator_box_forall (GtkContainer *container,
 static GType
 xfce_indicator_box_child_type (GtkContainer *container)
 {
-  return GTK_TYPE_WIDGET;
+  return XFCE_TYPE_INDICATOR_BUTTON;
 }
 
 
@@ -234,17 +278,17 @@ static void
 xfce_indicator_box_size_request (GtkWidget      *widget,
                                  GtkRequisition *requisition)
 {
-  XfceIndicatorBox *box = XFCE_INDICATOR_BOX (widget);
-  GtkWidget        *child;
-  GtkRequisition    child_req;
-  GSList           *li;
-  gint              panel_size;
-  gint              length;
-  gint              row;
-  gint              nrows;
-  gint              x;
-  gboolean          has_label;
-  GtkOrientation    panel_orientation;
+  XfceIndicatorBox    *box = XFCE_INDICATOR_BOX (widget);
+  XfceIndicatorButton *button;
+  GtkRequisition       child_req;
+  GList               *known_indicators, *li, *li_int, *li_tmp;
+  gint                 panel_size;
+  gint                 length;
+  gint                 row;
+  gint                 nrows;
+  gint                 x;
+  gboolean             has_label;
+  GtkOrientation       panel_orientation;
 
   panel_size = indicator_config_get_panel_size (box->config);
   panel_orientation = indicator_config_get_panel_orientation (box->config);
@@ -253,34 +297,41 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
   x = 0;
   nrows = panel_size / xfce_indicator_box_get_row_size (box);
 
-  for (li = box->children; li != NULL; li = li->next)
+  if (g_hash_table_lookup (box->children, "<placeholder>") != NULL)
+    known_indicators = g_list_append (NULL, "<placeholder>");
+  else
+    known_indicators = indicator_config_get_known_indicators (box->config);
+  for (li = known_indicators; li != NULL; li = li->next)
     {
-      child = GTK_WIDGET (li->data);
-      g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
-
-      gtk_widget_size_request (child, &child_req);
-      has_label = (xfce_indicator_button_get_label (XFCE_INDICATOR_BUTTON (child)) != NULL);
-
-      /* wrap rows if column is overflowing or a label is encountered */
-      if (row > 0 && (has_label || row >= nrows))
+      li_int = g_hash_table_lookup (box->children, li->data);
+      for (li_tmp = li_int; li_tmp != NULL; li_tmp = li_tmp->next)
         {
-          x += length;
-          row = 0;
-          length = 0;
-        }
+          button = XFCE_INDICATOR_BUTTON (li_tmp->data);
 
-      length =
-        MAX (length, (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
+          gtk_widget_size_request (GTK_WIDGET (button), &child_req);
+          has_label = (xfce_indicator_button_get_label (button) != NULL);
 
-      if (has_label || row >= nrows)
-        {
-          x += length;
-          row = 0;
-          length = 0;
-        }
-      else
-        {
-          row += 1;
+          /* wrap rows if column is overflowing or a label is encountered */
+          if (row > 0 && (has_label || row >= nrows))
+            {
+              x += length;
+              row = 0;
+              length = 0;
+            }
+
+          length =
+            MAX (length, (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
+
+          if (has_label || row >= nrows)
+            {
+              x += length;
+              row = 0;
+              length = 0;
+            }
+          else
+            {
+              row += 1;
+            }
         }
     }
 
@@ -305,19 +356,19 @@ static void
 xfce_indicator_box_size_allocate (GtkWidget     *widget,
                                   GtkAllocation *allocation)
 {
-  XfceIndicatorBox *box = XFCE_INDICATOR_BOX (widget);
-  GtkWidget        *child;
-  GtkAllocation     child_alloc;
-  GtkRequisition    child_req;
-  gint              panel_size, size;
-  gint              x, y;
-  gint              x0, y0;
-  GSList           *li;
-  gint              length, width;
-  gint              row;
-  gint              nrows;
-  gboolean          has_label;
-  GtkOrientation    panel_orientation;
+  XfceIndicatorBox    *box = XFCE_INDICATOR_BOX (widget);
+  XfceIndicatorButton *button;
+  GtkAllocation        child_alloc;
+  GtkRequisition       child_req;
+  gint                 panel_size, size;
+  gint                 x, y;
+  gint                 x0, y0;
+  GList               *known_indicators, *li, *li_int, *li_tmp;
+  gint                 length, width;
+  gint                 row;
+  gint                 nrows;
+  gboolean             has_label;
+  GtkOrientation       panel_orientation;
 
   row = 0;
   length = 0;
@@ -331,59 +382,66 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   nrows = panel_size / xfce_indicator_box_get_row_size (box);
   size = panel_size / nrows;
 
-  for (li = box->children; li != NULL; li = li->next)
+  if (g_hash_table_lookup (box->children, "<placeholder>") != NULL)
+    known_indicators = g_list_append (NULL, "<placeholder>");
+  else
+    known_indicators = indicator_config_get_known_indicators (box->config);
+  for (li = known_indicators; li != NULL; li = li->next)
     {
-      child = GTK_WIDGET (li->data);
-      g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
-
-      gtk_widget_get_child_requisition (child, &child_req);
-
-      has_label = (xfce_indicator_button_get_label (XFCE_INDICATOR_BUTTON (child)) != NULL);
-
-      /* wrap rows if column is overflowing or a label is encountered */
-      if (row > 0 && (has_label || row >= nrows))
+      li_int = g_hash_table_lookup (box->children, li->data);
+      for (li_tmp = li_int; li_tmp != NULL; li_tmp = li_tmp->next)
         {
-          x += length;
-          y = 0;
-          row = 0;
-          length = 0;
-        }
+          button = XFCE_INDICATOR_BUTTON (li_tmp->data);
 
-      width = (has_label) ? panel_size : size;
-      length = MAX (length,
-                    (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
+          gtk_widget_get_child_requisition (GTK_WIDGET (button), &child_req);
 
-      if (panel_orientation == GTK_ORIENTATION_HORIZONTAL)
-        {
-          child_alloc.x = x0 + x;
-          child_alloc.y = y0 + y;
-          child_alloc.width = length;
-          child_alloc.height = width;
-        }
-      else
-        {
-          child_alloc.x = x0 + y;
-          child_alloc.y = y0 + x;
-          child_alloc.width = width;
-          child_alloc.height = length;
-        }
+          has_label = (xfce_indicator_button_get_label (button) != NULL);
 
-      /* g_debug ("indicator-box size allocate: x=%d y=%d w=%d h=%d", */
-      /*          child_alloc.x, child_alloc.y, child_alloc.width, child_alloc.height); */
+          /* wrap rows if column is overflowing or a label is encountered */
+          if (row > 0 && (has_label || row >= nrows))
+            {
+              x += length;
+              y = 0;
+              row = 0;
+              length = 0;
+            }
 
-      gtk_widget_size_allocate (child, &child_alloc);
+          width = (has_label) ? panel_size : size;
+          length = MAX (length,
+                        (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
 
-      if (has_label || row >= nrows)
-        {
-          x += length;
-          y = 0;
-          row = 0;
-          length = 0;
-        }
-      else
-        {
-          row += 1;
-          y += size;
+          if (panel_orientation == GTK_ORIENTATION_HORIZONTAL)
+            {
+              child_alloc.x = x0 + x;
+              child_alloc.y = y0 + y;
+              child_alloc.width = length;
+              child_alloc.height = width;
+            }
+          else
+            {
+              child_alloc.x = x0 + y;
+              child_alloc.y = y0 + x;
+              child_alloc.width = width;
+              child_alloc.height = length;
+            }
+
+          /* g_debug ("indicator-box size allocate: x=%d y=%d w=%d h=%d", */
+          /*          child_alloc.x, child_alloc.y, child_alloc.width, child_alloc.height); */
+
+          gtk_widget_size_allocate (GTK_WIDGET (button), &child_alloc);
+
+          if (has_label || row >= nrows)
+            {
+              x += length;
+              y = 0;
+              row = 0;
+              length = 0;
+            }
+          else
+            {
+              row += 1;
+              y += size;
+            }
         }
     }
 }
@@ -394,22 +452,24 @@ void
 xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
                                  IndicatorObjectEntry *entry)
 {
-  GSList              *li;
-  GtkWidget           *child;
+  GList               *known_indicators, *li, *li_int, *li_tmp;
   XfceIndicatorButton *button;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
 
-  for (li = box->children; li != NULL; li = li->next)
+  known_indicators = indicator_config_get_known_indicators (box->config);
+  for (li = known_indicators; li != NULL; li = li->next)
     {
-      child = GTK_WIDGET (li->data);
-      g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (child));
-
-      button = XFCE_INDICATOR_BUTTON (child);
-      if (xfce_indicator_button_get_entry (button) == entry)
+      li_int = g_hash_table_lookup (box->children, li->data);
+      for (li_tmp = li_int; li_tmp != NULL; li_tmp = li_tmp->next)
         {
-          xfce_indicator_button_disconnect_signals (button);
-          gtk_widget_destroy (GTK_WIDGET (button));
+          button = XFCE_INDICATOR_BUTTON (li_tmp->data);
+          if (xfce_indicator_button_get_entry (button) == entry)
+            {
+              xfce_indicator_button_disconnect_signals (button);
+              gtk_widget_destroy (GTK_WIDGET (button));
+              return;
+            }
         }
     }
 }

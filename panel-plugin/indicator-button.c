@@ -56,6 +56,7 @@ struct _XfceIndicatorButton
   GtkToggleButton       __parent__;
 
   IndicatorObject      *io;
+  const gchar          *io_name;
   IndicatorObjectEntry *entry;
   GtkMenu              *menu;
   XfcePanelPlugin      *plugin;
@@ -423,6 +424,16 @@ xfce_indicator_button_get_io (XfceIndicatorButton *button)
 
 
 
+const gchar *
+xfce_indicator_button_get_io_name (XfceIndicatorButton *button)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), NULL);
+
+  return button->io_name;
+}
+
+
+
 GtkMenu *
 xfce_indicator_button_get_menu (XfceIndicatorButton *button)
 {
@@ -489,6 +500,7 @@ xfce_indicator_configuration_changed (XfceIndicatorButton *button,
 
 GtkWidget *
 xfce_indicator_button_new (IndicatorObject      *io,
+                           const gchar          *io_name,
                            IndicatorObjectEntry *entry,
                            XfcePanelPlugin      *plugin,
                            IndicatorConfig      *config)
@@ -498,6 +510,7 @@ xfce_indicator_button_new (IndicatorObject      *io,
   g_return_val_if_fail (XFCE_IS_PANEL_PLUGIN (plugin), NULL);
 
   button->io = io;
+  button->io_name = io_name;
   button->entry = entry;
   button->plugin = plugin;
   button->config = config;

@@ -249,6 +249,7 @@ indicator_construct (XfcePanelPlugin *plugin)
   if (indicators_loaded == 0) {
     /* A label to allow for click through */
     indicator->item = xfce_indicator_button_new (NULL,
+                                                 "<placeholder>",
                                                  NULL,
                                                  plugin,
                                                  indicator->config);
@@ -266,10 +267,12 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
 {
   XfcePanelPlugin *plugin = XFCE_PANEL_PLUGIN (user_data);
   IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
-  GtkWidget *button = xfce_indicator_button_new (io,
-                                                 entry,
-                                                 plugin,
-                                                 indicator->config);
+  const gchar     *io_name = g_object_get_data (G_OBJECT (io), "io-name");
+  GtkWidget       *button = xfce_indicator_button_new (io,
+                                                       io_name,
+                                                       entry,
+                                                       plugin,
+                                                       indicator->config);
 
   /* remove placeholder item when there are real entries to be added */
   if (indicator->item != NULL)
@@ -325,6 +328,7 @@ load_module (const gchar * name, IndicatorPlugin * indicator)
   fullpath = g_build_filename(INDICATOR_DIR, name, NULL);
   io = indicator_object_new_from_file(fullpath);
   g_free(fullpath);
+  g_object_set_data (G_OBJECT (io), "io-name", g_strdup (name));
 
   g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_ADDED,
                    G_CALLBACK(entry_added), indicator);
