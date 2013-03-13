@@ -259,6 +259,32 @@ indicator_dialog_visible_toggled (GtkCellRendererToggle *renderer,
 
 
 static void
+indicator_dialog_mode_whitelist_toggled (GtkCheckButton        *check_box,
+                                         IndicatorDialog       *dialog)
+{
+  GtkTreeViewColumn *column_visible, *column_hidden;
+  GObject           *treeview;
+  gboolean           mode_whitelist;
+
+  g_return_if_fail (GTK_IS_CHECK_BUTTON (check_box));
+  g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
+
+  mode_whitelist = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (check_box));
+
+  treeview = gtk_builder_get_object (GTK_BUILDER (dialog), "indicators-treeview");
+  g_return_if_fail (GTK_IS_TREE_VIEW (treeview));
+
+  column_visible = gtk_tree_view_get_column (GTK_TREE_VIEW (treeview), COLUMN_VISIBLE);
+  column_hidden  = gtk_tree_view_get_column (GTK_TREE_VIEW (treeview), COLUMN_HIDDEN);
+
+  gtk_tree_view_column_set_visible (column_visible,  mode_whitelist);
+  gtk_tree_view_column_set_visible (column_hidden,  !mode_whitelist);
+}
+
+
+
+
+static void
 indicator_dialog_swap_rows (IndicatorDialog  *dialog,
                             GtkTreeIter      *iter_prev,
                             GtkTreeIter      *iter)
@@ -445,6 +471,9 @@ indicator_dialog_build (IndicatorDialog *dialog)
       g_return_if_fail (GTK_IS_WIDGET (object));
       exo_mutual_binding_new (G_OBJECT (dialog->config), "mode-whitelist",
                               G_OBJECT (object), "active");
+      g_signal_connect (G_OBJECT (object), "toggled",
+                        G_CALLBACK (indicator_dialog_mode_whitelist_toggled), dialog);
+      indicator_dialog_mode_whitelist_toggled (GTK_CHECK_BUTTON (object), dialog);
 
       dialog->store = gtk_builder_get_object (builder, "indicators-store");
       g_return_if_fail (GTK_IS_LIST_STORE (dialog->store));
