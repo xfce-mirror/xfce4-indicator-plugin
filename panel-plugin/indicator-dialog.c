@@ -43,6 +43,23 @@
 
 
 
+/* known indicator names */
+static const gchar *pretty_names[][3] =
+{
+  /* raw name,                  pretty name,                                 icon-name(?) */
+  { "libapplication.so",        N_("Application Indicators"),               "application-default-icon" },
+  { "libsoundmenu.so",          N_("Sound Menu"),                           "preferences-desktop-sound" },
+  { "libprintersmenu.so",       N_("Printers Menu"),                        "printer" },
+  { "libpower.so",              N_("Power Management"),                     NULL },
+  { "libappmenu.so",            N_("Application Menus (Global Menu)"),      "menu-editor" },
+  { "libsession.so",            N_("Session Management"),                   NULL },
+  { "libmessaging.so",          N_("Messaging Menu"),                       "indicator-messages" },
+  { "libdatetime.so",           N_("Date and Time"),                        "time-admin" },
+};
+
+
+#define ICON_SIZE     (22)
+
 static void              indicator_dialog_build               (IndicatorDialog          *dialog);
 static void              indicator_dialog_response            (GtkWidget                *window,
                                                                gint                      response_id,
@@ -71,7 +88,8 @@ enum
   COLUMN_PIXBUF,
   COLUMN_TITLE,
   COLUMN_HIDDEN,
-  COLUMN_VISIBLE
+  COLUMN_VISIBLE,
+  COLUMN_TIP
 };
 
 
@@ -102,6 +120,7 @@ static void
 indicator_dialog_add_indicator (IndicatorDialog *dialog,
                                 GdkPixbuf       *pixbuf,
                                 const gchar     *name,
+                                const gchar     *pretty_name,
                                 gboolean         hidden,
                                 gboolean         visible)
 {
@@ -114,10 +133,11 @@ indicator_dialog_add_indicator (IndicatorDialog *dialog,
   /* insert in the store */
   gtk_list_store_append (GTK_LIST_STORE (dialog->store), &iter);
   gtk_list_store_set (GTK_LIST_STORE (dialog->store), &iter,
-                      COLUMN_PIXBUF, pixbuf,
-                      COLUMN_TITLE, name,
-                      COLUMN_HIDDEN, hidden,
+                      COLUMN_PIXBUF,  pixbuf,
+                      COLUMN_TITLE,   (pretty_name != NULL) ? pretty_name : name,
+                      COLUMN_HIDDEN,  hidden,
                       COLUMN_VISIBLE, visible,
+                      COLUMN_TIP,     name,
                       -1);
 }
 
@@ -128,6 +148,10 @@ indicator_dialog_update_indicator_names (IndicatorDialog *dialog)
 {
   GList        *li;
   const gchar  *name;
+  const gchar  *pretty_name = NULL;
+  const gchar  *icon_name = NULL;
+  GdkPixbuf    *pixbuf = NULL;
+  guint         i;
 
   g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (dialog->config));
@@ -136,13 +160,35 @@ indicator_dialog_update_indicator_names (IndicatorDialog *dialog)
   for(li = indicator_config_get_known_indicators (dialog->config); li != NULL; li = li->next)
     {
       name = li->data;
+
+      /* check if we have a better name for the application */
+      for (i = 0; i < G_N_ELEMENTS (pretty_names); i++)
+        {
+          if (strcmp (name, pretty_names[i][0]) == 0)
+            {
+              pretty_name = pretty_names[i][1];
+              icon_name = pretty_names[i][2];
+              break;
+            }
+        }
+
+      /* try to load the icon name */
+      if (icon_name != NULL)
+        pixbuf = xfce_panel_pixbuf_from_source (icon_name, NULL, ICON_SIZE);
+      else
+        pixbuf = NULL;
+
+      /* insert indicator in the store */
       indicator_dialog_add_indicator
         (dialog,
-         NULL,
+         pixbuf,
          name,
+         pretty_name,
          indicator_config_is_blacklisted (dialog->config, name),
          indicator_config_is_whitelisted (dialog->config, name));
     }
+  if (pixbuf != NULL)
+    g_object_unref (G_OBJECT (pixbuf));
 }
 
 
@@ -164,14 +210,14 @@ indicator_dialog_hidden_toggled (GtkCellRendererToggle *renderer,
     {
       gtk_tree_model_get (GTK_TREE_MODEL (dialog->store), &iter,
                           COLUMN_HIDDEN, &hidden,
-                          COLUMN_TITLE, &name, -1);
+                          COLUMN_TIP, &name, -1);
 
       /* insert value (we need to update it) */
       hidden = !hidden;
 
       /* update box and store with new state */
       indicator_config_blacklist_set (dialog->config, name, hidden);
-      gtk_list_store_set (GTK_LIST_STORE (dialog->store), &iter, 2, hidden, -1);
+      gtk_list_store_set (GTK_LIST_STORE (dialog->store), &iter, COLUMN_HIDDEN, hidden, -1);
 
       g_free (name);
     }
@@ -196,14 +242,14 @@ indicator_dialog_visible_toggled (GtkCellRendererToggle *renderer,
     {
       gtk_tree_model_get (GTK_TREE_MODEL (dialog->store), &iter,
                           COLUMN_VISIBLE, &visible,
-                          COLUMN_TITLE, &name, -1);
+                          COLUMN_TIP, &name, -1);
 
       /* insert value (we need to update it) */
       visible = !visible;
 
       /* update box and store with new state */
       indicator_config_whitelist_set (dialog->config, name, visible);
-      gtk_list_store_set (GTK_LIST_STORE (dialog->store), &iter, 3, visible, -1);
+      gtk_list_store_set (GTK_LIST_STORE (dialog->store), &iter, COLUMN_VISIBLE, visible, -1);
 
       g_free (name);
     }
@@ -221,6 +267,7 @@ indicator_dialog_swap_rows (IndicatorDialog  *dialog,
   gchar        *name1, *name2;
   gboolean      hidden1, hidden2;
   gboolean      visible1, visible2;
+  gchar        *tip1, *tip2;
 
   g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (dialog->config));
@@ -230,25 +277,29 @@ indicator_dialog_swap_rows (IndicatorDialog  *dialog,
                       COLUMN_PIXBUF,  &pixbuf1,
                       COLUMN_TITLE,   &name1,
                       COLUMN_HIDDEN,  &hidden1,
-                      COLUMN_VISIBLE, &visible1, -1);
+                      COLUMN_VISIBLE, &visible1,
+                      COLUMN_TIP,     &tip1, -1);
   gtk_tree_model_get (GTK_TREE_MODEL (dialog->store), iter,
                       COLUMN_PIXBUF,  &pixbuf2,
                       COLUMN_TITLE,   &name2,
                       COLUMN_HIDDEN,  &hidden2,
-                      COLUMN_VISIBLE, &visible2, -1);
+                      COLUMN_VISIBLE, &visible2,
+                      COLUMN_TIP,     &tip2, -1);
   gtk_list_store_set (GTK_LIST_STORE (dialog->store), iter_prev,
-                      COLUMN_PIXBUF, pixbuf2,
-                      COLUMN_TITLE, name2,
-                      COLUMN_HIDDEN, hidden2,
-                      COLUMN_VISIBLE, visible2, -1);
+                      COLUMN_PIXBUF,  pixbuf2,
+                      COLUMN_TITLE,   name2,
+                      COLUMN_HIDDEN,  hidden2,
+                      COLUMN_VISIBLE, visible2,
+                      COLUMN_TIP,     tip2, -1);
   gtk_list_store_set (GTK_LIST_STORE (dialog->store), iter,
-                      COLUMN_PIXBUF, pixbuf1,
-                      COLUMN_TITLE, name1,
-                      COLUMN_HIDDEN, hidden1,
-                      COLUMN_VISIBLE, visible1, -1);
+                      COLUMN_PIXBUF,  pixbuf1,
+                      COLUMN_TITLE,   name1,
+                      COLUMN_HIDDEN,  hidden1,
+                      COLUMN_VISIBLE, visible1,
+                      COLUMN_TIP,     tip1, -1);
 
   /* do a matching operation on IndicatorConfig */
-  indicator_config_swap_known_indicators (dialog->config, name1, name2);
+  indicator_config_swap_known_indicators (dialog->config, tip1, tip2);
 }
 
 
@@ -398,6 +449,10 @@ indicator_dialog_build (IndicatorDialog *dialog)
       dialog->store = gtk_builder_get_object (builder, "indicators-store");
       g_return_if_fail (GTK_IS_LIST_STORE (dialog->store));
       indicator_dialog_update_indicator_names (dialog);
+
+      object = gtk_builder_get_object (GTK_BUILDER (dialog), "indicators-treeview");
+      g_return_if_fail (GTK_IS_TREE_VIEW (object));
+      gtk_tree_view_set_tooltip_column (GTK_TREE_VIEW (object), COLUMN_TIP);
 
       object = gtk_builder_get_object (builder, "hidden-toggle");
       g_return_if_fail (GTK_IS_CELL_RENDERER_TOGGLE (object));

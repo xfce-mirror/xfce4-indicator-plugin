@@ -333,6 +333,23 @@
                           </packing>
                         </child>
                         <child>
+                          <object class="GtkLabel" id="label4">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="xalign">0</property>
+                            <property name="xpad">20</property>
+                            <property name="ypad">6</property>
+                            <property name="label" translatable="yes">&lt;i&gt;Please restart the panel for visibility changes to take effect.&lt;/i&gt;</property>
+                            <property name="use_markup">True</property>
+                            <property name="wrap">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
                           <object class="GtkHButtonBox" id="hbuttonbox1">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
@@ -358,7 +375,7 @@
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
-                            <property name="position">2</property>
+                            <property name="position">3</property>
                           </packing>
                         </child>
                       </object>
@@ -411,6 +428,8 @@
       <column type="gboolean"/>
       <!-- column-name visible -->
       <column type="gboolean"/>
+      <!-- column-name tooltip -->
+      <column type="gchararray"/>
     </columns>
   </object>
   <object class="GtkAdjustment" id="size-adjustment">
