@@ -469,8 +469,8 @@ xfce_indicator_button_get_icon_size (XfceIndicatorButton *button)
 
   indicator_size = xfce_indicator_button_get_size (button);
 
-  style = gtk_widget_get_style (GTK_WIDGET (button));
-  border_thickness = 2 * MAX (style->xthickness, style->ythickness) + 2;
+  style = gtk_widget_get_style (GTK_WIDGET (button->plugin));
+  border_thickness = 2 * MAX (style->xthickness, style->ythickness);
 
   return MIN (indicator_size - border_thickness,
               indicator_config_get_icon_size_max (button->config));
@@ -486,8 +486,8 @@ xfce_indicator_button_get_size (XfceIndicatorButton *button)
 
   g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), 24);
 
-  style = gtk_widget_get_style (GTK_WIDGET (button));
-  border_thickness = 2 * MAX (style->xthickness, style->ythickness) + 2;
+  style = gtk_widget_get_style (GTK_WIDGET (button->plugin));
+  border_thickness = 2 * MAX (style->xthickness, style->ythickness) ;
 
   return MIN (indicator_config_get_panel_size (button->config) /
               indicator_config_get_nrows (button->config),
