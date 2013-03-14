@@ -773,6 +773,8 @@ indicator_config_new (const gchar     *property_base)
       property = g_strconcat (property_base, "/known-indicators", NULL);
       xfconf_g_property_bind (channel, property, XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY, config, "known-indicators");
       g_free (property);
+
+      g_signal_emit (G_OBJECT (config), indicator_config_signals[CONFIGURATION_CHANGED], 0);
     }
 
   return config;
