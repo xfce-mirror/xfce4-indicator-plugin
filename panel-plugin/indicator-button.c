@@ -465,7 +465,7 @@ xfce_indicator_button_get_icon_size (XfceIndicatorButton *button)
   gint                 border_thickness;
   GtkStyle            *style;
 
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), 24);
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), 22);
 
   indicator_size = xfce_indicator_button_get_size (button);
 
