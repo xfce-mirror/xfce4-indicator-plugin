@@ -170,21 +170,38 @@ xfce_indicator_box_sort_buttons (gconstpointer a,
   XfceIndicatorButton *a0 = XFCE_INDICATOR_BUTTON (a);
   XfceIndicatorButton *b0 = XFCE_INDICATOR_BUTTON (b);
   guint                a1, b1;
+  const gchar         *a_io;
+  gint                 result = 0;
 
   a1 = xfce_indicator_button_get_pos (a0);
   b1 = xfce_indicator_button_get_pos (b0);
 
+  /* only need one */
+  a_io = xfce_indicator_button_get_io_name (a0);
+
+  // printf ("=== %s, %s; %s, %s; %d, %d", xfce_indicator_button_get_io_name (a0), xfce_indicator_button_get_io_name (b0), xfce_indicator_button_get_entry (a0)->name_hint, xfce_indicator_button_get_entry (b0)->name_hint, a1, b1);
+
+  /* special case for Application indicators (unreliable ordering) */
+  /* always compare by name and ignore location field */
+  if (a_io != NULL && g_strcmp0 (a_io, "libapplication.so") == 0)
+    result = g_strcmp0 (xfce_indicator_button_get_entry(a0)->name_hint,
+                        xfce_indicator_button_get_entry(b0)->name_hint);
+
   /* group all entries with location==0 at the beginning of the list
    * but don't sort them (they may depend on insertion order) */
 
+  if (result == 0 && (a1 != 0 || b1 != 0))
+    result = a1-b1;
+
   /* if there are two entries with the same non-zero location
    * try to resolve their order by their name_hint */
-  if (a1 != 0 && a1 == b1)
-    return -g_strcmp0 (xfce_indicator_button_get_entry(a0)->name_hint,
-                       xfce_indicator_button_get_entry(b0)->name_hint);
 
-  /* else, use the location field */
-  return (a1-b1);
+  if (result == 0)
+    result =  g_strcmp0 (xfce_indicator_button_get_entry(a0)->name_hint,
+                         xfce_indicator_button_get_entry(b0)->name_hint);
+
+  // printf (" -> %d\n", result);
+  return result;
 }
 
 
@@ -204,7 +221,9 @@ xfce_indicator_box_add (GtkContainer *container,
 
   io_name = xfce_indicator_button_get_io_name (button);
   li = g_hash_table_lookup (box->children, io_name);
-  if (xfce_indicator_button_get_pos (button) == 0)
+  // printf ("   +++ %s %s\n", io_name, xfce_indicator_button_get_entry (button)->name_hint);
+  if (g_strcmp0 (io_name, "libapplication.so") != 0 &&
+      xfce_indicator_button_get_pos (button) == 0)
     li = g_list_append (li, button);
   else
     li = g_list_insert_sorted (li, button, xfce_indicator_box_sort_buttons);
