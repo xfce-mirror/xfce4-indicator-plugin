@@ -41,6 +41,13 @@
 #include "indicator-dialog.h"
 #include "indicator-dialog_ui.h"
 
+#define PLUGIN_WEBSITE  "http://goodies.xfce.org/projects/panel-plugins/xfce4-indicator-plugin"
+
+#ifdef LIBXFCE4UI_CHECK_VERSION
+#if LIBXFCE4UI_CHECK_VERSION (4,9,0)
+#define HAS_ONLINE_HELP
+#endif
+#endif
 
 
 /* known indicator names */
@@ -60,10 +67,12 @@ static const gchar *pretty_names[][3] =
 
 #define ICON_SIZE     (22)
 
-static void              indicator_dialog_build               (IndicatorDialog          *dialog);
-static void              indicator_dialog_response            (GtkWidget                *window,
-                                                               gint                      response_id,
-                                                               IndicatorDialog          *dialog);
+static void              indicator_dialog_build                  (IndicatorDialog          *dialog);
+static void              indicator_dialog_close_button_clicked   (IndicatorDialog          *dialog,
+                                                                  GtkWidget                *button);
+
+static void              indicator_dialog_help_button_clicked    (IndicatorDialog          *dialog,
+                                                                  GtkWidget                *button);
 
 
 
@@ -454,8 +463,18 @@ indicator_dialog_build (IndicatorDialog *dialog)
 
       dialog->dialog = gtk_builder_get_object (builder, "dialog");
       g_return_if_fail (XFCE_IS_TITLED_DIALOG (dialog->dialog));
-      g_signal_connect (G_OBJECT (dialog->dialog), "response",
-                        G_CALLBACK (indicator_dialog_response), dialog);
+
+      object = gtk_builder_get_object (builder, "close-button");
+      g_return_if_fail (GTK_IS_BUTTON (object));
+      g_signal_connect_swapped (G_OBJECT (object), "clicked",
+                                G_CALLBACK (indicator_dialog_close_button_clicked),
+                                dialog);
+
+      object = gtk_builder_get_object (builder, "help-button");
+      g_return_if_fail (GTK_IS_BUTTON (object));
+      g_signal_connect_swapped (G_OBJECT (object), "clicked",
+                                G_CALLBACK (indicator_dialog_help_button_clicked),
+                                dialog);
 
       object = gtk_builder_get_object (builder, "size-max");
       g_return_if_fail (GTK_IS_WIDGET (object));
@@ -518,23 +537,41 @@ indicator_dialog_build (IndicatorDialog *dialog)
 
 
 static void
-indicator_dialog_response (GtkWidget                *window,
-                           gint                      response_id,
-                           IndicatorDialog          *dialog)
+indicator_dialog_close_button_clicked (IndicatorDialog *dialog,
+                                       GtkWidget       *button)
 {
-  g_return_if_fail (GTK_IS_DIALOG (window));
   g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
+  g_return_if_fail (GTK_IS_BUTTON (button));
+  g_return_if_fail (GTK_IS_WINDOW (dialog->dialog));
 
-  if (response_id == GTK_RESPONSE_HELP)
-    {
-      xfce_dialog_show_help (GTK_WINDOW (window), "xfce4-indicator", "dialog", NULL);
-    }
-  else
-    {
-      gtk_widget_destroy (window);
+  gtk_widget_destroy (GTK_WIDGET (dialog->dialog));
+  g_object_unref (G_OBJECT (dialog));
+}
 
-      g_object_unref (G_OBJECT (dialog));
-    }
+
+static void
+indicator_dialog_help_button_clicked (IndicatorDialog *dialog,
+                                      GtkWidget       *button)
+{
+  //#ifndef HAS_ONLINE_HELP
+  gboolean result;
+  //#endif
+
+  g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
+  g_return_if_fail (GTK_IS_BUTTON (button));
+  g_return_if_fail (GTK_IS_WINDOW (dialog->dialog));
+
+  /* Doesn't seem to work */
+  //#ifdef HAS_ONLINE_HELP
+  //xfce_dialog_show_help (GTK_WINDOW (dialog->dialog), "xfce4-indicator", "dialog", NULL);
+  //#else
+
+  result = g_spawn_command_line_async ("exo-open --launch WebBrowser " PLUGIN_WEBSITE, NULL);
+
+  if (G_UNLIKELY (result == FALSE))
+    g_warning (_("Unable to open the following url: %s"), PLUGIN_WEBSITE);
+
+  //#endif
 }
 
 
