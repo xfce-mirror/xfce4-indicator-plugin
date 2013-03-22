@@ -53,6 +53,7 @@ static void             indicator_construct                        (XfcePanelPlu
 static void             indicator_free                             (XfcePanelPlugin       *plugin);
 static gboolean         load_module                                (const gchar           *name,
                                                                     IndicatorPlugin       *indicator);
+static void             indicator_show_about                       (XfcePanelPlugin       *plugin);
 static void             indicator_configure_plugin                 (XfcePanelPlugin       *plugin);
 static gboolean         indicator_size_changed                     (XfcePanelPlugin       *plugin,
                                                                     gint                   size);
@@ -99,6 +100,7 @@ indicator_class_init (IndicatorPluginClass *klass)
   plugin_class->construct = indicator_construct;
   plugin_class->free_data = indicator_free;
   plugin_class->size_changed = indicator_size_changed;
+  plugin_class->about = indicator_show_about;
   plugin_class->configure_plugin = indicator_configure_plugin;
 #ifdef HAS_PANEL_49
   plugin_class->mode_changed = indicator_mode_changed;
@@ -130,6 +132,35 @@ indicator_free (XfcePanelPlugin *plugin)
   dialog = g_object_get_data (G_OBJECT (plugin), "dialog");
   if (G_UNLIKELY (dialog != NULL))
     gtk_widget_destroy (dialog);
+}
+
+
+
+static void
+indicator_show_about (XfcePanelPlugin *plugin)
+{
+   GdkPixbuf *icon;
+
+   const gchar *auth[] = {
+     "Mark Trompell <mark@foresightlinux.org>", "Andrzej Radecki <ndrwrdck@gmail.com>",
+     "Lionel Le Folgoc <lionel@lefolgoc.net>", "Jason Conti <jconti@launchpad.net>",
+     "Nick Schermer <nick@xfce.org>", "Evgeni Golov <evgeni@debian.org>", NULL };
+
+   g_return_if_fail (XFCE_IS_INDICATOR_PLUGIN (plugin));
+
+   icon = xfce_panel_pixbuf_from_source("xfce4-indicator-plugin", NULL, 32);
+   gtk_show_about_dialog(NULL,
+                         "logo", icon,
+                         "license", xfce_get_license_text (XFCE_LICENSE_TEXT_GPL),
+                         "version", PACKAGE_VERSION,
+                         "program-name", PACKAGE_NAME,
+                         "comments", _("An indicator of something that needs your attention on the desktop"),
+                         "website", "http://goodies.xfce.org/projects/panel-plugins/xfce4-indicator-plugin",
+                         "copyright", _("Copyright (c) 2009-2013\n"),
+                         "authors", auth, NULL);
+
+   if(icon)
+     g_object_unref(G_OBJECT(icon));
 }
 
 
@@ -202,6 +233,7 @@ indicator_construct (XfcePanelPlugin *plugin)
   GtkWidget        *label;
 
   xfce_panel_plugin_menu_show_configure (plugin);
+  xfce_panel_plugin_menu_show_about (plugin);
 
   /* setup transation domain */
   xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
