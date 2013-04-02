@@ -579,9 +579,8 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
       gtk_menu_reposition (GTK_MENU (button->menu));
       gtk_menu_popup (button->menu, NULL, NULL,
-                      xfce_panel_plugin_position_menu,
-                      button->plugin,
-                      1, gtk_get_current_event_time ());
+                      xfce_panel_plugin_position_menu, button->plugin,
+                      event->button, event->time);
       return TRUE;
     }
 
