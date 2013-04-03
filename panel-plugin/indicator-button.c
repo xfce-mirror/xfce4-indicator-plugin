@@ -67,6 +67,7 @@ struct _XfceIndicatorButton
   GtkWidget            *label;
   GtkWidget            *icon;
   GtkWidget            *orig_icon;
+  gboolean              rectangular_icon;
 
   gulong                orig_icon_changed_id;
   gulong                configuration_changed_id;
@@ -119,6 +120,7 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   button->icon = NULL;
   button->orig_icon_changed_id = 0;
   button->configuration_changed_id = 0;
+  button->rectangular_icon = FALSE;
 
   button->align_box = gtk_alignment_new (0.5, 0.5, 0.0, 0.0);
   gtk_container_add (GTK_CONTAINER (button), button->align_box);
@@ -214,8 +216,6 @@ xfce_indicator_button_update_layout (XfceIndicatorButton *button)
     gtk_label_set_angle (GTK_LABEL (button->label),
                          (indicator_config_get_orientation (button->config) == GTK_ORIENTATION_VERTICAL)
                          ? -90 : 0);
-  if (button->icon != NULL)
-    xfce_panel_image_set_size (XFCE_PANEL_IMAGE (button->icon), xfce_indicator_button_get_icon_size (button));
 }
 
 
@@ -226,10 +226,12 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
 {
   GdkPixbuf    *pixbuf_s, *pixbuf_d;
   gdouble       aspect;
-  gint          size;
+  gint          w, h, size;
+  gint          border_thickness;
+  GtkStyle     *style;
 
   g_return_if_fail (GTK_IS_IMAGE (button->orig_icon));
-  g_return_if_fail (XFCE_IS_PANEL_IMAGE (button->icon));
+  g_return_if_fail (GTK_IS_IMAGE (button->icon));
 
   size = xfce_indicator_button_get_icon_size (button);
 
@@ -246,25 +248,34 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
 
   if (pixbuf_s != NULL)
     {
-      aspect = (gdouble) gdk_pixbuf_get_width (pixbuf_s) /
-        (gdouble) gdk_pixbuf_get_height (pixbuf_s);
-      if (aspect > 1.0)
-        pixbuf_d = gdk_pixbuf_scale_simple
-          (pixbuf_s, size, (gint) (size / aspect),
-           GDK_INTERP_BILINEAR);
+      w = gdk_pixbuf_get_width (pixbuf_s);
+      h = gdk_pixbuf_get_height (pixbuf_s);
+      aspect = (gdouble) w / (gdouble) h;
+
+      button->rectangular_icon = (w != h);
+
+      if (indicator_config_get_panel_orientation (button->config) == GTK_ORIENTATION_VERTICAL &&
+          size * aspect > indicator_config_get_panel_size (button->config))
+        {
+          style = gtk_widget_get_style (GTK_WIDGET (button->plugin));
+          border_thickness = 2 * MAX (style->xthickness, style->ythickness);
+          w = indicator_config_get_panel_size (button->config) - border_thickness;
+          h = (gint) (w / aspect);
+        }
       else
-        pixbuf_d = gdk_pixbuf_scale_simple
-          (pixbuf_s, (gint) (size * aspect), size,
-           GDK_INTERP_BILINEAR);
-      xfce_panel_image_set_from_pixbuf (XFCE_PANEL_IMAGE (button->icon), pixbuf_d);
+        {
+          h = size;
+          w = (gint) (h * aspect);
+        }
+      pixbuf_d = gdk_pixbuf_scale_simple (pixbuf_s, w, h, GDK_INTERP_BILINEAR);
+      gtk_image_set_from_pixbuf (GTK_IMAGE (button->icon), pixbuf_d);
       g_object_unref (G_OBJECT (pixbuf_d));
     }
   else
     {
-      xfce_panel_image_set_from_source (XFCE_PANEL_IMAGE (button->icon), "image-missing");
+      gtk_image_set_from_icon_name (GTK_IMAGE (button->icon),
+                                    "image-missing", GTK_ICON_SIZE_MENU);
     }
-
-  xfce_panel_image_set_size (XFCE_PANEL_IMAGE (button->icon), size);
 }
 
 
@@ -310,7 +321,7 @@ on_pixbuf_changed (GtkImage *image, GParamSpec *pspec, XfceIndicatorButton *butt
 {
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_IMAGE (image));
-  g_return_if_fail (XFCE_IS_PANEL_IMAGE (button->icon));
+  g_return_if_fail (GTK_IS_IMAGE (button->icon));
 
   xfce_indicator_button_update_icon (button);
 }
@@ -350,8 +361,7 @@ xfce_indicator_button_set_image (XfceIndicatorButton *button,
       button->orig_icon_changed_id = g_signal_connect
         (G_OBJECT (image), "notify::pixbuf", G_CALLBACK (on_pixbuf_changed), button);
 
-
-      button->icon = xfce_panel_image_new ();
+      button->icon = gtk_image_new ();
       xfce_indicator_button_update_icon (button);
 
       gtk_box_pack_start (GTK_BOX (button->box), button->icon, TRUE, FALSE, 1);
@@ -455,6 +465,19 @@ xfce_indicator_button_get_menu (XfceIndicatorButton *button)
 
   return button->menu;
 }
+
+
+
+
+
+gboolean
+xfce_indicator_button_is_icon_rectangular (XfceIndicatorButton *button)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), FALSE);
+
+  return button->rectangular_icon;
+}
+
 
 
 

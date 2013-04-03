@@ -336,7 +336,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
   gint                 row;
   gint                 nrows;
   gint                 x;
-  gboolean             has_label;
+  gboolean             has_label, rectangular_icon;
   GtkOrientation       panel_orientation;
 
   panel_size = indicator_config_get_panel_size (box->config);
@@ -359,9 +359,10 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
 
           gtk_widget_size_request (GTK_WIDGET (button), &child_req);
           has_label = (xfce_indicator_button_get_label (button) != NULL);
+          rectangular_icon = xfce_indicator_button_is_icon_rectangular (button);
 
           /* wrap rows if column is overflowing or a label is encountered */
-          if (row > 0 && (has_label || row >= nrows))
+          if (row > 0 && (has_label || row >= nrows || rectangular_icon))
             {
               x += length;
               row = 0;
@@ -371,7 +372,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
           length =
             MAX (length, (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
 
-          if (has_label || row >= nrows)
+          if (has_label || row >= nrows || rectangular_icon)
             {
               x += length;
               row = 0;
@@ -416,7 +417,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   gint                 length, width;
   gint                 row;
   gint                 nrows;
-  gboolean             has_label;
+  gboolean             has_label, rectangular_icon;
   GtkOrientation       panel_orientation;
 
   row = 0;
@@ -445,9 +446,10 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
           gtk_widget_get_child_requisition (GTK_WIDGET (button), &child_req);
 
           has_label = (xfce_indicator_button_get_label (button) != NULL);
+          rectangular_icon = xfce_indicator_button_is_icon_rectangular (button);
 
           /* wrap rows if column is overflowing or a label is encountered */
-          if (row > 0 && (has_label || row >= nrows))
+          if (row > 0 && (has_label || row >= nrows || rectangular_icon))
             {
               x += length;
               y = 0;
@@ -455,7 +457,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
               length = 0;
             }
 
-          width = (has_label) ? panel_size : size;
+          width = (has_label || rectangular_icon) ? panel_size : size;
           length = MAX (length,
                         (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
 
@@ -479,7 +481,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
           gtk_widget_size_allocate (GTK_WIDGET (button), &child_alloc);
 
-          if (has_label || row >= nrows)
+          if (has_label || row >= nrows || rectangular_icon)
             {
               x += length;
               y = 0;

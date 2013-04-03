@@ -63,6 +63,8 @@ guint                   xfce_indicator_button_get_pos     (XfceIndicatorButton  
 
 GtkMenu                *xfce_indicator_button_get_menu    (XfceIndicatorButton        *button);
 
+gboolean                xfce_indicator_button_is_icon_rectangular (XfceIndicatorButton *button);
+
 GtkWidget              *xfce_indicator_button_new         (IndicatorObject            *io,
                                                            const gchar                *io_name,
                                                            IndicatorObjectEntry       *entry,
