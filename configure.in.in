@@ -30,6 +30,7 @@ dnl ***************************
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar])
 AM_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE()
+m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
 dnl ********************************
 dnl *** Check for basic programs ***
@@ -38,6 +39,12 @@ AC_PROG_CC()
 AC_PROG_LD()
 AC_PROG_INSTALL()
 AC_PROG_INTLTOOL()
+LT_PREREQ([2.2.6])
+LT_INIT([disable-static])
+
+dnl **************************
+dnl *** Initialize libtool ***
+dnl **************************
 LT_PREREQ([2.2.6])
 LT_INIT([disable-static])
 
@@ -68,6 +75,7 @@ dnl ***********************************
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.14.0])
 XDT_CHECK_PACKAGE([EXO], [exo-1], [0.6.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.3.99.2])
+XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-1], [4.8.0])
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.6.0])
 XDT_CHECK_PACKAGE([INDICATOR], [indicator], [0.3.0], [indicator_pkgname=indicator], [XDT_CHECK_PACKAGE([INDICATOR], [indicator-0.4], [0.3.90], [indicator_pkgname=indicator-0.4], [])])

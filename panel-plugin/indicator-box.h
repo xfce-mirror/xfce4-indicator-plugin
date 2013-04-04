@@ -1,4 +1,4 @@
-/*  Copyright (c) 2012 Andrzej <ndrwrdck@gmail.com>
+/*  Copyright (c) 2012-2013 Andrzej <ndrwrdck@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -18,6 +18,12 @@
 #ifndef __INDICATOR_BOX_H__
 #define __INDICATOR_BOX_H__
 
+#include <glib.h>
+#include <gtk/gtk.h>
+#include <libindicator/indicator-object.h>
+#include <libxfce4panel/libxfce4panel.h>
+#include "indicator-config.h"
+
 G_BEGIN_DECLS
 
 GType xfce_indicator_box_get_type (void);
@@ -32,34 +38,10 @@ GType xfce_indicator_box_get_type (void);
 typedef struct _XfceIndicatorBox XfceIndicatorBox;
 typedef struct _XfceIndicatorBoxClass XfceIndicatorBoxClass;
 
-struct _XfceIndicatorBox
-{
-  GtkContainer          __parent__;
+void xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
+                                      IndicatorObjectEntry *entry);
 
-  GSList               *children;
-
-  gint                  panel_size;
-  gint                  nrows;
-  gint                  icon_size_max;
-
-  GtkOrientation        panel_orientation;
-  GtkOrientation        orientation;
-};
-
-struct _XfceIndicatorBoxClass
-{
-  GtkContainerClass __parent__;
-};
-
-void xfce_indicator_box_set_orientation (XfceIndicatorBox *button,
-                                         GtkOrientation panel_orientation,
-                                         GtkOrientation orientation);
-
-void xfce_indicator_box_set_size (XfceIndicatorBox *button,
-                                  gint panel_size,
-                                  gint nrows);
-
-GtkWidget *xfce_indicator_box_new ();
+GtkWidget       *xfce_indicator_box_new                       (IndicatorConfig        *config);
 
 G_END_DECLS
 

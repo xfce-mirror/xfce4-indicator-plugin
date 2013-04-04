@@ -18,28 +18,30 @@
 #ifndef __INDICATOR_H__
 #define __INDICATOR_H__
 
+#include <glib.h>
+#include <gtk/gtk.h>
+#include <libxfce4panel/libxfce4panel.h>
+#include "indicator-box.h"
+
 G_BEGIN_DECLS
-#ifndef INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED
-#define INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED "scroll-entry"
-#endif
-/* plugin structure */
-typedef struct
-{
-    XfcePanelPlugin *plugin;
+typedef struct _IndicatorPluginClass IndicatorPluginClass;
+typedef struct _IndicatorPlugin      IndicatorPlugin;
 
-    /* panel widgets */ 
-    GtkWidget       *item;
-    GtkWidget       *buttonbox;
-    GtkWidget       *ebox;
+#define XFCE_TYPE_INDICATOR_PLUGIN            (indicator_get_type ())
+#define XFCE_INDICATOR_PLUGIN(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_INDICATOR_PLUGIN, IndicatorPlugin))
+#define XFCE_INDICATOR_PLUGIN_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_INDICATOR_PLUGIN, IndicatorPluginClass))
+#define XFCE_IS_INDICATOR_PLUGIN(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_INDICATOR_PLUGIN))
+#define XFCE_IS_INDICATOR_PLUGIN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_INDICATOR_PLUGIN))
+#define XFCE_INDICATOR_PLUGIN_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_INDICATOR_PLUGIN, IndicatorPluginClass))
 
-    /* indicator settings */
-    gchar          **excluded_modules;
-}
-IndicatorPlugin;
+GType indicator_get_type      (void) G_GNUC_CONST;
 
-void
-indicator_save (XfcePanelPlugin *plugin,
-             IndicatorPlugin    *indicator);
+void  indicator_register_type (XfcePanelTypeModule *type_module);
+
+void                indicator_save             (XfcePanelPlugin    *plugin,
+                                                IndicatorPlugin    *indicator);
+
+XfceIndicatorBox   *indicator_get_buttonbox    (IndicatorPlugin    *plugin);
 
 G_END_DECLS
 
