@@ -1,2 +1,7 @@
+panel-plugin/indicator.desktop.in
 panel-plugin/indicator.c
-panel-plugin/indicator.desktop.in.in
+panel-plugin/indicator-box.c
+panel-plugin/indicator-button.c
+panel-plugin/indicator-config.c
+panel-plugin/indicator-dialog.c
+panel-plugin/indicator-dialog.glade
