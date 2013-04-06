@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-06 04:39+0000\n"
-"PO-Revision-Date: 2013-04-06 09:49+0100\n"
+"PO-Revision-Date: 2013-04-06 09:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Gestion de l'énergie"
 
 #: ../panel-plugin/indicator-dialog.c:61
 msgid "Application Menus (Global Menu)"
-msgstr ""
+msgstr "Menus application (menu global)"
 
 #: ../panel-plugin/indicator-dialog.c:62
 msgid "Session Management"
@@ -63,7 +63,7 @@ msgstr "Gestion de la session"
 
 #: ../panel-plugin/indicator-dialog.c:63
 msgid "Messaging Menu"
-msgstr ""
+msgstr "Menu messagerie"
 
 #: ../panel-plugin/indicator-dialog.c:64
 msgid "Date and Time"
@@ -71,7 +71,7 @@ msgstr "Date et heure"
 
 #: ../panel-plugin/indicator-dialog.c:436
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir effacer la liste des indicateurs connus ?"
 
 #: ../panel-plugin/indicator-dialog.c:572
 #, c-format
@@ -81,10 +81,13 @@ msgstr "Impossible d'ouvrir l'url suivante : %s"
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr ""
+"<i>S'il vous plaît redémarrer le panneau pour que les changements de "
+"visibilité prennent effet.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
+#, fuzzy
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "Aligner à gauche en mode deskbar"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid "Appearance"
@@ -102,13 +105,15 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Hide indicators by default"
-msgstr ""
+msgstr "Masquer les indicateurs par défaut"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
 msgstr ""
+"Les icônes sont mis à l'échelle pour s'adapter à une seule rangée de "
+"l'écran. Utiliser cette option pour définir la taille maximale de l'icône."
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Indicators"
@@ -120,15 +125,16 @@ msgstr "Indicateur connus"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Move the selected indicator one row down."
-msgstr ""
+msgstr "Déplacer l'indicateur sélectionné une ligne vers le bas."
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Move the selected indicator one row up."
-msgstr ""
+msgstr "Déplacer l'indicateur sélectionné une ligne vers le haut."
 
 #: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Resets the list of indicators and their visibility settings."
 msgstr ""
+"Réinitialise la liste des indicateurs et de leurs paramètres de visibilité."
 
 #: ../panel-plugin/indicator-dialog.glade.h:13
 msgid ""
