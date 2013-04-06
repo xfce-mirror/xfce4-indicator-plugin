@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-06 04:39+0000\n"
-"PO-Revision-Date: 2013-04-06 09:57+0100\n"
+"PO-Revision-Date: 2013-04-06 10:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -85,9 +85,8 @@ msgstr ""
 "visibilité prennent effet.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-#, fuzzy
 msgid "Align left in deskbar mode"
-msgstr "Aligner à gauche en mode deskbar"
+msgstr "Aligner à gauche en mode barre de bureau"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid "Appearance"
@@ -102,6 +101,9 @@ msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr ""
+"Contrôle la disposition des boutons indicateur lorsque le panneau est en "
+"mode barre de bureau. Les choix possibles sont « centré » ou « aligné à "
+"gauche »."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Hide indicators by default"
@@ -141,6 +143,9 @@ msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr ""
+"Lorsqu'elle est activée, seuls les indicateurs marqués « Visible » sont "
+"affichés. Dans le cas contraire, tous les indicateurs non marqués « Caché » "
+"sont affichés."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "_Maximum icon size (px):"
