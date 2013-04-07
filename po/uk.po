@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-25 17:32-0400\n"
+"POT-Creation-Date: 2013-04-07 18:06+0000\n"
 "PO-Revision-Date: 2011-03-25 18:36+0300\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -16,14 +16,123 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/indicator.c:208
-msgid "No Indicators"
-msgstr "Немає індикаторів"
-
-#: ../panel-plugin/indicator.desktop.in.in.h:1
+#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Індикатор якоїсь події, що потребує Вашої уваги на стільниці"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2
+#: ../panel-plugin/indicator.desktop.in.h:2
 msgid "Indicator Plugin"
 msgstr "Плагін індикаторів"
+
+#: ../panel-plugin/indicator.c:159
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Всі права застережено (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:288
+msgid "No Indicators"
+msgstr "Немає індикаторів"
+
+#. raw name,                  pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Індикатори програм"
+
+#: ../panel-plugin/indicator-dialog.c:58
+msgid "Sound Menu"
+msgstr "Меню звуку"
+
+#: ../panel-plugin/indicator-dialog.c:59
+msgid "Printers Menu"
+msgstr "Меню принтерів"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Power Management"
+msgstr "Керування живленням"
+
+#: ../panel-plugin/indicator-dialog.c:61
+msgid "Application Menus (Global Menu)"
+msgstr "Меню програм (глобальне меню)"
+
+#: ../panel-plugin/indicator-dialog.c:62
+msgid "Session Management"
+msgstr "Керування сесією"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Messaging Menu"
+msgstr "Меню повідомлень"
+
+#: ../panel-plugin/indicator-dialog.c:64
+msgid "Date and Time"
+msgstr "Дата і час"
+
+#: ../panel-plugin/indicator-dialog.c:436
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Ви дійсно бажаєте очистити список відомих індикаторів?"
+
+#: ../panel-plugin/indicator-dialog.c:572
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Неможливо відкрити наступне посилання: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Будь ласка, перезавантажте панель для застосування змін.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Align left in deskbar mode"
+msgstr "Порівняти зліва в режимі панелі"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid "Appearance"
+msgstr "Зовнішній вигляд"
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "C_lear known indicators"
+msgstr "_Очистити відомі індикатори"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hide indicators by default"
+msgstr "Сховати індикатори по замовчуванню"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid ""
+"Icons are scaled to fit a single row of the panel. Use this option to "
+"restrict the maximum size of the icon."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid "Indicators"
+msgstr "Індикатори"
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Known Indicators"
+msgstr "Відомі індикатори"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Move the selected indicator one row down."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Move the selected indicator one row up."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Resets the list of indicators and their visibility settings."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "_Maximum icon size (px):"
+msgstr "_Максимальний розмір іконки (пікселі):"
