@@ -103,7 +103,9 @@ xfce_indicator_button_class_init (XfceIndicatorButtonClass *klass)
 static void
 xfce_indicator_button_init (XfceIndicatorButton *button)
 {
-  GTK_WIDGET_UNSET_FLAGS (GTK_WIDGET (button), GTK_CAN_DEFAULT | GTK_CAN_FOCUS);
+  //GTK_WIDGET_UNSET_FLAGS (GTK_WIDGET (button), GTK_CAN_DEFAULT | GTK_CAN_FOCUS);
+  gtk_widget_set_can_focus(GTK_WIDGET(button), FALSE);
+  gtk_widget_set_can_default (GTK_WIDGET (button), FALSE);
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_button_set_use_underline (GTK_BUTTON (button),TRUE);
   gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
@@ -526,7 +528,7 @@ xfce_indicator_configuration_changed (XfceIndicatorButton *button,
 {
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  g_return_if_fail (GTK_WIDGET (button)->parent != NULL);
+  g_return_if_fail (gtk_widget_get_parent (GTK_WIDGET (button)) != NULL);
 
   if (button->orig_icon != NULL)
     xfce_indicator_button_update_icon (button);

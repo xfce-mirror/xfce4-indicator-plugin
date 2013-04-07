@@ -32,7 +32,6 @@ libindicator_plugin_la_SOURCES = \
 
 libindicator_plugin_la_CFLAGS = \
 	$(GTK_CFLAGS) \
-	$(EXO_CFLAGS) \
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(LIBXFCE4UI_CFLAGS) \
 	$(LIBXFCE4PANEL_CFLAGS)						\
@@ -52,7 +51,6 @@ libindicator_plugin_la_LDFLAGS = \
 
 libindicator_plugin_la_LIBADD = \
 	$(GTK_LIBS) \
-	$(EXO_LIBS) \
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(LIBXFCE4UI_LIBS) \
 	$(LIBXFCE4PANEL_LIBS)						\

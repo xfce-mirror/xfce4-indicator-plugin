@@ -35,7 +35,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
-#include <exo/exo.h>
+//#include <exo/exo.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 
 #include "indicator-dialog.h"
@@ -478,18 +478,18 @@ indicator_dialog_build (IndicatorDialog *dialog)
 
       object = gtk_builder_get_object (builder, "size-max");
       g_return_if_fail (GTK_IS_WIDGET (object));
-      exo_mutual_binding_new (G_OBJECT (dialog->config), "icon-size-max",
-                              G_OBJECT (object), "value");
+      //exo_mutual_binding_new (G_OBJECT (dialog->config), "icon-size-max",
+      //                        G_OBJECT (object), "value");
 
       object = gtk_builder_get_object (builder, "checkbutton-align-left");
       g_return_if_fail (GTK_IS_WIDGET (object));
-      exo_mutual_binding_new (G_OBJECT (dialog->config), "align-left",
-                              G_OBJECT (object), "active");
+      //exo_mutual_binding_new (G_OBJECT (dialog->config), "align-left",
+      //                        G_OBJECT (object), "active");
 
       object = gtk_builder_get_object (builder, "checkbutton-whitelist");
       g_return_if_fail (GTK_IS_WIDGET (object));
-      exo_mutual_binding_new (G_OBJECT (dialog->config), "mode-whitelist",
-                              G_OBJECT (object), "active");
+      //exo_mutual_binding_new (G_OBJECT (dialog->config), "mode-whitelist",
+      //                        G_OBJECT (object), "active");
       g_signal_connect (G_OBJECT (object), "toggled",
                         G_CALLBACK (indicator_dialog_mode_whitelist_toggled), dialog);
       indicator_dialog_mode_whitelist_toggled (GTK_CHECK_BUTTON (object), dialog);
