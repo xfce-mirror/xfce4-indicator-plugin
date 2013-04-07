@@ -81,7 +81,7 @@ msgstr "<i>Будь ласка, перезавантажте панель для
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Align left in deskbar mode"
-msgstr "Порівняти зліва в режимі панелі"
+msgstr "Вирівнювання зліва в режимі панелі"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid "Appearance"
