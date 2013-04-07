@@ -95,7 +95,7 @@ msgstr "_Очистити відомі індикатори"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "Контроль розташування кнопок індикаторів в режимі панелі. Можливі варіанти: \"по центру\" або \"вирівнювання зліва\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Hide indicators by default"
@@ -105,7 +105,7 @@ msgstr "Сховати індикатори по замовчуванню"
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
-msgstr ""
+msgstr "Іконки масштабуються, щоб умістити їх в рядок панелі. Використовуйте цей параметр для обмеження максимального розміру іконки."
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Indicators"
@@ -117,21 +117,21 @@ msgstr "Відомі індикатори"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Move the selected indicator one row down."
-msgstr ""
+msgstr "Перемістити вибраний індикатор на один рядок вниз."
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Move the selected indicator one row up."
-msgstr ""
+msgstr "Перемістити вибраний індикатор на один рядок вверх."
 
 #: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Resets the list of indicators and their visibility settings."
-msgstr ""
+msgstr "Відновити список індикаторів і налаштування їх видимості. "
 
 #: ../panel-plugin/indicator-dialog.glade.h:13
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
+msgstr "Якщо цей параметр включений, тоді показуються тільки індикатори, відмічені як \"Видимий\". В протилежному випадку всі індикатори, що не позначені як \"Схований\", будуть показані."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "_Maximum icon size (px):"
