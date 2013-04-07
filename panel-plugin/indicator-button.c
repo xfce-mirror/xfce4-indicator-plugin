@@ -128,7 +128,8 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   gtk_container_add (GTK_CONTAINER (button), button->align_box);
   gtk_widget_show (button->align_box);
 
-  button->box = xfce_hvbox_new (GTK_ORIENTATION_HORIZONTAL, FALSE, 1);
+  //button->box = xfce_hvbox_new (GTK_ORIENTATION_HORIZONTAL, FALSE, 1);
+  button->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
   gtk_container_add (GTK_CONTAINER (button->align_box), button->box);
   gtk_widget_show (button->box);
 }
