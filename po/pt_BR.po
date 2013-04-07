@@ -8,23 +8,142 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-26 10:19+0000\n"
-"PO-Revision-Date: 2011-05-26 09:51-0300\n"
-"Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2013-04-07 12:45+0000\n"
+"PO-Revision-Date: 2013-04-07 12:40-0300\n"
+"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <xfce-i18n-br@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: pt_BR\n"
 
-#: ../panel-plugin/indicator.c:119
-msgid "No Indicators"
-msgstr "Nenhum indicador"
-
-#: ../panel-plugin/indicator.desktop.in.in.h:1
+#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Um indicador de algo que requer sua atenção na área de trabalho"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2
+#: ../panel-plugin/indicator.desktop.in.h:2
 msgid "Indicator Plugin"
 msgstr "Plugin Indicador"
 
+#: ../panel-plugin/indicator.c:159
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Copyright (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:288
+msgid "No Indicators"
+msgstr "Nenhum indicador"
+
+#. raw name,                  pretty name,                                 icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Indicadores de aplicativos"
+
+#: ../panel-plugin/indicator-dialog.c:58
+msgid "Sound Menu"
+msgstr "Menu de áudio"
+
+#: ../panel-plugin/indicator-dialog.c:59
+msgid "Printers Menu"
+msgstr "Menu de impressoras"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Power Management"
+msgstr "Gerenciamento de energia"
+
+#: ../panel-plugin/indicator-dialog.c:61
+msgid "Application Menus (Global Menu)"
+msgstr "Menus de aplicativos (Menu global)"
+
+#: ../panel-plugin/indicator-dialog.c:62
+msgid "Session Management"
+msgstr "Gerenciamento de sessão"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Messaging Menu"
+msgstr "Menu de mensagens"
+
+#: ../panel-plugin/indicator-dialog.c:64
+msgid "Date and Time"
+msgstr "Data e hora"
+
+#: ../panel-plugin/indicator-dialog.c:436
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Você tem certeza que deseja limpar a lista de indicadores conhecidos?"
+
+#: ../panel-plugin/indicator-dialog.c:572
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Não foi possível abrir a seguinte url: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr ""
+"<i>Por favor, reiniciar o painel para as alterações de visibilidade terem "
+"efeitos.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Align left in deskbar mode"
+msgstr "Alinhar à esquerda no modo deskbar"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid "Appearance"
+msgstr "Aparência"
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "C_lear known indicators"
+msgstr "_Limpar indicadores conhecidos"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr ""
+"Controla o layout de botão de indicador quando o painel está em um modo "
+"deskbar. Escolhas possíveis são \"centralizado\" ou \"alinhado à esquerda\"."
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hide indicators by default"
+msgstr "Ocultar indicadores por padrão"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid ""
+"Icons are scaled to fit a single row of the panel. Use this option to "
+"restrict the maximum size of the icon."
+msgstr ""
+"Ícones são escalados para se ajustar a uma única linha do painel. Use esta "
+"opção para restringir o tamanho máximo do ícone."
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid "Indicators"
+msgstr "Indicadores"
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Known Indicators"
+msgstr "Indicadores conhecidos"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Move the selected indicator one row down."
+msgstr "Mover o indicador selecionado uma linha para baixo."
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Move the selected indicator one row up."
+msgstr "Mover o indicador selecionado uma linha para cima."
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Redefine a lista os indicadores e suas configurações de visibilidade."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr ""
+"Quando habilitado, apenas indicadores marcados com \"Visível\" são "
+"mostrados. Do contrário, todos os indicadores não marcados com \"Oculto\" "
+"são exibidos."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "_Maximum icon size (px):"
+msgstr "Tamanho _máximo do ícone (px):"
