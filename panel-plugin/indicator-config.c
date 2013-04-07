@@ -157,24 +157,21 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                                       128,
                                                       DEFAULT_ICON_SIZE_MAX,
                                                       G_PARAM_READWRITE |
-                                                      G_PARAM_STATIC_STRINGS |
-                                                      G_PARAM_CONSTRUCT_ONLY));
+                                                      G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
                                    PROP_ALIGN_LEFT,
                                    g_param_spec_boolean ("align-left", NULL, NULL,
                                                          DEFAULT_ALIGN_LEFT,
                                                          G_PARAM_READWRITE |
-                                                         G_PARAM_STATIC_STRINGS |
-                                                         G_PARAM_CONSTRUCT_ONLY));
+                                                         G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
                                    PROP_MODE_WHITELIST,
                                    g_param_spec_boolean ("mode-whitelist", NULL, NULL,
                                                          DEFAULT_MODE_WHITELIST,
                                                          G_PARAM_READWRITE |
-                                                         G_PARAM_STATIC_STRINGS |
-                                                         G_PARAM_CONSTRUCT_ONLY));
+                                                         G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
                                    PROP_BLACKLIST,
@@ -182,8 +179,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                                        NULL, NULL,
                                                        XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
                                                        G_PARAM_READWRITE |
-                                                       G_PARAM_STATIC_STRINGS |
-                                                       G_PARAM_CONSTRUCT_ONLY));
+                                                       G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
                                    PROP_WHITELIST,
@@ -191,8 +187,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                                        NULL, NULL,
                                                        XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
                                                        G_PARAM_READWRITE |
-                                                       G_PARAM_STATIC_STRINGS |
-                                                       G_PARAM_CONSTRUCT_ONLY));
+                                                       G_PARAM_STATIC_STRINGS));
 
 
   g_object_class_install_property (gobject_class,
@@ -201,8 +196,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                                        NULL, NULL,
                                                        XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
                                                        G_PARAM_READWRITE |
-                                                       G_PARAM_STATIC_STRINGS |
-                                                       G_PARAM_CONSTRUCT_ONLY));
+                                                       G_PARAM_STATIC_STRINGS));
 
 
   indicator_config_signals[CONFIGURATION_CHANGED] =

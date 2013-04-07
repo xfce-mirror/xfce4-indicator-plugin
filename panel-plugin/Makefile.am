@@ -85,7 +85,7 @@ DISTCLEANFILES += \
 	$(libindicator_built_sources)
 
 indicator-dialog_ui.h: indicator-dialog.glade
-	$(AM_V_GEN) exo-csource --static --strip-comments --strip-content --name=indicator_dialog_ui $< >$@
+	$(AM_V_GEN) xdt-csource --static --strip-comments --strip-content --name=indicator_dialog_ui $< >$@
 endif
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

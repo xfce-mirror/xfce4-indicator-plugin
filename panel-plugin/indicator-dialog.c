@@ -480,16 +480,25 @@ indicator_dialog_build (IndicatorDialog *dialog)
       g_return_if_fail (GTK_IS_WIDGET (object));
       //exo_mutual_binding_new (G_OBJECT (dialog->config), "icon-size-max",
       //                        G_OBJECT (object), "value");
+      g_object_bind_property (G_OBJECT (dialog->config), "icon-size-max",
+                              G_OBJECT (object), "value",
+                              G_BINDING_SYNC_CREATE | G_BINDING_BIDIRECTIONAL);
 
       object = gtk_builder_get_object (builder, "checkbutton-align-left");
       g_return_if_fail (GTK_IS_WIDGET (object));
       //exo_mutual_binding_new (G_OBJECT (dialog->config), "align-left",
       //                        G_OBJECT (object), "active");
+      g_object_bind_property (G_OBJECT (dialog->config), "align-left",
+                              G_OBJECT (object), "active",
+                              G_BINDING_SYNC_CREATE | G_BINDING_BIDIRECTIONAL);
 
       object = gtk_builder_get_object (builder, "checkbutton-whitelist");
       g_return_if_fail (GTK_IS_WIDGET (object));
       //exo_mutual_binding_new (G_OBJECT (dialog->config), "mode-whitelist",
       //                        G_OBJECT (object), "active");
+      g_object_bind_property (G_OBJECT (dialog->config), "mode-whitelist",
+                              G_OBJECT (object), "active",
+                              G_BINDING_SYNC_CREATE | G_BINDING_BIDIRECTIONAL);
       g_signal_connect (G_OBJECT (object), "toggled",
                         G_CALLBACK (indicator_dialog_mode_whitelist_toggled), dialog);
       indicator_dialog_mode_whitelist_toggled (GTK_CHECK_BUTTON (object), dialog);
