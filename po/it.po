@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-06 04:39+0000\n"
+"POT-Creation-Date: 2013-04-07 07:24+0000\n"
 "PO-Revision-Date: 2011-05-29 11:44+0100\n"
 "Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-it-translators@googlegroups.com>\n"
@@ -41,7 +41,7 @@ msgstr "Nessun indicatore"
 #. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
-msgstr ""
+msgstr "Indicatori applicazione"
 
 #: ../panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
@@ -82,11 +82,12 @@ msgstr "Impossibile aprire il seguente indirizzo: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Riavviare il pannello per rendere effettive le modifiche di visibilità</i>"
+msgstr ""
+"<i>Riavviare il pannello per rendere effettive le modifiche di visibilità</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "Allinea a sinistra in modalità deskbar"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid "Appearance"
@@ -100,7 +101,7 @@ msgstr "Elimina gli indicatori conosci_uti"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "Controlla il posizionamento di pulsante dell'indicatore quando il pannello è nella modalità deskbar; le scelte disponibili sono \"centrato\" o \"allineato a sinistra\""
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Hide indicators by default"
@@ -110,7 +111,9 @@ msgstr "Nascondi gli indicatori"
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
-msgstr "Le icone sono scalate per adattarsi a una singola riga del pannello. Usare questa opzione per diminuire la dimensione dell'icona"
+msgstr ""
+"Le icone sono scalate per adattarsi a una singola riga del pannello. Usare "
+"questa opzione per diminuire la dimensione dell'icona"
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Indicators"
@@ -136,7 +139,10 @@ msgstr "Ripristina l'elenco degli indicatori e la loro visibilità."
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Se abilitata, solo gli indicatori marcati come \"Visibili\" verranno mostrati. Diversamente verranno visualizzati solo quelli marcati come \"Nascosti\""
+msgstr ""
+"Se abilitata, solo gli indicatori marcati come \"Visibili\" verranno "
+"mostrati. Diversamente verranno visualizzati solo quelli marcati come "
+"\"Nascosti\""
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "_Maximum icon size (px):"
