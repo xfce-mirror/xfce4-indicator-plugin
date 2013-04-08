@@ -463,6 +463,8 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   x0 = allocation->x;
   y0 = allocation->y;
 
+  gtk_widget_set_allocation (widget, allocation);
+
   panel_size = indicator_config_get_panel_size (box->config);
   panel_orientation = indicator_config_get_panel_orientation (box->config);
   nrows = panel_size / xfce_indicator_box_get_row_size (box);
