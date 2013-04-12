@@ -2,33 +2,147 @@
 # Russian messages for xfce4-indicator-plugin.
 # Copyright (C) 2010 Evgeni Golov <evgeni@debian.org>
 # This file is distributed under the same license as the xfce4-indicator-plugin package.
-# 2010 Evgeni Golov <evgeni@debian.org>, 2010.
+#
+# Evgeni Golov <evgeni@debian.org>, 2010.
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.2.0-hg\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-02 09:48+0100\n"
-"PO-Revision-Date: 2010-07-02 10:06+0100\n"
-"Last-Translator: Evgeni Golov <evgeni@debian.org>\n"
-"Language-Team: Russian\n"
+"Report-Msgid-Bugs-To: Xfce translations mailing list <xfce-i18n@xfce.org>\n"
+"POT-Creation-Date: 2013-04-12 22:41+0400\n"
+"PO-Revision-Date: 2013-04-12 23:09+0400\n"
+"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
+"Language-Team: <xfce-i18n@xfce.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#. A label to allow for click through
-#: ../panel-plugin/indicator.c:209
-msgid "No Indicators"
-msgstr "Нет индикаторов"
-
-#: ../panel-plugin/indicator.desktop.in.in.h:1
-msgid "An indicator of something that needs your attention on the desktop"
-msgstr "Индикатор события, требующего вашего внимания"
-
-#: ../panel-plugin/indicator.desktop.in.in.h:2
+#: ../panel-plugin/indicator.desktop.in.h:1
 msgid "Indicator Plugin"
 msgstr "Плагин индикаторов"
 
+#: ../panel-plugin/indicator.desktop.in.h:2 ../panel-plugin/indicator.c:157
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "Индикатор события, требующего вашего внимания"
+
+#: ../panel-plugin/indicator.c:159
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Copyright © 2009—2013\n"
+
+#: ../panel-plugin/indicator.c:288
+msgid "No Indicators"
+msgstr "Нет индикаторов"
+
+#. raw name,                  pretty name,                                 icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Индикаторы приложения"
+
+#: ../panel-plugin/indicator-dialog.c:58
+msgid "Sound Menu"
+msgstr "Меню звука"
+
+#: ../panel-plugin/indicator-dialog.c:59
+msgid "Printers Menu"
+msgstr "Меню принтеров"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Power Management"
+msgstr "Управление питанием"
+
+#: ../panel-plugin/indicator-dialog.c:61
+msgid "Application Menus (Global Menu)"
+msgstr "Меню приложения (глобальное)"
+
+#: ../panel-plugin/indicator-dialog.c:62
+msgid "Session Management"
+msgstr "Управление сеансом"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Messaging Menu"
+msgstr "Меню сообщений"
+
+#: ../panel-plugin/indicator-dialog.c:64
+msgid "Date and Time"
+msgstr "Дата и время"
+
+#: ../panel-plugin/indicator-dialog.c:436
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Уверены, что хотите очистить список известных индикаторов?"
+
+#: ../panel-plugin/indicator-dialog.c:572
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Невозможно открыть ссылку: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "Indicators"
+msgstr "Индикаторы"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "_Maximum icon size (px):"
+msgstr "_Наибольший размер значка (пикс.):"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid ""
+"Icons are scaled to fit a single row of the panel. Use this option to "
+"restrict the maximum size of the icon."
+msgstr ""
+"Значки масштабируются для заполнения одой строки панели. Используйте эту "
+"опцию для ограничения наибольшего размера значка."
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr "Выравнивать по левому краю в режиме Deskbar"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr ""
+"Расположение кнопок индикаторов в режиме панели Deskbar. Возможные варианты: "
+"«по центру» или «слева»."
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Appearance"
+msgstr "Внешний вид"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "Скрывать индикаторы по умолчанию"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr ""
+"Если включено, только отображаются только индикаторы отмеченные как "
+"«видимые». Иначе отображаются все индикаторы, не отмеченные как «скрытые»."
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Move the selected indicator one row up."
+msgstr "Переместить выбранные индикаторы на одну строку вверх"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Move the selected indicator one row down."
+msgstr "Переместить выбранные индикаторы на одну строку вниз"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Перезапустить панель для применения изменений видимости.<i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "C_lear known indicators"
+msgstr "О_чистить известные индикаторы"
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Сбросить список индикаторов и их настройки видимости."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "Known Indicators"
+msgstr "Известные индикаторы"
