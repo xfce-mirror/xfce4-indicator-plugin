@@ -2,32 +2,141 @@
 # Copyright (C) 2009 Mark Trompell <mark@foresightlinux.org>
 # This file is distributed under the same license as the xfce4-indicator-plugin package.
 # Michal Várady <miko.vaji@gmail.com>, 2012.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-08 17:54+0000\n"
+"POT-Creation-Date: 2013-04-13 08:00+0000\n"
 "PO-Revision-Date: 2012-01-09 00:29+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <xfce-i18n@xfce.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 
-#: ../panel-plugin/indicator.c:182
-msgid "No Indicators"
-msgstr "Žádné indikátory"
-
-#: ../panel-plugin/indicator.desktop.in.in.h:1
+#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Indikátor záležitosti, která vyžaduje vaši pozornost na pracovní ploše"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2
+#: ../panel-plugin/indicator.desktop.in.h:2
 msgid "Indicator Plugin"
 msgstr "Zásuvný modul Indikátor"
 
+#: ../panel-plugin/indicator.c:159
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Copyright (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:288
+msgid "No Indicators"
+msgstr "Žádné indikátory"
+
+#. raw name,                  pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+#, fuzzy
+msgid "Application Indicators"
+msgstr "Žádné indikátory"
+
+#: ../panel-plugin/indicator-dialog.c:58
+msgid "Sound Menu"
+msgstr "Nabídka Zvuk"
+
+#: ../panel-plugin/indicator-dialog.c:59
+msgid "Printers Menu"
+msgstr "Nabídka Tiskárny"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Power Management"
+msgstr "Správa napájení"
+
+#: ../panel-plugin/indicator-dialog.c:61
+msgid "Application Menus (Global Menu)"
+msgstr "Nabídky aplikace (Hlavní nabídka)"
+
+#: ../panel-plugin/indicator-dialog.c:62
+msgid "Session Management"
+msgstr "Správa relace"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Messaging Menu"
+msgstr "Nabídka Zasílání zpráv"
+
+#: ../panel-plugin/indicator-dialog.c:64
+msgid "Date and Time"
+msgstr "Datum a čas"
+
+#: ../panel-plugin/indicator-dialog.c:436
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Opravdu chcete vymazat seznam známých indikátorů?"
+
+#: ../panel-plugin/indicator-dialog.c:572
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Nelze otevřít toto umístění URL: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Změny viditelnosti se projeví po restartu panelu.<./i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Align left in deskbar mode"
+msgstr "V režimu Deskbar umístit vlevo"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid "Appearance"
+msgstr "Vzhled"
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "C_lear known indicators"
+msgstr "Vy_mazat známé indikátory"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr "Ovládá rozložení tlačítek indikátoru, pokud je panel v režimu Deskbar. Dostupné volby jsou \"vystředěný\" a \"umístěný vlevo\"."
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hide indicators by default"
+msgstr "Ve výchozím stavu skrýt indikátory"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid ""
+"Icons are scaled to fit a single row of the panel. Use this option to "
+"restrict the maximum size of the icon."
+msgstr "Velikosti Ikon jsou přizpůsobeny tak, aby je bylo možné umístit do jednoho řádku panelu. Tuto volbu použijte k omezení maximální velikosti ikony."
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid "Indicators"
+msgstr "Indikátory"
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Known Indicators"
+msgstr "Známé indikátory"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Move the selected indicator one row down."
+msgstr "Přesunout vybraný indikátor o řádek níže."
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Move the selected indicator one row up."
+msgstr "Přesunout vybraný indikátor o řádek výše."
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Obnoví seznam indikátorů a jejich nastavení viditelnosti."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "Pokud je tato volby povolena, zobrazí se pouze indikátory označené jako \"Viditelné\". V opačném případě se zobrazí všechny indikátory, kromě indikátorů označených jako \"Skryté\""
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "_Maximum icon size (px):"
+msgstr "_Maximální velikosti ikony (v pixelech):"
