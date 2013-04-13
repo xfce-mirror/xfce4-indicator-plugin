@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-10 15:39+0000\n"
+"POT-Creation-Date: 2013-04-13 13:24+0000\n"
 "PO-Revision-Date: 2012-01-08 22:16-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
@@ -83,7 +83,7 @@ msgstr "<i>Reinicie o painel para aplicar as alterações.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "Alinha na esquerdo no modo de barra de applets"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid "Appearance"
@@ -97,7 +97,7 @@ msgstr "_Limpar indicadores"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "Controla o esquema do botão indicador quando o painel está no modo de barra de applets. As escolhas possíveis são centrado ou alinhado à esquerda."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Hide indicators by default"
@@ -107,7 +107,9 @@ msgstr "Por omissão, ocultar indicadores"
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
-msgstr "Os ícones são ajustados a uma linha do painel. Utilize esta opção para restringir o tamanho máximo dos ícones."
+msgstr ""
+"Os ícones são ajustados a uma linha do painel. Utilize esta opção para "
+"restringir o tamanho máximo dos ícones."
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Indicators"
@@ -133,7 +135,9 @@ msgstr "Reinicia a lista de indicadores e as definições de visibilidade."
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Se ativa, apenas os indicadores marcados como visíveis são mostrados. Se inativa, todos os indicadores não marcados como ocultos serão exibidos."
+msgstr ""
+"Se ativa, apenas os indicadores marcados como visíveis são mostrados. Se "
+"inativa, todos os indicadores não marcados como ocultos serão exibidos."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "_Maximum icon size (px):"
