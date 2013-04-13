@@ -230,7 +230,7 @@
                                     </child>
                                     <child>
                                       <object class="GtkTreeViewColumn" id="treeviewcolumn-name">
-                                        <property name="title" translatable="yes">Indicator</property>
+                                        <property name="title">Indicator</property>
                                         <property name="expand">True</property>
                                         <child>
                                           <object class="GtkCellRendererText" id="cellrenderertext1"/>
@@ -242,7 +242,7 @@
                                     </child>
                                     <child>
                                       <object class="GtkTreeViewColumn" id="treeviewcolumn-blacklist">
-                                        <property name="title" translatable="yes">Hidden</property>
+                                        <property name="title">Hidden</property>
                                         <child>
                                           <object class="GtkCellRendererToggle" id="hidden-toggle"/>
                                           <attributes>
@@ -253,7 +253,7 @@
                                     </child>
                                     <child>
                                       <object class="GtkTreeViewColumn" id="treeviewcolumn-whitelist">
-                                        <property name="title" translatable="yes">Visible</property>
+                                        <property name="title">Visible</property>
                                         <child>
                                           <object class="GtkCellRendererToggle" id="visible-toggle"/>
                                           <attributes>
