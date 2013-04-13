@@ -14,10 +14,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
 "Language: \n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Poedit-Language: Czech\n"
-"X-Poedit-Country: CZECH REPUBLIC\n"
 
 #: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
@@ -38,9 +38,8 @@ msgstr "Žádné indikátory"
 #. raw name,                  pretty name,
 #. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
-#, fuzzy
 msgid "Application Indicators"
-msgstr "Žádné indikátory"
+msgstr "Indikátory aplikace"
 
 #: ../panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
