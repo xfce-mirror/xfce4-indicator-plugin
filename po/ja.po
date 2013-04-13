@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.5.0git-2052561\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-13 02:33+0000\n"
-"PO-Revision-Date: 2013-04-13 15:15+0900\n"
+"POT-Creation-Date: 2013-04-13 22:02+0900\n"
+"PO-Revision-Date: 2013-04-13 22:04+0900\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
-msgid "An indicator of something that needs your attention on the desktop"
-msgstr "デスクトップ上であなたの注目を引きたいなにがしかのインジケーターです"
-
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.h:1
 msgid "Indicator Plugin"
 msgstr "インジケータープラグイン"
+
+#: ../panel-plugin/indicator.desktop.in.h:2 ../panel-plugin/indicator.c:157
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "デスクトップ上であなたの注目を引きたいなにがしかのインジケーターです"
 
 #: ../panel-plugin/indicator.c:159
 msgid "Copyright (c) 2009-2013\n"
@@ -77,63 +77,69 @@ msgid "Unable to open the following url: %s"
 msgstr "次の URL を開けません: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
-msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>表示上の変更を即座に反映させたい場合はパネルを再起動してください。</i>"
-
-#: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "Align left in deskbar mode"
-msgstr "デスクバーモードで左に寄せる"
-
-#: ../panel-plugin/indicator-dialog.glade.h:3
-msgid "Appearance"
-msgstr "外観"
-
-#: ../panel-plugin/indicator-dialog.glade.h:4
-msgid "C_lear known indicators"
-msgstr "既知のインジケーターのクリア(_L)"
-
-#: ../panel-plugin/indicator-dialog.glade.h:5
-msgid ""
-"Controls the indicator button layout when the panel is in a Deskbar mode. "
-"Possible choices are \"centered\" or \"aligned left\"."
-msgstr "パネルがデスクバーモードの時のインジケーターボタンのレイアウトを制御します。\"中央揃え\" か \"左寄せ\" を選択出来ます。"
-
-#: ../panel-plugin/indicator-dialog.glade.h:6
-msgid "Hide indicators by default"
-msgstr "デフォルトでインジケーターを表示しない"
-
-#: ../panel-plugin/indicator-dialog.glade.h:7
-msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
-msgstr "アイコンはパネルの 1 行に合わせて拡大縮小します。このオプションでアイコンの最大サイズを制限できます。"
-
-#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Indicators"
 msgstr "インジケーター"
 
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "_Maximum icon size (px):"
+msgstr "最大アイコンサイズ (px)(_M):"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid "Icons are scaled to fit a single row of the panel. Use this option to restrict the maximum size of the icon."
+msgstr "アイコンはパネルの 1 行に合わせて拡大縮小します。このオプションでアイコンの最大サイズを制限できます。"
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr "デスクバーモードで左に寄せる"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid "Controls the indicator button layout when the panel is in a Deskbar mode. Possible choices are \"centered\" or \"aligned left\"."
+msgstr "パネルがデスクバーモードの時のインジケーターボタンのレイアウトを制御します。\"中央揃え\" か \"左寄せ\" を選択出来ます。"
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Appearance"
+msgstr "外観"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "デフォルトでインジケーターを表示しない"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all indicators not marked \"Hidden\" are displayed."
+msgstr "このオプションを有効にすると、\"表示\" 指定されたインジケーターのみ表示します。無効にすると、\"非表示\" 指定されたものを除く全インジケーターが表示されます。"
+
 #: ../panel-plugin/indicator-dialog.glade.h:9
-msgid "Known Indicators"
-msgstr "既知のインジケーター"
+msgid "Indicator"
+msgstr "インジケーター"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
-msgid "Move the selected indicator one row down."
-msgstr "選択したインジケーターを 1 行下に移動します。"
+msgid "Hidden"
+msgstr "非表示"
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Visible"
+msgstr "表示"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row up."
 msgstr "選択したインジケーターを 1 行上に移動します。"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr "選択したインジケーターを 1 行下に移動します。"
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>表示上の変更を即座に反映させたい場合はパネルを再起動してください。</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "既知のインジケーターのクリア(_L)"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "インジケーターのリストとそれらの表示設定をリセットします。"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
-msgid ""
-"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
-"indicators not marked \"Hidden\" are displayed."
-msgstr "このオプションを有効にすると、\"表示\" 指定されたインジケーターのみ表示します。無効にすると、\"非表示\" 指定されたものを除く全インジケーターが表示されます。"
-
-#: ../panel-plugin/indicator-dialog.glade.h:14
-msgid "_Maximum icon size (px):"
-msgstr "最大アイコンサイズ (px)(_M):"
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "Known Indicators"
+msgstr "既知のインジケーター"
