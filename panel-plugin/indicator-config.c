@@ -36,7 +36,7 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
 #include <xfconf/xfconf.h>
-#include <exo/exo.h>
+//#include <exo/exo.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 
 #include "indicator.h"
@@ -156,32 +156,38 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                                       1,
                                                       128,
                                                       DEFAULT_ICON_SIZE_MAX,
-                                                      EXO_PARAM_READWRITE));
+                                                      G_PARAM_READWRITE |
+                                                      G_PARAM_STATIC_STRINGS));
+
   g_object_class_install_property (gobject_class,
                                    PROP_ALIGN_LEFT,
                                    g_param_spec_boolean ("align-left", NULL, NULL,
                                                          DEFAULT_ALIGN_LEFT,
-                                                         EXO_PARAM_READWRITE));
+                                                         G_PARAM_READWRITE |
+                                                         G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
                                    PROP_MODE_WHITELIST,
                                    g_param_spec_boolean ("mode-whitelist", NULL, NULL,
                                                          DEFAULT_MODE_WHITELIST,
-                                                         EXO_PARAM_READWRITE));
+                                                         G_PARAM_READWRITE |
+                                                         G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
                                    PROP_BLACKLIST,
                                    g_param_spec_boxed ("blacklist",
                                                        NULL, NULL,
                                                        XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
-                                                       EXO_PARAM_READWRITE));
+                                                       G_PARAM_READWRITE |
+                                                       G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
                                    PROP_WHITELIST,
                                    g_param_spec_boxed ("whitelist",
                                                        NULL, NULL,
                                                        XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
-                                                       EXO_PARAM_READWRITE));
+                                                       G_PARAM_READWRITE |
+                                                       G_PARAM_STATIC_STRINGS));
 
 
   g_object_class_install_property (gobject_class,
@@ -189,7 +195,8 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                    g_param_spec_boxed ("known-indicators",
                                                        NULL, NULL,
                                                        XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
-                                                       EXO_PARAM_READWRITE));
+                                                       G_PARAM_READWRITE |
+                                                       G_PARAM_STATIC_STRINGS));
 
 
   indicator_config_signals[CONFIGURATION_CHANGED] =
@@ -584,7 +591,7 @@ indicator_config_blacklist_set (IndicatorConfig *config,
   gchar *name_copy;
 
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  g_return_if_fail (!exo_str_is_empty (name));
+  //g_return_if_fail (!exo_str_is_empty (name));
 
   if (add)
     {
@@ -611,7 +618,7 @@ indicator_config_whitelist_set (IndicatorConfig *config,
   gchar *name_copy;
 
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  g_return_if_fail (!exo_str_is_empty (name));
+  //g_return_if_fail (!exo_str_is_empty (name));
 
   if (add)
     {
@@ -660,7 +667,7 @@ indicator_config_add_known_indicator (IndicatorConfig *config,
   GList    *li;
 
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  g_return_if_fail (!exo_str_is_empty (name));
+  //g_return_if_fail (!exo_str_is_empty (name));
 
   /* check if the indicator is already known */
   for(li = config->known_indicators; li != NULL; li = li->next)
@@ -684,8 +691,8 @@ indicator_config_swap_known_indicators (IndicatorConfig *config,
   GList       *li, *li_tmp;
 
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  g_return_if_fail (!exo_str_is_empty (name1));
-  g_return_if_fail (!exo_str_is_empty (name2));
+  //g_return_if_fail (!exo_str_is_empty (name1));
+  //g_return_if_fail (!exo_str_is_empty (name2));
 
   for(li = config->known_indicators; li != NULL; li = li->next)
     if (g_strcmp0 (li->data, name1) == 0)

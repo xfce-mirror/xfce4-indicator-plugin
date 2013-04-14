@@ -26,7 +26,7 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <exo/exo.h>
+//#include <exo/exo.h>
 #include <libxfce4panel/libxfce4panel.h>
 #include <libindicator/indicator-object.h>
 
@@ -47,6 +47,12 @@ static void                 xfce_indicator_box_forall         (GtkContainer     
 static GType                xfce_indicator_box_child_type     (GtkContainer     *container);
 static void                 xfce_indicator_box_size_request   (GtkWidget        *widget,
                                                                GtkRequisition   *requisition);
+static void                 xfce_indicator_box_get_preferred_width (GtkWidget   *widget,
+                                                                    gint        *minimal_width,
+                                                                    gint        *natural_width);
+static void                 xfce_indicator_box_get_preferred_height (GtkWidget   *widget,
+                                                                     gint        *minimal_height,
+                                                                     gint        *natural_height);
 static void                 xfce_indicator_box_size_allocate  (GtkWidget        *widget,
                                                                GtkAllocation    *allocation);
 
@@ -91,7 +97,9 @@ xfce_indicator_box_class_init (XfceIndicatorBoxClass *klass)
   gobject_class->finalize = xfce_indicator_box_finalize;
 
   gtkwidget_class = GTK_WIDGET_CLASS (klass);
-  gtkwidget_class->size_request = xfce_indicator_box_size_request;
+  //gtkwidget_class->size_request = xfce_indicator_box_size_request;
+  gtkwidget_class->get_preferred_width = xfce_indicator_box_get_preferred_width;
+  gtkwidget_class->get_preferred_height = xfce_indicator_box_get_preferred_height;
   gtkwidget_class->size_allocate = xfce_indicator_box_size_allocate;
 
   gtkcontainer_class = GTK_CONTAINER_CLASS (klass);
@@ -106,8 +114,7 @@ xfce_indicator_box_class_init (XfceIndicatorBoxClass *klass)
 static void
 xfce_indicator_box_init (XfceIndicatorBox *box)
 {
-  GTK_WIDGET_SET_FLAGS (box, GTK_NO_WINDOW);
-
+  gtk_widget_set_has_window (GTK_WIDGET (box), FALSE);
   gtk_widget_set_can_focus(GTK_WIDGET(box), TRUE);
   gtk_container_set_border_width(GTK_CONTAINER(box), 0);
 
@@ -217,7 +224,7 @@ xfce_indicator_box_add (GtkContainer *container,
 
   g_return_if_fail (XFCE_IS_INDICATOR_BOX (box));
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
-  g_return_if_fail (child->parent == NULL);
+  g_return_if_fail (gtk_widget_get_parent (GTK_WIDGET (child)) == NULL);
 
   io_name = xfce_indicator_button_get_io_name (button);
   li = g_hash_table_lookup (box->children, io_name);
@@ -403,6 +410,35 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
 
 
 static void
+xfce_indicator_box_get_preferred_width (GtkWidget *widget,
+                                        gint      *minimal_width,
+                                        gint      *natural_width)
+{
+  GtkRequisition requisition;
+
+  xfce_indicator_box_size_request (widget, &requisition);
+
+  *minimal_width = *natural_width = requisition.width;
+}
+
+
+
+static void
+xfce_indicator_box_get_preferred_height (GtkWidget *widget,
+                                         gint      *minimal_height,
+                                         gint      *natural_height)
+{
+  GtkRequisition requisition;
+
+  xfce_indicator_box_size_request (widget, &requisition);
+
+  *minimal_height = *natural_height = requisition.height;
+}
+
+
+
+
+static void
 xfce_indicator_box_size_allocate (GtkWidget     *widget,
                                   GtkAllocation *allocation)
 {
@@ -426,6 +462,8 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   x = y = 0;
   x0 = allocation->x;
   y0 = allocation->y;
+
+  gtk_widget_set_allocation (widget, allocation);
 
   panel_size = indicator_config_get_panel_size (box->config);
   panel_orientation = indicator_config_get_panel_orientation (box->config);
