@@ -28,7 +28,7 @@ msgstr "Aplet powiadamiania"
 
 #: ../panel-plugin/indicator.c:159
 msgid "Copyright (c) 2009-2013\n"
-msgstr ""
+msgstr "Copyright (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:288
 msgid "No Indicators"
@@ -37,9 +37,8 @@ msgstr "Brak powiadomień"
 #. raw name,                  pretty name,
 #. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
-#, fuzzy
 msgid "Application Indicators"
-msgstr "Brak powiadomień"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
@@ -91,9 +90,8 @@ msgid "Appearance"
 msgstr "Wygląd"
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
-#, fuzzy
 msgid "C_lear known indicators"
-msgstr "Brak powiadomień"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
@@ -110,25 +108,23 @@ msgid "Hide indicators by default"
 msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
+#, fuzzy
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
-msgstr ""
+msgstr "Rozmiar ikon jest dopasowywany do wielkości pojedynczego wiersza panelu. Za pomocą tej opcji można ograniczyć ich maksymalny rozmiar."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
-#, fuzzy
 msgid "Indicator"
-msgstr "Brak powiadomień"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
-#, fuzzy
 msgid "Indicators"
-msgstr "Brak powiadomień"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
-#, fuzzy
 msgid "Known Indicators"
-msgstr "Brak powiadomień"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row down."
@@ -154,4 +150,4 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum icon size (px):"
-msgstr ""
+msgstr "_Maksymalny rozmiar ikon (px):"
