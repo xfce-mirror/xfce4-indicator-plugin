@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-05 07:15+0000\n"
+"POT-Creation-Date: 2013-04-15 08:36+0000\n"
 "PO-Revision-Date: 2012-10-30 09:02+0100\n"
 "Last-Translator: salepetronije <salepetronije@gmail.com>\n"
 "Language-Team: српски <xfce-i18n@xfce.org>\n"
@@ -73,14 +73,15 @@ msgstr "Датум и време"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Да ли сте сигурни да желите очистити списак познатих указивача?"
 
-#: ../panel-plugin/indicator-dialog.c:572
+#: ../panel-plugin/indicator-dialog.c:581
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Нисам успео да отворим следећу урл адресу: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Молим, покрените поново полицу да би измене приказа ступиле на снагу.</i>"
+msgstr ""
+"<i>Молим, покрените поново полицу да би измене приказа ступиле на снагу.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Align left in deskbar mode"
@@ -98,44 +99,62 @@ msgstr "Очисти познате указиваче"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Управља размештајем дугмета указивача када је полица у начину приказа траке пулта. Могући избори су „у средини“ и „лево поравнање“."
+msgstr ""
+"Управља размештајем дугмета указивача када је полица у начину приказа траке "
+"пулта. Могући избори су „у средини“ и „лево поравнање“."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hidden"
+msgstr "Скривен"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
 msgstr "Подразумевано скривај указиваче"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
-msgstr "Величина икона је подешена да стане у један рд на полицу. Користите ову могућност да ограничите највећу величину приказа иконе."
+msgstr ""
+"Величина икона је подешена да стане у један рд на полицу. Користите ову "
+"могућност да ограничите највећу величину приказа иконе."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Указивач"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Indicators"
 msgstr "Указивачи"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Known Indicators"
 msgstr "Познати указивачи"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row down."
 msgstr "Премести означени указивач један ред ниже."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row up."
 msgstr "Премести означени указивач један ред више."
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Врати на подразумевано списак указивача и њихове поставке видљивости."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr "Видљив"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Када је омогућено, само указивачи означени као „видљиви“ се приказују. Иначе, сви указивачи који нису означени као „скривени“ се приказују."
+msgstr ""
+"Када је омогућено, само указивачи означени као „видљиви“ се приказују. "
+"Иначе, сви указивачи који нису означени као „скривени“ се приказују."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum icon size (px):"
 msgstr "Највећа величина икона (тачака):"
