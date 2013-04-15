@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-07 12:45+0000\n"
+"POT-Creation-Date: 2013-04-15 14:00+0000\n"
 "PO-Revision-Date: 2011-06-16 16:21+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
@@ -73,14 +73,16 @@ msgstr "Datum en tijd"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Weet u zeker dat u de lijst van bekende indicatoren wil wissen?"
 
-#: ../panel-plugin/indicator-dialog.c:572
+#: ../panel-plugin/indicator-dialog.c:581
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Kon het volgende webadres niet openen: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Herstart a.u.b. de werkbalk om de zichtbaarheidveranderingen door te voeren.</i>"
+msgstr ""
+"<i>Herstart a.u.b. de werkbalk om de zichtbaarheidveranderingen door te "
+"voeren.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Align left in deskbar mode"
@@ -98,44 +100,67 @@ msgstr "Verwijder bekende indicatoren"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Beheerst de vormgeving van de indicatorknop wanneer de werkbalk in bureaubalkmodus is. Mogelijke keuzes zijn 'gecentreerd' of 'links uitgelijnd'."
+msgstr ""
+"Beheerst de vormgeving van de indicatorknop wanneer de werkbalk in "
+"bureaubalkmodus is. Mogelijke keuzes zijn 'gecentreerd' of 'links "
+"uitgelijnd'."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hidden"
+msgstr "Verborgen"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
 msgstr "Verberg standaard de indicatoren"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
-msgstr "Pictogrammen worden geschaald om te passen op een enkele rij van de werkbalk. Gebruik deze optie om de maximumgrootte van het pictogram te beperken."
+msgstr ""
+"Pictogrammen worden geschaald om te passen op een enkele rij van de "
+"werkbalk. Gebruik deze optie om de maximumgrootte van het pictogram te "
+"beperken."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Indicator"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Indicators"
 msgstr "Indicatoren"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Known Indicators"
 msgstr "Bekende indicatoren"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row down."
 msgstr "Verplaats de gekozen indicator een rij naar beneden."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row up."
 msgstr "Verplaats de gekozen indicator een rij naar boven."
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Resets the list of indicators and their visibility settings."
-msgstr "Zet de lijst van indicatoren en hun zichtbaarheidinstellingen terug op de standaardwaarden."
+msgstr ""
+"Zet de lijst van indicatoren en hun zichtbaarheidinstellingen terug op de "
+"standaardwaarden."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr "Zichtbaar"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Wanneer ingeschakeld, worden er alleen indicatoren getoond met de markering 'Zichtbaar'. Anders worden alle indicatoren zonder de markering 'Verborgen' getoond."
+msgstr ""
+"Wanneer ingeschakeld, worden er alleen indicatoren getoond met de markering "
+"'Zichtbaar'. Anders worden alle indicatoren zonder de markering 'Verborgen' "
+"getoond."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum icon size (px):"
 msgstr "Maximale pictogramgrootte (px):"
