@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-06 04:39+0000\n"
+"POT-Creation-Date: 2013-04-16 00:48+0000\n"
 "PO-Revision-Date: 2011-05-21 13:02+0100\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <ikoli@yahoo.com>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr ""
 
-#: ../panel-plugin/indicator-dialog.c:572
+#: ../panel-plugin/indicator-dialog.c:581
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr ""
@@ -102,41 +102,53 @@ msgid ""
 msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
-msgid "Hide indicators by default"
+msgid "Hidden"
 msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
 msgstr ""
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Indikator"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Indicators"
 msgstr "Indikatori"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Known Indicators"
 msgstr "Poznati indikatori"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row down."
 msgstr ""
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row up."
 msgstr ""
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Resets the list of indicators and their visibility settings."
 msgstr ""
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr ""
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum icon size (px):"
 msgstr ""
