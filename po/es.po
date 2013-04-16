@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-14 16:24+0000\n"
-"PO-Revision-Date: 2013-04-14 11:35-0600\n"
+"POT-Creation-Date: 2013-04-16 17:00+0000\n"
+"PO-Revision-Date: 2013-04-16 16:41-0600\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -70,7 +70,7 @@ msgstr "Fecha y hora"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "¿Está seguro de que quiere limpiar la lista de indicadores conocidos?"
 
-#: ../panel-plugin/indicator-dialog.c:572
+#: ../panel-plugin/indicator-dialog.c:581
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "No se pudo abrir el siguiente URL: %s"
@@ -102,10 +102,14 @@ msgstr ""
 "«deskbar». Las opciones posibles son «centrado» o «alineado a la izquierda»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hidden"
+msgstr "Oculto"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
 msgstr "Ocultar los indicadores de manera predeterminada"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
@@ -113,27 +117,35 @@ msgstr ""
 "Los iconos se redimensionan para que quepan en una sola fila del panel. Use "
 "esta opción para restringir el tamaño máximo del icono."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Indicador"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Indicators"
 msgstr "Indicadores"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Known Indicators"
 msgstr "Indicadores conocidos"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row down."
 msgstr "Mover el indicador seleccionado una fila hacia abajo."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row up."
 msgstr "Mover el indicador seleccionado una fila hacia arriba."
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Restablece la lista de indicadores y su configuración de visibilidad."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr "Visible"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
@@ -141,6 +153,6 @@ msgstr ""
 "Cuando se activa, solo se muestran los indicadores marcados como «visibles». "
 "Si no, se muestran todos los indicadores no marcados como «ocultos»."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum icon size (px):"
 msgstr "Tamaño _máximo de los iconos (px):"
