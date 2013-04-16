@@ -3,20 +3,24 @@
 # Copyright (C) 2009 THE xfce4-indicator-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-indicator-plugin package.
 # Mark Trompell <mark@foresightlinux.org>, 2009.
-# 
+# Bucur Alexandru <melipse@gmail.com>, 2009.
+# Mișu Moldovan <dumol@xfce.org>, 2013.
+# Mișu Moldovan <dumol@gnome.org>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.0.1svn-r\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-14 16:24+0000\n"
-"PO-Revision-Date: 2009-06-10 15:31+0200\n"
-"Last-Translator: Bucur Alexandru <melipse@gmail.com>\n"
-"Language-Team: Romanian\n"
+"POT-Creation-Date: 2013-04-16 06:12+0000\n"
+"PO-Revision-Date: 2013-04-16 11:42+0300\n"
+"Last-Translator: Mișu Moldovan <dumol@gnome.org>\n"
+"Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);;\n"
+"X-Generator: Virtaal 0.7.0\n"
 
 #: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
@@ -34,11 +38,10 @@ msgstr "Drepturi de autor © 2009–2013\n"
 msgid "No Indicators"
 msgstr "Niciun indicator"
 
-#. raw name,                  pretty name,
-#. icon-name(?)
+#. raw name,                  pretty name,                                 icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
-msgstr "Indicatori pentru programe"
+msgstr "Indicatoare pentru programe"
 
 #: ../panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
@@ -70,16 +73,18 @@ msgstr "Dată și oră"
 
 #: ../panel-plugin/indicator-dialog.c:436
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr "Sigur doriți să goliți lista indicatorilor cunoscuți?"
+msgstr "Sigur doriți să goliți lista indicatoarelor cunoscute?"
 
-#: ../panel-plugin/indicator-dialog.c:572
+#: ../panel-plugin/indicator-dialog.c:581
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nu s-a putut deschide următorul URL: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Reporniți panoul pentru ca noile opțiuni de vizibilitate să intre în funcțiune.</i>"
+msgstr ""
+"<i>Reporniți panoul pentru ca noile opțiuni de vizibilitate să intre în "
+"funcțiune.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Align left in deskbar mode"
@@ -91,50 +96,68 @@ msgstr "Aspect"
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "C_lear known indicators"
-msgstr "Șt_erge indicatorii cunoscuți"
+msgstr "Șt_erge indicatoarele cunoscute"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Aranjamentul butoanelor indicatorilor când panoul este în modul Deskbar. Opțiunile posibile sunt „centered” și „aligned left”."
+msgstr ""
+"Aranjamentul butoanelor indicatoarelor când panoul este în modul Deskbar. "
+"Opțiunile posibile sunt „centered” și „aligned left”."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
-msgid "Hide indicators by default"
-msgstr "Ascunde implicit indicatorii"
+msgid "Hidden"
+msgstr "Ascunse"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "Ascunde implicit indicatoarele"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
-msgstr "Iconițele sunt potrivite la un singur rând din panou. Utilizați această opțiune pentru a limita mărimea maximă a iconiței."
-
-#: ../panel-plugin/indicator-dialog.glade.h:8
-msgid "Indicators"
-msgstr "Indicatori"
+msgstr ""
+"Iconițele sunt potrivite la un singur rând din panou. Utilizați această "
+"opțiune pentru a limita mărimea maximă a iconiței."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
-msgid "Known Indicators"
-msgstr "Indicatori cunoscuți"
+msgid "Indicator"
+msgstr "Indicator"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Indicators"
+msgstr "Indicatoare"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Known Indicators"
+msgstr "Indicatoare cunoscute"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row down."
 msgstr "Mută indicatorul selectat cu un rând mai jos."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row up."
 msgstr "Mută indicatorul selectat cu un rând mai sus."
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Resets the list of indicators and their visibility settings."
-msgstr "Reinițializează lista indicatorilor și opțiunile lor de vizibilitate."
+msgstr "Reinițializează lista indicatoarelor și opțiunile lor de vizibilitate."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr "Vizibil"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "La activare, doar indicatorii marcați ca vizibili sunt afișați. Altfel, vor fi afișați toți indicatorii ce nu sunt marcați ca fiind ascunși."
+msgstr ""
+"La activare, doar indicatoarele marcate ca vizibile sunt afișate. Altfel, vor "
+"fi afișate toate indicatoarele ce nu sunt marcate ca fiind ascunse."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum icon size (px):"
 msgstr "_Mărime maximă a iconiței (px):"
