@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-07 18:06+0000\n"
+"POT-Creation-Date: 2013-04-16 17:00+0000\n"
 "PO-Revision-Date: 2011-03-25 18:36+0300\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -70,7 +70,7 @@ msgstr "Дата і час"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Ви дійсно бажаєте очистити список відомих індикаторів?"
 
-#: ../panel-plugin/indicator-dialog.c:572
+#: ../panel-plugin/indicator-dialog.c:581
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Неможливо відкрити наступне посилання: %s"
@@ -95,44 +95,63 @@ msgstr "_Очистити відомі індикатори"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Контроль розташування кнопок індикаторів в режимі панелі. Можливі варіанти: \"по центру\" або \"вирівнювання зліва\"."
+msgstr ""
+"Контроль розташування кнопок індикаторів в режимі панелі. Можливі варіанти: "
+"\"по центру\" або \"вирівнювання зліва\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hidden"
+msgstr "Приховано"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
 msgstr "Сховати індикатори по замовчуванню"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
-msgstr "Іконки масштабуються, щоб умістити їх в рядок панелі. Використовуйте цей параметр для обмеження максимального розміру іконки."
+msgstr ""
+"Іконки масштабуються, щоб умістити їх в рядок панелі. Використовуйте цей "
+"параметр для обмеження максимального розміру іконки."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Індикатор"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Indicators"
 msgstr "Індикатори"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Known Indicators"
 msgstr "Відомі індикатори"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row down."
 msgstr "Перемістити вибраний індикатор на один рядок вниз."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row up."
 msgstr "Перемістити вибраний індикатор на один рядок вверх."
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Відновити список індикаторів і налаштування їх видимості. "
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr "Видимо"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Якщо цей параметр включений, тоді показуються тільки індикатори, відмічені як \"Видимий\". В протилежному випадку всі індикатори, що не позначені як \"Схований\", будуть показані."
+msgstr ""
+"Якщо цей параметр включений, тоді показуються тільки індикатори, відмічені "
+"як \"Видимий\". В протилежному випадку всі індикатори, що не позначені як "
+"\"Схований\", будуть показані."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum icon size (px):"
 msgstr "_Максимальний розмір іконки (пікселі):"
