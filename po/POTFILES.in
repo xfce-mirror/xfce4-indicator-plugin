@@ -1,4 +1,4 @@
-panel-plugin/indicator.desktop.in
+panel-plugin/indicator.desktop.in.in
 panel-plugin/indicator.c
 panel-plugin/indicator-box.c
 panel-plugin/indicator-button.c
