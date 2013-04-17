@@ -33,28 +33,29 @@
 #include "indicator-box.h"
 #include "indicator-button.h"
 
-static void                 xfce_indicator_box_finalize       (GObject          *object);
-static void                 xfce_indicator_box_list_changed   (XfceIndicatorBox *box,
-                                                               IndicatorConfig  *config);
-static void                 xfce_indicator_box_add            (GtkContainer     *container,
-                                                               GtkWidget        *child);
-static void                 xfce_indicator_box_remove         (GtkContainer     *container,
-                                                               GtkWidget        *child);
-static void                 xfce_indicator_box_forall         (GtkContainer     *container,
-                                                               gboolean          include_internals,
-                                                               GtkCallback       callback,
-                                                               gpointer          callback_data);
-static GType                xfce_indicator_box_child_type     (GtkContainer     *container);
-static void                 xfce_indicator_box_size_request   (GtkWidget        *widget,
-                                                               GtkRequisition   *requisition);
-static void                 xfce_indicator_box_get_preferred_width (GtkWidget   *widget,
-                                                                    gint        *minimal_width,
-                                                                    gint        *natural_width);
-static void                 xfce_indicator_box_get_preferred_height (GtkWidget   *widget,
-                                                                     gint        *minimal_height,
-                                                                     gint        *natural_height);
-static void                 xfce_indicator_box_size_allocate  (GtkWidget        *widget,
-                                                               GtkAllocation    *allocation);
+static void                 xfce_indicator_box_finalize             (GObject          *object);
+static void                 xfce_indicator_box_list_changed         (XfceIndicatorBox *box,
+                                                                     IndicatorConfig  *config);
+static void                 xfce_indicator_box_add                  (GtkContainer     *container,
+                                                                     GtkWidget        *child);
+static void                 xfce_indicator_box_remove               (GtkContainer     *container,
+                                                                     GtkWidget        *child);
+static void                 xfce_indicator_box_forall               (GtkContainer     *container,
+                                                                     gboolean          include_internals,
+                                                                     GtkCallback       callback,
+                                                                     gpointer          callback_data);
+static GType                xfce_indicator_box_child_type           (GtkContainer     *container);
+static void                 xfce_indicator_box_get_preferred_length (GtkWidget        *widget,
+                                                                     gint             *minimal_length,
+                                                                     gint             *natural_length);
+static void                 xfce_indicator_box_get_preferred_width  (GtkWidget        *widget,
+                                                                     gint             *minimal_width,
+                                                                     gint             *natural_width);
+static void                 xfce_indicator_box_get_preferred_height (GtkWidget        *widget,
+                                                                     gint             *minimal_height,
+                                                                     gint             *natural_height);
+static void                 xfce_indicator_box_size_allocate        (GtkWidget        *widget,
+                                                                     GtkAllocation    *allocation);
 
 
 struct _XfceIndicatorBox
@@ -64,14 +65,6 @@ struct _XfceIndicatorBox
   IndicatorConfig      *config;
 
   GHashTable           *children;
-
-  gint                  panel_size;
-  gint                  nrows;
-  gint                  icon_size_max;
-  gboolean              align_left;
-
-  GtkOrientation        panel_orientation;
-  GtkOrientation        orientation;
 
   gulong                indicator_list_changed_id;
 };
@@ -313,17 +306,9 @@ xfce_indicator_box_child_type (GtkContainer *container)
 static gint
 xfce_indicator_box_get_row_size (XfceIndicatorBox *box)
 {
-  gint                 border_thickness;
-  GtkStyle            *style;
-
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BOX (box), 24);
-
-  style = gtk_widget_get_style (GTK_WIDGET (box));
-  border_thickness = 2 * MAX (style->xthickness, style->ythickness) + 2;
-
   return MIN (indicator_config_get_panel_size (box->config) /
               indicator_config_get_nrows (box->config),
-              indicator_config_get_icon_size_max (box->config) + border_thickness);
+              indicator_config_get_row_size_max (box->config));
 }
 
 
@@ -331,8 +316,9 @@ xfce_indicator_box_get_row_size (XfceIndicatorBox *box)
 
 
 static void
-xfce_indicator_box_size_request (GtkWidget      *widget,
-                                 GtkRequisition *requisition)
+xfce_indicator_box_get_preferred_length (GtkWidget *widget,
+                                         gint      *minimum_length,
+                                         gint      *natural_length)
 {
   XfceIndicatorBox    *box = XFCE_INDICATOR_BOX (widget);
   XfceIndicatorButton *button;
@@ -364,7 +350,7 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
         {
           button = XFCE_INDICATOR_BUTTON (li_tmp->data);
 
-          gtk_widget_size_request (GTK_WIDGET (button), &child_req);
+          gtk_widget_get_preferred_size (GTK_WIDGET (button), NULL, &child_req);
           has_label = (xfce_indicator_button_get_label (button) != NULL);
           rectangular_icon = xfce_indicator_button_is_icon_rectangular (button);
 
@@ -394,45 +380,61 @@ xfce_indicator_box_size_request (GtkWidget      *widget,
 
   x += length;
 
-  if (panel_orientation == GTK_ORIENTATION_HORIZONTAL)
-    {
-      requisition->width = x;
-      requisition->height = panel_size;
-    }
-  else
-    {
-      requisition->width = panel_size;
-      requisition->height = x;
-    }
-  /* g_debug ("indicator-box size request: w=%d h=%d", requisition->width, requisition->height); */
+  if (minimum_length != NULL)
+    *minimum_length = x;
+
+  if (natural_length != NULL)
+    *natural_length = x;
+
+  /* g_debug ("indicator-box size request: %d", x); */
 }
 
 
 
 static void
 xfce_indicator_box_get_preferred_width (GtkWidget *widget,
-                                        gint      *minimal_width,
+                                        gint      *minimum_width,
                                         gint      *natural_width)
 {
-  GtkRequisition requisition;
+  XfceIndicatorBox *box = XFCE_INDICATOR_BOX (widget);
+  gint              panel_size;
 
-  xfce_indicator_box_size_request (widget, &requisition);
-
-  *minimal_width = *natural_width = requisition.width;
+  if (indicator_config_get_panel_orientation (box->config) == GTK_ORIENTATION_HORIZONTAL)
+    {
+      xfce_indicator_box_get_preferred_length (widget, minimum_width, natural_width);
+    }
+  else
+    {
+      panel_size = indicator_config_get_panel_size (box->config);
+      if (minimum_width != NULL)
+        *minimum_width = panel_size;
+      if (natural_width != NULL)
+        *natural_width = panel_size;
+    }
 }
 
 
 
 static void
 xfce_indicator_box_get_preferred_height (GtkWidget *widget,
-                                         gint      *minimal_height,
+                                         gint      *minimum_height,
                                          gint      *natural_height)
 {
-  GtkRequisition requisition;
+  XfceIndicatorBox *box = XFCE_INDICATOR_BOX (widget);
+  gint              panel_size;
 
-  xfce_indicator_box_size_request (widget, &requisition);
-
-  *minimal_height = *natural_height = requisition.height;
+  if (indicator_config_get_panel_orientation (box->config) == GTK_ORIENTATION_VERTICAL)
+    {
+      xfce_indicator_box_get_preferred_length (widget, minimum_height, natural_height);
+    }
+  else
+    {
+      panel_size = indicator_config_get_panel_size (box->config);
+      if (minimum_height != NULL)
+        *minimum_height = panel_size;
+      if (natural_height != NULL)
+        *natural_height = panel_size;
+    }
 }
 
 
@@ -481,7 +483,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
         {
           button = XFCE_INDICATOR_BUTTON (li_tmp->data);
 
-          gtk_widget_get_child_requisition (GTK_WIDGET (button), &child_req);
+          gtk_widget_get_preferred_size (GTK_WIDGET (button), NULL, &child_req);
 
           has_label = (xfce_indicator_button_get_label (button) != NULL);
           rectangular_icon = xfce_indicator_button_is_icon_rectangular (button);

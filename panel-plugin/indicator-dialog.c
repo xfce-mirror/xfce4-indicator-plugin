@@ -478,9 +478,9 @@ indicator_dialog_build (IndicatorDialog *dialog)
 
       object = gtk_builder_get_object (builder, "size-max");
       g_return_if_fail (GTK_IS_WIDGET (object));
-      //exo_mutual_binding_new (G_OBJECT (dialog->config), "icon-size-max",
+      //exo_mutual_binding_new (G_OBJECT (dialog->config), "row-size-max",
       //                        G_OBJECT (object), "value");
-      g_object_bind_property (G_OBJECT (dialog->config), "icon-size-max",
+      g_object_bind_property (G_OBJECT (dialog->config), "row-size-max",
                               G_OBJECT (object), "value",
                               G_BINDING_SYNC_CREATE | G_BINDING_BIDIRECTIONAL);
 

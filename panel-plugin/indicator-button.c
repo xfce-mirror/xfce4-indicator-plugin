@@ -38,6 +38,11 @@
 //#define INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED "scroll-entry"
 //#endif
 
+//#if GTK_CHECK_VERSION (3, 0, 0) && !GTK_CHECK_VERSION (3, 10, 0)
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define GTK_BUTTON_SIZING_FIX
+#endif
+
 
 static void                 xfce_indicator_button_finalize        (GObject                *object);
 static gint                 xfce_indicator_button_get_icon_size   (XfceIndicatorButton    *button);
@@ -47,8 +52,14 @@ static gboolean             xfce_indicator_button_scroll          (GtkWidget    
                                                                    GdkEventScroll         *event);
 static void                 xfce_indicator_button_menu_deactivate (XfceIndicatorButton    *button,
                                                                    GtkMenu                *menu);
-static gint                 xfce_indicator_button_get_size        (XfceIndicatorButton    *button);
-
+#ifdef GTK_BUTTON_SIZING_FIX
+static void            xfce_indicator_button_get_preferred_width  (GtkWidget              *widget,
+                                                                   gint                   *minimum_width,
+                                                                   gint                   *natural_width);
+static void            xfce_indicator_button_get_preferred_height (GtkWidget              *widget,
+                                                                   gint                   *minimum_height,
+                                                                   gint                   *natural_height);
+#endif
 
 
 struct _XfceIndicatorButton
@@ -95,7 +106,10 @@ xfce_indicator_button_class_init (XfceIndicatorButtonClass *klass)
   widget_class = GTK_WIDGET_CLASS (klass);
   widget_class->button_press_event = xfce_indicator_button_button_press;
   widget_class->scroll_event = xfce_indicator_button_scroll;
-
+#ifdef GTK_BUTTON_SIZING_FIX
+  widget_class->get_preferred_width = xfce_indicator_button_get_preferred_width;
+  widget_class->get_preferred_height = xfce_indicator_button_get_preferred_height;
+#endif
 }
 
 
@@ -129,7 +143,7 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   gtk_widget_show (button->align_box);
 
   //button->box = xfce_hvbox_new (GTK_ORIENTATION_HORIZONTAL, FALSE, 1);
-  button->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
+  button->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_container_add (GTK_CONTAINER (button->align_box), button->box);
   gtk_widget_show (button->box);
 }
@@ -167,6 +181,9 @@ xfce_indicator_button_update_layout (XfceIndicatorButton *button)
 {
   GtkRequisition          label_size;
   gfloat                  align_x;
+  gint                    border_thickness;
+  GtkStyleContext        *ctx;
+  GtkBorder               padding, border;
 
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
 
@@ -178,14 +195,24 @@ xfce_indicator_button_update_layout (XfceIndicatorButton *button)
       indicator_config_get_panel_orientation (button->config) == GTK_ORIENTATION_VERTICAL &&
       indicator_config_get_orientation (button->config) == GTK_ORIENTATION_HORIZONTAL)
     {
-      gtk_widget_size_request (button->label, &label_size);
+      ctx = gtk_widget_get_style_context (GTK_WIDGET (button));
+      gtk_style_context_get_padding (ctx,
+                                     gtk_widget_get_state_flags (GTK_WIDGET (button)),
+                                     &padding);
+      gtk_style_context_get_border (ctx,
+                                    gtk_widget_get_state_flags (GTK_WIDGET (button)),
+                                    &border);
+      border_thickness = MAX (padding.left+padding.right+border.left+border.right,
+                              padding.top+padding.bottom+border.top+border.bottom);
+
+      gtk_widget_get_preferred_size (button->label, NULL, &label_size);
 
       /* check if icon and label fit side by side */
       if (!indicator_config_get_align_left (button->config)
           || (button->icon != NULL
               && label_size.width >
-              indicator_config_get_panel_size (button->config)
-              - xfce_indicator_button_get_size (button)))
+              indicator_config_get_panel_size (button->config) - 2 - border_thickness
+              - xfce_indicator_button_get_icon_size (button)))
         {
           align_x = 0.5;
           gtk_orientable_set_orientation (GTK_ORIENTABLE (button->box), GTK_ORIENTATION_VERTICAL);
@@ -197,7 +224,7 @@ xfce_indicator_button_update_layout (XfceIndicatorButton *button)
         }
 
       /* check if label alone fits in the panel */
-      if (label_size.width > indicator_config_get_panel_size (button->config) - 6)
+      if (label_size.width > indicator_config_get_panel_size (button->config) - border_thickness)
         {
           gtk_alignment_set (GTK_ALIGNMENT (button->align_box), align_x, 0.5, 1.0, 0.0);
           gtk_label_set_ellipsize (GTK_LABEL (button->label), PANGO_ELLIPSIZE_END);
@@ -227,11 +254,12 @@ xfce_indicator_button_update_layout (XfceIndicatorButton *button)
 static void
 xfce_indicator_button_update_icon (XfceIndicatorButton *button)
 {
-  GdkPixbuf    *pixbuf_s, *pixbuf_d;
-  gdouble       aspect;
-  gint          w, h, size;
-  gint          border_thickness;
-  GtkStyle     *style;
+  GdkPixbuf        *pixbuf_s, *pixbuf_d;
+  gdouble           aspect;
+  gint              w, h, size;
+  gint              border_thickness;
+  GtkStyleContext  *ctx;
+  GtkBorder         padding, border;
 
   g_return_if_fail (GTK_IS_IMAGE (button->orig_icon));
   g_return_if_fail (GTK_IS_IMAGE (button->icon));
@@ -254,14 +282,21 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
       w = gdk_pixbuf_get_width (pixbuf_s);
       h = gdk_pixbuf_get_height (pixbuf_s);
       aspect = (gdouble) w / (gdouble) h;
+      ctx = gtk_widget_get_style_context (GTK_WIDGET (button));
+      gtk_style_context_get_padding (ctx,
+                                     gtk_widget_get_state_flags (GTK_WIDGET (button)),
+                                     &padding);
+      gtk_style_context_get_border (ctx,
+                                    gtk_widget_get_state_flags (GTK_WIDGET (button)),
+                                    &border);
+      border_thickness = MAX (padding.left+padding.right+border.left+border.right,
+                              padding.top+padding.bottom+border.top+border.bottom);
 
       button->rectangular_icon = (w != h);
 
       if (indicator_config_get_panel_orientation (button->config) == GTK_ORIENTATION_VERTICAL &&
-          size * aspect > indicator_config_get_panel_size (button->config))
+          size * aspect > indicator_config_get_panel_size (button->config) - border_thickness)
         {
-          style = gtk_widget_get_style (GTK_WIDGET (button->plugin));
-          border_thickness = 2 * MAX (style->xthickness, style->ythickness);
           w = indicator_config_get_panel_size (button->config) - border_thickness;
           h = (gint) (w / aspect);
         }
@@ -489,37 +524,23 @@ xfce_indicator_button_get_icon_size (XfceIndicatorButton *button)
 {
   gint                 indicator_size;
   gint                 border_thickness;
-  GtkStyle            *style;
+  GtkStyleContext     *ctx;
+  GtkBorder            padding, border;
 
   g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), 22);
 
-  indicator_size = xfce_indicator_button_get_size (button);
+  indicator_size = MIN (indicator_config_get_panel_size (button->config) /
+                        indicator_config_get_nrows (button->config),
+                        indicator_config_get_row_size_max (button->config));
 
-  style = gtk_widget_get_style (GTK_WIDGET (button->plugin));
-  border_thickness = 2 * MAX (style->xthickness, style->ythickness);
+  ctx = gtk_widget_get_style_context (GTK_WIDGET (button));
+  gtk_style_context_get_padding (ctx, gtk_widget_get_state_flags (GTK_WIDGET (button)), &padding);
+  gtk_style_context_get_border (ctx, gtk_widget_get_state_flags (GTK_WIDGET (button)), &border);
+  border_thickness = MAX (padding.left+padding.right+border.left+border.right,
+                          padding.top+padding.bottom+border.top+border.bottom);
 
-  return MIN (indicator_size - border_thickness,
-              indicator_config_get_icon_size_max (button->config));
+  return indicator_size - border_thickness;
 }
-
-
-
-static gint
-xfce_indicator_button_get_size (XfceIndicatorButton *button)
-{
-  gint                 border_thickness;
-  GtkStyle            *style;
-
-  g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON (button), 24);
-
-  style = gtk_widget_get_style (GTK_WIDGET (button->plugin));
-  border_thickness = 2 * MAX (style->xthickness, style->ythickness) ;
-
-  return MIN (indicator_config_get_panel_size (button->config) /
-              indicator_config_get_nrows (button->config),
-              indicator_config_get_icon_size_max (button->config) + border_thickness);
-}
-
 
 
 
@@ -635,3 +656,78 @@ xfce_indicator_button_menu_deactivate (XfceIndicatorButton *button,
 
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), FALSE);
 }
+
+
+
+
+#ifdef GTK_BUTTON_SIZING_FIX
+/* When can_focus is true, GtkButton allocates larger size than requested *
+ * and causes the panel image to grow indefinitely.                       *
+ * This workaround compensates for this difference.                       *
+ * Details in https://bugzilla.gnome.org/show_bug.cgi?id=698030           *
+ */
+static gint
+xfce_indicator_button_padding_correction (GtkWidget *widget)
+{
+  GtkStyleContext       *context;
+  gint                   focus_width;
+  gint                   focus_pad;
+  gint                   correction;
+
+  if (!gtk_widget_get_can_focus (widget))
+    {
+      context = gtk_widget_get_style_context (widget);
+      gtk_style_context_get_style (context,
+                                   "focus-line-width", &focus_width,
+                                   "focus-padding", &focus_pad,
+                                   NULL);
+      correction = (focus_width + focus_pad) * 2;
+    }
+  else
+    {
+      correction = 0;
+    }
+
+  return correction;
+}
+
+
+
+static void
+xfce_indicator_button_get_preferred_width (GtkWidget *widget,
+                                           gint      *minimum_width,
+                                           gint      *natural_width)
+{
+  gint correction;
+
+  (*GTK_WIDGET_CLASS (xfce_indicator_button_parent_class)->get_preferred_width) (widget, minimum_width, natural_width);
+
+  correction = xfce_indicator_button_padding_correction (widget);
+
+  if (minimum_width != NULL)
+    *minimum_width = MAX (0, *minimum_width - correction);
+
+  if (natural_width != NULL)
+    *natural_width = MAX (0, *natural_width - correction);
+}
+
+
+
+static void
+xfce_indicator_button_get_preferred_height (GtkWidget *widget,
+                                            gint      *minimum_height,
+                                            gint      *natural_height)
+{
+  gint correction;
+
+  (*GTK_WIDGET_CLASS (xfce_indicator_button_parent_class)->get_preferred_height) (widget, minimum_height, natural_height);
+
+  correction = xfce_indicator_button_padding_correction (widget);
+
+  if (minimum_height != NULL)
+    *minimum_height = MAX (0, *minimum_height - correction);
+
+  if (natural_height != NULL)
+    *natural_height = MAX (0, *natural_height - correction);
+}
+#endif
