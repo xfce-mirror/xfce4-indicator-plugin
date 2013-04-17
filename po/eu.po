@@ -143,8 +143,8 @@ msgstr ""
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
+msgstr "Gaitua dagoenean, \"Ikusgarri\" etiketa duten adierazleak bakarrik ikusiko dira. Bestela \"Ezkutatua\" etiketa ez duten adierazle guztiak bistaraziko dira."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum icon size (px):"
-msgstr ""
+msgstr "_Gehienezko ikono tamaina (px):"
