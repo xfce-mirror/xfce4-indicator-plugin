@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-15 14:00+0000\n"
+"POT-Creation-Date: 2013-04-18 06:48+0000\n"
 "PO-Revision-Date: 2013-04-06 10:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
+#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Un indicateur de quelque chose qui nécessite votre attention"
 
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Indicateur greffon"
 
@@ -117,7 +117,7 @@ msgstr "Masquer les indicateurs par défaut"
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
+"restrict the maximum size of the row."
 msgstr ""
 "Les icônes sont mis à l'échelle pour s'adapter à une seule rangée de "
 "l'écran. Utiliser cette option pour définir la taille maximale de l'icône."
@@ -161,5 +161,5 @@ msgstr ""
 "sont affichés."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum icon size (px):"
-msgstr "Taille maximale d'une icône (pixel) :"
+msgid "_Maximum row size (px):"
+msgstr "Taille maximale de la ligne (pixel) :"
