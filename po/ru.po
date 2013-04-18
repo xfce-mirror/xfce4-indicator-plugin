@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.2.0-hg\n"
-"Report-Msgid-Bugs-To: Xfce translations mailing list <xfce-i18n@xfce.org>\n"
-"POT-Creation-Date: 2013-04-12 22:41+0400\n"
-"PO-Revision-Date: 2013-04-12 23:09+0400\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-19 00:02+0400\n"
+"PO-Revision-Date: 2013-04-19 00:02+0400\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: <xfce-i18n@xfce.org>\n"
 "Language: ru\n"
@@ -124,25 +124,37 @@ msgstr ""
 "«видимые». Иначе отображаются все индикаторы, не отмеченные как «скрытые»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Индикатор"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Hidden"
+msgstr "Скрытый"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Visible"
+msgstr "Видимый"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row up."
 msgstr "Переместить выбранные индикаторы на одну строку вверх"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row down."
 msgstr "Переместить выбранные индикаторы на одну строку вниз"
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Перезапустить панель для применения изменений видимости.<i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
 msgstr "О_чистить известные индикаторы"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Сбросить список индикаторов и их настройки видимости."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Известные индикаторы"
