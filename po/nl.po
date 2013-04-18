@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-15 14:00+0000\n"
+"POT-Creation-Date: 2013-04-18 06:48+0000\n"
 "PO-Revision-Date: 2011-06-16 16:21+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Language: nl (Dutch)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
+#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Een indicator van iets dat uw aandacht nodig heeft op het bureaublad"
 
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Indicator-plugin"
 
@@ -116,7 +116,7 @@ msgstr "Verberg standaard de indicatoren"
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
+"restrict the maximum size of the row."
 msgstr ""
 "Pictogrammen worden geschaald om te passen op een enkele rij van de "
 "werkbalk. Gebruik deze optie om de maximumgrootte van het pictogram te "
@@ -162,5 +162,5 @@ msgstr ""
 "getoond."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum icon size (px):"
-msgstr "Maximale pictogramgrootte (px):"
+msgid "_Maximum row size (px):"
+msgstr "Maximale rijgrootte (px):"
