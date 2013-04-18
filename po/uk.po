@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-16 17:00+0000\n"
+"POT-Creation-Date: 2013-04-18 17:36+0000\n"
 "PO-Revision-Date: 2011-03-25 18:36+0300\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
+#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Індикатор якоїсь події, що потребує Вашої уваги на стільниці"
 
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Плагін індикаторів"
 
@@ -110,7 +110,7 @@ msgstr "Сховати індикатори по замовчуванню"
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
+"restrict the maximum size of the row."
 msgstr ""
 "Іконки масштабуються, щоб умістити їх в рядок панелі. Використовуйте цей "
 "параметр для обмеження максимального розміру іконки."
@@ -153,5 +153,5 @@ msgstr ""
 "\"Схований\", будуть показані."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum icon size (px):"
-msgstr "_Максимальний розмір іконки (пікселі):"
+msgid "_Maximum row size (px):"
+msgstr "_Максимальна висота рядка (пікселі):"
