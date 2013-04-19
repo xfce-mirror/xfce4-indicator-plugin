@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.0.1svn-r\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-19 07:48+0000\n"
+"POT-Creation-Date: 2013-04-19 15:09+0000\n"
 "PO-Revision-Date: 2009-06-09 12:02+0200\n"
 "Last-Translator: Mark Trompell <mark@foresightlinux.org>\n"
 "Language-Team: German\n"
@@ -44,9 +44,8 @@ msgid "Application Indicators"
 msgstr "Anwendungsanzeigen"
 
 #: ../panel-plugin/indicator-dialog.c:58
-#, fuzzy
 msgid "Sound Menu"
-msgstr "Sounmenü"
+msgstr "Soundmenü"
 
 #: ../panel-plugin/indicator-dialog.c:59
 #, fuzzy
@@ -54,7 +53,6 @@ msgid "Printers Menu"
 msgstr "Druckermenü"
 
 #: ../panel-plugin/indicator-dialog.c:60
-#, fuzzy
 msgid "Power Management"
 msgstr "Energieverwaltung"
 
@@ -84,14 +82,15 @@ msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Soll die Liste der bekannten Indikatoren gelöscht werden?"
 
 #: ../panel-plugin/indicator-dialog.c:572
-#, c-format, fuzzy
+#, fuzzy, c-format
 msgid "Unable to open the following url: %s"
 msgstr "%s konnte nicht geöffnet werden."
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 #, fuzzy
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Sie müssen das Panel neu starten damit die Änderungen wirksam werden</i>"
+msgstr ""
+"<i>Sie müssen das Panel neu starten damit die Änderungen wirksam werden</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 #, fuzzy
@@ -101,7 +100,7 @@ msgstr "Im Deskbarmodus linksbündig ausrichten"
 #: ../panel-plugin/indicator-dialog.glade.h:3
 #, fuzzy
 msgid "Appearance"
-msgstr "Aussehen"
+msgstr "Erscheinungsbild"
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 #, fuzzy
@@ -113,7 +112,9 @@ msgstr "Bekannte Anzeigen _löschen"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Bestimmt die Ausrichtung der Anzeigenknöpfe im Deskbarmodus. Mögliche Auswahl: \"zentriert\" oder \"linksbündig\""
+msgstr ""
+"Bestimmt die Ausrichtung der Anzeigenknöpfe im Deskbarmodus. Mögliche "
+"Auswahl: \"zentriert\" oder \"linksbündig\""
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 #, fuzzy
@@ -132,7 +133,8 @@ msgid ""
 "restrict the maximum size of the icon."
 msgstr ""
 "Icons werden skaliert um in eine Reihe des Panels zu passen.\r\n"
-"Benutzen Sie diese Einstellung um die maximale Größe der Icons zu beschränken."
+"Benutzen Sie diese Einstellung um die maximale Größe der Icons zu "
+"beschränken."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 #, fuzzy
@@ -170,13 +172,13 @@ msgid "Visible"
 msgstr "Sichtbar"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
-#, fuzzy
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr ""
 "Wenn aktiviert werden nur als sichtbar makierte Anzeigen angezeigt.\r\n"
-"Ansonsten werden nur Anzeigen angezeit, die nicht als versteckt markiert sind."
+"Ansonsten werden nur Anzeigen angezeit, die nicht als versteckt markiert "
+"sind."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 #, fuzzy
