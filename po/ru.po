@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.2.0-hg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-19 00:02+0400\n"
-"PO-Revision-Date: 2013-04-19 00:02+0400\n"
+"POT-Creation-Date: 2013-04-19 08:47+0400\n"
+"PO-Revision-Date: 2013-04-19 08:49+0400\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: <xfce-i18n@xfce.org>\n"
 "Language: ru\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../panel-plugin/indicator.desktop.in.h:1
 msgid "Indicator Plugin"
-msgstr "Плагин индикаторов"
+msgstr "Индикаторы"
 
 #: ../panel-plugin/indicator.desktop.in.h:2 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
@@ -145,7 +145,7 @@ msgstr "Переместить выбранные индикаторы на од
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Перезапустить панель для применения изменений видимости.<i>"
+msgstr "<i>Перезапустите панель для применения изменений видимости.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
