@@ -23,6 +23,7 @@ msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Eine Anzeige, dass etwas Ihre Aufmerksamkeit benötigt"
 
 #: ../panel-plugin/indicator.desktop.in.h:2
+#, fuzzy
 msgid "Indicator Plugin"
 msgstr "Nachrichtenanzeige"
 
@@ -31,6 +32,7 @@ msgid "Copyright (c) 2009-2013\n"
 msgstr "Copyright (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:288
+#, fuzzy
 msgid "No Indicators"
 msgstr "Keine Anzeigen"
 
@@ -72,10 +74,12 @@ msgid "Messaging Menu"
 msgstr "Nachrichtenmenü"
 
 #: ../panel-plugin/indicator-dialog.c:64
+#, fuzzy
 msgid "Date and Time"
 msgstr "Datum und Uhrzeit"
 
 #: ../panel-plugin/indicator-dialog.c:436
+#, fuzzy
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Soll die Liste der bekannten Indikatoren gelöscht werden?"
 
@@ -100,6 +104,7 @@ msgid "Appearance"
 msgstr "Aussehen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
+#, fuzzy
 msgid "C_lear known indicators"
 msgstr "Bekannte Anzeigen _löschen"
 
