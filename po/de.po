@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.0.1svn-r\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-12 19:34+0000\n"
+"POT-Creation-Date: 2013-04-19 07:48+0000\n"
 "PO-Revision-Date: 2009-06-09 12:02+0200\n"
 "Last-Translator: Mark Trompell <mark@foresightlinux.org>\n"
 "Language-Team: German\n"
@@ -27,7 +27,6 @@ msgid "Indicator Plugin"
 msgstr "Nachrichtenanzeige"
 
 #: ../panel-plugin/indicator.c:159
-#, fuzzy
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Copyright (c) 2009-2013\n"
 
@@ -40,12 +39,12 @@ msgstr "Keine Anzeigen"
 #: ../panel-plugin/indicator-dialog.c:57
 #, fuzzy
 msgid "Application Indicators"
-msgstr "Keine Anzeigen"
+msgstr "Anwendungsanzeigen"
 
 #: ../panel-plugin/indicator-dialog.c:58
 #, fuzzy
 msgid "Sound Menu"
-msgstr "Sound Menu"
+msgstr "Sounmenü"
 
 #: ../panel-plugin/indicator-dialog.c:59
 #, fuzzy
@@ -60,7 +59,7 @@ msgstr "Energieverwaltung"
 #: ../panel-plugin/indicator-dialog.c:61
 #, fuzzy
 msgid "Application Menus (Global Menu)"
-msgstr "Anwendungsmenü"
+msgstr "Anwendungsmenü (Globales Menü)"
 
 #: ../panel-plugin/indicator-dialog.c:62
 #, fuzzy
@@ -81,71 +80,100 @@ msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Soll die Liste der bekannten Indikatoren gelöscht werden?"
 
 #: ../panel-plugin/indicator-dialog.c:572
-#, c-format
+#, c-format, fuzzy
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "%s konnte nicht geöffnet werden."
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
+#, fuzzy
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr ""
+msgstr "<i>Sie müssen das Panel neu starten damit die Änderungen wirksam werden</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
+#, fuzzy
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "Im Deskbarmodus linksbündig ausrichten"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
+#, fuzzy
 msgid "Appearance"
-msgstr ""
+msgstr "Aussehen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
-#, fuzzy
 msgid "C_lear known indicators"
-msgstr "Keine Anzeigen"
+msgstr "Bekannte Anzeigen _löschen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
+#, fuzzy
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "Bestimmt die Ausrichtung der Anzeigenknöpfe im Deskbarmodus. Mögliche Auswahl: \"zentriert\" oder \"linksbündig\""
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
-msgid "Hide indicators by default"
-msgstr ""
+#, fuzzy
+msgid "Hidden"
+msgstr "Versteckt"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
+#, fuzzy
+msgid "Hide indicators by default"
+msgstr "Anzeigen standardmäßig verstecken"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+#, fuzzy
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the icon."
 msgstr ""
-
-#: ../panel-plugin/indicator-dialog.glade.h:8
-#, fuzzy
-msgid "Indicators"
-msgstr "Keine Anzeigen"
+"Icons werden skaliert um in eine Reihe des Panels zu passen.\r\n"
+"Benutzen Sie diese Einstellung um die maximale Größe der Icons zu beschränken."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 #, fuzzy
-msgid "Known Indicators"
-msgstr "Keine Anzeigen"
+msgid "Indicator"
+msgstr "Anzeige"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
-msgid "Move the selected indicator one row down."
-msgstr ""
+#, fuzzy
+msgid "Indicators"
+msgstr "Anzeigen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
-msgid "Move the selected indicator one row up."
-msgstr ""
+#, fuzzy
+msgid "Known Indicators"
+msgstr "Bekannte Anzeigen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:12
-msgid "Resets the list of indicators and their visibility settings."
-msgstr ""
+#, fuzzy
+msgid "Move the selected indicator one row down."
+msgstr "Ausgewählte Anzeige eine Reihe hinab setzten."
 
 #: ../panel-plugin/indicator-dialog.glade.h:13
+#, fuzzy
+msgid "Move the selected indicator one row up."
+msgstr "Ausgewählte Anzeige eine Reihe hinauf setzten."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+#, fuzzy
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Liste der Anzeigen und ihre Sichtbarkeitseinstellungen zurücksetzen."
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+#, fuzzy
+msgid "Visible"
+msgstr "Sichtbar"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+#, fuzzy
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr ""
+"Wenn aktiviert werden nur als sichtbar makierte Anzeigen angezeigt.\r\n"
+"Ansonsten werden nur Anzeigen angezeit, die nicht als versteckt markiert sind."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:17
+#, fuzzy
 msgid "_Maximum icon size (px):"
-msgstr ""
+msgstr "_Maximale Icongröße (px):"
