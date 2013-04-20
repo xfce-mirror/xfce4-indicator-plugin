@@ -152,12 +152,12 @@ msgstr "Bekannte Anzeigen"
 #: ../panel-plugin/indicator-dialog.glade.h:12
 #, fuzzy
 msgid "Move the selected indicator one row down."
-msgstr "Ausgewählte Anzeige eine Reihe hinab setzten."
+msgstr "Ausgewählte Anzeige eine Position hinab setzten."
 
 #: ../panel-plugin/indicator-dialog.glade.h:13
 #, fuzzy
 msgid "Move the selected indicator one row up."
-msgstr "Ausgewählte Anzeige eine Reihe hinauf setzten."
+msgstr "Ausgewählte Anzeige eine Position hinauf setzten."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 #, fuzzy
@@ -176,7 +176,7 @@ msgid ""
 "indicators not marked \"Hidden\" are displayed."
 msgstr ""
 "Wenn aktiviert werden nur als sichtbar makierte Anzeigen angezeigt.\r\n"
-"Ansonsten werden nur Anzeigen angezeit, die nicht als versteckt markiert sind."
+"Ansonsten werden nur Anzeigen angezeigt, die nicht als versteckt markiert sind."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 #, fuzzy
