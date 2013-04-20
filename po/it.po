@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-17 09:12+0000\n"
+"POT-Creation-Date: 2013-04-20 07:24+0000\n"
 "PO-Revision-Date: 2011-05-29 11:44+0100\n"
 "Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-it-translators@googlegroups.com>\n"
@@ -21,11 +21,11 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Country: ITALY\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
+#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Un indicatore per qualsiasi cosa richieda attenzione sulla scrivania"
 
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Plugin indicatore"
 
@@ -117,7 +117,7 @@ msgstr "Nascondi gli indicatori"
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
+"restrict the maximum size of the row."
 msgstr ""
 "Le icone sono scalate per adattarsi a una singola riga del pannello. Usare "
 "questa opzione per diminuire la dimensione dell'icona"
@@ -160,5 +160,5 @@ msgstr ""
 "\"Nascosti\""
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum icon size (px):"
-msgstr "_Dimensione massima dell'icona (px):"
+msgid "_Maximum row size (px):"
+msgstr "Dimensione massima della _riga (px):"
