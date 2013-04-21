@@ -8,22 +8,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-07 12:45+0000\n"
-"PO-Revision-Date: 2013-04-07 12:40-0300\n"
+"POT-Creation-Date: 2013-04-21 10:24+0000\n"
+"PO-Revision-Date: 2013-04-21 11:01-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <xfce-i18n-br@xfce.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: pt_BR\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
+#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Um indicador de algo que requer sua atenção na área de trabalho"
 
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Plugin Indicador"
 
@@ -72,7 +72,7 @@ msgstr "Data e hora"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Você tem certeza que deseja limpar a lista de indicadores conhecidos?"
 
-#: ../panel-plugin/indicator-dialog.c:572
+#: ../panel-plugin/indicator-dialog.c:581
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Não foi possível abrir a seguinte url: %s"
@@ -104,38 +104,50 @@ msgstr ""
 "deskbar. Escolhas possíveis são \"centralizado\" ou \"alinhado à esquerda\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hidden"
+msgstr "Oculto"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
 msgstr "Ocultar indicadores por padrão"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
+"restrict the maximum size of the row."
 msgstr ""
-"Ícones são escalados para se ajustar a uma única linha do painel. Use esta "
-"opção para restringir o tamanho máximo do ícone."
+"Ícones são escalonados para se ajustarem a uma única linha do painel. Use "
+"esta opção para restringir o tamanho máximo da linha."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Indicador"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Indicators"
 msgstr "Indicadores"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Known Indicators"
 msgstr "Indicadores conhecidos"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row down."
 msgstr "Mover o indicador selecionado uma linha para baixo."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row up."
 msgstr "Mover o indicador selecionado uma linha para cima."
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Redefine a lista os indicadores e suas configurações de visibilidade."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr "Visível"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
@@ -144,6 +156,6 @@ msgstr ""
 "mostrados. Do contrário, todos os indicadores não marcados com \"Oculto\" "
 "são exibidos."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
-msgid "_Maximum icon size (px):"
-msgstr "Tamanho _máximo do ícone (px):"
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "_Maximum row size (px):"
+msgstr "Tamanho _máximo da linha (px):"
