@@ -256,7 +256,7 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
 {
   GdkPixbuf        *pixbuf_s, *pixbuf_d;
   gdouble           aspect;
-  gint              w, h, size;
+  gint              w, h, w2, h2, size;
   gint              border_thickness;
   GtkStyleContext  *ctx;
   GtkBorder         padding, border;
@@ -265,6 +265,9 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
   g_return_if_fail (GTK_IS_IMAGE (button->icon));
 
   size = xfce_indicator_button_get_icon_size (button);
+
+  if (size > 22 && size <= 26)
+    size = 22;
 
 #if 0
   if (size > 16 && size < 22)
@@ -297,17 +300,25 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
       if (indicator_config_get_panel_orientation (button->config) == GTK_ORIENTATION_VERTICAL &&
           size * aspect > indicator_config_get_panel_size (button->config) - border_thickness)
         {
-          w = indicator_config_get_panel_size (button->config) - border_thickness;
-          h = (gint) (w / aspect);
+          w2 = indicator_config_get_panel_size (button->config) - border_thickness;
+          h2 = (gint) (w2 / aspect);
         }
       else
         {
-          h = size;
-          w = (gint) (h * aspect);
+          h2 = size;
+          w2 = (gint) (h2 * aspect);
         }
-      pixbuf_d = gdk_pixbuf_scale_simple (pixbuf_s, w, h, GDK_INTERP_BILINEAR);
-      gtk_image_set_from_pixbuf (GTK_IMAGE (button->icon), pixbuf_d);
-      g_object_unref (G_OBJECT (pixbuf_d));
+
+      if (h2 == h)
+        {
+          gtk_image_set_from_pixbuf (GTK_IMAGE (button->icon), pixbuf_s);
+        }
+      else
+        {
+          pixbuf_d = gdk_pixbuf_scale_simple (pixbuf_s, w2, h2, GDK_INTERP_BILINEAR);
+          gtk_image_set_from_pixbuf (GTK_IMAGE (button->icon), pixbuf_d);
+          g_object_unref (G_OBJECT (pixbuf_d));
+        }
     }
   else
     {
@@ -402,7 +413,7 @@ xfce_indicator_button_set_image (XfceIndicatorButton *button,
       button->icon = gtk_image_new ();
       xfce_indicator_button_update_icon (button);
 
-      gtk_box_pack_start (GTK_BOX (button->box), button->icon, TRUE, FALSE, 1);
+      gtk_box_pack_start (GTK_BOX (button->box), button->icon, TRUE, FALSE, 2);
       gtk_widget_show (button->icon);
 
       xfce_indicator_button_update_layout (button);
