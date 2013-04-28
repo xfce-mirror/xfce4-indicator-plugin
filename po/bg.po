@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-29 14:24+0000\n"
-"PO-Revision-Date: 2011-12-29 19:59+0200\n"
-"Last-Translator: Milen Milev <fanfolet@gmail.com>\n"
+"POT-Creation-Date: 2013-04-27 18:15+0000\n"
+"PO-Revision-Date: 2013-04-28 10:41+0200\n"
+"Last-Translator: Kiril Kirilov (Cybercop) <cybercop_montana@abv.bg>\n"
 "Language-Team: BULGARIAN\n"
 "Language: bulgarian\n"
 "MIME-Version: 1.0\n"
@@ -19,15 +19,130 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/indicator.c:182
-msgid "No Indicators"
-msgstr "Няма индикатори"
-
 #: ../panel-plugin/indicator.desktop.in.in.h:1
+#: ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Индикатор, който се нуждае от Вашето внимание."
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Индикатор плъгин"
+
+#: ../panel-plugin/indicator.c:159
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Запазени права (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:288
+msgid "No Indicators"
+msgstr "Няма индикатори"
+
+#. raw name,                  pretty name,                                 icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Индикатори за програми"
+
+#: ../panel-plugin/indicator-dialog.c:58
+msgid "Sound Menu"
+msgstr "Меню на звука"
+
+#: ../panel-plugin/indicator-dialog.c:59
+msgid "Printers Menu"
+msgstr "Меню на принтерите"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Power Management"
+msgstr "Управление на захранването"
+
+#: ../panel-plugin/indicator-dialog.c:61
+msgid "Application Menus (Global Menu)"
+msgstr "Меню на програмите (Основно меню)"
+
+#: ../panel-plugin/indicator-dialog.c:62
+msgid "Session Management"
+msgstr "Управление на сесията"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Messaging Menu"
+msgstr "Меню на съобщенията"
+
+#: ../panel-plugin/indicator-dialog.c:64
+msgid "Date and Time"
+msgstr "Дата и Час"
+
+#: ../panel-plugin/indicator-dialog.c:436
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Наистина ли искате да изчистите списъка с използваните индикатори ?"
+
+#: ../panel-plugin/indicator-dialog.c:581
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Не може да бъде отворен следният адрес: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Моля, рестартирайте панела, за да влязат промените в сила.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Align left in deskbar mode"
+msgstr "Подравняване вляво в Deskbar режим"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid "Appearance"
+msgstr "Външен вид"
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "C_lear known indicators"
+msgstr "Изчисти списъка с използваните индикатори"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid "Controls the indicator button layout when the panel is in a Deskbar mode. Possible choices are \"centered\" or \"aligned left\"."
+msgstr "Контролира оформление индикатор бутона, когато панелът е в Deskbar режим. Възможните решения са \"центриране \" или \"ляво подравняване \"."
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hidden"
+msgstr "Скриване"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "Скриване на индикаторите по подразбиране"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid "Icons are scaled to fit a single row of the panel. Use this option to restrict the maximum size of the row."
+msgstr "Иконите са мащабирани да се поберат един ред на панела. Използвайте тази опция, за да ограничите максималния размер на реда."
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Индикатор"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Indicators"
+msgstr "Индикатори"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Known Indicators"
+msgstr "Използвани индикатори"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row down."
+msgstr "Преместване на избраният индикатор с един ред надолу."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row up."
+msgstr "Преместване на избраният индикатор с един ред нагоре."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Възстановява списъка на индикаторите и техните настройки за видимост."
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr "Видим"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all indicators not marked \"Hidden\" are displayed."
+msgstr "Когато е включено се показват само индикаторите, отбелязани като \"Видим\" . В противен случай, всички индикатори не маркирани, като \"Скрити \" се показват."
+
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "_Maximum row size (px):"
+msgstr "Максимален размер на ред (px):"
 
