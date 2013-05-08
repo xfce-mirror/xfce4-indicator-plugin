@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-17 09:12+0000\n"
+"POT-Creation-Date: 2013-05-08 08:03+0000\n"
 "PO-Revision-Date: 2011-05-15 01:18+0200\n"
 "Last-Translator: Piarres Beobide <pi+xfce@beobide.net>\n"
 "Language-Team: Euskara <librezale@librezale.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
+#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Mahaigainean zerbaitek zure arreta behar duenaren adierazle bat"
 
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Adierazle plugina"
 
@@ -81,7 +81,7 @@ msgstr "<i>Panela berrabiarazi ikusgarritasun aukerek eragin izan dezaten."
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "Ezkerrera lerrokatu mahaigain-barra moduan."
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid "Appearance"
@@ -108,8 +108,8 @@ msgstr "Lehenespenez adierazleak ezkutatu"
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
-msgstr ""
+"restrict the maximum size of the row."
+msgstr "Ikonoak paneleko errenkada bakarrean sartzeko txikituko dira. Aukera hau erabili errenkadaren gehienezko tamaina mugatzeko."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -137,14 +137,17 @@ msgstr "Adierazle zerrenda eta ikusgarritasun ezarpenak berrezarri."
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Visible"
-msgstr ""
+msgstr "Ikusgarria"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Gaitua dagoenean, \"Ikusgarri\" etiketa duten adierazleak bakarrik ikusiko dira. Bestela \"Ezkutatua\" etiketa ez duten adierazle guztiak bistaraziko dira."
+msgstr ""
+"Gaitua dagoenean, \"Ikusgarri\" etiketa duten adierazleak bakarrik ikusiko "
+"dira. Bestela \"Ezkutatua\" etiketa ez duten adierazle guztiak bistaraziko "
+"dira."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum icon size (px):"
-msgstr "_Gehienezko ikono tamaina (px):"
+msgid "_Maximum row size (px):"
+msgstr "_Gehienezko errenkada tamaina (px):"
