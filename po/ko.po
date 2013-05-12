@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-16 11:36+0000\n"
-"PO-Revision-Date: 2013-04-17 01:33+0900\n"
+"POT-Creation-Date: 2013-05-12 03:51+0000\n"
+"PO-Revision-Date: 2013-05-12 15:56+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: xfce-i18n <xfce-i18n@xfce.org>\n"
 "Language: ko\n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.5\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
+#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "데스크톱에서 주목해야 하는 요소를 표시합니다"
 
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "표시기 플러그인"
 
@@ -112,10 +112,10 @@ msgstr "표시기 기본적으로 숨김"
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
+"restrict the maximum size of the row."
 msgstr ""
-"패널 한 줄에 맞추려 아이콘의 크기를 조절하였습니다. 이 옵션은 아이콘의 최대 "
-"크기를 제한합니다."
+"패널 한 줄에 맞추려 아이콘의 크기를 조절했습니다. 행의 최대 높이를 제한하려"
+"면 이 옵션을 사용하십시오."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -154,5 +154,5 @@ msgstr ""
 "로 표시하지 않은 모든 표시기가 나타납니다."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum icon size (px):"
-msgstr "최대 아이콘 크기(px)(_M):"
+msgid "_Maximum row size (px):"
+msgstr "최대 행 높이(px)(_M):"
