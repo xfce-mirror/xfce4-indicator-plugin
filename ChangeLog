@@ -1,8 +1,83 @@
-# created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2013-06-04 e123b2c make distcheck fixes Andrzej <ndrwrdck@gmail.com>
+2013-04-22 69afae1 l10n: Updated German (de) translation to 100% Mark Trompell <mark@foresightlinux.org>
+2013-04-20 a2fd886 tweak de.po Mark Trompell <mark@foresightlinux.org>
+2013-04-19 f21ae5d l10n: Updated German (de) translation to 16% Johannes Lips <johannes.lips@googlemail.com>
+2013-04-19 4f4eeaa l10n: Updated German (de) translation to 6% Mark Trompell <mark@foresightlinux.org>
+2013-04-19 ed8ae14 l10n: Updated German (de) translation to 22% Mark Trompell <mark@foresightlinux.org>
+2013-04-19 0a33510 merge {es,hu,nl}.po from master Mark Trompell <mark@foresightlinux.org>
+2013-04-19 16240fe l10n: Updated Russian (ru) translation to 100% Sergey Alyoshin <alyoshin.s@gmail.com>
+2013-04-18 ec06937 l10n: Updated Russian (ru) translation to 100% Sergey Alyoshin <alyoshin.s@gmail.com>
+2013-04-16 8d4f20d l10n: Updated Romanian (ro) translation to 100% Mișu Moldovan <dumol@xfce.org>
+2013-04-14 4b937fb l10n: Updated Polish (pl) translation to 45% Piotr Sokół <psokol@jabster.pl>
+2013-04-14 835ad78 l10n: Updated Polish (pl) translation to 38% Piotr Sokół <psokol@jabster.pl>
+2013-04-13 5306a03 l10n: Updated Japanese (ja) translation to 100% Masato Hashimoto <hashimo@xfce.org>
+2013-04-12 5a76c65 Add column titles to translation Sergey Alyoshin <alyoshin.s@gmail.com>
+2013-04-13 fc0900b Revert "make column titles translatable" Mark Trompell <mark@foresightlinux.org>
+2013-04-13 d02f804 make column titles translatable Mark Trompell <mark@foresightlinux.org>
+2013-04-13 4855405 rename to .ac.in, avoid obsolete Macro Mark Trompell <mark@foresightlinux.org>
+2013-04-13 4030e77 l10n: Add ja translation Masato Hashimoto <hashimo@xfce.org>
+2013-04-12 4bf324e l10n: Updated German (de) translation to 17% Mark Trompell <mark@foresightlinux.org>
+2013-04-12 4b2b5fd l10n: Updated Russian (ru) translation to 100% Sergey Alyoshin <alyoshin.s@gmail.com>
+2013-04-12 2ba29dd l10n: Updated Korean (ko) translation to 100% Seong-ho Cho <darkcircle.0426@gmail.com>
+2013-04-10 92c8dc0 l10n: Updated Portuguese (pt) translation to 92% Sergio Marques <smarquespt@gmail.com>
+2013-04-07 c441817 l10n: Updated Ukrainian (uk) translation to 100% Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-04-07 2644dde l10n: Updated Ukrainian (uk) translation to 100% Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-04-07 da4ebab l10n: Updated Ukrainian (uk) translation to 78% Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-04-07 d35c618 l10n: Updated Dutch (Flemish) (nl) translation to 100% Pjotr vertaalt <pjotrvertaalt@gmail.com>
+2013-04-07 1ec1610 l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 100% Rafael Ferreira <rafael.f.f1@gmail.com>
+2013-04-07 d819238 l10n: Updated Italian (it) translation to 100% Cristian Marchi <cri.penta@gmail.com>
+2013-04-06 29fd8d2 l10n: Updated Italian (it) translation to 89% Cristian Marchi <cri.penta@gmail.com>
+2013-04-06 8c52a5e l10n: Updated Croatian (hr) translation to 25% Ivica  Kolić <ikoli@yahoo.com>
+2013-04-06 bc19ca1 l10n: Updated French (fr) translation to 100% jc jc1 <jc1.quebecos@gmail.com>
+2013-04-06 aceff8c l10n: Updated French (fr) translation to 89% jc jc1 <jc1.quebecos@gmail.com>
+2013-04-06 b9c02bb l10n: Updated French (fr) translation to 57% jc jc1 <jc1.quebecos@gmail.com>
+2013-04-05 c47509d l10n: Updated Serbian (sr) translation to 100% Саша Петровић <salepetronije@gmail.com>
+2013-04-05 7f332e0 Updated list of files for translation Andrzej <ndrwrdck@gmail.com>
+2013-04-05 a7ae93a button: Compilation fix. Andrzej <ndrwrdck@gmail.com>
+2013-04-03 f60f6d5 Fixed #9040. Andrzej <ndrwrdck@gmail.com>
+2013-04-02 985d349 indicator-button: minor fix to gtk_menu_popup call Andrzej <ndrwrdck@gmail.com>
+2013-03-22 23dfad6 Reworked indicator entry sorting Andrzej <ndrwrdck@gmail.com>
+2013-03-22 8c1c944 Using 22px icon size by default. Andrzej <ndrwrdck@gmail.com>
+2013-03-22 dd4f96d Added an About dialog. Andrzej <ndrwrdck@gmail.com>
+2013-03-22 bc0abf0 Fixed crash on Xfce 4.8 (no xfce_dialog_show_help) Andrzej <ndrwrdck@gmail.com>
+2013-03-14 8eb3053 Fixed a regression, inconsistent border sizes. Andrzej <ndrwrdck@gmail.com>
+2013-03-14 81c7851 Force a configuration-changed signal at start-up. Andrzej <ndrwrdck@gmail.com>
+2013-03-13 346cfe1 Hiding one of "hidden"/"visible" columns to minimize confusion. Andrzej <ndrwrdck@gmail.com>
+2013-03-13 b552265 Added "pretty names" and indicators for known indicators. Andrzej <ndrwrdck@gmail.com>
+2013-03-12 33d3eb3 Sort indicator entries by location. Andrzej <ndrwrdck@gmail.com>
+2013-03-12 290c5f4 Properly connecting indicator-list-changed signal. Andrzej <ndrwrdck@gmail.com>
+2013-03-12 0db001b Added support for indicator reordering. Andrzej <ndrwrdck@gmail.com>
+2013-03-11 86c62c4 Configuration system rework. Andrzej <ndrwrdck@gmail.com>
+2012-12-25 94c371f Plugged a memory leak. Andrzej <ndrwrdck@gmail.com>
+2012-12-09 1c76403 Fixed menu positioning. Andrzej <ndrwrdck@gmail.com>
+2012-12-02 707ad09 Worked around crashes when plugin is loaded as an external plugin. Andrzej <ndrwrdck@gmail.com>
+2012-11-17 00633e1 Removed unneeded event box causing issues with transparent panels. Andrzej <ndrwrdck@gmail.com>
+2012-11-01 54fde86 l10n: Serbian translation Саша Петровић <salepetronije@gmail.com>
+2012-10-25 56a10c5 l10n: Updated Uyghur (ug) translation to 100% Gheyret Kenji <gheyret@yahoo.com>
+2012-07-25 aaa1b5f Make sure the menu is closed when the button is removed. Andrzej <ndrwrdck@gmail.com>
+2012-06-04 6e234ad l10n: Updated Uyghur (ug) translation to 100% Gheyret Kenji <gheyret@yahoo.com>
+2012-05-10 24788ad Fixed compilation warnings Andrzej <ndrwrdck@gmail.com>
+2012-05-04 3930157 l10n: Added Galician translation Leandro Regueiro <leandro.regueiro@gmail.com>
+2012-04-29 c40c282 Fixed missing placeholder label (regression) Andrzej <ndrwrdck@gmail.com>
+2012-04-28 2cb73e6 Moved button-related event handlers to buttons Andrzej <ndrwrdck@gmail.com>
+2012-04-28 c9785b9 Refactored XfceIndicatorButton class Andrzej <ndrwrdck@gmail.com>
+2012-04-28 8af1dff compilation error fix Andrzej <ndrwrdck@gmail.com>
+2012-04-27 fb8b0c8 Added "align-left" property Andrzej <ndrwrdck@gmail.com>
+2012-04-23 9715e41 back to normal Mark Trompell <mark@foresightlinux.org>
+2012-04-23 ea26211 get ready for a release Mark Trompell <mark@foresightlinux.org>
 2012-04-08 828eb61 Cleaning some runtime GObject assert violations Andrzej <ndrwrdck@gmail.com>
 2012-04-02 33611c0 bugfix: fixed label orientation. Andrzej <ndrwrdck@gmail.com>
 2012-04-20 7ce7f33 l10n: Updated Chinese (China) (zh_CN) translation to 100% Chipong Luo <chipong.luo@yahoo.com>
 2012-04-12 33a3472 l10n: Initial Finnish translation Jari Rahkonen <jari.rahkonen@pp1.inet.fi>
+2012-04-08 57b1394 Fixed panel 4.9 assert (widget not constructed) Andrzej <ndrwrdck@gmail.com>
+2012-04-08 d0bef06 Cleaning some runtime GObject assert violations Andrzej <ndrwrdck@gmail.com>
+2012-04-02 81aecb3 bugfix: fixed label orientation. Andrzej <ndrwrdck@gmail.com>
+2012-04-01 c90af56 Reworked dialog UI. Andrzej <ndrwrdck@gmail.com>
+2012-04-01 e79f2b3 Added comments. Andrzej <ndrwrdck@gmail.com>
+2012-04-01 44ef2fa Experiment with preferences dialog. Andrzej <ndrwrdck@gmail.com>
+2012-03-31 02a4e03 Reverted glade related change - not ready yet. Andrzej <ndrwrdck@gmail.com>
+2012-03-31 f84d012 Making the plugin a library and a subclass of XfcePanelPlugin Andrzej <ndrwrdck@gmail.com>
+2012-03-29 d59fbfc Reworked entry_removed handler Andrzej <ndrwrdck@gmail.com>
 2012-03-23 2bf70a1 bind icon-size-max to xfconf Andrzej <ndrwrdck@gmail.com>
 2012-03-22 969fe20 Replaced "nrows-min" with "icon-size-max" Andrzej <ndrwrdck@gmail.com>
 2012-03-21 517416a brain dead port to xfconf Mark Trompell <mark@foresightlinux.org>
