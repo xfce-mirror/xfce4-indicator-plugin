@@ -72,6 +72,7 @@ desktop_DATA =									\
 @INTLTOOL_DESKTOP_RULE@
 
 EXTRA_DIST =									\
+	indicator-dialog.glade \
 	$(desktop_in_files)
 
 DISTCLEANFILES = \
