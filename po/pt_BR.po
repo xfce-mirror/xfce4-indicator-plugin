@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Og Maciel <ogmaciel@gnome.org>, 2009.
 # Sérgio Cipolla <secipolla@gmail.com>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-21 10:24+0000\n"
+"POT-Creation-Date: 2013-06-11 02:03+0000\n"
 "PO-Revision-Date: 2013-04-21 11:01-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <xfce-i18n-br@xfce.org>\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "X-Generator: Poedit 1.5.5\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
@@ -35,7 +35,8 @@ msgstr "Copyright (c) 2009-2013\n"
 msgid "No Indicators"
 msgstr "Nenhum indicador"
 
-#. raw name,                  pretty name,                                 icon-name(?)
+#. raw name,                  pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Indicadores de aplicativos"
