@@ -1,28 +1,28 @@
 # Hungarian translation of xfce4-indicator-plugin
 # Copyright (C) 2011. Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-indicator-plugin package.
-#
+# 
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2011, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-14 16:24+0000\n"
+"POT-Creation-Date: 2013-06-20 22:24+0000\n"
 "PO-Revision-Date: 2013-04-15 00:58+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
-"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
+#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
 msgid "An indicator of something that needs your attention on the desktop"
 msgstr "Ez az indikátor jelzi, hogy valami a figyelmét igényli az asztalon"
 
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:2
 msgid "Indicator Plugin"
 msgstr "Indikátor bővítmény"
 
@@ -34,7 +34,8 @@ msgstr "Copyright (c) 2009-2013\n"
 msgid "No Indicators"
 msgstr "Nincsenek indikátorok"
 
-#. raw name,                  pretty name,                                 icon-name(?)
+#. raw name,                  pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Alkalmazásindikátorok"
@@ -71,7 +72,7 @@ msgstr "Dátum és idő"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Biztos törölni akarja az ismert indikátorok listáját?"
 
-#: ../panel-plugin/indicator-dialog.c:572
+#: ../panel-plugin/indicator-dialog.c:581
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nem nyitható meg a következő URL: %s"
@@ -98,46 +99,57 @@ msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr ""
-"Az indikátor gombelrendezést vezérli amikor a panel asztali sáv módban van. A "
-"lehetséges értékek a „középre igazított” és a „balra igazított”."
+"Az indikátor gombelrendezést vezérli amikor a panel asztali sáv módban van. "
+"A lehetséges értékek a „középre igazított” és a „balra igazított”."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Hidden"
+msgstr "Rejtett"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
 msgstr "Indikátorok elrejtése alapértelmezésben"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
-msgstr ""
+"restrict the maximum size of the row."
+msgstr "Az ikonok a panel egy sorának méretére igazítottak. Használja ezt a lehetőséget a sor maximális méretének korlátozására."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Indikátor"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Indicators"
 msgstr "Indikátorok"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Known Indicators"
 msgstr "Ismert indikátorok"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
-msgid "Move the selected indicator one row down."
-msgstr ""
-
-#: ../panel-plugin/indicator-dialog.glade.h:11
-msgid "Move the selected indicator one row up."
-msgstr ""
-
 #: ../panel-plugin/indicator-dialog.glade.h:12
-msgid "Resets the list of indicators and their visibility settings."
-msgstr ""
+msgid "Move the selected indicator one row down."
+msgstr "A kiválasztott indikátor mozgatása egy sorral lejjebb."
 
 #: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row up."
+msgstr "A kiválasztott indikátor mozgatása egy sorral feljebb."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Az indikátorok listájának és láthatóságának alaphelyzetbe állítása."
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Visible"
+msgstr "Látható"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
+msgstr "Ha bekapcsolt, csak a \"Látható\"-nak jelöltek jelennek meg. Egyébként minden indikátor mely nincs \"Rejtett\"-nek jelölve, megjelenik."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
-msgid "_Maximum icon size (px):"
-msgstr "_Maximális ikonméret (képpont):"
-
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "_Maximum row size (px):"
+msgstr "_Maximális sor méret (képpont):"
