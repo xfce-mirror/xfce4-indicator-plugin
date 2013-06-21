@@ -152,4 +152,4 @@ msgstr "Ha bekapcsolt, csak a \"Látható\"-nak jelöltek jelennek meg. Egyébk�
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "_Maximum row size (px):"
-msgstr "_Maximális sor méret (képpont):"
+msgstr "_Maximális sorméret (képpont):"
