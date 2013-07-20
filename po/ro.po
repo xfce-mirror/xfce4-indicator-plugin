@@ -1,34 +1,33 @@
-# Romanian translations for xfce4-indicator-plugin package
-# Traducerea în limba română pentru pachetul xfce4-indicator-plugin.
-# Copyright (C) 2009 THE xfce4-indicator-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-indicator-plugin package.
-# Mark Trompell <mark@foresightlinux.org>, 2009.
-# Bucur Alexandru <melipse@gmail.com>, 2009.
-# Mișu Moldovan <dumol@xfce.org>, 2013.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# CoolGoose <melipse@gmail.com>, 2009
+# Mark__T <mark@foresightlinux.org>, 2009
+# Mișu Moldovan <dumol@gnome.org>, 2013
+# Mișu Moldovan <dumol@xfce.org>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-indicator-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-16 06:12+0000\n"
-"PO-Revision-Date: 2013-04-16 11:42+0300\n"
-"Last-Translator: Mișu Moldovan <dumol@xfce.org>\n"
-"Language-Team: Romanian <diacritice@googlegroups.com>\n"
-"Language: ro\n"
+"POT-Creation-Date: 2013-07-03 21:02+0200\n"
+"PO-Revision-Date: 2013-07-20 20:47+0000\n"
+"Last-Translator: Mișu Moldovan <dumol@gnome.org>\n"
+"Language-Team: Romanian (http://www.transifex.com/projects/p/xfce/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.7.0\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
-#: ../panel-plugin/indicator.desktop.in.h:1 ../panel-plugin/indicator.c:157
-msgid "An indicator of something that needs your attention on the desktop"
-msgstr "Un indicator pentru chestii ce necesită atenție"
-
-#: ../panel-plugin/indicator.desktop.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
 msgstr "Modul de indicator"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:157
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "Un indicator pentru chestii ce necesită atenție"
 
 #: ../panel-plugin/indicator.c:159
 msgid "Copyright (c) 2009-2013\n"
@@ -38,7 +37,8 @@ msgstr "Drepturi de autor © 2009–2013\n"
 msgid "No Indicators"
 msgstr "Niciun indicator"
 
-#. raw name,                  pretty name,                                 icon-name(?)
+#. raw name,                  pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Indicatoare pentru programe"
@@ -53,7 +53,7 @@ msgstr "Meniu de tipărire"
 
 #: ../panel-plugin/indicator-dialog.c:60
 msgid "Power Management"
-msgstr "Gestionare de consum"
+msgstr "Gestionare a consumului"
 
 #: ../panel-plugin/indicator-dialog.c:61
 msgid "Application Menus (Global Menu)"
@@ -81,34 +81,32 @@ msgid "Unable to open the following url: %s"
 msgstr "Nu s-a putut deschide următorul URL: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
-msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr ""
-"<i>Reporniți panoul pentru ca noile opțiuni de vizibilitate să intre în "
-"funcțiune.</i>"
+msgid "Indicators"
+msgstr "Indicatoare"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "Align left in deskbar mode"
-msgstr "Aliniere la stânga în modul deskbar"
+msgid "_Maximum row size (px):"
+msgstr "Mărime maximă pentru rând (px):"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
-msgid "Appearance"
-msgstr "Aspect"
+msgid ""
+"Icons are scaled to fit a single row of the panel. Use this option to "
+"restrict the maximum size of the row."
+msgstr "Iconițele sunt redimensionate pentru a încăpea în panou într-un singur rând. Utilizați această opțiune pentru a restricționa mărimea maximă a rândului."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
-msgid "C_lear known indicators"
-msgstr "Șt_erge indicatoarele cunoscute"
+msgid "Align left in deskbar mode"
+msgstr "Aliniere la stânga în modul deskbar"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
-"Aranjamentul butoanelor indicatoarelor când panoul este în modul Deskbar. "
-"Opțiunile posibile sunt „centered” și „aligned left”."
+msgstr "Aranjamentul butoanelor indicatoarelor când panoul este în modul Deskbar. Opțiunile posibile sunt „centered” și „aligned left”."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
-msgid "Hidden"
-msgstr "Ascunse"
+msgid "Appearance"
+msgstr "Aspect"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
@@ -116,48 +114,42 @@ msgstr "Ascunde implicit indicatoarele"
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the icon."
-msgstr ""
-"Iconițele sunt potrivite la un singur rând din panou. Utilizați această "
-"opțiune pentru a limita mărimea maximă a iconiței."
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "La activare, doar indicatoarele marcate ca vizibile sunt afișate. Altfel vor fi afișate toate indicatoarele ce nu sunt marcate ca fiind ascunse."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
 msgstr "Indicator"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
-msgid "Indicators"
-msgstr "Indicatoare"
+msgid "Hidden"
+msgstr "Ascunse"
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
-msgid "Known Indicators"
-msgstr "Indicatoare cunoscute"
-
-#: ../panel-plugin/indicator-dialog.glade.h:12
-msgid "Move the selected indicator one row down."
-msgstr "Mută indicatorul selectat cu un rând mai jos."
-
-#: ../panel-plugin/indicator-dialog.glade.h:13
-msgid "Move the selected indicator one row up."
-msgstr "Mută indicatorul selectat cu un rând mai sus."
-
-#: ../panel-plugin/indicator-dialog.glade.h:14
-msgid "Resets the list of indicators and their visibility settings."
-msgstr "Reinițializează lista indicatoarelor și opțiunile lor de vizibilitate."
-
-#: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Visible"
 msgstr "Vizibil"
 
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row up."
+msgstr "Mută indicatorul selectat cu un rând mai sus."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr "Mută indicatorul selectat cu un rând mai jos."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Reporniți panoul pentru ca noile opțiuni de vizibilitate să intre în funcțiune.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "Șt_erge indicatoarele cunoscute"
+
 #: ../panel-plugin/indicator-dialog.glade.h:16
-msgid ""
-"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
-"indicators not marked \"Hidden\" are displayed."
-msgstr ""
-"La activare, doar indicatoarele marcate ca vizibile sunt afișate. Altfel, vor "
-"fi afișate toate indicatoarele ce nu sunt marcate ca fiind ascunse."
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Reinițializează lista indicatoarelor și opțiunile lor de vizibilitate."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum icon size (px):"
-msgstr "_Mărime maximă a iconiței (px):"
+msgid "Known Indicators"
+msgstr "Indicatoare cunoscute"
