@@ -1,31 +1,154 @@
-# Polish translation for xfce4-indicator-plugin.
-# Copyright (C) 2011 xfce4-indicator-plugin COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-indicator-plugin package.
-# Piotr Sokół <psokol@jabster.pl>, 2011.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013
+# Piotr Sokół <psokol@jabster.pl>, 2011
+# Piotr Strębski <strebski@o2.pl>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-indicator-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-22 06:01+0000\n"
-"PO-Revision-Date: 2011-03-22 12:42+0100\n"
-"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
-"Language-Team: Polish <>\n"
+"POT-Creation-Date: 2013-07-03 21:02+0200\n"
+"PO-Revision-Date: 2013-08-19 12:15+0000\n"
+"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
+"Language-Team: Polish <xfce-i18n-pl@xfce.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
-"%100<10 || n%100>=20)) ? 1 : 2));\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/indicator.c:208
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "Indicator Plugin"
+msgstr "Aplet powiadamiania"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:157
+msgid "An indicator of something that needs your attention on the desktop"
+msgstr "Przechowuje powiadomienia o zdarzeniach środowiska wartych zwrócenia uwagi"
+
+#: ../panel-plugin/indicator.c:159
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Prawa autorskie (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:288
 msgid "No Indicators"
 msgstr "Brak powiadomień"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:1
-msgid "An indicator of something that needs your attention on the desktop"
-msgstr ""
-"Przechowuje powiadomienia o zdarzeniach środowiska wartych zwrócenia uwagi"
+#. raw name,                  pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Powiadomienia programów"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2
-msgid "Indicator Plugin"
-msgstr "Aplet powiadamiania"
+#: ../panel-plugin/indicator-dialog.c:58
+msgid "Sound Menu"
+msgstr "Menu dźwięku"
+
+#: ../panel-plugin/indicator-dialog.c:59
+msgid "Printers Menu"
+msgstr "Menu drukarek"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Power Management"
+msgstr "Zarządzanie zasilaniem"
+
+#: ../panel-plugin/indicator-dialog.c:61
+msgid "Application Menus (Global Menu)"
+msgstr "Aplikacje Menu (Globalne Menu)"
+
+#: ../panel-plugin/indicator-dialog.c:62
+msgid "Session Management"
+msgstr "Zarządzanie sesją"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Messaging Menu"
+msgstr "Menu wiadomości tekstowych"
+
+#: ../panel-plugin/indicator-dialog.c:64
+msgid "Date and Time"
+msgstr "Data i czas"
+
+#: ../panel-plugin/indicator-dialog.c:436
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Czy na pewno wyczyścić listę znanych powiadomień?"
+
+#: ../panel-plugin/indicator-dialog.c:581
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Nie udało się otworzyć następującego adresu url: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "Indicators"
+msgstr "Powiadomienia"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "_Maximum row size (px):"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid ""
+"Icons are scaled to fit a single row of the panel. Use this option to "
+"restrict the maximum size of the row."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Appearance"
+msgstr "Wygląd"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "Domyślnie ukrywaj powiadomienia"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Powiadomienie"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Hidden"
+msgstr "Ukryty"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Visible"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row up."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Proszę zrestartować panel dla uzyskania zmian w widoczności.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "W_yczyść znane powiadomienia"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Resetuje listę powiadomień i ich ustawienia widoczności."
+
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "Known Indicators"
+msgstr "Znane powiadomienia"
