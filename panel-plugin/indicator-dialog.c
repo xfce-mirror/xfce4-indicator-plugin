@@ -60,8 +60,11 @@ static const gchar *pretty_names[][3] =
   { "libpower.so",              N_("Power Management"),                     NULL },
   { "libappmenu.so",            N_("Application Menus (Global Menu)"),      "menu-editor" },
   { "libsession.so",            N_("Session Management"),                   NULL },
-  { "libmessaging.so",          N_("Messaging Menu"),                       "indicator-messages" },
+  { "libmessaging.so",          N_("Messaging Menu"),                       "indicator-messages-new" },
   { "libdatetime.so",           N_("Date and Time"),                        "time-admin" },
+  { "libbluetooth.so",          N_("Bluetooth"),                            "bluetooth-active" },
+  { "libsyncindicator.so",      N_("Sync Menu"),                            "sync-client-updating" },
+  { "libworkrave.so",           N_("Workrave"),                             "workrave" },
 };
 
 
