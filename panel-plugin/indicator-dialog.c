@@ -171,6 +171,8 @@ indicator_dialog_update_indicator_names (IndicatorDialog *dialog)
       name = li->data;
 
       /* check if we have a better name for the application */
+      pretty_name = NULL;
+      icon_name = NULL;
       for (i = 0; i < G_N_ELEMENTS (pretty_names); i++)
         {
           if (strcmp (name, pretty_names[i][0]) == 0)
