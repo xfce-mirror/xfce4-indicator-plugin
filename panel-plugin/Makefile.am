@@ -64,10 +64,9 @@ desktopdir =									\
 	$(datadir)/xfce4/panel/plugins
 
 desktop_in_files = \
-	indicator.desktop.in
+	indicator.desktop.in.in
 
-desktop_DATA =									\
-	$(desktop_in_files:.desktop.in=.desktop)
+desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
 
 @INTLTOOL_DESKTOP_RULE@
 
