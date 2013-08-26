@@ -1,8 +1,127 @@
-# created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2013-08-26 f9608f5 make distcheck fix Andrzej <ndrwrdck@gmail.com>
+2013-06-04 d0a61c0 make distcheck fixes Andrzej <ndrwrdck@gmail.com>
+2013-08-26 e807eae Added more known indicators Andrzej <ndrwrdck@gmail.com>
+2013-08-26 52ac036 Fixed repeated names and icons in the config dialog. Andrzej <ndrwrdck@gmail.com>
+2013-08-24 4ab0d62 I18n: Update translation cs (100%). Alois Nešpor <info@aloisnespor.info>
+2013-08-19 a2d90a7 I18n: Update translation pl (74%). Piotr Strębski <strebski@o2.pl>
+2013-07-29 e0f5d31 I18n: Add new translation en_AU (100%). k3lt01 <keltoiboy@gmail.com>
+2013-07-27 8e346db I18n: Add new translation en_GB (100%). Noskcaj <noskcaj@ubuntu.com>
+2013-07-21 e712cdd I18n: Update translation ro (100%). Mișu Moldovan <dumol@gnome.org>
+2013-07-13 e9808bb Remove unneeded files. Nick Schermer <nick@xfce.org>
+2013-07-05 b66764c I18n: Add new translation eu (96%). Piarres Beobide <pi@beobide.net>
+2013-07-03 a97b0b8 I18n: Remove broken / unsupported translations. Nick Schermer <nick@xfce.org>
+2013-06-21 f722729 l10n: Updated Hungarian (hu) translation to 100% Imre Benedek <nucleo@indamail.hu>
+2013-06-21 f801f71 l10n: Updated Hungarian (hu) translation to 100% Imre Benedek <nucleo@indamail.hu>
+2013-06-15 b34b864 l10n: Updated Indonesian (id) translation to 100% Ardjuna <asyura.x@gmail.com>
+2013-06-11 4394f10 l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 100% Neliton Pereira Junior <nelitonpjr@gmail.com>
+2013-05-30 146bdfa l10n: Updated Chinese (China) (zh_CN) translation to 100% Chipong Luo <chipong.luo@yahoo.com>
+2013-05-12 eb1555f l10n: Updated Korean (ko) translation to 100% Seong-ho Cho <darkcircle.0426@gmail.com>
+2013-05-08 ba1b92c l10n: Updated Basque (eu) translation to 96% Piarres Beobide <pi@beobide.net>
+2013-05-07 00109c1 l10n: Updated Portuguese (pt) translation to 100% Sergio Marques <smarquespt@gmail.com>
+2013-05-03 143c07e l10n: Updated Spanish (Castilian) (es) translation to 100% Francisco Javier Serrador <fserrador@gmail.com>
+2013-04-28 8af47d6 l10n: Updated Bulgarian (bg) translation to 100% Kiril Kirilov <cybercop_montana@abv.bg>
+2013-04-26 abe8deb l10n: Updated Dutch (Flemish) (nl) translation to 100% Pjotr vertaalt <pjotrvertaalt@gmail.com>
+2013-04-22 46f43f3 Improved icon sizing. Andrzej <ndrwrdck@gmail.com>
+2013-04-22 816b45a l10n: Updated German (de) translation to 100% Mark Trompell <mark@foresightlinux.org>
+2013-04-21 f97c212 l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 100% Rafael Ferreira <rafael.f.f1@gmail.com>
+2013-04-21 9494786 l10n: Updated Russian (ru) translation to 100% Roman K <mrdoctorwho@gmail.com>
+2013-04-20 d2c81b2 tweak de.po Mark Trompell <mark@foresightlinux.org>
+2013-04-20 51c1aac l10n: Updated Italian (it) translation to 100% Cristian Marchi <cri.penta@gmail.com>
+2013-04-19 523cb8c merge de.po Mark Trompell <mark@foresightlinux.org>
+2013-04-18 ae89a56 l10n: Updated Ukrainian (uk) translation to 100% Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-04-18 8cb9bdf l10n: Updated Dutch (Flemish) (nl) translation to 100% Pjotr vertaalt <pjotrvertaalt@gmail.com>
+2013-04-18 d4ca8e9 l10n: Updated Serbian (sr) translation to 100% Саша Петровић <salepetronije@gmail.com>
+2013-04-18 3845461 l10n: Updated French (fr) translation to 100% jc jc1 <jc1.quebecos@gmail.com>
+2013-04-18 9804040 Layout fixes Andrzej <ndrwrdck@gmail.com>
+2013-04-17 54c2201 Build fixes, automatic detection of libxfce4panel api version Andrzej <ndrwrdck@gmail.com>
+2013-04-17 2a7ee58 l10n: Updated Italian (it) translation to 100% Cristian Marchi <cri.penta@gmail.com>
+2013-04-17 00abd73 l10n: Updated Basque (eu) translation to 87% Piarres Beobide <pi@beobide.net>
+2013-04-17 b309f6e l10n: Updated Basque (eu) translation to 80% Piarres Beobide <pi@beobide.net>
+2013-04-16 a87f3e3 l10n: Updated Spanish (Castilian) (es) translation to 100% Adolfo Jayme Barrientos <fitoschido@gmail.com>
+2013-04-16 8746e2d l10n: Updated Ukrainian (uk) translation to 100% Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-04-16 d106a04 l10n: Updated Korean (ko) translation to 100% Seong-ho Cho <darkcircle.0426@gmail.com>
+2013-04-16 d5a5ab7 l10n: Updated Romanian (ro) translation to 100% Mișu Moldovan <dumol@xfce.org>
+2013-04-16 6c09846 l10n: Updated Romanian (ro) translation to 100% Mișu Moldovan <dumol@xfce.org>
+2013-04-16 41f9ea9 l10n: Updated Croatian (hr) translation to 25% Ivica  Kolić <ikoli@yahoo.com>
+2013-04-15 16a0cac l10n: Updated Dutch (Flemish) (nl) translation to 100% Pjotr vertaalt <pjotrvertaalt@gmail.com>
+2013-04-15 57c95ed l10n: Updated French (fr) translation to 100% jc jc1 <jc1.quebecos@gmail.com>
+2013-04-15 7a58b3d l10n: Updated Serbian (sr) translation to 100% Саша Петровић <salepetronije@gmail.com>
+2013-04-15 ad4a639 l10n: Updated Hungarian (hu) translation to 82% Gabor Kelemen <kelemeng@gnome.hu>
+2013-04-14 0a14154 move AC_CONFIG_HEADERS to*** Initialize autoconf *** Mark Trompell <mark@foresightlinux.org>
+2013-04-12 8080d72 Add column titles to translation Sergey Alyoshin <alyoshin.s@gmail.com>
+2013-04-13 a6adc7a rename to .ac.in, avoid obsolete Macro Mark Trompell <mark@foresightlinux.org>
+2013-04-14 d195e32 l10n: Updated Romanian (ro) translation to 100% Mișu Moldovan <dumol@xfce.org>
+2013-04-14 65515dc l10n: Updated Spanish (Castilian) (es) translation to 100% Adolfo Jayme Barrientos <fitoschido@gmail.com>
+2013-04-13 42d7625 l10n: Updated Portuguese (pt) translation to 100% Sergio Marques <smarquespt@gmail.com>
+2013-04-13 7914091 l10n: Updated Czech (cs) translation to 100% Michal Várady <miko.vaji@gmail.com>
+2013-04-13 e844670 l10n: Updated Czech (cs) translation to 96% Michal Várady <miko.vaji@gmail.com>
+2013-04-13 d677ab9 l10n: Add ja translation. Masato Hashimoto <hashimo@xfce.org>
+2013-04-12 2052561 l10n: Updated Russian (ru) translation to 100% Sergey Alyoshin <alyoshin.s@gmail.com>
+2013-04-12 4b2b5fd l10n: Updated Russian (ru) translation to 100% Sergey Alyoshin <alyoshin.s@gmail.com>
+2013-04-12 2ba29dd l10n: Updated Korean (ko) translation to 100% Seong-ho Cho <darkcircle.0426@gmail.com>
+2013-04-10 92c8dc0 l10n: Updated Portuguese (pt) translation to 92% Sergio Marques <smarquespt@gmail.com>
+2013-04-08 8fa31fb Making the plugin display indicator icons. Andrzej <ndrwrdck@gmail.com>
+2013-04-07 84ab84c Some exo fixes to make config settings work Andrzej <ndrwrdck@gmail.com>
+2013-04-07 ed35886 Changes needed for the plugin not to crash at load time. Andrzej <ndrwrdck@gmail.com>
+2013-04-07 c441817 l10n: Updated Ukrainian (uk) translation to 100% Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-04-07 2644dde l10n: Updated Ukrainian (uk) translation to 100% Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-04-07 da4ebab l10n: Updated Ukrainian (uk) translation to 78% Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-04-07 d35c618 l10n: Updated Dutch (Flemish) (nl) translation to 100% Pjotr vertaalt <pjotrvertaalt@gmail.com>
+2013-04-07 1ec1610 l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 100% Rafael Ferreira <rafael.f.f1@gmail.com>
+2013-04-07 d819238 l10n: Updated Italian (it) translation to 100% Cristian Marchi <cri.penta@gmail.com>
+2013-04-07 72a3de8 Initial port to gtk3 Andrzej <ndrwrdck@gmail.com>
+2013-04-06 29fd8d2 l10n: Updated Italian (it) translation to 89% Cristian Marchi <cri.penta@gmail.com>
+2013-04-06 8c52a5e l10n: Updated Croatian (hr) translation to 25% Ivica  Kolić <ikoli@yahoo.com>
+2013-04-06 bc19ca1 l10n: Updated French (fr) translation to 100% jc jc1 <jc1.quebecos@gmail.com>
+2013-04-06 aceff8c l10n: Updated French (fr) translation to 89% jc jc1 <jc1.quebecos@gmail.com>
+2013-04-06 b9c02bb l10n: Updated French (fr) translation to 57% jc jc1 <jc1.quebecos@gmail.com>
+2013-04-05 c47509d l10n: Updated Serbian (sr) translation to 100% Саша Петровић <salepetronije@gmail.com>
+2013-04-05 7f332e0 Updated list of files for translation Andrzej <ndrwrdck@gmail.com>
+2013-04-05 a7ae93a button: Compilation fix. Andrzej <ndrwrdck@gmail.com>
+2013-04-03 f60f6d5 Fixed #9040. Andrzej <ndrwrdck@gmail.com>
+2013-04-02 985d349 indicator-button: minor fix to gtk_menu_popup call Andrzej <ndrwrdck@gmail.com>
+2013-03-22 23dfad6 Reworked indicator entry sorting Andrzej <ndrwrdck@gmail.com>
+2013-03-22 8c1c944 Using 22px icon size by default. Andrzej <ndrwrdck@gmail.com>
+2013-03-22 dd4f96d Added an About dialog. Andrzej <ndrwrdck@gmail.com>
+2013-03-22 bc0abf0 Fixed crash on Xfce 4.8 (no xfce_dialog_show_help) Andrzej <ndrwrdck@gmail.com>
+2013-03-14 8eb3053 Fixed a regression, inconsistent border sizes. Andrzej <ndrwrdck@gmail.com>
+2013-03-14 81c7851 Force a configuration-changed signal at start-up. Andrzej <ndrwrdck@gmail.com>
+2013-03-13 346cfe1 Hiding one of "hidden"/"visible" columns to minimize confusion. Andrzej <ndrwrdck@gmail.com>
+2013-03-13 b552265 Added "pretty names" and indicators for known indicators. Andrzej <ndrwrdck@gmail.com>
+2013-03-12 33d3eb3 Sort indicator entries by location. Andrzej <ndrwrdck@gmail.com>
+2013-03-12 290c5f4 Properly connecting indicator-list-changed signal. Andrzej <ndrwrdck@gmail.com>
+2013-03-12 0db001b Added support for indicator reordering. Andrzej <ndrwrdck@gmail.com>
+2013-03-11 86c62c4 Configuration system rework. Andrzej <ndrwrdck@gmail.com>
+2012-12-25 94c371f Plugged a memory leak. Andrzej <ndrwrdck@gmail.com>
+2012-12-09 1c76403 Fixed menu positioning. Andrzej <ndrwrdck@gmail.com>
+2012-12-02 707ad09 Worked around crashes when plugin is loaded as an external plugin. Andrzej <ndrwrdck@gmail.com>
+2012-11-17 00633e1 Removed unneeded event box causing issues with transparent panels. Andrzej <ndrwrdck@gmail.com>
+2012-11-01 54fde86 l10n: Serbian translation Саша Петровић <salepetronije@gmail.com>
+2012-10-25 56a10c5 l10n: Updated Uyghur (ug) translation to 100% Gheyret Kenji <gheyret@yahoo.com>
+2012-07-25 aaa1b5f Make sure the menu is closed when the button is removed. Andrzej <ndrwrdck@gmail.com>
+2012-06-04 6e234ad l10n: Updated Uyghur (ug) translation to 100% Gheyret Kenji <gheyret@yahoo.com>
+2012-05-10 24788ad Fixed compilation warnings Andrzej <ndrwrdck@gmail.com>
+2012-05-04 3930157 l10n: Added Galician translation Leandro Regueiro <leandro.regueiro@gmail.com>
+2012-04-29 c40c282 Fixed missing placeholder label (regression) Andrzej <ndrwrdck@gmail.com>
+2012-04-28 2cb73e6 Moved button-related event handlers to buttons Andrzej <ndrwrdck@gmail.com>
+2012-04-28 c9785b9 Refactored XfceIndicatorButton class Andrzej <ndrwrdck@gmail.com>
+2012-04-28 8af1dff compilation error fix Andrzej <ndrwrdck@gmail.com>
+2012-04-27 fb8b0c8 Added "align-left" property Andrzej <ndrwrdck@gmail.com>
+2012-04-23 9715e41 back to normal Mark Trompell <mark@foresightlinux.org>
+2012-04-23 ea26211 get ready for a release Mark Trompell <mark@foresightlinux.org>
 2012-04-08 828eb61 Cleaning some runtime GObject assert violations Andrzej <ndrwrdck@gmail.com>
 2012-04-02 33611c0 bugfix: fixed label orientation. Andrzej <ndrwrdck@gmail.com>
 2012-04-20 7ce7f33 l10n: Updated Chinese (China) (zh_CN) translation to 100% Chipong Luo <chipong.luo@yahoo.com>
 2012-04-12 33a3472 l10n: Initial Finnish translation Jari Rahkonen <jari.rahkonen@pp1.inet.fi>
+2012-04-08 57b1394 Fixed panel 4.9 assert (widget not constructed) Andrzej <ndrwrdck@gmail.com>
+2012-04-08 d0bef06 Cleaning some runtime GObject assert violations Andrzej <ndrwrdck@gmail.com>
+2012-04-02 81aecb3 bugfix: fixed label orientation. Andrzej <ndrwrdck@gmail.com>
+2012-04-01 c90af56 Reworked dialog UI. Andrzej <ndrwrdck@gmail.com>
+2012-04-01 e79f2b3 Added comments. Andrzej <ndrwrdck@gmail.com>
+2012-04-01 44ef2fa Experiment with preferences dialog. Andrzej <ndrwrdck@gmail.com>
+2012-03-31 02a4e03 Reverted glade related change - not ready yet. Andrzej <ndrwrdck@gmail.com>
+2012-03-31 f84d012 Making the plugin a library and a subclass of XfcePanelPlugin Andrzej <ndrwrdck@gmail.com>
+2012-03-29 d59fbfc Reworked entry_removed handler Andrzej <ndrwrdck@gmail.com>
 2012-03-23 2bf70a1 bind icon-size-max to xfconf Andrzej <ndrwrdck@gmail.com>
 2012-03-22 969fe20 Replaced "nrows-min" with "icon-size-max" Andrzej <ndrwrdck@gmail.com>
 2012-03-21 517416a brain dead port to xfconf Mark Trompell <mark@foresightlinux.org>
