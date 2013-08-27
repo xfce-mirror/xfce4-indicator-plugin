@@ -260,6 +260,7 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
   gint              border_thickness;
   GtkStyleContext  *ctx;
   GtkBorder         padding, border;
+  GtkImageType      storage;
 
   g_return_if_fail (GTK_IS_IMAGE (button->orig_icon));
   g_return_if_fail (GTK_IS_IMAGE (button->icon));
@@ -278,7 +279,37 @@ xfce_indicator_button_update_icon (XfceIndicatorButton *button)
     size = 24;
 #endif
 
-  pixbuf_s = gtk_image_get_pixbuf (GTK_IMAGE (button->orig_icon));
+  storage = gtk_image_get_storage_type (GTK_IMAGE (button->orig_icon));
+
+  if (storage == GTK_IMAGE_PIXBUF || storage == GTK_IMAGE_EMPTY)
+    {
+      pixbuf_s = gtk_image_get_pixbuf (GTK_IMAGE (button->orig_icon));
+    }
+  else if (storage == GTK_IMAGE_GICON)
+    {
+      GIcon *icon = NULL;
+      GtkIconSize size;
+      gtk_image_get_gicon (GTK_IMAGE (button->orig_icon), &icon, &size);
+      //printf ("G_ICON %s ... %d\n", g_icon_to_string (icon), size);
+      gtk_image_set_from_gicon (GTK_IMAGE (button->icon),
+                                icon, size);
+      return;
+    }
+  else if (storage == GTK_IMAGE_ICON_NAME)
+    {
+      const gchar *icon_name = NULL;
+      GtkIconSize size;
+      gtk_image_get_icon_name (GTK_IMAGE (button->orig_icon), &icon_name, &size);
+      //printf ("ICON_NAME %s ... %d\n", icon_name, size);
+      gtk_image_set_from_icon_name (GTK_IMAGE (button->icon),
+                                    icon_name, size);
+      return;
+    }
+  else
+    {
+      printf ("Unrecognized storage type");
+      return;
+    }
 
   if (pixbuf_s != NULL)
     {
