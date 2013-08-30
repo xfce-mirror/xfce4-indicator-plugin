@@ -33,6 +33,8 @@
 #include "indicator-box.h"
 #include "indicator-button.h"
 
+#define ICON_SIZE 22
+
 static void                 xfce_indicator_box_finalize             (GObject          *object);
 static void                 xfce_indicator_box_list_changed         (XfceIndicatorBox *box,
                                                                      IndicatorConfig  *config);
@@ -324,25 +326,44 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
   XfceIndicatorButton *button;
   GtkRequisition       child_req;
   GList               *known_indicators, *li, *li_int, *li_tmp;
-  gint                 panel_size;
+  gint                 panel_size, size;
   gint                 length;
   gint                 row;
   gint                 nrows;
   gint                 x;
-  gboolean             has_label, rectangular_icon;
+  gboolean             is_small;
   GtkOrientation       panel_orientation;
+  GtkStyleContext     *ctx;
+  GtkBorder            padding, border;
+  gint                 border_thickness;
 
+  /* check border thickness of the first button */
+  li = gtk_container_get_children (GTK_CONTAINER (box));
+  if (li == NULL)
+    return;
+
+  button = XFCE_INDICATOR_BUTTON (li->data);
+  ctx = gtk_widget_get_style_context (GTK_WIDGET (button));
+  gtk_style_context_get_padding (ctx, gtk_widget_get_state_flags (GTK_WIDGET (button)), &padding);
+  gtk_style_context_get_border (ctx, gtk_widget_get_state_flags (GTK_WIDGET (button)), &border);
+  border_thickness = MAX (padding.left+padding.right+border.left+border.right,
+                          padding.top+padding.bottom+border.top+border.bottom);
+
+  size = ICON_SIZE + border_thickness;
   panel_size = indicator_config_get_panel_size (box->config);
+  nrows = MAX (1, panel_size / size);
+
   panel_orientation = indicator_config_get_panel_orientation (box->config);
+
   row = 0;
   length = 0;
   x = 0;
-  nrows = panel_size / xfce_indicator_box_get_row_size (box);
 
   if (g_hash_table_lookup (box->children, "<placeholder>") != NULL)
     known_indicators = g_list_append (NULL, "<placeholder>");
   else
     known_indicators = indicator_config_get_known_indicators (box->config);
+
   for (li = known_indicators; li != NULL; li = li->next)
     {
       li_int = g_hash_table_lookup (box->children, li->data);
@@ -351,11 +372,11 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
           button = XFCE_INDICATOR_BUTTON (li_tmp->data);
 
           gtk_widget_get_preferred_size (GTK_WIDGET (button), NULL, &child_req);
-          has_label = (xfce_indicator_button_get_label (button) != NULL);
-          rectangular_icon = xfce_indicator_button_is_icon_rectangular (button);
+
+          is_small = xfce_indicator_button_is_small (button);
 
           /* wrap rows if column is overflowing or a label is encountered */
-          if (row > 0 && (has_label || row >= nrows || rectangular_icon))
+          if (row > 0 && (row >= nrows || !is_small))
             {
               x += length;
               row = 0;
@@ -365,7 +386,7 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
           length =
             MAX (length, (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
 
-          if (has_label || row >= nrows || rectangular_icon)
+          if (row >= nrows || !is_small)
             {
               x += length;
               row = 0;
@@ -448,15 +469,18 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   XfceIndicatorButton *button;
   GtkAllocation        child_alloc;
   GtkRequisition       child_req;
-  gint                 panel_size, size;
+  gint                 panel_size, size, full_size, spacing;
   gint                 x, y;
   gint                 x0, y0;
   GList               *known_indicators, *li, *li_int, *li_tmp;
   gint                 length, width;
   gint                 row;
   gint                 nrows;
-  gboolean             has_label, rectangular_icon;
+  gboolean             is_small;
   GtkOrientation       panel_orientation;
+  GtkStyleContext     *ctx;
+  GtkBorder            padding, border;
+  gint                 border_thickness;
 
   row = 0;
   length = 0;
@@ -467,15 +491,31 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
   gtk_widget_set_allocation (widget, allocation);
 
+  /* check border thickness of the first button */
+  li = gtk_container_get_children (GTK_CONTAINER (box));
+  if (li == NULL)
+    return;
+
+  button = XFCE_INDICATOR_BUTTON (li->data);
+  ctx = gtk_widget_get_style_context (GTK_WIDGET (button));
+  gtk_style_context_get_padding (ctx, gtk_widget_get_state_flags (GTK_WIDGET (button)), &padding);
+  gtk_style_context_get_border (ctx, gtk_widget_get_state_flags (GTK_WIDGET (button)), &border);
+  border_thickness = MAX (padding.left+padding.right+border.left+border.right,
+                          padding.top+padding.bottom+border.top+border.bottom);
+
+  size = ICON_SIZE + border_thickness;
   panel_size = indicator_config_get_panel_size (box->config);
+  nrows = MAX (1, panel_size / size);
+  //full_size = ((nrows-1)*panel_size + nrows*size) / nrows; // regular pitch, margins
+  full_size = panel_size; // irregular pitch, no margins
+
   panel_orientation = indicator_config_get_panel_orientation (box->config);
-  nrows = panel_size / xfce_indicator_box_get_row_size (box);
-  size = panel_size / nrows;
 
   if (g_hash_table_lookup (box->children, "<placeholder>") != NULL)
     known_indicators = g_list_append (NULL, "<placeholder>");
   else
     known_indicators = indicator_config_get_known_indicators (box->config);
+
   for (li = known_indicators; li != NULL; li = li->next)
     {
       li_int = g_hash_table_lookup (box->children, li->data);
@@ -485,19 +525,27 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
           gtk_widget_get_preferred_size (GTK_WIDGET (button), NULL, &child_req);
 
-          has_label = (xfce_indicator_button_get_label (button) != NULL);
-          rectangular_icon = xfce_indicator_button_is_icon_rectangular (button);
+          is_small = xfce_indicator_button_is_small (button);
 
           /* wrap rows if column is overflowing or a label is encountered */
-          if (row > 0 && (has_label || row >= nrows || rectangular_icon))
+          if (row > 0 && (row >= nrows || !is_small))
             {
               x += length;
-              y = 0;
               row = 0;
               length = 0;
             }
 
-          width = (has_label || rectangular_icon) ? panel_size : size;
+          // regular pitch
+          // y = ((2*row+1) * panel_size + nrows - nrows * size) / 2 / nrows;
+          // no margins
+          if (!is_small)
+            y = 0;
+          else if (nrows == 1)
+            y = (panel_size - size + 1) / 2;
+          else
+            y = (2*row*(panel_size-size) + nrows - 1) / (2*nrows-2);
+
+          width = (is_small) ? size : full_size;
           length = MAX (length,
                         (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
 
@@ -521,17 +569,15 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
           gtk_widget_size_allocate (GTK_WIDGET (button), &child_alloc);
 
-          if (has_label || row >= nrows || rectangular_icon)
+          if (row >= nrows || !is_small)
             {
               x += length;
-              y = 0;
               row = 0;
               length = 0;
             }
           else
             {
               row += 1;
-              y += size;
             }
         }
     }

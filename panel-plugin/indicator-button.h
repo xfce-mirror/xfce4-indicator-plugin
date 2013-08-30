@@ -49,10 +49,6 @@ void                    xfce_indicator_button_set_image   (XfceIndicatorButton  
 void                    xfce_indicator_button_set_menu    (XfceIndicatorButton        *button,
                                                            GtkMenu                    *menu);
 
-GtkWidget              *xfce_indicator_button_get_label   (XfceIndicatorButton        *button);
-
-GtkWidget              *xfce_indicator_button_get_image   (XfceIndicatorButton        *button);
-
 IndicatorObjectEntry   *xfce_indicator_button_get_entry   (XfceIndicatorButton        *button);
 
 IndicatorObject        *xfce_indicator_button_get_io      (XfceIndicatorButton        *button);
@@ -63,7 +59,9 @@ guint                   xfce_indicator_button_get_pos     (XfceIndicatorButton  
 
 GtkMenu                *xfce_indicator_button_get_menu    (XfceIndicatorButton        *button);
 
-gboolean                xfce_indicator_button_is_icon_rectangular (XfceIndicatorButton *button);
+gboolean                xfce_indicator_button_is_small    (XfceIndicatorButton        *button);
+
+gint                    xfce_indicator_button_get_button_border (XfceIndicatorButton  *button);
 
 GtkWidget              *xfce_indicator_button_new         (IndicatorObject            *io,
                                                            const gchar                *io_name,
