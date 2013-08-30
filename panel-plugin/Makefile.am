@@ -1,8 +1,8 @@
 
-INCLUDES =										\
-	-I$(top_srcdir)								\
-	-DG_LOG_DOMAIN=\"libindicator-plugin\"	\
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"		\
+INCLUDES = \
+	-I$(top_srcdir) \
+	-DG_LOG_DOMAIN=\"libindicator-plugin\" \
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
 	$(PLATFORM_CPPFLAGS)
 
 #
@@ -19,28 +19,28 @@ libindicator_built_sources = \
 
 libindicator_plugin_la_SOURCES = \
 	$(libindicator_built_sources) \
-	indicator-config.c									\
-	indicator-config.h									\
-	indicator-button-box.c									\
-	indicator-button-box.h									\
-	indicator-button.c									\
-	indicator-button.h									\
-	indicator-box.c									\
-	indicator-box.h									\
+	indicator-config.c \
+	indicator-config.h \
+	indicator-button-box.c \
+	indicator-button-box.h \
+	indicator-button.c \
+	indicator-button.h \
+	indicator-box.c \
+	indicator-box.h \
 	indicator-dialog.c \
 	indicator-dialog.h \
-	indicator.c									\
-	indicator.h									
+	indicator.c \
+	indicator.h
 
 libindicator_plugin_la_CFLAGS = \
 	$(GTK_CFLAGS) \
-	$(LIBXFCE4UTIL_CFLAGS)						\
+	$(LIBXFCE4UTIL_CFLAGS) \
 	$(LIBXFCE4UI_CFLAGS) \
-	$(LIBXFCE4PANEL_CFLAGS)						\
-	$(XFCONF_CFLAGS)					\
-	$(INDICATOR_CFLAGS)						\
-	$(PLATFORM_CFLAGS)					\
-	-DDATADIR=\""$(datadir)"\" 				\
+	$(LIBXFCE4PANEL_CFLAGS) \
+	$(XFCONF_CFLAGS) \
+	$(INDICATOR_CFLAGS) \
+	$(PLATFORM_CFLAGS) \
+	-DDATADIR=\""$(datadir)"\" \
 	-DINDICATOR_ICONS_DIR=\""$(INDICATORICONSDIR)"\" \
 	-DINDICATOR_DIR=\""$(INDICATORDIR)"\"
 
@@ -53,16 +53,16 @@ libindicator_plugin_la_LDFLAGS = \
 
 libindicator_plugin_la_LIBADD = \
 	$(GTK_LIBS) \
-	$(LIBXFCE4UTIL_LIBS)						\
+	$(LIBXFCE4UTIL_LIBS) \
 	$(LIBXFCE4UI_LIBS) \
-	$(LIBXFCE4PANEL_LIBS)						\
-	$(XFCONF_LIBS)						\
+	$(LIBXFCE4PANEL_LIBS) \
+	$(XFCONF_LIBS) \
 	$(INDICATOR_LIBS)
 
 #
 # Desktop file
 #
-desktopdir =									\
+desktopdir = \
 	$(datadir)/xfce4/panel/plugins
 
 desktop_in_files = \
@@ -72,7 +72,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
 
 @INTLTOOL_DESKTOP_RULE@
 
-EXTRA_DIST =									\
+EXTRA_DIST = \
 	indicator-dialog.glade \
 	$(desktop_in_files)
 

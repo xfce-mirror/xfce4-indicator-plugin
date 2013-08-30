@@ -276,7 +276,7 @@ indicator_button_box_set_image (IndicatorButtonBox  *box,
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON_BOX (box));
   g_return_if_fail (GTK_IS_IMAGE (image));
 
-  g_debug ("indicator-button-box set image, image=%x\n", (uint) image);
+  /* g_debug ("indicator-button-box set image, image=%x", (uint) image); */
 
   if (box->icon != NULL)
     {
@@ -344,7 +344,7 @@ indicator_button_box_disconnect_signals (IndicatorButtonBox *box)
 gboolean
 indicator_button_box_is_small (IndicatorButtonBox *box)
 {
-  g_return_if_fail (XFCE_IS_INDICATOR_BUTTON_BOX (box));
+  g_return_val_if_fail (XFCE_IS_INDICATOR_BUTTON_BOX (box), FALSE);
 
   if (box->cached)
     return box->is_small;
@@ -394,7 +394,6 @@ indicator_button_box_get_preferred_width (GtkWidget *widget,
                                           gint      *natural_width)
 {
   IndicatorButtonBox  *box = XFCE_INDICATOR_BUTTON_BOX (widget);
-  IndicatorConfig     *config = box->config;
   gint                 min_size, nat_size;
 
   if (indicator_button_box_is_small (box)) // check & cache
@@ -448,7 +447,6 @@ indicator_button_box_get_preferred_height (GtkWidget *widget,
                                            gint      *natural_height)
 {
   IndicatorButtonBox  *box = XFCE_INDICATOR_BUTTON_BOX (widget);
-  IndicatorConfig     *config = box->config;
   gint                 min_size, nat_size;
 
   if (indicator_button_box_is_small (box)) // check & cache
@@ -501,7 +499,6 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
                                     GtkAllocation *allocation)
 {
   IndicatorButtonBox  *box = XFCE_INDICATOR_BUTTON_BOX (widget);
-  IndicatorConfig     *config = box->config;
   gint                 label_width, label_height;
   gint                 x, y, width, height;
   GtkAllocation        child_allocation;

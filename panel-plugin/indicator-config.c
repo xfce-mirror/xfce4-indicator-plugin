@@ -701,7 +701,7 @@ indicator_config_swap_known_indicators (IndicatorConfig *config,
   /* make sure that the list contains name1 followed by name2 */
   if (li == NULL || li->next == NULL || g_strcmp0 (li->next->data, name2) != 0)
     {
-      g_debug("Couldn't swap indicators: %s and %s\n", name1, name2);
+      g_debug("Couldn't swap indicators: %s and %s", name1, name2);
       return;
     }
 

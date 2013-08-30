@@ -44,7 +44,6 @@
 //#endif
 
 static void                 xfce_indicator_button_finalize        (GObject                *object);
-static gint                 xfce_indicator_button_get_icon_size   (XfceIndicatorButton    *button);
 static gboolean             xfce_indicator_button_button_press    (GtkWidget              *widget,
                                                                    GdkEventButton         *event);
 static gboolean             xfce_indicator_button_scroll          (GtkWidget              *widget,

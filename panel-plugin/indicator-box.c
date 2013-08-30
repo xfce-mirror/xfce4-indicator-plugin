@@ -305,18 +305,6 @@ xfce_indicator_box_child_type (GtkContainer *container)
 
 
 
-static gint
-xfce_indicator_box_get_row_size (XfceIndicatorBox *box)
-{
-  return MIN (indicator_config_get_panel_size (box->config) /
-              indicator_config_get_nrows (box->config),
-              indicator_config_get_row_size_max (box->config));
-}
-
-
-
-
-
 static void
 xfce_indicator_box_get_preferred_length (GtkWidget *widget,
                                          gint      *minimum_length,
@@ -469,7 +457,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   XfceIndicatorButton *button;
   GtkAllocation        child_alloc;
   GtkRequisition       child_req;
-  gint                 panel_size, size, full_size, spacing;
+  gint                 panel_size, size, full_size;
   gint                 x, y;
   gint                 x0, y0;
   GList               *known_indicators, *li, *li_int, *li_tmp;
