@@ -82,6 +82,9 @@ struct _IndicatorPlugin
 
   /* indicator settings */
   IndicatorConfig *config;
+
+  /* log file */
+  FILE            *logfile;
 };
 
 
@@ -119,6 +122,11 @@ indicator_init (IndicatorPlugin *indicator)
      plugin but not internal one (loaded by "xfce4-panel" itself).
      The following lines makes only g_error critical. */
   g_log_set_always_fatal (G_LOG_LEVEL_ERROR);
+
+  indicator->item      = NULL;
+  indicator->buttonbox = NULL;
+  indicator->config    = NULL;
+  indicator->logfile   = NULL;
 }
 
 
@@ -225,6 +233,49 @@ indicator_size_changed (XfcePanelPlugin *plugin,
 }
 
 
+
+static void
+indicator_log_handler (const gchar    *domain,
+                       GLogLevelFlags  level,
+                       const gchar    *message,
+                       gpointer        data)
+{
+  IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (data);
+  gchar           *path;
+  const gchar     *prefix;
+
+  if (indicator->logfile == NULL)
+    {
+      g_mkdir_with_parents (g_get_user_cache_dir (), 0755);
+      path = g_build_filename (g_get_user_cache_dir (), "xfce4-indicator-plugin.log", NULL);
+      indicator->logfile = fopen (path, "w");
+      g_free (path);
+    }
+
+  if (indicator->logfile)
+    {
+      switch (level & G_LOG_LEVEL_MASK)
+        {
+        case G_LOG_LEVEL_ERROR:    prefix = "ERROR";    break;
+        case G_LOG_LEVEL_CRITICAL: prefix = "CRITICAL"; break;
+        case G_LOG_LEVEL_WARNING:  prefix = "WARNING";  break;
+        case G_LOG_LEVEL_MESSAGE:  prefix = "MESSAGE";  break;
+        case G_LOG_LEVEL_INFO:     prefix = "INFO";     break;
+        case G_LOG_LEVEL_DEBUG:    prefix = "DEBUG";    break;
+        default:                   prefix = "LOG";      break;
+        }
+
+      fprintf (indicator->logfile, "%-10s %-25s %s\n", prefix, domain, message);
+      fflush (indicator->logfile);
+    }
+
+  /* print log to the stdout */
+  if (level & G_LOG_LEVEL_ERROR || level & G_LOG_LEVEL_CRITICAL)
+    g_log_default_handler (domain, level, message, NULL);
+}
+
+
+
 static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
@@ -237,6 +288,9 @@ indicator_construct (XfcePanelPlugin *plugin)
 
   /* setup transation domain */
   xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+
+  /* log messages to a file */
+  g_log_set_default_handler(indicator_log_handler, plugin);
 
   /* Init some theme/icon stuff */
   gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(),
