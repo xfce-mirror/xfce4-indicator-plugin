@@ -39,6 +39,7 @@ libindicator_plugin_la_CFLAGS = \
 	$(LIBXFCE4PANEL_CFLAGS) \
 	$(XFCONF_CFLAGS) \
 	$(INDICATOR_CFLAGS) \
+	$(IDO_CFLAGS) \
 	$(PLATFORM_CFLAGS) \
 	-DDATADIR=\""$(datadir)"\" \
 	-DINDICATOR_ICONS_DIR=\""$(INDICATORICONSDIR)"\" \
@@ -57,7 +58,8 @@ libindicator_plugin_la_LIBADD = \
 	$(LIBXFCE4UI_LIBS) \
 	$(LIBXFCE4PANEL_LIBS) \
 	$(XFCONF_LIBS) \
-	$(INDICATOR_LIBS)
+	$(INDICATOR_LIBS) \
+	$(IDO_LIBS)
 
 #
 # Desktop file
