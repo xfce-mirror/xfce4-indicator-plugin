@@ -36,6 +36,7 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libindicator/indicator-object.h>
+#include <libindicator/indicator-ng.h>
 
 #include "indicator.h"
 #include "indicator-box.h"
@@ -64,6 +65,7 @@ static void             indicator_mode_changed                     (XfcePanelPlu
 static void             indicator_orientation_changed              (XfcePanelPlugin       *plugin,
                                                                     GtkOrientation         orientation);
 #endif
+static gint             indicator_load_indicators_ng               (IndicatorPlugin       *indicator);
 
 
 struct _IndicatorPluginClass
@@ -332,6 +334,8 @@ indicator_construct (XfcePanelPlugin *plugin)
     g_dir_close (dir);
   }
 
+  indicators_loaded += indicator_load_indicators_ng (indicator);
+
   if (indicators_loaded == 0) {
     /* A label to allow for click through */
     indicator->item = xfce_indicator_button_new (NULL,
@@ -359,6 +363,8 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
                                                        entry,
                                                        plugin,
                                                        indicator->config);
+
+  g_debug("Entry added for io=%s", io_name);
 
   /* remove placeholder item when there are real entries to be added */
   if (indicator->item != NULL)
@@ -433,6 +439,121 @@ load_module (const gchar * name, IndicatorPlugin * indicator)
   g_list_free(entries);
 
   return TRUE;
+}
+
+
+static void
+load_indicator (IndicatorPlugin *indicator,
+		IndicatorObject *io,
+		const gchar     *name)
+{
+  GList                *entries, *entry;
+  IndicatorObjectEntry *entrydata;
+
+  g_debug ("Load indicator_ng: %s", name);
+
+  indicator_config_add_known_indicator (indicator->config, name);
+
+  g_object_set_data (G_OBJECT (io), "io-name", g_strdup (name));
+
+  /* Connect to its signals */
+  g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_ADDED,
+                   G_CALLBACK(entry_added), indicator);
+  g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_REMOVED,
+                   G_CALLBACK(entry_removed), indicator->buttonbox);
+
+  /* Work on the entries */
+  entries = indicator_object_get_entries(io);
+  entry = NULL;
+
+  for (entry = entries; entry != NULL; entry = g_list_next(entry))
+    {
+      entrydata = (IndicatorObjectEntry *)entry->data;
+      entry_added(io, entrydata, indicator);
+    }
+
+  g_list_free(entries);
+}
+
+
+
+#define INDICATORS_NG_DIR "/usr/share/unity/indicators"
+
+static gint
+indicator_load_indicators_ng (IndicatorPlugin *indicator)
+{
+  GDir        *indicators_ng_dir;
+  const gchar *io_name;
+  GError      *err = NULL;
+  gint         indicators = 0;
+  gchar       *file_name = NULL;
+  IndicatorNg *indicator_ng = NULL;
+
+  g_return_val_if_fail (XFCE_IS_INDICATOR_PLUGIN (indicator), 0);
+
+  indicators_ng_dir = g_dir_open (INDICATORS_NG_DIR, 0, &err);
+
+  if (!indicators_ng_dir)
+    {
+      g_warning ("%s", err->message);
+      g_error_free (err);
+
+      return 0;
+    }
+
+  if (indicator_config_get_mode_whitelist (indicator->config))
+    {
+      while ((io_name = g_dir_read_name (indicators_ng_dir)) != NULL)
+	{
+          if (indicator_config_is_whitelisted (indicator->config, io_name))
+            {
+              g_debug ("Loading whitelisted IndicatorNg: %s", io_name);
+	      file_name = g_build_filename (INDICATORS_NG_DIR, io_name, NULL);
+	      indicator_ng = indicator_ng_new_for_profile (file_name, "desktop", &err);
+	      g_free (file_name);
+	      if (indicator_ng)
+		{
+		  load_indicator (indicator, INDICATOR_OBJECT (indicator_ng), io_name);
+		  indicators++;
+		}
+	      else
+		{
+		  g_warning ("Cannot load indicator '%s': %s", io_name, err->message);
+		  g_clear_error (&err);
+		}
+	    }
+	}
+    }
+  else
+    {
+      while ((io_name = g_dir_read_name (indicators_ng_dir)) != NULL)
+	{
+          if (indicator_config_is_blacklisted (indicator->config, io_name))
+            {
+              g_debug ("Excluding blacklisted IndicatorNg: %s", io_name);
+	    }
+	  else
+	    {
+	      file_name = g_build_filename (INDICATORS_NG_DIR, io_name, NULL);
+	      indicator_ng = indicator_ng_new_for_profile (file_name, "desktop", &err);
+	      g_free (file_name);
+	      if (indicator_ng)
+		{
+		  load_indicator (indicator, INDICATOR_OBJECT (indicator_ng), io_name);
+		  indicators++;
+		}
+	      else
+		{
+		  g_warning ("Cannot load indicator '%s': %s", io_name, err->message);
+		  g_clear_error (&err);
+		}
+	    }
+	}
+    }
+
+  g_dir_close (indicators_ng_dir);
+
+  return indicators;
 }
 
 

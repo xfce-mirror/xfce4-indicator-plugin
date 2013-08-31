@@ -510,7 +510,7 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
   width  = allocation->width;
   height = allocation->height;
 
-  if (indicator_button_box_is_small (box)) // check & cache
+  if (indicator_button_box_is_small (box) && box->icon != NULL) // check & cache
     {
       child_allocation.x = x + (width - ICON_SIZE + 1) / 2;
       child_allocation.y = y + (height - ICON_SIZE + 1) / 2;
