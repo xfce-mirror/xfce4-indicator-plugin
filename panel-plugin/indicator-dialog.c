@@ -55,15 +55,24 @@ static const gchar *pretty_names[][3] =
 {
   /* raw name,                           pretty name,                                 icon-name(?) */
   { "libapplication.so",                 N_("Application Indicators"),               "application-default-icon" },
+  { "libsoundmenu.so",                   N_("Sound Menu"),                           "preferences-desktop-sound" },
   { "com.canonical.indicator.sound",     N_("Sound Menu"),                           "preferences-desktop-sound" },
   { "libprintersmenu.so",                N_("Printers Menu"),                        "printer" },
+  { "libpower.so",                       N_("Power Management"),                     NULL },
   { "com.canonical.indicator.power",     N_("Power Management"),                     NULL },
   { "libappmenu.so",                     N_("Application Menus (Global Menu)"),      "menu-editor" },
+  { "libsession.so",                     N_("Session Management"),                   NULL },
   { "com.canonical.indicator.session",   N_("Session Management"),                   NULL },
+  { "libmessaging.so",                   N_("Messaging Menu"),                       "indicator-messages-new" },
   { "com.canonical.indicator.messages",  N_("Messaging Menu"),                       "indicator-messages-new" },
+  { "libdatetime.so",                    N_("Date and Time"),                        "time-admin" },
   { "com.canonical.indicator.datetime",  N_("Date and Time"),                        "time-admin" },
+  { "libbluetooth.so",                   N_("Bluetooth"),                            "bluetooth-active" },
   { "com.canonical.indicator.bluetooth", N_("Bluetooth"),                            "bluetooth-active" },
   { "libsyncindicator.so",               N_("Sync Menu"),                            "sync-client-updating" },
+  { "com.canonical.indicator.keyboard",  N_("Keyboard"),                             NULL },
+  { "com.canonical.indicator.location",  N_("Location"),                             NULL },
+  { "com.canonical.indicator.network",   N_("Network"),                              NULL },
   { "libworkrave.so",                    N_("Workrave"),                             "workrave" },
 };
 
