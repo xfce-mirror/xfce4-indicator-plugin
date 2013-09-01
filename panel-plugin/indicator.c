@@ -43,6 +43,10 @@
 #include "indicator-button.h"
 #include "indicator-dialog.h"
 
+#ifdef HAVE_IDO
+#include <libido/libido.h>
+#endif
+
 #ifdef LIBXFCE4PANEL_CHECK_VERSION
 #if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
 #define HAS_PANEL_49
@@ -285,7 +289,9 @@ indicator_construct (XfcePanelPlugin *plugin)
   gint              indicators_loaded = 0;
   GtkWidget        *label;
 
+  #ifdef HAVE_IDO
   ido_init();
+  #endif
 
   xfce_panel_plugin_menu_show_configure (plugin);
   xfce_panel_plugin_menu_show_about (plugin);
