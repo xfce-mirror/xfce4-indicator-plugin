@@ -53,18 +53,18 @@
 /* known indicator names */
 static const gchar *pretty_names[][3] =
 {
-  /* raw name,                  pretty name,                                 icon-name(?) */
-  { "libapplication.so",        N_("Application Indicators"),               "application-default-icon" },
-  { "libsoundmenu.so",          N_("Sound Menu"),                           "preferences-desktop-sound" },
-  { "libprintersmenu.so",       N_("Printers Menu"),                        "printer" },
-  { "libpower.so",              N_("Power Management"),                     NULL },
-  { "libappmenu.so",            N_("Application Menus (Global Menu)"),      "menu-editor" },
-  { "libsession.so",            N_("Session Management"),                   NULL },
-  { "libmessaging.so",          N_("Messaging Menu"),                       "indicator-messages-new" },
-  { "libdatetime.so",           N_("Date and Time"),                        "time-admin" },
-  { "libbluetooth.so",          N_("Bluetooth"),                            "bluetooth-active" },
-  { "libsyncindicator.so",      N_("Sync Menu"),                            "sync-client-updating" },
-  { "libworkrave.so",           N_("Workrave"),                             "workrave" },
+  /* raw name,                           pretty name,                                 icon-name(?) */
+  { "libapplication.so",                 N_("Application Indicators"),               "application-default-icon" },
+  { "com.canonical.indicator.sound",     N_("Sound Menu"),                           "preferences-desktop-sound" },
+  { "libprintersmenu.so",                N_("Printers Menu"),                        "printer" },
+  { "com.canonical.indicator.power",     N_("Power Management"),                     NULL },
+  { "libappmenu.so",                     N_("Application Menus (Global Menu)"),      "menu-editor" },
+  { "com.canonical.indicator.session",   N_("Session Management"),                   NULL },
+  { "com.canonical.indicator.messages",  N_("Messaging Menu"),                       "indicator-messages-new" },
+  { "com.canonical.indicator.datetime",  N_("Date and Time"),                        "time-admin" },
+  { "com.canonical.indicator.bluetooth", N_("Bluetooth"),                            "bluetooth-active" },
+  { "libsyncindicator.so",               N_("Sync Menu"),                            "sync-client-updating" },
+  { "libworkrave.so",                    N_("Workrave"),                             "workrave" },
 };
 
 
