@@ -151,10 +151,17 @@ indicator_show_about (XfcePanelPlugin *plugin)
 {
    GdkPixbuf *icon;
 
-   const gchar *auth[] = {
-     "Mark Trompell <mark@foresightlinux.org>", "Andrzej Radecki <ndrwrdck@gmail.com>",
-     "Lionel Le Folgoc <lionel@lefolgoc.net>", "Jason Conti <jconti@launchpad.net>",
-     "Nick Schermer <nick@xfce.org>", "Evgeni Golov <evgeni@debian.org>", NULL };
+   const gchar *auth[] =
+     {
+       "Mark Trompell <mark@foresightlinux.org>",
+       "Andrzej Radecki <ndrwrdck@gmail.com>",
+       "Lionel Le Folgoc <lionel@lefolgoc.net>",
+       "Alistair Buxton <a.j.buxton@gmail.com>",
+       "Jason Conti <jconti@launchpad.net>",
+       "Nick Schermer <nick@xfce.org>",
+       "Evgeni Golov <evgeni@debian.org>",
+       NULL
+     };
 
    g_return_if_fail (XFCE_IS_INDICATOR_PLUGIN (plugin));
 
@@ -164,7 +171,7 @@ indicator_show_about (XfcePanelPlugin *plugin)
                          "license", xfce_get_license_text (XFCE_LICENSE_TEXT_GPL),
                          "version", PACKAGE_VERSION,
                          "program-name", PACKAGE_NAME,
-                         "comments", _("An indicator of something that needs your attention on the desktop"),
+                         "comments", _("Provides a panel area for Unity indicators. Indicators allow applications and system services to display their status and interact with the user."),
                          "website", "http://goodies.xfce.org/projects/panel-plugins/xfce4-indicator-plugin",
                          "copyright", _("Copyright (c) 2009-2013\n"),
                          "authors", auth, NULL);
