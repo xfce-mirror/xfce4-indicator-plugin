@@ -285,6 +285,8 @@ indicator_construct (XfcePanelPlugin *plugin)
   gint              indicators_loaded = 0;
   GtkWidget        *label;
 
+  ido_init();
+
   xfce_panel_plugin_menu_show_configure (plugin);
   xfce_panel_plugin_menu_show_about (plugin);
 
