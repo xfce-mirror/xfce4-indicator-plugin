@@ -1,3 +1,30 @@
+# created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2013-09-01 6dc7c2e Updated .po files Andrzej <ndrwrdck@gmail.com>
+2013-09-01 61a419b Updated description in the desktop file. Andrzej <ndrwrdck@gmail.com>
+2013-09-01 19b21aa Updated list of authors and plugin description. Andrzej <ndrwrdck@gmail.com>
+2013-09-02 919f8d8 I18n: Update translation it (100%). Anonymous <noreply@xfce.org>
+2013-09-01 a90c20e Refactored indicator loading functions. Andrzej <ndrwrdck@gmail.com>
+2013-09-01 e993461 Updated the friendly name table. Andrzej <ndrwrdck@gmail.com>
+2013-09-01 0bcb768 Remove panel version checking Andrzej <ndrwrdck@gmail.com>
+2013-09-01 c86bf2c Make IDO library optional Andrzej <ndrwrdck@gmail.com>
+2013-09-01 f949719 Call ido_init() Alistair Buxton <a.j.buxton@gmail.com>
+2013-09-01 99f974b Update the friendly name table. Alistair Buxton <a.j.buxton@gmail.com>
+2013-08-31 8d26ab0 Add libido to the build rules. Alistair Buxton <a.j.buxton@gmail.com>
+2013-09-01 48edafd Initial support for IndicatorNg service files Andrzej <ndrwrdck@gmail.com>
+2013-08-31 05fdb4d I18n: Update translation hu (100%). Nucleo <nucleo@indamail.hu>
+2013-08-31 0d48094 Added a log handler Andrzej <ndrwrdck@gmail.com>
+2013-08-31 4eccf54 Cleanup Andrzej <ndrwrdck@gmail.com>
+2013-08-30 4010e45 I18n: Update translation ko (100%). kentarch <bkrhlim@aol.com>
+2013-08-30 56a2a08 Reworked button layout mechanism. Andrzej <ndrwrdck@gmail.com>
+2013-08-30 f6b312b I18n: Update translation pt (100%). Sérgio Marques <smarquespt@gmail.com>
+2013-08-28 5455bae I18n: Update translation pl (97%). Piotr Sokół <psokol@jabster.pl>
+2013-08-28 f669246 IndicatorButton: detect storage type Andrzej <ndrwrdck@gmail.com>
+2013-08-27 01e0527 I18n: Update translation pt_BR (100%). Rafael Ferreira <rafael.f.f1@gmail.com>
+2013-08-27 c69bc0b I18n: Update translation nl (100%). Pjotr123 <pjotrvertaalt@gmail.com>
+2013-08-27 e18290e I18n: Update translation fr (100%). jc1 <jc1.quebecos@gmail.com>
+2013-08-27 0618450 I18n: Update translation bg (100%). cybercop <cybercop_montana@abv.bg>
+2013-08-26 c19cf69 back to development Andrzej <ndrwrdck@gmail.com>
+2013-08-26 6570cb8 preparing for a release Andrzej <ndrwrdck@gmail.com>
 2013-08-26 f9608f5 make distcheck fix Andrzej <ndrwrdck@gmail.com>
 2013-06-04 d0a61c0 make distcheck fixes Andrzej <ndrwrdck@gmail.com>
 2013-08-26 e807eae Added more known indicators Andrzej <ndrwrdck@gmail.com>
