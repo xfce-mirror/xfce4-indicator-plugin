@@ -1,90 +1,104 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Pjotr123 <pjotrvertaalt@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-27 00:31+0200\n"
+"POT-Creation-Date: 2013-09-01 23:53+0100\n"
 "PO-Revision-Date: 2013-08-27 09:10+0000\n"
 "Last-Translator: Pjotr123 <pjotrvertaalt@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/xfce/language/nl/)\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/xfce/language/"
+"nl/)\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
 msgstr "Aanwijzer-invoegtoepassing"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:157
-msgid "An indicator of something that needs your attention on the desktop"
-msgstr "Een aanwijzer van iets dat uw aandacht nodig heeft op het bureaublad"
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr ""
 
-#: ../panel-plugin/indicator.c:159
+#: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Auteursrecht (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:288
+#: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
 msgstr "Geen aanwijzers"
 
-#. raw name,                  pretty name,
-#. icon-name(?)
+#. raw name,                           pretty name,                                 icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Toepassingaanwijzers"
 
-#: ../panel-plugin/indicator-dialog.c:58
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
 msgid "Sound Menu"
 msgstr "Geluidmenu"
 
-#: ../panel-plugin/indicator-dialog.c:59
+#: ../panel-plugin/indicator-dialog.c:60
 msgid "Printers Menu"
 msgstr "Printersmenu"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
 msgid "Power Management"
 msgstr "Energiebeheer"
 
-#: ../panel-plugin/indicator-dialog.c:61
+#: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
 msgstr "Toepassingenmenu's (globaal menu)"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
 msgstr "Sessiebeheer"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
 msgid "Messaging Menu"
 msgstr "Boodschappenmenu"
 
-#: ../panel-plugin/indicator-dialog.c:64
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
 msgid "Date and Time"
 msgstr "Datum en tijd"
 
-#: ../panel-plugin/indicator-dialog.c:65
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../panel-plugin/indicator-dialog.c:66
+#: ../panel-plugin/indicator-dialog.c:72
 msgid "Sync Menu"
 msgstr "Synchronisatiemenu"
 
-#: ../panel-plugin/indicator-dialog.c:67
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:441
+#: ../panel-plugin/indicator-dialog.c:450
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Weet u zeker dat u de lijst van bekende aanwijzers wil wissen?"
 
-#: ../panel-plugin/indicator-dialog.c:586
+#: ../panel-plugin/indicator-dialog.c:595
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Kon het volgende webadres niet openen: %s"
@@ -101,7 +115,10 @@ msgstr "Maximale rijgrootte (px):"
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the row."
-msgstr "Pictogrammen worden geschaald om te passen op een enkele rij van de werkbalk. Gebruik deze optie om de maximumgrootte van het pictogram te beperken."
+msgstr ""
+"Pictogrammen worden geschaald om te passen op een enkele rij van de "
+"werkbalk. Gebruik deze optie om de maximumgrootte van het pictogram te "
+"beperken."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -111,7 +128,10 @@ msgstr "Lijn naar links uit in bureaubalkmodus"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Beheerst de vormgeving van de indicatorknop wanneer de werkbalk in bureaubalkmodus is. Mogelijke keuzes zijn 'gecentreerd' of 'links uitgelijnd'."
+msgstr ""
+"Beheerst de vormgeving van de indicatorknop wanneer de werkbalk in "
+"bureaubalkmodus is. Mogelijke keuzes zijn 'gecentreerd' of 'links "
+"uitgelijnd'."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -125,7 +145,10 @@ msgstr "Verberg de aanwijzers standaard"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Wanneer ingeschakeld, worden er alleen aanwijzers getoond met de markering 'Zichtbaar'. Anders worden alle aanwijzers zonder de markering 'Verborgen' getoond."
+msgstr ""
+"Wanneer ingeschakeld, worden er alleen aanwijzers getoond met de markering "
+"'Zichtbaar'. Anders worden alle aanwijzers zonder de markering 'Verborgen' "
+"getoond."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -149,7 +172,9 @@ msgstr "Verplaats de gekozen aanwijzer een rij naar beneden."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Herstart a.u.b. de werkbalk om de zichtbaarheidveranderingen door te voeren.</i>"
+msgstr ""
+"<i>Herstart a.u.b. de werkbalk om de zichtbaarheidveranderingen door te "
+"voeren.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
@@ -157,8 +182,14 @@ msgstr "Verwijder bekende aanwijzers"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
-msgstr "Zet de lijst van aanwijzers en hun zichtbaarheidinstellingen terug op de standaardwaarden."
+msgstr ""
+"Zet de lijst van aanwijzers en hun zichtbaarheidinstellingen terug op de "
+"standaardwaarden."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Bekende aanwijzers"
+
+#~ msgid "An indicator of something that needs your attention on the desktop"
+#~ msgstr ""
+#~ "Een aanwijzer van iets dat uw aandacht nodig heeft op het bureaublad"

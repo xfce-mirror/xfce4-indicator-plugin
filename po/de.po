@@ -3,96 +3,126 @@
 # Copyright (C) 2009 Mark Trompell <mark@foresightlinux.org>
 # This file is distributed under the same license as the xfce4-indicator-plugin package.
 # Mark Trompell <mark@foresightlinux.org>, 2009.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.0.1svn-r\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-22 08:00+0000\n"
+"POT-Creation-Date: 2013-09-01 23:53+0100\n"
 "PO-Revision-Date: 2009-06-09 12:02+0200\n"
 "Last-Translator: Mark Trompell <mark@foresightlinux.org>\n"
 "Language-Team: German\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
-msgid "An indicator of something that needs your attention on the desktop"
-msgstr "Eine Anzeige, dass etwas Ihre Aufmerksamkeit benötigt"
-
-#: ../panel-plugin/indicator.desktop.in.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
 msgstr "Nachrichtenanzeige"
 
-#: ../panel-plugin/indicator.c:159
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr ""
+
+#: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Copyright (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:288
+#: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
 msgstr "Keine Anzeigen"
 
-#. raw name,                  pretty name,
-#. icon-name(?)
+#. raw name,                           pretty name,                                 icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Anwendungsanzeigen"
 
-#: ../panel-plugin/indicator-dialog.c:58
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
 msgid "Sound Menu"
 msgstr "Sounmenü"
 
-#: ../panel-plugin/indicator-dialog.c:59
+#: ../panel-plugin/indicator-dialog.c:60
 msgid "Printers Menu"
 msgstr "Druckermenü"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
 msgid "Power Management"
 msgstr "Energieverwaltung"
 
-#: ../panel-plugin/indicator-dialog.c:61
+#: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
 msgstr "Anwendungsmenü (Globales Menü)"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
 msgstr "Sitzungsverwaltung"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
 msgid "Messaging Menu"
 msgstr "Nachrichtenmenü"
 
-#: ../panel-plugin/indicator-dialog.c:64
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
 msgid "Date and Time"
 msgstr "Datum und Uhrzeit"
 
-#: ../panel-plugin/indicator-dialog.c:436
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+msgid "Bluetooth"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:72
+#, fuzzy
+msgid "Sync Menu"
+msgstr "Sounmenü"
+
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:76
+msgid "Workrave"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:450
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Soll die Liste der bekannten Indikatoren gelöscht werden?"
 
-#: ../panel-plugin/indicator-dialog.c:581
+#: ../panel-plugin/indicator-dialog.c:595
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "%s konnte nicht geöffnet werden."
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
-msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr ""
-"<i>Sie müssen das Panel neu starten damit die Änderungen wirksam werden</i>"
+msgid "Indicators"
+msgstr "Anzeigen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "Align left in deskbar mode"
-msgstr "Im Deskbarmodus linksbündig ausrichten"
+msgid "_Maximum row size (px):"
+msgstr "_Maximale Icongröße (px):"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
-msgid "Appearance"
-msgstr "Aussehen"
+msgid ""
+"Icons are scaled to fit a single row of the panel. Use this option to "
+"restrict the maximum size of the row."
+msgstr ""
+"Icons werden skaliert um in eine Reihe des Panels zu passen.\r\n"
+"Benutzen Sie diese Einstellung um die maximale Größe der Icons zu "
+"beschränken."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
-msgid "C_lear known indicators"
-msgstr "Bekannte Anzeigen _löschen"
+msgid "Align left in deskbar mode"
+msgstr "Im Deskbarmodus linksbündig ausrichten"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
@@ -103,51 +133,14 @@ msgstr ""
 "Auswahl: \"zentriert\" oder \"linksbündig\""
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
-msgid "Hidden"
-msgstr "Versteckt"
+msgid "Appearance"
+msgstr "Aussehen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
 msgstr "Anzeigen standardmäßig verstecken"
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
-msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
-msgstr ""
-"Icons werden skaliert um in eine Reihe des Panels zu passen.\r\n"
-"Benutzen Sie diese Einstellung um die maximale Größe der Icons zu "
-"beschränken."
-
-#: ../panel-plugin/indicator-dialog.glade.h:9
-msgid "Indicator"
-msgstr "Anzeige"
-
-#: ../panel-plugin/indicator-dialog.glade.h:10
-msgid "Indicators"
-msgstr "Anzeigen"
-
-#: ../panel-plugin/indicator-dialog.glade.h:11
-msgid "Known Indicators"
-msgstr "Bekannte Anzeigen"
-
-#: ../panel-plugin/indicator-dialog.glade.h:12
-msgid "Move the selected indicator one row down."
-msgstr "Ausgewählte Anzeige eine Position hinab setzten."
-
-#: ../panel-plugin/indicator-dialog.glade.h:13
-msgid "Move the selected indicator one row up."
-msgstr "Ausgewählte Anzeige eine Position hinauf setzten."
-
-#: ../panel-plugin/indicator-dialog.glade.h:14
-msgid "Resets the list of indicators and their visibility settings."
-msgstr "Liste der Anzeigen und ihre Sichtbarkeitseinstellungen zurücksetzen."
-
-#: ../panel-plugin/indicator-dialog.glade.h:15
-msgid "Visible"
-msgstr "Sichtbar"
-
-#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
@@ -156,6 +149,42 @@ msgstr ""
 "Ansonsten werden nur Anzeigen angezeigt, die nicht als versteckt markiert "
 "sind."
 
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Anzeige"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Hidden"
+msgstr "Versteckt"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Visible"
+msgstr "Sichtbar"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row up."
+msgstr "Ausgewählte Anzeige eine Position hinauf setzten."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr "Ausgewählte Anzeige eine Position hinab setzten."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr ""
+"<i>Sie müssen das Panel neu starten damit die Änderungen wirksam werden</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "Bekannte Anzeigen _löschen"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Liste der Anzeigen und ihre Sichtbarkeitseinstellungen zurücksetzen."
+
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum row size (px):"
-msgstr "_Maximale Icongröße (px):"
+msgid "Known Indicators"
+msgstr "Bekannte Anzeigen"
+
+#~ msgid "An indicator of something that needs your attention on the desktop"
+#~ msgstr "Eine Anzeige, dass etwas Ihre Aufmerksamkeit benötigt"

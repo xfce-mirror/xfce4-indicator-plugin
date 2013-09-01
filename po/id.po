@@ -2,105 +2,136 @@
 # Copyright (C) 2011 THE xfce4-indicator-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-indicator-plugin package.
 # Andhika Padmawan <andhika.padmawan@gmail.com>, 2011.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-15 03:15+0000\n"
+"POT-Creation-Date: 2013-09-01 23:53+0100\n"
 "PO-Revision-Date: 2011-06-05 01:17+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: id\n"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:1 ../panel-plugin/indicator.c:157
-msgid "An indicator of something that needs your attention on the desktop"
-msgstr ""
-"Sebuah indikator atau sesuatu yang memerlukan perhatian anda di desktop"
-
-#: ../panel-plugin/indicator.desktop.in.in.h:2
+#: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
 msgstr "Plugin Indikator"
 
-#: ../panel-plugin/indicator.c:159
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr ""
+
+#: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Hak Cipta (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:288
+#: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
 msgstr "Tak Ada Indikator"
 
-#. raw name,                  pretty name,
-#. icon-name(?)
+#. raw name,                           pretty name,                                 icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Indikator Aplikasi"
 
-#: ../panel-plugin/indicator-dialog.c:58
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
 msgid "Sound Menu"
 msgstr "Menu Suara"
 
-#: ../panel-plugin/indicator-dialog.c:59
+#: ../panel-plugin/indicator-dialog.c:60
 msgid "Printers Menu"
 msgstr "Menu Pencetak"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
 msgid "Power Management"
 msgstr "Manajemen Daya"
 
-#: ../panel-plugin/indicator-dialog.c:61
+#: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
 msgstr "Menu Aplikasi (Menu Global)"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
 msgstr "Manajemen Sesi"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
 msgid "Messaging Menu"
 msgstr "Menu Perpesanan"
 
-#: ../panel-plugin/indicator-dialog.c:64
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
 msgid "Date and Time"
 msgstr "Tanggal dan Waktu"
 
-#: ../panel-plugin/indicator-dialog.c:436
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+msgid "Bluetooth"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:72
+#, fuzzy
+msgid "Sync Menu"
+msgstr "Menu Suara"
+
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:76
+msgid "Workrave"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:450
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Anda yakin ingin membersihkan daftar indikator?"
 
-#: ../panel-plugin/indicator-dialog.c:581
+#: ../panel-plugin/indicator-dialog.c:595
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Tidak dapat membuka URL: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
-msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Efek akan muncul setelah panel direstart.</i>"
+msgid "Indicators"
+msgstr "Indikator"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "Align left in deskbar mode"
-msgstr "Buat rata kiri pada mode deskbar"
+msgid "_Maximum row size (px):"
+msgstr "Ukuran baris _maksimal (px):"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
-msgid "Appearance"
-msgstr "Penampilan"
+msgid ""
+"Icons are scaled to fit a single row of the panel. Use this option to "
+"restrict the maximum size of the row."
+msgstr ""
+"Ikon disesuaikan utnuk memenuhi baris tunggal pada panel. Gunakan opsi ini "
+"untuk membatasi ukuran maksimal suatu baris."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
-msgid "C_lear known indicators"
-msgstr "Hapus indikator"
+msgid "Align left in deskbar mode"
+msgstr "Buat rata kiri pada mode deskbar"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Tampilan tombol indikator saat panel dalam mode Deskbar. Pilihan: \"Rata Tengah\" atau \"Rata Kiri\"."
+msgstr ""
+"Tampilan tombol indikator saat panel dalam mode Deskbar. Pilihan: \"Rata "
+"Tengah\" atau \"Rata Kiri\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
-msgid "Hidden"
-msgstr "Tersembunyi"
+msgid "Appearance"
+msgstr "Penampilan"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
@@ -108,44 +139,49 @@ msgstr "Indikator disembunyikan secara standar"
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
-msgstr "Ikon disesuaikan utnuk memenuhi baris tunggal pada panel. Gunakan opsi ini untuk membatasi ukuran maksimal suatu baris."
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr ""
+"Saat diaktifkan, hanya indikator yang bertanda \"Terlihat\" yang akan "
+"ditampilkan. Jika tidak diaktifkan, maka seluruh indikator yang tidak "
+"bertanda \"Tersembunyi\" akan ditampilkan."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
 msgstr "Indikator"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
-msgid "Indicators"
-msgstr "Indikator"
+msgid "Hidden"
+msgstr "Tersembunyi"
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
-msgid "Known Indicators"
-msgstr "Indikator Terdaftar"
-
-#: ../panel-plugin/indicator-dialog.glade.h:12
-msgid "Move the selected indicator one row down."
-msgstr "Pindahkan indikator terpilih satu baris ke bawah."
-
-#: ../panel-plugin/indicator-dialog.glade.h:13
-msgid "Move the selected indicator one row up."
-msgstr "Pindahkan indikator terpilih satu baris ke atas."
-
-#: ../panel-plugin/indicator-dialog.glade.h:14
-msgid "Resets the list of indicators and their visibility settings."
-msgstr "Reset daftar indikator dan tampilannya."
-
-#: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Visible"
 msgstr "Terlihat"
 
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row up."
+msgstr "Pindahkan indikator terpilih satu baris ke atas."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr "Pindahkan indikator terpilih satu baris ke bawah."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Efek akan muncul setelah panel direstart.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "Hapus indikator"
+
 #: ../panel-plugin/indicator-dialog.glade.h:16
-msgid ""
-"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
-"indicators not marked \"Hidden\" are displayed."
-msgstr "Saat diaktifkan, hanya indikator yang bertanda \"Terlihat\" yang akan ditampilkan. Jika tidak diaktifkan, maka seluruh indikator yang tidak bertanda \"Tersembunyi\" akan ditampilkan."
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Reset daftar indikator dan tampilannya."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-msgid "_Maximum row size (px):"
-msgstr "Ukuran baris _maksimal (px):"
+msgid "Known Indicators"
+msgstr "Indikator Terdaftar"
+
+#~ msgid "An indicator of something that needs your attention on the desktop"
+#~ msgstr ""
+#~ "Sebuah indikator atau sesuatu yang memerlukan perhatian anda di desktop"

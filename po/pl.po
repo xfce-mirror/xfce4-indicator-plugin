@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013
 # Piotr Sokół <psokol@jabster.pl>, 2011,2013
@@ -10,83 +10,97 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-27 00:31+0200\n"
+"POT-Creation-Date: 2013-09-01 23:53+0100\n"
 "PO-Revision-Date: 2013-08-28 09:44+0000\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: Polish <xfce-i18n-pl@xfce.org>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
 msgstr "Aplet ikon powiadomień"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:157
-msgid "An indicator of something that needs your attention on the desktop"
-msgstr "Przechowuje powiadomienia o zdarzeniach środowiska wartych zwrócenia uwagi"
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr ""
 
-#: ../panel-plugin/indicator.c:159
+#: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Copyright (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:288
+#: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
 msgstr "Brak ikon powiadomień"
 
-#. raw name,                  pretty name,
-#. icon-name(?)
+#. raw name,                           pretty name,                                 icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Ikony powiadomień programów"
 
-#: ../panel-plugin/indicator-dialog.c:58
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
 msgid "Sound Menu"
 msgstr "Dźwięk"
 
-#: ../panel-plugin/indicator-dialog.c:59
+#: ../panel-plugin/indicator-dialog.c:60
 msgid "Printers Menu"
 msgstr "Drukarki"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
 msgid "Power Management"
 msgstr "Zarządzanie zasilaniem"
 
-#: ../panel-plugin/indicator-dialog.c:61
+#: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
 msgstr "Menu programów (Globalne menu)"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
 msgstr "Zarządzanie sesją"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
 msgid "Messaging Menu"
 msgstr "Wiadomości tekstowe"
 
-#: ../panel-plugin/indicator-dialog.c:64
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
 msgid "Date and Time"
 msgstr "Data i czas"
 
-#: ../panel-plugin/indicator-dialog.c:65
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../panel-plugin/indicator-dialog.c:66
+#: ../panel-plugin/indicator-dialog.c:72
 msgid "Sync Menu"
 msgstr "Synchronizowanie"
 
-#: ../panel-plugin/indicator-dialog.c:67
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
 msgstr ""
 
-#: ../panel-plugin/indicator-dialog.c:441
+#: ../panel-plugin/indicator-dialog.c:450
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Wyczyścić listę znanych ikon powiadomień?"
 
-#: ../panel-plugin/indicator-dialog.c:586
+#: ../panel-plugin/indicator-dialog.c:595
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nie można otworzyć następującego adresu url: %s"
@@ -103,7 +117,9 @@ msgstr "_Maksymalny rozmiar wiersza (px):"
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the row."
-msgstr "Ogranicza maksymalny rozmiar wiersza, dopasowując jednocześnie rozmiar wyświetlanych ikon"
+msgstr ""
+"Ogranicza maksymalny rozmiar wiersza, dopasowując jednocześnie rozmiar "
+"wyświetlanych ikon"
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -113,7 +129,10 @@ msgstr "Wyrównanie do lewej w trybie bocznym"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Konfiguruje układ przycisków powiadomień w sytuacji, gdy panel jest w trybie bocznym. Możliwe do wybrania opcje to „Wyśrodkowanie” i „Wyrównanie do lewej”."
+msgstr ""
+"Konfiguruje układ przycisków powiadomień w sytuacji, gdy panel jest w trybie "
+"bocznym. Możliwe do wybrania opcje to „Wyśrodkowanie” i „Wyrównanie do "
+"lewej”."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -127,7 +146,9 @@ msgstr "Domyślne ukrywanie ikon powiadomień"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Przełącza wyświetlanie pomiędzy ikonami powiadomień oznaczonymi jako „Widoczne” oraz tymi nie oznaczonymi jako „Ukryte”."
+msgstr ""
+"Przełącza wyświetlanie pomiędzy ikonami powiadomień oznaczonymi jako "
+"„Widoczne” oraz tymi nie oznaczonymi jako „Ukryte”."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -164,3 +185,7 @@ msgstr "Czyści listę ikon powiadomień i ich ustawienia widoczności"
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Znane ikony powiadomień"
+
+#~ msgid "An indicator of something that needs your attention on the desktop"
+#~ msgstr ""
+#~ "Przechowuje powiadomienia o zdarzeniach środowiska wartych zwrócenia uwagi"
