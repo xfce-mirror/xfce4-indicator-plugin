@@ -47,12 +47,6 @@
 #include <libido/libido.h>
 #endif
 
-#ifdef LIBXFCE4PANEL_CHECK_VERSION
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
-#define HAS_PANEL_49
-#endif
-#endif
-
 /* prototypes */
 static void             indicator_construct                        (XfcePanelPlugin       *plugin);
 static void             indicator_free                             (XfcePanelPlugin       *plugin);
@@ -62,13 +56,8 @@ static void             indicator_show_about                       (XfcePanelPlu
 static void             indicator_configure_plugin                 (XfcePanelPlugin       *plugin);
 static gboolean         indicator_size_changed                     (XfcePanelPlugin       *plugin,
                                                                     gint                   size);
-#ifdef HAS_PANEL_49
 static void             indicator_mode_changed                     (XfcePanelPlugin       *plugin,
                                                                     XfcePanelPluginMode    mode);
-#else
-static void             indicator_orientation_changed              (XfcePanelPlugin       *plugin,
-                                                                    GtkOrientation         orientation);
-#endif
 static gint             indicator_load_indicators_ng               (IndicatorPlugin       *indicator);
 
 
@@ -111,11 +100,7 @@ indicator_class_init (IndicatorPluginClass *klass)
   plugin_class->size_changed = indicator_size_changed;
   plugin_class->about = indicator_show_about;
   plugin_class->configure_plugin = indicator_configure_plugin;
-#ifdef HAS_PANEL_49
   plugin_class->mode_changed = indicator_mode_changed;
-#else
-  plugin_class->orientation_changed = indicator_orientation_changed;
-#endif
 }
 
 
@@ -190,7 +175,6 @@ indicator_configure_plugin (XfcePanelPlugin *plugin)
 
 
 
-#ifdef HAS_PANEL_49
 static void
 indicator_mode_changed (XfcePanelPlugin     *plugin,
                         XfcePanelPluginMode  mode)
@@ -209,31 +193,13 @@ indicator_mode_changed (XfcePanelPlugin     *plugin,
 
 
 
-#else
-static void
-indicator_orientation_changed (XfcePanelPlugin *plugin,
-                               GtkOrientation   orientation)
-{
-  IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
-
-  indicator_config_set_orientation (indicator->config, orientation, GTK_ORIENTATION_HORIZONTAL);
-
-  indicator_size_changed (plugin, xfce_panel_plugin_get_size (plugin));
-}
-#endif
-
-
 static gboolean
 indicator_size_changed (XfcePanelPlugin *plugin,
                         gint             size)
 {
   IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
 
-#ifdef HAS_PANEL_49
   indicator_config_set_size (indicator->config, size, xfce_panel_plugin_get_nrows (plugin));
-#else
-  indicator_config_set_size (indicator->config, size, 1);
-#endif
 
   return TRUE;
 }
