@@ -24,6 +24,8 @@
  */
 
 
+#define INDICATOR_SERVICE_DIR "/usr/share/unity/indicators"
+
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -50,15 +52,21 @@
 /* prototypes */
 static void             indicator_construct                        (XfcePanelPlugin       *plugin);
 static void             indicator_free                             (XfcePanelPlugin       *plugin);
-static gboolean         load_module                                (const gchar           *name,
-                                                                    IndicatorPlugin       *indicator);
 static void             indicator_show_about                       (XfcePanelPlugin       *plugin);
 static void             indicator_configure_plugin                 (XfcePanelPlugin       *plugin);
 static gboolean         indicator_size_changed                     (XfcePanelPlugin       *plugin,
                                                                     gint                   size);
 static void             indicator_mode_changed                     (XfcePanelPlugin       *plugin,
                                                                     XfcePanelPluginMode    mode);
-static gint             indicator_load_indicators_ng               (IndicatorPlugin       *indicator);
+static gboolean         indicator_load_indicator                   (IndicatorPlugin       *indicator,
+                                                                    IndicatorObject       *io,
+                                                                    const gchar           *name);
+static gboolean         indicator_load_module                      (IndicatorPlugin       *indicator,
+                                                                    const gchar           *name);
+static gboolean         indicator_load_service                     (IndicatorPlugin       *indicator,
+                                                                    const gchar           *name);
+static void             indicator_load_services                    (IndicatorPlugin       *indicator);
+static void             indicator_load_modules                     (IndicatorPlugin       *indicator);
 
 
 struct _IndicatorPluginClass
@@ -70,6 +78,8 @@ struct _IndicatorPluginClass
 struct _IndicatorPlugin
 {
   XfcePanelPlugin __parent__;
+
+  gint             indicator_count;
 
   /* panel widgets */
   GtkWidget       *item;
@@ -114,10 +124,11 @@ indicator_init (IndicatorPlugin *indicator)
      The following lines makes only g_error critical. */
   g_log_set_always_fatal (G_LOG_LEVEL_ERROR);
 
-  indicator->item      = NULL;
-  indicator->buttonbox = NULL;
-  indicator->config    = NULL;
-  indicator->logfile   = NULL;
+  indicator->indicator_count = 0;
+  indicator->item            = NULL;
+  indicator->buttonbox       = NULL;
+  indicator->config          = NULL;
+  indicator->logfile         = NULL;
 }
 
 
@@ -252,7 +263,6 @@ static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
   IndicatorPlugin  *indicator = XFCE_INDICATOR_PLUGIN (plugin);
-  gint              indicators_loaded = 0;
   GtkWidget        *label;
 
   #ifdef HAVE_IDO
@@ -282,35 +292,10 @@ indicator_construct (XfcePanelPlugin *plugin)
   gtk_widget_show(GTK_WIDGET(indicator->buttonbox));
 
   /* load 'em */
-  if (g_file_test(INDICATOR_DIR, (G_FILE_TEST_EXISTS | G_FILE_TEST_IS_DIR))) {
-    GDir * dir = g_dir_open(INDICATOR_DIR, 0, NULL);
+  indicator_load_modules (indicator);
+  indicator_load_services (indicator);
 
-    const gchar * name;
-    if (indicator_config_get_mode_whitelist (indicator->config))
-      {
-        while ((name = g_dir_read_name (dir)) != NULL)
-          if (indicator_config_is_whitelisted (indicator->config, name))
-            {
-              g_debug ("Loading whitelisted module: %s", name);
-              if (load_module(name, indicator))
-                indicators_loaded++;
-            }
-      }
-    else
-      {
-        while ((name = g_dir_read_name (dir)) != NULL)
-          if (indicator_config_is_blacklisted (indicator->config, name))
-            g_debug ("Excluding blacklisted module: %s", name);
-          else if (load_module(name, indicator))
-            indicators_loaded++;
-      }
-
-    g_dir_close (dir);
-  }
-
-  indicators_loaded += indicator_load_indicators_ng (indicator);
-
-  if (indicators_loaded == 0) {
+  if (indicator->indicator_count == 0) {
     /* A label to allow for click through */
     indicator->item = xfce_indicator_button_new (NULL,
                                                  "<placeholder>",
@@ -374,56 +359,15 @@ entry_removed (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user
 
 
 static gboolean
-load_module (const gchar * name, IndicatorPlugin * indicator)
+indicator_load_indicator (IndicatorPlugin *indicator,
+                          IndicatorObject *io,
+                          const gchar     *name)
 {
-  gchar                *fullpath;
-  IndicatorObject      *io;
   GList                *entries, *entry;
   IndicatorObjectEntry *entrydata;
 
-  g_debug("Looking at Module: %s", name);
+  g_return_val_if_fail (XFCE_IS_INDICATOR_PLUGIN (indicator), 0);
   g_return_val_if_fail(name != NULL, FALSE);
-
-  if (!g_str_has_suffix(name,G_MODULE_SUFFIX))
-    return FALSE;
-
-  g_debug("Loading Module: %s", name);
-
-  indicator_config_add_known_indicator (indicator->config, name);
-
-  fullpath = g_build_filename(INDICATOR_DIR, name, NULL);
-  io = indicator_object_new_from_file(fullpath);
-  g_free(fullpath);
-  g_object_set_data (G_OBJECT (io), "io-name", g_strdup (name));
-
-  g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_ADDED,
-                   G_CALLBACK(entry_added), indicator);
-  g_signal_connect(G_OBJECT(io), INDICATOR_OBJECT_SIGNAL_ENTRY_REMOVED,
-                   G_CALLBACK(entry_removed), indicator->buttonbox);
-
-  entries = indicator_object_get_entries(io);
-  entry = NULL;
-
-  for (entry = entries; entry != NULL; entry = g_list_next(entry))
-    {
-      entrydata = (IndicatorObjectEntry *)entry->data;
-      entry_added(io, entrydata, indicator);
-    }
-
-  g_list_free(entries);
-
-  return TRUE;
-}
-
-
-static void
-load_indicator (IndicatorPlugin *indicator,
-		IndicatorObject *io,
-		const gchar     *name)
-{
-  GList                *entries, *entry;
-  IndicatorObjectEntry *entrydata;
-
   g_debug ("Load indicator_ng: %s", name);
 
   indicator_config_add_known_indicator (indicator->config, name);
@@ -447,88 +391,153 @@ load_indicator (IndicatorPlugin *indicator,
     }
 
   g_list_free(entries);
+
+  return TRUE;
 }
 
 
 
-#define INDICATORS_NG_DIR "/usr/share/unity/indicators"
+static gboolean
+indicator_load_module (IndicatorPlugin *indicator,
+                       const gchar     *name)
+{
+  gchar                *file_name;
+  IndicatorObject      *io;
 
-static gint
-indicator_load_indicators_ng (IndicatorPlugin *indicator)
+  g_return_val_if_fail (XFCE_IS_INDICATOR_PLUGIN (indicator), 0);
+  g_debug ("Looking at Module: %s", name);
+  g_return_val_if_fail (name != NULL, FALSE);
+
+  if (!g_str_has_suffix (name,G_MODULE_SUFFIX))
+    return FALSE;
+
+  g_debug ("Loading Module: %s", name);
+
+  file_name = g_build_filename (INDICATOR_DIR, name, NULL);
+  io = indicator_object_new_from_file (file_name);
+  g_free (file_name);
+
+  return indicator_load_indicator (indicator, io, name);
+}
+
+
+static gboolean
+indicator_load_service (IndicatorPlugin *indicator,
+                        const gchar     *name)
+{
+  gchar                *fullpath;
+  IndicatorNg          *io;
+  GError               *err = NULL;
+
+  g_debug("Looking at Service: %s", name);
+  g_return_val_if_fail(name != NULL, FALSE);
+
+  g_debug("Loading Service: %s", name);
+
+  fullpath = g_build_filename(INDICATOR_SERVICE_DIR, name, NULL);
+  io = indicator_ng_new_for_profile (fullpath, "desktop", &err);
+  g_free(fullpath);
+
+  if (io != NULL)
+    {
+      indicator_load_indicator(indicator, INDICATOR_OBJECT(io), name);
+      return TRUE;
+    }
+  else
+    {
+      g_error_free (err);
+      return FALSE;
+    }
+}
+
+
+static void
+indicator_load_services (IndicatorPlugin *indicator)
 {
   GDir        *indicators_ng_dir;
   const gchar *io_name;
   GError      *err = NULL;
-  gint         indicators = 0;
-  gchar       *file_name = NULL;
-  IndicatorNg *indicator_ng = NULL;
 
-  g_return_val_if_fail (XFCE_IS_INDICATOR_PLUGIN (indicator), 0);
+  g_return_if_fail (XFCE_IS_INDICATOR_PLUGIN (indicator));
 
-  indicators_ng_dir = g_dir_open (INDICATORS_NG_DIR, 0, &err);
+  indicators_ng_dir = g_dir_open (INDICATOR_SERVICE_DIR, 0, &err);
 
-  if (!indicators_ng_dir)
+  if (err != NULL)
     {
       g_warning ("%s", err->message);
       g_error_free (err);
 
-      return 0;
+      return;
     }
 
   if (indicator_config_get_mode_whitelist (indicator->config))
     {
       while ((io_name = g_dir_read_name (indicators_ng_dir)) != NULL)
-	{
-          if (indicator_config_is_whitelisted (indicator->config, io_name))
-            {
-              g_debug ("Loading whitelisted IndicatorNg: %s", io_name);
-	      file_name = g_build_filename (INDICATORS_NG_DIR, io_name, NULL);
-	      indicator_ng = indicator_ng_new_for_profile (file_name, "desktop", &err);
-	      g_free (file_name);
-	      if (indicator_ng)
-		{
-		  load_indicator (indicator, INDICATOR_OBJECT (indicator_ng), io_name);
-		  indicators++;
-		}
-	      else
-		{
-		  g_warning ("Cannot load indicator '%s': %s", io_name, err->message);
-		  g_clear_error (&err);
-		}
-	    }
-	}
+        if (indicator_config_is_whitelisted (indicator->config, io_name))
+          {
+            g_debug ("Loading whitelisted service: %s", io_name);
+            if (indicator_load_service (indicator, io_name))
+              indicator->indicator_count++;
+          }
     }
   else
     {
       while ((io_name = g_dir_read_name (indicators_ng_dir)) != NULL)
-	{
-          if (indicator_config_is_blacklisted (indicator->config, io_name))
-            {
-              g_debug ("Excluding blacklisted IndicatorNg: %s", io_name);
-	    }
-	  else
-	    {
-	      file_name = g_build_filename (INDICATORS_NG_DIR, io_name, NULL);
-	      indicator_ng = indicator_ng_new_for_profile (file_name, "desktop", &err);
-	      g_free (file_name);
-	      if (indicator_ng)
-		{
-		  load_indicator (indicator, INDICATOR_OBJECT (indicator_ng), io_name);
-		  indicators++;
-		}
-	      else
-		{
-		  g_warning ("Cannot load indicator '%s': %s", io_name, err->message);
-		  g_clear_error (&err);
-		}
-	    }
-	}
+        if (indicator_config_is_blacklisted (indicator->config, io_name))
+          g_debug ("Excluding blacklisted service: %s", io_name);
+        else
+          if (indicator_load_service (indicator, io_name))
+            indicator->indicator_count++;
     }
 
   g_dir_close (indicators_ng_dir);
-
-  return indicators;
 }
+
+
+
+
+static void
+indicator_load_modules (IndicatorPlugin *indicator)
+{
+  GDir        *indicators_dir;
+  const gchar *io_name;
+  GError      *err = NULL;
+
+  g_return_if_fail (XFCE_IS_INDICATOR_PLUGIN (indicator));
+
+  indicators_dir = g_dir_open (INDICATOR_DIR, 0, &err);
+
+  if (err != NULL)
+    {
+      g_warning ("%s", err->message);
+      g_error_free (err);
+
+      return;
+    }
+
+  if (indicator_config_get_mode_whitelist (indicator->config))
+    {
+      while ((io_name = g_dir_read_name (indicators_dir)) != NULL)
+        if (indicator_config_is_whitelisted (indicator->config, io_name))
+          {
+            g_debug ("Loading whitelisted module: %s", io_name);
+            if (indicator_load_module(indicator, io_name))
+              indicator->indicator_count++;
+          }
+    }
+  else
+    {
+      while ((io_name = g_dir_read_name (indicators_dir)) != NULL)
+        if (indicator_config_is_blacklisted (indicator->config, io_name))
+          g_debug ("Excluding blacklisted module: %s", io_name);
+        else if (indicator_load_module(indicator, io_name))
+          indicator->indicator_count++;
+    }
+
+  g_dir_close (indicators_dir);
+}
+
+
 
 
 XfceIndicatorBox *
