@@ -491,9 +491,9 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   border_thickness = MAX (padding.left+padding.right+border.left+border.right,
                           padding.top+padding.bottom+border.top+border.bottom);
 
-  size = ICON_SIZE + border_thickness;
   panel_size = indicator_config_get_panel_size (box->config);
-  nrows = MAX (1, panel_size / size);
+  size = MIN (ICON_SIZE + border_thickness, panel_size);
+  nrows = panel_size / size;
   //full_size = ((nrows-1)*panel_size + nrows*size) / nrows; // regular pitch, margins
   full_size = panel_size; // irregular pitch, no margins
 
