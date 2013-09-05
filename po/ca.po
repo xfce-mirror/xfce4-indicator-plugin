@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-02 06:31+0200\n"
-"PO-Revision-Date: 2013-09-05 16:31+0000\n"
+"PO-Revision-Date: 2013-09-05 16:33+0000\n"
 "Last-Translator: sandandmercury <sandandmercury@gmail.com>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/xfce/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Proporciona una àrea del panell per indicadors d'Unity. Els indicadors 
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
-msgstr ""
+msgstr "Copyright (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
@@ -93,7 +93,7 @@ msgstr "Xarxa"
 
 #: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
-msgstr ""
+msgstr "Workrave"
 
 #: ../panel-plugin/indicator-dialog.c:450
 msgid "Are you sure you want to clear the list of known indicators?"
@@ -168,7 +168,7 @@ msgstr "<i>Si us plau, reinicieu el panell per tal que tinguin efecte els canvis
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
-msgstr ""
+msgstr "Netejar indicadors coneguts"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
