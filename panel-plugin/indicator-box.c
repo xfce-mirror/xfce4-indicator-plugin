@@ -324,6 +324,7 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
   GtkStyleContext     *ctx;
   GtkBorder            padding, border;
   gint                 border_thickness;
+  gboolean             allow_small;
 
   /* check border thickness of the first button */
   li = gtk_container_get_children (GTK_CONTAINER (box));
@@ -340,6 +341,7 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
   size = ICON_SIZE + border_thickness;
   panel_size = indicator_config_get_panel_size (box->config);
   nrows = MAX (1, panel_size / size);
+  allow_small = !((nrows == 1) || indicator_config_get_single_row (box->config));
 
   panel_orientation = indicator_config_get_panel_orientation (box->config);
 
@@ -361,7 +363,7 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
 
           gtk_widget_get_preferred_size (GTK_WIDGET (button), NULL, &child_req);
 
-          is_small = xfce_indicator_button_is_small (button);
+          is_small = allow_small && xfce_indicator_button_is_small (button);
 
           /* wrap rows if column is overflowing or a label is encountered */
           if (row > 0 && (row >= nrows || !is_small))
@@ -469,6 +471,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   GtkStyleContext     *ctx;
   GtkBorder            padding, border;
   gint                 border_thickness;
+  gboolean             allow_small;
 
   row = 0;
   length = 0;
@@ -496,6 +499,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   nrows = panel_size / size;
   //full_size = ((nrows-1)*panel_size + nrows*size) / nrows; // regular pitch, margins
   full_size = panel_size; // irregular pitch, no margins
+  allow_small = !((nrows == 1) || indicator_config_get_single_row (box->config));
 
   panel_orientation = indicator_config_get_panel_orientation (box->config);
 
@@ -513,7 +517,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
           gtk_widget_get_preferred_size (GTK_WIDGET (button), NULL, &child_req);
 
-          is_small = xfce_indicator_button_is_small (button);
+          is_small = allow_small && xfce_indicator_button_is_small (button);
 
           /* wrap rows if column is overflowing or a label is encountered */
           if (row > 0 && (row >= nrows || !is_small))
