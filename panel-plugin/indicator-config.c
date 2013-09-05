@@ -426,7 +426,7 @@ indicator_config_set_property (GObject      *object,
 
 
 
-gint
+gboolean
 indicator_config_get_single_row (IndicatorConfig *config)
 {
   g_return_val_if_fail (XFCE_IS_INDICATOR_CONFIG (config), DEFAULT_SINGLE_ROW);
