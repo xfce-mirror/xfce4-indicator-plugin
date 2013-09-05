@@ -353,17 +353,25 @@ indicator_button_box_is_small (IndicatorButtonBox *box)
   box->pixbuf_w = -1;
   box->pixbuf_h = -1;
 
+  box->orientation = indicator_config_get_panel_orientation (box->config);
+
   if (box->label != NULL)
     {
       box->is_small = FALSE;
-      box->orientation = indicator_config_get_panel_orientation (box->config);
       if (box->orientation == GTK_ORIENTATION_VERTICAL &&
           indicator_config_get_orientation (box->config) == GTK_ORIENTATION_HORIZONTAL &&
           indicator_config_get_align_left (box->config))
-        box->orientation = GTK_ORIENTATION_HORIZONTAL;
+	{
+	  box->orientation = GTK_ORIENTATION_HORIZONTAL;
+	  gtk_misc_set_alignment (GTK_MISC (box->label), 0.0, 0.5);
+	}
+      else
+	{
+	  gtk_misc_set_alignment (GTK_MISC (box->label), 0.5, 0.5);
+	}
       gtk_label_set_angle (GTK_LABEL (box->label),
-                           (indicator_config_get_orientation (box->config) == GTK_ORIENTATION_VERTICAL)
-                           ? -90 : 0);
+			   (indicator_config_get_orientation (box->config) == GTK_ORIENTATION_VERTICAL) ?
+			   -90 : 0);
     }
   else if (box->icon != NULL &&
            gtk_image_get_storage_type (GTK_IMAGE (box->icon)) == GTK_IMAGE_PIXBUF)
@@ -373,7 +381,7 @@ indicator_button_box_is_small (IndicatorButtonBox *box)
       box->pixbuf_w = gdk_pixbuf_get_width (pixbuf);
       box->pixbuf_h = gdk_pixbuf_get_height (pixbuf);
 
-      box->is_small = (box->pixbuf_w == box->pixbuf_h);
+      box->is_small = (box->pixbuf_w == box->pixbuf_h && box->pixbuf_w <= ICON_SIZE);
     }
   else
     {
@@ -501,82 +509,37 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
   IndicatorButtonBox  *box = XFCE_INDICATOR_BUTTON_BOX (widget);
   gint                 label_width, label_height;
   gint                 x, y, width, height;
+  gint                 icon_width, icon_height;
   GtkAllocation        child_allocation;
 
   gtk_widget_set_allocation (widget, allocation);
 
-  x = allocation->x;
-  y = allocation->y;
-  width  = allocation->width;
-  height = allocation->height;
+  child_allocation.x      = x      = allocation->x;
+  child_allocation.y      = y      = allocation->y;
+  child_allocation.width  = width  = allocation->width;
+  child_allocation.height = height = allocation->height;
 
-  if (indicator_button_box_is_small (box) && box->icon != NULL) // check & cache
+  indicator_button_box_is_small (box); // refresh cache
+
+  if (box->icon != NULL)
     {
-      child_allocation.x = x + (width - ICON_SIZE + 1) / 2;
-      child_allocation.y = y + (height - ICON_SIZE + 1) / 2;
-      child_allocation.width = ICON_SIZE;
-      child_allocation.height = ICON_SIZE;
-      gtk_widget_size_allocate (box->icon, &child_allocation);
-    }
-  else if (box->icon != NULL)
-    {
-      /* allocate icon */
-      child_allocation.width = MAX (ICON_SIZE, box->pixbuf_w);
-      child_allocation.height = MAX (ICON_SIZE, box->pixbuf_h);
-      if (box->orientation == GTK_ORIENTATION_HORIZONTAL)
-        {
-          if (box->label != NULL)
-            child_allocation.x = x;
-          else
-            child_allocation.x = x + (width - child_allocation.width + 1) / 2;
-          child_allocation.y = y + (height - child_allocation.height + 1) / 2;
-        }
-      else
-        {
-          if (box->label != NULL)
-            child_allocation.y = y;
-          else
-            child_allocation.y = y + (height - child_allocation.height + 1) / 2;
-          child_allocation.x = x + (width - child_allocation.width + 1) / 2;
-        }
       gtk_widget_size_allocate (box->icon, &child_allocation);
     }
   if (box->label != NULL)
     {
-      /* allocate label */
-      gtk_widget_get_preferred_width  (box->label, NULL, &label_width);
-      gtk_widget_get_preferred_height (box->label, NULL, &label_height);
-
-      if (box->orientation == GTK_ORIENTATION_HORIZONTAL)
-        {
-          if (box->icon != NULL)
-            {
-              child_allocation.x = x + ICON_SIZE + SPACING;
-              child_allocation.width  = MAX (1, MIN (width - ICON_SIZE - SPACING, label_width));
-            }
-          else
-            {
-              child_allocation.x = x;
-              child_allocation.width  = MAX (ICON_SIZE, MIN (width, label_width));
-            }
-          child_allocation.height = MAX (ICON_SIZE, MIN (height, label_height));
-          child_allocation.y = y + (height - child_allocation.height + 1) / 2;
-        }
-      else
-        {
-          if (box->icon != NULL)
-            {
-              child_allocation.y = y + ICON_SIZE + SPACING;
-              child_allocation.height = MAX (1, MIN (height - ICON_SIZE - SPACING, label_height));
-            }
-          else
-            {
-              child_allocation.height = MAX (ICON_SIZE, MIN (height, label_height));
-              child_allocation.y = y + (height - child_allocation.height + 1) / 2;
-            }
-          child_allocation.width  = MAX (ICON_SIZE, MIN (width, label_width));
-          child_allocation.x = x + (width - child_allocation.width + 1) / 2;
-        }
+      if (box->icon != NULL)
+	{
+	  if (box->orientation == GTK_ORIENTATION_HORIZONTAL)
+	    {
+	      child_allocation.width  = MAX (1, width - ICON_SIZE - SPACING);
+	      child_allocation.x = x + width - child_allocation.width;
+	    }
+	  else
+	    {
+	      child_allocation.height = MAX (1, height - ICON_SIZE - SPACING);
+	      child_allocation.y = y + height - child_allocation.height;
+	    }
+	}
       gtk_widget_size_allocate (box->label, &child_allocation);
     }
 }
