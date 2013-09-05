@@ -45,7 +45,7 @@
 
 
 
-#define DEFAULT_ROW_SIZE_MAX       24
+#define DEFAULT_SINGLE_ROW         FALSE
 #define DEFAULT_ALIGN_LEFT         FALSE
 #define DEFAULT_EXCLUDED_MODULES   NULL
 #define DEFAULT_ORIENTATION        GTK_ORIENTATION_HORIZONTAL
@@ -77,7 +77,7 @@ struct _IndicatorConfig
 {
   GObject          __parent__;
 
-  gint             row_size_max;
+  gboolean         single_row;
   gboolean         align_left;
   gboolean         mode_whitelist;
   GHashTable      *blacklist;
@@ -98,7 +98,7 @@ struct _IndicatorConfig
 enum
 {
   PROP_0,
-  PROP_ROW_SIZE_MAX,
+  PROP_SINGLE_ROW,
   PROP_ALIGN_LEFT,
   PROP_MODE_WHITELIST,
   PROP_BLACKLIST,
@@ -150,14 +150,11 @@ indicator_config_class_init (IndicatorConfigClass *klass)
   gobject_class->set_property = indicator_config_set_property;
 
   g_object_class_install_property (gobject_class,
-                                   PROP_ROW_SIZE_MAX,
-                                   g_param_spec_uint ("row-size-max",
-                                                      NULL, NULL,
-                                                      1,
-                                                      128,
-                                                      DEFAULT_ROW_SIZE_MAX,
-                                                      G_PARAM_READWRITE |
-                                                      G_PARAM_STATIC_STRINGS));
+                                   PROP_SINGLE_ROW,
+                                   g_param_spec_boolean ("single-row", NULL, NULL,
+                                                         DEFAULT_SINGLE_ROW,
+                                                         G_PARAM_READWRITE |
+                                                         G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
                                    PROP_ALIGN_LEFT,
@@ -221,7 +218,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
 static void
 indicator_config_init (IndicatorConfig *config)
 {
-  config->row_size_max         = DEFAULT_ROW_SIZE_MAX;
+  config->single_row           = DEFAULT_SINGLE_ROW;
   config->align_left           = DEFAULT_ALIGN_LEFT;
   config->mode_whitelist       = DEFAULT_MODE_WHITELIST;
   config->blacklist            = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
@@ -281,8 +278,8 @@ indicator_config_get_property (GObject    *object,
 
   switch (prop_id)
     {
-    case PROP_ROW_SIZE_MAX:
-      g_value_set_uint (value, config->row_size_max);
+    case PROP_SINGLE_ROW:
+      g_value_set_boolean (value, config->single_row);
       break;
 
     case PROP_ALIGN_LEFT:
@@ -343,11 +340,11 @@ indicator_config_set_property (GObject      *object,
 
   switch (prop_id)
     {
-    case PROP_ROW_SIZE_MAX:
-      val = g_value_get_uint (value);
-      if (config->row_size_max != val)
+    case PROP_SINGLE_ROW:
+      val = g_value_get_boolean (value);
+      if (config->single_row != val)
         {
-          config->row_size_max = val;
+          config->single_row = val;
           g_signal_emit (G_OBJECT (config), indicator_config_signals [CONFIGURATION_CHANGED], 0);
         }
       break;
@@ -430,11 +427,11 @@ indicator_config_set_property (GObject      *object,
 
 
 gint
-indicator_config_get_row_size_max (IndicatorConfig *config)
+indicator_config_get_single_row (IndicatorConfig *config)
 {
-  g_return_val_if_fail (XFCE_IS_INDICATOR_CONFIG (config), DEFAULT_ROW_SIZE_MAX);
+  g_return_val_if_fail (XFCE_IS_INDICATOR_CONFIG (config), DEFAULT_SINGLE_ROW);
 
-  return config->row_size_max;
+  return config->single_row;
 }
 
 
@@ -757,8 +754,8 @@ indicator_config_new (const gchar     *property_base)
     {
       channel = xfconf_channel_get ("xfce4-panel");
 
-      property = g_strconcat (property_base, "/row-size-max", NULL);
-      xfconf_g_property_bind (channel, property, G_TYPE_INT, config, "row-size-max");
+      property = g_strconcat (property_base, "/single-row", NULL);
+      xfconf_g_property_bind (channel, property, G_TYPE_BOOLEAN, config, "single-row");
       g_free (property);
 
       property = g_strconcat (property_base, "/align-left", NULL);

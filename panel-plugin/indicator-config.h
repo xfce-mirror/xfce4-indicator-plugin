@@ -65,7 +65,7 @@ gint               indicator_config_get_nrows               (IndicatorConfig    
 
 gint               indicator_config_get_panel_size          (IndicatorConfig      *config);
 
-gint               indicator_config_get_row_size_max        (IndicatorConfig      *config);
+gboolean           indicator_config_get_single_row          (IndicatorConfig      *config);
 
 gboolean           indicator_config_get_align_left          (IndicatorConfig      *config);
 

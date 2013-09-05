@@ -490,12 +490,10 @@ indicator_dialog_build (IndicatorDialog *dialog)
                                 G_CALLBACK (indicator_dialog_help_button_clicked),
                                 dialog);
 
-      object = gtk_builder_get_object (builder, "size-max");
+      object = gtk_builder_get_object (builder, "checkbutton-single-row");
       g_return_if_fail (GTK_IS_WIDGET (object));
-      //exo_mutual_binding_new (G_OBJECT (dialog->config), "row-size-max",
-      //                        G_OBJECT (object), "value");
-      g_object_bind_property (G_OBJECT (dialog->config), "row-size-max",
-                              G_OBJECT (object), "value",
+      g_object_bind_property (G_OBJECT (dialog->config), "single-row",
+                              G_OBJECT (object), "active",
                               G_BINDING_SYNC_CREATE | G_BINDING_BIDIRECTIONAL);
 
       object = gtk_builder_get_object (builder, "checkbutton-align-left");
