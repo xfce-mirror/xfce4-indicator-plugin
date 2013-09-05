@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # kentarch <bkrhlim@aol.com>, 2013
 # Darkcircle <darkcircle.0426@gmail.com>, 2012-2013
@@ -9,15 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
-"PO-Revision-Date: 2013-08-30 00:41+0000\n"
-"Last-Translator: kentarch <bkrhlim@aol.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/xfce/language/"
-"ko/)\n"
-"Language: ko\n"
+"POT-Creation-Date: 2013-09-02 06:31+0200\n"
+"PO-Revision-Date: 2013-09-05 08:18+0000\n"
+"Last-Translator: Darkcircle <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/xfce/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
@@ -28,7 +27,7 @@ msgstr "표시기 플러그인"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "유니티 표시기 전용 패널 영역을 제공합니다. 표시기에서는 프로그램과 시스템 서비스의 상태를 표시하고, 사용자와 상호작용할 수 있도록 합니다."
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
@@ -38,7 +37,8 @@ msgstr "Copyright (c) 2009-2013\n"
 msgid "No Indicators"
 msgstr "표시기 없음"
 
-#. raw name,                           pretty name,                                 icon-name(?)
+#. raw name,                           pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "프로그램 표시기"
@@ -81,15 +81,15 @@ msgstr "메뉴 동기화 "
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
-msgstr ""
+msgstr "키보드"
 
 #: ../panel-plugin/indicator-dialog.c:74
 msgid "Location"
-msgstr ""
+msgstr "위치"
 
 #: ../panel-plugin/indicator-dialog.c:75
 msgid "Network"
-msgstr ""
+msgstr "네트워크"
 
 #: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
@@ -116,9 +116,7 @@ msgstr "최대 행 높이(px)(_M):"
 msgid ""
 "Icons are scaled to fit a single row of the panel. Use this option to "
 "restrict the maximum size of the row."
-msgstr ""
-"패널 한 줄에 맞추려 아이콘의 크기를 조절했습니다. 행의 최대 높이를 제한하려"
-"면 이 옵션을 사용하십시오."
+msgstr "패널 한 줄에 맞추려 아이콘의 크기를 조절했습니다. 행의 최대 높이를 제한하려면 이 옵션을 사용하십시오."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -128,9 +126,7 @@ msgstr "데스크 표시줄 모드에서 왼쪽으로 정렬"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
-"패널이 데스크 표시줄 모드일 때 표시기 단추 배치를 다룹니다. 가능한 선택은 "
-"\"가운데 정렬\"과 \"왼쪽 정렬\"이 있습니다."
+msgstr "패널이 데스크 표시줄 모드일 때 표시기 단추 배치를 다룹니다. 가능한 선택은 \"가운데 정렬\"과 \"왼쪽 정렬\"이 있습니다."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -144,9 +140,7 @@ msgstr "표시기 기본적으로 숨김"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
-"활성화 하면 \"보임\"으로 설정한 표시기만 보입니다. 그렇지 않으면 \"숨김\"으"
-"로 표시하지 않은 모든 표시기가 나타납니다."
+msgstr "활성화 하면 \"보임\"으로 설정한 표시기만 보입니다. 그렇지 않으면 \"숨김\"으로 표시하지 않은 모든 표시기가 나타납니다."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -183,6 +177,3 @@ msgstr "표시기 목록과 가시성 설정을 초기화합니다."
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "알려진 표시기"
-
-#~ msgid "An indicator of something that needs your attention on the desktop"
-#~ msgstr "데스크톱에서 주목해야 하는 요소를 표시합니다"
