@@ -508,40 +508,42 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
                                     GtkAllocation *allocation)
 {
   IndicatorButtonBox  *box = XFCE_INDICATOR_BUTTON_BOX (widget);
-  gint                 label_width, label_height;
   gint                 x, y, width, height;
-  gint                 icon_width, icon_height;
-  GtkAllocation        child_allocation;
+  GtkAllocation        icon_alloc, label_alloc;
 
   gtk_widget_set_allocation (widget, allocation);
 
-  child_allocation.x      = x      = allocation->x;
-  child_allocation.y      = y      = allocation->y;
-  child_allocation.width  = width  = allocation->width;
-  child_allocation.height = height = allocation->height;
+  icon_alloc.x      = label_alloc.x      = x      = allocation->x;
+  icon_alloc.y      = label_alloc.y      = y      = allocation->y;
+  icon_alloc.width  = label_alloc.width  = width  = allocation->width;
+  icon_alloc.height = label_alloc.height = height = allocation->height;
 
   indicator_button_box_is_small (box); // refresh cache
 
-  if (box->icon != NULL)
+  if (box->icon != NULL && box->label != NULL)
     {
-      gtk_widget_size_allocate (box->icon, &child_allocation);
+      if (box->orientation == GTK_ORIENTATION_HORIZONTAL)
+        {
+          icon_alloc.width  = ICON_SIZE;
+          label_alloc.width = MAX (1, width - icon_alloc.width - SPACING);
+          label_alloc.x = x + icon_alloc.width + SPACING;
+        }
+      else
+        {
+          icon_alloc.height  = ICON_SIZE;
+          label_alloc.height = MAX (1, height - icon_alloc.height - SPACING);
+          label_alloc.y = x + icon_alloc.height + SPACING;
+        }
+      gtk_widget_size_allocate (box->icon, &icon_alloc);
+      gtk_widget_size_allocate (box->label, &label_alloc);
     }
-  if (box->label != NULL)
+  else if (box->icon != NULL)
     {
-      if (box->icon != NULL)
-	{
-	  if (box->orientation == GTK_ORIENTATION_HORIZONTAL)
-	    {
-	      child_allocation.width  = MAX (1, width - ICON_SIZE - SPACING);
-	      child_allocation.x = x + width - child_allocation.width;
-	    }
-	  else
-	    {
-	      child_allocation.height = MAX (1, height - ICON_SIZE - SPACING);
-	      child_allocation.y = y + height - child_allocation.height;
-	    }
-	}
-      gtk_widget_size_allocate (box->label, &child_allocation);
+      gtk_widget_size_allocate (box->icon, &icon_alloc);
+    }
+  else if (box->label != NULL)
+    {
+      gtk_widget_size_allocate (box->label, &label_alloc);
     }
 }
 
