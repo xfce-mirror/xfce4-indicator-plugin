@@ -532,7 +532,7 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
         {
           icon_alloc.height  = ICON_SIZE;
           label_alloc.height = MAX (1, height - icon_alloc.height - SPACING);
-          label_alloc.y = x + icon_alloc.height + SPACING;
+          label_alloc.y = y + icon_alloc.height + SPACING;
         }
       gtk_widget_size_allocate (box->icon, &icon_alloc);
       gtk_widget_size_allocate (box->label, &label_alloc);
