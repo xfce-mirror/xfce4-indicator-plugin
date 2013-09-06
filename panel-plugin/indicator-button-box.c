@@ -381,7 +381,8 @@ indicator_button_box_is_small (IndicatorButtonBox *box)
       box->pixbuf_w = gdk_pixbuf_get_width (pixbuf);
       box->pixbuf_h = gdk_pixbuf_get_height (pixbuf);
 
-      box->is_small = (box->pixbuf_w == box->pixbuf_h && box->pixbuf_w <= ICON_SIZE);
+      // allow some wiggle room for small nearly square icons
+      box->is_small = (box->pixbuf_w <= ICON_SIZE+4 && box->pixbuf_h <= ICON_SIZE+4);
     }
   else
     {
