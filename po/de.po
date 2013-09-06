@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.0.1svn-r\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2009-06-09 12:02+0200\n"
 "Last-Translator: Mark Trompell <mark@foresightlinux.org>\n"
 "Language-Team: German\n"
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Soll die Liste der bekannten Indikatoren gelöscht werden?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "%s konnte nicht geöffnet werden."
@@ -108,17 +108,14 @@ msgid "Indicators"
 msgstr "Anzeigen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "_Maximale Icongröße (px):"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"Icons werden skaliert um in eine Reihe des Panels zu passen.\r\n"
-"Benutzen Sie diese Einstellung um die maximale Größe der Icons zu "
-"beschränken."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -185,6 +182,17 @@ msgstr "Liste der Anzeigen und ihre Sichtbarkeitseinstellungen zurücksetzen."
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Bekannte Anzeigen"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "_Maximale Icongröße (px):"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Icons werden skaliert um in eine Reihe des Panels zu passen.\r\n"
+#~ "Benutzen Sie diese Einstellung um die maximale Größe der Icons zu "
+#~ "beschränken."
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr "Eine Anzeige, dass etwas Ihre Aufmerksamkeit benötigt"

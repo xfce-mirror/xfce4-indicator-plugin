@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.5.0git-2052561\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2013-04-13 15:15+0900\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "既知のインジケーターのリストをクリアしてよろしいですか?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "次の URL を開けません: %s"
@@ -108,18 +108,14 @@ msgid "Indicators"
 msgstr "インジケーター"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-#, fuzzy
-msgid "_Maximum row size (px):"
-msgstr "最大アイコンサイズ (px)(_M):"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
-#, fuzzy
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"アイコンはパネルの 1 行に合わせて拡大縮小します。このオプションでアイコンの最"
-"大サイズを制限できます。"
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -187,6 +183,18 @@ msgstr "インジケーターのリストとそれらの表示設定をリセッ
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "既知のインジケーター"
+
+#, fuzzy
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "最大アイコンサイズ (px)(_M):"
+
+#, fuzzy
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "アイコンはパネルの 1 行に合わせて拡大縮小します。このオプションでアイコン"
+#~ "の最大サイズを制限できます。"
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr ""

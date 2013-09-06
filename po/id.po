@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2011-06-05 01:17+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Anda yakin ingin membersihkan daftar indikator?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Tidak dapat membuka URL: %s"
@@ -106,16 +106,14 @@ msgid "Indicators"
 msgstr "Indikator"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "Ukuran baris _maksimal (px):"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"Ikon disesuaikan utnuk memenuhi baris tunggal pada panel. Gunakan opsi ini "
-"untuk membatasi ukuran maksimal suatu baris."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -181,6 +179,16 @@ msgstr "Reset daftar indikator dan tampilannya."
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Indikator Terdaftar"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "Ukuran baris _maksimal (px):"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Ikon disesuaikan utnuk memenuhi baris tunggal pada panel. Gunakan opsi "
+#~ "ini untuk membatasi ukuran maksimal suatu baris."
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr ""

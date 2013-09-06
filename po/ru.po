@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin 0.2.0-hg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2013-04-12 23:09+0400\n"
 "Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: <xfce-i18n@xfce.org>\n"
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Уверены, что хотите очистить список известных индикаторов?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Невозможно открыть ссылку: %s"
@@ -111,16 +111,14 @@ msgid "Indicators"
 msgstr "Индикаторы"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "_Наибольший размер строки (пикс.):"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"Значки масштабируются для заполнения одой строки панели. Используйте эту "
-"опцию для ограничения наибольшего размера значка."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -185,6 +183,16 @@ msgstr "Сбросить список индикаторов и их настр�
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Известные индикаторы"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "_Наибольший размер строки (пикс.):"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Значки масштабируются для заполнения одой строки панели. Используйте эту "
+#~ "опцию для ограничения наибольшего размера значка."
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr "Индикатор события, требующего вашего внимания"

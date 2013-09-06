@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-indicator-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
 "Language: zh_CN\n"
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "您确定要清除已知指示器列表吗？"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "未能打开以下地址：%s"
@@ -107,14 +107,14 @@ msgid "Indicators"
 msgstr "指示器"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "行最大像素(_M)："
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
-msgstr "图标缩放为适合单行面板。使用此选项限制行的最大像素。"
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -177,6 +177,14 @@ msgstr "重置指示器列表及其可见性设置。"
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "已知指示器"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "行最大像素(_M)："
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr "图标缩放为适合单行面板。使用此选项限制行的最大像素。"
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr "桌面上需要您注意事项的指示器"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2013-08-27 08:15+0000\n"
 "Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce/language/"
@@ -99,7 +99,7 @@ msgstr "Workrave"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Êtes-vous sûr de vouloir effacer la liste des indicateurs connus ?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Impossible d'ouvrir l'url suivante : %s"
@@ -109,16 +109,14 @@ msgid "Indicators"
 msgstr "Indicateurs"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "Taille maximale de la ligne (pixel) :"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"Les icônes sont redimensionnées pour s'adapter à une seule rangée du "
-"panneau. Utilisez cette option pour limiter la taille maximale de la ligne."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -188,6 +186,17 @@ msgstr ""
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Indicateur connus"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "Taille maximale de la ligne (pixel) :"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Les icônes sont redimensionnées pour s'adapter à une seule rangée du "
+#~ "panneau. Utilisez cette option pour limiter la taille maximale de la "
+#~ "ligne."
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr ""

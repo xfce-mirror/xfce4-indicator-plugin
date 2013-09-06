@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2013-08-24 06:35+0000\n"
 "Last-Translator: Alois Nešpor <info@aloisnespor.info>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/xfce/language/"
@@ -100,7 +100,7 @@ msgstr ""
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Opravdu chcete vymazat seznam známých indikátorů?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nelze otevřít toto umístění URL: %s"
@@ -110,16 +110,14 @@ msgid "Indicators"
 msgstr "Indikátory"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "_Maximální velikost řádku (px):"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"Přizpůsobit ikony tak, aby se vešly na jeden řádek panelu. Tuto volbu "
-"použijte k omezení maximální velikosti řádku."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -185,6 +183,16 @@ msgstr "Obnoví seznam indikátorů a jejich nastavení viditelnosti."
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Známé indikátory"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "_Maximální velikost řádku (px):"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Přizpůsobit ikony tak, aby se vešly na jeden řádek panelu. Tuto volbu "
+#~ "použijte k omezení maximální velikosti řádku."
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr ""

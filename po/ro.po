@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2013-07-20 20:47+0000\n"
 "Last-Translator: Mișu Moldovan <dumol@gnome.org>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/xfce/language/"
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Sigur doriți să goliți lista indicatoarelor cunoscute?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nu s-a putut deschide următorul URL: %s"
@@ -113,16 +113,14 @@ msgid "Indicators"
 msgstr "Indicatoare"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "Mărime maximă pentru rând (px):"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"Iconițele sunt redimensionate pentru a încăpea în panou într-un singur rând. "
-"Utilizați această opțiune pentru a restricționa mărimea maximă a rândului."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -189,6 +187,17 @@ msgstr "Reinițializează lista indicatoarelor și opțiunile lor de vizibilitat
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Indicatoare cunoscute"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "Mărime maximă pentru rând (px):"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Iconițele sunt redimensionate pentru a încăpea în panou într-un singur "
+#~ "rând. Utilizați această opțiune pentru a restricționa mărimea maximă a "
+#~ "rândului."
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr "Un indicator pentru chestii ce necesită atenție"

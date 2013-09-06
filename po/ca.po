@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # carlesmu <carlesmu@internautas.org>, 2012
 # sandandmercury <sandandmercury@gmail.com>, 2013
@@ -9,14 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-02 06:31+0200\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2013-09-05 16:33+0000\n"
 "Last-Translator: sandandmercury <sandandmercury@gmail.com>\n"
-"Language-Team: Catalan (http://www.transifex.com/projects/p/xfce/language/ca/)\n"
+"Language-Team: Catalan (http://www.transifex.com/projects/p/xfce/language/"
+"ca/)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
@@ -27,7 +28,10 @@ msgstr "Connector d'indicadors"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Proporciona una àrea del panell per indicadors d'Unity. Els indicadors permeten que les aplicacions i serveis del sistema mostrar el seu estat i interactuar amb l'usuari."
+msgstr ""
+"Proporciona una àrea del panell per indicadors d'Unity. Els indicadors "
+"permeten que les aplicacions i serveis del sistema mostrar el seu estat i "
+"interactuar amb l'usuari."
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
@@ -37,8 +41,7 @@ msgstr "Copyright (c) 2009-2013\n"
 msgid "No Indicators"
 msgstr "Cap indicador"
 
-#. raw name,                           pretty name,
-#. icon-name(?)
+#. raw name,                           pretty name,                                 icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Indicadors d'aplicació"
@@ -99,7 +102,7 @@ msgstr "Workrave"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Està segur que vol esborrar la llista d'indicadors coneguts?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "No es pot obrir el següent url: %s"
@@ -109,14 +112,14 @@ msgid "Indicators"
 msgstr "Indicadors"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "_Mida màxima de la fila (px)"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
-msgstr "Icones a escala per ajustar-se a una única fila del panell. Utilitza aquesta opció per a restringir la mida màxima de la fila."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -126,7 +129,10 @@ msgstr "Alinear a l'esquerra al mode de barra de l'escriptori"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Controla la disposició dels botons de l'indicador quan el panell mode barra de l'escriptori. Les opcions possibles són \"centrat\" ​​o \"alineat a l'esquerra\"."
+msgstr ""
+"Controla la disposició dels botons de l'indicador quan el panell mode barra "
+"de l'escriptori. Les opcions possibles són \"centrat\" ​​o \"alineat a "
+"l'esquerra\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -140,7 +146,10 @@ msgstr "Amaga indicadors per defecte"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Quan està activat, només es mostren els indicadors marcats com a \"Visible\". En cas contrari, es mostren tots els indicadors que no estan marcats com a \"Ocult\"."
+msgstr ""
+"Quan està activat, només es mostren els indicadors marcats com a \"Visible"
+"\". En cas contrari, es mostren tots els indicadors que no estan marcats com "
+"a \"Ocult\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -164,7 +173,9 @@ msgstr "Mou l'indicador seleccionat una fila cap avall."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Si us plau, reinicieu el panell per tal que tinguin efecte els canvis de visibilitat.</i>"
+msgstr ""
+"<i>Si us plau, reinicieu el panell per tal que tinguin efecte els canvis de "
+"visibilitat.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
@@ -172,8 +183,19 @@ msgstr "Netejar indicadors coneguts"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
-msgstr "Restableix la llista d'indicadors i la seva configuració de visibilitat."
+msgstr ""
+"Restableix la llista d'indicadors i la seva configuració de visibilitat."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Indicadors coneguts"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "_Mida màxima de la fila (px)"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Icones a escala per ajustar-se a una única fila del panell. Utilitza "
+#~ "aquesta opció per a restringir la mida màxima de la fila."

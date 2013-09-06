@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2013-08-27 07:02+0000\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <xfce-i18n-br@xfce.org>\n"
@@ -99,7 +99,7 @@ msgstr "Workrave"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Você tem certeza que deseja limpar a lista de indicadores conhecidos?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Não foi possível abrir a seguinte url: %s"
@@ -109,16 +109,14 @@ msgid "Indicators"
 msgstr "Indicadores"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "Tamanho _máximo da linha (px):"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"Ícones são escalonados para se ajustarem a uma única linha do painel. Use "
-"esta opção para restringir o tamanho máximo da linha."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -186,6 +184,16 @@ msgstr "Redefine a lista os indicadores e suas configurações de visibilidade."
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Indicadores conhecidos"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "Tamanho _máximo da linha (px):"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Ícones são escalonados para se ajustarem a uma única linha do painel. Use "
+#~ "esta opção para restringir o tamanho máximo da linha."
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr "Um indicador de algo que requer sua atenção na área de trabalho"

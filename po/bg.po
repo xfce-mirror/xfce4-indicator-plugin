@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 23:53+0100\n"
+"POT-Creation-Date: 2013-09-06 01:59+0100\n"
 "PO-Revision-Date: 2013-08-27 06:31+0000\n"
 "Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce/language/"
@@ -97,7 +97,7 @@ msgstr "Workrave"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Наистина ли искате да изчистите списъка с използваните индикатори ?"
 
-#: ../panel-plugin/indicator-dialog.c:595
+#: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Не може да бъде отворен следният адрес: %s"
@@ -107,16 +107,14 @@ msgid "Indicators"
 msgstr "Индикатори"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
-msgid "_Maximum row size (px):"
-msgstr "Максимален размер на ред (px):"
+msgid "Arrange indicators in a single row"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
-"Icons are scaled to fit a single row of the panel. Use this option to "
-"restrict the maximum size of the row."
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
 msgstr ""
-"Иконите са мащабирани да се поберат един ред на панела. Използвайте тази "
-"опция, за да ограничите максималния размер на реда."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -182,6 +180,16 @@ msgstr "Възстановява списъка на индикаторите и
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Използвани индикатори"
+
+#~ msgid "_Maximum row size (px):"
+#~ msgstr "Максимален размер на ред (px):"
+
+#~ msgid ""
+#~ "Icons are scaled to fit a single row of the panel. Use this option to "
+#~ "restrict the maximum size of the row."
+#~ msgstr ""
+#~ "Иконите са мащабирани да се поберат един ред на панела. Използвайте тази "
+#~ "опция, за да ограничите максималния размер на реда."
 
 #~ msgid "An indicator of something that needs your attention on the desktop"
 #~ msgstr "Индикатор, който се нуждае от Вашето внимание."
