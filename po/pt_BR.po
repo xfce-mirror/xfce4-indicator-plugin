@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Og Maciel <ogmaciel@gnome.org>, 2009
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2013
@@ -10,14 +10,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 01:59+0100\n"
-"PO-Revision-Date: 2013-08-27 07:02+0000\n"
+"POT-Creation-Date: 2013-09-06 00:31+0200\n"
+"PO-Revision-Date: 2013-09-07 02:44+0000\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <xfce-i18n-br@xfce.org>\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
@@ -28,7 +28,7 @@ msgstr "Plugin Indicador"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "Fornece uma área de painel para indicadores do Unity. Os indicadores permitem que os aplicativos e serviços de sistemas exibam seus estados e interajam com o usuário."
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
@@ -38,7 +38,8 @@ msgstr "Copyright (c) 2009-2013\n"
 msgid "No Indicators"
 msgstr "Nenhum indicador"
 
-#. raw name,                           pretty name,                                 icon-name(?)
+#. raw name,                           pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Indicadores de aplicativos"
@@ -81,15 +82,15 @@ msgstr "Menu de sincronização"
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
-msgstr ""
+msgstr "Teclado"
 
 #: ../panel-plugin/indicator-dialog.c:74
 msgid "Location"
-msgstr ""
+msgstr "Localização"
 
 #: ../panel-plugin/indicator-dialog.c:75
 msgid "Network"
-msgstr ""
+msgstr "Rede"
 
 #: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
@@ -110,13 +111,13 @@ msgstr "Indicadores"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr ""
+msgstr "Organizar indicadores em uma única linha"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr ""
+msgstr "Se habilitado, garante que os indicadores sejam posicionados em uma única linha ou coluna."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -126,9 +127,7 @@ msgstr "Alinhar à esquerda no modo deskbar"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
-"Controla o layout de botão de indicador quando o painel está em um modo "
-"deskbar. Escolhas possíveis são \"centralizado\" ou \"alinhado à esquerda\"."
+msgstr "Controla o layout de botão de indicador quando o painel está em um modo deskbar. Escolhas possíveis são \"centralizado\" ou \"alinhado à esquerda\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -142,10 +141,7 @@ msgstr "Ocultar indicadores por padrão"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
-"Quando habilitado, apenas indicadores marcados com \"Visível\" são "
-"mostrados. Do contrário, todos os indicadores não marcados com \"Oculto\" "
-"são exibidos."
+msgstr "Quando habilitado, apenas indicadores marcados com \"Visível\" são mostrados. Do contrário, todos os indicadores não marcados com \"Oculto\" são exibidos."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -169,9 +165,7 @@ msgstr "Mover o indicador selecionado uma linha para baixo."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr ""
-"<i>Por favor, reiniciar o painel para as alterações de visibilidade terem "
-"efeitos.</i>"
+msgstr "<i>Por favor, reiniciar o painel para as alterações de visibilidade terem efeitos.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
@@ -184,16 +178,3 @@ msgstr "Redefine a lista os indicadores e suas configurações de visibilidade."
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Indicadores conhecidos"
-
-#~ msgid "_Maximum row size (px):"
-#~ msgstr "Tamanho _máximo da linha (px):"
-
-#~ msgid ""
-#~ "Icons are scaled to fit a single row of the panel. Use this option to "
-#~ "restrict the maximum size of the row."
-#~ msgstr ""
-#~ "Ícones são escalonados para se ajustarem a uma única linha do painel. Use "
-#~ "esta opção para restringir o tamanho máximo da linha."
-
-#~ msgid "An indicator of something that needs your attention on the desktop"
-#~ msgstr "Um indicador de algo que requer sua atenção na área de trabalho"
