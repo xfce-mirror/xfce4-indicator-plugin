@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2013-09-06 11:30+0000\n"
+"PO-Revision-Date: 2013-09-11 13:14+0000\n"
 "Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Gösterge Eklentisi"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "Unity göstergeleri için bir panel alanı sağlar. Göstergeler uygulamaların ve sistem servislerinin durumlarını göstermelerine ve kullanıcıyla etkileşime geçmelerine izin verirler."
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
@@ -117,7 +117,7 @@ msgstr "Göstergeleri bir sırada ayarla"
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr ""
+msgstr "Etkileştirilirse, göstergelerin tek bir satır veya sütun halinde olduğundan emin olun."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -169,11 +169,11 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
-msgstr ""
+msgstr "Bilinen göstergeleri temiz_le"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
-msgstr ""
+msgstr "Gösterge listesini ve görünür ayarlarını sıfırlar"
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
