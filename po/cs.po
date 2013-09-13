@@ -1,23 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Alois Nešpor <info@aloisnespor.info>, 2013
 # Michal Várady <miko.vaji@gmail.com>, 2012
+# fri <pavelfric@seznam.cz>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 01:59+0100\n"
-"PO-Revision-Date: 2013-08-24 06:35+0000\n"
-"Last-Translator: Alois Nešpor <info@aloisnespor.info>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/xfce/language/"
-"cs/)\n"
-"Language: cs\n"
+"POT-Creation-Date: 2013-09-06 00:31+0200\n"
+"PO-Revision-Date: 2013-09-13 12:56+0000\n"
+"Last-Translator: fri <pavelfric@seznam.cz>\n"
+"Language-Team: Czech (http://www.transifex.com/projects/p/xfce/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
@@ -38,7 +38,8 @@ msgstr "Copyright (c) 2009-2013\n"
 msgid "No Indicators"
 msgstr "Žádné indikátory"
 
-#. raw name,                           pretty name,                                 icon-name(?)
+#. raw name,                           pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Indikátory aplikace"
@@ -73,12 +74,11 @@ msgstr "Datum a čas"
 
 #: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: ../panel-plugin/indicator-dialog.c:72
-#, fuzzy
 msgid "Sync Menu"
-msgstr "Nabídka Zvuk"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
@@ -86,11 +86,11 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:74
 msgid "Location"
-msgstr ""
+msgstr "Umístění"
 
 #: ../panel-plugin/indicator-dialog.c:75
 msgid "Network"
-msgstr ""
+msgstr "Síť"
 
 #: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
@@ -111,7 +111,7 @@ msgstr "Indikátory"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr ""
+msgstr "Uspořádat ukazatele v jednom řádku"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
@@ -127,9 +127,7 @@ msgstr "V režimu Deskbar umístit vlevo"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
-"Ovládá rozložení tlačítek indikátoru, pokud je panel v režimu Deskbar. "
-"Dostupné volby jsou \"vystředěný\" a \"umístěný vlevo\"."
+msgstr "Ovládá rozložení tlačítek indikátoru, pokud je panel v režimu Deskbar. Dostupné volby jsou \"vystředěný\" a \"umístěný vlevo\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -143,10 +141,7 @@ msgstr "Ve výchozím stavu skrýt indikátory"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
-"Pokud je tato volby povolena, zobrazí se pouze indikátory označené jako "
-"\"Viditelné\". V opačném případě se zobrazí všechny indikátory, kromě "
-"indikátorů označených jako \"Skryté\""
+msgstr "Pokud je tato volby povolena, zobrazí se pouze indikátory označené jako \"Viditelné\". V opačném případě se zobrazí všechny indikátory, kromě indikátorů označených jako \"Skryté\""
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -183,17 +178,3 @@ msgstr "Obnoví seznam indikátorů a jejich nastavení viditelnosti."
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Známé indikátory"
-
-#~ msgid "_Maximum row size (px):"
-#~ msgstr "_Maximální velikost řádku (px):"
-
-#~ msgid ""
-#~ "Icons are scaled to fit a single row of the panel. Use this option to "
-#~ "restrict the maximum size of the row."
-#~ msgstr ""
-#~ "Přizpůsobit ikony tak, aby se vešly na jeden řádek panelu. Tuto volbu "
-#~ "použijte k omezení maximální velikosti řádku."
-
-#~ msgid "An indicator of something that needs your attention on the desktop"
-#~ msgstr ""
-#~ "Indikátor záležitosti, která vyžaduje vaši pozornost na pracovní ploše"
