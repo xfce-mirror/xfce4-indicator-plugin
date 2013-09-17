@@ -46,7 +46,7 @@
 static void                 xfce_indicator_button_finalize        (GObject                *object);
 static gboolean             xfce_indicator_button_button_press    (GtkWidget              *widget,
                                                                    GdkEventButton         *event);
-static gboolean             xfce_indicator_button_scroll          (GtkWidget              *widget,
+static gboolean             xfce_indicator_button_scroll_event    (GtkWidget              *widget,
                                                                    GdkEventScroll         *event);
 static void                 xfce_indicator_button_menu_deactivate (XfceIndicatorButton    *button,
                                                                    GtkMenu                *menu);
@@ -94,7 +94,7 @@ xfce_indicator_button_class_init (XfceIndicatorButtonClass *klass)
 
   widget_class = GTK_WIDGET_CLASS (klass);
   widget_class->button_press_event = xfce_indicator_button_button_press;
-  widget_class->scroll_event = xfce_indicator_button_scroll;
+  widget_class->scroll_event = xfce_indicator_button_scroll_event;
   widget_class->get_preferred_width = xfce_indicator_button_get_preferred_width;
   widget_class->get_preferred_height = xfce_indicator_button_get_preferred_height;
 }
@@ -111,6 +111,8 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   gtk_button_set_use_underline (GTK_BUTTON (button),TRUE);
   gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
   gtk_widget_set_name (GTK_WIDGET (button), "indicator-button");
+
+  gtk_widget_add_events (GTK_WIDGET (button), GDK_SCROLL_MASK);
 
   button->io = NULL;
   button->entry = NULL;
@@ -340,7 +342,7 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
 
 
 static gboolean
-xfce_indicator_button_scroll (GtkWidget *widget, GdkEventScroll *event)
+xfce_indicator_button_scroll_event (GtkWidget *widget, GdkEventScroll *event)
 {
   XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (widget);
 
