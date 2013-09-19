@@ -46,6 +46,8 @@
 static void                 xfce_indicator_button_finalize        (GObject                *object);
 static gboolean             xfce_indicator_button_button_press    (GtkWidget              *widget,
                                                                    GdkEventButton         *event);
+static gboolean             xfce_indicator_button_button_release  (GtkWidget              *widget,
+                                                                   GdkEventButton         *event);
 static gboolean             xfce_indicator_button_scroll_event    (GtkWidget              *widget,
                                                                    GdkEventScroll         *event);
 static void                 xfce_indicator_button_menu_deactivate (XfceIndicatorButton    *button,
@@ -94,6 +96,7 @@ xfce_indicator_button_class_init (XfceIndicatorButtonClass *klass)
 
   widget_class = GTK_WIDGET_CLASS (klass);
   widget_class->button_press_event = xfce_indicator_button_button_press;
+  widget_class->button_release_event = xfce_indicator_button_button_release;
   widget_class->scroll_event = xfce_indicator_button_scroll_event;
   widget_class->get_preferred_width = xfce_indicator_button_get_preferred_width;
   widget_class->get_preferred_height = xfce_indicator_button_get_preferred_height;
@@ -334,6 +337,23 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
       gtk_menu_popup (button->menu, NULL, NULL,
                       xfce_panel_plugin_position_menu, button->plugin,
                       event->button, event->time);
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+
+static gboolean
+xfce_indicator_button_button_release (GtkWidget      *widget,
+				      GdkEventButton *event)
+{
+  XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (widget);
+
+  if(event->button == 2) /* middle button */
+    {
+      g_signal_emit_by_name(button->io, INDICATOR_OBJECT_SIGNAL_SECONDARY_ACTIVATE, 
+			    button->entry, event->time);
       return TRUE;
     }
 
