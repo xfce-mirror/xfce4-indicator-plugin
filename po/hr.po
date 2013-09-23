@@ -1,25 +1,22 @@
-# Croatian translation for  xfce4-indicator-plugin package.
-# Copyright (C) 2009 Mark Trompell <mark@foresightlinux.org>
-# This file is distributed under the same license as the xfce4-indicator-plugin package.
-#
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Ivica  Kolić <ikoli@yahoo.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce-indicator-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 01:59+0100\n"
-"PO-Revision-Date: 2011-05-21 13:02+0100\n"
-"Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
-"Language-Team: Croatian <ikoli@yahoo.com>\n"
-"Language: hr\n"
+"POT-Creation-Date: 2013-09-06 00:31+0200\n"
+"PO-Revision-Date: 2013-09-23 14:26+0000\n"
+"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
+"Language-Team: Croatian (http://www.transifex.com/projects/p/xfce/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Croatian\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Country: CROATIA\n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
@@ -33,36 +30,37 @@ msgstr ""
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
-msgstr ""
+msgstr "Autorska prava (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
 msgstr "Nema indikatora"
 
-#. raw name,                           pretty name,                                 icon-name(?)
+#. raw name,                           pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Indikatori programa"
 
 #: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
 msgid "Sound Menu"
-msgstr ""
+msgstr "Izbornik zvuka"
 
 #: ../panel-plugin/indicator-dialog.c:60
 msgid "Printers Menu"
-msgstr ""
+msgstr "Izbornik pisača"
 
 #: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
 msgid "Power Management"
-msgstr ""
+msgstr "Upravljanje energijom"
 
 #: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
-msgstr ""
+msgstr "Izbornici programa (opći izbornik)"
 
 #: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
-msgstr ""
+msgstr "Upravljanje sesijom"
 
 #: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
 msgid "Messaging Menu"
@@ -70,11 +68,11 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
 msgid "Date and Time"
-msgstr ""
+msgstr "Datum i vrijeme"
 
 #: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: ../panel-plugin/indicator-dialog.c:72
 msgid "Sync Menu"
@@ -82,15 +80,15 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
-msgstr ""
+msgstr "Tipkovnica"
 
 #: ../panel-plugin/indicator-dialog.c:74
 msgid "Location"
-msgstr ""
+msgstr "Lokacija"
 
 #: ../panel-plugin/indicator-dialog.c:75
 msgid "Network"
-msgstr ""
+msgstr "Mreža"
 
 #: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
@@ -98,12 +96,12 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:450
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr ""
+msgstr "Jeste li sigurni da želite očistiti listu poznatih indikatora?"
 
 #: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "Nije moguće otvoriti slijedeći url: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "Indicators"
@@ -131,17 +129,17 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
-msgstr ""
+msgstr "Izgled"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
-msgstr ""
+msgstr "Kao zadano, sakrij indikatore"
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
+msgstr "Kada je omogućeno, samo indikatori označeni kao \"Vidljivi\" su pokazani.Inače, svi indikatori koji nisu označeni kao \"Skriveni\" su prikazani."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -149,19 +147,19 @@ msgstr "Indikator"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Hidden"
-msgstr ""
+msgstr "Skriven"
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Visible"
-msgstr ""
+msgstr "Vidljiv"
 
 #: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row up."
-msgstr ""
+msgstr "Pomaknite izabrani indikator jedan red gore."
 
 #: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row down."
-msgstr ""
+msgstr "Pomaknite izabrani indikator jedan red dolje."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
@@ -178,6 +176,3 @@ msgstr ""
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
 msgstr "Poznati indikatori"
-
-#~ msgid "An indicator of something that needs your attention on the desktop"
-#~ msgstr "Indikator nečega što zahtjeva vašu pozornost na radnoj površini"
