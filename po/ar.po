@@ -1,22 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# ahmadzxc <ahmad.almomani5@gmail.com>, 2013
+# ahmadzxc <ahmad.almomani5@gmail.com>, 2013
+# محمد الحرقان <malham1@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-indicator-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 01:59+0100\n"
-"PO-Revision-Date: 2011-08-09 16:05-0000\n"
-"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
-"Language-Team: Arabic Xfce Translation Team <herr.linux88@gmail.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-09-06 00:31+0200\n"
+"PO-Revision-Date: 2013-09-30 11:59+0000\n"
+"Last-Translator: mohammad alhargan <malham1@hotmail.com>\n"
+"Language-Team: Arabic (http://www.transifex.com/projects/p/xfce/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Arabic\n"
-"X-Poedit-Country: Lorocco\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
@@ -26,160 +28,153 @@ msgstr "إضافة المؤشر"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "يوفر منطقة لوحة مؤشرات وحدة. مؤشرات تسمح بعرض حالة تطبيقات وخدمات النظام والتفاعل مع المستخدم."
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
-msgstr ""
+msgstr "حقوق النشر (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
 msgstr "بدون مؤشر"
 
-#. raw name,                           pretty name,                                 icon-name(?)
+#. raw name,                           pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
-#, fuzzy
 msgid "Application Indicators"
-msgstr "بدون مؤشر"
+msgstr "مؤشرات التطبيق"
 
 #: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
 msgid "Sound Menu"
-msgstr ""
+msgstr "قائمة الصوت"
 
 #: ../panel-plugin/indicator-dialog.c:60
 msgid "Printers Menu"
-msgstr ""
+msgstr "قائمة الطابعات"
 
 #: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
 msgid "Power Management"
-msgstr ""
+msgstr "ادارة الطاقة"
 
 #: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
-msgstr ""
+msgstr "قوائم التطبيق (القائمة العامة)"
 
 #: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
-msgstr ""
+msgstr "ادارة الجلسة"
 
 #: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
 msgid "Messaging Menu"
-msgstr ""
+msgstr "قائمة المراسلة"
 
 #: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
 msgid "Date and Time"
-msgstr ""
+msgstr "التاريخ و الوقت"
 
 #: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
 msgid "Bluetooth"
-msgstr ""
+msgstr "بلوتوث"
 
 #: ../panel-plugin/indicator-dialog.c:72
 msgid "Sync Menu"
-msgstr ""
+msgstr "قائمة المزامنة"
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
-msgstr ""
+msgstr "لوحة المفاتيح"
 
 #: ../panel-plugin/indicator-dialog.c:74
 msgid "Location"
-msgstr ""
+msgstr "الموقع"
 
 #: ../panel-plugin/indicator-dialog.c:75
 msgid "Network"
-msgstr ""
+msgstr "الشبكة"
 
 #: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
-msgstr ""
+msgstr "Workrave"
 
 #: ../panel-plugin/indicator-dialog.c:450
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr ""
+msgstr "هل انت متاكد من مسح قائمة المؤشرات المعروفة؟"
 
 #: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "غير قادر على فتح الرابط التالي: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
-#, fuzzy
 msgid "Indicators"
-msgstr "بدون مؤشر"
+msgstr "المؤشرات"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr ""
+msgstr "ترتيب المؤشرات في صف واحد"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr ""
+msgstr "إذا تم تمكينه، يضمن أن وضع مؤشرات في صف واحد أو عمود."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "محاذاه الى اليسار في وضع شريط المكتب"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "يتحكم بزر مؤشر تخطيط اللوحة عندما يكون في وضع شريط المكتب. الخيارات الممكنة هي \"وسط\" أو \"محاذاة اليسار\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
-msgstr ""
+msgstr "المظهر"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
-msgstr ""
+msgstr "اخفاء المؤشرات افتراضيا"
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
+msgstr "عند تمكينه، فقط المؤشرات التي تم وضع علامة \"مرئي\" سيتم عرضها. وإلا فإن كافة المؤشرات التي لم يتم وضع علامة \"مخفي\" سيتم عرضها."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
-#, fuzzy
 msgid "Indicator"
-msgstr "بدون مؤشر"
+msgstr "المؤشر"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Hidden"
-msgstr ""
+msgstr "مخفي"
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Visible"
-msgstr ""
+msgstr "مرئي"
 
 #: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row up."
-msgstr ""
+msgstr "انقل المؤشر المحدد صف واحد للاعلى."
 
 #: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row down."
-msgstr ""
+msgstr "انقل المؤشر المحدد صف واحد لاسفل."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr ""
+msgstr "<i>يرجى اعادة تشغيل اللوحة لكي تاخذ التغيرات الرئية حيز التنفيذ.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
-#, fuzzy
 msgid "C_lear known indicators"
-msgstr "بدون مؤشر"
+msgstr "مسح المؤشرات المعروفة"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
-msgstr ""
+msgstr "اعادة تعيين قائمة المؤشرات و اعداداتها المرئية."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
-#, fuzzy
 msgid "Known Indicators"
-msgstr "بدون مؤشر"
-
-#~ msgid "An indicator of something that needs your attention on the desktop"
-#~ msgstr "مؤشرا لشيء يحتاج إلى عناية منك على سطح المكتب"
+msgstr "مؤشرات معروفة"
