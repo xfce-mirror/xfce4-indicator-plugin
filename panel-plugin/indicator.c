@@ -38,7 +38,9 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libindicator/indicator-object.h>
+#ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
 #include <libindicator/indicator-ng.h>
+#endif
 
 #include "indicator.h"
 #include "indicator-box.h"
@@ -63,9 +65,11 @@ static gboolean         indicator_load_indicator                   (IndicatorPlu
                                                                     const gchar           *name);
 static gboolean         indicator_load_module                      (IndicatorPlugin       *indicator,
                                                                     const gchar           *name);
+#ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
 static gboolean         indicator_load_service                     (IndicatorPlugin       *indicator,
                                                                     const gchar           *name);
 static void             indicator_load_services                    (IndicatorPlugin       *indicator);
+#endif
 static void             indicator_load_modules                     (IndicatorPlugin       *indicator);
 
 
@@ -300,7 +304,9 @@ indicator_construct (XfcePanelPlugin *plugin)
 
   /* load 'em */
   indicator_load_modules (indicator);
+#ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
   indicator_load_services (indicator);
+#endif
 
   if (indicator->indicator_count == 0) {
     /* A label to allow for click through */
@@ -375,7 +381,7 @@ indicator_load_indicator (IndicatorPlugin *indicator,
 
   g_return_val_if_fail (XFCE_IS_INDICATOR_PLUGIN (indicator), 0);
   g_return_val_if_fail(name != NULL, FALSE);
-  g_debug ("Load indicator_ng: %s", name);
+  g_debug ("Load indicator: %s", name);
 
   indicator_config_add_known_indicator (indicator->config, name);
 
@@ -427,7 +433,7 @@ indicator_load_module (IndicatorPlugin *indicator,
   return indicator_load_indicator (indicator, io, name);
 }
 
-
+#ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
 static gboolean
 indicator_load_service (IndicatorPlugin *indicator,
                         const gchar     *name)
@@ -499,7 +505,7 @@ indicator_load_services (IndicatorPlugin *indicator)
 
   g_dir_close (indicators_ng_dir);
 }
-
+#endif
 
 
 

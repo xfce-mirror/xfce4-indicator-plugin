@@ -86,6 +86,15 @@ XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.6.0])
 INDICATOR_PKGNAME=indicator3-0.4
 XDT_CHECK_PACKAGE([INDICATOR], [${INDICATOR_PKGNAME}], [12.10.1])
 
+dnl ********************************************************************
+dnl *** Check if libindicator has indicator-ng.h headery             ***
+dnl *** At the moment this cannot be derived from the version number ***
+dnl ********************************************************************
+AC_LANG_PUSH([C])
+CPPFLAGS=`$PKG_CONFIG --cflags ${INDICATOR_PKGNAME}`
+AC_CHECK_HEADERS([libindicator/indicator-ng.h], [HAVE_INDICATOR_NG_H=yes], [HAVE_INDICATOR_NG_H=no])
+AC_LANG_POP
+
 dnl ****************************
 dnl *** Optional IDO library ***
 dnl ****************************
@@ -134,10 +143,11 @@ dnl ***************************
 echo
 echo "Build Configuration:"
 echo
-echo "* Debug Support:    $enable_debug"
+echo "* Debug Support:        $enable_debug"
+echo "* Use IndicatorNg API:  $HAVE_INDICATOR_NG_H"
 if test x"$IDO_FOUND" = x"yes"; then
-echo "* Use IDO library:  yes"
+echo "* Use IDO library:      yes"
 else
-echo "* Use IDO library:  no"
+echo "* Use IDO library:      no"
 fi
 echo
