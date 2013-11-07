@@ -283,6 +283,13 @@ indicator_button_box_set_image (IndicatorButtonBox  *box,
       gtk_container_remove (GTK_CONTAINER (box), box->icon);
       g_object_unref (G_OBJECT (box->icon));
     }
+
+  if(gtk_image_get_storage_type(image) == GTK_IMAGE_EMPTY)
+    {
+      box->icon = NULL;
+      return;
+    }
+
   box->icon = GTK_WIDGET (image);
   g_object_ref (G_OBJECT (box->icon));
   g_signal_connect(G_OBJECT(box->icon), "notify::pixbuf",
