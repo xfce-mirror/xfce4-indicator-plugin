@@ -280,7 +280,7 @@ indicator_button_box_set_image (IndicatorButtonBox  *box,
 
   if (box->icon != NULL)
     {
-      gtk_container_remove (GTK_CONTAINER (box), box->label);
+      gtk_container_remove (GTK_CONTAINER (box), box->icon);
       g_object_unref (G_OBJECT (box->icon));
     }
   box->icon = GTK_WIDGET (image);
