@@ -1,4 +1,57 @@
-# created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2013-12-01 4971cc4 Changed required version of libxfce4panel Andrzej <ndrwrdck@gmail.com>
+2013-11-18 b992563 I18n: Update translation da (100%). cedeel <chris@cedeel.com>
+2013-11-16 bc7f4df I18n: Update translation zh_TW (78%). sofyalai <sofyalai@gmail.com>
+2013-11-16 57b525b I18n: Update translation zh_TW (62%). sofyalai <sofyalai@gmail.com>
+2013-11-07 35c2697 Ignore empty icons set by indicators. Alistair Buxton <a.j.buxton@gmail.com>
+2013-11-07 b7a42ad Remove the old icon, not the label, when icon is updated. Alistair Buxton <a.j.buxton@gmail.com>
+2013-10-27 c551c14 Check if indicator-ng.h exists Andrzej <ndrwrdck@gmail.com>
+2013-10-27 4689cb3 Updated dependencies Andrzej <ndrwrdck@gmail.com>
+2013-10-26 4f22aed I18n: Update translation cs (100%). Michal Várady <miko.vaji@gmail.com>
+2013-10-20 235254b I18n: Update translation zh_CN (100%). Chipong <chipong.luo@yahoo.com>
+2013-10-19 03506c3 I18n: Update translation pl (100%). OSWorld <michal.olber@osworld.pl>
+2013-10-14 5d670b4 I18n: Update translation ru (100%). shlyapugin <shlyapugin@gmail.com>
+2013-09-30 d9b56a2 I18n: Update translation ar (100%). mohammad alhargan <malham1@hotmail.com>
+2013-09-29 c38f9d6 I18n: Update translation pt (100%). nunom <nunomgue@gmail.com>
+2013-09-24 53df5ad Require libxfce4ui-4.11 Andrzej <ndrwrdck@gmail.com>
+2013-09-23 32df0d4 I18n: Update translation hr (72%). Ivica  Kolić <ikoli@yahoo.com>
+2013-09-21 833616f I18n: Update translation ko (100%). Darkcircle <darkcircle.0426@gmail.com>
+2013-09-19 243049c Indicator-button: Pass secondary-activate event Andrzej <ndrwrdck@gmail.com>
+2013-09-17 82fa77e XfceIndicatorButton: add gdk_scroll_mask Andrzej <ndrwrdck@gmail.com>
+2013-09-15 25f6fef I18n: Update translation hu (100%). Nucleo <nucleo@indamail.hu>
+2013-09-13 711f458 I18n: Update translation cs (86%). fri <pavelfric@seznam.cz>
+2013-09-12 d3a46b1 I18n: Update translation zh_CN (91%). 玉堂白鹤 <yjwork@qq.com>
+2013-09-12 a8afd3f I18n: Update translation tr (86%). farukuzun <farukuzun@mail.com>
+2013-09-11 c977fa1 I18n: Update translation tr (83%). Necdet Yücel <necdetyucel@gmail.com>
+2013-09-11 2ac34bc I18n: Update translation pl (91%). Piotr Sokół <psokol@jabster.pl>
+2013-09-08 0616d0e I18n: Update translation es (100%). Pablo Lezaeta <prflr88@gmail.com>
+2013-09-07 7fd1efa I18n: Update translation uk (100%). Yarema aka Knedlyk <yupadmin@gmail.com>
+2013-09-07 ed2200d I18n: Update translation nl (100%). Pjotr123 <pjotrvertaalt@gmail.com>
+2013-09-07 a7ae932 I18n: Update translation fr (100%). jc1 <jc1.quebecos@gmail.com>
+2013-09-07 68abde0 I18n: Update translation pt_BR (100%). Rafael Ferreira <rafael.f.f1@gmail.com>
+2013-09-06 c665938 Fixed typo. Andrzej <ndrwrdck@gmail.com>
+2013-09-06 f6b84ee I18n: Update translation tr (72%). Necdet Yücel <necdetyucel@gmail.com>
+2013-09-06 0da1de0 I18n: Update translation it (100%). cri <cri.penta@gmail.com>
+2013-09-06 45273e5 I18n: Update translation sr (100%). salepetronije <salepetronije@gmail.com>
+2013-09-06 0f78dd9 I18n: Update translation en_AU (100%). k3lt01 <keltoiboy@gmail.com>
+2013-09-06 5356231 I18n: Update translation bg (100%). cybercop <cybercop_montana@abv.bg>
+2013-09-06 becd486 Update translations Andrzej <ndrwrdck@gmail.com>
+2013-09-06 47267bb More layout fixes. Andrzej <ndrwrdck@gmail.com>
+2013-09-06 cdfc5e4 Allow rectangular or slightly oversized icons Andrzej <ndrwrdck@gmail.com>
+2013-09-06 990593b indicator layout fixes Andrzej <ndrwrdck@gmail.com>
+2013-09-06 7187abb Use "single-row" property Andrzej <ndrwrdck@gmail.com>
+2013-09-06 2df49bb Fix type of a "single-row" property Andrzej <ndrwrdck@gmail.com>
+2013-09-06 c619253 I18n: Update translation ca (100%). sandandmercury <sandandmercury@gmail.com>
+2013-09-05 a53baf1 Removed row-size property and added a single-row one Andrzej <ndrwrdck@gmail.com>
+2013-09-05 e0b1ed0 I18n: Update translation ca (91%). sandandmercury <sandandmercury@gmail.com>
+2013-09-05 c556271 I18n: Update translation ko (100%). Darkcircle <darkcircle.0426@gmail.com>
+2013-09-04 49d3090 I18n: Update translation en_AU (100%). k3lt01 <keltoiboy@gmail.com>
+2013-09-03 1930a20 I18n: Update translation sr (100%). salepetronije <salepetronije@gmail.com>
+2013-09-03 d9f073d I18n: Update translation es (100%). Pablo Lezaeta <prflr88@gmail.com>
+2013-09-02 123f657 I18n: Update translation pt (100%). nunom <nunomgue@gmail.com>
+2013-09-02 afa068f I18n: Update translation es (91%). MC <correomc2000-ing@yahoo.es>
+2013-09-02 8272c58 Force buttons to fit in the panel Andrzej <ndrwrdck@gmail.com>
+2013-09-02 2c3cac4 back to development Andrzej <ndrwrdck@gmail.com>
+2013-09-02 877d979 preparing for a release Andrzej <ndrwrdck@gmail.com>
 2013-09-01 6dc7c2e Updated .po files Andrzej <ndrwrdck@gmail.com>
 2013-09-01 61a419b Updated description in the desktop file. Andrzej <ndrwrdck@gmail.com>
 2013-09-01 19b21aa Updated list of authors and plugin description. Andrzej <ndrwrdck@gmail.com>
