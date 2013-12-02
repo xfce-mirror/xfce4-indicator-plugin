@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# anthonmanix <anthon.manix@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-06 00:31+0200\n"
+"PO-Revision-Date: 2013-12-02 21:47+0000\n"
+"Last-Translator: anthonmanix <anthon.manix@gmail.com>\n"
+"Language-Team: Slovenian (http://www.transifex.com/projects/p/xfce/language/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "Indicator Plugin"
+msgstr "Vstavek kazalnika"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr ""
+
+#: ../panel-plugin/indicator.c:176
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Avtorske pravice (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:312
+msgid "No Indicators"
+msgstr "Ni kazalnikov"
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Kazalniki programov"
+
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+msgid "Sound Menu"
+msgstr "Meni zvoka"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Printers Menu"
+msgstr "Meni tiskalnikov"
+
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+msgid "Power Management"
+msgstr "Upravljanje napajanja"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Application Menus (Global Menu)"
+msgstr "Meni programov (Globalni meni)"
+
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+msgid "Session Management"
+msgstr "Upravljanje seje"
+
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+msgid "Messaging Menu"
+msgstr "Meni sporočanja"
+
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+msgid "Date and Time"
+msgstr "Datum in čas"
+
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ../panel-plugin/indicator-dialog.c:72
+msgid "Sync Menu"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr "Tipkovnica"
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr "Mesto"
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr "Omrežje"
+
+#: ../panel-plugin/indicator-dialog.c:76
+msgid "Workrave"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:450
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Ste prepričani, da želite počistiti seznam znanih kazalnikov?"
+
+#: ../panel-plugin/indicator-dialog.c:593
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Naslova URL ni mogoče odpreti: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "Indicators"
+msgstr "Kazalniki"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Arrange indicators in a single row"
+msgstr "Razporedi kazalnike v eno vrstico"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "Omogočeno zagotavlja, da so kazalniki postavljeni v eno vrstico ali stolpec."
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Appearance"
+msgstr "Videz"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "Privzeto skrij kazalnike"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "Omogočeno pokaže samo kazalnike označene z \"Viden\". Drugače pokaže vse kazalnike, ki niso označeni z \"Skrit\"."
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Kazalnik"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Hidden"
+msgstr "Skrit"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Visible"
+msgstr "Viden"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row up."
+msgstr "Premakni izbran kazalnik eno vrstico gor."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr "Premakni izbran kazalnik eno vrstico dol."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Znova zaženite pult, da bodo spremembe vidnosti imele učinek.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "Počisti znane kaza_lnike"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Ponastavi seznam kazalnikov in njihove nastavitve vidnosti."
+
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "Known Indicators"
+msgstr "Znani kazalniki"
