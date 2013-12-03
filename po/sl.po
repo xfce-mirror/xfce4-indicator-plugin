@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2013-12-02 21:47+0000\n"
+"PO-Revision-Date: 2013-12-03 18:45+0000\n"
 "Last-Translator: anthonmanix <anthon.manix@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/xfce/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Vstavek kazalnika"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "Zagotavlja področje na pultu za Unity kazalnike. Kazalniki aplikacijam in sistemskim storitvam omogočajo prikazovanje svojega statusa in interakcijo z uporabnikom."
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
@@ -76,7 +76,7 @@ msgstr "Bluetooth"
 
 #: ../panel-plugin/indicator-dialog.c:72
 msgid "Sync Menu"
-msgstr ""
+msgstr "Meni usklajevanja"
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
@@ -92,7 +92,7 @@ msgstr "Omrežje"
 
 #: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
-msgstr ""
+msgstr "Workrave"
 
 #: ../panel-plugin/indicator-dialog.c:450
 msgid "Are you sure you want to clear the list of known indicators?"
@@ -119,13 +119,13 @@ msgstr "Omogočeno zagotavlja, da so kazalniki postavljeni v eno vrstico ali sto
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "Levo poravnaj v načinu namizne vrstice"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "Nadzoruje razpored gumbov kazalnikov, ko je pult v načinu namizne vrstice. Možni izbiri sta \"sredinsko\" ali \"levo poravnano\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
