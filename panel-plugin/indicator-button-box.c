@@ -362,7 +362,8 @@ indicator_button_box_is_small (IndicatorButtonBox *box)
 
   box->orientation = indicator_config_get_panel_orientation (box->config);
 
-  if (box->label != NULL)
+  if (box->label != NULL &&
+      g_strcmp0 (gtk_label_get_label (GTK_LABEL (box->label)), "") != 0)
     {
       box->is_small = FALSE;
       if (box->orientation == GTK_ORIENTATION_VERTICAL &&
