@@ -222,6 +222,8 @@ indicator_button_box_label_changed (GtkLabel            *label,
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON_BOX (box));
   g_return_if_fail (GTK_IS_LABEL (label));
 
+  box->cached = FALSE;
+
   gtk_widget_queue_resize (GTK_WIDGET (box));
 }
 
@@ -243,8 +245,12 @@ indicator_button_box_set_label (IndicatorButtonBox  *box,
   g_object_ref (G_OBJECT (box->label));
   g_signal_connect(G_OBJECT(box->label), "notify::label",
                    G_CALLBACK(indicator_button_box_label_changed), box);
+  g_signal_connect(G_OBJECT(box->label), "notify::visible",
+                   G_CALLBACK(indicator_button_box_label_changed), box);
 
   box->is_small = FALSE;
+
+  box->cached = FALSE;
 
   gtk_container_add (GTK_CONTAINER (box), box->label);
   gtk_widget_show (box->label);
@@ -362,6 +368,7 @@ indicator_button_box_is_small (IndicatorButtonBox *box)
   box->orientation = indicator_config_get_panel_orientation (box->config);
 
   if (box->label != NULL &&
+      gtk_widget_get_visible (box->label) &&
       g_strcmp0 (gtk_label_get_label (GTK_LABEL (box->label)), "") != 0)
     {
       box->is_small = FALSE;
@@ -529,7 +536,7 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
 
   indicator_button_box_is_small (box); // refresh cache
 
-  if (box->icon != NULL && box->label != NULL)
+  if (box->icon != NULL && box->label != NULL && !box->is_small)
     {
       if (box->orientation == GTK_ORIENTATION_HORIZONTAL)
         {
