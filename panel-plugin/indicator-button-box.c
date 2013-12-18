@@ -244,7 +244,6 @@ indicator_button_box_set_label (IndicatorButtonBox  *box,
   g_signal_connect(G_OBJECT(box->label), "notify::label",
                    G_CALLBACK(indicator_button_box_label_changed), box);
 
-  gtk_label_set_ellipsize (GTK_LABEL (box->label), PANGO_ELLIPSIZE_END);
   box->is_small = FALSE;
 
   gtk_container_add (GTK_CONTAINER (box), box->label);
@@ -372,10 +371,12 @@ indicator_button_box_is_small (IndicatorButtonBox *box)
 	{
 	  box->orientation = GTK_ORIENTATION_HORIZONTAL;
 	  gtk_misc_set_alignment (GTK_MISC (box->label), 0.0, 0.5);
+	  gtk_label_set_ellipsize (GTK_LABEL (box->label), PANGO_ELLIPSIZE_END);
 	}
       else
 	{
 	  gtk_misc_set_alignment (GTK_MISC (box->label), 0.5, 0.5);
+	  gtk_label_set_ellipsize (GTK_LABEL (box->label), PANGO_ELLIPSIZE_NONE);
 	}
       gtk_label_set_angle (GTK_LABEL (box->label),
 			   (indicator_config_get_orientation (box->config) == GTK_ORIENTATION_VERTICAL) ?
