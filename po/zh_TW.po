@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Walter Cheuk <wwycheuk@gmail.com>, 2013
+# Walter Cheuk <wwycheuk@gmail.com>, 2013-2014
 # sofyalai <sofyalai@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2013-11-16 11:52+0000\n"
-"Last-Translator: sofyalai <sofyalai@gmail.com>\n"
+"PO-Revision-Date: 2014-01-04 05:57+0000\n"
+"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,11 +27,11 @@ msgstr "指示器插件"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "為 Unity 指示器提供面板空間。「指示器」讓應用程式和系統服務顯示其狀態以及與使用者互動。"
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
-msgstr "Copyright (c) 2009-2013\n"
+msgstr "著作權 (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
@@ -102,7 +102,7 @@ msgstr "您確定要清除已知的指示器清單嗎？"
 #: ../panel-plugin/indicator-dialog.c:593
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "無法開啟以下 url: %s"
+msgstr "無法開啟以下 URL：%s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "Indicators"
@@ -110,23 +110,23 @@ msgstr "指示器"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr ""
+msgstr "將指示器重新整理為一列"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr ""
+msgstr "若啟用，確保指示器會在單一列或欄顯示。"
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr "桌面工具模式時, 靠左對齊"
+msgstr "桌面工具模式時，靠左對齊"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "當工具列設定為桌面工具模式時, 控制指示器按鈕的版面之可行選項為\"置中\"或\"靠左對齊\"."
+msgstr "當工具列設定為桌面工具模式時，控制指示器按鈕的版面。可行選項為「置中」或「靠左對齊」。"
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -134,13 +134,13 @@ msgstr "外觀"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Hide indicators by default"
-msgstr ""
+msgstr "預設隱藏指示器"
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
+msgstr "若啟用，只顯示標為「可見」的指示器。否則會顯示所有沒有標為「隱藏」的指示器。"
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -168,12 +168,12 @@ msgstr "<i>請重新啟動工具列使可見性變更生效<i/>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
-msgstr "清除已知顯示器(_L)"
+msgstr "清除已知指示器(_L)"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
-msgstr ""
+msgstr "重設指示器清單及其可見性設定值。"
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
-msgstr ""
+msgstr "已知指示器"
