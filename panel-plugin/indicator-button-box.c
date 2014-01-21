@@ -423,7 +423,9 @@ indicator_button_box_get_preferred_width (GtkWidget *widget,
     {
       gtk_widget_get_preferred_width (box->label, &min_size, &nat_size);
 
-      if (box->icon != NULL && box->orientation == GTK_ORIENTATION_HORIZONTAL)
+      if (box->icon != NULL &&
+          gtk_image_get_storage_type (GTK_IMAGE (box->icon)) != GTK_IMAGE_EMPTY &&
+          box->orientation == GTK_ORIENTATION_HORIZONTAL)
         {
           min_size = min_size + ICON_SIZE + SPACING;
           nat_size = nat_size + ICON_SIZE + SPACING;
@@ -476,7 +478,9 @@ indicator_button_box_get_preferred_height (GtkWidget *widget,
     {
       gtk_widget_get_preferred_height (box->label, &min_size, &nat_size);
 
-      if (box->icon != NULL && box->orientation == GTK_ORIENTATION_VERTICAL)
+      if (box->icon != NULL &&
+          gtk_image_get_storage_type (GTK_IMAGE (box->icon)) != GTK_IMAGE_EMPTY &&
+          box->orientation == GTK_ORIENTATION_VERTICAL)
         {
           min_size = min_size + ICON_SIZE + SPACING;
           nat_size = nat_size + ICON_SIZE + SPACING;
@@ -530,7 +534,10 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
 
   indicator_button_box_is_small (box); // refresh cache
 
-  if (box->icon != NULL && box->label != NULL && !box->is_small)
+  if (box->icon != NULL &&
+      gtk_image_get_storage_type (GTK_IMAGE (box->icon)) != GTK_IMAGE_EMPTY &&
+      box->label != NULL &&
+      !box->is_small)
     {
       if (box->orientation == GTK_ORIENTATION_HORIZONTAL)
         {
@@ -547,7 +554,8 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
       gtk_widget_size_allocate (box->icon, &icon_alloc);
       gtk_widget_size_allocate (box->label, &label_alloc);
     }
-  else if (box->icon != NULL)
+  else if (box->icon != NULL &&
+           gtk_image_get_storage_type (GTK_IMAGE (box->icon)) != GTK_IMAGE_EMPTY)
     {
       gtk_widget_size_allocate (box->icon, &icon_alloc);
     }
