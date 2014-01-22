@@ -43,7 +43,6 @@
 //#define INDICATOR_OBJECT_SIGNAL_ENTRY_SCROLLED "scroll-entry"
 //#endif
 
-static void                 xfce_indicator_button_finalize        (GObject                *object);
 static gboolean             xfce_indicator_button_button_press    (GtkWidget              *widget,
                                                                    GdkEventButton         *event);
 static gboolean             xfce_indicator_button_button_release  (GtkWidget              *widget,
@@ -73,6 +72,7 @@ struct _XfceIndicatorButton
 
   GtkWidget            *align_box;
   GtkWidget            *box;
+  gulong                deactivate_id;
 };
 
 struct _XfceIndicatorButtonClass
@@ -88,11 +88,7 @@ G_DEFINE_TYPE (XfceIndicatorButton, xfce_indicator_button, GTK_TYPE_TOGGLE_BUTTO
 static void
 xfce_indicator_button_class_init (XfceIndicatorButtonClass *klass)
 {
-  GObjectClass      *gobject_class;
   GtkWidgetClass    *widget_class;
-
-  gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize = xfce_indicator_button_finalize;
 
   widget_class = GTK_WIDGET_CLASS (klass);
   widget_class->button_press_event = xfce_indicator_button_button_press;
@@ -122,22 +118,11 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   button->plugin = NULL;
   button->config = NULL;
   button->menu = NULL;
+  button->deactivate_id = 0;
 
   button->align_box = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
   gtk_container_add (GTK_CONTAINER (button), button->align_box);
   gtk_widget_show (button->align_box);
-}
-
-
-
-static void
-xfce_indicator_button_finalize (GObject *object)
-{
-  XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (object);
-
-  xfce_indicator_button_disconnect_signals (button);
-
-  G_OBJECT_CLASS (xfce_indicator_button_parent_class)->finalize (object);
 }
 
 
@@ -174,13 +159,15 @@ xfce_indicator_button_set_menu (XfceIndicatorButton *button,
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_MENU (menu));
 
-  if (button->menu != menu)
+  if (button->menu != NULL)
     {
-      button->menu = menu;
-      g_signal_connect_swapped (G_OBJECT (button->menu), "deactivate",
-                                G_CALLBACK (xfce_indicator_button_menu_deactivate), button);
-      gtk_menu_attach_to_widget(menu, GTK_WIDGET (button), NULL);
+      gtk_menu_detach (button->menu);
+      gtk_menu_popdown (button->menu);
+      button->menu = NULL;
     }
+
+  button->menu = menu;
+  gtk_menu_attach_to_widget(menu, GTK_WIDGET (button), NULL);
 }
 
 
@@ -297,14 +284,17 @@ xfce_indicator_button_new (IndicatorObject      *io,
 
 
 void
-xfce_indicator_button_disconnect_signals (XfceIndicatorButton *button)
+xfce_indicator_button_destroy (XfceIndicatorButton *button)
 {
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
 
-  if (button->menu != 0)
+  if (button->menu != NULL)
     {
+      gtk_menu_detach (button->menu);
       gtk_menu_popdown (button->menu);
+      button->menu = NULL;
     }
+  gtk_widget_destroy (GTK_WIDGET (button));
 }
 
 
@@ -316,13 +306,14 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
 
   if(event->button == 1 && button->menu != NULL) /* left click only */
     {
-      //gtk_menu_attach_to_widget(button->menu, GTK_WIDGET (button), NULL);
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
+      button->deactivate_id = g_signal_connect_swapped
+        (G_OBJECT (button->menu), "deactivate",
+         G_CALLBACK (xfce_indicator_button_menu_deactivate), button);
       gtk_menu_reposition (GTK_MENU (button->menu));
       gtk_menu_popup (button->menu, NULL, NULL,
                       xfce_panel_plugin_position_menu, button->plugin,
                       event->button, event->time);
-      //gtk_menu_detach(button->menu);
       return TRUE;
     }
 
@@ -366,6 +357,11 @@ xfce_indicator_button_menu_deactivate (XfceIndicatorButton *button,
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_MENU (menu));
 
+  if (button->deactivate_id)
+    {
+      g_signal_handler_disconnect (menu, button->deactivate_id);
+      button->deactivate_id = 0;
+    }
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), FALSE);
 }
 

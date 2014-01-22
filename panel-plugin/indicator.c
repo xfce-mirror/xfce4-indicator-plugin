@@ -341,8 +341,7 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
   /* remove placeholder item when there are real entries to be added */
   if (indicator->item != NULL)
     {
-      xfce_indicator_button_disconnect_signals (XFCE_INDICATOR_BUTTON (indicator->item));
-      gtk_widget_destroy (GTK_WIDGET (indicator->item));
+      xfce_indicator_button_destroy (XFCE_INDICATOR_BUTTON (indicator->item));
       indicator->item = NULL;
     }
 
@@ -367,6 +366,9 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
 static void
 entry_removed (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_data)
 {
+  const gchar     *io_name = g_object_get_data (G_OBJECT (io), "io-name");
+
+  g_debug("Entry removed for io=%s", io_name);
   xfce_indicator_box_remove_entry (XFCE_INDICATOR_BOX (user_data), entry);
 }
 

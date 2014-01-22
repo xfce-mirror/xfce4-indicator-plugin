@@ -69,7 +69,7 @@ GtkWidget              *xfce_indicator_button_new         (IndicatorObject      
                                                            XfcePanelPlugin            *plugin,
                                                            IndicatorConfig            *config);
 
-void                    xfce_indicator_button_disconnect_signals (XfceIndicatorButton *button);
+void                    xfce_indicator_button_destroy     (XfceIndicatorButton *button);
 
 G_END_DECLS
 

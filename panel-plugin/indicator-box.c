@@ -595,8 +595,7 @@ xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
           button = XFCE_INDICATOR_BUTTON (li_tmp->data);
           if (xfce_indicator_button_get_entry (button) == entry)
             {
-              xfce_indicator_button_disconnect_signals (button);
-              gtk_widget_destroy (GTK_WIDGET (button));
+              xfce_indicator_button_destroy (button);
               return;
             }
         }
