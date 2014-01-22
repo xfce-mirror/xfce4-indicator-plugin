@@ -137,14 +137,6 @@ xfce_indicator_button_finalize (GObject *object)
 
   xfce_indicator_button_disconnect_signals (button);
 
-  if (button->menu != NULL)
-    g_object_unref (G_OBJECT (button->menu));
-  /* IndicatorObjectEntry is not GObject */
-  /* if (button->entry != NULL) */
-  /*   g_object_unref (G_OBJECT (button->entry)); */
-  if (button->io != NULL)
-    g_object_unref (G_OBJECT (button->io));
-
   G_OBJECT_CLASS (xfce_indicator_button_parent_class)->finalize (object);
 }
 
@@ -184,10 +176,7 @@ xfce_indicator_button_set_menu (XfceIndicatorButton *button,
 
   if (button->menu != menu)
     {
-      if (button->menu != NULL)
-        g_object_unref (G_OBJECT (button->menu));
       button->menu = menu;
-      g_object_ref (G_OBJECT (button->menu));
       g_signal_connect_swapped (G_OBJECT (button->menu), "deactivate",
                                 G_CALLBACK (xfce_indicator_button_menu_deactivate), button);
       gtk_menu_attach_to_widget(menu, GTK_WIDGET (button), NULL);
@@ -302,11 +291,6 @@ xfce_indicator_button_new (IndicatorObject      *io,
   gtk_container_add (GTK_CONTAINER (button->align_box), button->box);
   gtk_widget_show (button->box);
 
-  if (button->io != NULL)
-    g_object_ref (G_OBJECT (button->io));
-  /* IndicatorObjectEntry is not GObject */
-  /* g_object_ref (G_OBJECT (button->entry)); */
-
   return GTK_WIDGET (button);
 }
 
@@ -332,11 +316,13 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
 
   if(event->button == 1 && button->menu != NULL) /* left click only */
     {
+      //gtk_menu_attach_to_widget(button->menu, GTK_WIDGET (button), NULL);
       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
       gtk_menu_reposition (GTK_MENU (button->menu));
       gtk_menu_popup (button->menu, NULL, NULL,
                       xfce_panel_plugin_position_menu, button->plugin,
                       event->button, event->time);
+      //gtk_menu_detach(button->menu);
       return TRUE;
     }
 

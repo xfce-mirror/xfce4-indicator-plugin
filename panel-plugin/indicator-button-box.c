@@ -148,11 +148,6 @@ indicator_button_box_finalize (GObject *object)
 
   indicator_button_box_disconnect_signals (box);
 
-  if (box->label != NULL)
-    g_object_unref (G_OBJECT (box->label));
-  if (box->icon != NULL)
-    g_object_unref (G_OBJECT (box->icon));
-
   G_OBJECT_CLASS (indicator_button_box_parent_class)->finalize (object);
 }
 
@@ -237,12 +232,8 @@ indicator_button_box_set_label (IndicatorButtonBox  *box,
   g_return_if_fail (GTK_IS_LABEL (label));
 
   if (box->label != NULL)
-    {
-      gtk_container_remove (GTK_CONTAINER (box), box->label);
-      g_object_unref (G_OBJECT (box->label));
-    }
+    gtk_container_remove (GTK_CONTAINER (box), box->label);
   box->label = GTK_WIDGET (label);
-  g_object_ref (G_OBJECT (box->label));
   g_signal_connect(G_OBJECT(box->label), "notify::label",
                    G_CALLBACK(indicator_button_box_label_changed), box);
   g_signal_connect(G_OBJECT(box->label), "notify::visible",
@@ -284,13 +275,9 @@ indicator_button_box_set_image (IndicatorButtonBox  *box,
   /* g_debug ("indicator-button-box set image, image=%x", (uint) image); */
 
   if (box->icon != NULL)
-    {
-      gtk_container_remove (GTK_CONTAINER (box), box->icon);
-      g_object_unref (G_OBJECT (box->icon));
-    }
+    gtk_container_remove (GTK_CONTAINER (box), box->icon);
 
   box->icon = GTK_WIDGET (image);
-  g_object_ref (G_OBJECT (box->icon));
   g_signal_connect(G_OBJECT(box->icon), "notify::pixbuf",
                    G_CALLBACK(indicator_button_box_icon_changed), box);
 
