@@ -1,3 +1,24 @@
+# created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2014-02-16 24fb6ad Depend on xfce4-panel 4.11.0 Andrzej <ndrwrdck@gmail.com>
+2014-02-14 019468d dialog: do not use deprecated gtk stock items Andrzej <ndrwrdck@gmail.com>
+2014-02-08 29e4b7d I18n: Add new translation sv (100%). PavelNicklasson <pavelnicklasson@bahnhof.se>
+2014-01-26 9bea734 I18n: Update translation id (100%). padmawan <andhika.padmawan@gmail.com>
+2014-01-22 9003be9 Improved handling of popup menus Andrzej <ndrwrdck@gmail.com>
+2014-01-22 11fbd8c Do not ref/unref widgets and let libindicator manage them Andrzej <ndrwrdck@gmail.com>
+2014-01-21 6eec40b Fixed button sizing when icon/image storage type == GTK_IMAGE_EMPTY Andrzej <ndrwrdck@gmail.com>
+2014-01-21 723a2db Fixed a randomly missing icon in sound indicator Andrzej <ndrwrdck@gmail.com>
+2014-01-04 2c252c2 I18n: Update translation zh_TW (97%). Walter Cheuk <wwycheuk@gmail.com>
+2014-01-03 54fb801 I18n: Update translation de (100%). Anonymous <noreply@xfce.org>
+2013-12-30 823f19c I18n: Update translation de (94%). Anonymous <noreply@xfce.org>
+2013-12-30 412b23e I18n: Update translation de (89%). Anonymous <noreply@xfce.org>
+2013-12-18 0ee1b17 Check if labels are visible. Andrzej <ndrwrdck@gmail.com>
+2013-12-18 f7ad97a Ellipsize labels only in deskbar mode. Andrzej <ndrwrdck@gmail.com>
+2013-12-11 d046d4b Check for empty labels to optimize layout Andrzej <ndrwrdck@gmail.com>
+2013-12-06 bb66797 I18n: Add new translation oc (100%). Cedric31 <cvalmary@yahoo.fr>
+2013-12-04 887fe33 I18n: Update translation sl (100%). anthonmanix <anthon.manix@gmail.com>
+2013-12-03 7f1fd24 I18n: Add new translation sl (86%). anthonmanix <anthon.manix@gmail.com>
+2013-12-01 ec0a224 Back to development Andrzej <ndrwrdck@gmail.com>
+2013-12-01 7a07e81 Preparing for a release Andrzej <ndrwrdck@gmail.com>
 2013-12-01 4971cc4 Changed required version of libxfce4panel Andrzej <ndrwrdck@gmail.com>
 2013-11-18 b992563 I18n: Update translation da (100%). cedeel <chris@cedeel.com>
 2013-11-16 bc7f4df I18n: Update translation zh_TW (78%). sofyalai <sofyalai@gmail.com>
