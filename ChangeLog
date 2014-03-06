@@ -1,4 +1,11 @@
 # created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2014-03-06 f74e861 Changed border-width to 1px. Andrzej <ndrwrdck@gmail.com>
+2014-03-06 fb527c4 Set default theme setting (thanks ochosi) Andrzej <ndrwrdck@gmail.com>
+2014-02-26 09f0c1e I18n: Add new translation ms (100%). abuyop <abuyop@gmail.com>
+2014-02-24 59eab9e I18n: Update translation hr (100%). schizo <eveskovic@gmail.com>
+2014-02-20 c6a6d88 I18n: Update translation ja (100%). Masato HASHIMOTO <cabezon.hashimoto@gmail.com>
+2014-02-16 fed00f8 Back to development. Andrzej <ndrwrdck@gmail.com>
+2014-02-16 620b8e7 Updates for the release Andrzej <ndrwrdck@gmail.com>
 2014-02-16 24fb6ad Depend on xfce4-panel 4.11.0 Andrzej <ndrwrdck@gmail.com>
 2014-02-14 019468d dialog: do not use deprecated gtk stock items Andrzej <ndrwrdck@gmail.com>
 2014-02-08 29e4b7d I18n: Add new translation sv (100%). PavelNicklasson <pavelnicklasson@bahnhof.se>
