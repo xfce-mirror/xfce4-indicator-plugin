@@ -1,4 +1,7 @@
 # created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2014-03-15 162fac0 Fix blank properties window, but #10749 Andrzej <ndrwrdck@gmail.com>
+2014-03-06 7c56c15 Back to development Andrzej <ndrwrdck@gmail.com>
+2014-03-06 0e63aaf Updates for the release Andrzej <ndrwrdck@gmail.com>
 2014-03-06 f74e861 Changed border-width to 1px. Andrzej <ndrwrdck@gmail.com>
 2014-03-06 fb527c4 Set default theme setting (thanks ochosi) Andrzej <ndrwrdck@gmail.com>
 2014-02-26 09f0c1e I18n: Add new translation ms (100%). abuyop <abuyop@gmail.com>
