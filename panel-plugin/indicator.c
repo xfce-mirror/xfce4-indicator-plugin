@@ -92,6 +92,9 @@ struct _IndicatorPlugin
   /* indicator settings */
   IndicatorConfig *config;
 
+  /* config dialog builder */
+  IndicatorDialog *dialog;
+
   /* log file */
   FILE            *logfile;
 };
@@ -191,7 +194,7 @@ indicator_configure_plugin (XfcePanelPlugin *plugin)
 {
   IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
 
-  indicator_dialog_show (gtk_widget_get_screen (GTK_WIDGET (plugin)), indicator->config);
+  indicator_dialog_show (indicator->dialog, gtk_widget_get_screen (GTK_WIDGET (plugin)));
 }
 
 
@@ -296,6 +299,9 @@ indicator_construct (XfcePanelPlugin *plugin)
 
   /* initialize xfconf */
   indicator->config = indicator_config_new (xfce_panel_plugin_get_property_base (plugin));
+
+  /* instantiate preference dialog builder */
+  indicator->dialog = indicator_dialog_new (indicator->config);
 
   /* instantiate a button box */
   indicator->buttonbox = xfce_indicator_box_new (indicator->config);

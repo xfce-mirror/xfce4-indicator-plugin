@@ -80,9 +80,6 @@ static const gchar *pretty_names[][3] =
 #define ICON_SIZE     (22)
 
 static void              indicator_dialog_build                  (IndicatorDialog          *dialog);
-static void              indicator_dialog_close_button_clicked   (IndicatorDialog          *dialog,
-                                                                  GtkWidget                *button);
-
 static void              indicator_dialog_help_button_clicked    (IndicatorDialog          *dialog,
                                                                   GtkWidget                *button);
 
@@ -481,8 +478,8 @@ indicator_dialog_build (IndicatorDialog *dialog)
       object = gtk_builder_get_object (builder, "close-button");
       g_return_if_fail (GTK_IS_BUTTON (object));
       g_signal_connect_swapped (G_OBJECT (object), "clicked",
-                                G_CALLBACK (indicator_dialog_close_button_clicked),
-                                dialog);
+                                G_CALLBACK (gtk_widget_destroy),
+                                dialog->dialog);
 
       object = gtk_builder_get_object (builder, "help-button");
       g_return_if_fail (GTK_IS_BUTTON (object));
@@ -558,19 +555,6 @@ indicator_dialog_build (IndicatorDialog *dialog)
 
 
 static void
-indicator_dialog_close_button_clicked (IndicatorDialog *dialog,
-                                       GtkWidget       *button)
-{
-  g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
-  g_return_if_fail (GTK_IS_BUTTON (button));
-  g_return_if_fail (GTK_IS_WINDOW (dialog->dialog));
-
-  gtk_widget_destroy (GTK_WIDGET (dialog->dialog));
-  g_object_unref (G_OBJECT (dialog));
-}
-
-
-static void
 indicator_dialog_help_button_clicked (IndicatorDialog *dialog,
                                       GtkWidget       *button)
 {
@@ -598,26 +582,28 @@ indicator_dialog_help_button_clicked (IndicatorDialog *dialog,
 
 
 void
-indicator_dialog_show (GdkScreen       *screen,
-                       IndicatorConfig *config)
+indicator_dialog_show (IndicatorDialog *dialog,
+                       GdkScreen       *screen)
 {
-  static IndicatorDialog *dialog = NULL;
-
+  g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
   g_return_if_fail (GDK_IS_SCREEN (screen));
-  g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
 
-  if (dialog == NULL)
-    {
-      dialog = g_object_new (XFCE_TYPE_INDICATOR_DIALOG, NULL);
-      g_object_add_weak_pointer (G_OBJECT (dialog), (gpointer *) &dialog);
-      dialog->config = config;
-      indicator_dialog_build (XFCE_INDICATOR_DIALOG (dialog));
-      gtk_widget_show (GTK_WIDGET (dialog->dialog));
-    }
-  else
-    {
-      gtk_window_present (GTK_WINDOW (dialog->dialog));
-    }
+  indicator_dialog_build (XFCE_INDICATOR_DIALOG (dialog));
+  gtk_widget_show (GTK_WIDGET (dialog->dialog));
 
   gtk_window_set_screen (GTK_WINDOW (dialog->dialog), screen);
+}
+
+
+IndicatorDialog *
+indicator_dialog_new (IndicatorConfig *config)
+{
+  IndicatorDialog *dialog;
+
+  g_return_val_if_fail (XFCE_IS_INDICATOR_CONFIG (config), NULL);
+
+  dialog = g_object_new (XFCE_TYPE_INDICATOR_DIALOG, NULL);
+  dialog->config = config;
+
+  return dialog;
 }
