@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-06 00:31+0200\n"
+"PO-Revision-Date: 2014-04-15 02:12+0000\n"
+"Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
+"Language-Team: Asturian (http://www.transifex.com/projects/p/xfce/language/ast/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ast\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "Indicator Plugin"
+msgstr "Complementu indicador"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr "Apurre un area de panel pa indicadores Unity. Los indicadores permiten a les aplicaciones y a los servicios del sistema amosar el so estáu ya interactuar col usuariu."
+
+#: ../panel-plugin/indicator.c:176
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Copyright (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:312
+msgid "No Indicators"
+msgstr "Nun hai indicadores"
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Indicadores d'aplicación"
+
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+msgid "Sound Menu"
+msgstr "Menñu de soníu"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Printers Menu"
+msgstr "Menú d'imprentadores"
+
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+msgid "Power Management"
+msgstr "Alministración d'enerxía"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Application Menus (Global Menu)"
+msgstr "Menús d'aplicación (menú global)"
+
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+msgid "Session Management"
+msgstr "Alministración de sesión"
+
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+msgid "Messaging Menu"
+msgstr "Menú de mensaxería"
+
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+msgid "Date and Time"
+msgstr "Data y hora"
+
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ../panel-plugin/indicator-dialog.c:72
+msgid "Sync Menu"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr "Tecláu"
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr "Allugamientu"
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr "Rede"
+
+#: ../panel-plugin/indicator-dialog.c:76
+msgid "Workrave"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.c:450
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "¿De xuru quies llimpiar la llista d'indicadores conocíos?"
+
+#: ../panel-plugin/indicator-dialog.c:593
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Nun pue abrise la siguiente url: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "Indicators"
+msgstr "INdicadores"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Arrange indicators in a single row"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Appearance"
+msgstr "Aspeutu"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "Anubrir indicadores por defeutu"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "Cuando s'habilita, namái amosaránse los marcadores conseñaos como \"Visible\". D'otramiente, tolos indicadores non conseñaos como \"Anubríu\" amosaránse."
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Indicador"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Hidden"
+msgstr "Anubríu"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Visible"
+msgstr "Visible"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row up."
+msgstr "Mover l'indicador esbilláu una filera haza arriba."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr "Mover l'indicador esbilláu una filera haza abaxo."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Por favor, reanicia'l panel pa que los cambeos de visibilidá faigan efeutu.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "L_limpiar indicadores conocíos"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Reaniciar les llistes d'indicadores y los sos axustes de visibilidá."
+
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "Known Indicators"
+msgstr "Indicadores conocíos"
