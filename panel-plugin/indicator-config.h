@@ -36,13 +36,6 @@ typedef struct _IndicatorConfig      IndicatorConfig;
 
 #define XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY (indicator_config_value_array_get_type ())
 
-typedef struct _IncicatorConfigProperty IndicatorConfigProperty;
-struct _IndicatorConfigProperty
-{
-  const gchar     *property;
-  GType            type;
-};
-
 GType              indicator_config_value_array_get_type    (void) G_GNUC_CONST;
 
 GType              indicator_config_get_type                (void) G_GNUC_CONST;
