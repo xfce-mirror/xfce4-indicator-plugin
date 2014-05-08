@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
+# Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2014-04-26 21:43+0000\n"
+"PO-Revision-Date: 2014-05-08 07:37+0000\n"
 "Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -115,7 +116,7 @@ msgstr "Ordenar los indicadores namái nuna filera "
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr ""
+msgstr "Si s'habilita, asegúrate que los indicadores tan espadíos nuna filera o columna sola."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
