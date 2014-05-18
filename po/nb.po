@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# kingu <comradekingu@gmail.com>, 2014
+# haarek <haarektrans@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-06 00:31+0200\n"
+"PO-Revision-Date: 2014-05-18 15:45+0000\n"
+"Last-Translator: kingu <comradekingu@gmail.com>\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce-panel-plugins/language/nb/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "Indicator Plugin"
+msgstr "Informasjonsvisnings-tillegg"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr "Oppretter et panelområde for Unity-instrumentering. Instrumenter gir programmer og systemtjenester muligheten til å vise status og annen info på en interaktiv måte."
+
+#: ../panel-plugin/indicator.c:176
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Opphavsrett (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:312
+msgid "No Indicators"
+msgstr "Ingen informasjons-instrumentering"
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Informasjons-instrumentering for programmer"
+
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+msgid "Sound Menu"
+msgstr "Lydmeny"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Printers Menu"
+msgstr "Skrivermeny"
+
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+msgid "Power Management"
+msgstr "Strømstyring"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Application Menus (Global Menu)"
+msgstr "Informasjonsinstrumenterings-menyer (Global meny)"
+
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+msgid "Session Management"
+msgstr "Øktbehandling"
+
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+msgid "Messaging Menu"
+msgstr "Meldings-meny"
+
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+msgid "Date and Time"
+msgstr "Dato og tid"
+
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+msgid "Bluetooth"
+msgstr "Blåtann"
+
+#: ../panel-plugin/indicator-dialog.c:72
+msgid "Sync Menu"
+msgstr "Synkroniserings-meny"
+
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr "Tastatur"
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr "Plassering"
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr "Nettverk"
+
+#: ../panel-plugin/indicator-dialog.c:76
+msgid "Workrave"
+msgstr "Workrave"
+
+#: ../panel-plugin/indicator-dialog.c:450
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Er du sikker på at du vil slette listen over kjente informasjons-instrumentering?"
+
+#: ../panel-plugin/indicator-dialog.c:593
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Kunne ikke åpne nettadressen %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "Indicators"
+msgstr "Instrumentering"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Arrange indicators in a single row"
+msgstr "Ta oppstilling for instrumentering på én rad"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "Hvis påskrudd, tar oppstillng av instrumentering på én enkelt rad eller kolonne."
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr "Venstrejuster i skrivebordsmodus"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr "Kontroller at instrumenteringens knappeoppsett når panelet er i skrivebordsmodus. Mulige valg er \"sentrert\" eller \"venstrejustert\"."
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Appearance"
+msgstr "Utseende"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "Gjem instrumentering som standard"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "Ved påslag vil bare instrumentering merket \"Synlig\" bli vist. Ellers vil all instrumentering merket \"Skjult\" bli vist"
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "Instrument"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Hidden"
+msgstr "Skjult"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Visible"
+msgstr "Synlig"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row up."
+msgstr "Flytt valgt instrument en rad oppover."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr "Flytt valgt instrument en rad nedover."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Vennligst start panelet på nytt for at synlige endringer skal tre i kraft</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "T_øm kjent instrumentering"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Tilbakestill listen over instrumentering og deres synlighetsinnstillinger."
+
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "Known Indicators"
+msgstr "Kjente indikatorer"
