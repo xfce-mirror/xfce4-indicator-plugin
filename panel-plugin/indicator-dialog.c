@@ -443,7 +443,7 @@ indicator_dialog_clear_clicked (GtkWidget       *button,
   g_return_if_fail (GTK_IS_LIST_STORE (dialog->store));
 
   if (xfce_dialog_confirm (GTK_WINDOW (gtk_widget_get_toplevel (button)),
-                           "edit-clear", NULL, NULL,
+                           "gtk-clear", NULL, NULL,
                            _("Are you sure you want to clear the list of "
                              "known indicators?")))
     {
