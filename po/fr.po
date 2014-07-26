@@ -5,14 +5,15 @@
 # Translators:
 # Alexandre Franke <alexandre.franke@gmail.com>, 2009
 # jc1 <jc1.quebecos@gmail.com>, 2013
+# Yannick Le Guen <leguen.yannick@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2013-09-07 06:59+0000\n"
-"Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/xfce/language/fr/)\n"
+"PO-Revision-Date: 2014-07-26 16:30+0000\n"
+"Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/xfce-panel-plugins/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +28,7 @@ msgstr "Greffon indicateur"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Fournit une zone du tableau pour des indicateurs d'Unity. Les indicateurs permettent aux applications et aux services du système à afficher leur état ​​et d'interagir avec l'utilisateur."
+msgstr "Fournit une zone du tableau de bord pour les indicateurs Unity. Les indicateurs permettent aux applications et aux services du système d'afficher leur état ​​et d'interagir avec l'utilisateur."
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
@@ -41,7 +42,7 @@ msgstr "Aucun indicateur"
 #. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
-msgstr "Indicateurs application"
+msgstr "Indicateurs des applications"
 
 #: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
 msgid "Sound Menu"
@@ -57,7 +58,7 @@ msgstr "Gestion de l'énergie"
 
 #: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
-msgstr "Menus application (menu global)"
+msgstr "Menus des applications (menu global)"
 
 #: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
@@ -110,13 +111,13 @@ msgstr "Indicateurs"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr "Arranger des indicateurs en une seule ligne"
+msgstr "Arranger les indicateurs sur une seule ligne"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr "Si activée, s'assure que les indicateurs sont disposés en une seule ligne ou colonne."
+msgstr "Si activé, permet de disposer les indicateurs sur une seule ligne ou colonne."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -126,7 +127,7 @@ msgstr "Aligner à gauche en mode barre de bureau"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Contrôle la disposition des boutons indicateur lorsque le panneau est en mode barre de bureau. Les choix possibles sont « centré » ou « aligné à gauche »."
+msgstr "Contrôle la disposition des boutons indicateurs lorsque le tableau de bord est en mode barre du bureau. Les choix possibles sont « centré » ou « aligné à gauche »."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -140,7 +141,7 @@ msgstr "Masquer les indicateurs par défaut"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Lorsqu'elle est activée, seuls les indicateurs marqués « Visible » sont affichés. Dans le cas contraire, tous les indicateurs non marqués « Caché » sont affichés."
+msgstr "Si activé, seuls les indicateurs marqués « Visible » sont affichés. Dans le cas contraire, tous les indicateurs non marqués « Caché » sont affichés."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -164,16 +165,16 @@ msgstr "Déplacer l'indicateur sélectionné une ligne vers le bas."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>S'il vous plaît redémarrer le panneau pour que les changements de visibilité prennent effet.</i>"
+msgstr "<i>Veuillez redémarrer le tableau de bord pour que les changements de visibilité prennent effet.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
-msgstr "Effacer les indicateur connus"
+msgstr "Effa_cer les indicateurs connus"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
-msgstr "Réinitialise la liste des indicateurs et de leurs paramètres de visibilité."
+msgstr "Réinitialise la liste des indicateurs et leurs paramètres de visibilité."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
-msgstr "Indicateur connus"
+msgstr "Indicateurs connus"
