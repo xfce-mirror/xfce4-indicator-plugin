@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2014-07-26 16:30+0000\n"
+"PO-Revision-Date: 2014-07-26 16:32+0000\n"
 "Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce-panel-plugins/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -121,7 +121,7 @@ msgstr "Si activé, permet de disposer les indicateurs sur une seule ligne ou co
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr "Aligner à gauche en mode barre de bureau"
+msgstr "Aligner à gauche en mode barre du bureau"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
