@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Mark__T <mark@foresightlinux.org>, 2009
-# M4he, 2013
-# to_ba, 2013-2014
+# Markus Hentsch, 2013
+# Tobias Bannert, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2014-01-02 23:20+0000\n"
-"Last-Translator: to_ba\n"
-"Language-Team: German (http://www.transifex.com/projects/p/xfce/language/de/)\n"
+"PO-Revision-Date: 2014-08-01 18:42+0000\n"
+"Last-Translator: Tobias Bannert\n"
+"Language-Team: German (http://www.transifex.com/projects/p/xfce-panel-plugins/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,7 +32,7 @@ msgstr "Stellt einen Leistenbereich für Unity-Anzeigen zur Verfügung. Diese An
 
 #: ../panel-plugin/indicator.c:176
 msgid "Copyright (c) 2009-2013\n"
-msgstr "Copyright (c) 2009-2013\n"
+msgstr "Urheberrecht (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:312
 msgid "No Indicators"
@@ -111,7 +111,7 @@ msgstr "Anzeigen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr "Anzeigen in einer einzigen Zeile anordnen"
+msgstr "Anzeigen in einer einzelnen Zeile anordnen"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
@@ -121,13 +121,13 @@ msgstr "Wenn aktiviert, werden Anzeige in einer einzelnen Reihe oder Spalte ausg
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr "Im Deskbarmodus linksbündig ausrichten"
+msgstr "Im Schreibtischleistenmodus linksbündig ausrichten"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Bestimmt die Ausrichtung der Anzeigenknöpfe im Deskbarmodus. Mögliche Auswahl: »zentriert« oder »linksbündig«"
+msgstr "Bestimmt die Ausrichtung der Anzeigenknöpfe im Schreibtischleistenmodus. Mögliche Auswahl: »zentriert« oder »linksbündig«"
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -165,7 +165,7 @@ msgstr "Ausgewählte Anzeige eine Position hinab setzten."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Sie müssen die Leiste neu starten damit die Änderungen wirksam werden</i>"
+msgstr "<i>Sie müssen die Leiste neu starten, damit die Änderungen wirksam werden</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "C_lear known indicators"
