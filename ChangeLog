@@ -1,4 +1,22 @@
 # created with git log --pretty=format:"%ad %h %s %aN <%aE>" --no-merges --date=short
+2014-12-26 fa87db8 I18n: Update translation es (100%). Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>
+2014-08-02 2548737 I18n: Update translation de (100%). Anonymous <noreply@xfce.org>
+2014-07-27 8f4c553 I18n: Update translation fr (100%). Yannick Le Guen <leguen.yannick@gmail.com>
+2014-07-26 36236bf I18n: Update translation fr (100%). Yannick Le Guen <leguen.yannick@gmail.com>
+2014-06-03 2fa0c85 Use "gtk-clear" icon for now. Andrzej <ndrwrdck@gmail.com>
+2014-05-28 e36d655 I18n: Add new translation th (100%). theppitak <theppitak@gmail.com>
+2014-05-19 e09fd2b I18n: Update translation es (100%). Pablo Lezaeta <prflr88@gmail.com>
+2014-05-18 fe401a7 I18n: Add new translation nb (100%). kingu <comradekingu@gmail.com>
+2014-05-08 da5fe5a I18n: Update translation ast (97%). Tornes Llume <l.lumex03.tornes@gmail.com>
+2014-05-05 9ee21aa Removed unused code. Andrzej <ndrwrdck@gmail.com>
+2014-04-29 a2effd7 I18n: Update translation pl (100%). Piotr Sokół <psokol@jabster.pl>
+2014-04-27 ae6ef40 I18n: Update translation ast (94%). Tornes Llume <l.lumex03.tornes@gmail.com>
+2014-04-16 5629390 I18n: Update translation zh_TW (100%). 柏諺 黃 <s8321414@gmail.com>
+2014-04-15 3624f25 I18n: Add new translation ast (83%). Tornes Llume <l.lumex03.tornes@gmail.com>
+2014-04-11 b3d007c I18n: Add new translation is (100%). Sveinn í Felli <sv1@fellsnet.is>
+2014-03-22 94c3e9f I18n: Update translation es (100%). Adolfo Jayme Barrientos <fitoschido@ubuntu.com>
+2014-03-15 0bbe3a6 Back to development Andrzej <ndrwrdck@gmail.com>
+2014-03-15 f33e74e Updates for the release Andrzej <ndrwrdck@gmail.com>
 2014-03-15 162fac0 Fix blank properties window, but #10749 Andrzej <ndrwrdck@gmail.com>
 2014-03-06 7c56c15 Back to development Andrzej <ndrwrdck@gmail.com>
 2014-03-06 0e63aaf Updates for the release Andrzej <ndrwrdck@gmail.com>
