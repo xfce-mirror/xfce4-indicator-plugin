@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Lyubomir Vasilev, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2013-09-06 05:45+0000\n"
-"Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
-"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce/language/bg/)\n"
+"PO-Revision-Date: 2015-02-23 15:37+0000\n"
+"Last-Translator: Lyubomir Vasilev\n"
+"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
-msgstr "Индикатор плъгин"
+msgstr "Индикатори"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
 msgid ""
@@ -124,7 +125,7 @@ msgstr "Подравняване вляво в Deskbar режим"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Контролира оформление индикатор бутона, когато панелът е в Deskbar режим. Възможните решения са \"центриране \" или \"ляво подравняване \"."
+msgstr "Контролира подредбата на бутоните в индикатора, когато панелът е в режим с работни ленти. Възможностите са „центриране“ или „подравняване отляво“."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -138,7 +139,7 @@ msgstr "Скриване на индикаторите по подразбира
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Когато е включено се показват само индикаторите, отбелязани като \"Видим\" . В противен случай, всички индикатори не маркирани, като \"Скрити \" се показват."
+msgstr "Когато е включено се показват само индикаторите, отбелязани като „Видими“. В противен случай, всички индикатори, които не са отбелязани като „Скрити“, се показват."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
