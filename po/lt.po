@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2015-03-17 14:19+0000\n"
+"PO-Revision-Date: 2015-03-27 11:58+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgstr "Klaviatūra"
 
 #: ../panel-plugin/indicator-dialog.c:74
 msgid "Location"
-msgstr ""
+msgstr "Vieta"
 
 #: ../panel-plugin/indicator-dialog.c:75
 msgid "Network"
@@ -140,7 +140,7 @@ msgstr "Slėpti indikatorius pagal numatymą"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
+msgstr "Kai įjungta, bus rodomi tik indikatoriai pažymėti kaip \"Matomas\". Kitu atveju, bus rodomi visi indikatoriai, kurie nėra pažymėti kaip \"Paslėptas\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -148,11 +148,11 @@ msgstr "Indikatorius"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
 msgid "Hidden"
-msgstr ""
+msgstr "Paslėptas"
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Visible"
-msgstr ""
+msgstr "Matomas"
 
 #: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row up."
