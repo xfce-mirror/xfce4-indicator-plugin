@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2015-04-28 21:28+0000\n"
+"PO-Revision-Date: 2015-05-15 23:39+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "Seanso Tvarkymas"
 
 #: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
 msgid "Messaging Menu"
-msgstr ""
+msgstr "Susirašinėjimų Meniu"
 
 #: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
 msgid "Date and Time"
