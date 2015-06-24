@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2015-05-15 23:39+0000\n"
+"PO-Revision-Date: 2015-06-24 11:59+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -120,13 +120,13 @@ msgstr "Jei įjungta, įsitikinkite, kad indikatoriai yra išdėstyti vienoje ei
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "Darbalaukio juostos veiksenoje lygiuoti kairėje"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "Valdo indikatoriaus mygtuko lygiuotę, kai skydelis yra Darbalaukio juostos veiksenoje. Galimi pasirinkimai yra \"centruotai\" arba \"lygiuota kairėje\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
