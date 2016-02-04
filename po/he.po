@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Elishai Eliyahu <e1907@mm.st>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-06 00:31+0200\n"
+"PO-Revision-Date: 2016-02-04 18:07+0000\n"
+"Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
+"Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-panel-plugins/language/he/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "Indicator Plugin"
+msgstr "תוסף אינדיקטור"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr "מספק שטח פאנל עבור אינדיקטורי אחידות. אינדיקטורים מאפשרים לתוכנות ושירותי מערכת להציג את הסטטוס שלהם ולבצע אינטראקציה עם המשתמש."
+
+#: ../panel-plugin/indicator.c:176
+msgid "Copyright (c) 2009-2013\n"
+msgstr "זכות יוצרים (c) 2009-2013\n"
+
+#: ../panel-plugin/indicator.c:312
+msgid "No Indicators"
+msgstr "אין אינדיקטורים"
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "אינדיקטורי תוכנה"
+
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+msgid "Sound Menu"
+msgstr "תפריט קול"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Printers Menu"
+msgstr "תפריט מדפסות"
+
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+msgid "Power Management"
+msgstr "ניהול הספק"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Application Menus (Global Menu)"
+msgstr "תפריטי תוכנה (תפריט גלובלי)"
+
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+msgid "Session Management"
+msgstr "ניהול סשן"
+
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+msgid "Messaging Menu"
+msgstr "תפריט מסרים"
+
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+msgid "Date and Time"
+msgstr "תאריך ושעה"
+
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+msgid "Bluetooth"
+msgstr "בלוטות'"
+
+#: ../panel-plugin/indicator-dialog.c:72
+msgid "Sync Menu"
+msgstr "תפריט סינכרון"
+
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr "מקלדת"
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr "מיקום"
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr "רשת"
+
+#: ../panel-plugin/indicator-dialog.c:76
+msgid "Workrave"
+msgstr "Workrave"
+
+#: ../panel-plugin/indicator-dialog.c:450
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "האם אתה בטוח שברצונך למחוק את הרשימה של אינדיקטורים ידועים?"
+
+#: ../panel-plugin/indicator-dialog.c:593
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "לא יכול לפתוח את הכתובת הבאה: %s "
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "Indicators"
+msgstr "אינדיקטורים"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Arrange indicators in a single row"
+msgstr "סדר אינדיקטורים בשורה יחידה"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "אם פועל, מוודא שהאינדיקטורים מסודרים בשורה או עמודה יחידים."
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr "יישר שמאלה במצב סרגל שולחני"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr "מבקר את הסידור של כפתור אינדיקטור כאשר הפאנל במצב סרגל שולחני. בחירות אפשריות הן \"ממורכז\" או \"מיושר שמאלה\"."
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Appearance"
+msgstr "מראה"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Hide indicators by default"
+msgstr "הסתר אינדיקטורים כברירת מחדל"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "כאשר מופעל, מוצגים רק אינדיקטורים שמסומנים \"גלוי\". אחרת, מוצגים כל האינדיקטורים שלא מסומנים \"נסתר\"."
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Indicator"
+msgstr "אינדיקטור"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid "Hidden"
+msgstr "נסתר"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Visible"
+msgstr "גלוי"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Move the selected indicator one row up."
+msgstr "הזז את האינדיקטור הנבחר שורה אחת מעלה."
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Move the selected indicator one row down."
+msgstr "הזז את האינדיקטור שנבחר שורה אחת מטה."
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>אנא אתחל את הפאנל על מנת ששינויי היראות יכנסו לתוקף.</i> "
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "C_lear known indicators"
+msgstr "מחק אינדיקטורים ידועים"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "מאתחל את רשימת האינדיקטורים ואת הגדרות ההיראות שלהם."
+
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "Known Indicators"
+msgstr "אינדיקטורים ידועים"
