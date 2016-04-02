@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# nunom <nunomgue@gmail.com>, 2013
+# Nuno Miguel <nunomgue@gmail.com>, 2013,2016
 # Sérgio Marques <smarquespt@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2013-09-29 13:54+0000\n"
-"Last-Translator: nunom <nunomgue@gmail.com>\n"
-"Language-Team: Portuguese (http://www.transifex.com/projects/p/xfce/language/pt/)\n"
+"PO-Revision-Date: 2016-04-02 14:59+0000\n"
+"Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
+"Language-Team: Portuguese (http://www.transifex.com/xfce/xfce-panel-plugins/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
-msgstr "\"Plug-in\" Indicador"
+msgstr "Plugin Indicador"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
 msgid ""
@@ -120,7 +120,7 @@ msgstr "Se ligado, assegurar que os indicadores são postos numa única linha ou
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr "Alinha na esquerdo no modo de barra de applets"
+msgstr "Alinha na esquerda no modo de barra"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
