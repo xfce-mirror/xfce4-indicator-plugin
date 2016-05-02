@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2016-05-01 18:48+0000\n"
+"PO-Revision-Date: 2016-05-02 13:07+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -174,7 +174,7 @@ msgstr "Neteja els indicadors coneguts"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
-msgstr "Restableix la llista d'indicadors i la configuració de visibilitat."
+msgstr "Restableix la llista d'indicadors i els ajusts de visibilitat."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
