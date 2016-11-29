@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2016-08-23 14:04+0000\n"
+"POT-Creation-Date: 2016-11-29 00:31+0100\n"
+"PO-Revision-Date: 2016-11-29 08:15+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -26,17 +26,17 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "Connector d'indicadors"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "Proporciona una àrea de plafó per als indicadors d'Unity. Els indicadors permeten que les aplicacions i els serveis del sistema mostrin l'estat i interactuïn amb l'usuari."
 
-#: ../panel-plugin/indicator.c:176
+#: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Copyright (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:312
+#: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
 msgstr "Cap indicador"
 
@@ -98,11 +98,15 @@ msgstr "Xarxa"
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:450
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Neteja"
+
+#: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Segur que voleu esborrar la llista d'indicadors coneguts?"
 
-#: ../panel-plugin/indicator-dialog.c:593
+#: ../panel-plugin/indicator-dialog.c:577
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "No es pot obrir l'url següent: %s"
@@ -129,7 +133,7 @@ msgstr "Alinea a l'esquerra al mode de barra d'escriptori"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Controla la disposició dels botons de l'indicador quan el plafó estigui en mode de barra d'escriptori. Les opcions possibles són \"centrat\" ​​o \"alineat a l'esquerra\"."
+msgstr "Controla la disposició dels botons de l'indicador quan el plafó estigui en mode de barra d'escriptori. Les opcions possibles són «centrat» ​​o «alineat a l'esquerra»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Appearance"
@@ -143,7 +147,7 @@ msgstr "Oculta els indicadors predeterminats"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Quan està activat, només es mostren els indicadors marcats com a \"Visible\". En cas contrari, es mostren tots els indicadors que no estan marcats com a \"Ocult\"."
+msgstr "Quan està activat, només es mostren els indicadors marcats com a «Visible». En cas contrari, es mostren tots els indicadors que no estan marcats com a «Ocult»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
