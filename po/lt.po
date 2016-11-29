@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2016-10-11 17:53+0000\n"
+"POT-Creation-Date: 2016-11-29 00:31+0100\n"
+"PO-Revision-Date: 2016-11-29 10:05+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -23,17 +23,17 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "Indikatorių įskiepis"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Parūpina skydelyje Unity indikatoriams skirtą sritį. Indikatoriai leidžia programoms ir sistemos tarnyboms rodyti naudotojui savo būseną ir su juo sąveikauti."
+msgstr "Parūpina skydelyje Unity indikatoriams skirtą sritį. Indikatoriai leidžia programoms ir sistemos tarnyboms rodyti naudotojui jų būseną ir sąveikauti su naudotoju."
 
-#: ../panel-plugin/indicator.c:176
+#: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
-msgstr "Autorinės Teisės (c) 2009-2013\n"
+msgstr "Autorių teisės (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:312
+#: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
 msgstr "Nėra indikatorių"
 
@@ -95,11 +95,15 @@ msgstr "Tinklas"
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:450
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Išvalyti"
+
+#: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Ar tikrai norite išvalyti žinomų indikatorių sąrašą?"
 
-#: ../panel-plugin/indicator-dialog.c:593
+#: ../panel-plugin/indicator-dialog.c:577
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nepavyko atverti sekančio url: %s"
