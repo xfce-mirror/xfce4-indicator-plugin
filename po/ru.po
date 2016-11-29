@@ -3,38 +3,40 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Alexander Filev <ifillrok@gmail.com>, 2016
 # Evgeni Golov <evgeni@debian.org>, 2010
-# asvl <alyoshin.s@gmail.com>, 2013
-# shlyapugin <shlyapugin@gmail.com>, 2013
+# Igor <f2404@yandex.ru>, 2016
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013
+# Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2013-10-13 19:50+0000\n"
-"Last-Translator: shlyapugin <shlyapugin@gmail.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/xfce/language/ru/)\n"
+"POT-Creation-Date: 2016-11-29 00:31+0100\n"
+"PO-Revision-Date: 2016-11-29 08:16+0000\n"
+"Last-Translator: Igor <f2404@yandex.ru>\n"
+"Language-Team: Russian (http://www.transifex.com/xfce/xfce-panel-plugins/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
 msgstr "Индикаторы"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "Предоставляет место на панели для индикаторов Unity. Индикаторы позволяют приложениям и системным сервисам показывать свой статус и взаимодействовать с пользователем."
 
-#: ../panel-plugin/indicator.c:176
+#: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Copyright © 2009—2013\n"
 
-#: ../panel-plugin/indicator.c:312
+#: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
 msgstr "Нет индикаторов"
 
@@ -96,11 +98,15 @@ msgstr "Сеть"
 msgid "Workrave"
 msgstr "Переутомление"
 
-#: ../panel-plugin/indicator-dialog.c:450
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Очистить"
+
+#: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Уверены, что хотите очистить список известных индикаторов?"
 
-#: ../panel-plugin/indicator-dialog.c:593
+#: ../panel-plugin/indicator-dialog.c:577
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Невозможно открыть ссылку: %s"
@@ -117,7 +123,7 @@ msgstr "Выстраивать индикаторы в одну строку"
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr "Если параметр включен, следить за тем, чтобы индикаторы располагались в один ряд или столбец."
+msgstr "Если включено, следить за тем, чтобы индикаторы располагались в один ряд или столбец."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -141,7 +147,7 @@ msgstr "Скрывать индикаторы по умолчанию"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Если включено, только отображаются только индикаторы отмеченные как «видимые». Иначе отображаются все индикаторы, не отмеченные как «скрытые»."
+msgstr "Если включено, отображаются только индикаторы, отмеченные как «видимые». Иначе отображаются все индикаторы, не отмеченные как «скрытые»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Indicator"
@@ -157,11 +163,11 @@ msgstr "Видимый"
 
 #: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Move the selected indicator one row up."
-msgstr "Переместить выбранные индикаторы на одну строку вверх"
+msgstr "Переместить выбранный индикатор на одну строку вверх."
 
 #: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Move the selected indicator one row down."
-msgstr "Переместить выбранные индикаторы на одну строку вниз"
+msgstr "Переместить выбранный индикатор на одну строку вниз."
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
@@ -173,7 +179,7 @@ msgstr "О_чистить известные индикаторы"
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "Resets the list of indicators and their visibility settings."
-msgstr "Сбросить список индикаторов и их настройки видимости."
+msgstr "Сбрасывает список индикаторов и их настройки видимости."
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "Known Indicators"
