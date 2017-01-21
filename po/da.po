@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-29 00:31+0100\n"
-"PO-Revision-Date: 2017-01-14 14:27+0000\n"
+"PO-Revision-Date: 2017-01-21 19:42+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -102,12 +102,12 @@ msgstr "Ryd"
 
 #: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr "Er du sikker på at du ønsker at slette listen af kendte indikatorer?"
+msgstr "Er du sikker på, at du vil rydde listen for kendte indikatorer?"
 
 #: ../panel-plugin/indicator-dialog.c:577
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Kunne ikke åbne den følgende URL: %s"
+msgstr "Kunne ikke åbne den følgende url: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "Indicators"
