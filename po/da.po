@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-29 00:31+0100\n"
-"PO-Revision-Date: 2017-01-21 19:42+0000\n"
+"PO-Revision-Date: 2017-01-22 17:58+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
-msgstr "Indikator-plugin"
+msgstr "Indikator-udvidelsesmodul"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
