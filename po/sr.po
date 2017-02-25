@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# salepetronije <salepetronije@gmail.com>, 2012
-# salepetronije <salepetronije@gmail.com>, 2012-2013
+# Саша Петровић <salepetronije@gmail.com>, 2012
+# Саша Петровић <salepetronije@gmail.com>, 2012-2013,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2013-09-06 08:01+0000\n"
-"Last-Translator: salepetronije <salepetronije@gmail.com>\n"
-"Language-Team: Serbian (http://www.transifex.com/projects/p/xfce/language/sr/)\n"
+"POT-Creation-Date: 2016-11-29 00:31+0100\n"
+"PO-Revision-Date: 2017-02-25 15:29+0000\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
+"Language-Team: Serbian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,17 +23,17 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "Прикључак Указивач"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "Обезбеђује простор на полици за указиваче Унитија. Указивачи омогућују приказ стања програма и услуга, и њихово општење са корисником."
 
-#: ../panel-plugin/indicator.c:176
+#: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Права умножавања (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:312
+#: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
 msgstr "Нема указивача"
 
@@ -95,11 +95,15 @@ msgstr "Мрежа"
 msgid "Workrave"
 msgstr "Приказ напредка"
 
-#: ../panel-plugin/indicator-dialog.c:450
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Очисти"
+
+#: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Да ли сте сигурни да желите очистити списак познатих указивача?"
 
-#: ../panel-plugin/indicator-dialog.c:593
+#: ../panel-plugin/indicator-dialog.c:577
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Нисам успео да отворим следећу урл адресу: %s"
