@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# padmawan <andhika.padmawan@gmail.com>, 2011,2014
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2011,2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2014-01-26 01:24+0000\n"
-"Last-Translator: padmawan <andhika.padmawan@gmail.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/xfce/language/id/)\n"
+"POT-Creation-Date: 2016-11-29 00:31+0100\n"
+"PO-Revision-Date: 2017-02-26 07:19+0000\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
+"Language-Team: Indonesian (http://www.transifex.com/xfce/xfce-panel-plugins/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,17 +22,17 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "Plugin Indikator"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "Menyediakan area panel untuk indikator Unity. Indikator memungkinkan aplikasi dan layanan sistem menampilkan status mereka dan berinteraksi dengan pengguna."
 
-#: ../panel-plugin/indicator.c:176
+#: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Hak Cipta (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:312
+#: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
 msgstr "Tak Ada Indikator"
 
@@ -94,11 +94,15 @@ msgstr "Jaringan"
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:450
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Bersihkan"
+
+#: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Anda yakin ingin membersihkan daftar indikator?"
 
-#: ../panel-plugin/indicator-dialog.c:593
+#: ../panel-plugin/indicator-dialog.c:577
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Tidak dapat membuka URL: %s"
