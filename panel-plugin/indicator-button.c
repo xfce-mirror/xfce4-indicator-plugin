@@ -51,6 +51,12 @@ static gboolean             xfce_indicator_button_scroll_event    (GtkWidget    
                                                                    GdkEventScroll         *event);
 static void                 xfce_indicator_button_menu_deactivate (XfceIndicatorButton    *button,
                                                                    GtkMenu                *menu);
+static gboolean             xfce_indicator_button_query_tooltip   (GtkWidget              *widget,
+                                                                   gint                    x,
+                                                                   gint                    y,
+                                                                   gboolean                keyboard_mode,
+                                                                   GtkTooltip             *tooltip,
+                                                                   gpointer                user_data);
 
 
 struct _XfceIndicatorButton
@@ -276,6 +282,10 @@ xfce_indicator_button_new (IndicatorObject      *io,
   gtk_container_add (GTK_CONTAINER (button->align_box), button->box);
   gtk_widget_show (button->box);
 
+  g_object_set (G_OBJECT (button), "has-tooltip", TRUE, NULL);
+  g_signal_connect (button, "query-tooltip",
+                    G_CALLBACK (xfce_indicator_button_query_tooltip), NULL);
+
   return GTK_WIDGET (button);
 }
 
@@ -361,4 +371,25 @@ xfce_indicator_button_menu_deactivate (XfceIndicatorButton *button,
       button->deactivate_id = 0;
     }
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), FALSE);
+}
+
+
+static gboolean
+xfce_indicator_button_query_tooltip (GtkWidget  *widget,
+                                     gint        x,
+                                     gint        y,
+                                     gboolean    keyboard_mode,
+                                     GtkTooltip *tooltip,
+                                     gpointer    user_data)
+{
+  XfceIndicatorButton *button = XFCE_INDICATOR_BUTTON (widget);
+
+  if (button->entry && button->entry->accessible_desc)
+    {
+      gtk_tooltip_set_text (tooltip, button->entry->accessible_desc);
+
+      return TRUE;
+    }
+
+  return FALSE;
 }
