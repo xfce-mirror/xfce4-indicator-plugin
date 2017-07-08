@@ -47,6 +47,7 @@
 
 #define DEFAULT_SINGLE_ROW         FALSE
 #define DEFAULT_ALIGN_LEFT         FALSE
+#define DEFAULT_SQUARE_ICONS       FALSE
 #define DEFAULT_EXCLUDED_MODULES   NULL
 #define DEFAULT_ORIENTATION        GTK_ORIENTATION_HORIZONTAL
 #define DEFAULT_PANEL_ORIENTATION  GTK_ORIENTATION_HORIZONTAL
@@ -79,6 +80,7 @@ struct _IndicatorConfig
 
   gboolean         single_row;
   gboolean         align_left;
+  gboolean         square_icons;
   gboolean         mode_whitelist;
   GHashTable      *blacklist;
   GHashTable      *whitelist;
@@ -100,6 +102,7 @@ enum
   PROP_0,
   PROP_SINGLE_ROW,
   PROP_ALIGN_LEFT,
+  PROP_SQUARE_ICONS,
   PROP_MODE_WHITELIST,
   PROP_BLACKLIST,
   PROP_WHITELIST,
@@ -166,6 +169,13 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                                          G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
+                                   PROP_SQUARE_ICONS,
+                                   g_param_spec_boolean ("square-icons", NULL, NULL,
+                                                         DEFAULT_ALIGN_LEFT,
+                                                         G_PARAM_READWRITE |
+                                                         G_PARAM_STATIC_STRINGS));
+
+  g_object_class_install_property (gobject_class,
                                    PROP_MODE_WHITELIST,
                                    g_param_spec_boolean ("mode-whitelist", NULL, NULL,
                                                          DEFAULT_MODE_WHITELIST,
@@ -222,6 +232,7 @@ indicator_config_init (IndicatorConfig *config)
 {
   config->single_row           = DEFAULT_SINGLE_ROW;
   config->align_left           = DEFAULT_ALIGN_LEFT;
+  config->square_icons         = DEFAULT_SQUARE_ICONS;
   config->mode_whitelist       = DEFAULT_MODE_WHITELIST;
   config->blacklist            = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
   config->whitelist            = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
@@ -299,6 +310,10 @@ indicator_config_get_property (GObject    *object,
       g_value_set_boolean (value, config->align_left);
       break;
 
+    case PROP_SQUARE_ICONS:
+      g_value_set_boolean (value, config->square_icons);
+      break;
+
     case PROP_MODE_WHITELIST:
       g_value_set_boolean (value, config->mode_whitelist);
       break;
@@ -367,6 +382,15 @@ indicator_config_set_property (GObject      *object,
       if (config->align_left != val)
         {
           config->align_left = val;
+          g_signal_emit (G_OBJECT (config), indicator_config_signals [CONFIGURATION_CHANGED], 0);
+        }
+      break;
+
+    case PROP_SQUARE_ICONS:
+      val = g_value_get_boolean (value);
+      if (config->square_icons != val)
+        {
+          config->square_icons = val;
           g_signal_emit (G_OBJECT (config), indicator_config_signals [CONFIGURATION_CHANGED], 0);
         }
       break;
@@ -455,6 +479,17 @@ indicator_config_get_align_left (IndicatorConfig *config)
   g_return_val_if_fail (XFCE_IS_INDICATOR_CONFIG (config), DEFAULT_ALIGN_LEFT);
 
   return config->align_left;
+}
+
+
+
+
+gboolean
+indicator_config_get_square_icons (IndicatorConfig *config)
+{
+  g_return_val_if_fail (XFCE_IS_INDICATOR_CONFIG (config), DEFAULT_SQUARE_ICONS);
+
+  return config->square_icons;
 }
 
 
@@ -772,6 +807,10 @@ indicator_config_new (const gchar     *property_base)
 
       property = g_strconcat (property_base, "/align-left", NULL);
       xfconf_g_property_bind (channel, property, G_TYPE_BOOLEAN, config, "align-left");
+      g_free (property);
+
+      property = g_strconcat (property_base, "/square-icons", NULL);
+      xfconf_g_property_bind (channel, property, G_TYPE_BOOLEAN, config, "square-icons");
       g_free (property);
 
       property = g_strconcat (property_base, "/mode-whitelist", NULL);

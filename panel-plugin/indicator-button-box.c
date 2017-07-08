@@ -401,6 +401,8 @@ indicator_button_box_get_preferred_width (GtkWidget *widget,
 {
   IndicatorButtonBox  *box = XFCE_INDICATOR_BUTTON_BOX (widget);
   gint                 min_size, nat_size;
+  gint                 panel_size, nrows, size;
+  gboolean             square_icons;
 
   if (indicator_button_box_is_small (box)) // check & cache
     {
@@ -414,13 +416,13 @@ indicator_button_box_get_preferred_width (GtkWidget *widget,
           gtk_image_get_storage_type (GTK_IMAGE (box->icon)) != GTK_IMAGE_EMPTY &&
           box->orientation == GTK_ORIENTATION_HORIZONTAL)
         {
-          min_size = min_size + ICON_SIZE + SPACING;
-          nat_size = nat_size + ICON_SIZE + SPACING;
+          min_size = min_size + ICON_SIZE + 2 * SPACING;
+          nat_size = nat_size + ICON_SIZE + 2 * SPACING;
         }
       else
         {
-          min_size = MAX (min_size, ICON_SIZE);
-          nat_size = MAX (nat_size, ICON_SIZE);
+          min_size = MAX (min_size + 2 * SPACING, ICON_SIZE);
+          nat_size = MAX (nat_size + 2 * SPACING, ICON_SIZE);
         }
     }
   else // rectangular icon
@@ -511,6 +513,7 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
   IndicatorButtonBox  *box = XFCE_INDICATOR_BUTTON_BOX (widget);
   gint                 x, y, width, height;
   GtkAllocation        icon_alloc, label_alloc;
+  GtkRequisition       requisition;
 
   gtk_widget_set_allocation (widget, allocation);
 
@@ -520,6 +523,11 @@ indicator_button_box_size_allocate (GtkWidget     *widget,
   icon_alloc.height = label_alloc.height = height = allocation->height;
 
   indicator_button_box_is_small (box); // refresh cache
+
+  if (box->icon != NULL)
+    gtk_widget_get_preferred_size (box->icon, NULL, &requisition);
+  if (box->label != NULL)
+    gtk_widget_get_preferred_size (box->label, NULL, &requisition);
 
   if (box->icon != NULL &&
       gtk_image_get_storage_type (GTK_IMAGE (box->icon)) != GTK_IMAGE_EMPTY &&

@@ -80,6 +80,9 @@ void               indicator_config_blacklist_set           (IndicatorConfig    
 gboolean           indicator_config_is_whitelisted          (IndicatorConfig      *config,
                                                              const gchar          *name);
 
+gboolean           indicator_config_get_square_icons        (IndicatorConfig      *config);
+
+
 void               indicator_config_whitelist_set           (IndicatorConfig      *config,
                                                              const gchar          *name,
                                                              gboolean              add);

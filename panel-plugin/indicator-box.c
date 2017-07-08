@@ -315,6 +315,7 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
   GtkRequisition       child_req;
   GList               *known_indicators, *li, *li_int, *li_tmp;
   gint                 panel_size, size;
+  gboolean             single_row, square_icons;
   gint                 length;
   gint                 row;
   gint                 nrows;
@@ -338,10 +339,20 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
   border_thickness = MAX (padding.left+padding.right+border.left+border.right,
                           padding.top+padding.bottom+border.top+border.bottom);
 
-  size = ICON_SIZE + border_thickness;
   panel_size = indicator_config_get_panel_size (box->config);
-  nrows = MAX (1, panel_size / size);
-  allow_small = !((nrows == 1) || indicator_config_get_single_row (box->config));
+  single_row = indicator_config_get_single_row (box->config);
+  square_icons = indicator_config_get_square_icons (box->config);
+  if (square_icons)
+    {
+      nrows = indicator_config_get_nrows (box->config);
+      size = (panel_size - border_thickness) / (single_row ? 1 : nrows);
+    }
+  else
+    {
+      size = MIN (ICON_SIZE + border_thickness, panel_size);
+      nrows = MAX (1, panel_size / size);
+    }
+  allow_small = !((nrows == 1) || single_row);
 
   panel_orientation = indicator_config_get_panel_orientation (box->config);
 
@@ -375,6 +386,8 @@ xfce_indicator_box_get_preferred_length (GtkWidget *widget,
 
           length =
             MAX (length, (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
+          if (square_icons)
+            length = MAX (length, size);
 
           if (row >= nrows || !is_small)
             {
@@ -460,6 +473,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
   GtkAllocation        child_alloc;
   GtkRequisition       child_req;
   gint                 panel_size, size, full_size;
+  gboolean             single_row, square_icons;
   gint                 x, y;
   gint                 x0, y0;
   GList               *known_indicators, *li, *li_int, *li_tmp;
@@ -495,11 +509,21 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
                           padding.top+padding.bottom+border.top+border.bottom);
 
   panel_size = indicator_config_get_panel_size (box->config);
-  size = MIN (ICON_SIZE + border_thickness, panel_size);
-  nrows = panel_size / size;
+  single_row = indicator_config_get_single_row (box->config);
+  square_icons = indicator_config_get_square_icons (box->config);
+  if (square_icons)
+    {
+      nrows = indicator_config_get_nrows (box->config);
+      size = (panel_size - border_thickness) / (single_row ? 1 : nrows);
+    }
+  else
+    {
+      size = MIN (ICON_SIZE + border_thickness, panel_size);
+      nrows = MAX (1, panel_size / size);
+    }
   //full_size = ((nrows-1)*panel_size + nrows*size) / nrows; // regular pitch, margins
   full_size = panel_size; // irregular pitch, no margins
-  allow_small = !((nrows == 1) || indicator_config_get_single_row (box->config));
+  allow_small = !((nrows == 1) || single_row);
 
   panel_orientation = indicator_config_get_panel_orientation (box->config);
 
@@ -540,6 +564,8 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
           width = (is_small) ? size : full_size;
           length = MAX (length,
                         (panel_orientation == GTK_ORIENTATION_HORIZONTAL) ? child_req.width :child_req.height);
+          if (square_icons)
+            length = MAX (length, size);
 
           if (panel_orientation == GTK_ORIENTATION_HORIZONTAL)
             {

@@ -495,16 +495,18 @@ indicator_dialog_build (IndicatorDialog *dialog)
 
       object = gtk_builder_get_object (builder, "checkbutton-align-left");
       g_return_if_fail (GTK_IS_WIDGET (object));
-      //exo_mutual_binding_new (G_OBJECT (dialog->config), "align-left",
-      //                        G_OBJECT (object), "active");
       g_object_bind_property (G_OBJECT (dialog->config), "align-left",
+                              G_OBJECT (object), "active",
+                              G_BINDING_SYNC_CREATE | G_BINDING_BIDIRECTIONAL);
+
+      object = gtk_builder_get_object (builder, "checkbutton-square-icons");
+      g_return_if_fail (GTK_IS_WIDGET (object));
+      g_object_bind_property (G_OBJECT (dialog->config), "square-icons",
                               G_OBJECT (object), "active",
                               G_BINDING_SYNC_CREATE | G_BINDING_BIDIRECTIONAL);
 
       object = gtk_builder_get_object (builder, "checkbutton-whitelist");
       g_return_if_fail (GTK_IS_WIDGET (object));
-      //exo_mutual_binding_new (G_OBJECT (dialog->config), "mode-whitelist",
-      //                        G_OBJECT (object), "active");
       g_object_bind_property (G_OBJECT (dialog->config), "mode-whitelist",
                               G_OBJECT (object), "active",
                               G_BINDING_SYNC_CREATE | G_BINDING_BIDIRECTIONAL);
