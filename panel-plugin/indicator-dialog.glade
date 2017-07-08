@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <requires lib="gtk+" version="2.14"/>
-  <!-- interface-requires libxfce4ui 0.0 -->
+  <requires lib="gtk+" version="3.18"/>
+  <!-- interface-requires libxfce4ui-2.0 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="XfceTitledDialog" id="dialog">
     <property name="can_focus">False</property>
@@ -11,14 +11,16 @@
     <property name="icon_name">gtk-properties</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
-      <object class="GtkVBox" id="dialog-vbox2">
+      <object class="GtkBox" id="dialog-vbox2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="dialog-action_area2">
+          <object class="GtkButtonBox" id="dialog-action_area2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="orientation">horizontal</property>
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="close-button">
@@ -60,10 +62,11 @@
           </packing>
         </child>
         <child>
-          <object class="GtkVBox" id="vbox1">
+          <object class="GtkBox" id="vbox1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">6</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkFrame" id="frame3">
@@ -77,10 +80,11 @@
                     <property name="can_focus">False</property>
                     <property name="left_padding">12</property>
                     <child>
-                      <object class="GtkVBox" id="vbox2">
+                      <object class="GtkBox" id="vbox2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="border_width">6</property>
+                        <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
                           <object class="GtkCheckButton" id="checkbutton-single-row">
@@ -163,10 +167,11 @@
                     <property name="can_focus">False</property>
                     <property name="left_padding">12</property>
                     <child>
-                      <object class="GtkVBox" id="vbox3">
+                      <object class="GtkBox" id="vbox3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="border_width">6</property>
+                        <property name="orientation">vertical</property>
                         <property name="spacing">6</property>
                         <child>
                           <object class="GtkCheckButton" id="checkbutton-whitelist">
@@ -185,9 +190,10 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkHBox" id="hbox2">
+                          <object class="GtkBox" id="hbox2">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="orientation">horizontal</property>
                             <property name="spacing">6</property>
                             <child>
                               <object class="GtkScrolledWindow" id="scrolledwindow1">
@@ -259,9 +265,10 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkVBox" id="vbox4">
+                              <object class="GtkBox" id="vbox4">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
                                   <object class="GtkButton" id="item-up">
@@ -337,9 +344,10 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkHButtonBox" id="hbuttonbox1">
+                          <object class="GtkButtonBox" id="hbuttonbox1">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="orientation">horizontal</property>
                             <property name="layout_style">start</property>
                             <child>
                               <object class="GtkButton" id="indicators-clear">

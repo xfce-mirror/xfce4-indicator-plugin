@@ -77,7 +77,7 @@ LIBXFCE4PANEL_VERSION_API=libxfce4panel_version_api()
 AC_DEFINE([LIBXFCE4PANEL_VERSION_API], "libxfce4panel_version_api()", [libxfce4panel api version])
 AC_SUBST([LIBXFCE4PANEL_VERSION_API])
 
-XDT_CHECK_PACKAGE([GTK], [gtk+-3.0], [3.6.0])
+XDT_CHECK_PACKAGE([GTK], [gtk+-3.0], [3.18.0])
 dnl XDT_CHECK_PACKAGE([EXO], [exo-1], [0.6.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.9.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.11.0])

@@ -70,7 +70,6 @@ struct _XfceIndicatorButton
   XfcePanelPlugin      *plugin;
   IndicatorConfig      *config;
 
-  GtkWidget            *align_box;
   GtkWidget            *box;
   gulong                deactivate_id;
 };
@@ -108,12 +107,17 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   gtk_widget_set_can_default (GTK_WIDGET (button), FALSE);
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_button_set_use_underline (GTK_BUTTON (button),TRUE);
+#if GTK_CHECK_VERSION (3, 20, 0)
+  gtk_widget_set_focus_on_click (GTK_WIDGET (button), FALSE);
+#else
   gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
+#endif
   gtk_widget_set_name (GTK_WIDGET (button), "indicator-button");
 
   css_provider = gtk_css_provider_new ();
   gtk_css_provider_load_from_data (css_provider, "#indicator-button { -GtkWidget-focus-padding: 0; -GtkWidget-focus-line-width: 0; -GtkButton-default-border: 0; -GtkButton-inner-border: 0; padding: 1px; border-width: 1px;}", -1, NULL);
   gtk_style_context_add_provider (GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (button))), GTK_STYLE_PROVIDER (css_provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  g_object_unref (css_provider);
 
   gtk_widget_add_events (GTK_WIDGET (button), GDK_SCROLL_MASK);
 
@@ -124,9 +128,8 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   button->menu = NULL;
   button->deactivate_id = 0;
 
-  button->align_box = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
-  gtk_container_add (GTK_CONTAINER (button), button->align_box);
-  gtk_widget_show (button->align_box);
+  gtk_widget_set_halign (GTK_WIDGET (button), GTK_ALIGN_FILL);
+  gtk_widget_set_valign (GTK_WIDGET (button), GTK_ALIGN_FILL);
 }
 
 
@@ -278,8 +281,7 @@ xfce_indicator_button_new (IndicatorObject      *io,
   button->config = config;
 
   button->box = indicator_button_box_new (button->config);
-  //gtk_container_add (GTK_CONTAINER (button), button->box);
-  gtk_container_add (GTK_CONTAINER (button->align_box), button->box);
+  gtk_container_add (GTK_CONTAINER (button), button->box);
   gtk_widget_show (button->box);
 
   g_object_set (G_OBJECT (button), "has-tooltip", TRUE, NULL);
@@ -319,9 +321,15 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
         (G_OBJECT (button->menu), "deactivate",
          G_CALLBACK (xfce_indicator_button_menu_deactivate), button);
       gtk_menu_reposition (GTK_MENU (button->menu));
+#if GTK_CHECK_VERSION (3, 22, 0)
+      gtk_menu_popup_at_widget (button->menu, widget,
+                                GDK_GRAVITY_NORTH_WEST, GDK_GRAVITY_NORTH_WEST,
+                                (GdkEvent *)event);
+#else
       gtk_menu_popup (button->menu, NULL, NULL,
                       xfce_panel_plugin_position_menu, button->plugin,
                       event->button, event->time);
+#endif
       return TRUE;
     }
 

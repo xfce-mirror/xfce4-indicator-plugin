@@ -358,12 +358,14 @@ indicator_button_box_is_small (IndicatorButtonBox *box)
           indicator_config_get_align_left (box->config))
 	{
 	  box->orientation = GTK_ORIENTATION_HORIZONTAL;
-	  gtk_misc_set_alignment (GTK_MISC (box->label), 0.0, 0.5);
+	  gtk_label_set_xalign (GTK_LABEL (box->label), 0.0);
+	  gtk_label_set_yalign (GTK_LABEL (box->label), 0.5);
 	  gtk_label_set_ellipsize (GTK_LABEL (box->label), PANGO_ELLIPSIZE_END);
 	}
       else
 	{
-	  gtk_misc_set_alignment (GTK_MISC (box->label), 0.5, 0.5);
+	  gtk_label_set_xalign (GTK_LABEL (box->label), 0.5);
+	  gtk_label_set_yalign (GTK_LABEL (box->label), 0.5);
 	  gtk_label_set_ellipsize (GTK_LABEL (box->label), PANGO_ELLIPSIZE_NONE);
 	}
       gtk_label_set_angle (GTK_LABEL (box->label),
