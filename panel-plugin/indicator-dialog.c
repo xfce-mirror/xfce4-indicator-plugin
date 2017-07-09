@@ -549,7 +549,7 @@ indicator_dialog_build (IndicatorDialog *dialog)
     }
   else
     {
-      g_critical ("Faild to construct the builder: %s.",
+      g_critical ("Failed to construct the builder: %s.",
                   error->message);
       g_error_free (error);
     }
