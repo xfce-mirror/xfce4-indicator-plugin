@@ -117,6 +117,15 @@ INDICATORICONSDIR=`$PKG_CONFIG --variable=iconsdir ${INDICATOR_PKGNAME}`
 AC_SUBST([INDICATORDIR])
 AC_SUBST([INDICATORICONSDIR])
 
+dnl **********************************************
+dnl *** Optional indicator-application support ***
+dnl **********************************************
+AC_ARG_ENABLE([application], AC_HELP_STRING([--disable-application],
+              [Disable indicator-application support]), [], [enable_application=yes])
+if test x"$enable_application" == x"no"; then
+        AC_DEFINE([DISABLE_APPLICATION], [], [indicator-application suport disabled])
+fi
+
 dnl *********************************
 dnl *** Substitute platform flags ***
 dnl *********************************
@@ -147,6 +156,7 @@ echo
 echo "Build Configuration:"
 echo
 echo "* Debug Support:        $enable_debug"
+echo "* Application Support:  $enable_application"
 echo "* Use IndicatorNg API:  $HAVE_INDICATOR_NG_H"
 if test x"$IDO_FOUND" = x"yes"; then
 echo "* Use IDO library:      yes"

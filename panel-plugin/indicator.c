@@ -432,6 +432,11 @@ indicator_load_module (IndicatorPlugin *indicator,
   if (!g_str_has_suffix (name,G_MODULE_SUFFIX))
     return FALSE;
 
+#ifdef DISABLE_APPLICATION
+  if (!g_strcmp0 (name, "libapplication.so"))
+    return FALSE;
+#endif
+
   g_debug ("Loading Module: %s", name);
 
   file_name = g_build_filename (INDICATOR_DIR, name, NULL);
