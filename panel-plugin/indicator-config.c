@@ -253,6 +253,17 @@ indicator_config_finalize (GObject *object)
 
 
 static void
+indicator_config_free_array_element (gpointer data)
+{
+  GValue *value = (GValue *) data;
+
+  g_value_unset (value);
+  g_free (value);
+}
+
+
+
+static void
 indicator_config_collect_keys (gpointer key,
                                gpointer value,
                                gpointer array)
@@ -293,21 +304,21 @@ indicator_config_get_property (GObject    *object,
       break;
 
     case PROP_BLACKLIST:
-      array = g_ptr_array_new ();
+      array = g_ptr_array_new_full (1, indicator_config_free_array_element);
       g_hash_table_foreach (config->blacklist, indicator_config_collect_keys, array);
       g_value_set_boxed (value, array);
-      xfconf_array_free (array);
+      g_ptr_array_unref (array);
       break;
 
     case PROP_WHITELIST:
-      array = g_ptr_array_new ();
+      array = g_ptr_array_new_full (1, indicator_config_free_array_element);
       g_hash_table_foreach (config->whitelist, indicator_config_collect_keys, array);
       g_value_set_boxed (value, array);
-      xfconf_array_free (array);
+      g_ptr_array_unref (array);
       break;
 
     case PROP_KNOWN_INDICATORS:
-      array = g_ptr_array_new ();
+      array = g_ptr_array_new_full (1, indicator_config_free_array_element);
       for(li = config->known_indicators; li != NULL; li = li->next)
         {
           tmp = g_new0 (GValue, 1);
@@ -316,7 +327,7 @@ indicator_config_get_property (GObject    *object,
           g_ptr_array_add (array, tmp);
         }
       g_value_set_boxed (value, array);
-      xfconf_array_free (array);
+      g_ptr_array_unref (array);
       break;
 
     default:
@@ -402,8 +413,7 @@ indicator_config_set_property (GObject      *object,
       break;
 
     case PROP_KNOWN_INDICATORS:
-      g_list_foreach (config->known_indicators, (GFunc) g_free, NULL);
-      g_list_free (config->known_indicators);
+      g_list_free_full (config->known_indicators, g_free);
       config->known_indicators = NULL;
       array = g_value_get_boxed (value);
       if (G_LIKELY (array != NULL))
