@@ -20,7 +20,9 @@
 #define __INDICATOR_CONFIG_H__
 
 #include <glib.h>
+#ifdef XFCONF_LEGACY
 #include <dbus/dbus-glib.h>
+#endif
 
 G_BEGIN_DECLS
 
@@ -34,7 +36,11 @@ typedef struct _IndicatorConfig      IndicatorConfig;
 #define XFCE_IS_INDICATOR_CONFIG_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_INDICATOR_CONFIG))
 #define XFCE_INDICATOR_CONFIG_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_INDICATOR_CONFIG, IndicatorConfigClass))
 
+#ifdef XFCONF_LEGACY
 #define XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY (indicator_config_value_array_get_type ())
+#else
+#define XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY G_TYPE_PTR_ARRAY
+#endif
 
 GType              indicator_config_value_array_get_type    (void) G_GNUC_CONST;
 

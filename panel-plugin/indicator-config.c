@@ -123,6 +123,7 @@ G_DEFINE_TYPE (IndicatorConfig, indicator_config, G_TYPE_OBJECT)
 
 
 
+#ifdef XFCONF_LEGACY
 GType
 indicator_config_value_array_get_type (void)
 {
@@ -137,6 +138,7 @@ indicator_config_value_array_get_type (void)
 
   return type__volatile;
 }
+#endif
 
 
 static void
