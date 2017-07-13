@@ -171,7 +171,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
   g_object_class_install_property (gobject_class,
                                    PROP_SQUARE_ICONS,
                                    g_param_spec_boolean ("square-icons", NULL, NULL,
-                                                         DEFAULT_ALIGN_LEFT,
+                                                         DEFAULT_SQUARE_ICONS,
                                                          G_PARAM_READWRITE |
                                                          G_PARAM_STATIC_STRINGS));
 
@@ -596,7 +596,7 @@ indicator_config_get_panel_size (IndicatorConfig *config)
 gchar**
 indicator_config_get_excluded_modules (IndicatorConfig *config)
 {
-  g_return_val_if_fail (XFCE_IS_INDICATOR_CONFIG (config), DEFAULT_ALIGN_LEFT);
+  g_return_val_if_fail (XFCE_IS_INDICATOR_CONFIG (config), NULL);
 
   return config->excluded_modules;
 }
