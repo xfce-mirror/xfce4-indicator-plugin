@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-29 00:31+0100\n"
-"PO-Revision-Date: 2017-02-26 07:19+0000\n"
+"POT-Creation-Date: 2017-07-16 18:31+0200\n"
+"PO-Revision-Date: 2017-07-17 06:34+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/xfce/xfce-panel-plugins/language/id/)\n"
 "MIME-Version: 1.0\n"
@@ -102,7 +102,7 @@ msgstr "Bersihkan"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Anda yakin ingin membersihkan daftar indikator?"
 
-#: ../panel-plugin/indicator-dialog.c:577
+#: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Tidak dapat membuka URL: %s"
@@ -132,51 +132,59 @@ msgid ""
 msgstr "Tampilan tombol indikator saat panel dalam mode Deskbar. Pilihan: \"Rata Tengah\" atau \"Rata Kiri\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Square icons"
+msgstr "Ikon bujur sangkar"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "Tombol indikator akan menjadi bujur sangkar kotak bila memungkinkan."
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
 msgstr "Penampilan"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Hide indicators by default"
 msgstr "Indikator disembunyikan secara standar"
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Saat diaktifkan, hanya indikator yang bertanda \"Terlihat\" yang akan ditampilkan. Jika tidak diaktifkan, maka seluruh indikator yang tidak bertanda \"Tersembunyi\" akan ditampilkan."
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
 msgstr "Indikator"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Hidden"
 msgstr "Tersembunyi"
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Visible"
 msgstr "Terlihat"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Move the selected indicator one row up."
 msgstr "Pindahkan indikator terpilih satu baris ke atas."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Move the selected indicator one row down."
 msgstr "Pindahkan indikator terpilih satu baris ke bawah."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Efek akan muncul setelah panel direstart.</i>"
+msgstr "<i>Efek akan muncul setelah panel dinyalakan ulang.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
 msgstr "Hapus indikator"
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: ../panel-plugin/indicator-dialog.glade.h:18
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Reset daftar indikator dan tampilannya."
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: ../panel-plugin/indicator-dialog.glade.h:19
 msgid "Known Indicators"
 msgstr "Indikator Terdaftar"
