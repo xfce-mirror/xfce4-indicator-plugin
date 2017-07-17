@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-29 00:31+0100\n"
-"PO-Revision-Date: 2017-01-22 17:58+0000\n"
+"POT-Creation-Date: 2017-07-16 18:31+0200\n"
+"PO-Revision-Date: 2017-07-17 17:06+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgstr "Ryd"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Er du sikker på, at du vil rydde listen for kendte indikatorer?"
 
-#: ../panel-plugin/indicator-dialog.c:577
+#: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Kunne ikke åbne den følgende url: %s"
@@ -134,51 +134,59 @@ msgid ""
 msgstr "Kontrollerer indikatorens knappelayout når panelet er i deskbar-tilstand. Mulige valg er \"centreret\" eller \"venstrejusteret\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Square icons"
+msgstr "Firkantede ikoner"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "Indikatorknapper vil optage en firkant når det er muligt."
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
 msgstr "Udseende"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Hide indicators by default"
 msgstr "Skjul indikatorer som standard"
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Når slået til, vises kun indikatorer markeret som \"synlige\". Ellers vises alle indikatorer som ikke er markeret \"skjult\"."
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
 msgstr "Indikator"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Hidden"
 msgstr "Skjult"
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Visible"
 msgstr "Synlig"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Move the selected indicator one row up."
 msgstr "Flyt den valgte indikator en række op."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Move the selected indicator one row down."
 msgstr "Flyt den valgte indikator en række ned."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Genstart venligst panelet før ændringer af synlighed anvendes.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
 msgstr "S_let kendte indikatorer"
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: ../panel-plugin/indicator-dialog.glade.h:18
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Sletter listen af indikatorer og deres synlighedsindstillinger."
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: ../panel-plugin/indicator-dialog.glade.h:19
 msgid "Known Indicators"
 msgstr "Kendte indikatorer"
