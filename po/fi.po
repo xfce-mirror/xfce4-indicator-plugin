@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2012
+# Jari Rahkonen <inactive+jari@transifex.com>, 2012
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2013
 # Pasi Lallinaho <pasi@shimmerproject.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 00:31+0200\n"
-"PO-Revision-Date: 2016-03-03 22:47+0000\n"
-"Last-Translator: Pasi Lallinaho <pasi@shimmerproject.org>\n"
+"POT-Creation-Date: 2017-07-16 18:31+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-panel-plugins/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,17 +24,17 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "Ilmaisinliitännäinen"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "Tarjoaa ilmaisinalueen Unity-ilmaisimille paneelissa. Ilmaisimet sallivat sovellusten ja järjestelmäpalveluiden näyttää tilansa ja olla vuorovaikutuksessa käyttäjän kanssa."
 
-#: ../panel-plugin/indicator.c:176
+#: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Tekijänoikeus (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:312
+#: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
 msgstr "Ei ilmaisimia"
 
@@ -96,11 +96,15 @@ msgstr "Verkko"
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:450
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Selkeää"
+
+#: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Haluatko varmasti tyhjentää tunnettujen ilmaisimien listan?"
 
-#: ../panel-plugin/indicator-dialog.c:593
+#: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Seuraavaa osoitetta ei voitu avata: %s"
@@ -130,51 +134,59 @@ msgid ""
 msgstr "Hallitsee ilmaisinpainikkeiden asettelua kun paneeli on työpöytäpalkkitilassa. Mahdolliset vaihtoehdot ovat \"keskitä\" ja \"tasaa vasemmalle\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Square icons"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Indicator buttons will take a square when it's possible."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
 msgstr "Ulkoasu"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Hide indicators by default"
 msgstr "Piilota ilmaisimet oletuksena"
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Kun käytössä, vain ilmaisimet, joiden tila on \"Näkyvissä\" näytetään. Muussa tapauksessa kaikki ilmaisimet joiden tila ei ole \"Piilotettu\" näytetään."
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
 msgstr "Ilmaisin"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Hidden"
 msgstr "Piilotettu"
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Visible"
 msgstr "Näkyvissä"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Move the selected indicator one row up."
 msgstr "Siirrä valittua ilmaisinta yksi rivi ylös."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Move the selected indicator one row down."
 msgstr "Siirrä valittua ilmaisinta yksi rivi alas."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Jotta uudet näkyvyysasetukset otetaan käyttöön, ole hyvä ja käynnistä paneel uudelleen.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
 msgstr "Tyhjennä _tunnetut ilmaisimet"
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: ../panel-plugin/indicator-dialog.glade.h:18
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Tyhjentää listan tunnetuista ilmaisimista ja niiden näkyvyysasetuksista."
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: ../panel-plugin/indicator-dialog.glade.h:19
 msgid "Known Indicators"
 msgstr "Tunnetut ilmaisimet"
