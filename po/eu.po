@@ -1,42 +1,42 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 01:59+0100\n"
-"PO-Revision-Date: 2013-07-04 08:02+0000\n"
-"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
-"Language-Team: Basque (http://www.transifex.com/projects/p/xfce/language/"
-"eu/)\n"
-"Language: eu\n"
+"POT-Creation-Date: 2017-07-16 18:31+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"Language-Team: Basque (http://www.transifex.com/xfce/xfce-panel-plugins/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
 msgstr "Adierazle plugina"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr ""
 
-#: ../panel-plugin/indicator.c:176
+#: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Copyright (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:312
+#: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
 msgstr "Adierazlerik &rz"
 
-#. raw name,                           pretty name,                                 icon-name(?)
+#. raw name,                           pretty name,
+#. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
 msgstr "Aplikazio adierazleak"
@@ -74,9 +74,8 @@ msgid "Bluetooth"
 msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:72
-#, fuzzy
 msgid "Sync Menu"
-msgstr "Soinu menua"
+msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
@@ -88,17 +87,21 @@ msgstr ""
 
 #: ../panel-plugin/indicator-dialog.c:75
 msgid "Network"
-msgstr ""
+msgstr "Sarea"
 
 #: ../panel-plugin/indicator-dialog.c:76
 msgid "Workrave"
 msgstr ""
 
-#: ../panel-plugin/indicator-dialog.c:450
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Garbia"
+
+#: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Ziur zaude ezagututako adierazleen zerrenda ezabatu nahi duzula?"
 
-#: ../panel-plugin/indicator-dialog.c:593
+#: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Ezin da hurrengo url-a ireki: %s"
@@ -128,67 +131,59 @@ msgid ""
 msgstr ""
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Square icons"
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Indicator buttons will take a square when it's possible."
+msgstr ""
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
 msgstr "Itxura"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Hide indicators by default"
 msgstr "Lehenespenez adierazleak ezkutatu"
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
-"Gaitua dagoenean, \"Ikusgarri\" etiketa duten adierazleak bakarrik ikusiko "
-"dira. Bestela \"Ezkutatua\" etiketa ez duten adierazle guztiak bistaraziko "
-"dira."
+msgstr "Gaitua dagoenean, \"Ikusgarri\" etiketa duten adierazleak bakarrik ikusiko dira. Bestela \"Ezkutatua\" etiketa ez duten adierazle guztiak bistaraziko dira."
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
 msgstr "Adierazlea"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Hidden"
 msgstr "Ezkutatua"
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Visible"
 msgstr "Ikusgarria"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Move the selected indicator one row up."
 msgstr "Mugitu hautatutako adierazlea lerro bat gora."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Move the selected indicator one row down."
 msgstr "Mugitu hautatutako adierazlea lerro bat behera."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Panela berrabiarazi ikusgarritasun aukerek eragin izan dezaten."
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
 msgstr "Ga_rbitu ezagututako adierazleak"
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: ../panel-plugin/indicator-dialog.glade.h:18
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Adierazle zerrenda eta ikusgarritasun ezarpenak berrezarri."
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: ../panel-plugin/indicator-dialog.glade.h:19
 msgid "Known Indicators"
 msgstr "Ezagututako adierazleak"
-
-#~ msgid "_Maximum row size (px):"
-#~ msgstr "_Gehienezko errenkada tamaina (px):"
-
-#~ msgid ""
-#~ "Icons are scaled to fit a single row of the panel. Use this option to "
-#~ "restrict the maximum size of the row."
-#~ msgstr ""
-#~ "Ikonoak paneleko errenkada bakarrean sartzeko txikituko dira. Aukera hau "
-#~ "erabili errenkadaren gehienezko tamaina mugatzeko."
-
-#~ msgid "An indicator of something that needs your attention on the desktop"
-#~ msgstr "Mahaigainean zerbaitek zure arreta behar duenaren adierazle bat"
