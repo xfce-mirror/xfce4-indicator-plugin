@@ -6,14 +6,14 @@
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2012
 # Marc Pastor i Sanz <sandandmercury@gmail.com>, 2013
 # Davidmp <medipas@gmail.com>, 2016
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2017
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-29 00:31+0100\n"
-"PO-Revision-Date: 2016-11-29 08:15+0000\n"
+"POT-Creation-Date: 2017-07-16 18:31+0200\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -106,7 +106,7 @@ msgstr "Neteja"
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Segur que voleu esborrar la llista d'indicadors coneguts?"
 
-#: ../panel-plugin/indicator-dialog.c:577
+#: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "No es pot obrir l'url següent: %s"
@@ -136,51 +136,59 @@ msgid ""
 msgstr "Controla la disposició dels botons de l'indicador quan el plafó estigui en mode de barra d'escriptori. Les opcions possibles són «centrat» ​​o «alineat a l'esquerra»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Square icons"
+msgstr "Icones quadrades"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "Quan es pugui, els botons dels indicadors prendran una forma quadrada."
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
 msgstr "Aparença"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Hide indicators by default"
 msgstr "Oculta els indicadors predeterminats"
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: ../panel-plugin/indicator-dialog.glade.h:10
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Quan està activat, només es mostren els indicadors marcats com a «Visible». En cas contrari, es mostren tots els indicadors que no estan marcats com a «Ocult»."
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
 msgstr "Indicador"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: ../panel-plugin/indicator-dialog.glade.h:12
 msgid "Hidden"
 msgstr "Ocult"
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: ../panel-plugin/indicator-dialog.glade.h:13
 msgid "Visible"
 msgstr "Visible"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Move the selected indicator one row up."
 msgstr "Mou l'indicador seleccionat una fila amunt."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Move the selected indicator one row down."
 msgstr "Mou l'indicador seleccionat una fila avall."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Reinicieu el plafó per tal que tinguin efecte els canvis de visibilitat.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
 msgstr "Neteja e_ls indicadors coneguts"
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: ../panel-plugin/indicator-dialog.glade.h:18
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Restableix la llista d'indicadors i els ajusts de visibilitat."
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: ../panel-plugin/indicator-dialog.glade.h:19
 msgid "Known Indicators"
 msgstr "Indicadors coneguts"
