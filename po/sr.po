@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"PO-Revision-Date: 2017-08-08 11:11+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Serbian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -134,7 +134,7 @@ msgstr "Управља размештајем дугмета указивача 
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
-msgstr ""
+msgstr "Четвртасте сличице"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Indicator buttons will take a square when it's possible."
