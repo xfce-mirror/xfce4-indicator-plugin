@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"PO-Revision-Date: 2017-09-13 19:26+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr "Er du sikker på, at du vil rydde listen for kendte indikatorer?"
 #: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Kunne ikke åbne den følgende url: %s"
+msgstr "Kan ikke åbne den følgende url: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "Indicators"
@@ -121,7 +121,7 @@ msgstr "Arrangér indikatorer i en enkelt række"
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr "Hvis den er aktiveret, så sørg for at indikatorer lægges på én række"
+msgstr "Hvis den er aktiveret, så sørg for at indikatorer lægges på én række eller kolonne."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
