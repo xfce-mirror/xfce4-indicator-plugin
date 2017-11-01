@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-09-30 14:18+0000\n"
+"PO-Revision-Date: 2017-11-01 17:29+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "Printermenu"
 
 #: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
 msgid "Power Management"
-msgstr "Strømhåndtering"
+msgstr "Strømstyring"
 
 #: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
@@ -70,7 +70,7 @@ msgstr "Beskedmenu"
 
 #: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
 msgid "Date and Time"
-msgstr "Dato og tid"
+msgstr "Dato og klokkeslæt"
 
 #: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
 msgid "Bluetooth"
@@ -131,7 +131,7 @@ msgstr "Juster til venstre i deskbar-tilstand"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Kontrollerer indikatorens knappelayout når panelet er i deskbar-tilstand. Mulige valg er \"centreret\" eller \"venstrejusteret\"."
+msgstr "Styrer layoutet på indikatorens knap når panelet er i deskbar-tilstand. Mulige valg er \"centreret\" eller \"venstrejusteret\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
@@ -153,7 +153,7 @@ msgstr "Skjul indikatorer som standard"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Når aktiveret, vises kun indikatorer markeret som \"synlige\". Ellers vises alle indikatorer som ikke er markeret \"skjult\"."
+msgstr "Når den er aktiveret, så vises kun indikatorer markeret som \"Synlig\". Ellers vises alle indikatorer som ikke er markeret \"Skjult\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
@@ -177,15 +177,15 @@ msgstr "Flyt den valgte indikator en række ned."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Genstart venligst panelet før ændringer af synlighed anvendes.</i>"
+msgstr "<i>Genstart venligst panelet før ændringerne af synlighed træder i kraft.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
-msgstr "S_let kendte indikatorer"
+msgstr "_Ryd kendte indikatorer"
 
 #: ../panel-plugin/indicator-dialog.glade.h:18
 msgid "Resets the list of indicators and their visibility settings."
-msgstr "Sletter listen af indikatorer og deres synlighedsindstillinger."
+msgstr "Nulstiller listen af indikatorer og deres synlighedsindstillinger."
 
 #: ../panel-plugin/indicator-dialog.glade.h:19
 msgid "Known Indicators"
