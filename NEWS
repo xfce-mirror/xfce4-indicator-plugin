@@ -1,3 +1,15 @@
+2.3.4
+=====
+- Bump GTK version to 3.18, remove deprecations
+- Bug #12417: Display tooltip for indicators
+- Make sure the "clear indicators" dialog works with libxfce4ui-4.13.x
+- Fix IT_PROG_INTLTOOL warning
+- Compilation fixes for xfconf-4.13
+- Fixed bugs exposed by xfconf-4.13
+- Add option to display indicators squared
+- Fix wrong defaults for config
+- Don't display horizontal scroll within treeview
+
 0.4.0
 =====
 support libindicator 0.4
