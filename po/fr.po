@@ -4,6 +4,8 @@
 # 
 # Translators:
 # Alexandre Franke <alexandre.franke@gmail.com>, 2009
+# Charles Monzat <superboa@hotmail.fr>, 2018
+# jc1 <jc1.quebecos@gmail.com>, 2013
 # jc1 <jc1.quebecos@gmail.com>, 2013
 # Yannick Le Guen <leguen.yannick@gmail.com>, 2014,2016-2017
 msgid ""
@@ -11,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2018-03-16 16:57+0000\n"
+"PO-Revision-Date: 2018-03-16 22:41+0000\n"
 "Last-Translator: Charles Monzat <superboa@hotmail.fr>\n"
 "Language-Team: French (http://www.transifex.com/xfce/xfce-panel-plugins/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +30,7 @@ msgstr "Greffon indicateur"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Fournit une zone du tableau de bord pour les indicateurs Unity. Les indicateurs permettent aux applications et aux services du système d'afficher leur état ​​et d'interagir avec l'utilisateur."
+msgstr "Fournit une zone du tableau de bord pour les indicateurs Unity. Les indicateurs permettent aux applications et aux services du système d’afficher leur état ​​et d’interagir avec l’utilisateur."
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
@@ -54,7 +56,7 @@ msgstr "Menu imprimantes"
 
 #: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
 msgid "Power Management"
-msgstr "Gestion de l'énergie"
+msgstr "Gestion de l’énergie"
 
 #: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
@@ -102,12 +104,12 @@ msgstr "Effacer"
 
 #: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr "Êtes-vous sûr de vouloir effacer la liste des indicateurs connus ?"
+msgstr "Êtes-vous sûr de vouloir effacer la liste des indicateurs connus ?"
 
 #: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Impossible d'ouvrir l'url suivante : %s"
+msgstr "Impossible d’ouvrir l’url suivante : %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "Indicators"
@@ -131,7 +133,7 @@ msgstr "Aligner à gauche en mode barre du bureau"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Contrôle la disposition des boutons indicateurs lorsque le tableau de bord est en mode barre du bureau. Les choix possibles sont « centré » ou « aligné à gauche »."
+msgstr "Contrôle la disposition des boutons indicateurs lorsque le tableau de bord est en mode barre du bureau. Les choix possibles sont « centré » ou « aligné à gauche »."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
@@ -153,7 +155,7 @@ msgstr "Masquer les indicateurs par défaut"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Si activé, seuls les indicateurs marqués « Visible » sont affichés. Dans le cas contraire, tous les indicateurs non marqués « Caché » sont affichés."
+msgstr "Si activé, seuls les indicateurs marqués « Visible » sont affichés. Dans le cas contraire, tous les indicateurs non marqués « Caché » sont affichés."
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
@@ -169,11 +171,11 @@ msgstr "Visible"
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Move the selected indicator one row up."
-msgstr "Déplacer l'indicateur sélectionné une ligne vers le haut."
+msgstr "Déplacer l’indicateur sélectionné une ligne vers le haut."
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Move the selected indicator one row down."
-msgstr "Déplacer l'indicateur sélectionné une ligne vers le bas."
+msgstr "Déplacer l’indicateur sélectionné une ligne vers le bas."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
