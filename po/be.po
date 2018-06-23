@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# AlexanderFilev, 2016
+# Evgeni Golov <evgeni@debian.org>, 2010
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2013
+# Sergey Shlyapugin <shlyapugin@gmail.com>, 2013
+# Viktor Odintsev <ninetls@xfce.org>, 2017
+# Zmicer Turok <zmicerturok@gmail.com >, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-16 18:31+0200\n"
+"PO-Revision-Date: 2018-06-23 18:24+0000\n"
+"Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
+"Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: be\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "Indicator Plugin"
+msgstr "Убудова індыкатараў"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr "Прадастаўляе месца на панэлі для індыкатараў Unity. Індыкатары дазваляюць праграмам і сістэмным сэрвісам паказваць свой статус і ўзаемадзейнічаць з карыстальнікам."
+
+#: ../panel-plugin/indicator.c:183
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Copyright © 2009—2013\n"
+
+#: ../panel-plugin/indicator.c:324
+msgid "No Indicators"
+msgstr "Індыкатары адсутнічаюць"
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Індыкатары праграм"
+
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+msgid "Sound Menu"
+msgstr "Меню гуку"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Printers Menu"
+msgstr "Меню прынтараў"
+
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+msgid "Power Management"
+msgstr "Кіраванне сілкаваннем"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Application Menus (Global Menu)"
+msgstr "Меню праграм (глабальнае)"
+
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+msgid "Session Management"
+msgstr "Кіраванне сеансам"
+
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+msgid "Messaging Menu"
+msgstr "Меню паведамленняў"
+
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+msgid "Date and Time"
+msgstr "Дата і час"
+
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ../panel-plugin/indicator-dialog.c:72
+msgid "Sync Menu"
+msgstr "Меню сінхранізацыі"
+
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr "Клавіятура"
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr "Размяшчэнне"
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr "Сетка"
+
+#: ../panel-plugin/indicator-dialog.c:76
+msgid "Workrave"
+msgstr "Стамленне"
+
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Ачысціць"
+
+#: ../panel-plugin/indicator-dialog.c:447
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Сапраўды хочаце ачысціць спіс вядомых індыкатараў?"
+
+#: ../panel-plugin/indicator-dialog.c:579
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Немагчыма адкрыць спасылку: %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "Indicators"
+msgstr "Індыкатары"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Arrange indicators in a single row"
+msgstr "Размяшчаць індыкатары ў адзін радок"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "Калі ўключана, сачыць, каб індыкатары размяшчаліся ў адзін радок альбо слупок."
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr "Выраўноўваць па леваму боку ў рэжыме Deskbar"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr "Размяшчэнне кнопак індыкатараў у рэжыме панэлі Deskbar. Магчымыя варыянты: «у цэнтры» альбо «злева»."
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Square icons"
+msgstr "Квадратныя значкі"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "Кнопкі індыкатараў будуць складацца ў квадрат, калі гэта магчыма."
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid "Appearance"
+msgstr "Выгляд"
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Hide indicators by default"
+msgstr "Прадвызначана хаваць індыкатары"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "Калі ўключана, будуць адлюстроўвацца толькі індыкатары пазначаныя «бачны». Інакш будуць адлюстроўвацца індыкатары не пазначаныя «схаваны»."
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Indicator"
+msgstr "Індыкатар"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Hidden"
+msgstr "Схаваны"
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Visible"
+msgstr "Бачны"
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "Move the selected indicator one row up."
+msgstr "Перамясціць абраны індыкатар на адзін радок вышэй."
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Move the selected indicator one row down."
+msgstr "Перамясціць абраны індыкатар на адзін радок ніжэй."
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Перазапусціце панэль, каб змены ў наладах бачнасці набылі моц.</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "C_lear known indicators"
+msgstr "_Ачысціць вядомыя індыкатары"
+
+#: ../panel-plugin/indicator-dialog.glade.h:18
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Скідвае спіс індыкатараў і іх налады бачнасці."
+
+#: ../panel-plugin/indicator-dialog.glade.h:19
+msgid "Known Indicators"
+msgstr "Вядомыя індыкатары"
