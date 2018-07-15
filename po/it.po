@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2018-07-14 10:58+0000\n"
+"PO-Revision-Date: 2018-07-15 10:48+0000\n"
 "Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-panel-plugins/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "Fornisce un'area del pannello per gli indicatori di Unity. Gli indicator
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
-msgstr "Copyright (c) 2009-2013\n"
+msgstr "Copyright © 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
