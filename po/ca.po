@@ -6,14 +6,14 @@
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2012
 # Marc Pastor i Sanz <sandandmercury@gmail.com>, 2013
 # Davidmp <medipas@gmail.com>, 2016
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2017
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2018
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-12-31 14:01+0000\n"
+"PO-Revision-Date: 2018-10-21 08:17+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Connector d'indicadors"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Proporciona una àrea de plafó per als indicadors d'Unity. Els indicadors permeten que les aplicacions i els serveis del sistema mostrin l'estat i interactuïn amb l'usuari."
+msgstr "Proporciona una àrea de tauler per als indicadors d'Unity. Els indicadors permeten que les aplicacions i els serveis del sistema mostrin l'estat i interactuïn amb l'usuari."
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
@@ -133,7 +133,7 @@ msgstr "Alinea a l'esquerra al mode de barra d'escriptori"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Controla la disposició dels botons de l'indicador quan el plafó estigui en mode de barra d'escriptori. Les opcions possibles són «centrat» ​​o «alineat a l'esquerra»."
+msgstr "Controla la disposició dels botons de l'indicador quan el tauler estigui en mode de barra d'escriptori. Les opcions possibles són «centrat» ​​o «alineat a l'esquerra»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
@@ -179,7 +179,7 @@ msgstr "Mou l'indicador seleccionat una fila avall."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Reinicieu el plafó per tal que tinguin efecte els canvis de visibilitat.</i>"
+msgstr "<i>Reinicieu el tauler per tal que tinguin efecte els canvis de visibilitat.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
