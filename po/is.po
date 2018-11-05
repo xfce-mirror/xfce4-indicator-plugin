@@ -5,13 +5,14 @@
 # Translators:
 # Sveinn í Felli <sv1@fellsnet.is>, 2013-2014
 # Sveinn í Felli <sveinki@nett.is>, 2013-2014
+# Sveinn í Felli <sveinki@nett.is>, 2013-2014, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2018-11-05 18:24+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-panel-plugins/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -134,11 +135,11 @@ msgstr "Stýrir framsetningu ástandsvísa þegar spjaldið er í skjástikuham 
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
-msgstr ""
+msgstr "Ferningslaga táknmyndir"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Indicator buttons will take a square when it's possible."
-msgstr ""
+msgstr "Vísishnappar verða ferningslaga ef mögulegt er."
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
