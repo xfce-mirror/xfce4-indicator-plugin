@@ -5,13 +5,13 @@
 # Translators:
 # Chris Darnell <chris@cedeel.com>, 2013
 # Morten Juhl-Johansen Zőlde-Fejér <inactive+mjjzfacee32fe569a410d@transifex.com>, 2011
-# scootergrisen, 2016-2017
+# scootergrisen, 2016-2017,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-11-03 18:00+0000\n"
+"PO-Revision-Date: 2019-05-04 17:28+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -102,7 +102,7 @@ msgstr "Ryd"
 
 #: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr "Er du sikker på, at du vil rydde listen for kendte indikatorer?"
+msgstr "Er du sikker på, at du vil rydde listen over kendte indikatorer?"
 
 #: ../panel-plugin/indicator-dialog.c:579
 #, c-format
@@ -115,7 +115,7 @@ msgstr "Indikatorer"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr "Arrangér indikatorer i en enkelt række"
+msgstr "Arrangér indikatorer på én række"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
@@ -125,13 +125,13 @@ msgstr "Hvis den er aktiveret, så sørg for at indikatorer lægges på én ræk
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr "Juster til venstre i deskbar-tilstand"
+msgstr "Juster til venstre i skrivebordsbjælketilstand"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Styrer layoutet på indikatorens knap når panelet er i deskbar-tilstand. Mulige valg er \"centreret\" eller \"venstrejusteret\"."
+msgstr "Styrer layoutet på indikatorens knap når panelet er i skrivebordsbjælketilstand. Mulige valg er \"centreret\" eller \"venstrejusteret\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
