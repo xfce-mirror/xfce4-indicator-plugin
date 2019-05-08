@@ -4,8 +4,8 @@
 # 
 # Translators:
 # CoolGoose <melipse@gmail.com>, 2009
-# Mark Trompell <mark@foresightlinux.org>, 2009
-# Mișu Moldovan <dumol@l10n.ro>, 2013
+# Mark Trompell <mark@marktrompell.de>, 2009
+# Dumitru Moldovan <dumol@gnome.org>, 2013
 # Mișu Moldovan <dumol@xfce.org>, 2013
 msgid ""
 msgstr ""
