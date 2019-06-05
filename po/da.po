@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2019-05-20 18:48+0000\n"
+"PO-Revision-Date: 2019-06-05 13:36+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Bluetooth"
 
 #: ../panel-plugin/indicator-dialog.c:72
 msgid "Sync Menu"
-msgstr "Synkronisationsmenu"
+msgstr "Synkroniseringsmenu"
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
