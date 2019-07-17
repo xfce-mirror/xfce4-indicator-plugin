@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Jari Rahkonen <inactive+jari@transifex.com>, 2012
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2013,2018
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2013,2018-2019
 # Pasi Lallinaho <pasi@shimmerproject.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2018-02-19 12:34+0000\n"
+"PO-Revision-Date: 2019-07-17 08:24+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-panel-plugins/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -98,7 +98,7 @@ msgstr "Workrave"
 
 #: ../panel-plugin/indicator-dialog.c:446
 msgid "Clear"
-msgstr "Selkeää"
+msgstr "Tyhjennä"
 
 #: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
@@ -177,7 +177,7 @@ msgstr "Siirrä valittua ilmaisinta yksi rivi alas."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Jotta uudet näkyvyysasetukset otetaan käyttöön, ole hyvä ja käynnistä paneel uudelleen.</i>"
+msgstr "<i>Jotta uudet näkyvyysasetukset otetaan käyttöön, käynnistä paneeli uudelleen.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
