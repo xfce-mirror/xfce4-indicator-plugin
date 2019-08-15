@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Daniel Muñiz Fontoira <dani@damufo.com>, 2018
+# Daniel Muñiz Fontoira <dani@damufo.com>, 2018-2019
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012
 # Xosé, 2017
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2018-10-02 10:02+0000\n"
+"PO-Revision-Date: 2019-08-15 09:26+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -102,12 +102,12 @@ msgstr "Limpar"
 
 #: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr "Confirma que desexa limpar a lista de indicadores coñecidos?"
+msgstr "Desexa realmente limpar a lista de indicadores coñecidos?"
 
 #: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Non foi posíbel abrir o URL seguinte: %s"
+msgstr "Non se puido abrir o URL seguinte: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "Indicators"
@@ -121,7 +121,7 @@ msgstr "Arrombar os indicadores nunha única fila"
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr "Ao activar, asegúrase de que os indicadores se dispoñen nunha única fila ou columna."
+msgstr "Se activar, os indicadores disporanse nunha única fila ou columna."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -139,7 +139,7 @@ msgstr "Iconas cadradas"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Indicator buttons will take a square when it's possible."
-msgstr "Os botóns do indicador collerán un cadrado cando sexa posible."
+msgstr "Os botóns do indicador collerán un cadrado cando sexa posíbel."
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
@@ -153,7 +153,7 @@ msgstr "Agochar os indicadores por omisión"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Ao activar, só se mostran os indicadores marcados como «visíbeis». Se non móstranse todos os indicadores non marcados como «agochados»."
+msgstr "Se activar, só se amosan os indicadores marcados como «visíbeis». Se desactivar amosaranse todos os indicadores non marcados como «agochados»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
