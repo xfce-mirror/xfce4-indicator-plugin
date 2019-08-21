@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2019-08-15 09:26+0000\n"
+"PO-Revision-Date: 2019-08-21 14:33+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Engadido de indicadores"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Fornece unha zona do panel para os indicadores de Unity. Os indicadores permiten que os aplicativos e os servizos do sistema mostren o seu estado e interactúen co usuario."
+msgstr "Fornece unha zona do panel para os indicadores de Unity. Os indicadores permiten que as aplicacións e os servizos do sistema amosen o seu estado e interactúen co usuario."
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
@@ -42,7 +42,7 @@ msgstr "Sen indicadores"
 #. icon-name(?)
 #: ../panel-plugin/indicator-dialog.c:57
 msgid "Application Indicators"
-msgstr "Indicadores de aplicativos"
+msgstr "Indicadores de aplicacións"
 
 #: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
 msgid "Sound Menu"
@@ -58,7 +58,7 @@ msgstr "Xestión da enerxía"
 
 #: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
-msgstr "Menú de aplicativos (Menú Global)"
+msgstr "Menú de aplicacións (Menú Global)"
 
 #: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
