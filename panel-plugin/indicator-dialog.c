@@ -35,8 +35,8 @@
 
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
-//#include <exo/exo.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
+/*#include <exo/exo.h>*/
+#include <libxfce4panel/libxfce4panel.h>
 
 #include "indicator-dialog.h"
 #include "indicator-dialog_ui.h"
