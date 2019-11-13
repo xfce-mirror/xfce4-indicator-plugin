@@ -41,7 +41,7 @@
 #include "indicator-dialog.h"
 #include "indicator-dialog_ui.h"
 
-#define PLUGIN_WEBSITE  "https://goodies.xfce.org/projects/panel-plugins/xfce4-indicator-plugin"
+#define PLUGIN_WEBSITE  "https://docs.xfce.org/panel-plugins/xfce4-indicator-plugin"
 
 #ifdef LIBXFCE4UI_CHECK_VERSION
 #if LIBXFCE4UI_CHECK_VERSION (4,9,0)

@@ -179,7 +179,7 @@ indicator_show_about (XfcePanelPlugin *plugin)
                          "version", PACKAGE_VERSION,
                          "program-name", PACKAGE_NAME,
                          "comments", _("Provides a panel area for Unity indicators. Indicators allow applications and system services to display their status and interact with the user."),
-                         "website", "https://goodies.xfce.org/projects/panel-plugins/xfce4-indicator-plugin",
+                         "website", "https://docs.xfce.org/panel-plugins/xfce4-indicator-plugin",
                          "copyright", _("Copyright (c) 2009-2013\n"),
                          "authors", auth, NULL);
 
