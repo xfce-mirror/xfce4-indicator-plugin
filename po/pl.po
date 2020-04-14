@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013
-# Marcin Mikołajczak <me@m4sk.in>, 2016
+# Marcin Mikołajczak <me@mkljczk.pl>, 2016
 # Michał Olber <michal@olber.pl>, 2013
 # No Ne, 2017
 # Piotr Sokół <psokol.l10n@gmail.com>, 2011,2013-2014
