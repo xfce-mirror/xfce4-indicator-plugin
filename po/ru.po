@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Al, 2016
+# Alexander Filev, 2016
 # Evgeni Golov <evgeni@debian.org>, 2010
 # Igor <f2404@yandex.ru>, 2016-2017
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2013
