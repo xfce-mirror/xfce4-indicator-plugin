@@ -14,6 +14,7 @@ rpm: dist
 	@rm -f $(PACKAGE)-$(VERSION).tar.gz
 
 EXTRA_DIST =								\
+	README.md							\								
 	intltool-extract.in						\
 	intltool-merge.in						\
 	intltool-update.in
