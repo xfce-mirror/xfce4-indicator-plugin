@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012
-# Moo, 2015-2017
+# Moo, 2015-2017,2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-09-23 18:48+0000\n"
+"PO-Revision-Date: 2020-08-20 09:35+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -130,7 +130,7 @@ msgstr "Darbalaukio juostos veiksenoje lygiuoti kairėje"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Valdo indikatoriaus mygtuko lygiuotę, kai skydelis yra Darbalaukio juostos veiksenoje. Galimi pasirinkimai yra \"centruotai\" arba \"lygiuota kairėje\"."
+msgstr "Valdo indikatoriaus mygtuko lygiuotę, kai skydelis yra Darbalaukio juostos veiksenoje. Galimi pasirinkimai yra „centruotai“ arba „lygiuota kairėje“."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
@@ -152,7 +152,7 @@ msgstr "Slėpti indikatorius pagal numatymą"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Kai įjungta, bus rodomi tik indikatoriai pažymėti kaip \"Matomas\". Kitu atveju, bus rodomi visi indikatoriai, kurie nėra pažymėti kaip \"Paslėptas\"."
+msgstr "Kai įjungta, bus rodomi tik indikatoriai pažymėti kaip „Matomas“. Kitu atveju, bus rodomi visi indikatoriai, kurie nėra pažymėti kaip „Paslėptas“."
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
