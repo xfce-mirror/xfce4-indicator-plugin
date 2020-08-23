@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Arman Harutyunyan <arman.harut468@gmail.com>, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-16 18:31+0200\n"
+"PO-Revision-Date: 2020-08-22 11:25+0000\n"
+"Last-Translator: Arman Harutyunyan <arman.harut468@gmail.com>\n"
+"Language-Team: Eastern Armenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/hye/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hye\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:1
+msgid "Indicator Plugin"
+msgstr "Ցուցիչի Ներդրաւն"
+
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr "Միասնութեան ցուցանիշների համար ապահովում է ընտրացանկի տարածք: Ցուցանիշները թոյլ են տալիս ծրագրերին եւ համակարգային ծառայութիւններին ցուցադրել իրենց կարգավիճակը եւ շփուել աւգտագործողի հետ:"
+
+#: ../panel-plugin/indicator.c:183
+msgid "Copyright (c) 2009-2013\n"
+msgstr "Հեղինակային իրաւունք (c) 2009-2013թթ.\n"
+
+#: ../panel-plugin/indicator.c:324
+msgid "No Indicators"
+msgstr "Ցուցանիշներ չկա"
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: ../panel-plugin/indicator-dialog.c:57
+msgid "Application Indicators"
+msgstr "Յաւելուածի ցուցանիշներ"
+
+#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+msgid "Sound Menu"
+msgstr "Ձայնային ընտրացանկ"
+
+#: ../panel-plugin/indicator-dialog.c:60
+msgid "Printers Menu"
+msgstr "Տպիչների ընտրացանկ"
+
+#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+msgid "Power Management"
+msgstr "Հզորութեան Կառավարում"
+
+#: ../panel-plugin/indicator-dialog.c:63
+msgid "Application Menus (Global Menu)"
+msgstr "Յաւելուածի ընտրացանկեր (Ընդհանուր Ընտրացանկ)"
+
+#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+msgid "Session Management"
+msgstr "Նիստերի Կառավարում"
+
+#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+msgid "Messaging Menu"
+msgstr "Հաղորդագրութիւնների ընտրացանկ"
+
+#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+msgid "Date and Time"
+msgstr "Ամսաթիւը եւ ժամանակը"
+
+#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ../panel-plugin/indicator-dialog.c:72
+msgid "Sync Menu"
+msgstr "Համաժամեցման ընտրացանկ"
+
+#: ../panel-plugin/indicator-dialog.c:73
+msgid "Keyboard"
+msgstr "Ստեղնաշար"
+
+#: ../panel-plugin/indicator-dialog.c:74
+msgid "Location"
+msgstr "Գտնվելու վայրը"
+
+#: ../panel-plugin/indicator-dialog.c:75
+msgid "Network"
+msgstr "Ցանց"
+
+#: ../panel-plugin/indicator-dialog.c:76
+msgid "Workrave"
+msgstr "Աշխատատեղ"
+
+#: ../panel-plugin/indicator-dialog.c:446
+msgid "Clear"
+msgstr "Մաքրել"
+
+#: ../panel-plugin/indicator-dialog.c:447
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Համոզուա՞ծ էք, որ ցանկանում էք մաքրել յայտնի ցուցանիշների ցուցակը"
+
+#: ../panel-plugin/indicator-dialog.c:579
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Չյաջողուեց բացել հետեւեալ url֊ը․ %s"
+
+#: ../panel-plugin/indicator-dialog.glade.h:1
+msgid "Indicators"
+msgstr "Ցուցանիշներ"
+
+#: ../panel-plugin/indicator-dialog.glade.h:2
+msgid "Arrange indicators in a single row"
+msgstr "Ցուցանիշները դասավորէք մեկ շարքով"
+
+#: ../panel-plugin/indicator-dialog.glade.h:3
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "Միացուած լինելու դէպքում համոզուէք, որ ցուցանիշները ներկայացուած են մեկ շարքով կամ սիւնակով:"
+
+#: ../panel-plugin/indicator-dialog.glade.h:4
+msgid "Align left in deskbar mode"
+msgstr "Հաւասարեցրէք ձախ` աշխատասեղանի կարգում"
+
+#: ../panel-plugin/indicator-dialog.glade.h:5
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr "Վերահսկում է ցուցիչի կոճակի դասաւորութիւնը, երբ վահանակը գտնուում է աշխատասեղանի կարգում: Հնարաւոր ընտրութիւնները «կենտրոնացած» են կամ «հաւասարեցուած ձախ»:"
+
+#: ../panel-plugin/indicator-dialog.glade.h:6
+msgid "Square icons"
+msgstr "Ուղղանկիւն պատկերներ"
+
+#: ../panel-plugin/indicator-dialog.glade.h:7
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "Ցուցանիշի կոճակները կարող էք վերցնել ուղղանկիւն, երբ դրանք հնարաւոր լինէն:"
+
+#: ../panel-plugin/indicator-dialog.glade.h:8
+msgid "Appearance"
+msgstr "Տեսք"
+
+#: ../panel-plugin/indicator-dialog.glade.h:9
+msgid "Hide indicators by default"
+msgstr "Թաքցնել ցուցիչները ըստ լռելեայն"
+
+#: ../panel-plugin/indicator-dialog.glade.h:10
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "Միացուած լինելու դէպքում ցուցադրուում են միայն «Տեսանելի» նշանով ցուցիչները: Հակառակ դէպքում ցուցադրուում են «Թաքնուած» նշան չունեցող բոլոր ցուցիչները:"
+
+#: ../panel-plugin/indicator-dialog.glade.h:11
+msgid "Indicator"
+msgstr "Ցուցիչ"
+
+#: ../panel-plugin/indicator-dialog.glade.h:12
+msgid "Hidden"
+msgstr "Թաքնուած"
+
+#: ../panel-plugin/indicator-dialog.glade.h:13
+msgid "Visible"
+msgstr "Տեսանելի"
+
+#: ../panel-plugin/indicator-dialog.glade.h:14
+msgid "Move the selected indicator one row up."
+msgstr "Ընտրէք ցուցիչը մեկ շարք վեր:"
+
+#: ../panel-plugin/indicator-dialog.glade.h:15
+msgid "Move the selected indicator one row down."
+msgstr "Ընտրէք ցուցիչը մեկ շարք ներքեւ:"
+
+#: ../panel-plugin/indicator-dialog.glade.h:16
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Տեսանելիութեան փոփոխութիւնների համար, խնդրում ենք վերագործարկէք վահանակը:</i>"
+
+#: ../panel-plugin/indicator-dialog.glade.h:17
+msgid "C_lear known indicators"
+msgstr "Մաք_րել յայտնի ցուցիչները"
+
+#: ../panel-plugin/indicator-dialog.glade.h:18
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Վերականգնում է ցուցիչների ցուցակը եւ դրանց տեսանելիութեան կարգաւորումները:"
+
+#: ../panel-plugin/indicator-dialog.glade.h:19
+msgid "Known Indicators"
+msgstr "Յայտնի Ցուցիչները"
