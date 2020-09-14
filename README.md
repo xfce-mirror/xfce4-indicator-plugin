@@ -8,7 +8,7 @@ xfce4-indicator-plugin is a panel plugin that uses the indicator-applet to show 
 
 ### Homepage
 
-[xfce4-indicator-plugin documentation](https://docs.xfce.org/panel-plugins/xfce4-indicator-plugin)
+[Xfce4-indicator-plugin documentation](https://docs.xfce.org/panel-plugins/xfce4-indicator-plugin)
 
 ### Changelog
 
@@ -16,13 +16,13 @@ See [NEWS](https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin/-/blob/m
 
 ### Source Code Repository
 
-[xfce4-indicator-plugin source code](https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin)
+[Xfce4-indicator-plugin source code](https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin)
 
-### Download A Release Tarball
+### Download a Release Tarball
 
-[xfce4-indicator-plugin archive](https://archive.xfce.org/src/panel-plugins/xfce4-indicator-plugin)
+[Xfce4-indicator-plugin archive](https://archive.xfce.org/src/panel-plugins/xfce4-indicator-plugin)
     or
-[xfce4-indicator-plugin tags](https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin/-/tags)
+[Xfce4-indicator-plugin tags](https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin/-/tags)
 
 ### Installation
 
