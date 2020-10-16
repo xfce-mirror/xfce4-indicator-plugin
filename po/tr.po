@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# atekinalp <alper.tekinalp@gmail.com>, 2011
+# Alper Tekinalp <alper.tekinalp@gmail.com>, 2011
 # Faruk Uzun <farukuzun@mail.com>, 2013
 # Necdet Yücel <necdetyucel@gmail.com>, 2013,2017
 # Recep, 2013
