@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Chris Darnell <chris@cedeel.com>, 2013
-# Morten Juhl-Johansen Zőlde-Fejér <inactive+mjjzfacee32fe569a410d@transifex.com>, 2011
+# ea4b4751f5ec55ccd3794966031c4bec_95b0ea5 <3ab812a3ed9c00fcd3ef47eaab929f30_23442>, 2011
 # scootergrisen, 2016-2017,2019
 msgid ""
 msgstr ""
