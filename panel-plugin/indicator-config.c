@@ -36,7 +36,6 @@
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
 #include <xfconf/xfconf.h>
-//#include <exo/exo.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
 
 #include "indicator.h"
@@ -635,7 +634,6 @@ indicator_config_blacklist_set (IndicatorConfig *config,
   gchar *name_copy;
 
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  //g_return_if_fail (!exo_str_is_empty (name));
 
   if (add)
     {
@@ -662,7 +660,6 @@ indicator_config_whitelist_set (IndicatorConfig *config,
   gchar *name_copy;
 
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  //g_return_if_fail (!exo_str_is_empty (name));
 
   if (add)
     {
@@ -711,7 +708,6 @@ indicator_config_add_known_indicator (IndicatorConfig *config,
   GList    *li;
 
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  //g_return_if_fail (!exo_str_is_empty (name));
 
   /* check if the indicator is already known */
   for(li = config->known_indicators; li != NULL; li = li->next)
@@ -735,8 +731,6 @@ indicator_config_swap_known_indicators (IndicatorConfig *config,
   GList       *li, *li_tmp;
 
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (config));
-  //g_return_if_fail (!exo_str_is_empty (name1));
-  //g_return_if_fail (!exo_str_is_empty (name2));
 
   for(li = config->known_indicators; li != NULL; li = li->next)
     if (g_strcmp0 (li->data, name1) == 0)

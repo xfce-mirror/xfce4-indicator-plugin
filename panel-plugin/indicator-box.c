@@ -26,7 +26,6 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-//#include <exo/exo.h>
 #include <libxfce4panel/libxfce4panel.h>
 #include <libindicator/indicator-object.h>
 
@@ -627,4 +626,3 @@ xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
         }
     }
 }
-
