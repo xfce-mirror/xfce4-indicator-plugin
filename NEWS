@@ -1,3 +1,21 @@
+2.4.0
+======
+- Fix build with xfce4-panel 4.16
+- Improved spacing, drop deprecated widget properties (Bug #14667)
+- Drop dependency to exo-1
+- Update README.md
+- Add basic GitLab pipeline
+- Switch to README.md and foreign automake mode
+- replace outdated email address
+- Update URLs from goodies.x.o to docs.x.o (Bug #16166)
+- s/http/https
+- Translation Updates:
+  Albanian, Belarusian, Catalan, Chinese (Taiwan), Czech, Danish,
+  Eastern Armenian, English (Australia), Finnish, French, Galician,
+  German, Greek, Hebrew, Hungarian, Icelandic, Interlingue, Italian,
+  Japanese, Lithuanian, Norwegian Bokmål, Polish, Portuguese,
+  Romanian, Russian, Slovak, Slovenian, Spanish, Turkish, Ukrainian
+
 2.3.4
 =====
 - Bump GTK version to 3.18, remove deprecations
