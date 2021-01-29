@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2021-01-22 16:26+0000\n"
+"PO-Revision-Date: 2021-01-29 16:18+0000\n"
 "Last-Translator: beriain\n"
 "Language-Team: Basque (http://www.transifex.com/xfce/xfce-panel-plugins/language/eu/)\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Adierazle plugina"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "Paneleko area bat gehitzen du Unity adierazleentzako. Adierazleak aplikazioek eta sistemaren zerbitzuek beren egoera erakustea baimentzen dute eta erabiltzailearekin elkar eragitea."
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
@@ -119,7 +119,7 @@ msgstr "Adierazleak lerro bakarrean antolatu"
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr ""
+msgstr "Gaituta badago, adierazleak lerro edo zutabe bakarrean jartzea bermatu."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -129,15 +129,15 @@ msgstr "Ezkerrera lerrokatu mahaigain-barra moduan."
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "Adierazle botoi diseinua kontrolatzen du panela mahaigain-barra moduan dagoenean. Aukerak posibleak \"zentratuta\" edo \"ezkerrean lerrokatuta\" dira."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
-msgstr ""
+msgstr "Ikono karratuak"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Indicator buttons will take a square when it's possible."
-msgstr ""
+msgstr "Adierazle botoiak karratuak izango dira ahal denean."
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
