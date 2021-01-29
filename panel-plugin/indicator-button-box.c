@@ -403,8 +403,6 @@ indicator_button_box_get_preferred_width (GtkWidget *widget,
 {
   IndicatorButtonBox  *box = XFCE_INDICATOR_BUTTON_BOX (widget);
   gint                 min_size, nat_size;
-  gint                 panel_size, nrows, size;
-  gboolean             square_icons;
 
   if (indicator_button_box_is_small (box)) // check & cache
     {
