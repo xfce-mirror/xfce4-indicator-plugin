@@ -1,3 +1,5 @@
+ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+
 SUBDIRS =								\
 	icons								\
 	panel-plugin 							\
@@ -14,7 +16,7 @@ rpm: dist
 	@rm -f $(PACKAGE)-$(VERSION).tar.gz
 
 EXTRA_DIST =								\
-	README.md							\								
+	README.md							\
 	intltool-extract.in						\
 	intltool-merge.in						\
 	intltool-update.in
