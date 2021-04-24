@@ -254,8 +254,7 @@ indicator_config_finalize (GObject *object)
 
   g_hash_table_destroy (config->blacklist);
   g_hash_table_destroy (config->whitelist);
-  g_list_foreach (config->known_indicators, (GFunc) g_free, NULL);
-  g_list_free (config->known_indicators);
+  g_list_free_full (config->known_indicators, g_free);
 
   G_OBJECT_CLASS (indicator_config_parent_class)->finalize (object);
 }
@@ -766,8 +765,7 @@ indicator_config_swap_known_indicators (IndicatorConfig *config,
 void
 indicator_config_names_clear (IndicatorConfig *config)
 {
-  g_list_foreach (config->known_indicators, (GFunc) g_free, NULL);
-  g_list_free (config->known_indicators);
+  g_list_free_full (config->known_indicators, g_free);
   config->known_indicators = NULL;
   g_object_notify (G_OBJECT (config), "known-indicators");
 
