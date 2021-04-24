@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2021-03-13 10:29+0000\n"
+"PO-Revision-Date: 2021-04-24 08:08+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr "Se proveerá un área para los indicadores de Unity. Estos indicadores p
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
-msgstr "Derechos de autor © 2009–2013\n"
+msgstr "Copyright (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
