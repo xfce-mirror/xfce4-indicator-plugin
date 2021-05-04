@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2021-04-24 08:08+0000\n"
+"PO-Revision-Date: 2021-05-04 15:39+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "Complemento de indicador"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Se proveerá un área para los indicadores de Unity. Estos indicadores permiten a aplicaciones y servicios del sistema mostrar su estado de manera interactiva con el usuario."
+msgstr "Proporciona un área del panel para los indicadores de Unity. Los indicadores permiten a las aplicaciones y a los servicios del sistema mostrar su estado e interactuar con el usuario."
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
@@ -152,7 +152,7 @@ msgstr "Apariencia"
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Hide indicators by default"
-msgstr "Ocultar los indicadores de manera predeterminada"
+msgstr "Ocultar los indicadores por defecto"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
 msgid ""
