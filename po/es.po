@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2021-05-04 15:39+0000\n"
+"PO-Revision-Date: 2021-05-08 20:25+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -174,11 +174,11 @@ msgstr "Visible"
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Move the selected indicator one row up."
-msgstr "Mover el indicador seleccionado una fila hacia arriba."
+msgstr "Subir el indicador seleccionado una fila."
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Move the selected indicator one row down."
-msgstr "Mover el indicador seleccionado una fila hacia abajo."
+msgstr "Bajar el indicador seleccionado una fila."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
