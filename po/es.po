@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2021-05-09 09:18+0000\n"
+"PO-Revision-Date: 2021-05-10 20:30+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,7 @@ msgstr "Bluetooth"
 
 #: ../panel-plugin/indicator-dialog.c:72
 msgid "Sync Menu"
-msgstr "Menú de sincronizado"
+msgstr "Menú de sincronización"
 
 #: ../panel-plugin/indicator-dialog.c:73
 msgid "Keyboard"
@@ -103,7 +103,7 @@ msgstr "Workrave"
 
 #: ../panel-plugin/indicator-dialog.c:446
 msgid "Clear"
-msgstr "Vaciar"
+msgstr "Borrar"
 
 #: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
@@ -186,7 +186,7 @@ msgstr "<i>Reinicie el panel para que los cambios en la visibilidad surtan efect
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
-msgstr "_Limpiar indicadores conocidos"
+msgstr "_Borrar indicadores conocidos"
 
 #: ../panel-plugin/indicator-dialog.glade.h:18
 msgid "Resets the list of indicators and their visibility settings."
