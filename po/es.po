@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2021-05-10 20:30+0000\n"
+"PO-Revision-Date: 2021-05-11 18:13+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "Copyright (c) 2009-2013\n"
 
 #: ../panel-plugin/indicator.c:324
 msgid "No Indicators"
-msgstr "No hay indicadores"
+msgstr "Sin indicadores"
 
 #. raw name,                           pretty name,
 #. icon-name(?)
@@ -63,11 +63,11 @@ msgstr "Gestión de energía"
 
 #: ../panel-plugin/indicator-dialog.c:63
 msgid "Application Menus (Global Menu)"
-msgstr "Menús de aplicación (menú global)"
+msgstr "Menús de la aplicación (menú global)"
 
 #: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
 msgid "Session Management"
-msgstr "Gestión de sesión"
+msgstr "Gestión de la sesión"
 
 #: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
 msgid "Messaging Menu"
@@ -107,12 +107,12 @@ msgstr "Borrar"
 
 #: ../panel-plugin/indicator-dialog.c:447
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr "¿Está seguro que quiere vaciar la lista de indicadores conocidos?"
+msgstr "¿Seguro que quiere borrar la lista de indicadores conocidos?"
 
 #: ../panel-plugin/indicator-dialog.c:579
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "No se ha podido abrir la dirección URL siguiente: %s"
+msgstr "No se puede abrir el URL siguiente: %s"
 
 #: ../panel-plugin/indicator-dialog.glade.h:1
 msgid "Indicators"
@@ -120,23 +120,23 @@ msgstr "Indicadores"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr "Ordenar indicadores en una única línea"
+msgstr "Organizar los indicadores en una sola fila"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr "Si esta activado, establece que todos los indicadores se posicionarán en una única línea o columna"
+msgstr "Si se activa, garantiza que los indicadores se dispongan en una sola fila o columna."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
-msgstr "Alinear a la izquierda en el modo barra de escritorio"
+msgstr "Alinear a la izquierda en el modo de barra de escritorio"
 
 #: ../panel-plugin/indicator-dialog.glade.h:5
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Controla la disposición del botón indicador cuando el panel está en el modo barra de escritorio. Las opciones posibles son «centrado» o «alineado a la izquierda»."
+msgstr "Controla la disposición de los botones de los indicadores cuando el panel está en modo de barra de escritorio. Las opciones posibles son «centrado» o «alineado a la izquierda»."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
@@ -144,7 +144,7 @@ msgstr "Iconos cuadrados"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Indicator buttons will take a square when it's possible."
-msgstr "El botón indicador tomará un cuadrado cuando le sea posible."
+msgstr "Los botones de los indicadores adoptarán forma cuadrada cuando sea posible."
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
@@ -158,7 +158,7 @@ msgstr "Ocultar los indicadores por defecto"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Cuando se activa, solo se muestran los indicadores marcados como «visibles». Si no, se muestran todos los indicadores no marcados como «ocultos»."
+msgstr "Si se activa, solo se mostrarán los indicadores marcados como visibles. En caso contrario, se mostrarán todos los indicadores que no estén marcados como ocultos."
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
@@ -182,11 +182,11 @@ msgstr "Bajar el indicador seleccionado una fila."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Reinicie el panel para que los cambios en la visibilidad surtan efecto.</i>"
+msgstr "<i>Reinicie el panel para que surtan efecto los cambios de visibilidad.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
-msgstr "_Borrar indicadores conocidos"
+msgstr "_Borrar los indicadores conocidos"
 
 #: ../panel-plugin/indicator-dialog.glade.h:18
 msgid "Resets the list of indicators and their visibility settings."
