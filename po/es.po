@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2021-05-11 18:13+0000\n"
+"PO-Revision-Date: 2021-05-15 08:34+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -27,13 +27,13 @@ msgstr ""
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
-msgstr "Complemento para los indicadores"
+msgstr "Indicadores"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Proporciona un área del panel para los indicadores de Unity. Los indicadores permiten a las aplicaciones y a los servicios del sistema mostrar su estado e interactuar con el usuario."
+msgstr "Área del panel para los indicadores de Unity. Los indicadores permiten a las aplicaciones y a los servicios del sistema mostrar su estado e interactuar con el usuario."
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
@@ -126,7 +126,7 @@ msgstr "Organizar los indicadores en una sola fila"
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr "Si se activa, garantiza que los indicadores se dispongan en una sola fila o columna."
+msgstr "Si se activa, los indicadores se disponen en una sola fila o columna."
 
 #: ../panel-plugin/indicator-dialog.glade.h:4
 msgid "Align left in deskbar mode"
@@ -136,7 +136,7 @@ msgstr "Alinear a la izquierda en el modo de barra de escritorio"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Controla la disposición de los botones de los indicadores cuando el panel está en modo de barra de escritorio. Las opciones posibles son «centrado» o «alineado a la izquierda»."
+msgstr "Controla la disposición de los botones de los indicadores cuando el panel está en modo de barra de escritorio. Las opciones posibles son centrarlos o alinearlos a la izquierda."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
@@ -174,11 +174,11 @@ msgstr "Visible"
 
 #: ../panel-plugin/indicator-dialog.glade.h:14
 msgid "Move the selected indicator one row up."
-msgstr "Subir el indicador seleccionado una fila."
+msgstr "Subir una fila el indicador seleccionado."
 
 #: ../panel-plugin/indicator-dialog.glade.h:15
 msgid "Move the selected indicator one row down."
-msgstr "Bajar el indicador seleccionado una fila."
+msgstr "Bajar una fila el indicador seleccionado."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
