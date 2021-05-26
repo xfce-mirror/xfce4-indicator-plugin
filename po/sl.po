@@ -4,13 +4,13 @@
 # 
 # Translators:
 # 8b03701f910565d01acaec9ce3f558ab_e9f0fee <b5b06e8f85fb8288fe43ad0bc2422d94_32848>, 2013
-# Arnold Marko <arnold.marko@gmail.com>, 2019
+# Arnold Marko <arnold.marko@gmail.com>, 2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2019-11-03 17:07+0000\n"
+"PO-Revision-Date: 2021-05-26 07:48+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Vtičnik indikatorjev"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Na pultu ustvari področje za Unity indikatorje. Indikatorij omogočajo aplikacijam in sistemskim storitvam prikazovanje svojega statusa in interakcijo z uporabnikom."
+msgstr "Na panoju ustvari področje za Unity prikazovalnike. Prikazovalniki omogočajo aplikacijam in sistemskim storitvam prikaz statusa in interakcijo z uporabnikom."
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
@@ -130,7 +130,7 @@ msgstr "Levo poravnaj v načinu namizne vrstice"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Nadzoruje razpored gumbov indikatorjev, ko je pult v načinu namizne vrstice. Možni izbiri sta \"sredinsko\" ali \"levo poravnano\"."
+msgstr "Nadzoruje razpored prikazovalnih gumbov, ko je pano v načinu namizne vrstice. Možni izbiri sta \"sredinsko\" ali \"levo poravnano\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:6
 msgid "Square icons"
@@ -176,7 +176,7 @@ msgstr "Premakni izbrani indikator eno vrstico dol."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Znova zaženite pult, da bodo spremembe vidnosti imele učinek.</i>"
+msgstr "</i>Ponovno zaženite pano, da bodo spremembe vidne.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
