@@ -6,13 +6,14 @@
 # Alois Nešpor <info@aloisnespor.info>, 2013
 # Michal Várady <miko.vaji@gmail.com>, 2012-2013,2016-2017
 # fri, 2013
+# Stanislav Horáček <stanislav.horacek@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2019-01-11 09:44+0000\n"
-"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
+"PO-Revision-Date: 2021-12-29 17:40+0000\n"
+"Last-Translator: Stanislav Horáček <stanislav.horacek@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/xfce/xfce-panel-plugins/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +29,7 @@ msgstr "Zásuvný modul Indikátor"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr "Poskytuje prostor panelu indikátorům Unity. Indikátory umožňují aplikacím a systémovým službám zobrazit svůj stav a reagovat na vstup uživatele."
+msgstr "Poskytuje prostor panelu indikátorům Unity. Indikátory umožňují aplikacím a systémovým službám zobrazit jejich stav a reagovat na vstup uživatele."
 
 #: ../panel-plugin/indicator.c:183
 msgid "Copyright (c) 2009-2013\n"
@@ -115,7 +116,7 @@ msgstr "Indikátory"
 
 #: ../panel-plugin/indicator-dialog.glade.h:2
 msgid "Arrange indicators in a single row"
-msgstr "Uspořádat ukazatele v jednom řádku"
+msgstr "Uspořádat indikátory v jednom řádku"
 
 #: ../panel-plugin/indicator-dialog.glade.h:3
 msgid ""
@@ -139,7 +140,7 @@ msgstr "Čtvercové ikony"
 
 #: ../panel-plugin/indicator-dialog.glade.h:7
 msgid "Indicator buttons will take a square when it's possible."
-msgstr "Pokud to bude možné, budou tlačítka indikátoru čtvercové."
+msgstr "Pokud to bude možné, budou tlačítka indikátoru čtvercová."
 
 #: ../panel-plugin/indicator-dialog.glade.h:8
 msgid "Appearance"
@@ -147,13 +148,13 @@ msgstr "Vzhled"
 
 #: ../panel-plugin/indicator-dialog.glade.h:9
 msgid "Hide indicators by default"
-msgstr "Ve výchozím stavu skrýt indikátory"
+msgstr "Ve výchozím stavu indikátory skrýt"
 
 #: ../panel-plugin/indicator-dialog.glade.h:10
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Pokud je tato volby povolena, zobrazí se pouze indikátory označené jako \"Viditelné\". V opačném případě se zobrazí všechny indikátory, kromě indikátorů označených jako \"Skryté\""
+msgstr "Pokud je tato volby povolena, zobrazí se pouze indikátory označené jako \"Viditelné\". V opačném případě se zobrazí všechny indikátory kromě indikátorů označených jako \"Skryté\"."
 
 #: ../panel-plugin/indicator-dialog.glade.h:11
 msgid "Indicator"
@@ -177,7 +178,7 @@ msgstr "Přesunout vybraný indikátor o řádek níže."
 
 #: ../panel-plugin/indicator-dialog.glade.h:16
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr "<i>Změny viditelnosti se projeví po restartu panelu.<./i>"
+msgstr "<i>Změny viditelnosti se projeví po restartu panelu.</i>"
 
 #: ../panel-plugin/indicator-dialog.glade.h:17
 msgid "C_lear known indicators"
