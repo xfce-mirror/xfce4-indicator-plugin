@@ -86,7 +86,6 @@ struct _IndicatorPlugin
   gint             indicator_count;
 
   /* panel widgets */
-  GtkWidget       *item;
   GtkWidget       *buttonbox;
 
   /* indicator settings */
@@ -132,7 +131,6 @@ indicator_init (IndicatorPlugin *indicator)
   g_log_set_always_fatal (G_LOG_LEVEL_ERROR);
 
   indicator->indicator_count = 0;
-  indicator->item            = NULL;
   indicator->buttonbox       = NULL;
   indicator->config          = NULL;
   indicator->logfile         = NULL;
@@ -313,20 +311,6 @@ indicator_construct (XfcePanelPlugin *plugin)
 #ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
   indicator_load_services (indicator);
 #endif
-
-  if (indicator->indicator_count == 0) {
-    /* A label to allow for click through */
-    indicator->item = xfce_indicator_button_new (NULL,
-                                                 "<placeholder>",
-                                                 NULL,
-                                                 plugin,
-                                                 indicator->config);
-    label = gtk_label_new ( _("No Indicators"));
-    xfce_indicator_button_set_label (XFCE_INDICATOR_BUTTON (indicator->item), GTK_LABEL (label));
-    gtk_container_add (GTK_CONTAINER (indicator->buttonbox), indicator->item);
-    gtk_widget_show (label);
-    gtk_widget_show (indicator->item);
-  }
 }
 
 
@@ -343,13 +327,6 @@ entry_added (IndicatorObject * io, IndicatorObjectEntry * entry, gpointer user_d
                                                        indicator->config);
 
   g_debug("Entry added for io=%s", io_name);
-
-  /* remove placeholder item when there are real entries to be added */
-  if (indicator->item != NULL)
-    {
-      xfce_indicator_button_destroy (XFCE_INDICATOR_BUTTON (indicator->item));
-      indicator->item = NULL;
-    }
 
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_button_set_use_underline(GTK_BUTTON (button),TRUE);
