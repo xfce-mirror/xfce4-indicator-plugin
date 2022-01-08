@@ -1,3 +1,15 @@
+2.4.1
+======
+- Fix distcheck build with recent libtool
+- Remove placeholder 'No Indicators' button (#14)
+- Fix compilation warnings
+- automake: Some updates
+- autoconf: Some updates
+- Add `.gitignore`
+- Translation Updates:
+  Basque, Belarusian, Catalan, Czech, Galician, Norwegian Bokmål,
+  Russian, Slovenian, Spanish, Turkish, Ukrainian
+
 2.4.0
 ======
 - Fix build with xfce4-panel 4.16
