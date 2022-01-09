@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
+"POT-Creation-Date: 2022-01-09 00:52+0100\n"
+"PO-Revision-Date: 2022-01-08 23:52+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Arabic (http://www.transifex.com/xfce/xfce-panel-plugins/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -24,87 +24,83 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "إضافة المؤشر"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:179
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "يوفر منطقة لوحة مؤشرات وحدة. مؤشرات تسمح بعرض حالة تطبيقات وخدمات النظام والتفاعل مع المستخدم."
 
-#: ../panel-plugin/indicator.c:183
+#: ../panel-plugin/indicator.c:181
 msgid "Copyright (c) 2009-2013\n"
 msgstr "حقوق النشر (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:324
-msgid "No Indicators"
-msgstr "بدون مؤشر"
-
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:57
+#: ../panel-plugin/indicator-dialog.c:56
 msgid "Application Indicators"
 msgstr "مؤشرات التطبيق"
 
-#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+#: ../panel-plugin/indicator-dialog.c:57 ../panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
 msgstr "قائمة الصوت"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: ../panel-plugin/indicator-dialog.c:59
 msgid "Printers Menu"
 msgstr "قائمة الطابعات"
 
-#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+#: ../panel-plugin/indicator-dialog.c:60 ../panel-plugin/indicator-dialog.c:61
 msgid "Power Management"
 msgstr "ادارة الطاقة"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: ../panel-plugin/indicator-dialog.c:62
 msgid "Application Menus (Global Menu)"
 msgstr "قوائم التطبيق (القائمة العامة)"
 
-#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+#: ../panel-plugin/indicator-dialog.c:63 ../panel-plugin/indicator-dialog.c:64
 msgid "Session Management"
 msgstr "ادارة الجلسة"
 
-#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+#: ../panel-plugin/indicator-dialog.c:65 ../panel-plugin/indicator-dialog.c:66
 msgid "Messaging Menu"
 msgstr "قائمة المراسلة"
 
-#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+#: ../panel-plugin/indicator-dialog.c:67 ../panel-plugin/indicator-dialog.c:68
 msgid "Date and Time"
 msgstr "التاريخ و الوقت"
 
-#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+#: ../panel-plugin/indicator-dialog.c:69 ../panel-plugin/indicator-dialog.c:70
 msgid "Bluetooth"
 msgstr "بلوتوث"
 
-#: ../panel-plugin/indicator-dialog.c:72
+#: ../panel-plugin/indicator-dialog.c:71
 msgid "Sync Menu"
 msgstr "قائمة المزامنة"
 
-#: ../panel-plugin/indicator-dialog.c:73
+#: ../panel-plugin/indicator-dialog.c:72
 msgid "Keyboard"
 msgstr "لوحة المفاتيح"
 
-#: ../panel-plugin/indicator-dialog.c:74
+#: ../panel-plugin/indicator-dialog.c:73
 msgid "Location"
 msgstr "الموقع"
 
-#: ../panel-plugin/indicator-dialog.c:75
+#: ../panel-plugin/indicator-dialog.c:74
 msgid "Network"
 msgstr "الشبكة"
 
-#: ../panel-plugin/indicator-dialog.c:76
+#: ../panel-plugin/indicator-dialog.c:75
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:446
+#: ../panel-plugin/indicator-dialog.c:445
 msgid "Clear"
 msgstr "صافي"
 
-#: ../panel-plugin/indicator-dialog.c:447
+#: ../panel-plugin/indicator-dialog.c:446
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "هل انت متاكد من مسح قائمة المؤشرات المعروفة؟"
 
-#: ../panel-plugin/indicator-dialog.c:579
+#: ../panel-plugin/indicator-dialog.c:578
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "غير قادر على فتح الرابط التالي: %s"
