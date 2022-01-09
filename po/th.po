@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-16 18:31+0200\n"
-"PO-Revision-Date: 2017-09-19 19:07+0000\n"
-"Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
+"POT-Creation-Date: 2022-01-09 00:52+0100\n"
+"PO-Revision-Date: 2022-01-08 23:52+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Thai (http://www.transifex.com/xfce/xfce-panel-plugins/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,87 +23,83 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "ปลั๊กอินบ่งชี้สถานะ"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:181
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:179
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "จัดเตรียมพื้นที่ในพาเนลสำหรับบ่งชี้สถานะแบบ Unity ตัวบ่งชี้ต่างๆ จะเปิดให้โปรแกรมและบริการต่างๆ ของระบบสามารถแสดงสถานะและโต้ตอบกับผู้ใช้ได้"
 
-#: ../panel-plugin/indicator.c:183
+#: ../panel-plugin/indicator.c:181
 msgid "Copyright (c) 2009-2013\n"
 msgstr "Copyright (c) 2009-2013\n"
 
-#: ../panel-plugin/indicator.c:324
-msgid "No Indicators"
-msgstr "ไม่มีตัวบ่งชี้"
-
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:57
+#: ../panel-plugin/indicator-dialog.c:56
 msgid "Application Indicators"
 msgstr "ตัวบ่งชี้ของโปรแกรม"
 
-#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+#: ../panel-plugin/indicator-dialog.c:57 ../panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
 msgstr "เมนูเสียง"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: ../panel-plugin/indicator-dialog.c:59
 msgid "Printers Menu"
 msgstr "เมนูเครื่องพิมพ์"
 
-#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+#: ../panel-plugin/indicator-dialog.c:60 ../panel-plugin/indicator-dialog.c:61
 msgid "Power Management"
 msgstr "การจัดการพลังงาน"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: ../panel-plugin/indicator-dialog.c:62
 msgid "Application Menus (Global Menu)"
 msgstr "เมนูโปรแกรม (เมนูแบบโกลบอล)"
 
-#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+#: ../panel-plugin/indicator-dialog.c:63 ../panel-plugin/indicator-dialog.c:64
 msgid "Session Management"
 msgstr "การจัดการวาระ"
 
-#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+#: ../panel-plugin/indicator-dialog.c:65 ../panel-plugin/indicator-dialog.c:66
 msgid "Messaging Menu"
 msgstr "เมนูข้อความทันใจ"
 
-#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+#: ../panel-plugin/indicator-dialog.c:67 ../panel-plugin/indicator-dialog.c:68
 msgid "Date and Time"
 msgstr "วันที่และเวลา"
 
-#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+#: ../panel-plugin/indicator-dialog.c:69 ../panel-plugin/indicator-dialog.c:70
 msgid "Bluetooth"
 msgstr "บลูทูท"
 
-#: ../panel-plugin/indicator-dialog.c:72
+#: ../panel-plugin/indicator-dialog.c:71
 msgid "Sync Menu"
 msgstr "เมนูการ Sync"
 
-#: ../panel-plugin/indicator-dialog.c:73
+#: ../panel-plugin/indicator-dialog.c:72
 msgid "Keyboard"
 msgstr "แป้นพิมพ์"
 
-#: ../panel-plugin/indicator-dialog.c:74
+#: ../panel-plugin/indicator-dialog.c:73
 msgid "Location"
 msgstr "ตำแหน่ง"
 
-#: ../panel-plugin/indicator-dialog.c:75
+#: ../panel-plugin/indicator-dialog.c:74
 msgid "Network"
 msgstr "เครือข่าย"
 
-#: ../panel-plugin/indicator-dialog.c:76
+#: ../panel-plugin/indicator-dialog.c:75
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:446
+#: ../panel-plugin/indicator-dialog.c:445
 msgid "Clear"
 msgstr "ล้าง"
 
-#: ../panel-plugin/indicator-dialog.c:447
+#: ../panel-plugin/indicator-dialog.c:446
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "คุณแน่ใจหรือไม่ว่าต้องการล้างรายชื่อตัวบ่งชี้ที่รู้จัก?"
 
-#: ../panel-plugin/indicator-dialog.c:579
+#: ../panel-plugin/indicator-dialog.c:578
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "ไม่สามารถเปิด URL ต่อไปนี้ได้: %s"
