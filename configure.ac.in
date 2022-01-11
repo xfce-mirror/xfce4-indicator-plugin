@@ -87,8 +87,8 @@ XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.13.0],,[
         AC_DEFINE([XFCONF_LEGACY], [], [Use dbus-glib provided by xfconf 4.12 to obtain array type])
         XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.6.0])
 ])
-INDICATOR_PKGNAME=indicator3-0.4
-XDT_CHECK_PACKAGE([INDICATOR], [${INDICATOR_PKGNAME}], [12.10.1])
+INDICATOR_PKGNAME=ayatana-indicator3-0.4
+XDT_CHECK_PACKAGE([INDICATOR], [${INDICATOR_PKGNAME}], [0.5.0])
 
 dnl ********************************************************************
 dnl *** Check if libindicator has indicator-ng.h headery             ***
@@ -96,13 +96,13 @@ dnl *** At the moment this cannot be derived from the version number ***
 dnl ********************************************************************
 AC_LANG_PUSH([C])
 CPPFLAGS=`$PKG_CONFIG --cflags ${INDICATOR_PKGNAME}`
-AC_CHECK_HEADERS([libindicator/indicator-ng.h], [HAVE_INDICATOR_NG_H=yes], [HAVE_INDICATOR_NG_H=no])
+AC_CHECK_HEADERS([libayatana-indicator/indicator-ng.h], [HAVE_INDICATOR_NG_H=yes], [HAVE_INDICATOR_NG_H=no])
 AC_LANG_POP
 
 dnl ****************************
 dnl *** Optional IDO library ***
 dnl ****************************
-XDT_CHECK_OPTIONAL_PACKAGE([IDO], [libido3-0.1], [13.10.0], [ido], [IDO library])
+XDT_CHECK_OPTIONAL_PACKAGE([IDO], [libayatana-ido3-0.4], [0.4.0], [ido], [IDO library])
 
 dnl ***********************************
 dnl *** Check for debugging support ***

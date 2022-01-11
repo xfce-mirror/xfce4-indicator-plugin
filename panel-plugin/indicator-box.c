@@ -31,7 +31,7 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libxfce4panel/libxfce4panel.h>
-#include <libindicator/indicator-object.h>
+#include <libayatana-indicator/indicator-object.h>
 
 #include "indicator-box.h"
 #include "indicator-button.h"
@@ -188,7 +188,7 @@ xfce_indicator_box_sort_buttons (gconstpointer a,
 
   /* special case for Application indicators (unreliable ordering) */
   /* always compare by name and ignore location field */
-  if (a_io != NULL && g_strcmp0 (a_io, "libapplication.so") == 0)
+  if (a_io != NULL && g_strcmp0 (a_io, "libayatana-application.so") == 0)
     result = g_strcmp0 (xfce_indicator_button_get_entry(a0)->name_hint,
                         xfce_indicator_button_get_entry(b0)->name_hint);
 
@@ -227,7 +227,7 @@ xfce_indicator_box_add (GtkContainer *container,
   io_name = xfce_indicator_button_get_io_name (button);
   li = g_hash_table_lookup (box->children, io_name);
   // printf ("   +++ %s %s\n", io_name, xfce_indicator_button_get_entry (button)->name_hint);
-  if (g_strcmp0 (io_name, "libapplication.so") != 0 &&
+  if (g_strcmp0 (io_name, "libayatana-application.so") != 0 &&
       xfce_indicator_button_get_pos (button) == 0)
     li = g_list_append (li, button);
   else

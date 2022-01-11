@@ -32,13 +32,13 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 #include <libxfce4panel/libxfce4panel.h>
-#include <libindicator/indicator-object.h>
+#include <libayatana-indicator/indicator-object.h>
 
 #include "indicator-button.h"
 #include "indicator-button-box.h"
 
 
-#include <libindicator/indicator-object.h>
+#include <libayatana-indicator/indicator-object.h>
 
 #define ICON_SIZE 22
 #define SPACING 2

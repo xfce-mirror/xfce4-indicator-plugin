@@ -24,7 +24,7 @@
  */
 
 
-#define INDICATOR_SERVICE_DIR "/usr/share/unity/indicators"
+#define INDICATOR_SERVICE_DIR "/usr/share/ayatana/indicators"
 
 
 #ifdef HAVE_CONFIG_H
@@ -37,9 +37,9 @@
 #include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
-#include <libindicator/indicator-object.h>
-#ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
-#include <libindicator/indicator-ng.h>
+#include <libayatana-indicator/indicator-object.h>
+#ifdef HAVE_LIBAYATANA_INDICATOR_INDICATOR_NG_H
+#include <libayatana-indicator/indicator-ng.h>
 #endif
 
 #include "indicator.h"
@@ -48,7 +48,7 @@
 #include "indicator-dialog.h"
 
 #ifdef HAVE_IDO
-#include <libido/libido.h>
+#include <libayatana-ido/libayatana-ido.h>
 #endif
 
 /* prototypes */
@@ -65,7 +65,7 @@ static gboolean         indicator_load_indicator                   (IndicatorPlu
                                                                     const gchar           *name);
 static gboolean         indicator_load_module                      (IndicatorPlugin       *indicator,
                                                                     const gchar           *name);
-#ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
+#ifdef HAVE_LIBAYATANA_INDICATOR_INDICATOR_NG_H
 static gboolean         indicator_load_service                     (IndicatorPlugin       *indicator,
                                                                     const gchar           *name);
 static void             indicator_load_services                    (IndicatorPlugin       *indicator);
@@ -303,7 +303,7 @@ indicator_construct (XfcePanelPlugin *plugin)
 
   /* load 'em */
   indicator_load_modules (indicator);
-#ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
+#ifdef HAVE_LIBAYATANA_INDICATOR_INDICATOR_NG_H
   indicator_load_services (indicator);
 #endif
 }
@@ -405,7 +405,7 @@ indicator_load_module (IndicatorPlugin *indicator,
     return FALSE;
 
 #ifdef DISABLE_APPLICATION
-  if (!g_strcmp0 (name, "libapplication.so"))
+  if (!g_strcmp0 (name, "libayatana-application.so"))
     return FALSE;
 #endif
 
@@ -418,7 +418,7 @@ indicator_load_module (IndicatorPlugin *indicator,
   return indicator_load_indicator (indicator, io, name);
 }
 
-#ifdef HAVE_LIBINDICATOR_INDICATOR_NG_H
+#ifdef HAVE_LIBAYATANA_INDICATOR_INDICATOR_NG_H
 static gboolean
 indicator_load_service (IndicatorPlugin *indicator,
                         const gchar     *name)
