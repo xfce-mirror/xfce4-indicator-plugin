@@ -124,11 +124,13 @@ indicator_class_init (IndicatorPluginClass *klass)
 static void
 indicator_init (IndicatorPlugin *indicator)
 {
+#ifdef G_ENABLE_DEBUG
   /* Indicators print a lot of warnings. By default, "wrapper"
      makes them critical, so the plugin "crashes" when run as an external
      plugin but not internal one (loaded by "xfce4-panel" itself).
      The following lines makes only g_error critical. */
   g_log_set_always_fatal (G_LOG_LEVEL_ERROR);
+#endif
 
   indicator->indicator_count = 0;
   indicator->buttonbox       = NULL;
