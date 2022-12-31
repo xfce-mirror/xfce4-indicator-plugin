@@ -156,8 +156,6 @@ indicator_free (XfcePanelPlugin *plugin)
 static void
 indicator_show_about (XfcePanelPlugin *plugin)
 {
-   GdkPixbuf *icon;
-
    const gchar *auth[] =
      {
        "Mark Trompell <mark@foresightlinux.org>",
@@ -172,9 +170,8 @@ indicator_show_about (XfcePanelPlugin *plugin)
 
    g_return_if_fail (XFCE_IS_INDICATOR_PLUGIN (plugin));
 
-   icon = xfce_panel_pixbuf_from_source("xfce4-indicator-plugin", NULL, 32);
    gtk_show_about_dialog(NULL,
-                         "logo", icon,
+                         "logo-icon-name", "xfce4-indicator-plugin",
                          "license", xfce_get_license_text (XFCE_LICENSE_TEXT_GPL),
                          "version", PACKAGE_VERSION,
                          "program-name", PACKAGE_NAME,
@@ -182,9 +179,6 @@ indicator_show_about (XfcePanelPlugin *plugin)
                          "website", "https://docs.xfce.org/panel-plugins/xfce4-indicator-plugin",
                          "copyright", _("Copyright (c) 2009-2013\n"),
                          "authors", auth, NULL);
-
-   if(icon)
-     g_object_unref(G_OBJECT(icon));
 }
 
 
