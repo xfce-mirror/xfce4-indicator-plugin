@@ -11,7 +11,7 @@
   <object class="GtkListStore" id="indicators-store">
     <columns>
       <!-- column-name icon -->
-      <column type="GdkPixbuf"/>
+      <column type="gchararray"/>
       <!-- column-name title -->
       <column type="gchararray"/>
       <!-- column-name hidden -->
@@ -229,7 +229,7 @@
                                         <child>
                                           <object class="GtkCellRendererPixbuf" id="cellrendererpixbuf1"/>
                                           <attributes>
-                                            <attribute name="pixbuf">0</attribute>
+                                            <attribute name="icon-name">0</attribute>
                                           </attributes>
                                         </child>
                                       </object>

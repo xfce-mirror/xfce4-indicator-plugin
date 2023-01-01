@@ -102,7 +102,7 @@ struct _IndicatorDialog
 
 enum
 {
-  COLUMN_PIXBUF,
+  COLUMN_ICON,
   COLUMN_TITLE,
   COLUMN_HIDDEN,
   COLUMN_VISIBLE,
@@ -135,7 +135,7 @@ indicator_dialog_init (IndicatorDialog *dialog)
 
 static void
 indicator_dialog_add_indicator (IndicatorDialog *dialog,
-                                GdkPixbuf       *pixbuf,
+                                const gchar     *icon,
                                 const gchar     *name,
                                 const gchar     *pretty_name,
                                 gboolean         hidden,
@@ -150,7 +150,7 @@ indicator_dialog_add_indicator (IndicatorDialog *dialog,
   /* insert in the store */
   gtk_list_store_append (GTK_LIST_STORE (dialog->store), &iter);
   gtk_list_store_set (GTK_LIST_STORE (dialog->store), &iter,
-                      COLUMN_PIXBUF,  pixbuf,
+                      COLUMN_ICON,    icon,
                       COLUMN_TITLE,   (pretty_name != NULL) ? pretty_name : name,
                       COLUMN_HIDDEN,  hidden,
                       COLUMN_VISIBLE, visible,
@@ -167,7 +167,6 @@ indicator_dialog_update_indicator_names (IndicatorDialog *dialog)
   const gchar  *name;
   const gchar  *pretty_name = NULL;
   const gchar  *icon_name = NULL;
-  GdkPixbuf    *pixbuf = NULL;
   guint         i;
 
   g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
@@ -191,23 +190,15 @@ indicator_dialog_update_indicator_names (IndicatorDialog *dialog)
             }
         }
 
-      /* try to load the icon name */
-      if (icon_name != NULL)
-        pixbuf = xfce_panel_pixbuf_from_source (icon_name, NULL, ICON_SIZE);
-      else
-        pixbuf = NULL;
-
       /* insert indicator in the store */
       indicator_dialog_add_indicator
         (dialog,
-         pixbuf,
+         icon_name,
          name,
          pretty_name,
          indicator_config_is_blacklisted (dialog->config, name),
          indicator_config_is_whitelisted (dialog->config, name));
     }
-  if (pixbuf != NULL)
-    g_object_unref (G_OBJECT (pixbuf));
 }
 
 
@@ -308,36 +299,36 @@ indicator_dialog_swap_rows (IndicatorDialog  *dialog,
                             GtkTreeIter      *iter_prev,
                             GtkTreeIter      *iter)
 {
-  GdkPixbuf    *pixbuf1, *pixbuf2;
-  gchar        *name1, *name2;
+  const gchar  *icon1, *icon2;
+  const gchar  *name1, *name2;
   gboolean      hidden1, hidden2;
   gboolean      visible1, visible2;
-  gchar        *tip1, *tip2;
+  const gchar  *tip1, *tip2;
 
   g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
   g_return_if_fail (XFCE_IS_INDICATOR_CONFIG (dialog->config));
   g_return_if_fail (GTK_IS_LIST_STORE (dialog->store));
 
   gtk_tree_model_get (GTK_TREE_MODEL (dialog->store), iter_prev,
-                      COLUMN_PIXBUF,  &pixbuf1,
+                      COLUMN_ICON,    &icon1,
                       COLUMN_TITLE,   &name1,
                       COLUMN_HIDDEN,  &hidden1,
                       COLUMN_VISIBLE, &visible1,
                       COLUMN_TIP,     &tip1, -1);
   gtk_tree_model_get (GTK_TREE_MODEL (dialog->store), iter,
-                      COLUMN_PIXBUF,  &pixbuf2,
+                      COLUMN_ICON,    &icon2,
                       COLUMN_TITLE,   &name2,
                       COLUMN_HIDDEN,  &hidden2,
                       COLUMN_VISIBLE, &visible2,
                       COLUMN_TIP,     &tip2, -1);
   gtk_list_store_set (GTK_LIST_STORE (dialog->store), iter_prev,
-                      COLUMN_PIXBUF,  pixbuf2,
+                      COLUMN_ICON,    icon2,
                       COLUMN_TITLE,   name2,
                       COLUMN_HIDDEN,  hidden2,
                       COLUMN_VISIBLE, visible2,
                       COLUMN_TIP,     tip2, -1);
   gtk_list_store_set (GTK_LIST_STORE (dialog->store), iter,
-                      COLUMN_PIXBUF,  pixbuf1,
+                      COLUMN_ICON,    icon1,
                       COLUMN_TITLE,   name1,
                       COLUMN_HIDDEN,  hidden1,
                       COLUMN_VISIBLE, visible1,
