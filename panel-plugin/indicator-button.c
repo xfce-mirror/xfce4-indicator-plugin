@@ -321,14 +321,14 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
         (G_OBJECT (button->menu), "deactivate",
          G_CALLBACK (xfce_indicator_button_menu_deactivate), button);
       gtk_menu_reposition (GTK_MENU (button->menu));
-#if GTK_CHECK_VERSION (3, 22, 0)
-      gtk_menu_popup_at_widget (button->menu, widget,
-                                GDK_GRAVITY_NORTH_WEST, GDK_GRAVITY_NORTH_WEST,
-                                (GdkEvent *)event);
+#if LIBXFCE4PANEL_CHECK_VERSION (4, 17 ,2)
+      xfce_panel_plugin_popup_menu (button->plugin, button->menu, widget, (GdkEvent *) event);
 #else
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       gtk_menu_popup (button->menu, NULL, NULL,
                       xfce_panel_plugin_position_menu, button->plugin,
                       event->button, event->time);
+G_GNUC_END_IGNORE_DEPRECATIONS
 #endif
       return TRUE;
     }

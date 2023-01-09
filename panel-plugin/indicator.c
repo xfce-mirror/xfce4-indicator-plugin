@@ -271,7 +271,6 @@ static void
 indicator_construct (XfcePanelPlugin *plugin)
 {
   IndicatorPlugin  *indicator = XFCE_INDICATOR_PLUGIN (plugin);
-  GtkWidget        *label;
 
   #ifdef HAVE_IDO
   ido_init();
