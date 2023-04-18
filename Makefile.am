@@ -11,10 +11,6 @@ distclean-local:
 distuninstallcheck_listfiles = 						\
 	find . -type f -print | grep -v ./share/icons/hicolor/icon-theme.cache
 
-rpm: dist
-	rpmbuild -ta $(PACKAGE)-$(VERSION).tar.gz
-	@rm -f $(PACKAGE)-$(VERSION).tar.gz
-
 EXTRA_DIST =								\
 	README.md							\
 	intltool-extract.in						\
