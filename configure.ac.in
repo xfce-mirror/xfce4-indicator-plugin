@@ -17,9 +17,9 @@ m4_define([indicator_version], [indicator_version_major().indicator_version_mino
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2006-2007
+AC_COPYRIGHT([Copyright (c) 2009-2023
         The Xfce development team. All rights reserved.])
-AC_INIT([xfce4-indicator-plugin], [indicator_version], [https://bugzilla.xfce.org/], [xfce4-indicator-plugin])
+AC_INIT([xfce4-indicator-plugin], [indicator_version], [https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin], [xfce4-indicator-plugin])
 AC_PREREQ([2.50])
 AC_CONFIG_MACRO_DIRS([m4])
 AC_CONFIG_HEADERS([config.h])
