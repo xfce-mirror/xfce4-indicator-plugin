@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2011,2013,2016-2017
-# Andrij Mizyk <andmizyk@gmail.com>, 2021
+# f977cb811fcf66493f48eac227fd7473_b98aa5d <2419f1d8d12d92441152e78ae3e3bde0_722180>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-09 00:52+0100\n"
-"PO-Revision-Date: 2022-01-08 23:52+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
+"POT-Creation-Date: 2023-04-19 01:16+0200\n"
+"PO-Revision-Date: 2013-07-03 19:02+0000\n"
+"Last-Translator: f977cb811fcf66493f48eac227fd7473_b98aa5d <2419f1d8d12d92441152e78ae3e3bde0_722180>, 2021\n"
+"Language-Team: Ukrainian (http://app.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,15 +23,11 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "Втулка індикаторів"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:179
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "Забезпечує ділянку на панелі для відображення індикаторів Unity. Індикатори дозволяють програмам і системним сервісам відображати їхній стан і взаємодіяти з користувачем."
-
-#: ../panel-plugin/indicator.c:181
-msgid "Copyright (c) 2009-2013\n"
-msgstr "Всі права застережено (c) 2009-2013\n"
 
 #. raw name,                           pretty name,
 #. icon-name(?)
@@ -91,15 +87,15 @@ msgstr "Мережа"
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:445
+#: ../panel-plugin/indicator-dialog.c:436
 msgid "Clear"
 msgstr "Очистити"
 
-#: ../panel-plugin/indicator-dialog.c:446
+#: ../panel-plugin/indicator-dialog.c:437
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Ви дійсно бажаєте очистити список відомих індикаторів?"
 
-#: ../panel-plugin/indicator-dialog.c:578
+#: ../panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Неможливо відкрити наступне посилання: %s"
