@@ -8,36 +8,32 @@
 # Adolfo Jayme-Barrientos, 2014
 # Ignacio Poggi <ignaciop.3@gmail.com>, 2020
 # mc <correomc2000-ing@yahoo.es>, 2013
-# prflr88 <prflr88@gmail.com>, 2013-2014
-# prflr88 <prflr88@gmail.com>, 2017
+# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
+# Pablo Lezaeta Reyes <prflr88@gmail.com>, 2017
 # Toni Estévez <toni.estevez@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-09 00:52+0100\n"
-"PO-Revision-Date: 2022-01-08 23:52+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
-"Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
+"POT-Creation-Date: 2023-04-19 01:16+0200\n"
+"PO-Revision-Date: 2013-07-03 19:02+0000\n"
+"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2021\n"
+"Language-Team: Spanish (http://app.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../panel-plugin/indicator.desktop.in.in.h:1
 msgid "Indicator Plugin"
 msgstr "Indicadores"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:179
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "Área del panel para los indicadores de Unity. Los indicadores permiten a las aplicaciones y a los servicios del sistema mostrar su estado e interactuar con el usuario."
-
-#: ../panel-plugin/indicator.c:181
-msgid "Copyright (c) 2009-2013\n"
-msgstr "Copyright © 2009-2013\n"
 
 #. raw name,                           pretty name,
 #. icon-name(?)
@@ -97,15 +93,15 @@ msgstr "Red"
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:445
+#: ../panel-plugin/indicator-dialog.c:436
 msgid "Clear"
 msgstr "Borrar"
 
-#: ../panel-plugin/indicator-dialog.c:446
+#: ../panel-plugin/indicator-dialog.c:437
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "¿Seguro que quiere borrar la lista de indicadores conocidos?"
 
-#: ../panel-plugin/indicator-dialog.c:578
+#: ../panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "No se puede abrir el URL siguiente: %s"
