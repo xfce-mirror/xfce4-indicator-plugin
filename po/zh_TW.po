@@ -11,10 +11,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-09 00:52+0100\n"
-"PO-Revision-Date: 2022-01-08 23:52+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/xfce-panel-plugins/language/zh_TW/)\n"
+"POT-Creation-Date: 2023-04-19 01:16+0200\n"
+"PO-Revision-Date: 2013-07-03 19:02+0000\n"
+"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>, 2013-2014,2019\n"
+"Language-Team: Chinese (Taiwan) (http://app.transifex.com/xfce/xfce-panel-plugins/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,15 +25,11 @@ msgstr ""
 msgid "Indicator Plugin"
 msgstr "指示器插件"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:179
+#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
 msgstr "為 Unity 指示器提供面板空間。「指示器」讓應用程式和系統服務顯示其狀態以及與使用者互動。"
-
-#: ../panel-plugin/indicator.c:181
-msgid "Copyright (c) 2009-2013\n"
-msgstr "著作權 (c) 2009-2013\n"
 
 #. raw name,                           pretty name,
 #. icon-name(?)
@@ -93,15 +89,15 @@ msgstr "網路"
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:445
+#: ../panel-plugin/indicator-dialog.c:436
 msgid "Clear"
 msgstr "清除"
 
-#: ../panel-plugin/indicator-dialog.c:446
+#: ../panel-plugin/indicator-dialog.c:437
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "確定要清除已知的指示器清單嗎？"
 
-#: ../panel-plugin/indicator-dialog.c:578
+#: ../panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "無法開啟以下 URL：%s"
