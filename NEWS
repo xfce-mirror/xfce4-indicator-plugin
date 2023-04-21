@@ -1,3 +1,27 @@
+2.4.2 (2023-04-21)
+=====
+- Use ayatana-indicator instead of indicator
+- Update copyright year
+- Remove deprecated project files
+- build: Add GLib requirement
+- Use xfce_panel_plugin_popup_menu() when possible
+- Fix unused variable
+- Update `.gitignore`
+- Use icon names instead of pixbufs in dialog treeview
+- Use "logo-icon-name" instead of "logo" in about dialog
+- Override fatal log level only in debug mode
+- Update COPYING See also: 
+https://gitlab.xfce.org/apps/xfce4-taskmanager/-/issues/49
+- Translation Updates:
+  Albanian, Amharic, Arabic, Basque, Belarusian, Bulgarian, Catalan,
+  Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish, Dutch,
+  Eastern Armenian, English (Australia), English (Canada), English
+  (United Kingdom), Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Interlingue, Italian, Japanese,
+  Korean, Lithuanian, Malay, Norwegian Bokmål, Occitan (post 1500),
+  Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian
+
 2.4.1
 ======
 - Fix distcheck build with recent libtool
