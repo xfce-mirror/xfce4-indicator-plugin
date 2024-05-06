@@ -1,8 +1,8 @@
 [Xfce Panel]
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
-_Name=Indicator Plugin
-_Comment=Provides a panel area for Unity indicators. Indicators allow applications and system services to display their status and interact with the user.
+Name=Indicator Plugin
+Comment=Provides a panel area for Unity indicators. Indicators allow applications and system services to display their status and interact with the user.
 Icon=xfce4-indicator-plugin
 X-XFCE-Module=indicator-plugin
 X-XFCE-Internal=FALSE
