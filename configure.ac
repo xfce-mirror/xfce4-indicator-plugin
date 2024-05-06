@@ -6,25 +6,19 @@ dnl
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-m4_define([indicator_version_major], [2])
-m4_define([indicator_version_minor], [4])
-m4_define([indicator_version_micro], [2])
-m4_define([indicator_version_nano],  []) dnl leave this empty to have no nano version
-m4_define([indicator_version_build], [@REVISION@])
-m4_define([indicator_version_tag],   [git])
-m4_define([indicator_version], [indicator_version_major().indicator_version_minor().indicator_version_micro()ifelse(indicator_version_nano(), [], [], [.indicator_version_nano()])ifelse(indicator_version_tag(), [git], [indicator_version_tag()-indicator_version_build()], [indicator_version_tag()])])
+XDT_VERSION_INIT([2.4.2], [git])
 
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2009-2023
         The Xfce development team. All rights reserved.])
-AC_INIT([xfce4-indicator-plugin], [indicator_version], [https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin], [xfce4-indicator-plugin])
-AC_PREREQ([2.50])
+AC_INIT([xfce4-indicator-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin], [xfce4-indicator-plugin])
+AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
 AC_CONFIG_HEADERS([config.h])
 AC_CANONICAL_TARGET()
-AC_REVISION([@REVISION@])
+AC_REVISION([xdt_version_build])
 
 dnl ***************************
 dnl *** Initialize automake ***
@@ -110,7 +104,7 @@ XDT_CHECK_OPTIONAL_PACKAGE([IDO], [libayatana-ido3-0.4], [0.4.0], [ido], [IDO li
 dnl ***********************************
 dnl *** Check for debugging support ***
 dnl ***********************************
-XDT_FEATURE_DEBUG()
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 dnl ***********************
 dnl *** Indicator info ***
