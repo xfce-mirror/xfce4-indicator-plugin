@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:59+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 13:00+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
 "Last-Translator: Moo, 2015-2017,2020\n"
 "Language-Team: Lithuanian (http://app.transifex.com/xfce/xfce-panel-plugins/language/lt/)\n"
@@ -19,7 +19,11 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../panel-plugin/indicator.c:178
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "Indikatorių įskiepis"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
@@ -27,153 +31,153 @@ msgstr "Parūpina skydelyje Unity indikatoriams skirtą sritį. Indikatoriai lei
 
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:56
+#: panel-plugin/indicator-dialog.c:56
 msgid "Application Indicators"
 msgstr "Programų indikatoriai"
 
-#: ../panel-plugin/indicator-dialog.c:57 ../panel-plugin/indicator-dialog.c:58
+#: panel-plugin/indicator-dialog.c:57 panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
 msgstr "Garso meniu"
 
-#: ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:59
 msgid "Printers Menu"
 msgstr "Spausdintuvų meniu"
 
-#: ../panel-plugin/indicator-dialog.c:60 ../panel-plugin/indicator-dialog.c:61
+#: panel-plugin/indicator-dialog.c:60 panel-plugin/indicator-dialog.c:61
 msgid "Power Management"
 msgstr "Maitinimo tvarkytuvė"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:62
 msgid "Application Menus (Global Menu)"
 msgstr "Programų meniu (Visuotinis meniu)"
 
-#: ../panel-plugin/indicator-dialog.c:63 ../panel-plugin/indicator-dialog.c:64
+#: panel-plugin/indicator-dialog.c:63 panel-plugin/indicator-dialog.c:64
 msgid "Session Management"
 msgstr "Seanso tvarkymas"
 
-#: ../panel-plugin/indicator-dialog.c:65 ../panel-plugin/indicator-dialog.c:66
+#: panel-plugin/indicator-dialog.c:65 panel-plugin/indicator-dialog.c:66
 msgid "Messaging Menu"
 msgstr "Susirašinėjimų meniu"
 
-#: ../panel-plugin/indicator-dialog.c:67 ../panel-plugin/indicator-dialog.c:68
+#: panel-plugin/indicator-dialog.c:67 panel-plugin/indicator-dialog.c:68
 msgid "Date and Time"
 msgstr "Data ir laikas"
 
-#: ../panel-plugin/indicator-dialog.c:69 ../panel-plugin/indicator-dialog.c:70
+#: panel-plugin/indicator-dialog.c:69 panel-plugin/indicator-dialog.c:70
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../panel-plugin/indicator-dialog.c:71
+#: panel-plugin/indicator-dialog.c:71
 msgid "Sync Menu"
 msgstr "Sinchronizavimo meniu"
 
-#: ../panel-plugin/indicator-dialog.c:72
+#: panel-plugin/indicator-dialog.c:72
 msgid "Keyboard"
 msgstr "Klaviatūra"
 
-#: ../panel-plugin/indicator-dialog.c:73
+#: panel-plugin/indicator-dialog.c:73
 msgid "Location"
 msgstr "Vieta"
 
-#: ../panel-plugin/indicator-dialog.c:74
+#: panel-plugin/indicator-dialog.c:74
 msgid "Network"
 msgstr "Tinklas"
 
-#: ../panel-plugin/indicator-dialog.c:75
+#: panel-plugin/indicator-dialog.c:75
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:436
+#: panel-plugin/indicator-dialog.c:436
 msgid "Clear"
 msgstr "Išvalyti"
 
-#: ../panel-plugin/indicator-dialog.c:437
+#: panel-plugin/indicator-dialog.c:437
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Ar tikrai norite išvalyti žinomų indikatorių sąrašą?"
 
-#: ../panel-plugin/indicator-dialog.c:569
+#: panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nepavyko atverti sekančio url: %s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
 msgstr "Indikatoriai"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
 msgstr "Išdėstyti indikatorius vienoje eilutėje"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
 msgstr "Jei įjungta, užtikrinti, kad indikatoriai būtų išdėstyti vienoje eilutėje ar stulpelyje."
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
 msgstr "Darbalaukio juostos veiksenoje lygiuoti kairėje"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr "Valdo indikatoriaus mygtuko lygiuotę, kai skydelis yra Darbalaukio juostos veiksenoje. Galimi pasirinkimai yra „centruotai“ arba „lygiuota kairėje“."
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
 msgstr "Kvadratinės piktogramos"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
 msgstr "Kai įmanoma, indikatoriaus mygtukai bus kvadratiniai."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
 msgstr "Išvaizda"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
 msgstr "Slėpti indikatorius pagal numatymą"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Kai įjungta, bus rodomi tik indikatoriai pažymėti kaip „Matomas“. Kitu atveju, bus rodomi visi indikatoriai, kurie nėra pažymėti kaip „Paslėptas“."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
 msgstr "Indikatorius"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
 msgstr "Paslėptas"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
 msgstr "Matomas"
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
 msgstr "Perkelti pasirinktą indikatorių viena eilute aukštyn."
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
 msgstr "Nuleisti pasirinktą indikatorių viena eilute žemyn."
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Prašome iš naujo paleisti skydelį, kad įsigaliotų matomumo pakeitimai.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
 msgstr "Išva_lyti žinomus indikatorius"
 
-#: ../panel-plugin/indicator-dialog.glade.h:18
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Atstato indikatorių sąrašą ir jų matomumo nustatymus."
 
-#: ../panel-plugin/indicator-dialog.glade.h:19
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
 msgstr "Žinomi indikatoriai"
