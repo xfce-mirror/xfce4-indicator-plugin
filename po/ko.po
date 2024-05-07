@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
 # Alan Lee <bkrhlim@aol.com>, 2013
@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:59+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 13:00+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
 "Last-Translator: 1763f4a4329a2376c933c5e919a36cbc_341ca53 <1f851310383599d03339229d772e1290_119292>, 2016\n"
 "Language-Team: Korean (http://app.transifex.com/xfce/xfce-panel-plugins/language/ko/)\n"
@@ -20,7 +20,11 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/indicator.c:178
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "표시기 플러그인"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
@@ -28,153 +32,153 @@ msgstr "유니티 표시기 전용 패널 영역을 제공합니다. 표시기�
 
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:56
+#: panel-plugin/indicator-dialog.c:56
 msgid "Application Indicators"
 msgstr "프로그램 표시기"
 
-#: ../panel-plugin/indicator-dialog.c:57 ../panel-plugin/indicator-dialog.c:58
+#: panel-plugin/indicator-dialog.c:57 panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
 msgstr "사운드 메뉴"
 
-#: ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:59
 msgid "Printers Menu"
 msgstr "프린터 메뉴"
 
-#: ../panel-plugin/indicator-dialog.c:60 ../panel-plugin/indicator-dialog.c:61
+#: panel-plugin/indicator-dialog.c:60 panel-plugin/indicator-dialog.c:61
 msgid "Power Management"
 msgstr "전원 관리"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:62
 msgid "Application Menus (Global Menu)"
 msgstr "프로그램 메뉴(전역 메뉴)"
 
-#: ../panel-plugin/indicator-dialog.c:63 ../panel-plugin/indicator-dialog.c:64
+#: panel-plugin/indicator-dialog.c:63 panel-plugin/indicator-dialog.c:64
 msgid "Session Management"
 msgstr "세션 관리"
 
-#: ../panel-plugin/indicator-dialog.c:65 ../panel-plugin/indicator-dialog.c:66
+#: panel-plugin/indicator-dialog.c:65 panel-plugin/indicator-dialog.c:66
 msgid "Messaging Menu"
 msgstr "대화보내기 메뉴"
 
-#: ../panel-plugin/indicator-dialog.c:67 ../panel-plugin/indicator-dialog.c:68
+#: panel-plugin/indicator-dialog.c:67 panel-plugin/indicator-dialog.c:68
 msgid "Date and Time"
 msgstr "날짜와 시간"
 
-#: ../panel-plugin/indicator-dialog.c:69 ../panel-plugin/indicator-dialog.c:70
+#: panel-plugin/indicator-dialog.c:69 panel-plugin/indicator-dialog.c:70
 msgid "Bluetooth"
 msgstr "블루투스 "
 
-#: ../panel-plugin/indicator-dialog.c:71
+#: panel-plugin/indicator-dialog.c:71
 msgid "Sync Menu"
 msgstr "메뉴 동기화 "
 
-#: ../panel-plugin/indicator-dialog.c:72
+#: panel-plugin/indicator-dialog.c:72
 msgid "Keyboard"
 msgstr "키보드"
 
-#: ../panel-plugin/indicator-dialog.c:73
+#: panel-plugin/indicator-dialog.c:73
 msgid "Location"
 msgstr "위치"
 
-#: ../panel-plugin/indicator-dialog.c:74
+#: panel-plugin/indicator-dialog.c:74
 msgid "Network"
 msgstr "네트워크"
 
-#: ../panel-plugin/indicator-dialog.c:75
+#: panel-plugin/indicator-dialog.c:75
 msgid "Workrave"
 msgstr "휴식 알림"
 
-#: ../panel-plugin/indicator-dialog.c:436
+#: panel-plugin/indicator-dialog.c:436
 msgid "Clear"
 msgstr "정리"
 
-#: ../panel-plugin/indicator-dialog.c:437
+#: panel-plugin/indicator-dialog.c:437
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "정말로 알려진 표시기 목록을 지우시렵니까?"
 
-#: ../panel-plugin/indicator-dialog.c:569
+#: panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "다음 URL을 열 수 없습니다: %s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
 msgstr "표시기"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
 msgstr "1행으로 표시기 정렬"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
 msgstr "이 옵션을 켜면, 표시기가 1행 또는 1열로 놓입니다."
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
 msgstr "데스크 표시줄 모드에서 왼쪽으로 정렬"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr "패널이 데스크 표시줄 모드일 때 표시기 단추 배치를 다룹니다. 가능한 선택은 \"가운데 정렬\"과 \"왼쪽 정렬\"이 있습니다."
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
 msgstr "사각형 아이콘"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
 msgstr "가능할 땐 표시기 버튼에 사각형 아이콘을 사용합니다."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
 msgstr "모양새"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
 msgstr "표시기 기본적으로 숨김"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "활성화 하면 \"보임\"으로 설정한 표시기만 보입니다. 그렇지 않으면 \"숨김\"으로 표시하지 않은 모든 표시기가 나타납니다."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
 msgstr "표시기"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
 msgstr "숨김"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
 msgstr "보임"
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
 msgstr "선택한 표시기를 한 줄 위로 이동합니다."
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
 msgstr "선택한 표시기를 한 줄 아래로 이동합니다."
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>바뀐 가시성 설정을  적용하려면 패널을 다시 시작하십시오.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
 msgstr "알려진 표시기 지우기(_L)"
 
-#: ../panel-plugin/indicator-dialog.glade.h:18
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "표시기 목록과 가시성 설정을 초기화합니다."
 
-#: ../panel-plugin/indicator-dialog.glade.h:19
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
 msgstr "알려진 표시기"
