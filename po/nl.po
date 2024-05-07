@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
 # Pjotr <pjotrvertaalt@gmail.com>, 2013,2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:59+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 13:00+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2013,2016-2017\n"
 "Language-Team: Dutch (http://app.transifex.com/xfce/xfce-panel-plugins/language/nl/)\n"
@@ -18,7 +18,11 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/indicator.c:178
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "Aanwijzer-invoegsel"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
@@ -26,153 +30,153 @@ msgstr "Levert een werkbalkgebied voor aanwijzers van Unity. Aanwijzers stellen 
 
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:56
+#: panel-plugin/indicator-dialog.c:56
 msgid "Application Indicators"
 msgstr "Toepassingaanwijzers"
 
-#: ../panel-plugin/indicator-dialog.c:57 ../panel-plugin/indicator-dialog.c:58
+#: panel-plugin/indicator-dialog.c:57 panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
 msgstr "Geluidmenu"
 
-#: ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:59
 msgid "Printers Menu"
 msgstr "Printersmenu"
 
-#: ../panel-plugin/indicator-dialog.c:60 ../panel-plugin/indicator-dialog.c:61
+#: panel-plugin/indicator-dialog.c:60 panel-plugin/indicator-dialog.c:61
 msgid "Power Management"
 msgstr "Energiebeheer"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:62
 msgid "Application Menus (Global Menu)"
 msgstr "Toepassingenmenu's (globaal menu)"
 
-#: ../panel-plugin/indicator-dialog.c:63 ../panel-plugin/indicator-dialog.c:64
+#: panel-plugin/indicator-dialog.c:63 panel-plugin/indicator-dialog.c:64
 msgid "Session Management"
 msgstr "Sessiebeheer"
 
-#: ../panel-plugin/indicator-dialog.c:65 ../panel-plugin/indicator-dialog.c:66
+#: panel-plugin/indicator-dialog.c:65 panel-plugin/indicator-dialog.c:66
 msgid "Messaging Menu"
 msgstr "Boodschappenmenu"
 
-#: ../panel-plugin/indicator-dialog.c:67 ../panel-plugin/indicator-dialog.c:68
+#: panel-plugin/indicator-dialog.c:67 panel-plugin/indicator-dialog.c:68
 msgid "Date and Time"
 msgstr "Datum en tijd"
 
-#: ../panel-plugin/indicator-dialog.c:69 ../panel-plugin/indicator-dialog.c:70
+#: panel-plugin/indicator-dialog.c:69 panel-plugin/indicator-dialog.c:70
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../panel-plugin/indicator-dialog.c:71
+#: panel-plugin/indicator-dialog.c:71
 msgid "Sync Menu"
 msgstr "Synchronisatiemenu"
 
-#: ../panel-plugin/indicator-dialog.c:72
+#: panel-plugin/indicator-dialog.c:72
 msgid "Keyboard"
 msgstr "Toetsenbord"
 
-#: ../panel-plugin/indicator-dialog.c:73
+#: panel-plugin/indicator-dialog.c:73
 msgid "Location"
 msgstr "Locatie"
 
-#: ../panel-plugin/indicator-dialog.c:74
+#: panel-plugin/indicator-dialog.c:74
 msgid "Network"
 msgstr "Netwerk"
 
-#: ../panel-plugin/indicator-dialog.c:75
+#: panel-plugin/indicator-dialog.c:75
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:436
+#: panel-plugin/indicator-dialog.c:436
 msgid "Clear"
 msgstr "Wissen"
 
-#: ../panel-plugin/indicator-dialog.c:437
+#: panel-plugin/indicator-dialog.c:437
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Weet u zeker dat u de lijst van bekende aanwijzers wil wissen?"
 
-#: ../panel-plugin/indicator-dialog.c:569
+#: panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Kon het volgende webadres niet openen: %s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
 msgstr "Aanwijzers"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
 msgstr "Rangschik aanwijzers in een enkele rij"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
 msgstr "Indien ingeschakeld, zorg ervoor dat de aanwijzers in een enkele rij of kolom zijn geplaatst."
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
 msgstr "Lijn uit naar links in bureaubalkmodus"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr "Beheerst de vormgeving van de indicatorknop wanneer de werkbalk in bureaubalkmodus is. Mogelijke keuzes zijn 'gecentreerd' of 'links uitgelijnd'."
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
 msgstr "Vierkante pictogrammen"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
 msgstr "Aanwijzerknoppen zullen, wanneer mogelijk, een vierkantje vullen."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
 msgstr "Uiterlijk"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
 msgstr "Verberg de aanwijzers standaard"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Wanneer ingeschakeld, worden er alleen aanwijzers getoond met de markering 'Zichtbaar'. Anders worden alle aanwijzers zonder de markering 'Verborgen' getoond."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
 msgstr "Aanwijzer"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
 msgstr "Verborgen"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
 msgstr "Zichtbaar"
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
 msgstr "Verplaats de gekozen aanwijzer een rij naar boven."
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
 msgstr "Verplaats de gekozen aanwijzer een rij naar beneden."
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Herstart a.u.b. de werkbalk om de zichtbaarheidsveranderingen door te voeren.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
 msgstr "Wis bekende aanwijzers"
 
-#: ../panel-plugin/indicator-dialog.glade.h:18
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Zet de lijst van aanwijzers en hun zichtbaarheidsinstellingen terug op de standaardwaarden."
 
-#: ../panel-plugin/indicator-dialog.glade.h:19
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
 msgstr "Bekende aanwijzers"
