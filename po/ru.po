@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
 # AlexanderFilev, 2016
@@ -12,8 +12,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 00:59+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-05-07 13:00+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
 "Last-Translator: Viktor Odintsev <ninetls@xfce.org>, 2017\n"
 "Language-Team: Russian (http://app.transifex.com/xfce/xfce-panel-plugins/language/ru/)\n"
@@ -23,7 +23,11 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../panel-plugin/indicator.c:178
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "Индикаторы"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
@@ -31,153 +35,153 @@ msgstr "Предоставляет место на панели для инди�
 
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:56
+#: panel-plugin/indicator-dialog.c:56
 msgid "Application Indicators"
 msgstr "Индикаторы приложения"
 
-#: ../panel-plugin/indicator-dialog.c:57 ../panel-plugin/indicator-dialog.c:58
+#: panel-plugin/indicator-dialog.c:57 panel-plugin/indicator-dialog.c:58
 msgid "Sound Menu"
 msgstr "Меню звука"
 
-#: ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:59
 msgid "Printers Menu"
 msgstr "Меню принтеров"
 
-#: ../panel-plugin/indicator-dialog.c:60 ../panel-plugin/indicator-dialog.c:61
+#: panel-plugin/indicator-dialog.c:60 panel-plugin/indicator-dialog.c:61
 msgid "Power Management"
 msgstr "Управление питанием"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:62
 msgid "Application Menus (Global Menu)"
 msgstr "Меню приложения (глобальное)"
 
-#: ../panel-plugin/indicator-dialog.c:63 ../panel-plugin/indicator-dialog.c:64
+#: panel-plugin/indicator-dialog.c:63 panel-plugin/indicator-dialog.c:64
 msgid "Session Management"
 msgstr "Управление сеансом"
 
-#: ../panel-plugin/indicator-dialog.c:65 ../panel-plugin/indicator-dialog.c:66
+#: panel-plugin/indicator-dialog.c:65 panel-plugin/indicator-dialog.c:66
 msgid "Messaging Menu"
 msgstr "Меню сообщений"
 
-#: ../panel-plugin/indicator-dialog.c:67 ../panel-plugin/indicator-dialog.c:68
+#: panel-plugin/indicator-dialog.c:67 panel-plugin/indicator-dialog.c:68
 msgid "Date and Time"
 msgstr "Дата и время"
 
-#: ../panel-plugin/indicator-dialog.c:69 ../panel-plugin/indicator-dialog.c:70
+#: panel-plugin/indicator-dialog.c:69 panel-plugin/indicator-dialog.c:70
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../panel-plugin/indicator-dialog.c:71
+#: panel-plugin/indicator-dialog.c:71
 msgid "Sync Menu"
 msgstr "Меню синхронизации"
 
-#: ../panel-plugin/indicator-dialog.c:72
+#: panel-plugin/indicator-dialog.c:72
 msgid "Keyboard"
 msgstr "Клавиатура"
 
-#: ../panel-plugin/indicator-dialog.c:73
+#: panel-plugin/indicator-dialog.c:73
 msgid "Location"
 msgstr "Местоположение"
 
-#: ../panel-plugin/indicator-dialog.c:74
+#: panel-plugin/indicator-dialog.c:74
 msgid "Network"
 msgstr "Сеть"
 
-#: ../panel-plugin/indicator-dialog.c:75
+#: panel-plugin/indicator-dialog.c:75
 msgid "Workrave"
 msgstr "Переутомление"
 
-#: ../panel-plugin/indicator-dialog.c:436
+#: panel-plugin/indicator-dialog.c:436
 msgid "Clear"
 msgstr "Очистить"
 
-#: ../panel-plugin/indicator-dialog.c:437
+#: panel-plugin/indicator-dialog.c:437
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Уверены, что хотите очистить список известных индикаторов?"
 
-#: ../panel-plugin/indicator-dialog.c:569
+#: panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Невозможно открыть ссылку: %s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
 msgstr "Индикаторы"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
 msgstr "Выстраивать индикаторы в одну строку"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
 msgstr "Если включено, следить за тем, чтобы индикаторы располагались в один ряд или столбец."
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
 msgstr "Выравнивать по левому краю в режиме Deskbar"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr "Расположение кнопок индикаторов в режиме панели Deskbar. Возможные варианты: «по центру» или «слева»."
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
 msgstr "Квадратные значки"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
 msgstr "Кнопки индикаторов образуют квадрат, если это возможно."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
 msgstr "Внешний вид"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
 msgstr "Скрывать индикаторы по умолчанию"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Если включено, отображаются только индикаторы, отмеченные как «видимые». Иначе отображаются все индикаторы, не отмеченные как «скрытые»."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
 msgstr "Индикатор"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
 msgstr "Скрытый"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
 msgstr "Видимый"
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
 msgstr "Переместить выбранный индикатор на одну строку вверх."
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
 msgstr "Переместить выбранный индикатор на одну строку вниз."
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Перезапустите панель для применения изменений видимости.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
 msgstr "О_чистить известные индикаторы"
 
-#: ../panel-plugin/indicator-dialog.glade.h:18
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Сбрасывает список индикаторов и их настройки видимости."
 
-#: ../panel-plugin/indicator-dialog.glade.h:19
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
 msgstr "Известные индикаторы"
