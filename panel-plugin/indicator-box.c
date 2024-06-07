@@ -492,8 +492,7 @@ xfce_indicator_box_size_allocate (GtkWidget     *widget,
 
   row = 0;
   length = 0;
-  width = 0;
-  x = y = 0;
+  x = 0;
   x0 = allocation->x;
   y0 = allocation->y;
 
