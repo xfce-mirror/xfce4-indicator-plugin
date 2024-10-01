@@ -66,7 +66,7 @@ msgstr "Wiadomości"
 
 #: panel-plugin/indicator-dialog.c:67 panel-plugin/indicator-dialog.c:68
 msgid "Date and Time"
-msgstr "Data i czas"
+msgstr "Data i godzina"
 
 #: panel-plugin/indicator-dialog.c:69 panel-plugin/indicator-dialog.c:70
 msgid "Bluetooth"
