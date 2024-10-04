@@ -103,7 +103,7 @@ msgstr "Wyczyścić listę znanych ikon powiadomień?"
 #: panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Nie można otworzyć następującego adresu url: %s"
+msgstr "Nie można otworzyć następującego adresu URL: %s"
 
 #: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
@@ -149,7 +149,7 @@ msgstr "Domyślne ukrywanie ikon"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Przełącza wyświetlanie pomiędzy ikonami powiadomień oznaczonymi jako „Widoczne” oraz tymi nie oznaczonymi jako „Ukryte”"
+msgstr "Przełącza wyświetlanie pomiędzy ikonami powiadomień oznaczonymi jako „Widoczne” oraz tymi nieoznaczonymi jako „Ukryte”"
 
 #: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
