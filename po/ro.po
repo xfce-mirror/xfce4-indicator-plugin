@@ -4,16 +4,20 @@
 # 
 # Translators:
 # CoolGoose <melipse@gmail.com>, 2009
+# CoolGoose <melipse@gmail.com>, 2009
+# Dumitru Moldovan <dumol@gnome.org>, 2013
+# Mark Trompell <mark@marktrompell.de>, 2009
 # Mark Trompell <mark@marktrompell.de>, 2009
 # Dumitru Moldovan <dumol@gnome.org>, 2013
 # Mișu Moldovan <dumol@xfce.org>, 2013
+# Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-05-07 13:00+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
-"Last-Translator: Dumitru Moldovan <dumol@gnome.org>, 2013\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, 2024\n"
 "Language-Team: Romanian (http://app.transifex.com/xfce/xfce-panel-plugins/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +33,7 @@ msgstr "Modul de indicator"
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "Oferă o zonă de panou pentru indicatorii Unity. Indicatorii permit aplicațiilor și serviciilor de sistem să își afișeze starea și să interacționeze cu utilizatorul."
 
 #. raw name,                           pretty name,
 #. icon-name(?)
@@ -43,11 +47,11 @@ msgstr "Meniu de sunet"
 
 #: panel-plugin/indicator-dialog.c:59
 msgid "Printers Menu"
-msgstr "Meniu de tipărire"
+msgstr "Meniu de imprimare"
 
 #: panel-plugin/indicator-dialog.c:60 panel-plugin/indicator-dialog.c:61
 msgid "Power Management"
-msgstr "Gestionare a consumului"
+msgstr "Gestionare a alimentării"
 
 #: panel-plugin/indicator-dialog.c:62
 msgid "Application Menus (Global Menu)"
@@ -55,11 +59,11 @@ msgstr "Meniu global pentru programe"
 
 #: panel-plugin/indicator-dialog.c:63 panel-plugin/indicator-dialog.c:64
 msgid "Session Management"
-msgstr "Management de sesiune"
+msgstr "Gestionarea sesiunii"
 
 #: panel-plugin/indicator-dialog.c:65 panel-plugin/indicator-dialog.c:66
 msgid "Messaging Menu"
-msgstr "Meniu de mesaje"
+msgstr "Meniu de mesagerie"
 
 #: panel-plugin/indicator-dialog.c:67 panel-plugin/indicator-dialog.c:68
 msgid "Date and Time"
@@ -67,40 +71,40 @@ msgstr "Dată și oră"
 
 #: panel-plugin/indicator-dialog.c:69 panel-plugin/indicator-dialog.c:70
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: panel-plugin/indicator-dialog.c:71
 msgid "Sync Menu"
-msgstr ""
+msgstr "Meniu sincronizare"
 
 #: panel-plugin/indicator-dialog.c:72
 msgid "Keyboard"
-msgstr ""
+msgstr "Tastatură"
 
 #: panel-plugin/indicator-dialog.c:73
 msgid "Location"
-msgstr ""
+msgstr "Locație"
 
 #: panel-plugin/indicator-dialog.c:74
 msgid "Network"
-msgstr ""
+msgstr "Rețea"
 
 #: panel-plugin/indicator-dialog.c:75
 msgid "Workrave"
-msgstr ""
+msgstr "Workrave"
 
 #: panel-plugin/indicator-dialog.c:436
 msgid "Clear"
-msgstr ""
+msgstr "Șterge"
 
 #: panel-plugin/indicator-dialog.c:437
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr "Sigur doriți să goliți lista indicatoarelor cunoscute?"
+msgstr "Sunteți sigur că doriți să ștergeți lista de indicatoare cunoscute?"
 
 #: panel-plugin/indicator-dialog.c:569
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr "Nu s-a putut deschide următorul URL: %s"
+msgstr "Nu s-a putut deschide următoarea adresă URL: %s"
 
 #: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
@@ -108,31 +112,31 @@ msgstr "Indicatoare"
 
 #: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
-msgstr ""
+msgstr "Aranjează indicatoarele pe un singur rând"
 
 #: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr ""
+msgstr "Dacă este activată, se asigură că indicatoarele sunt dispuse pe un singur rând sau coloană."
 
 #: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
-msgstr "Aliniere la stânga în modul deskbar"
+msgstr "Aliniere la stânga în modul «deskbar»"
 
 #: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Aranjamentul butoanelor indicatoarelor când panoul este în modul Deskbar. Opțiunile posibile sunt „centered” și „aligned left”."
+msgstr "Aranjamentul butoanelor indicatoarelor când panoul este în modul «deskbar». Opțiunile posibile sunt „centrat” și „aliniat la stânga”."
 
 #: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
-msgstr ""
+msgstr "Pictograme cu formă de pătrat"
 
 #: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
-msgstr ""
+msgstr "Butoanele indicatoare vor lua formă pătrată atunci când este posibil."
 
 #: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
