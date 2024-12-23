@@ -111,11 +111,7 @@ xfce_indicator_button_init (XfceIndicatorButton *button)
   gtk_widget_set_can_default (GTK_WIDGET (button), FALSE);
   gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
   gtk_button_set_use_underline (GTK_BUTTON (button),TRUE);
-#if GTK_CHECK_VERSION (3, 20, 0)
   gtk_widget_set_focus_on_click (GTK_WIDGET (button), FALSE);
-#else
-  gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
-#endif
   gtk_widget_set_name (GTK_WIDGET (button), "indicator-button");
 
   css_provider = gtk_css_provider_new ();
