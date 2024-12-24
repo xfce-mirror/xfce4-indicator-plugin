@@ -11,7 +11,7 @@ XDT_VERSION_INIT([2.4.2], [git])
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2009-2023
+AC_COPYRIGHT([Copyright (c) 2009-2024
         The Xfce development team. All rights reserved.])
 AC_INIT([xfce4-indicator-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-indicator-plugin], [xfce4-indicator-plugin])
 AC_PREREQ([2.69])
