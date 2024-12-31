@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
+# Besnik Bleta <besnik@programeshqip.org>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-05-07 13:00+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2024\n"
 "Language-Team: Albanian (http://app.transifex.com/xfce/xfce-panel-plugins/language/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -120,7 +121,7 @@ msgstr "Vendosi majtas nën mënyrën deskbar"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Kontrollon skemën e butonave të treguesve kur paneli gjendet nën mënyrën Deskbar. Zgjedhje të mundshme janë \"në qendër\" ose \"vendosur majtas\"."
+msgstr "Kontrollon skemën e butonave të treguesve kur paneli gjendet nën mënyrën Deskbar. Zgjedhje të mundshme janë “në qendër” ose “vendosur majtas”."
 
 #: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
@@ -142,7 +143,7 @@ msgstr "Si parazgjedhje, fshihi treguesit"
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr "Kur aktivizohet, do të shfaqen vetëm treguesit e shënuar si \"Të dukshëm\". Përndryshe, shfaqen krejt treguesit jo të shënuar si \"Të fshehur\"."
+msgstr "Kur aktivizohet, do të shfaqen vetëm treguesit e shënuar si “Të dukshëm”. Përndryshe, shfaqen krejt treguesit jo të shënuar si “Të fshehur”."
 
 #: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
