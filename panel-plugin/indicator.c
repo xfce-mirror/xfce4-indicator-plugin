@@ -36,7 +36,7 @@
 
 #include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
+#include <libxfce4panel/libxfce4panel.h>
 #include <libayatana-indicator/indicator-object.h>
 #ifdef HAVE_LIBAYATANA_INDICATOR_INDICATOR_NG_H
 #include <libayatana-indicator/indicator-ng.h>
