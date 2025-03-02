@@ -30,6 +30,9 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+#ifdef HAVE_XFCE_REVISION_H
+#include "xfce-revision.h"
+#endif
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
@@ -173,11 +176,11 @@ indicator_show_about (XfcePanelPlugin *plugin)
    gtk_show_about_dialog(NULL,
                          "logo-icon-name", "xfce4-indicator-plugin",
                          "license", xfce_get_license_text (XFCE_LICENSE_TEXT_GPL),
-                         "version", PACKAGE_VERSION,
+                         "version", VERSION_FULL,
                          "program-name", PACKAGE_NAME,
                          "comments", _("Provides a panel area for Unity indicators. Indicators allow applications and system services to display their status and interact with the user."),
                          "website", "https://docs.xfce.org/panel-plugins/xfce4-indicator-plugin",
-                         "copyright", "Copyright \302\251 2009-2024 The Xfce development team",
+                         "copyright", "Copyright \302\251 2009-" COPYRIGHT_YEAR " The Xfce development team",
                          "authors", auth, NULL);
 }
 

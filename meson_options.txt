@@ -1,0 +1,27 @@
+option(
+  'ido',
+  type: 'feature',
+  value: 'auto',
+  description: 'libayatana-ido support',
+)
+
+option(
+  'application',
+  type: 'feature',
+  value: 'auto',
+  description: 'indicator-application support',
+)
+
+option(
+  'indicatordir',
+  type: 'string',
+  value: '',
+  description: 'Specify where to load indicator modules (default: autodetect)',
+)
+
+option(
+  'indicatoriconsdir',
+  type: 'string',
+  value: '',
+  description: 'Specify where to load indicator icons (default: autodetect)',
+)
