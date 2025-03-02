@@ -77,6 +77,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
 
 EXTRA_DIST = \
 	indicator-dialog.glade \
+	meson.build \
 	$(desktop_in_files)
 
 DISTCLEANFILES = \
