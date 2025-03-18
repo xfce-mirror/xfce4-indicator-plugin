@@ -550,7 +550,11 @@ indicator_dialog_help_button_clicked (IndicatorDialog *dialog,
   g_return_if_fail (GTK_IS_BUTTON (button));
   g_return_if_fail (GTK_IS_WINDOW (dialog->dialog));
 
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+  result = g_spawn_command_line_async ("xfce-open --launch WebBrowser " PLUGIN_WEBSITE, NULL);
+#else
   result = g_spawn_command_line_async ("exo-open --launch WebBrowser " PLUGIN_WEBSITE, NULL);
+#endif
 
   if (G_UNLIKELY (result == FALSE))
     g_warning (_("Unable to open the following url: %s"), PLUGIN_WEBSITE);
