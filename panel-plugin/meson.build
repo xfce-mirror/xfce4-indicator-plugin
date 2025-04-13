@@ -1,10 +1,3 @@
-settings_dialog_ui_h = custom_target(
-  'settings-dialog_ui.h',
-  input: 'indicator-dialog.glade',
-  output: 'indicator-dialog_ui.h',
-  command: [xdt_csource, '--static', '--strip-comments', '--strip-content', '--name=indicator_dialog_ui', '--output=@OUTPUT@', '@INPUT@'],
-)
-
 plugin_sources = [
   'indicator-box.c',
   'indicator-box.h',
@@ -18,13 +11,17 @@ plugin_sources = [
   'indicator-dialog.c',
   'indicator-dialog.h',
   'indicator.h',
-  settings_dialog_ui_h,
   xfce_revision_h,
 ]
 
+plugin_sources += gnome.compile_resources(
+  'indicator-dialog-resources',
+  'indicator-dialog.gresource.xml',
+)
+
 plugin_install_subdir = 'xfce4' / 'panel' / 'plugins'
 
-plugin_lib = shared_library(
+plugin_lib = shared_module(
   'indicator-plugin',
   plugin_sources,
   gnu_symbol_visibility: 'hidden',
