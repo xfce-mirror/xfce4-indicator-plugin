@@ -38,7 +38,6 @@
 #include <libxfce4panel/libxfce4panel.h>
 
 #include "indicator-dialog.h"
-#include "indicator-dialog_ui.h"
 
 #define PLUGIN_WEBSITE  "https://docs.xfce.org/panel-plugins/xfce4-indicator-plugin"
 
@@ -452,8 +451,7 @@ indicator_dialog_build (IndicatorDialog *dialog)
     return;
 
   /* load the builder data into the object */
-  if (gtk_builder_add_from_string (builder, indicator_dialog_ui,
-                                   indicator_dialog_ui_length, &error))
+  if (gtk_builder_add_from_resource (builder, "/org/xfce/indicator-plugin/indicator-dialog.glade", &error))
     {
 
       dialog->dialog = gtk_builder_get_object (builder, "dialog");

@@ -15,7 +15,7 @@ plugin_LTLIBRARIES = \
 	libindicator-plugin.la
 
 libindicator_built_sources = \
-	indicator-dialog_ui.h
+	indicator-dialog-resources.c
 
 libindicator_plugin_la_SOURCES = \
 	$(libindicator_built_sources) \
@@ -77,21 +77,21 @@ desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
 
 EXTRA_DIST = \
 	indicator-dialog.glade \
+	indicator-dialog.gresource.xml \
 	meson.build \
 	$(desktop_in_files)
 
 DISTCLEANFILES = \
-	$(desktop_DATA)
+	$(desktop_DATA) \
+	$(libindicator_built_sources) \
+	$(NULL)
 
-if MAINTAINER_MODE
 BUILT_SOURCES = \
 	$(libindicator_built_sources)
 
-DISTCLEANFILES += \
-	$(libindicator_built_sources)
+libindicator_dialog_glade_files = $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir) $(srcdir)/indicator-dialog.gresource.xml)
 
-indicator-dialog_ui.h: indicator-dialog.glade
-	$(AM_V_GEN) xdt-csource --static --strip-comments --strip-content --name=indicator_dialog_ui $< >$@
-endif
+indicator-dialog-resources.c: $(srcdir)/indicator-dialog.gresource.xml $(libindicator_dialog_glade_files) Makefile
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate-source $<
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

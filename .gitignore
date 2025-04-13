@@ -22,7 +22,6 @@ panel-plugin/*.la
 panel-plugin/*.lo
 panel-plugin/indicator.desktop
 panel-plugin/indicator.desktop.in
-panel-plugin/indicator-dialog_ui.h
 po/*.gmo
 po/Makefile.in.in
 po/stamp-po

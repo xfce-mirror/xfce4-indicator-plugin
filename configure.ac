@@ -83,6 +83,7 @@ XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-${LIBXFCE4PANEL_VERSION_API}],
 XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.16.0])
 INDICATOR_PKGNAME=ayatana-indicator3-0.4
 XDT_CHECK_PACKAGE([INDICATOR], [${INDICATOR_PKGNAME}], [0.5.0])
+XDT_CHECK_PACKAGE_BINARY([GLIB_COMPILE_RESOURCES], [gio-2.0], [glib_compile_resources], [glib-compile-resources])
 
 dnl ********************************************************************
 dnl *** Check if libindicator has indicator-ng.h headery             ***

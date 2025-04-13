@@ -36,7 +36,6 @@ libxfce4util = dependency('libxfce4util-1.0', version: dependency_versions['xfce
 xfconf = dependency('libxfconf-0', version: dependency_versions['xfce4'])
 ayatana_indicator = dependency('ayatana-indicator3-0.4', version: dependency_versions['ayatana-indicator'])
 libayatana_ido = dependency('libayatana-ido3-0.4', version: dependency_versions['libayatana-ido'], required: get_option('libayatana-ido'))
-xdt_csource = find_program('xdt-csource')
 
 indicator_dir = get_option('indicator-dir')
 if indicator_dir == ''
