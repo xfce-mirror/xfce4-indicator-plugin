@@ -118,7 +118,7 @@ dnl *** Optional indicator-application support ***
 dnl **********************************************
 AC_ARG_ENABLE([application], AS_HELP_STRING([--disable-application],
               [Disable indicator-application support]), [], [enable_application=yes])
-if test x"$enable_application" == x"no"; then
+if test x"$enable_application" = x"no"; then
         AC_DEFINE([DISABLE_APPLICATION], [], [indicator-application suport disabled])
 fi
 
