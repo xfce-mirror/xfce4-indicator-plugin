@@ -27,9 +27,6 @@
 #define INDICATOR_SERVICE_DIR "/usr/share/ayatana/indicators"
 
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
 #ifdef HAVE_XFCE_REVISION_H
 #include "xfce-revision.h"
 #endif
