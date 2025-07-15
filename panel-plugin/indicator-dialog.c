@@ -452,6 +452,8 @@ indicator_dialog_build (IndicatorDialog *dialog)
 
       dialog->dialog = gtk_builder_get_object (builder, "dialog");
       g_return_if_fail (XFCE_IS_TITLED_DIALOG (dialog->dialog));
+      g_object_add_weak_pointer (G_OBJECT (dialog->dialog), (gpointer *) &dialog->dialog);
+      g_signal_connect (dialog->dialog, "response", G_CALLBACK (gtk_widget_destroy), NULL);
 
       object = gtk_builder_get_object (builder, "close-button");
       g_return_if_fail (GTK_IS_BUTTON (object));
@@ -562,6 +564,12 @@ indicator_dialog_show (IndicatorDialog *dialog,
 {
   g_return_if_fail (XFCE_IS_INDICATOR_DIALOG (dialog));
   g_return_if_fail (GDK_IS_SCREEN (screen));
+
+  if (dialog->dialog != NULL)
+    {
+      gtk_window_present (GTK_WINDOW (dialog->dialog));
+      return;
+    }
 
   indicator_dialog_build (XFCE_INDICATOR_DIALOG (dialog));
   gtk_widget_show (GTK_WIDGET (dialog->dialog));
