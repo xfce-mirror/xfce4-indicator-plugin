@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
 # Balázs Meskó <meskobalazs@mailbox.org>, 2018
@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-16 12:51+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
 "Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>, 2018\n"
 "Language-Team: Hungarian (http://app.transifex.com/xfce/xfce-panel-plugins/language/hu/)\n"
@@ -20,7 +20,11 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/indicator.c:178
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "Indikátor bővítmény"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
@@ -28,153 +32,153 @@ msgstr "Helyet biztosít a panelen a Unity indikátoroknak. Az indikátorok lehe
 
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:45
+#: panel-plugin/indicator-dialog.c:45
 msgid "Application Indicators"
 msgstr "Alkalmazásindikátorok"
 
-#: ../panel-plugin/indicator-dialog.c:46 ../panel-plugin/indicator-dialog.c:47
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
 msgid "Sound Menu"
 msgstr "Hang menü"
 
-#: ../panel-plugin/indicator-dialog.c:48
+#: panel-plugin/indicator-dialog.c:48
 msgid "Printers Menu"
 msgstr "Nyomtatók menü"
 
-#: ../panel-plugin/indicator-dialog.c:49 ../panel-plugin/indicator-dialog.c:50
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
 msgid "Power Management"
 msgstr "Energiagazdálkodás"
 
-#: ../panel-plugin/indicator-dialog.c:51
+#: panel-plugin/indicator-dialog.c:51
 msgid "Application Menus (Global Menu)"
 msgstr "Alkalmazásmenük (globális menü)"
 
-#: ../panel-plugin/indicator-dialog.c:52 ../panel-plugin/indicator-dialog.c:53
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
 msgid "Session Management"
 msgstr "Munkamenet-kezelés"
 
-#: ../panel-plugin/indicator-dialog.c:54 ../panel-plugin/indicator-dialog.c:55
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
 msgid "Messaging Menu"
 msgstr "Üzenetkezelési menü"
 
-#: ../panel-plugin/indicator-dialog.c:56 ../panel-plugin/indicator-dialog.c:57
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
 msgid "Date and Time"
 msgstr "Dátum és idő"
 
-#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: panel-plugin/indicator-dialog.c:60
 msgid "Sync Menu"
 msgstr "Szinkronizálás menü"
 
-#: ../panel-plugin/indicator-dialog.c:61
+#: panel-plugin/indicator-dialog.c:61
 msgid "Keyboard"
 msgstr "Billentyűzet"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:62
 msgid "Location"
 msgstr "Hely"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: panel-plugin/indicator-dialog.c:63
 msgid "Network"
 msgstr "Hálózat"
 
-#: ../panel-plugin/indicator-dialog.c:64
+#: panel-plugin/indicator-dialog.c:64
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:425
+#: panel-plugin/indicator-dialog.c:425
 msgid "Clear"
 msgstr "Tiszta"
 
-#: ../panel-plugin/indicator-dialog.c:426
+#: panel-plugin/indicator-dialog.c:426
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Biztos törölni akarja az ismert indikátorok listáját?"
 
-#: ../panel-plugin/indicator-dialog.c:556
+#: panel-plugin/indicator-dialog.c:556
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Nem nyitható meg a következő URL: %s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
 msgstr "Indikátorok"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
 msgstr "Indikátorok rendezése egy sorba"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
 msgstr "Ha bekapcsolt, az indikátorok egy sorba vagy oszlopba kerülnek."
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
 msgstr "Balra igazítás asztali sáv módban"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr "Az indikátor gombelrendezést vezérli amikor a panel asztali sáv módban van. A lehetséges értékek a „középre igazított” és a „balra igazított”."
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
 msgstr "Négyszögletes ikonok"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
 msgstr "Az indikátorgombok egy kockát tesznek ki, ha az lehetséges"
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
 msgstr "Megjelenés"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
 msgstr "Indikátorok elrejtése alapértelmezésben"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Ha bekapcsolt, csak a \"Látható\"-nak jelöltek jelennek meg. Egyébként minden indikátor mely nincs \"Rejtett\"-nek jelölve, megjelenik."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
 msgstr "Indikátor"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
 msgstr "Rejtett"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
 msgstr "Látható"
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
 msgstr "A kiválasztott indikátor mozgatása egy sorral feljebb."
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
 msgstr "A kiválasztott indikátor mozgatása egy sorral lejjebb."
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Indítsa újra a panelt a láthatósági változások életbe lépéséhez.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
 msgstr "_Ismert indikátorok törlése"
 
-#: ../panel-plugin/indicator-dialog.glade.h:18
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Az indikátorok listájának és láthatóságának alaphelyzetbe állítása."
 
-#: ../panel-plugin/indicator-dialog.glade.h:19
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
 msgstr "Ismert indikátorok"
