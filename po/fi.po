@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
 # 9e06e299e74d2541309887ba0f7d6eee_126c110 <673225c2b34f8d31a8e0b8e4dc2dd62e_1152>, 2012
@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-16 12:51+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>, 2013,2018-2019\n"
 "Language-Team: Finnish (http://app.transifex.com/xfce/xfce-panel-plugins/language/fi/)\n"
@@ -20,7 +20,11 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/indicator.c:178
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "Ilmaisinliitännäinen"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
@@ -28,153 +32,153 @@ msgstr "Tarjoaa ilmaisinalueen Unity-ilmaisimille paneelissa. Ilmaisimet salliva
 
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:45
+#: panel-plugin/indicator-dialog.c:45
 msgid "Application Indicators"
 msgstr "Sovellusilmaisimet"
 
-#: ../panel-plugin/indicator-dialog.c:46 ../panel-plugin/indicator-dialog.c:47
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
 msgid "Sound Menu"
 msgstr "Äänivalikko"
 
-#: ../panel-plugin/indicator-dialog.c:48
+#: panel-plugin/indicator-dialog.c:48
 msgid "Printers Menu"
 msgstr "Tulostinvalikko"
 
-#: ../panel-plugin/indicator-dialog.c:49 ../panel-plugin/indicator-dialog.c:50
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
 msgid "Power Management"
 msgstr "Virranhallinta"
 
-#: ../panel-plugin/indicator-dialog.c:51
+#: panel-plugin/indicator-dialog.c:51
 msgid "Application Menus (Global Menu)"
 msgstr "Sovellusvalikot (Global Menu)"
 
-#: ../panel-plugin/indicator-dialog.c:52 ../panel-plugin/indicator-dialog.c:53
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
 msgid "Session Management"
 msgstr "Istunnon hallinta"
 
-#: ../panel-plugin/indicator-dialog.c:54 ../panel-plugin/indicator-dialog.c:55
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
 msgid "Messaging Menu"
 msgstr "Viestintävalikko"
 
-#: ../panel-plugin/indicator-dialog.c:56 ../panel-plugin/indicator-dialog.c:57
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
 msgid "Date and Time"
 msgstr "Päivämäärä ja aika"
 
-#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: panel-plugin/indicator-dialog.c:60
 msgid "Sync Menu"
 msgstr "Synkronointivalikko"
 
-#: ../panel-plugin/indicator-dialog.c:61
+#: panel-plugin/indicator-dialog.c:61
 msgid "Keyboard"
 msgstr "Näppäimistö"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:62
 msgid "Location"
 msgstr "Sijainti"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: panel-plugin/indicator-dialog.c:63
 msgid "Network"
 msgstr "Verkko"
 
-#: ../panel-plugin/indicator-dialog.c:64
+#: panel-plugin/indicator-dialog.c:64
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:425
+#: panel-plugin/indicator-dialog.c:425
 msgid "Clear"
 msgstr "Tyhjennä"
 
-#: ../panel-plugin/indicator-dialog.c:426
+#: panel-plugin/indicator-dialog.c:426
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Haluatko varmasti tyhjentää tunnettujen ilmaisimien listan?"
 
-#: ../panel-plugin/indicator-dialog.c:556
+#: panel-plugin/indicator-dialog.c:556
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Seuraavaa osoitetta ei voitu avata: %s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
 msgstr "llmaisimet"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
 msgstr "Järjestä ilmaisimet yhdelle riville"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
 msgstr "Jos käytössä, pitää huolen että ilmaisimet on asetelty yhteen riviin tai sarakkeeseen."
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
 msgstr "Tasaa vasemmalle työpöytäpalkkitilassa"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr "Hallitsee ilmaisinpainikkeiden asettelua kun paneeli on työpöytäpalkkitilassa. Mahdolliset vaihtoehdot ovat \"keskitä\" ja \"tasaa vasemmalle\"."
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
 msgstr "Neliökuvakkeet"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
 msgstr "Ilmaisinpainikkeet ottavat neliömuodon kun mahdollista."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
 msgstr "Ulkoasu"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
 msgstr "Piilota ilmaisimet oletuksena"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Kun käytössä, vain ilmaisimet, joiden tila on \"Näkyvissä\" näytetään. Muussa tapauksessa kaikki ilmaisimet joiden tila ei ole \"Piilotettu\" näytetään."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
 msgstr "Ilmaisin"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
 msgstr "Piilotettu"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
 msgstr "Näkyvissä"
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
 msgstr "Siirrä valittua ilmaisinta yksi rivi ylös."
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
 msgstr "Siirrä valittua ilmaisinta yksi rivi alas."
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Jotta uudet näkyvyysasetukset otetaan käyttöön, käynnistä paneeli uudelleen.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
 msgstr "Tyhjennä _tunnetut ilmaisimet"
 
-#: ../panel-plugin/indicator-dialog.glade.h:18
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Tyhjentää listan tunnetuista ilmaisimista ja niiden näkyvyysasetuksista."
 
-#: ../panel-plugin/indicator-dialog.glade.h:19
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
 msgstr "Tunnetut ilmaisimet"
