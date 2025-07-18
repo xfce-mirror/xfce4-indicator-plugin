@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
 # Alper Tekinalp <alper.tekinalp@gmail.com>, 2011
@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-16 12:51+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>, 2020\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/xfce-panel-plugins/language/tr/)\n"
@@ -22,7 +22,11 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/indicator.c:178
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "Gösterge Eklentisi"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
@@ -30,153 +34,153 @@ msgstr "Unity göstergeleri için panel alanı sağlar. Göstergeler uygulamalar
 
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:45
+#: panel-plugin/indicator-dialog.c:45
 msgid "Application Indicators"
 msgstr "Uygulama Göstergeleri"
 
-#: ../panel-plugin/indicator-dialog.c:46 ../panel-plugin/indicator-dialog.c:47
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
 msgid "Sound Menu"
 msgstr "Ses Menüsü"
 
-#: ../panel-plugin/indicator-dialog.c:48
+#: panel-plugin/indicator-dialog.c:48
 msgid "Printers Menu"
 msgstr "Yazıcılar Menüsü"
 
-#: ../panel-plugin/indicator-dialog.c:49 ../panel-plugin/indicator-dialog.c:50
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
 msgid "Power Management"
 msgstr "Güç Yönetimi"
 
-#: ../panel-plugin/indicator-dialog.c:51
+#: panel-plugin/indicator-dialog.c:51
 msgid "Application Menus (Global Menu)"
 msgstr "Uygulamalar Menüsü (Genel Menü)"
 
-#: ../panel-plugin/indicator-dialog.c:52 ../panel-plugin/indicator-dialog.c:53
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
 msgid "Session Management"
 msgstr "Oturum Yönetimi"
 
-#: ../panel-plugin/indicator-dialog.c:54 ../panel-plugin/indicator-dialog.c:55
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
 msgid "Messaging Menu"
 msgstr "İletişim Menüsü"
 
-#: ../panel-plugin/indicator-dialog.c:56 ../panel-plugin/indicator-dialog.c:57
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
 msgid "Date and Time"
 msgstr "Tarih ve Saat"
 
-#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: panel-plugin/indicator-dialog.c:60
 msgid "Sync Menu"
 msgstr "Menüyü Eşle"
 
-#: ../panel-plugin/indicator-dialog.c:61
+#: panel-plugin/indicator-dialog.c:61
 msgid "Keyboard"
 msgstr "Klavye"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:62
 msgid "Location"
 msgstr "Konum"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: panel-plugin/indicator-dialog.c:63
 msgid "Network"
 msgstr "Ağ"
 
-#: ../panel-plugin/indicator-dialog.c:64
+#: panel-plugin/indicator-dialog.c:64
 msgid "Workrave"
 msgstr "Sistem Tepsisi"
 
-#: ../panel-plugin/indicator-dialog.c:425
+#: panel-plugin/indicator-dialog.c:425
 msgid "Clear"
 msgstr "Temizle"
 
-#: ../panel-plugin/indicator-dialog.c:426
+#: panel-plugin/indicator-dialog.c:426
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "Bilinmeyen göstergelerin listesini temizlemek istediğinize emin misiniz?"
 
-#: ../panel-plugin/indicator-dialog.c:556
+#: panel-plugin/indicator-dialog.c:556
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Açılamayan adres:%s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
 msgstr "Göstergeler"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
 msgstr "Göstergeleri tek sıraya diz"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
 msgstr "Etkileştirilirse, göstergelerin tek satır veya sütun olarak dizildiğinden emin ol."
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
 msgstr "Masaçubuğu kipinde sola hizala"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr "Panel, Masaçubuğu kipindeyken düğme düzeni göstergesini denetler. Olası seçimler \"centered\" (merkezi) ya da \"aligned left\" (sola hizalı)."
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
 msgstr "Kare simgeler"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
 msgstr "Öge düğmeleri olabildiğince kare halini alırlar."
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
 msgstr "Görünüm"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
 msgstr "Göstergeleri öntanımlı olarak gizle"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "Etkinleştirildiğinde, yalnızca \"Görünür\" olarak imlenmiş göstergeler görünür. Yoksa \"Gizli\" olarak imlenmemiş tüm göstergeler görünür."
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
 msgstr "Gösterge"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
 msgstr "Gizli"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
 msgstr "Görünür"
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
 msgstr "Seçili göstergeyi bir sıra yukarı taşı"
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
 msgstr "Seçili göstergeyi bir sıra aşağıya taşı."
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>Görünüm değişikliklerinin etkin olabilmesi için lütfen paneli yeniden başlatın.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
 msgstr "Bilinen göstergeleri temiz_le"
 
-#: ../panel-plugin/indicator-dialog.glade.h:18
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "Gösterge listesini ve görünür ayarlarını sıfırlar"
 
-#: ../panel-plugin/indicator-dialog.glade.h:19
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
 msgstr "Bilinen göstergeler"
