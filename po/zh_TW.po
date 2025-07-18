@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
 # 
 # Translators:
 # 黃柏諺 <s8321414@gmail.com>, 2016-2017
@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-16 12:51+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
 "PO-Revision-Date: 2013-07-03 19:02+0000\n"
 "Last-Translator: Walter Cheuk <wwycheuk@gmail.com>, 2013-2014,2019\n"
 "Language-Team: Chinese (Taiwan) (http://app.transifex.com/xfce/xfce-panel-plugins/language/zh_TW/)\n"
@@ -21,7 +21,11 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/indicator.c:178
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "指示器插件"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
@@ -29,153 +33,153 @@ msgstr "為 Unity 指示器提供面板空間。「指示器」讓應用程式�
 
 #. raw name,                           pretty name,
 #. icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:45
+#: panel-plugin/indicator-dialog.c:45
 msgid "Application Indicators"
 msgstr "應用程式指示器"
 
-#: ../panel-plugin/indicator-dialog.c:46 ../panel-plugin/indicator-dialog.c:47
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
 msgid "Sound Menu"
 msgstr "音效選單"
 
-#: ../panel-plugin/indicator-dialog.c:48
+#: panel-plugin/indicator-dialog.c:48
 msgid "Printers Menu"
 msgstr "印表機選單"
 
-#: ../panel-plugin/indicator-dialog.c:49 ../panel-plugin/indicator-dialog.c:50
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
 msgid "Power Management"
 msgstr "電源管理"
 
-#: ../panel-plugin/indicator-dialog.c:51
+#: panel-plugin/indicator-dialog.c:51
 msgid "Application Menus (Global Menu)"
 msgstr "應用程式選單 (全域選單)"
 
-#: ../panel-plugin/indicator-dialog.c:52 ../panel-plugin/indicator-dialog.c:53
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
 msgid "Session Management"
 msgstr "工作階段管理"
 
-#: ../panel-plugin/indicator-dialog.c:54 ../panel-plugin/indicator-dialog.c:55
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
 msgid "Messaging Menu"
 msgstr "訊息選單"
 
-#: ../panel-plugin/indicator-dialog.c:56 ../panel-plugin/indicator-dialog.c:57
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
 msgid "Date and Time"
 msgstr "日期和時間"
 
-#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
 msgid "Bluetooth"
 msgstr "藍牙"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: panel-plugin/indicator-dialog.c:60
 msgid "Sync Menu"
 msgstr "同步化選單"
 
-#: ../panel-plugin/indicator-dialog.c:61
+#: panel-plugin/indicator-dialog.c:61
 msgid "Keyboard"
 msgstr "鍵盤"
 
-#: ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:62
 msgid "Location"
 msgstr "位置"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: panel-plugin/indicator-dialog.c:63
 msgid "Network"
 msgstr "網路"
 
-#: ../panel-plugin/indicator-dialog.c:64
+#: panel-plugin/indicator-dialog.c:64
 msgid "Workrave"
 msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:425
+#: panel-plugin/indicator-dialog.c:425
 msgid "Clear"
 msgstr "清除"
 
-#: ../panel-plugin/indicator-dialog.c:426
+#: panel-plugin/indicator-dialog.c:426
 msgid "Are you sure you want to clear the list of known indicators?"
 msgstr "確定要清除已知的指示器清單嗎？"
 
-#: ../panel-plugin/indicator-dialog.c:556
+#: panel-plugin/indicator-dialog.c:556
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "無法開啟以下 URL：%s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
 msgstr "指示器"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
 msgstr "將指示器重新整理為一列"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
 msgstr "若啟用，確保指示器會在單一列或欄顯示。"
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
 msgstr "桌面工具模式時，靠左對齊"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
 msgstr "當工具列設定為桌面工具模式時，控制指示器按鈕的版面。可行選項為「置中」或「靠左對齊」。"
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
 msgstr "方形圖示"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:141
 msgid "Indicator buttons will take a square when it's possible."
 msgstr "指示器按鈕將會盡可能使用方形的圖示。"
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
 msgstr "外觀"
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
 msgstr "預設隱藏指示器"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
 msgstr "若啟用，只顯示標為「可見」的指示器。否則會顯示所有沒有標為「隱藏」的指示器。"
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
 msgstr "指示器"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
 msgstr "隱藏"
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
 msgstr "可見"
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
 msgstr "上移一列所選取之指示器"
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
 msgstr "下移一列所選取之指示器"
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
 msgstr "<i>請重新啟動工具列使可見性變更生效<i/>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
 msgstr "清除已知指示器(_L)"
 
-#: ../panel-plugin/indicator-dialog.glade.h:18
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
 msgstr "重設指示器清單及其可見性設定值。"
 
-#: ../panel-plugin/indicator-dialog.glade.h:19
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
 msgstr "已知指示器"
