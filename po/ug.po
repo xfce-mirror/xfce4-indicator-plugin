@@ -1,184 +1,182 @@
-# Uyghur translation for xfce4-indicator-plugin.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Gheyret Kenji <gheyret@gmail.com>, YEAR.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
+# 
+# Translators:
+# Gheyret Kenji <gheyret@yahoo.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-indicator-plugin\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-06 01:59+0100\n"
-"PO-Revision-Date: 2011-11-09 16:10+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
-"Language: \n"
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
+"PO-Revision-Date: 2013-07-03 19:02+0000\n"
+"Last-Translator: Gheyret Kenji <gheyret@yahoo.com>, 2014\n"
+"Language-Team: Uyghur (http://app.transifex.com/xfce/xfce-panel-plugins/language/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ug\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:1
+#: panel-plugin/indicator.desktop.in.in:5
 msgid "Indicator Plugin"
-msgstr "كۆرسەتكۈ قىستۇرمىسى"
+msgstr "كۆرسەتكۈچ قىستۇرمىسى"
 
-#: ../panel-plugin/indicator.desktop.in.in.h:2 ../panel-plugin/indicator.c:174
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
 msgid ""
 "Provides a panel area for Unity indicators. Indicators allow applications "
 "and system services to display their status and interact with the user."
-msgstr ""
+msgstr "ئەمەلىي قوللىنىلىدىغان قورالغا بىر كۆزنەكچە رايونى تەمىنلەيدۇ. كۆرسەتكۈچ پىروگرامما ۋە سىستېما مۇلازىمىتى ئۇلارنىڭ ھالىتىنى كۆرسىتىدۇ ھەمدە ئىشلەتكۈچى بىلەن تەسىرلىشىدۇ."
 
-#: ../panel-plugin/indicator.c:176
-msgid "Copyright (c) 2009-2013\n"
-msgstr ""
-
-#: ../panel-plugin/indicator.c:312
-msgid "No Indicators"
-msgstr "كۆرسەتكۈلەر يوق"
-
-#. raw name,                           pretty name,                                 icon-name(?)
-#: ../panel-plugin/indicator-dialog.c:57
-#, fuzzy
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: panel-plugin/indicator-dialog.c:45
 msgid "Application Indicators"
-msgstr "كۆرسەتكۈلەر يوق"
+msgstr "پىروگرامما كۆرسەتكۈچ"
 
-#: ../panel-plugin/indicator-dialog.c:58 ../panel-plugin/indicator-dialog.c:59
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
 msgid "Sound Menu"
-msgstr ""
+msgstr "ئاۋاز تىزىملىكى"
 
-#: ../panel-plugin/indicator-dialog.c:60
+#: panel-plugin/indicator-dialog.c:48
 msgid "Printers Menu"
-msgstr ""
+msgstr "پىرىنتېر تىزىملىكى"
 
-#: ../panel-plugin/indicator-dialog.c:61 ../panel-plugin/indicator-dialog.c:62
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
 msgid "Power Management"
-msgstr ""
+msgstr "توك مەنبەسىنى باشقۇرۇش"
 
-#: ../panel-plugin/indicator-dialog.c:63
+#: panel-plugin/indicator-dialog.c:51
 msgid "Application Menus (Global Menu)"
-msgstr ""
+msgstr "پىروگرامما تىزىملىكى (ئومۇمىيەت تىزىملىكى)"
 
-#: ../panel-plugin/indicator-dialog.c:64 ../panel-plugin/indicator-dialog.c:65
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
 msgid "Session Management"
-msgstr ""
+msgstr "ئەڭگىمە باشقۇرۇش"
 
-#: ../panel-plugin/indicator-dialog.c:66 ../panel-plugin/indicator-dialog.c:67
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
 msgid "Messaging Menu"
-msgstr ""
+msgstr "ئۇچۇر تىزىملىكى"
 
-#: ../panel-plugin/indicator-dialog.c:68 ../panel-plugin/indicator-dialog.c:69
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
 msgid "Date and Time"
-msgstr ""
+msgstr "چېسلا ۋە ۋاقىت"
 
-#: ../panel-plugin/indicator-dialog.c:70 ../panel-plugin/indicator-dialog.c:71
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
 msgid "Bluetooth"
-msgstr ""
+msgstr "كۆكچىش"
 
-#: ../panel-plugin/indicator-dialog.c:72
+#: panel-plugin/indicator-dialog.c:60
 msgid "Sync Menu"
-msgstr ""
+msgstr "قەدەمداش تىزىملىكى"
 
-#: ../panel-plugin/indicator-dialog.c:73
+#: panel-plugin/indicator-dialog.c:61
 msgid "Keyboard"
-msgstr ""
+msgstr "ھەرپتاختا"
 
-#: ../panel-plugin/indicator-dialog.c:74
+#: panel-plugin/indicator-dialog.c:62
 msgid "Location"
-msgstr ""
+msgstr "ئورنى"
 
-#: ../panel-plugin/indicator-dialog.c:75
+#: panel-plugin/indicator-dialog.c:63
 msgid "Network"
-msgstr ""
+msgstr "تور"
 
-#: ../panel-plugin/indicator-dialog.c:76
+#: panel-plugin/indicator-dialog.c:64
 msgid "Workrave"
-msgstr ""
+msgstr "Workrave"
 
-#: ../panel-plugin/indicator-dialog.c:450
+#: panel-plugin/indicator-dialog.c:425
+msgid "Clear"
+msgstr "تازىلا"
+
+#: panel-plugin/indicator-dialog.c:426
 msgid "Are you sure you want to clear the list of known indicators?"
-msgstr ""
+msgstr "تونۇش كۆرسەتكۈچ تىزىمىنى راستتىنلا تازىلىۋېتەمسىز؟"
 
-#: ../panel-plugin/indicator-dialog.c:593
+#: panel-plugin/indicator-dialog.c:556
 #, c-format
 msgid "Unable to open the following url: %s"
-msgstr ""
+msgstr "تۆۋەندىكى تور ئادرېسىنى ئاچقىلى بولمىدى: %s"
 
-#: ../panel-plugin/indicator-dialog.glade.h:1
-#, fuzzy
+#: panel-plugin/indicator-dialog.glade:27
 msgid "Indicators"
-msgstr "كۆرسەتكۈلەر يوق"
+msgstr "كۆرسەتكۈچ"
 
-#: ../panel-plugin/indicator-dialog.glade.h:2
+#: panel-plugin/indicator-dialog.glade:107
 msgid "Arrange indicators in a single row"
-msgstr ""
+msgstr "كۆرسەتكۈچنى بىر قۇرغا ئورۇنلاشتۇرىدۇ"
 
-#: ../panel-plugin/indicator-dialog.glade.h:3
+#: panel-plugin/indicator-dialog.glade:111
 msgid ""
 "If enabled, ensure that the indicators are laid out in a single row or "
 "column."
-msgstr ""
+msgstr "ئەگەر قوزغىتىلسا، ئەگەر قوزغىتىلسا، كۆرسەتكۈچنى بىر قۇر ياكى رەتكە رەتلەشكە كاپالەتلىك قىلىدۇ."
 
-#: ../panel-plugin/indicator-dialog.glade.h:4
+#: panel-plugin/indicator-dialog.glade:122
 msgid "Align left in deskbar mode"
-msgstr ""
+msgstr "ئۈستەلئۈستى بالداق ھالىتىدە سولغا توغرىلىنىدۇ"
 
-#: ../panel-plugin/indicator-dialog.glade.h:5
+#: panel-plugin/indicator-dialog.glade:126
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr ""
+msgstr "تىزگىن ئۈستەلئۈستى بالداق ھالىتىدىكى كۆزنەكچىدىكى كۆرسەتكۈچ توپچە ئورۇنلاشتۇرۇش ھالىتىدە تۇرىدۇ. تاللىغىلى بولىدىغان ئىمكانىيەت «ئوتتۇرىغا توغرىلانغان» ياكى «سولغا توغرىلانغان» بولىدۇ."
 
-#: ../panel-plugin/indicator-dialog.glade.h:6
+#: panel-plugin/indicator-dialog.glade:137
+msgid "Square icons"
+msgstr "چاسا سىنبەلگە"
+
+#: panel-plugin/indicator-dialog.glade:141
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "كۆرسەتكۈچ توپچىسىغا ئامالنىڭ بارىچە چاسا سىنبەلگە ئىشلىتىلىدۇ."
+
+#: panel-plugin/indicator-dialog.glade:158
 msgid "Appearance"
-msgstr ""
+msgstr "كۆرۈنۈشى"
 
-#: ../panel-plugin/indicator-dialog.glade.h:7
+#: panel-plugin/indicator-dialog.glade:191
 msgid "Hide indicators by default"
-msgstr ""
+msgstr "كۆڭۈلدىكى ئەھۋالدا كۆرسەتكۈچنى يوشۇرىدۇ"
 
-#: ../panel-plugin/indicator-dialog.glade.h:8
+#: panel-plugin/indicator-dialog.glade:195
 msgid ""
 "When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
 "indicators not marked \"Hidden\" are displayed."
-msgstr ""
+msgstr "قوزغىتىلغاندا، پەقەت «كۆرۈنۈشچان» بەلگىسى قويۇلغان كۆرسەتكۈچلا كۆرۈنىدۇ. ئۇنداق بولمىسا، «يوشۇرۇن» بەلگىسى قويۇلمىغان بارلىق كۆرسەتكۈچنى كۆرسىتىدۇ."
 
-#: ../panel-plugin/indicator-dialog.glade.h:9
-#, fuzzy
+#: panel-plugin/indicator-dialog.glade:239
 msgid "Indicator"
-msgstr "كۆرسەتكۈلەر يوق"
+msgstr "كۆرسەتكۈچ"
 
-#: ../panel-plugin/indicator-dialog.glade.h:10
+#: panel-plugin/indicator-dialog.glade:251
 msgid "Hidden"
-msgstr ""
+msgstr "يوشۇرۇن"
 
-#: ../panel-plugin/indicator-dialog.glade.h:11
+#: panel-plugin/indicator-dialog.glade:262
 msgid "Visible"
-msgstr ""
+msgstr "كۆرۈنۈشچان"
 
-#: ../panel-plugin/indicator-dialog.glade.h:12
+#: panel-plugin/indicator-dialog.glade:291
 msgid "Move the selected indicator one row up."
-msgstr ""
+msgstr "تاللانغان كۆرسەتكۈچنى ئۈستىگە بىر قۇر يۆتكەيدۇ."
 
-#: ../panel-plugin/indicator-dialog.glade.h:13
+#: panel-plugin/indicator-dialog.glade:311
 msgid "Move the selected indicator one row down."
-msgstr ""
+msgstr "تاللانغان كۆرسەتكۈچنى ئاستىغا بىر قۇر يۆتكەيدۇ."
 
-#: ../panel-plugin/indicator-dialog.glade.h:14
+#: panel-plugin/indicator-dialog.glade:344
 msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
-msgstr ""
+msgstr "<i>كۆرۈنۈشچانلىق ئۆزگىرىشىنىڭ كۈچكە ئىگە بولۇشى ئۈچۈن كۆزنەكچىنى قايتا قوزغىتىڭ.</i>"
 
-#: ../panel-plugin/indicator-dialog.glade.h:15
-#, fuzzy
+#: panel-plugin/indicator-dialog.glade:363
 msgid "C_lear known indicators"
-msgstr "كۆرسەتكۈلەر يوق"
+msgstr "تونۇش كۆرسەتكۈچنى تازىلا(_L)"
 
-#: ../panel-plugin/indicator-dialog.glade.h:16
+#: panel-plugin/indicator-dialog.glade:367
 msgid "Resets the list of indicators and their visibility settings."
-msgstr ""
+msgstr "كۆرسەتكۈچ تىزىمى ۋە كۆرۈنۈشچانلىق تەڭشىكىنى ئەسلىگە قايتۇرىدۇ."
 
-#: ../panel-plugin/indicator-dialog.glade.h:17
-#, fuzzy
+#: panel-plugin/indicator-dialog.glade:392
 msgid "Known Indicators"
-msgstr "كۆرسەتكۈلەر يوق"
-
-#~ msgid "An indicator of something that needs your attention on the desktop"
-#~ msgstr ""
-#~ "كۆرسەتكۈ دېگەن سىزنىڭ ئۈستەلئۈستىدىكى دىققىتىڭىزنى تارتىدىغان نەرسىدۇر"
+msgstr "تونۇش كۆرسەتكۈچ"
