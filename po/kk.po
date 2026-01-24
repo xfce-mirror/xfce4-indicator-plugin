@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
+"PO-Revision-Date: 2013-07-03 19:02+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Kazakh (http://app.transifex.com/xfce/xfce-panel-plugins/language/kk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: kk\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "Индикатор плагині"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr "Unity индикаторлары үшін панель аймағын ұсынады. Индикаторлар қолданбалар мен жүйелік қызметтерге өз күйлерін көрсетуге және пайдаланушымен әрекеттесуге мүмкіндік береді."
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: panel-plugin/indicator-dialog.c:45
+msgid "Application Indicators"
+msgstr "Қолданба индикаторлары"
+
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
+msgid "Sound Menu"
+msgstr "Дыбыс мәзірі"
+
+#: panel-plugin/indicator-dialog.c:48
+msgid "Printers Menu"
+msgstr "Принтерлер мәзірі"
+
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
+msgid "Power Management"
+msgstr "Қуатты басқару"
+
+#: panel-plugin/indicator-dialog.c:51
+msgid "Application Menus (Global Menu)"
+msgstr "Қолданба мәзірлері (Глобалды мәзір)"
+
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
+msgid "Session Management"
+msgstr "Сеансты басқару"
+
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
+msgid "Messaging Menu"
+msgstr "Хабар алмасу мәзірі"
+
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
+msgid "Date and Time"
+msgstr "Күн мен уақыт"
+
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: panel-plugin/indicator-dialog.c:60
+msgid "Sync Menu"
+msgstr "Синхрондау мәзірі"
+
+#: panel-plugin/indicator-dialog.c:61
+msgid "Keyboard"
+msgstr "Пернетақта"
+
+#: panel-plugin/indicator-dialog.c:62
+msgid "Location"
+msgstr "Орналасу"
+
+#: panel-plugin/indicator-dialog.c:63
+msgid "Network"
+msgstr "Желі"
+
+#: panel-plugin/indicator-dialog.c:64
+msgid "Workrave"
+msgstr "Workrave"
+
+#: panel-plugin/indicator-dialog.c:425
+msgid "Clear"
+msgstr "Тазарту"
+
+#: panel-plugin/indicator-dialog.c:426
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Белгілі индикаторлар тізімін тазартуды шынымен қалайсыз ба?"
+
+#: panel-plugin/indicator-dialog.c:556
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Келесі url-ды ашу мүмкін емес: %s"
+
+#: panel-plugin/indicator-dialog.glade:27
+msgid "Indicators"
+msgstr "Индикаторлар"
+
+#: panel-plugin/indicator-dialog.glade:107
+msgid "Arrange indicators in a single row"
+msgstr "Индикаторларды бір жолға орналастыру"
+
+#: panel-plugin/indicator-dialog.glade:111
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "Егер іске қосылған болса, индикаторлардың бір жолға немесе бағанға орналасуын қамтамасыз етеді."
+
+#: panel-plugin/indicator-dialog.glade:122
+msgid "Align left in deskbar mode"
+msgstr "Дескбар режимінде сол жаққа туралау"
+
+#: panel-plugin/indicator-dialog.glade:126
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr "Панель дескбар режимінде болғанда индикатор батырмаларының жайғасуын басқарады. Мүмкін таңдаулар: «centered» немесе «aligned left»."
+
+#: panel-plugin/indicator-dialog.glade:137
+msgid "Square icons"
+msgstr "Шаршы таңбашалар"
+
+#: panel-plugin/indicator-dialog.glade:141
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "Мүмкін болған жағдайда индикатор батырмалары шаршы пішінді болады."
+
+#: panel-plugin/indicator-dialog.glade:158
+msgid "Appearance"
+msgstr "Сыртқы түрі"
+
+#: panel-plugin/indicator-dialog.glade:191
+msgid "Hide indicators by default"
+msgstr "Индикаторларды әдепкі бойынша жасыру"
+
+#: panel-plugin/indicator-dialog.glade:195
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "Іске қосылған кезде тек «Көрінетін» деп белгіленген индикаторлар көрсетіледі. Әйтпесе, «Жасырын» деп белгіленбеген барлық индикаторлар көрсетіледі."
+
+#: panel-plugin/indicator-dialog.glade:239
+msgid "Indicator"
+msgstr "Индикатор"
+
+#: panel-plugin/indicator-dialog.glade:251
+msgid "Hidden"
+msgstr "Жасырын"
+
+#: panel-plugin/indicator-dialog.glade:262
+msgid "Visible"
+msgstr "Көрінетін"
+
+#: panel-plugin/indicator-dialog.glade:291
+msgid "Move the selected indicator one row up."
+msgstr "Таңдалған индикаторды бір жолға жоғары жылжыту."
+
+#: panel-plugin/indicator-dialog.glade:311
+msgid "Move the selected indicator one row down."
+msgstr "Таңдалған индикаторды бір жолға төмен жылжыту."
+
+#: panel-plugin/indicator-dialog.glade:344
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Көріну өзгерістері күшіне енуі үшін панельді қайта іске қосыңыз.</i>"
+
+#: panel-plugin/indicator-dialog.glade:363
+msgid "C_lear known indicators"
+msgstr "Белгілі индикаторларды _тазарту"
+
+#: panel-plugin/indicator-dialog.glade:367
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Индикаторлар тізімін және олардың көріну параметрлерін ысырады."
+
+#: panel-plugin/indicator-dialog.glade:392
+msgid "Known Indicators"
+msgstr "Белгілі индикаторлар"
