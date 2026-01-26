@@ -96,6 +96,7 @@ struct _IndicatorPlugin
 
   /* log file */
   FILE            *logfile;
+  guint            log_id;
 };
 
 
@@ -143,12 +144,15 @@ indicator_init (IndicatorPlugin *indicator)
 static void
 indicator_free (XfcePanelPlugin *plugin)
 {
+  IndicatorPlugin *indicator = XFCE_INDICATOR_PLUGIN (plugin);
   GtkWidget *dialog;
 
   /* check if the dialog is still open. if so, destroy it */
   dialog = g_object_get_data (G_OBJECT (plugin), "dialog");
   if (G_UNLIKELY (dialog != NULL))
     gtk_widget_destroy (dialog);
+
+  g_log_remove_handler("xfce4-indicator-plugin", indicator->log_id);
 }
 
 
@@ -283,7 +287,8 @@ indicator_construct (XfcePanelPlugin *plugin)
   xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
   /* log messages to a file */
-  g_log_set_default_handler(indicator_log_handler, plugin);
+  indicator->log_id = g_log_set_handler("xfce4-indicator-plugin", G_LOG_LEVEL_MASK,
+                                        indicator_log_handler, plugin);
 
   /* Init some theme/icon stuff */
   gtk_icon_theme_append_search_path(gtk_icon_theme_get_default(),
