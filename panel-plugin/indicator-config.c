@@ -204,7 +204,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
 
 
   indicator_config_signals[CONFIGURATION_CHANGED] =
-    g_signal_new (g_intern_static_string ("configuration-changed"),
+    g_signal_new (g_intern_string ("configuration-changed"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   0, NULL, NULL,
@@ -212,7 +212,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                   G_TYPE_NONE, 0);
 
   indicator_config_signals[INDICATOR_LIST_CHANGED] =
-    g_signal_new (g_intern_static_string ("indicator-list-changed"),
+    g_signal_new (g_intern_string ("indicator-list-changed"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   0, NULL, NULL,
