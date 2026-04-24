@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
+"PO-Revision-Date: 2013-07-03 19:02+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Lao (http://app.transifex.com/xfce/xfce-panel-plugins/language/lo/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lo\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "ປລັກອິນຕົວບົ່ງຊີ້"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr "ສະໜອງພື້ນທີ່ແຖບພາເນລສຳລັບຕົວບົ່ງຊີ້ Unity. ຕົວບົ່ງຊີ້ຊ່ວຍໃຫ້ແອັບພລິເຄຊັນ ແລະ ບໍລິການລະບົບສາມາດສະແດງສະຖານະ ແລະ ໂຕ້ຕອບກັບຜູ້ໃຊ້ໄດ້."
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: panel-plugin/indicator-dialog.c:45
+msgid "Application Indicators"
+msgstr "ຕົວບົ່ງຊີ້ແອັບພລິເຄຊັນ"
+
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
+msgid "Sound Menu"
+msgstr "ເມນູສຽງ"
+
+#: panel-plugin/indicator-dialog.c:48
+msgid "Printers Menu"
+msgstr "ເມນູເຄື່ອງພິມ"
+
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
+msgid "Power Management"
+msgstr "ການຈັດການພະລັງງານ"
+
+#: panel-plugin/indicator-dialog.c:51
+msgid "Application Menus (Global Menu)"
+msgstr "ເມນູແອັບພລິເຄຊັນ (ເມນູລວມ)"
+
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
+msgid "Session Management"
+msgstr "ການຈັດການເຊດຊັນ"
+
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
+msgid "Messaging Menu"
+msgstr "ເມນູຂໍ້ຄວາມ"
+
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
+msgid "Date and Time"
+msgstr "ວັນທີ ແລະ ເວລາ"
+
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
+msgid "Bluetooth"
+msgstr "ບລູທູດ"
+
+#: panel-plugin/indicator-dialog.c:60
+msgid "Sync Menu"
+msgstr "ເມນູການຊິງຄ໌"
+
+#: panel-plugin/indicator-dialog.c:61
+msgid "Keyboard"
+msgstr "ຄີບອດ"
+
+#: panel-plugin/indicator-dialog.c:62
+msgid "Location"
+msgstr "ສະຖານທີ່"
+
+#: panel-plugin/indicator-dialog.c:63
+msgid "Network"
+msgstr "ເຄືອຂ່າຍ"
+
+#: panel-plugin/indicator-dialog.c:64
+msgid "Workrave"
+msgstr "Workrave"
+
+#: panel-plugin/indicator-dialog.c:425
+msgid "Clear"
+msgstr "ແຈ້ງ"
+
+#: panel-plugin/indicator-dialog.c:426
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການລຶບລາຍຊື່ຕົວບົ່ງຊີ້ທີ່ຮູ້ຈັກທັງໝົດ?"
+
+#: panel-plugin/indicator-dialog.c:556
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "ບໍ່ສາມາດເປີດ URL ຕໍ່ໄປນີ້ໄດ້: %s"
+
+#: panel-plugin/indicator-dialog.glade:27
+msgid "Indicators"
+msgstr "ຕົວບົ່ງຊີ້"
+
+#: panel-plugin/indicator-dialog.glade:107
+msgid "Arrange indicators in a single row"
+msgstr "ຈັດລຽງຕົວບົ່ງຊີ້ໃຫ້ຢູ່ໃນແຖວດຽວ"
+
+#: panel-plugin/indicator-dialog.glade:111
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "ຖ້າເປີດໃຊ້, ຈະຮັບປະກັນວ່າຕົວບົ່ງຊີ້ຖືກຈັດວາງຢູ່ໃນແຖວ ຫຼື ຖັນດຽວ."
+
+#: panel-plugin/indicator-dialog.glade:122
+msgid "Align left in deskbar mode"
+msgstr "ຈັດລຽງໄວ້ທາງຊ້າຍໃນໂໝດເດດບາ"
+
+#: panel-plugin/indicator-dialog.glade:126
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr "ຄວບຄຸມການຈັດວາງປຸ່ມຕົວບົ່ງຊີ້ເມື່ອພາເນລຢູ່ໃນໂໝດ Deskbar. ຕົວເລືອກທີ່ເປັນໄປໄດ້ແມ່ນ \"ຢູ່ເຄິ່ງກາງ\" ຫຼື \"ຈັດຊ້າຍ\"."
+
+#: panel-plugin/indicator-dialog.glade:137
+msgid "Square icons"
+msgstr "ໄອຄອນຮູບຈະຕຸລັດ"
+
+#: panel-plugin/indicator-dialog.glade:141
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "ປຸ່ມຕົວບົ່ງຊີ້ຈະເປັນຮູບຈະຕຸລັດເມື່ອເປັນໄປໄດ້."
+
+#: panel-plugin/indicator-dialog.glade:158
+msgid "Appearance"
+msgstr "ຮູບລັກສະນະ"
+
+#: panel-plugin/indicator-dialog.glade:191
+msgid "Hide indicators by default"
+msgstr "ເຊື່ອງຕົວບົ່ງຊີ້ໂດຍເລີ່ມຕົ້ນ"
+
+#: panel-plugin/indicator-dialog.glade:195
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "ເມື່ອເປີດໃຊ້, ຈະສະແດງສະເພາະຕົວບົ່ງຊີ້ທີ່ຖືກໝາຍວ່າ \"ເຫັນໄດ້\" ເທົັ້ນນັ້ນ. ຖ້າບໍ່ດັ່ງນັ້ນ, ຕົວບົ່ງຊີ້ທັງໝົດທີ່ບໍ່ໄດ້ໝາຍວ່າ \"ເຊື່ອງໄວ້\" ຈະຖືກສະແດງ."
+
+#: panel-plugin/indicator-dialog.glade:239
+msgid "Indicator"
+msgstr "ຕົວບົ່ງຊີ້"
+
+#: panel-plugin/indicator-dialog.glade:251
+msgid "Hidden"
+msgstr "ເຊື່ອງໄວ້"
+
+#: panel-plugin/indicator-dialog.glade:262
+msgid "Visible"
+msgstr "ເຫັນໄດ້"
+
+#: panel-plugin/indicator-dialog.glade:291
+msgid "Move the selected indicator one row up."
+msgstr "ຍ້າຍຕົວບົ່ງຊີ້ທີ່ເລືອກຂຶ້ນເທິງໜຶ່ງແຖວ."
+
+#: panel-plugin/indicator-dialog.glade:311
+msgid "Move the selected indicator one row down."
+msgstr "ຍ້າຍຕົວບົ່ງຊີ້ທີ່ເລືອກລົງລຸ່ມໜຶ່ງແຖວ."
+
+#: panel-plugin/indicator-dialog.glade:344
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>ກະລຸນາເລີ່ມພາເນລໃໝ່ເພື່ອໃຫ້ການປ່ຽນແປງການເບິ່ງເຫັນມີຜົນ.</i>"
+
+#: panel-plugin/indicator-dialog.glade:363
+msgid "C_lear known indicators"
+msgstr "_ລຶບຕົວບົ່ງຊີ້ທີ່ຮູ້ຈັກ"
+
+#: panel-plugin/indicator-dialog.glade:367
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "ຕັ້ງຄ່າລາຍຊື່ຕົວບົ່ງຊີ້ ແລະ ການຕັ້ງຄ່າການເບິ່ງເຫັນໃໝ່."
+
+#: panel-plugin/indicator-dialog.glade:392
+msgid "Known Indicators"
+msgstr "ຕົວບົ່ງຊີ້ທີ່ຮູ້ຈັກ"
