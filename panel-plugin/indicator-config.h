@@ -42,9 +42,9 @@ typedef struct _IndicatorConfig      IndicatorConfig;
 #define XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY G_TYPE_PTR_ARRAY
 #endif
 
-GType              indicator_config_value_array_get_type    (void) G_GNUC_CONST;
+GType              indicator_config_value_array_get_type    (void);
 
-GType              indicator_config_get_type                (void) G_GNUC_CONST;
+GType              indicator_config_get_type                (void);
 
 IndicatorConfig   *indicator_config_new                     (const gchar          *property_base);
 

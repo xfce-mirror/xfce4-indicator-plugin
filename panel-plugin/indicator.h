@@ -34,7 +34,7 @@ typedef struct _IndicatorPlugin      IndicatorPlugin;
 #define XFCE_IS_INDICATOR_PLUGIN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_INDICATOR_PLUGIN))
 #define XFCE_INDICATOR_PLUGIN_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_INDICATOR_PLUGIN, IndicatorPluginClass))
 
-GType indicator_get_type      (void) G_GNUC_CONST;
+GType indicator_get_type      (void);
 
 void  indicator_register_type (XfcePanelTypeModule *type_module);
 

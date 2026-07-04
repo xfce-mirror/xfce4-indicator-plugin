@@ -34,7 +34,7 @@ typedef struct _IndicatorDialog      IndicatorDialog;
 #define XFCE_IS_INDICATOR_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_INDICATOR_DIALOG))
 #define XFCE_INDICATOR_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_INDICATOR_DIALOG, IndicatorDialogClass))
 
-GType              indicator_dialog_get_type (void) G_GNUC_CONST;
+GType              indicator_dialog_get_type (void);
 
 void               indicator_dialog_show     (IndicatorDialog  *dialog,
                                               GdkScreen        *screen);
