@@ -25,18 +25,8 @@
 
 G_BEGIN_DECLS
 
-GType indicator_button_box_get_type (void);
-
-#define XFCE_TYPE_INDICATOR_BUTTON_BOX             (indicator_button_box_get_type())
-#define XFCE_INDICATOR_BUTTON_BOX(obj)             (G_TYPE_CHECK_INSTANCE_CAST((obj), XFCE_TYPE_INDICATOR_BUTTON_BOX, IndicatorButtonBox))
-#define XFCE_INDICATOR_BUTTON_BOX_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST((klass), XFCE_TYPE_INDICATOR_BUTTON_BOX, IndicatorButtonBoxClass))
-#define XFCE_IS_INDICATOR_BUTTON_BOX(obj)          (G_TYPE_CHECK_INSTANCE_TYPE((obj), XFCE_TYPE_INDICATOR_BUTTON_BOX))
-#define XFCE_IS_INDICATOR_BUTTON_BOX_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE((klass), XFCE_TYPE_INDICATOR_BUTTON_BOX))
-#define XFCE_INDICATOR_BUTTON_BOX_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS((obj), XFCE_TYPE_INDICATOR_BUTTON_BOX, IndicatorButtonBoxClass))
-
-typedef struct          _IndicatorButtonBox              IndicatorButtonBox;
-typedef struct          _IndicatorButtonBoxClass         IndicatorButtonBoxClass;
-
+#define XFCE_TYPE_INDICATOR_BUTTON_BOX (indicator_button_box_get_type())
+G_DECLARE_FINAL_TYPE (IndicatorButtonBox, indicator_button_box, XFCE, INDICATOR_BUTTON_BOX, GtkContainer)
 
 void                    indicator_button_box_set_label   (IndicatorButtonBox        *box,
                                                           GtkLabel                  *label);

@@ -72,12 +72,6 @@ static void              indicator_dialog_help_button_clicked    (IndicatorDialo
                                                                   GtkWidget                *button);
 
 
-
-struct _IndicatorDialogClass
-{
-  GtkBuilderClass   __parent__;
-};
-
 struct _IndicatorDialog
 {
   GtkBuilder        __parent__;

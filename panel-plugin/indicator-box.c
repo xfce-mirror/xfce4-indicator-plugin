@@ -70,12 +70,6 @@ struct _XfceIndicatorBox
   gulong                indicator_list_changed_id;
 };
 
-struct _XfceIndicatorBoxClass
-{
-  GtkContainerClass __parent__;
-};
-
-
 
 
 G_DEFINE_TYPE (XfceIndicatorBox, xfce_indicator_box, GTK_TYPE_CONTAINER)

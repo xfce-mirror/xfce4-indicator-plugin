@@ -73,10 +73,6 @@ static void             indicator_load_services                    (IndicatorPlu
 static void             indicator_load_modules                     (IndicatorPlugin       *indicator);
 
 
-struct _IndicatorPluginClass
-{
-  XfcePanelPluginClass __parent__;
-};
 
 /* plugin structure */
 struct _IndicatorPlugin

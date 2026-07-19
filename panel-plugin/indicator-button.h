@@ -27,18 +27,8 @@
 
 G_BEGIN_DECLS
 
-GType xfce_indicator_button_get_type (void);
-
-#define XFCE_TYPE_INDICATOR_BUTTON             (xfce_indicator_button_get_type())
-#define XFCE_INDICATOR_BUTTON(obj)             (G_TYPE_CHECK_INSTANCE_CAST((obj), XFCE_TYPE_INDICATOR_BUTTON, XfceIndicatorButton))
-#define XFCE_INDICATOR_BUTTON_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST((klass), XFCE_TYPE_INDICATOR_BUTTON, XfceIndicatorButtonClass))
-#define XFCE_IS_INDICATOR_BUTTON(obj)          (G_TYPE_CHECK_INSTANCE_TYPE((obj), XFCE_TYPE_INDICATOR_BUTTON))
-#define XFCE_IS_INDICATOR_BUTTON_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE((klass), XFCE_TYPE_INDICATOR_BUTTON))
-#define XFCE_INDICATOR_BUTTON_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS((obj), XFCE_TYPE_INDICATOR_BUTTON, XfceIndicatorButtonClass))
-
-typedef struct          _XfceIndicatorButton              XfceIndicatorButton;
-typedef struct          _XfceIndicatorButtonClass         XfceIndicatorButtonClass;
-
+#define XFCE_TYPE_INDICATOR_BUTTON (xfce_indicator_button_get_type())
+G_DECLARE_FINAL_TYPE (XfceIndicatorButton, xfce_indicator_button, XFCE, INDICATOR_BUTTON, GtkToggleButton)
 
 void                    xfce_indicator_button_set_label   (XfceIndicatorButton        *button,
                                                            GtkLabel                   *label);

@@ -80,12 +80,6 @@ struct _IndicatorButtonBox
   gulong                configuration_changed_id;
 };
 
-struct _IndicatorButtonBoxClass
-{
-  GtkContainerClass   __parent__;
-};
-
-
 
 
 G_DEFINE_TYPE (IndicatorButtonBox, indicator_button_box, GTK_TYPE_CONTAINER)
