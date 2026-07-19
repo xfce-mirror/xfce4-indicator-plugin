@@ -70,12 +70,6 @@ struct _XfceIndicatorBox
   gulong                indicator_list_changed_id;
 };
 
-struct _XfceIndicatorBoxClass
-{
-  GtkContainerClass __parent__;
-};
-
-
 
 
 G_DEFINE_TYPE (XfceIndicatorBox, xfce_indicator_box, GTK_TYPE_CONTAINER)
@@ -123,12 +117,7 @@ xfce_indicator_box_finalize (GObject *object)
 {
   XfceIndicatorBox *box = XFCE_INDICATOR_BOX (object);
 
-  if (box->indicator_list_changed_id != 0)
-    {
-      g_signal_handler_disconnect (box->config, box->indicator_list_changed_id);
-      box->indicator_list_changed_id = 0;
-    }
-
+  g_clear_signal_handler (&box->indicator_list_changed_id, box->config);
   g_hash_table_destroy (box->children);
 
   G_OBJECT_CLASS (xfce_indicator_box_parent_class)->finalize (object);
@@ -168,8 +157,8 @@ static gint
 xfce_indicator_box_sort_buttons (gconstpointer a,
                                  gconstpointer b)
 {
-  XfceIndicatorButton *a0 = XFCE_INDICATOR_BUTTON (a);
-  XfceIndicatorButton *b0 = XFCE_INDICATOR_BUTTON (b);
+  XfceIndicatorButton *a0 = (XfceIndicatorButton *) a;
+  XfceIndicatorButton *b0 = (XfceIndicatorButton *) b;
   guint                a1, b1;
   const gchar         *a_io;
   gint                 result = 0;

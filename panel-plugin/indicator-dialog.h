@@ -24,17 +24,8 @@
 
 G_BEGIN_DECLS
 
-typedef struct _IndicatorDialogClass IndicatorDialogClass;
-typedef struct _IndicatorDialog      IndicatorDialog;
-
-#define XFCE_TYPE_INDICATOR_DIALOG            (indicator_dialog_get_type ())
-#define XFCE_INDICATOR_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_INDICATOR_DIALOG, IndicatorDialog))
-#define XFCE_INDICATOR_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_INDICATOR_DIALOG, IndicatorDialogClass))
-#define XFCE_IS_INDICATOR_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_INDICATOR_DIALOG))
-#define XFCE_IS_INDICATOR_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_INDICATOR_DIALOG))
-#define XFCE_INDICATOR_DIALOG_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_INDICATOR_DIALOG, IndicatorDialogClass))
-
-GType              indicator_dialog_get_type (void);
+#define XFCE_TYPE_INDICATOR_DIALOG (indicator_dialog_get_type ())
+G_DECLARE_FINAL_TYPE (IndicatorDialog, indicator_dialog, XFCE, INDICATOR_DIALOG, GtkBuilder)
 
 void               indicator_dialog_show     (IndicatorDialog  *dialog,
                                               GdkScreen        *screen);

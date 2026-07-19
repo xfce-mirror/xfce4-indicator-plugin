@@ -80,12 +80,6 @@ struct _IndicatorButtonBox
   gulong                configuration_changed_id;
 };
 
-struct _IndicatorButtonBoxClass
-{
-  GtkContainerClass   __parent__;
-};
-
-
 
 
 G_DEFINE_TYPE (IndicatorButtonBox, indicator_button_box, GTK_TYPE_CONTAINER)
@@ -325,11 +319,7 @@ indicator_button_box_disconnect_signals (IndicatorButtonBox *box)
 {
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON_BOX (box));
 
-  if (box->configuration_changed_id != 0)
-    {
-      g_signal_handler_disconnect (box->config, box->configuration_changed_id);
-      box->configuration_changed_id = 0;
-    }
+  g_clear_signal_handler (&box->configuration_changed_id, box->config);
 }
 
 

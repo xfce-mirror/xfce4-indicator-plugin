@@ -74,12 +74,6 @@ struct _XfceIndicatorButton
   gulong                deactivate_id;
 };
 
-struct _XfceIndicatorButtonClass
-{
-  GtkToggleButtonClass __parent__;
-};
-
-
 
 
 G_DEFINE_TYPE (XfceIndicatorButton, xfce_indicator_button, GTK_TYPE_TOGGLE_BUTTON)
@@ -165,8 +159,7 @@ xfce_indicator_button_set_menu (XfceIndicatorButton *button,
   if (button->menu != NULL)
     {
       gtk_menu_detach (button->menu);
-      gtk_menu_popdown (button->menu);
-      button->menu = NULL;
+      g_clear_pointer (&button->menu, gtk_menu_popdown);
     }
 
   button->menu = menu;
@@ -297,8 +290,7 @@ xfce_indicator_button_destroy (XfceIndicatorButton *button)
   if (button->menu != NULL)
     {
       gtk_menu_detach (button->menu);
-      gtk_menu_popdown (button->menu);
-      button->menu = NULL;
+      g_clear_pointer (&button->menu, gtk_menu_popdown);
     }
   gtk_widget_destroy (GTK_WIDGET (button));
 }
@@ -317,15 +309,7 @@ xfce_indicator_button_button_press (GtkWidget      *widget,
         (G_OBJECT (button->menu), "deactivate",
          G_CALLBACK (xfce_indicator_button_menu_deactivate), button);
       gtk_menu_reposition (GTK_MENU (button->menu));
-#if LIBXFCE4PANEL_CHECK_VERSION (4, 17 ,2)
       xfce_panel_plugin_popup_menu (button->plugin, button->menu, widget, (GdkEvent *) event);
-#else
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-      gtk_menu_popup (button->menu, NULL, NULL,
-                      xfce_panel_plugin_position_menu, button->plugin,
-                      event->button, event->time);
-G_GNUC_END_IGNORE_DEPRECATIONS
-#endif
       return TRUE;
     }
 
@@ -369,11 +353,7 @@ xfce_indicator_button_menu_deactivate (XfceIndicatorButton *button,
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_MENU (menu));
 
-  if (button->deactivate_id)
-    {
-      g_signal_handler_disconnect (menu, button->deactivate_id);
-      button->deactivate_id = 0;
-    }
+  g_clear_signal_handler (&button->deactivate_id, menu);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), FALSE);
 }
 

@@ -20,31 +20,12 @@
 #define __INDICATOR_CONFIG_H__
 
 #include <glib.h>
-#ifdef XFCONF_LEGACY
-#include <dbus/dbus-glib.h>
-#endif
+#include <glib-object.h>
 
 G_BEGIN_DECLS
 
-typedef struct _IndicatorConfigClass IndicatorConfigClass;
-typedef struct _IndicatorConfig      IndicatorConfig;
-
-#define XFCE_TYPE_INDICATOR_CONFIG             (indicator_config_get_type ())
-#define XFCE_INDICATOR_CONFIG(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_INDICATOR_CONFIG, IndicatorConfig))
-#define XFCE_INDICATOR_CONFIG_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_INDICATOR_CONFIG, IndicatorConfigClass))
-#define XFCE_IS_INDICATOR_CONFIG(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_INDICATOR_CONFIG))
-#define XFCE_IS_INDICATOR_CONFIG_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_INDICATOR_CONFIG))
-#define XFCE_INDICATOR_CONFIG_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_INDICATOR_CONFIG, IndicatorConfigClass))
-
-#ifdef XFCONF_LEGACY
-#define XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY (indicator_config_value_array_get_type ())
-#else
-#define XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY G_TYPE_PTR_ARRAY
-#endif
-
-GType              indicator_config_value_array_get_type    (void);
-
-GType              indicator_config_get_type                (void);
+#define XFCE_TYPE_INDICATOR_CONFIG (indicator_config_get_type ())
+G_DECLARE_FINAL_TYPE (IndicatorConfig, indicator_config, XFCE, INDICATOR_CONFIG, GObject)
 
 IndicatorConfig   *indicator_config_new                     (const gchar          *property_base);
 

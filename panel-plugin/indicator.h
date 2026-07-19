@@ -24,22 +24,11 @@
 #include "indicator-box.h"
 
 G_BEGIN_DECLS
-typedef struct _IndicatorPluginClass IndicatorPluginClass;
-typedef struct _IndicatorPlugin      IndicatorPlugin;
 
-#define XFCE_TYPE_INDICATOR_PLUGIN            (indicator_get_type ())
-#define XFCE_INDICATOR_PLUGIN(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), XFCE_TYPE_INDICATOR_PLUGIN, IndicatorPlugin))
-#define XFCE_INDICATOR_PLUGIN_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), XFCE_TYPE_INDICATOR_PLUGIN, IndicatorPluginClass))
-#define XFCE_IS_INDICATOR_PLUGIN(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XFCE_TYPE_INDICATOR_PLUGIN))
-#define XFCE_IS_INDICATOR_PLUGIN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XFCE_TYPE_INDICATOR_PLUGIN))
-#define XFCE_INDICATOR_PLUGIN_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), XFCE_TYPE_INDICATOR_PLUGIN, IndicatorPluginClass))
+#define XFCE_TYPE_INDICATOR_PLUGIN (indicator_get_type ())
+G_DECLARE_FINAL_TYPE (IndicatorPlugin, indicator_plugin, XFCE, INDICATOR_PLUGIN, XfcePanelPlugin)
 
-GType indicator_get_type      (void);
-
-void  indicator_register_type (XfcePanelTypeModule *type_module);
-
-void                indicator_save             (XfcePanelPlugin    *plugin,
-                                                IndicatorPlugin    *indicator);
+void  indicator_plugin_register_type (XfcePanelTypeModule *type_module);
 
 XfceIndicatorBox   *indicator_get_buttonbox    (IndicatorPlugin    *plugin);
 

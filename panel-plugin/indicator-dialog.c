@@ -72,12 +72,6 @@ static void              indicator_dialog_help_button_clicked    (IndicatorDialo
                                                                   GtkWidget                *button);
 
 
-
-struct _IndicatorDialogClass
-{
-  GtkBuilderClass   __parent__;
-};
-
 struct _IndicatorDialog
 {
   GtkBuilder        __parent__;
@@ -552,7 +546,7 @@ indicator_dialog_help_button_clicked (IndicatorDialog *dialog,
   result = g_spawn_command_line_async ("exo-open --launch WebBrowser " PLUGIN_WEBSITE, NULL);
 #endif
 
-  if (G_UNLIKELY (result == FALSE))
+  if (G_UNLIKELY (!result))
     g_warning (_("Unable to open the following url: %s"), PLUGIN_WEBSITE);
 }
 
