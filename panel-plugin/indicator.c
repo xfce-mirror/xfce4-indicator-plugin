@@ -410,7 +410,7 @@ indicator_load_module (IndicatorPlugin *indicator,
     return FALSE;
 
 #ifdef DISABLE_APPLICATION
-  if (!g_strcmp0 (name, "libayatana-application.so"))
+  if (g_strcmp0 (name, "libayatana-application.so") == 0)
     return FALSE;
 #endif
 
