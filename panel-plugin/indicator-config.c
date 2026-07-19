@@ -407,8 +407,7 @@ indicator_config_set_property (GObject      *object,
       break;
 
     case PROP_KNOWN_INDICATORS:
-      g_list_free_full (config->known_indicators, g_free);
-      config->known_indicators = NULL;
+      g_clear_list (&config->known_indicators, g_free);
       array = g_value_get_boxed (value);
       if (G_LIKELY (array != NULL))
         {
@@ -737,8 +736,7 @@ indicator_config_swap_known_indicators (IndicatorConfig *config,
 void
 indicator_config_names_clear (IndicatorConfig *config)
 {
-  g_list_free_full (config->known_indicators, g_free);
-  config->known_indicators = NULL;
+  g_clear_list (&config->known_indicators, g_free);
   g_object_notify (G_OBJECT (config), "known-indicators");
 
   g_hash_table_remove_all (config->blacklist);
