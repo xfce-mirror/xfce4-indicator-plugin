@@ -74,12 +74,6 @@ struct _XfceIndicatorButton
   gulong                deactivate_id;
 };
 
-struct _XfceIndicatorButtonClass
-{
-  GtkToggleButtonClass __parent__;
-};
-
-
 
 
 G_DEFINE_TYPE (XfceIndicatorButton, xfce_indicator_button, GTK_TYPE_TOGGLE_BUTTON)

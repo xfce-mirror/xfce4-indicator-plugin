@@ -73,10 +73,6 @@ static void             indicator_load_services                    (IndicatorPlu
 static void             indicator_load_modules                     (IndicatorPlugin       *indicator);
 
 
-struct _IndicatorPluginClass
-{
-  XfcePanelPluginClass __parent__;
-};
 
 /* plugin structure */
 struct _IndicatorPlugin
@@ -101,13 +97,13 @@ struct _IndicatorPlugin
 
 
 /* define the plugin */
-XFCE_PANEL_DEFINE_PLUGIN (IndicatorPlugin, indicator)
+XFCE_PANEL_DEFINE_PLUGIN (IndicatorPlugin, indicator_plugin)
 
 
 
 
 static void
-indicator_class_init (IndicatorPluginClass *klass)
+indicator_plugin_class_init (IndicatorPluginClass *klass)
 {
   XfcePanelPluginClass *plugin_class;
 
@@ -123,7 +119,7 @@ indicator_class_init (IndicatorPluginClass *klass)
 
 
 static void
-indicator_init (IndicatorPlugin *indicator)
+indicator_plugin_init (IndicatorPlugin *indicator)
 {
 #ifdef G_ENABLE_DEBUG
   /* Indicators print a lot of warnings. By default, "wrapper"

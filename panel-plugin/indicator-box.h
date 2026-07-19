@@ -26,17 +26,8 @@
 
 G_BEGIN_DECLS
 
-GType xfce_indicator_box_get_type (void);
-
-#define XFCE_TYPE_INDICATOR_BOX             (xfce_indicator_box_get_type())
-#define XFCE_INDICATOR_BOX(obj)             (G_TYPE_CHECK_INSTANCE_CAST((obj), XFCE_TYPE_INDICATOR_BOX, XfceIndicatorBox))
-#define XFCE_INDICATOR_BOX_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST((klass), XFCE_TYPE_INDICATOR_BOX, XfceIndicatorBoxClass))
-#define XFCE_IS_INDICATOR_BOX(obj)          (G_TYPE_CHECK_INSTANCE_TYPE((obj), XFCE_TYPE_INDICATOR_BOX))
-#define XFCE_IS_INDICATOR_BOX_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE((klass), XFCE_TYPE_INDICATOR_BOX))
-#define XFCE_INDICATOR_BOX_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS((obj), XFCE_TYPE_INDICATOR_BOX, XfceIndicatorBoxClass))
-
-typedef struct _XfceIndicatorBox XfceIndicatorBox;
-typedef struct _XfceIndicatorBoxClass XfceIndicatorBoxClass;
+#define XFCE_TYPE_INDICATOR_BOX (xfce_indicator_box_get_type())
+G_DECLARE_FINAL_TYPE (XfceIndicatorBox, xfce_indicator_box, XFCE, INDICATOR_BOX, GtkContainer)
 
 void xfce_indicator_box_remove_entry (XfceIndicatorBox     *box,
                                       IndicatorObjectEntry *entry);

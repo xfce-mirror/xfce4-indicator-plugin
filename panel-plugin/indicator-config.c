@@ -64,11 +64,6 @@ static void                 indicator_config_set_property   (GObject          *o
 
 
 
-struct _IndicatorConfigClass
-{
-  GObjectClass      __parent__;
-};
-
 struct _IndicatorConfig
 {
   GObject          __parent__;
@@ -120,25 +115,6 @@ G_DEFINE_TYPE (IndicatorConfig, indicator_config, G_TYPE_OBJECT)
 
 
 
-
-#ifdef XFCONF_LEGACY
-GType
-indicator_config_value_array_get_type (void)
-{
-  static volatile gsize type__volatile = 0;
-  GType                 type;
-
-  if (g_once_init_enter (&type__volatile))
-    {
-      type = dbus_g_type_get_collection ("GPtrArray", G_TYPE_VALUE);
-      g_once_init_leave (&type__volatile, type);
-    }
-
-  return type__volatile;
-}
-#endif
-
-
 static void
 indicator_config_class_init (IndicatorConfigClass *klass)
 {
@@ -181,7 +157,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                    PROP_BLACKLIST,
                                    g_param_spec_boxed ("blacklist",
                                                        NULL, NULL,
-                                                       XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
+                                                       G_TYPE_PTR_ARRAY,
                                                        G_PARAM_READWRITE |
                                                        G_PARAM_STATIC_STRINGS));
 
@@ -189,7 +165,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                    PROP_WHITELIST,
                                    g_param_spec_boxed ("whitelist",
                                                        NULL, NULL,
-                                                       XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
+                                                       G_TYPE_PTR_ARRAY,
                                                        G_PARAM_READWRITE |
                                                        G_PARAM_STATIC_STRINGS));
 
@@ -198,7 +174,7 @@ indicator_config_class_init (IndicatorConfigClass *klass)
                                    PROP_KNOWN_INDICATORS,
                                    g_param_spec_boxed ("known-indicators",
                                                        NULL, NULL,
-                                                       XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY,
+                                                       G_TYPE_PTR_ARRAY,
                                                        G_PARAM_READWRITE |
                                                        G_PARAM_STATIC_STRINGS));
 
@@ -806,15 +782,15 @@ indicator_config_new (const gchar     *property_base)
       g_free (property);
 
       property = g_strconcat (property_base, "/blacklist", NULL);
-      xfconf_g_property_bind (channel, property, XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY, config, "blacklist");
+      xfconf_g_property_bind (channel, property, G_TYPE_PTR_ARRAY, config, "blacklist");
       g_free (property);
 
       property = g_strconcat (property_base, "/whitelist", NULL);
-      xfconf_g_property_bind (channel, property, XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY, config, "whitelist");
+      xfconf_g_property_bind (channel, property, G_TYPE_PTR_ARRAY, config, "whitelist");
       g_free (property);
 
       property = g_strconcat (property_base, "/known-indicators", NULL);
-      xfconf_g_property_bind (channel, property, XFCE_TYPE_INDICATOR_CONFIG_VALUE_ARRAY, config, "known-indicators");
+      xfconf_g_property_bind (channel, property, G_TYPE_PTR_ARRAY, config, "known-indicators");
       g_free (property);
 
       g_signal_emit (G_OBJECT (config), indicator_config_signals[CONFIGURATION_CHANGED], 0);
