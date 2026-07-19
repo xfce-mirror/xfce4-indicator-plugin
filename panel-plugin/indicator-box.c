@@ -117,12 +117,7 @@ xfce_indicator_box_finalize (GObject *object)
 {
   XfceIndicatorBox *box = XFCE_INDICATOR_BOX (object);
 
-  if (box->indicator_list_changed_id != 0)
-    {
-      g_signal_handler_disconnect (box->config, box->indicator_list_changed_id);
-      box->indicator_list_changed_id = 0;
-    }
-
+  g_clear_signal_handler (&box->indicator_list_changed_id, box->config);
   g_hash_table_destroy (box->children);
 
   G_OBJECT_CLASS (xfce_indicator_box_parent_class)->finalize (object);

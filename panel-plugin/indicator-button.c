@@ -159,8 +159,7 @@ xfce_indicator_button_set_menu (XfceIndicatorButton *button,
   if (button->menu != NULL)
     {
       gtk_menu_detach (button->menu);
-      gtk_menu_popdown (button->menu);
-      button->menu = NULL;
+      g_clear_pointer (&button->menu, gtk_menu_popdown);
     }
 
   button->menu = menu;
@@ -291,8 +290,7 @@ xfce_indicator_button_destroy (XfceIndicatorButton *button)
   if (button->menu != NULL)
     {
       gtk_menu_detach (button->menu);
-      gtk_menu_popdown (button->menu);
-      button->menu = NULL;
+      g_clear_pointer (&button->menu, gtk_menu_popdown);
     }
   gtk_widget_destroy (GTK_WIDGET (button));
 }
@@ -355,11 +353,7 @@ xfce_indicator_button_menu_deactivate (XfceIndicatorButton *button,
   g_return_if_fail (XFCE_IS_INDICATOR_BUTTON (button));
   g_return_if_fail (GTK_IS_MENU (menu));
 
-  if (button->deactivate_id)
-    {
-      g_signal_handler_disconnect (menu, button->deactivate_id);
-      button->deactivate_id = 0;
-    }
+  g_clear_signal_handler (&button->deactivate_id, menu);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), FALSE);
 }
 
