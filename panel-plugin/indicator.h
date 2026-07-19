@@ -38,9 +38,6 @@ GType indicator_get_type      (void);
 
 void  indicator_register_type (XfcePanelTypeModule *type_module);
 
-void                indicator_save             (XfcePanelPlugin    *plugin,
-                                                IndicatorPlugin    *indicator);
-
 XfceIndicatorBox   *indicator_get_buttonbox    (IndicatorPlugin    *plugin);
 
 G_END_DECLS
