@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
+"PO-Revision-Date: 2013-07-03 19:02+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Georgian (http://app.transifex.com/xfce/xfce-panel-plugins/language/ka/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "მაჩვენებელი დამატება"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr ""
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: panel-plugin/indicator-dialog.c:45
+msgid "Application Indicators"
+msgstr "აპლიკაციის მაჩვენებლები"
+
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
+msgid "Sound Menu"
+msgstr "ხმის მენიუ"
+
+#: panel-plugin/indicator-dialog.c:48
+msgid "Printers Menu"
+msgstr "პრინტერების მენიუ"
+
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
+msgid "Power Management"
+msgstr "კვების მართვა"
+
+#: panel-plugin/indicator-dialog.c:51
+msgid "Application Menus (Global Menu)"
+msgstr "აპლიკაციის მენიუები (გლობალური მენიუ)"
+
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
+msgid "Session Management"
+msgstr "სესიების მართვა"
+
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
+msgid "Messaging Menu"
+msgstr "შეტყობინებების მენიუ"
+
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
+msgid "Date and Time"
+msgstr "თარიღი და დრო"
+
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
+msgid "Bluetooth"
+msgstr "ბლუთუზი"
+
+#: panel-plugin/indicator-dialog.c:60
+msgid "Sync Menu"
+msgstr "სინქრონიზაციის მენიუ"
+
+#: panel-plugin/indicator-dialog.c:61
+msgid "Keyboard"
+msgstr "კლავიატურა"
+
+#: panel-plugin/indicator-dialog.c:62
+msgid "Location"
+msgstr "მდებარეობა"
+
+#: panel-plugin/indicator-dialog.c:63
+msgid "Network"
+msgstr "ქსელი"
+
+#: panel-plugin/indicator-dialog.c:64
+msgid "Workrave"
+msgstr "Workrave"
+
+#: panel-plugin/indicator-dialog.c:425
+msgid "Clear"
+msgstr "გასუფთავება"
+
+#: panel-plugin/indicator-dialog.c:426
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "მართლა გნებავთ ცნობილი მაჩვენებლების სიის გასუფთავება?"
+
+#: panel-plugin/indicator-dialog.c:556
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "ვერ გაიხსნა შემდეგი url: %s"
+
+#: panel-plugin/indicator-dialog.glade:27
+msgid "Indicators"
+msgstr "მაჩვენებლები"
+
+#: panel-plugin/indicator-dialog.glade:107
+msgid "Arrange indicators in a single row"
+msgstr "მაჩვენებლების დალაგება ერთ მწკრივში"
+
+#: panel-plugin/indicator-dialog.glade:111
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "თუ ჩართულია, მაჩვენებლები ყოველთვის ერთ მწკრივში დალაგდება."
+
+#: panel-plugin/indicator-dialog.glade:122
+msgid "Align left in deskbar mode"
+msgstr "მარცხნივ სწორება სამუშაო ზოლის რეჟიმში"
+
+#: panel-plugin/indicator-dialog.glade:126
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr ""
+
+#: panel-plugin/indicator-dialog.glade:137
+msgid "Square icons"
+msgstr "კვადრატული ხატულები"
+
+#: panel-plugin/indicator-dialog.glade:141
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "მაჩვენებლის ღილაკები კვადრატული იქნება, როცა ეს შესაძლებელია."
+
+#: panel-plugin/indicator-dialog.glade:158
+msgid "Appearance"
+msgstr "გარეგნობა"
+
+#: panel-plugin/indicator-dialog.glade:191
+msgid "Hide indicators by default"
+msgstr "მაჩვენებლების დამალვა ნაგულისხმევად"
+
+#: panel-plugin/indicator-dialog.glade:195
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr ""
+
+#: panel-plugin/indicator-dialog.glade:239
+msgid "Indicator"
+msgstr "მაჩვენებელი"
+
+#: panel-plugin/indicator-dialog.glade:251
+msgid "Hidden"
+msgstr "დამალული"
+
+#: panel-plugin/indicator-dialog.glade:262
+msgid "Visible"
+msgstr "ხილული"
+
+#: panel-plugin/indicator-dialog.glade:291
+msgid "Move the selected indicator one row up."
+msgstr "მონიშნული მაჩვენებლის აწევა ერთი მწკრივით."
+
+#: panel-plugin/indicator-dialog.glade:311
+msgid "Move the selected indicator one row down."
+msgstr "მონიშნული მაჩვენებლის ჩამოწევა ერთი მწკრივით."
+
+#: panel-plugin/indicator-dialog.glade:344
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>იმისათვის, რომ ხილვადობის ცვლილებები ძალაში შევიდეს, გადატვირთეთ პანელი.</i>"
+
+#: panel-plugin/indicator-dialog.glade:363
+msgid "C_lear known indicators"
+msgstr "ცნობი_ლი მაჩვენებლების გასუფთავება"
+
+#: panel-plugin/indicator-dialog.glade:367
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "ჩამოყრის მაჩვენებლების სიას და მათი ხილვადობის პარამეტრებს."
+
+#: panel-plugin/indicator-dialog.glade:392
+msgid "Known Indicators"
+msgstr "ცნობილი მაჩვენებლები"
