@@ -124,7 +124,7 @@ msgstr "V režimu Deskbar zarovnat vlevo"
 msgid ""
 "Controls the indicator button layout when the panel is in a Deskbar mode. "
 "Possible choices are \"centered\" or \"aligned left\"."
-msgstr "Ovládá rozložení tlačítek indikátoru, pokud je panel v režimu „pracovní panel. Dostupné volby jsou \"vystředěný\" a \"umístěný vlevo\"."
+msgstr "Ovládá rozložení tlačítek indikátoru, když je panel v režimu Deskbar. Dostupné volby jsou „vystředěné“ a „zarovnané vlevo“."
 
 #: panel-plugin/indicator-dialog.glade:137
 msgid "Square icons"
