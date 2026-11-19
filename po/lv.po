@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-indicator-plugin package.
+# 
+# Translators:
+# Rihards Priedītis <rprieditis@gmail.com>, 2026
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:06+0200\n"
+"PO-Revision-Date: 2013-07-03 19:02+0000\n"
+"Last-Translator: Rihards Priedītis <rprieditis@gmail.com>, 2026\n"
+"Language-Team: Latvian (http://app.transifex.com/xfce/xfce-panel-plugins/language/lv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lv\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+
+#: panel-plugin/indicator.desktop.in.in:5
+msgid "Indicator Plugin"
+msgstr "Indikatoru spraudnis"
+
+#: panel-plugin/indicator.desktop.in.in:6 panel-plugin/indicator.c:178
+msgid ""
+"Provides a panel area for Unity indicators. Indicators allow applications "
+"and system services to display their status and interact with the user."
+msgstr "Nodrošina paneļa apgabalu Unity indikatoriem. Indikatori ļauj lietotnēm un sistēmas pakalpojumiem rādīt savu statusu un mijiedarboties ar lietotāju."
+
+#. raw name,                           pretty name,
+#. icon-name(?)
+#: panel-plugin/indicator-dialog.c:45
+msgid "Application Indicators"
+msgstr "Lietotņu indikatori"
+
+#: panel-plugin/indicator-dialog.c:46 panel-plugin/indicator-dialog.c:47
+msgid "Sound Menu"
+msgstr "Skaņas izvēlne"
+
+#: panel-plugin/indicator-dialog.c:48
+msgid "Printers Menu"
+msgstr "Printeru izvēlne"
+
+#: panel-plugin/indicator-dialog.c:49 panel-plugin/indicator-dialog.c:50
+msgid "Power Management"
+msgstr "Barošanas pārvaldība"
+
+#: panel-plugin/indicator-dialog.c:51
+msgid "Application Menus (Global Menu)"
+msgstr "Lietotņu izvēlnes (globālā izvēlne)"
+
+#: panel-plugin/indicator-dialog.c:52 panel-plugin/indicator-dialog.c:53
+msgid "Session Management"
+msgstr "Sesiju pārvaldība"
+
+#: panel-plugin/indicator-dialog.c:54 panel-plugin/indicator-dialog.c:55
+msgid "Messaging Menu"
+msgstr "Ziņojumapmaiņas izvēlne"
+
+#: panel-plugin/indicator-dialog.c:56 panel-plugin/indicator-dialog.c:57
+msgid "Date and Time"
+msgstr "Datums un laiks"
+
+#: panel-plugin/indicator-dialog.c:58 panel-plugin/indicator-dialog.c:59
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: panel-plugin/indicator-dialog.c:60
+msgid "Sync Menu"
+msgstr "Sinhronizācijas izvēlne"
+
+#: panel-plugin/indicator-dialog.c:61
+msgid "Keyboard"
+msgstr "Tastatūra"
+
+#: panel-plugin/indicator-dialog.c:62
+msgid "Location"
+msgstr "Atrašanās vieta"
+
+#: panel-plugin/indicator-dialog.c:63
+msgid "Network"
+msgstr "Tīkls"
+
+#: panel-plugin/indicator-dialog.c:64
+msgid "Workrave"
+msgstr "Workrave"
+
+#: panel-plugin/indicator-dialog.c:425
+msgid "Clear"
+msgstr "Notīrīt"
+
+#: panel-plugin/indicator-dialog.c:426
+msgid "Are you sure you want to clear the list of known indicators?"
+msgstr "Vai tiešām vēlaties notīrīt zināmo indikatoru sarakstu?"
+
+#: panel-plugin/indicator-dialog.c:556
+#, c-format
+msgid "Unable to open the following url: %s"
+msgstr "Neizdevās atvērt šo URL: %s"
+
+#: panel-plugin/indicator-dialog.glade:27
+msgid "Indicators"
+msgstr "Indikatori"
+
+#: panel-plugin/indicator-dialog.glade:107
+msgid "Arrange indicators in a single row"
+msgstr "Izkārtot indikatorus vienā rindā"
+
+#: panel-plugin/indicator-dialog.glade:111
+msgid ""
+"If enabled, ensure that the indicators are laid out in a single row or "
+"column."
+msgstr "Ja iespējots, indikatori tiek izkārtoti vienā rindā vai kolonnā."
+
+#: panel-plugin/indicator-dialog.glade:122
+msgid "Align left in deskbar mode"
+msgstr "Sānu joslas režīmā līdzināt pa kreisi"
+
+#: panel-plugin/indicator-dialog.glade:126
+msgid ""
+"Controls the indicator button layout when the panel is in a Deskbar mode. "
+"Possible choices are \"centered\" or \"aligned left\"."
+msgstr "Nosaka indikatoru pogu izkārtojumu, kad panelis ir sānu joslas režīmā. Iespējamās izvēles ir „centrēts” vai „līdzināts pa kreisi”."
+
+#: panel-plugin/indicator-dialog.glade:137
+msgid "Square icons"
+msgstr "Kvadrātveida ikonas"
+
+#: panel-plugin/indicator-dialog.glade:141
+msgid "Indicator buttons will take a square when it's possible."
+msgstr "Indikatoru pogas, ja iespējams, būs kvadrātveida."
+
+#: panel-plugin/indicator-dialog.glade:158
+msgid "Appearance"
+msgstr "Izskats"
+
+#: panel-plugin/indicator-dialog.glade:191
+msgid "Hide indicators by default"
+msgstr "Pēc noklusējuma paslēpt indikatorus"
+
+#: panel-plugin/indicator-dialog.glade:195
+msgid ""
+"When enabled, only indicators marked \"Visible\" are shown. Otherwise, all "
+"indicators not marked \"Hidden\" are displayed."
+msgstr "Ja iespējots, tiek rādīti tikai indikatori, kas atzīmēti kā „Redzams”. Citādi tiek rādīti visi indikatori, kas nav atzīmēti kā „Paslēpts”."
+
+#: panel-plugin/indicator-dialog.glade:239
+msgid "Indicator"
+msgstr "Indikators"
+
+#: panel-plugin/indicator-dialog.glade:251
+msgid "Hidden"
+msgstr "Paslēpts"
+
+#: panel-plugin/indicator-dialog.glade:262
+msgid "Visible"
+msgstr "Redzams"
+
+#: panel-plugin/indicator-dialog.glade:291
+msgid "Move the selected indicator one row up."
+msgstr "Pārvietot atlasīto indikatoru par vienu rindu augšup."
+
+#: panel-plugin/indicator-dialog.glade:311
+msgid "Move the selected indicator one row down."
+msgstr "Pārvietot atlasīto indikatoru par vienu rindu lejup."
+
+#: panel-plugin/indicator-dialog.glade:344
+msgid "<i>Please restart the panel for visibility changes to take effect.</i>"
+msgstr "<i>Lai redzamības izmaiņas stātos spēkā, lūdzu, pārstartējiet paneli.</i>"
+
+#: panel-plugin/indicator-dialog.glade:363
+msgid "C_lear known indicators"
+msgstr "_Notīrīt zināmos indikatorus"
+
+#: panel-plugin/indicator-dialog.glade:367
+msgid "Resets the list of indicators and their visibility settings."
+msgstr "Atiestata indikatoru sarakstu un to redzamības iestatījumus."
+
+#: panel-plugin/indicator-dialog.glade:392
+msgid "Known Indicators"
+msgstr "Zināmie indikatori"
